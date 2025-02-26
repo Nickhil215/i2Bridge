@@ -20,22 +20,23 @@ import gzip
 import json
 import logging
 import os
-import re
 import shutil
 import sys
 import tarfile
 import tempfile
-import urllib.parse
-import urllib.request
 import zipfile
 from abc import ABC, abstractmethod
 from collections import defaultdict
 from dataclasses import dataclass
-from pathlib import Path
-from typing import Any, Dict, List, Optional, Set, Tuple, Union
+from typing import Any, Dict, List, Optional, Set
+
+import uuid
+import logging
+import requests
+from io import BytesIO
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 import astroid
-import uncompyle6
 from astroid import nodes
 from git import GitCommandError, Repo
 from wheel.wheelfile import WheelFile
@@ -50,6 +51,12 @@ logger = logging.getLogger(__name__)
 #-----------------------------------------------------------------------------
 # Data Classes
 #-----------------------------------------------------------------------------
+
+@dataclass
+class ImportInfo:
+  """Store detailed information about an import."""
+  module_name: str
+  alias: Optional[str]
 
 @dataclass
 class FunctionInfo:
@@ -138,18 +145,21 @@ class BaseAnalyzer(ABC):
             self.errors.append((file_path, str(e)))
 
     def _analyze_imports(self, module: nodes.Module, file_path: str) -> None:
-        """Extract and track all imports in a module."""
-        for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
-            if isinstance(node, nodes.Import):
-                for name, asname in node.names:
-                    self.imports[file_path].add(name)
-            elif isinstance(node, nodes.ImportFrom):
-                module_name = node.modname
-                for name, asname in node.names:
-                    if module_name:
-                        self.imports[file_path].add(f"{module_name}.{name}")
-                    else:
-                        self.imports[file_path].add(name)
+      """Extract and track all imports in a module."""
+      for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
+        if isinstance(node, nodes.Import):
+          for name, asname in node.names:
+            import_name = name if asname is None else asname
+            if file_path not in self.imports:
+              self.imports[file_path] = set()
+            self.imports[file_path].add(import_name)
+        elif isinstance(node, nodes.ImportFrom):
+          module_name = node.modname
+          for name, asname in node.names:
+            import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
+            if file_path not in self.imports:
+              self.imports[file_path] = set()
+            self.imports[file_path].add(import_name)
 
     def _analyze_functions(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all functions in a module, including methods."""
@@ -203,8 +213,12 @@ class BaseAnalyzer(ABC):
             if isinstance(child, nodes.FunctionDef):
                 method_info = self._extract_function_info(child, source)
                 methods[child.name] = method_info
-            elif isinstance(child, nodes.AssignName):
-                attributes.append(child.name)
+            elif isinstance(child, nodes.AnnAssign):  # Type-hinted attributes
+                attributes.append(child.target.name)
+            elif isinstance(child, nodes.Assign):  # Regular assignments
+                attributes.extend(
+                    target.name for target in child.targets if isinstance(target, nodes.AssignName)
+                )
 
         docstring = None
         if isinstance(node.doc_node, nodes.Const):
@@ -259,6 +273,7 @@ class BaseAnalyzer(ABC):
             'total_files': len(self.modules),
             'total_classes': len(self.classes),
             'total_functions': len(self.functions),
+            'total_imports' : sum(len(imports) for imports in self.imports.values()),
             'average_complexity': sum(f.complexity for f in self.functions.values()) / len(self.functions) if self.functions else 0,
             'total_lines': sum(f.end_line - f.line_number for f in self.functions.values()),
             'errors': len(self.errors)
@@ -276,6 +291,7 @@ class BaseAnalyzer(ABC):
             f"- Total Files: {metrics['total_files']}",
             f"- Total Classes: {metrics['total_classes']}",
             f"- Total Functions: {metrics['total_functions']}",
+            f"- Total Imports: {metrics['total_imports']}",
             f"- Average Complexity: {metrics['average_complexity']:.2f}",
             f"- Total Lines of Code: {metrics['total_lines']}",
             f"- Analysis Errors: {metrics['errors']}\n",
@@ -286,11 +302,18 @@ class BaseAnalyzer(ABC):
         for func_path, func_info in sorted(self.functions.items()):
             report.extend([
                 f"\n{func_path}:",
-                f"  Module: {func_info.module}",
+                f"  name: {func_info.name}",
+                f"  Module: {func_info.module if func_info.module else 'None'}",
                 f"  Signature: {func_info.signature}",
-                f"  Line: {func_info.line_number}",
+                f"  Arguments: {func_info.args if func_info.args else 'None'}",
+                f"  Returns: {func_info.returns if func_info.returns else 'None'}",
+                f"  Start Line: {func_info.line_number}",
+                f"  End Line: {func_info.end_line}",
+                f"  Complexity: {func_info.complexity}",
+                f"  Is Method: {func_info.is_method}",
+                f"  Is Async: {func_info.is_async}",
                 f"  Decorators: {', '.join(func_info.decorators) or 'None'}",
-                f"  Docstring: {func_info.docstring or 'None'}"
+                f"  Docstring: {func_info.docstring if func_info.docstring else 'None'}"
             ])
 
         # Add class information
@@ -298,10 +321,22 @@ class BaseAnalyzer(ABC):
         for class_path, class_info in sorted(self.classes.items()):
             report.extend([
                 f"\n{class_path}:",
-                f"  Bases: {', '.join(class_info.bases)}",
+                f"  Bases: {', '.join(class_info.bases) if class_info.bases else 'None'}",
                 f"  Methods: {len(class_info.methods)}",
-                f"  Attributes: {len(class_info.attributes)}"
+                f"  Attributes: {len(class_info.attributes)}",
+                f"  Start Line: {class_info.line_number}",
+                f"  End Line: {class_info.end_line}",
+                f"  Decorators: {', '.join(class_info.decorators) if class_info.decorators else 'None'}",
+                f"  Docstring: {class_info.docstring.strip() if class_info.docstring else 'None'}"
             ])
+
+        # Add import information
+        if self.imports:
+          report.extend(["\nImports:"])
+          for file_path, imports in sorted(self.imports.items()):
+            report.append(f"  {file_path}:")
+            for import_name in sorted(imports):
+              report.append(f"    - {import_name}")
 
         # Add error information if any
         if self.errors:
@@ -797,6 +832,74 @@ def analyze_package(package_path: str, output_file: Optional[str] = None, **kwar
         logger.error(error_msg)
         raise RuntimeError(error_msg)
 
+class ApiException(Exception):
+    """ Custom exception for API-related errors """
+    pass
+
+class Client:
+
+    def import_ontology(self, content_id):
+
+        url = 'https://ig.aidtaas.com/mobius-graph-operations/graphrag/v2.0/initialize'
+        bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3Ny1NUVdFRTNHZE5adGlsWU5IYmpsa2dVSkpaWUJWVmN1UmFZdHl5ejFjIn0.eyJleHAiOjE3NDA1OTg1OTcsImlhdCI6MTc0MDU2MjU5NywianRpIjoiMWQ5ODgwZmYtZDczYi00NzdjLWI1Y2UtYzQ4NDcyNGFkMWMxIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrLXNlcnZpY2Uua2V5Y2xvYWsuc3ZjLmNsdXN0ZXIubG9jYWw6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIkJPTFRaTUFOTl9CT1RfbW9iaXVzIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9tb2JpdXMiLCJNT05FVF9tb2JpdXMiLCJWSU5DSV9tb2JpdXMiLCJhY2NvdW50Il0sInN1YiI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInR5cCI6IkJlYXJlciIsImF6cCI6IkhPTEFDUkFDWV9tb2JpdXMiLCJzaWQiOiJmMjFkNmUwOS02YmMyLTRkYzgtYmVjNi0wYWM3Nzc3NjAzZDkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1hc3RlciIsIkhDWV9URU5BTlRfQ1VTVE9NIiwib2ZmbGluZV9hY2Nlc3MiLCJCT0JfVEVOQU5UX0NVU1RPTSIsInVtYV9hdXRob3JpemF0aW9uIiwiUElfVEVOQU5UX0NVU1RPTSIsIk1PTkVUX1RFTkFOVF9DVVNUT00iXX0sInJlc291cmNlX2FjY2VzcyI6eyJCT0xUWk1BTk5fQk9UX21vYml1cyI6eyJyb2xlcyI6WyJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9QUk9DRVNTX0RFRklOSVRJT04iLCJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9JTlNUQU5DRSIsIlRFTkFOVF9XT1JLRkxPV19SRVRSSUVWRV9BTEwiLCJURU5BTlRfV09SS0ZMT1dfQUNUSVZBVEVfSU5TVEFOQ0UiLCJURU5BTlRfV09SS0ZMT1dfRVhFQ1VURSIsIlRFTkFOVF9XT1JLRkxPV19SRVRSSUVWRV9IT01FIiwiVEVOQU5UX1dPUktGTE9XX1JFVFJJRVZFX1NVU1BFTkRFRF9QUk9DRVNTX0RFRlMiLCJURU5BTlRfV09SS0ZMT1dfQUNUSVZBVEVfUlVOX0pPQiIsIlRFTkFOVF9XT1JLRkxPV19TVEFUVVMiLCJURU5BTlRfV09SS0ZMT1dfQ1JFQVRFIiwiVEVOQU5UX1dPUktGTE9XX0FDVElWSVRZX0RBVEFfQ09VTlQiLCJCT0xUWk1BTk5fQk9UX1VTRVIiLCJURU5BTlRfV09SS0ZMT1dfREVQTE9ZX1ZFUlNJT04iLCJURU5BTlRfV09SS0ZMT1dfSU1QT1JUIiwiVEVOQU5UX1dPUktGTE9XX1VQREFURSIsIlRFTkFOVF9XT1JLRkxPV19ERVBMT1kiLCJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9SVU5fSk9CIiwiVEVOQU5UX1dPUktGTE9XX1JFVFJJRVZFIiwiVEVOQU5UX1dPUktGTE9XX0RFTEVURSIsIlRFTkFOVF9XT1JLRkxPV19UUklHR0VSX01FU1NBR0VfTElTVEVORVIiXX0sIkhPTEFDUkFDWV9tb2JpdXMiOnsicm9sZXMiOlsiVEVOQU5UX1BST0RVQ1RfUkVUUklFVkVfTUFTVEVSX0NPTkZJRyIsIlRFTkFOVF9JTlZJVEFUSU9OX1JFU1BPTkQiLCJURU5BTlRfTkVHT1RJQVRJT05fQVBQUk9WQUxfQlVZRVIiLCJURU5BTlRfSU5WSVRBVElPTl9SRVRSSUVWRSIsIlRFTkFOVF9PUkdBTklaQVRJT05fQ1JFQVRFIiwiVEVOQU5UX0NSRUFURV9URU5BTlQiLCJURU5BTlRfU1VCX0FMTElBTkNFX1JFVFJJRVZFIiwiVEVOQU5UX1BMQVRGT1JNX0NSRUFURSIsIkhPTEFDUkFDWV9VU0VSIiwiVEVOQU5UX1JBVEVDQVJEX0NSRUFURSIsIlRFTkFOVF9QTEFURk9STV9SRVRSSUVWRSIsIlRFTkFOVF9SRVRSSUVWRV9CWV9CVVlFUl9QTEFURk9STSIsIlRFTkFOVF9TVUJfQUxMSUFOQ0VfUkVUUklFVkVfQUxMIiwiVEVOQU5UX1BST0RVQ1RfUkVUUklFVkUiLCJURU5BTlRfQUNDT1VOVF9ERUxFVEUiLCJURU5BTlRfQUxMSUFOQ0VfUkVUUklFVkUiLCJURU5BTlRfUExBVEZPUk1fVVBEQVRFIiwiVEVOQU5UX0lOVklUQVRJT05fQ1JFQVRFIiwiVEVOQU5UX1JBVEVDQVJEX1JFVFJJRVZFIiwiVEVOQU5UX09SR0FOSVpBVElPTl9VUERBVEUiLCJURU5BTlRfUkFURUNBUkRfVVBEQVRFIiwiVEVOQU5UX09SR0FOSVpBVElPTl9ERUxFVEUiLCJURU5BTlRfUExBVEZPUk1fREVMRVRFIiwiVEVOQU5UX1BST0RVQ1RfQ1JFQVRFIiwiVEVOQU5UX1NVQl9BTExJQU5DRV9DUkVBVEUiLCJURU5BTlRfUkFURUNBUkRfREVMRVRFIiwiVEVOQU5UX0FDQ09VTlRfQ1JFQVRFIiwiVEVOQU5UX0lOVklUQVRJT05fVVBEQVRFIiwiVEVOQU5UX1JFVFJJRVZFX1RFTkFOVCIsIlRFTkFOVF9JTlZJVEFUSU9OX0RFTEVURSIsIlRFTkFOVF9ORUdPVElBVElPTl9BUFBST1ZBTF9TVVBFUl9BRE1JTiIsIlRFTkFOVF9ORUdPVElBVElPTl9SRVRSSUVWRV9BTExfQkVUV0VFTl9CVVlFUl9TRUxMRVIiLCJURU5BTlRfUkVUUklFVkVfVEVOQU5UX0FMTCIsIlRFTkFOVF9ORUdPVElBVElPTl9DUkVBVEUiLCJURU5BTlRfVVBEQVRFX1RFTkFOVCIsIlRFTkFOVF9PUkdBTklaQVRJT05fUkVUUklFVkUiLCJURU5BTlRfQUNDT1VOVF9VUERBVEUiLCJURU5BTlRfUFJPRFVDVF9ERUxFVEUiLCJURU5BTlRfU1VCX0FMTElBTkNFX0RFTEVURSIsIlRFTkFOVF9ORUdPVElBVElPTl9BUFBST1ZBTF9TRUxMRVIiLCJURU5BTlRfU1VCX0FMTElBTkNFX1VQREFURSIsIlRFTkFOVF9QUk9EVUNUX1VQREFURSIsIlRFTkFOVF9BQ0NPVU5UX1JFVFJJRVZFIiwiVEVOQU5UX05FR09USUFUSU9OX1JFVFJJRVZFIiwiVEVOQU5UX0RFTEVURV9URU5BTlQiXX0sIlBBU0NBTF9JTlRFTExJR0VOQ0VfbW9iaXVzIjp7InJvbGVzIjpbIlRFTkFOVF9DT05URVhUX0RFTEVURSIsIlRFTkFOVF9DT05URVhUX1VQREFURSIsIlRFTkFOVF9CSUdRVUVSWV9SRVRSSUVWRSIsIlRFTkFOVF9CSUdRVUVSWV9VUERBVEUiLCJURU5BTlRfVU5JVkVSU0VfQ1JFQVRFIiwiVEVOQU5UX0NPSE9SVFNfUkVUUklFVkUiLCJURU5BTlRfQklHUVVFUllfQ1JFQVRFIiwiVEVOQU5UX0JJR1FVRVJZX0VWQUxVQVRFIiwiVEVOQU5UX0NPSE9SVFNfVVBEQVRFIiwiVEVOQU5UX0NPTlRFWFRfUkVUUklFVkUiLCJURU5BTlRfVU5JVkVSU0VfUkVUUklFVkUiLCJURU5BTlRfQ09IT1JUU19FVkFMVUFURSIsIlRFTkFOVF9CSUdRVUVSWV9ERUxFVEUiLCJURU5BTlRfU0NIRU1BX0NSRUFURSIsIlBBU0NBTF9JTlRFTExJR0VOQ0VfVVNFUiIsIlRFTkFOVF9DT0hPUlRTX0NSRUFURSIsIlRFTkFOVF9TQ0hFTUFfVVBEQVRFIiwiVEVOQU5UX0NPTlRFWFRfQVBQUk9WRSIsIlRFTkFOVF9VTklWRVJTRV9VUERBVEUiLCJURU5BTlRfQklHUVVFUllfQVBQUk9WRSIsIlRFTkFOVF9TQ0hFTUFfUkVUUklFVkUiLCJURU5BTlRfU0NIRU1BX0FQUFJPVkUiLCJURU5BTlRfQ09OVEVYVF9FVkFMVUFURSIsIlRFTkFOVF9TQ0hFTUFfREVMRVRFIiwiVEVOQU5UX0NPTlRFWFRfQ1JFQVRFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX1JFVFJJRVZFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX0RFTEVURSIsIlRFTkFOVF9TQ0hFTUFfREFUQV9VUERBVEUiLCJURU5BTlRfQ09IT1JUU19ERUxFVEUiLCJURU5BTlRfVU5JVkVSU0VfREVMRVRFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX0lOR0VTVElPTiIsIlRFTkFOVF9DT0hPUlRTX0FQUFJPVkUiXX0sIk1PTkVUX21vYml1cyI6eyJyb2xlcyI6WyJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9BTExfUFVCTElTSEVEIiwiVEVOQU5UX1dJREdFVFNfUkVUUklFVkVfRFJBRlQiLCJURU5BTlRfV0lER0VUU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19ERUxFVEUiLCJURU5BTlRfV0lER0VUU19ERUxFVEUiLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX1JFVFJJRVZFX0FMTCIsIlRFTkFOVF9BUFBMRVRTX1VQREFURV9ISVNUT1JZIiwiVEVOQU5UX0VYUEVSSUVOQ0VTX0NSRUFURSIsIlRFTkFOVF9XSURHRVRTX1JFVFJJRVZFX1BVQkxJU0giLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX0NSRUFURSIsIlRFTkFOVF9ERVBFTkRFTkNZX1JFVFJJRVZFX0FMTCIsIlRFTkFOVF9XSURHRVRTX1BVQkxJU0giLCJURU5BTlRfUkVUUklFVkVfRklFTERTX09GX1BVQkxJU0hFRCIsIlRFTkFOVF9FWFBFUklFTkNFU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19DUkVBVEUiLCJURU5BTlRfUExVR0lOU19ERUxFVEUiLCJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9BTExfRFJBRlQiLCJURU5BTlRfUExVR0lOU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9GUk9NX0hJU1RPUlkiLCJURU5BTlRfUkVUUklFVkVfRklFTERTX09GX0RSQUZUIiwiVEVOQU5UX0FQUExFVFNfUkVUUklFVkVfUFVCTElTSEVEIiwiVEVOQU5UX0FQUExFVFNfUFVCTElTSEVEIiwiVEVOQU5UX1dJREdFVFNfUkVUUklFVkUiLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX0RFTEVURSIsIlRFTkFOVF9QTFVHSU5fQ0FURUdPUllfUFVCTElTSCIsIlRFTkFOVF9QTFVHSU5fQ0FURUdPUllfREVMRVRFX0NPTVBfRlJPTSIsIlRFTkFOVF9SRVRSSUVWRV9QVUJMSVNIRUQiLCJURU5BTlRfUExVR0lOU19SRVRSSUVWRSIsIlRFTkFOVF9QTFVHSU5TX0NSRUFURSIsIlRFTkFOVF9XSURHRVRTX0NSRUFURSIsIlRFTkFOVF9BUFBMRVRTX1JFVFJJRVZFX0FMTF9QVUJMSVNIRURfVEhVTUJOQUlMUyIsIk1PTkVUX1VTRVIiLCJURU5BTlRfRVhQRVJJRU5DRVNfREVMRVRFIiwiVEVOQU5UX0VYUEVSSUVOQ0VTX1BVQkxJU0giLCJURU5BTlRfUkVUUklFVkVfRlJPTV9ISVNUT1JZIiwiVEVOQU5UX1BMVUdJTl9DQVRFR09SWV9VUERBVEUiXX0sIlZJTkNJX21vYml1cyI6eyJyb2xlcyI6WyJWSU5DSV9VU0VSIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJyZXF1ZXN0ZXJUeXBlIjoiVEVOQU5UIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJBaWR0YWFzIEFpZHRhYXMiLCJ0ZW5hbnRJZCI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInByZWZlcnJlZF91c2VybmFtZSI6InBhc3N3b3JkX3RlbmFudF9haWR0YWFzQGdhaWFuc29sdXRpb25zLmNvbSIsImdpdmVuX25hbWUiOiJBaWR0YWFzIiwiZmFtaWx5X25hbWUiOiJBaWR0YWFzIiwiZW1haWwiOiJwYXNzd29yZF90ZW5hbnRfYWlkdGFhc0BnYWlhbnNvbHV0aW9ucy5jb20ifQ.G725rwPGvOPssZ3V_oKTT1ASF-tZwUjIKjeuzvnUYv-onXbf5wlHmmehsGlDsIMH1pd96QEqlShoYGJ7b2Ddk0_4chVZFWZIsryZ_gvIAw7gA4dGaOQl3CINQd5yBG12KLg-5ZqLiJ9HWT7slp1Su_VSofqTdkX-g2moSFRFRA_H0vQNv9wuvxKPHyl0SwNpj3DCyJAX3MzUoKsp3Rd-HWofWrhqYkMAChZ5enRH26vP6VeAWxImEN_8036xQ_pE4_Eed3iP3peMCOPYKbqhRBYxQkfic7Nu2y9EZc8WbcFhqorfkihjvJ0Fpz-XQlaaP97B_GoOGxmnAuFRaJxvhw"  # Replace with actual Bearer token
+        headers = {
+            'Authorization': f'Bearer {bearer_token}',
+            'Content-Type': 'application/json',
+        }
+
+        data = {
+            "content_id": content_id,
+            "tenant_id": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64",
+            "ontology_id": "67bef1363e8a06781ba671ce",
+            "transaction_id": "example_transaction_id",
+            "ontology_name": "test123",
+            "is_pdf": False
+        }
+
+        try:
+            response = requests.post(url, headers=headers, json=data)
+            response.raise_for_status()  # Raises HTTPError for bad responses
+            logging.info(f"------- Response body:  {response.text} --------")
+        except requests.exceptions.RequestException as e:
+            logging.error(f"API request error: {e}")
+            raise ApiException("Failed to make API call")
+        except ValueError as e:
+            logging.error(f"JSON parsing error: {e}")
+            raise ApiException("Object mapping failure")
+
+    def upload_to_content_service(self, content):
+        file_name = f"FILE2_{uuid.uuid1().hex}.txt"
+
+        url = "https://ig.aidtaas.com/mobius-content-service/v1.0/content/upload?filePath=python"
+        bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3Ny1NUVdFRTNHZE5adGlsWU5IYmpsa2dVSkpaWUJWVmN1UmFZdHl5ejFjIn0.eyJleHAiOjE3NDA1OTg1OTcsImlhdCI6MTc0MDU2MjU5NywianRpIjoiMWQ5ODgwZmYtZDczYi00NzdjLWI1Y2UtYzQ4NDcyNGFkMWMxIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrLXNlcnZpY2Uua2V5Y2xvYWsuc3ZjLmNsdXN0ZXIubG9jYWw6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIkJPTFRaTUFOTl9CT1RfbW9iaXVzIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9tb2JpdXMiLCJNT05FVF9tb2JpdXMiLCJWSU5DSV9tb2JpdXMiLCJhY2NvdW50Il0sInN1YiI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInR5cCI6IkJlYXJlciIsImF6cCI6IkhPTEFDUkFDWV9tb2JpdXMiLCJzaWQiOiJmMjFkNmUwOS02YmMyLTRkYzgtYmVjNi0wYWM3Nzc3NjAzZDkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1hc3RlciIsIkhDWV9URU5BTlRfQ1VTVE9NIiwib2ZmbGluZV9hY2Nlc3MiLCJCT0JfVEVOQU5UX0NVU1RPTSIsInVtYV9hdXRob3JpemF0aW9uIiwiUElfVEVOQU5UX0NVU1RPTSIsIk1PTkVUX1RFTkFOVF9DVVNUT00iXX0sInJlc291cmNlX2FjY2VzcyI6eyJCT0xUWk1BTk5fQk9UX21vYml1cyI6eyJyb2xlcyI6WyJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9QUk9DRVNTX0RFRklOSVRJT04iLCJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9JTlNUQU5DRSIsIlRFTkFOVF9XT1JLRkxPV19SRVRSSUVWRV9BTEwiLCJURU5BTlRfV09SS0ZMT1dfQUNUSVZBVEVfSU5TVEFOQ0UiLCJURU5BTlRfV09SS0ZMT1dfRVhFQ1VURSIsIlRFTkFOVF9XT1JLRkxPV19SRVRSSUVWRV9IT01FIiwiVEVOQU5UX1dPUktGTE9XX1JFVFJJRVZFX1NVU1BFTkRFRF9QUk9DRVNTX0RFRlMiLCJURU5BTlRfV09SS0ZMT1dfQUNUSVZBVEVfUlVOX0pPQiIsIlRFTkFOVF9XT1JLRkxPV19TVEFUVVMiLCJURU5BTlRfV09SS0ZMT1dfQ1JFQVRFIiwiVEVOQU5UX1dPUktGTE9XX0FDVElWSVRZX0RBVEFfQ09VTlQiLCJCT0xUWk1BTk5fQk9UX1VTRVIiLCJURU5BTlRfV09SS0ZMT1dfREVQTE9ZX1ZFUlNJT04iLCJURU5BTlRfV09SS0ZMT1dfSU1QT1JUIiwiVEVOQU5UX1dPUktGTE9XX1VQREFURSIsIlRFTkFOVF9XT1JLRkxPV19ERVBMT1kiLCJURU5BTlRfV09SS0ZMT1dfU1VTUEVORF9SVU5fSk9CIiwiVEVOQU5UX1dPUktGTE9XX1JFVFJJRVZFIiwiVEVOQU5UX1dPUktGTE9XX0RFTEVURSIsIlRFTkFOVF9XT1JLRkxPV19UUklHR0VSX01FU1NBR0VfTElTVEVORVIiXX0sIkhPTEFDUkFDWV9tb2JpdXMiOnsicm9sZXMiOlsiVEVOQU5UX1BST0RVQ1RfUkVUUklFVkVfTUFTVEVSX0NPTkZJRyIsIlRFTkFOVF9JTlZJVEFUSU9OX1JFU1BPTkQiLCJURU5BTlRfTkVHT1RJQVRJT05fQVBQUk9WQUxfQlVZRVIiLCJURU5BTlRfSU5WSVRBVElPTl9SRVRSSUVWRSIsIlRFTkFOVF9PUkdBTklaQVRJT05fQ1JFQVRFIiwiVEVOQU5UX0NSRUFURV9URU5BTlQiLCJURU5BTlRfU1VCX0FMTElBTkNFX1JFVFJJRVZFIiwiVEVOQU5UX1BMQVRGT1JNX0NSRUFURSIsIkhPTEFDUkFDWV9VU0VSIiwiVEVOQU5UX1JBVEVDQVJEX0NSRUFURSIsIlRFTkFOVF9QTEFURk9STV9SRVRSSUVWRSIsIlRFTkFOVF9SRVRSSUVWRV9CWV9CVVlFUl9QTEFURk9STSIsIlRFTkFOVF9TVUJfQUxMSUFOQ0VfUkVUUklFVkVfQUxMIiwiVEVOQU5UX1BST0RVQ1RfUkVUUklFVkUiLCJURU5BTlRfQUNDT1VOVF9ERUxFVEUiLCJURU5BTlRfQUxMSUFOQ0VfUkVUUklFVkUiLCJURU5BTlRfUExBVEZPUk1fVVBEQVRFIiwiVEVOQU5UX0lOVklUQVRJT05fQ1JFQVRFIiwiVEVOQU5UX1JBVEVDQVJEX1JFVFJJRVZFIiwiVEVOQU5UX09SR0FOSVpBVElPTl9VUERBVEUiLCJURU5BTlRfUkFURUNBUkRfVVBEQVRFIiwiVEVOQU5UX09SR0FOSVpBVElPTl9ERUxFVEUiLCJURU5BTlRfUExBVEZPUk1fREVMRVRFIiwiVEVOQU5UX1BST0RVQ1RfQ1JFQVRFIiwiVEVOQU5UX1NVQl9BTExJQU5DRV9DUkVBVEUiLCJURU5BTlRfUkFURUNBUkRfREVMRVRFIiwiVEVOQU5UX0FDQ09VTlRfQ1JFQVRFIiwiVEVOQU5UX0lOVklUQVRJT05fVVBEQVRFIiwiVEVOQU5UX1JFVFJJRVZFX1RFTkFOVCIsIlRFTkFOVF9JTlZJVEFUSU9OX0RFTEVURSIsIlRFTkFOVF9ORUdPVElBVElPTl9BUFBST1ZBTF9TVVBFUl9BRE1JTiIsIlRFTkFOVF9ORUdPVElBVElPTl9SRVRSSUVWRV9BTExfQkVUV0VFTl9CVVlFUl9TRUxMRVIiLCJURU5BTlRfUkVUUklFVkVfVEVOQU5UX0FMTCIsIlRFTkFOVF9ORUdPVElBVElPTl9DUkVBVEUiLCJURU5BTlRfVVBEQVRFX1RFTkFOVCIsIlRFTkFOVF9PUkdBTklaQVRJT05fUkVUUklFVkUiLCJURU5BTlRfQUNDT1VOVF9VUERBVEUiLCJURU5BTlRfUFJPRFVDVF9ERUxFVEUiLCJURU5BTlRfU1VCX0FMTElBTkNFX0RFTEVURSIsIlRFTkFOVF9ORUdPVElBVElPTl9BUFBST1ZBTF9TRUxMRVIiLCJURU5BTlRfU1VCX0FMTElBTkNFX1VQREFURSIsIlRFTkFOVF9QUk9EVUNUX1VQREFURSIsIlRFTkFOVF9BQ0NPVU5UX1JFVFJJRVZFIiwiVEVOQU5UX05FR09USUFUSU9OX1JFVFJJRVZFIiwiVEVOQU5UX0RFTEVURV9URU5BTlQiXX0sIlBBU0NBTF9JTlRFTExJR0VOQ0VfbW9iaXVzIjp7InJvbGVzIjpbIlRFTkFOVF9DT05URVhUX0RFTEVURSIsIlRFTkFOVF9DT05URVhUX1VQREFURSIsIlRFTkFOVF9CSUdRVUVSWV9SRVRSSUVWRSIsIlRFTkFOVF9CSUdRVUVSWV9VUERBVEUiLCJURU5BTlRfVU5JVkVSU0VfQ1JFQVRFIiwiVEVOQU5UX0NPSE9SVFNfUkVUUklFVkUiLCJURU5BTlRfQklHUVVFUllfQ1JFQVRFIiwiVEVOQU5UX0JJR1FVRVJZX0VWQUxVQVRFIiwiVEVOQU5UX0NPSE9SVFNfVVBEQVRFIiwiVEVOQU5UX0NPTlRFWFRfUkVUUklFVkUiLCJURU5BTlRfVU5JVkVSU0VfUkVUUklFVkUiLCJURU5BTlRfQ09IT1JUU19FVkFMVUFURSIsIlRFTkFOVF9CSUdRVUVSWV9ERUxFVEUiLCJURU5BTlRfU0NIRU1BX0NSRUFURSIsIlBBU0NBTF9JTlRFTExJR0VOQ0VfVVNFUiIsIlRFTkFOVF9DT0hPUlRTX0NSRUFURSIsIlRFTkFOVF9TQ0hFTUFfVVBEQVRFIiwiVEVOQU5UX0NPTlRFWFRfQVBQUk9WRSIsIlRFTkFOVF9VTklWRVJTRV9VUERBVEUiLCJURU5BTlRfQklHUVVFUllfQVBQUk9WRSIsIlRFTkFOVF9TQ0hFTUFfUkVUUklFVkUiLCJURU5BTlRfU0NIRU1BX0FQUFJPVkUiLCJURU5BTlRfQ09OVEVYVF9FVkFMVUFURSIsIlRFTkFOVF9TQ0hFTUFfREVMRVRFIiwiVEVOQU5UX0NPTlRFWFRfQ1JFQVRFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX1JFVFJJRVZFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX0RFTEVURSIsIlRFTkFOVF9TQ0hFTUFfREFUQV9VUERBVEUiLCJURU5BTlRfQ09IT1JUU19ERUxFVEUiLCJURU5BTlRfVU5JVkVSU0VfREVMRVRFIiwiVEVOQU5UX1NDSEVNQV9EQVRBX0lOR0VTVElPTiIsIlRFTkFOVF9DT0hPUlRTX0FQUFJPVkUiXX0sIk1PTkVUX21vYml1cyI6eyJyb2xlcyI6WyJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9BTExfUFVCTElTSEVEIiwiVEVOQU5UX1dJREdFVFNfUkVUUklFVkVfRFJBRlQiLCJURU5BTlRfV0lER0VUU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19ERUxFVEUiLCJURU5BTlRfV0lER0VUU19ERUxFVEUiLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX1JFVFJJRVZFX0FMTCIsIlRFTkFOVF9BUFBMRVRTX1VQREFURV9ISVNUT1JZIiwiVEVOQU5UX0VYUEVSSUVOQ0VTX0NSRUFURSIsIlRFTkFOVF9XSURHRVRTX1JFVFJJRVZFX1BVQkxJU0giLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX0NSRUFURSIsIlRFTkFOVF9ERVBFTkRFTkNZX1JFVFJJRVZFX0FMTCIsIlRFTkFOVF9XSURHRVRTX1BVQkxJU0giLCJURU5BTlRfUkVUUklFVkVfRklFTERTX09GX1BVQkxJU0hFRCIsIlRFTkFOVF9FWFBFUklFTkNFU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19DUkVBVEUiLCJURU5BTlRfUExVR0lOU19ERUxFVEUiLCJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9BTExfRFJBRlQiLCJURU5BTlRfUExVR0lOU19VUERBVEUiLCJURU5BTlRfQVBQTEVUU19SRVRSSUVWRV9GUk9NX0hJU1RPUlkiLCJURU5BTlRfUkVUUklFVkVfRklFTERTX09GX0RSQUZUIiwiVEVOQU5UX0FQUExFVFNfUkVUUklFVkVfUFVCTElTSEVEIiwiVEVOQU5UX0FQUExFVFNfUFVCTElTSEVEIiwiVEVOQU5UX1dJREdFVFNfUkVUUklFVkUiLCJURU5BTlRfUExVR0lOX0NBVEVHT1JZX0RFTEVURSIsIlRFTkFOVF9QTFVHSU5fQ0FURUdPUllfUFVCTElTSCIsIlRFTkFOVF9QTFVHSU5fQ0FURUdPUllfREVMRVRFX0NPTVBfRlJPTSIsIlRFTkFOVF9SRVRSSUVWRV9QVUJMSVNIRUQiLCJURU5BTlRfUExVR0lOU19SRVRSSUVWRSIsIlRFTkFOVF9QTFVHSU5TX0NSRUFURSIsIlRFTkFOVF9XSURHRVRTX0NSRUFURSIsIlRFTkFOVF9BUFBMRVRTX1JFVFJJRVZFX0FMTF9QVUJMSVNIRURfVEhVTUJOQUlMUyIsIk1PTkVUX1VTRVIiLCJURU5BTlRfRVhQRVJJRU5DRVNfREVMRVRFIiwiVEVOQU5UX0VYUEVSSUVOQ0VTX1BVQkxJU0giLCJURU5BTlRfUkVUUklFVkVfRlJPTV9ISVNUT1JZIiwiVEVOQU5UX1BMVUdJTl9DQVRFR09SWV9VUERBVEUiXX0sIlZJTkNJX21vYml1cyI6eyJyb2xlcyI6WyJWSU5DSV9VU0VSIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJyZXF1ZXN0ZXJUeXBlIjoiVEVOQU5UIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsIm5hbWUiOiJBaWR0YWFzIEFpZHRhYXMiLCJ0ZW5hbnRJZCI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInByZWZlcnJlZF91c2VybmFtZSI6InBhc3N3b3JkX3RlbmFudF9haWR0YWFzQGdhaWFuc29sdXRpb25zLmNvbSIsImdpdmVuX25hbWUiOiJBaWR0YWFzIiwiZmFtaWx5X25hbWUiOiJBaWR0YWFzIiwiZW1haWwiOiJwYXNzd29yZF90ZW5hbnRfYWlkdGFhc0BnYWlhbnNvbHV0aW9ucy5jb20ifQ.G725rwPGvOPssZ3V_oKTT1ASF-tZwUjIKjeuzvnUYv-onXbf5wlHmmehsGlDsIMH1pd96QEqlShoYGJ7b2Ddk0_4chVZFWZIsryZ_gvIAw7gA4dGaOQl3CINQd5yBG12KLg-5ZqLiJ9HWT7slp1Su_VSofqTdkX-g2moSFRFRA_H0vQNv9wuvxKPHyl0SwNpj3DCyJAX3MzUoKsp3Rd-HWofWrhqYkMAChZ5enRH26vP6VeAWxImEN_8036xQ_pE4_Eed3iP3peMCOPYKbqhRBYxQkfic7Nu2y9EZc8WbcFhqorfkihjvJ0Fpz-XQlaaP97B_GoOGxmnAuFRaJxvhw"  # Replace with actual Bearer token
+
+        # Headers including Bearer token
+        headers = {
+            'Authorization': f'Bearer {bearer_token}',
+        }
+
+        # Create the file part of the multipart body
+        multipart_data = MultipartEncoder(
+            fields={
+                'file': (file_name, BytesIO(content.encode('utf-8')), 'application/octet-stream'),
+            }
+        )
+
+        # Update the headers with the correct multipart content type
+        headers['Content-Type'] = multipart_data.content_type
+
+        try:
+            response = requests.post(url, data=multipart_data, headers=headers)
+            response.raise_for_status()  # Raises HTTPError for bad responses
+            return json.loads(json.dumps(response.json())).get("id")
+        except requests.exceptions.RequestException as e:
+            logging.error(f"API request error: {e}")
+            raise ApiException("Failed to make API call")
+        except ValueError as e:
+            logging.error(f"JSON parsing error: {e}")
+            raise ApiException("Object mapping failure")
+
+
 def main():
     """Command-line interface for the package analyzer."""
     if len(sys.argv) < 2:
@@ -822,7 +925,12 @@ def main():
 
     try:
         report = analyze_package(package_path, output_file)
-        print(report)
+        client = Client()
+        content_id = client.upload_to_content_service(report)
+        logging.info(f"------- content_id:  {content_id} --------")
+
+        client.import_ontology(content_id)
+        # print(report)
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
         sys.exit(1)
