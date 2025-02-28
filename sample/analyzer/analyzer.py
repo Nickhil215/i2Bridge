@@ -31,7 +31,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from io import BytesIO
 from typing import Any, Dict, List, Optional, Set
-
+import re
 import astroid
 import requests
 from astroid import nodes
@@ -62,7 +62,8 @@ class ApiInfo:
     path: str
     http_method: str
     name: str
-    params: List[str]
+    path_params: List[str]
+    request_params: List[str]
     request_body: Optional[str]
     response_body: Optional[str]
 
@@ -198,7 +199,7 @@ class BaseAnalyzer(ABC):
         returns = node.returns.as_string() if node.returns else None
         docstring = None
         if isinstance(node.doc_node, nodes.Const):
-            docstring = node.doc_node.value
+            docstring = node.doc_node.value.strip()
         complexity = self._calculate_complexity(node)
 
         # Fix decorator handling
@@ -274,7 +275,8 @@ class BaseAnalyzer(ABC):
         """Extract detailed information about a api endpoint."""
 
         endpoint_info = {}
-        params = []
+        path_params = []
+        request_params = []
         request_body = None
         response_body = None
 
@@ -301,9 +303,12 @@ class BaseAnalyzer(ABC):
                         endpoint_info['method'] = 'UNKNOWN'  # Default if no method is matched
                     endpoint_info['path'] = decorator.args[0].value
 
+                    path = endpoint_info['path']
+                    path_params = re.findall(r'\{([^}]+)\}', path)
+
             # Extract function parameters
             if node.args:
-                params = [arg.name for arg in node.args.args]
+                request_params = [arg.name for arg in node.args.args]
 
             for stmt in node.body:
                 # Extract request body (typically found in POST/PUT/PATCH requests)
@@ -317,9 +322,10 @@ class BaseAnalyzer(ABC):
 
         return ApiInfo(
             name=node.name,
-            path=endpoint_info.get('path', '/'),
+            path=endpoint_info.get('path'),
             http_method=endpoint_info.get('method', None),
-            params=params if params else None,
+            path_params=path_params if request_params else None,
+            request_params=request_params if request_params else None,
             request_body=request_body if request_body else None,
             response_body=response_body if response_body else None
         )
@@ -334,7 +340,7 @@ class BaseAnalyzer(ABC):
         - except blocks
         - boolean operations
         """
-        complexity = 1  # Base complexity
+        complexity = 1
 
         # Count branching statements
         for child in node.nodes_of_class((
@@ -389,9 +395,10 @@ class BaseAnalyzer(ABC):
                     f"    name: {api_info.name}",
                     f"    path: {api_info.path}",
                     f"    method: {api_info.http_method}",
-                    f"    params: {api_info.params}",
-                    f"    request: {api_info.request_body}",
-                    f"    response: {api_info.response_body}"
+                    f"    path_param: {api_info.path_params}",
+                    f"    request_param: {api_info.request_params}",
+                    f"    request_body: {api_info.request_body}",
+                    f"    response_body: {api_info.response_body}"
                 ])
 
         # Add function information
@@ -981,7 +988,7 @@ def import_ontology(content_id):
     data = {
         "content_id": content_id,
         "tenant_id": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64",
-        "ontology_id": "67c046d07afbaa5f5a6957ef",
+        "ontology_id": "67c0564b7afbaa5f5a6957f6",
         "transaction_id": "example_transaction_id",
         "ontology_name": "test123",
         "is_pdf": False
@@ -1025,10 +1032,10 @@ def main():
     try:
         report = analyze_package(package_path, output_file)
 
-        content_id = upload_to_content_service(report)
-        logging.info(f"------- content_id:  {content_id} --------")
+        # content_id = upload_to_content_service(report)
+        # logging.info(f"------- content_id:  {content_id} --------")
+        # import_ontology(content_id)
 
-        import_ontology(content_id)
         print(report)
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
