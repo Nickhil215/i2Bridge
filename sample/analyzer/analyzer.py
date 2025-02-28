@@ -20,6 +20,7 @@ import gzip
 import json
 import logging
 import os
+import re
 import shutil
 import sys
 import tarfile
@@ -31,7 +32,7 @@ from collections import defaultdict
 from dataclasses import dataclass
 from io import BytesIO
 from typing import Any, Dict, List, Optional, Set
-import re
+
 import astroid
 import requests
 from astroid import nodes
@@ -55,6 +56,13 @@ class ImportInfo:
   """Store detailed information about an import."""
   module_name: str
   alias: Optional[str]
+
+@dataclass
+class CodeComponentInfo:
+    """Store detailed information about each .py files required packages"""
+    name: str
+    packages: List[str]
+    imports: List[str]
 
 @dataclass
 class ApiInfo:
@@ -83,6 +91,7 @@ class FunctionInfo:
     is_method: bool
     is_async: bool
     signature: str
+    exec_cmd: str
 
 @dataclass
 class ClassInfo:
@@ -109,6 +118,7 @@ class BaseAnalyzer(ABC):
         self.modules: Dict[str, nodes.Module] = {}
         self.imports: Dict[str, Set[str]] = defaultdict(set)
         self.classes: Dict[str, ClassInfo] = {}
+        self.code_component_info: Dict[str, CodeComponentInfo] = {}
         self.functions: Dict[str, FunctionInfo] = {}
         self.apis: Dict[str, ApiInfo] = {}
         self.errors: List[tuple] = []
@@ -147,7 +157,7 @@ class BaseAnalyzer(ABC):
             self.modules[relative_path] = module
 
             # Pass source to analysis methods
-            self._analyze_imports(module, relative_path, source)
+            self._analyze_core_component(module, relative_path, source)
             self._analyze_classes(module, relative_path, source)
             self._analyze_functions(module, relative_path, source)
             self._analyze_api_endpoint(module, file_path, source)
@@ -156,22 +166,31 @@ class BaseAnalyzer(ABC):
             logger.error(f"Error analyzing {file_path}: {str(e)}")
             self.errors.append((file_path, str(e)))
 
-    def _analyze_imports(self, module: nodes.Module, file_path: str, source: str) -> None:
-      """Extract and track all imports in a module."""
+
+    def _analyze_core_component(self, module, file_path: str, source: str) -> None:
+      """Extract and track all imports in a module, and create CoreComponentInfo"""
+      core_component_info = CodeComponentInfo(name=file_path.split('/')[-1], packages=[], imports=[])
+
+      # Assuming that `module` contains the AST nodes
       for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
         if isinstance(node, nodes.Import):
           for name, asname in node.names:
             import_name = name if asname is None else asname
-            if file_path not in self.imports:
-              self.imports[file_path] = set()
-            self.imports[file_path].add(import_name)
+            package_name = import_name.split('.')[0]
+            if package_name not in core_component_info.packages:
+              core_component_info.packages.append(package_name)
+            core_component_info.imports.append(import_name)
         elif isinstance(node, nodes.ImportFrom):
           module_name = node.modname
           for name, asname in node.names:
             import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-            if file_path not in self.imports:
-              self.imports[file_path] = set()
-            self.imports[file_path].add(import_name)
+            package_name = import_name.split('.')[0]
+            if package_name not in core_component_info.packages:
+              core_component_info.packages.append(package_name)
+            core_component_info.imports.append(import_name)
+
+      self.code_component_info[file_path] = core_component_info
+
 
     def _analyze_functions(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all functions in a module, including methods."""
@@ -369,88 +388,92 @@ class BaseAnalyzer(ABC):
         }
 
     def generate_report(self) -> str:
-        """Generate a detailed report of the package analysis."""
-        metrics = self.get_package_metrics()
+      """Generate a detailed report of the package analysis."""
+      metrics = self.get_package_metrics()
 
-        report = [
-            "Package Analysis Report",
-            "=====================\n",
-            f"Package: {self.package_path}\n",
-            "Metrics:",
-            f"- Total Files: {metrics['total_files']}",
-            f"- Total Classes: {metrics['total_classes']}",
-            f"- Total Functions: {metrics['total_functions']}",
-            f"- Total Imports: {metrics['total_imports']}",
-            f"- Average Complexity: {metrics['average_complexity']:.2f}",
-            f"- Total Lines of Code: {metrics['total_lines']}",
-            f"- Analysis Errors: {metrics['errors']}\n",
-        ]
+      report = [
+        "Package Analysis Report",
+        "=====================\n",
+        f"Package: {self.package_path}\n",
+        "Metrics:",
+        f"- Total Files: {metrics['total_files']}",
+        f"- Total Classes: {metrics['total_classes']}",
+        f"- Total Functions: {metrics['total_functions']}",
+        f"- Total Imports: {metrics['total_imports']}",
+        f"- Average Complexity: {metrics['average_complexity']:.2f}",
+        f"- Total Lines of Code: {metrics['total_lines']}",
+        f"- Analysis Errors: {metrics['errors']}\n",
+      ]
 
-        # Add apis information
-        report.extend(["\nAPIs:"])
-        for func_path, api_info in sorted(self.apis.items()):
-            if api_info.http_method is not None:
-                report.extend([
-                    f"\n  {func_path}:",
-                    f"    name: {api_info.name}",
-                    f"    path: {api_info.path}",
-                    f"    method: {api_info.http_method}",
-                    f"    path_param: {api_info.path_params}",
-                    f"    request_param: {api_info.request_params}",
-                    f"    request_body: {api_info.request_body}",
-                    f"    response_body: {api_info.response_body}"
-                ])
+      # Add apis information
+      report.extend(["\nAPIs:"])
+      for func_path, api_info in sorted(self.apis.items()):
+        if api_info.http_method is not None:
+          report.extend([
+            f"\n  {func_path}:",
+            f"    name: {api_info.name}",
+            f"    path: {api_info.path}",
+            f"    method: {api_info.http_method}",
+            f"    path_param: {api_info.path_params}",
+            f"    request_param: {api_info.request_params}",
+            f"    request_body: {api_info.request_body}",
+            f"    response_body: {api_info.response_body}"
+          ])
 
-        # Add function information
-        report.extend(["\nFunctions:"])
-        for func_path, func_info in sorted(self.functions.items()):
-            report.extend([
-                f"\n  {func_path}:",
-                f"    name: {func_info.name}",
-                f"    Module: {func_info.module if func_info.module else 'None'}",
-                f"    Signature: {func_info.signature}",
-                f"    Parameters: {func_info.args if func_info.args else 'None'}",
-                f"    Returns: {func_info.returns if func_info.returns else 'None'}",
-                f"    Start Line: {func_info.line_number}",
-                f"    End Line: {func_info.end_line}",
-                f"    Complexity: {func_info.complexity}",
-                f"    Is Method: {func_info.is_method}",
-                f"    Is Async: {func_info.is_async}",
-                f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
-                f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
-                f"    Comments: {func_info.comments if func_info.comments else 'None'}"
-            ])
+      # Add function information
+      report.extend(["\nFunctions:"])
+      for func_path, func_info in sorted(self.functions.items()):
+        report.extend([
+          f"\n  {func_path}:",
+          f"    name: {func_info.name}",
+          f"    Module: {func_info.module if func_info.module else 'None'}",
+          f"    Signature: {func_info.signature}",
+          f"    Parameters: {func_info.args if func_info.args else 'None'}",
+          f"    Returns: {func_info.returns if func_info.returns else 'None'}",
+          f"    Start Line: {func_info.line_number}",
+          f"    End Line: {func_info.end_line}",
+          f"    Complexity: {func_info.complexity}",
+          f"    Is Method: {func_info.is_method}",
+          f"    Is Async: {func_info.is_async}",
+          f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
+          f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
+          f"    Comments: {func_info.comments if func_info.comments else 'None'}"
+        ])
 
-        # Add class information
-        report.extend(["\nClass Hierarchy:"])
-        for class_path, class_info in sorted(self.classes.items()):
-            report.extend([
-                f"\n  {class_path}:",
-                f"    Bases: {', '.join(class_info.bases) if class_info.bases else 'None'}",
-                f"    Methods: {len(class_info.methods)}",
-                f"    Attributes: {len(class_info.attributes)}",
-                f"    Start Line: {class_info.line_number}",
-                f"    End Line: {class_info.end_line}",
-                f"    Decorators: {', '.join(class_info.decorators) if class_info.decorators else 'None'}",
-                f"    Docstring: {class_info.docstring.strip() if class_info.docstring else 'None'}"
-            ])
+      # Add class information
+      report.extend(["\nClass Hierarchy:"])
+      for class_path, class_info in sorted(self.classes.items()):
+        report.extend([
+          f"\n  {class_path}:",
+          f"    Bases: {', '.join(class_info.bases) if class_info.bases else 'None'}",
+          f"    Methods: {len(class_info.methods)}",
+          f"    Attributes: {len(class_info.attributes)}",
+          f"    Start Line: {class_info.line_number}",
+          f"    End Line: {class_info.end_line}",
+          f"    Decorators: {', '.join(class_info.decorators) if class_info.decorators else 'None'}",
+          f"    Docstring: {class_info.docstring.strip() if class_info.docstring else 'None'}"
+        ])
 
-        # Add import information
-        if self.imports:
-          report.extend(["\nImports:"])
-          for file_path, imports in sorted(self.imports.items()):
-            report.append(f"  {file_path}:")
-            for import_name in sorted(imports):
-              report.append(f"    - {import_name}")
+      # Add core component information
+      report.extend(["\nCode Components:"])
+      if self.code_component_info:
+        for file_path, core_components in sorted(self.code_component_info.items()):
+          report.append(f"\n  {file_path}:")
+          report.extend([
+            f"    Name: {core_components.name}",
+            f"    Packages: {core_components.packages}",
+            f"    Imports: {core_components.imports}"
+          ])
 
-        # Add error information if any
-        if self.errors:
-            report.extend([
-                "\nErrors:",
-                *[f"- {path}: {error}" for path, error in self.errors]
-            ])
 
-        return '\n'.join(report)
+      # Add error information if any
+      if self.errors:
+        report.extend([
+          "\nErrors:",
+          *[f"- {path}: {error}" for path, error in self.errors]
+        ])
+
+      return '\n'.join(report)
 
 class TemporaryDirectoryAnalyzer(BaseAnalyzer):
     """Base class for analyzers that need to work with temporary directories."""
@@ -1032,11 +1055,11 @@ def main():
     try:
         report = analyze_package(package_path, output_file)
 
-        # content_id = upload_to_content_service(report)
-        # logging.info(f"------- content_id:  {content_id} --------")
+        content_id = upload_to_content_service(report)
+        logging.info(f"------- content_id:  {content_id} --------")
         # import_ontology(content_id)
 
-        print(report)
+        # print(report)
     except Exception as e:
         print(f"Error: {str(e)}", file=sys.stderr)
         sys.exit(1)
