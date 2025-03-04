@@ -87,6 +87,7 @@ class FunctionInfo:
     returns: Optional[str]
     docstring: Optional[str]
     description: Optional[str]
+    description_embedding: Optional[str]
     comments: List[str]
     decorators: List[str]
     complexity: int
@@ -180,6 +181,9 @@ class RDFExporter:
       # Add description
       self.graph.add((func_uri, self.CODE.description,
                       Literal(f"Description: {func_info.description}")))
+      self.graph.add((func_uri, self.CODE.descriptionEmbedding,
+                      Literal(f"DescriptionEmbedding: {func_info.description_embedding}")))
+
       # Add complexity
       self.graph.add((func_uri, self.CODE.complexity,
                       Literal(f"Complexity: {func_info.complexity}")))
@@ -503,7 +507,7 @@ class BaseAnalyzer(ABC):
         try:
             relative_path = os.path.relpath(file_path, self.package_path)
             logger.info(f"Analyzing file: {relative_path}")
-            self.file_path = relative_path
+            self.source_path = relative_path
 
             with open(file_path, 'r', encoding='utf-8') as f:
                 source = f.read()
@@ -513,13 +517,15 @@ class BaseAnalyzer(ABC):
             self.modules[relative_path] = module
 
             # Pass source to analysis methods
-            if relative_path.startswith("test"):
+            if ("tests" in relative_path.split("/")
+                or "test" in relative_path.split("/")
+                or relative_path.startswith("test")):
               self._analyze_tests(module, relative_path, source)
             elif not relative_path.split('/')[-1].__contains__("_"):
               self._analyze_code_component(module, relative_path, source)
               self._analyze_classes(module, relative_path, source)
               self._analyze_functions(module, relative_path, source)
-              self._analyze_api_endpoint(module, file_path, source)
+              self._analyze_api_endpoint(module, relative_path, source)
 
         except Exception as e:
             logger.error(f"Error analyzing {file_path}: {str(e)}")
@@ -646,7 +652,7 @@ class BaseAnalyzer(ABC):
             comments.append(comment_text)
 
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        formatted_path = self.format_path(self.file_path)
+        formatted_path = self.format_path(self.source_path)
 
         return TestsInfo(
             name=node.name,
@@ -697,7 +703,7 @@ class BaseAnalyzer(ABC):
                 comments.append(comment_text)
 
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        formatted_path = self.format_path(self.file_path)
+        formatted_path = self.format_path(self.source_path)
 
         return FunctionInfo(
             name=node.name,
@@ -707,6 +713,7 @@ class BaseAnalyzer(ABC):
             function_exec_cmd=f"{formatted_path}.{class_name}.{signature}" if class_name else f"{formatted_path}.{signature}",
             docstring=docstring,
             description="",
+            description_embedding="",
             comments=comments,
             decorators=decorators,  # Use the properly extracted decorators
             complexity=complexity,
@@ -944,6 +951,7 @@ class BaseAnalyzer(ABC):
             f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
             f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
             f"    Description: {func_info.description}",
+            f"    Description Embedding: {func_info.description_embedding}",
             f"    Comments: {func_info.comments if func_info.comments else 'None'}"
           ])
 
@@ -951,7 +959,7 @@ class BaseAnalyzer(ABC):
       # Add apis information
       report.extend(["\nAPIs:"])
       for func_path, api_info in sorted(self.apis.items()):
-        if api_info.http_method is not None and not 'UNKNOWN':
+        if api_info.http_method is not None:
           report.extend([
             f"\n  {func_path}:",
             f"    name: {api_info.name}",

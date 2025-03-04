@@ -930,6 +930,7 @@ code:CodeComponent_utils_py_utils_py a code:CodeComponent ;
 code:Function_add_dict_to_cookiejar____src_requests_utils_py__add_dict_to_cookiejar a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a CookieJar from a key/value dictionary.
 
     :param cj: CookieJar to insert cookies into.
@@ -944,6 +945,7 @@ code:Function_add_dict_to_cookiejar____src_requests_utils_py__add_dict_to_cookie
 code:Function_add_header____src_requests_cookies_py__add_header a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "cookiejar has no legitimate use for this method; add it back if you find one." ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.add_header(self, key, val)" ;
     code:hasInput code:Parameter_key_add_header,
@@ -955,6 +957,7 @@ code:Function_add_header____src_requests_cookies_py__add_header a code:Function 
 code:Function_add_headers____src_requests_adapters_py__add_headers a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Add any headers needed by the connection. As of v2.0 this does
         nothing by default, but is left for overriding by users that subclass
         the :class:`HTTPAdapter <requests.adapters.HTTPAdapter>`.
@@ -974,6 +977,7 @@ code:Function_add_headers____src_requests_adapters_py__add_headers a code:Functi
 code:Function_add_unredirected_header____src_requests_cookies_py__add_unredirected_header a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.add_unredirected_header(self, name, value)" ;
     code:hasInput code:Parameter_name_add_unredirected_header,
         code:Parameter_self_add_unredirected_header,
@@ -984,6 +988,7 @@ code:Function_add_unredirected_header____src_requests_cookies_py__add_unredirect
 code:Function_address_in_network____src_requests_utils_py__address_in_network a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """This function allows you to check if an IP belongs to a network subnet
 
     Example: returns True if ip = 192.168.1.1 and net = 192.168.1.0/24
@@ -1000,6 +1005,7 @@ code:Function_apparent_encoding____src_requests_models_py__apparent_encoding a c
     code:comments "If no character detection library is available, we'll fall back, to a standard Python utf-8 str." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "The apparent encoding, provided by the charset_normalizer or chardet libraries." ;
     code:function_exe_cmd "src.requests.models.Response.apparent_encoding(self)" ;
     code:hasInput code:Parameter_self_apparent_encoding ;
@@ -1009,6 +1015,7 @@ code:Function_apparent_encoding____src_requests_models_py__apparent_encoding a c
 code:Function_atomic_open____src_requests_utils_py__atomic_open a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Write a file to the disk in an atomic fashion" ;
     code:function_exe_cmd "src.requests.utils.atomic_open(filename)" ;
     code:hasInput code:Parameter_filename_atomic_open ;
@@ -1018,6 +1025,7 @@ code:Function_atomic_open____src_requests_utils_py__atomic_open a code:Function 
 code:Function_build_connection_pool_key_attributes____src_requests_adapters_py__build_connection_pool_key_attributes a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Build the PoolKey attributes used by urllib3 to return a connection.
 
         This looks at the PreparedRequest, the user-specified verify value,
@@ -1076,6 +1084,7 @@ code:Function_build_digest_header____src_requests_auth_py__build_digest_header a
     code:comments "lambdas assume digest modules are imported at the top level, noqa:E731, XXX not implemented yet, : path is request-uri defined in RFC 2616 which should not be empty, XXX handle auth-int., XXX should the partial digests be encoded too?" ;
     code:complexity "Complexity: 26" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring ":rtype: str" ;
     code:function_exe_cmd "src.requests.auth.HTTPDigestAuth.build_digest_header(self, method, url)" ;
     code:hasInput code:Parameter_method_build_digest_header,
@@ -1088,6 +1097,7 @@ code:Function_build_response____src_requests_adapters_py__build_response a code:
     code:comments "Fallback to None if there's no status_code, for whatever reason., Make headers case-insensitive., Set encoding., Add new cookies from the server., Give the Response some context." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Builds a :class:`Response <requests.Response>` object from a urllib3
         response. This should not be called from user code, and is only exposed
         for use when subclassing the
@@ -1107,6 +1117,7 @@ code:Function_cert_verify____src_requests_adapters_py__cert_verify a code:Functi
     code:comments "Only load the CA certificates if 'verify' is a string indicating the CA bundle to use., Otherwise, if verify is a boolean, we don't load anything since, the connection will be using a context with the default certificates already loaded,, and this avoids a call to the slow load_verify_locations(), `verify` must be a str with a path then" ;
     code:complexity "Complexity: 15" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Verify a SSL certificate. This method should not be called from user
         code, and is only exposed for use when subclassing the
         :class:`HTTPAdapter <requests.adapters.HTTPAdapter>`.
@@ -1129,6 +1140,7 @@ code:Function_cert_verify____src_requests_adapters_py__cert_verify a code:Functi
 code:Function_check_header_validity____src_requests_utils_py__check_header_validity a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Verifies that header parts don't contain leading whitespace
     reserved characters, or return characters.
 
@@ -1141,6 +1153,7 @@ code:Function_check_header_validity____src_requests_utils_py__check_header_valid
 code:Function_close____src_requests_adapters_py__close a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Disposes of any internal state.
 
         Currently, this closes the PoolManager and any active ProxyManager,
@@ -1153,6 +1166,7 @@ code:Function_close____src_requests_adapters_py__close a code:Function ;
 code:Function_close____src_requests_models_py__close a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Releases the connection back to the pool. Once this method has been
         called the underlying ``raw`` object must not be accessed again.
 
@@ -1165,6 +1179,7 @@ code:Function_close____src_requests_models_py__close a code:Function ;
 code:Function_close____src_requests_sessions_py__close a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Closes all adapters and as such the session" ;
     code:function_exe_cmd "src.requests.sessions.Session.close(self)" ;
     code:hasInput code:Parameter_self_close ;
@@ -1175,6 +1190,7 @@ code:Function_content____src_requests_models_py__content a code:Function ;
     code:comments "Read the contents., don't need to release the connection; that's been handled by urllib3, since we exhausted the data." ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Content of the response, in bytes." ;
     code:function_exe_cmd "src.requests.models.Response.content(self)" ;
     code:hasInput code:Parameter_self_content ;
@@ -1184,6 +1200,7 @@ code:Function_content____src_requests_models_py__content a code:Function ;
 code:Function_cookiejar_from_dict____src_requests_cookies_py__cookiejar_from_dict a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a CookieJar from a key/value dictionary.
 
     :param cookie_dict: Dict of key/values to insert into CookieJar.
@@ -1201,6 +1218,7 @@ code:Function_cookiejar_from_dict____src_requests_cookies_py__cookiejar_from_dic
 code:Function_copy____src_requests_cookies_py__copy a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Return a copy of this RequestsCookieJar." ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.copy(self)" ;
     code:hasInput code:Parameter_self_copy ;
@@ -1210,6 +1228,7 @@ code:Function_copy____src_requests_cookies_py__copy a code:Function ;
 code:Function_copy____src_requests_models_py__copy a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.copy(self)" ;
     code:hasInput code:Parameter_self_copy ;
     code:isDocumented false ;
@@ -1218,6 +1237,7 @@ code:Function_copy____src_requests_models_py__copy a code:Function ;
 code:Function_copy____src_requests_structures_py__copy a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.structures.CaseInsensitiveDict.copy(self)" ;
     code:hasInput code:Parameter_self_copy ;
     code:isDocumented false ;
@@ -1226,6 +1246,7 @@ code:Function_copy____src_requests_structures_py__copy a code:Function ;
 code:Function_create_cookie____src_requests_cookies_py__create_cookie a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Make a cookie from underspecified parameters.
 
     By default, the pair of `name` and `value` will be set for the domain ''
@@ -1239,6 +1260,7 @@ code:Function_create_cookie____src_requests_cookies_py__create_cookie a code:Fun
 code:Function_default_headers____src_requests_utils_py__default_headers a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring ":rtype: requests.structures.CaseInsensitiveDict" ;
     code:function_exe_cmd "src.requests.utils.default_headers()" ;
     code:isDocumented true ;
@@ -1247,6 +1269,7 @@ code:Function_default_headers____src_requests_utils_py__default_headers a code:F
 code:Function_default_hooks____src_requests_hooks_py__default_hooks a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.hooks.default_hooks()" ;
     code:isDocumented false ;
     code:name "default_hooks" .
@@ -1254,6 +1277,7 @@ code:Function_default_hooks____src_requests_hooks_py__default_hooks a code:Funct
 code:Function_default_user_agent____src_requests_utils_py__default_user_agent a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Return a string representing the default user agent.
 
     :rtype: str""" ;
@@ -1265,6 +1289,7 @@ code:Function_default_user_agent____src_requests_utils_py__default_user_agent a 
 code:Function_delete____src_requests_api_py__delete a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a DELETE request.
 
     :param url: URL for the new :class:`Request` object.
@@ -1279,6 +1304,7 @@ code:Function_delete____src_requests_api_py__delete a code:Function ;
 code:Function_delete____src_requests_sessions_py__delete a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a DELETE request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -1293,6 +1319,7 @@ code:Function_delete____src_requests_sessions_py__delete a code:Function ;
 code:Function_deregister_hook____src_requests_models_py__deregister_hook a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Deregister a previously registered hook.
         Returns True if the hook existed, False if not.""" ;
     code:function_exe_cmd "src.requests.models.RequestHooksMixin.deregister_hook(self, event, hook)" ;
@@ -1305,6 +1332,7 @@ code:Function_deregister_hook____src_requests_models_py__deregister_hook a code:
 code:Function_dict_from_cookiejar____src_requests_utils_py__dict_from_cookiejar a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a key/value dictionary from a CookieJar.
 
     :param cj: CookieJar object to extract cookies from.
@@ -1317,6 +1345,7 @@ code:Function_dict_from_cookiejar____src_requests_utils_py__dict_from_cookiejar 
 code:Function_dict_to_sequence____src_requests_utils_py__dict_to_sequence a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Returns an internal sequence dictionary update." ;
     code:function_exe_cmd "src.requests.utils.dict_to_sequence(d)" ;
     code:hasInput code:Parameter_d_dict_to_sequence ;
@@ -1326,6 +1355,7 @@ code:Function_dict_to_sequence____src_requests_utils_py__dict_to_sequence a code
 code:Function_dispatch_hook____src_requests_hooks_py__dispatch_hook a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Dispatches a hook dictionary on a given piece of data." ;
     code:function_exe_cmd "src.requests.hooks.dispatch_hook(key, hooks, hook_data)" ;
     code:hasInput code:Parameter_hook_data_dispatch_hook,
@@ -1337,6 +1367,7 @@ code:Function_dispatch_hook____src_requests_hooks_py__dispatch_hook a code:Funct
 code:Function_dotted_netmask____src_requests_utils_py__dotted_netmask a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Converts mask from /xx format to xxx.xxx.xxx.xxx
 
     Example: if mask is 24 function returns 255.255.255.0
@@ -1351,6 +1382,7 @@ code:Function_extract_cookies_to_jar____src_requests_cookies_py__extract_cookies
     code:comments "the _original_response field is the wrapped httplib.HTTPResponse object,, pull out the HTTPMessage with the headers and put it in the mock:" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Extract the cookies from the response into a CookieJar.
 
     :param jar: http.cookiejar.CookieJar (not necessarily a RequestsCookieJar)
@@ -1367,6 +1399,7 @@ code:Function_extract_zipped_paths____src_requests_utils_py__extract_zipped_path
     code:comments "this is already a valid path, no need to do anything further, find the first valid part of the provided path and treat that as a zip archive, assume the rest of the path is the name of a member in the archive, If we don't check for an empty prefix after the split (in other words, archive remains unchanged after the split),, we _can_ end up in an infinite loop on a rare corner case affecting a small number of users, we have a valid zip archive and a valid member of that archive, use read + write to avoid the creating nested folders, we only want the file, avoids mkdir racing condition" ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Replace nonexistent paths that look like they refer to a member of a zip
     archive with the location of an extracted copy of the target, or else
     just return the provided path unchanged.""" ;
@@ -1378,6 +1411,7 @@ code:Function_extract_zipped_paths____src_requests_utils_py__extract_zipped_path
 code:Function_from_key_val_list____src_requests_utils_py__from_key_val_list a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Take an object and test to see if it can be represented as a
     dictionary. Unless it can not be represented as such, return an
     OrderedDict, e.g.,
@@ -1402,6 +1436,7 @@ code:Function_from_key_val_list____src_requests_utils_py__from_key_val_list a co
 code:Function_get____src_requests_api_py__get a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a GET request.
 
     :param url: URL for the new :class:`Request` object.
@@ -1419,6 +1454,7 @@ code:Function_get____src_requests_api_py__get a code:Function ;
 code:Function_get____src_requests_cookies_py__get a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like get() that also supports optional domain and path args in
         order to resolve naming collisions from using one cookie jar over
         multiple domains.
@@ -1436,6 +1472,7 @@ code:Function_get____src_requests_cookies_py__get a code:Function ;
 code:Function_get____src_requests_sessions_py__get a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a GET request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -1450,6 +1487,7 @@ code:Function_get____src_requests_sessions_py__get a code:Function ;
 code:Function_get____src_requests_structures_py__get a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.structures.LookupDict.get(self, key, default)" ;
     code:hasInput code:Parameter_default_get,
         code:Parameter_key_get,
@@ -1461,6 +1499,7 @@ code:Function_get_adapter____src_requests_sessions_py__get_adapter a code:Functi
     code:comments "Nothing matches :-/" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns the appropriate connection adapter for the given URL.
 
         :rtype: requests.adapters.BaseAdapter""" ;
@@ -1473,6 +1512,7 @@ code:Function_get_adapter____src_requests_sessions_py__get_adapter a code:Functi
 code:Function_get_auth_from_url____src_requests_utils_py__get_auth_from_url a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Given a url with authentication components, extract them into a tuple of
     username,password.
 
@@ -1486,6 +1526,7 @@ code:Function_get_connection____src_requests_adapters_py__get_connection a code:
     code:comments "Only scheme should be lower case" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """DEPRECATED: Users should move to `get_connection_with_tls_context`
         for all subclasses of HTTPAdapter using Requests>=2.32.2.
 
@@ -1507,6 +1548,7 @@ code:Function_get_connection_with_tls_context____src_requests_adapters_py__get_c
     code:comments "Only scheme should be lower case" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a urllib3 connection for the given request and TLS settings.
         This should not be called from user code, and is only exposed for use
         when subclassing the :class:`HTTPAdapter <requests.adapters.HTTPAdapter>`.
@@ -1537,6 +1579,7 @@ code:Function_get_connection_with_tls_context____src_requests_adapters_py__get_c
 code:Function_get_cookie_header____src_requests_cookies_py__get_cookie_header a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Produce an appropriate Cookie header string to be sent with `request`, or None.
 
     :rtype: str""" ;
@@ -1549,6 +1592,7 @@ code:Function_get_cookie_header____src_requests_cookies_py__get_cookie_header a 
 code:Function_get_dict____src_requests_cookies_py__get_dict a code:Function ;
     code:complexity "Complexity: 9" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Takes as an argument an optional domain and path and returns a plain
         old Python dict of name-value pairs of cookies that meet the
         requirements.
@@ -1565,6 +1609,7 @@ code:Function_get_encoding_from_headers____src_requests_utils_py__get_encoding_f
     code:comments "Assume UTF-8 based on RFC 4627: https://www.ietf.org/rfc/rfc4627.txt since the charset was unset" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns encodings from given HTTP Header Dict.
 
     :param headers: dictionary to extract encoding from.
@@ -1578,6 +1623,7 @@ code:Function_get_encodings_from_content____src_requests_utils_py__get_encodings
     code:comments "2266. (This\"" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns encodings from given content string.
 
     :param content: bytestring to extract encodings from.""" ;
@@ -1589,6 +1635,7 @@ code:Function_get_encodings_from_content____src_requests_utils_py__get_encodings
 code:Function_get_environ_proxies____src_requests_utils_py__get_environ_proxies a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Return a dict of environment proxies.
 
     :rtype: dict""" ;
@@ -1602,6 +1649,7 @@ code:Function_get_full_url____src_requests_cookies_py__get_full_url a code:Funct
     code:comments "Only return the response's URL if the user hadn't set the Host, header, If they did set it, retrieve it and reconstruct the expected domain, Reconstruct the URL as we expect it" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_full_url(self)" ;
     code:hasInput code:Parameter_self_get_full_url ;
     code:isDocumented false ;
@@ -1610,6 +1658,7 @@ code:Function_get_full_url____src_requests_cookies_py__get_full_url a code:Funct
 code:Function_get_header____src_requests_cookies_py__get_header a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_header(self, name, default)" ;
     code:hasInput code:Parameter_default_get_header,
         code:Parameter_name_get_header,
@@ -1620,6 +1669,7 @@ code:Function_get_header____src_requests_cookies_py__get_header a code:Function 
 code:Function_get_host____src_requests_cookies_py__get_host a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_host(self)" ;
     code:hasInput code:Parameter_self_get_host ;
     code:isDocumented false ;
@@ -1629,6 +1679,7 @@ code:Function_get_netrc_auth____src_requests_utils_py__get_netrc_auth a code:Fun
     code:comments "os.path.expanduser can fail when $HOME is undefined and, getpwuid fails. See https://bugs.python.org/issue20164 &, https://github.com/psf/requests/issues/1846, Abort early if there isn't one., Strip port numbers from netloc. This weird `if...encode`` dance is, used for Python 3.2, which doesn't support unicode literals., Return with login / password, If there was a parsing error or a permissions issue reading the file,, we'll just skip netrc auth unless explicitly asked to raise errors., App Engine hackiness." ;
     code:complexity "Complexity: 11" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Returns the Requests tuple auth for a given url from netrc." ;
     code:function_exe_cmd "src.requests.utils.get_netrc_auth(url, raise_errors)" ;
     code:hasInput code:Parameter_raise_errors_get_netrc_auth,
@@ -1639,6 +1690,7 @@ code:Function_get_netrc_auth____src_requests_utils_py__get_netrc_auth a code:Fun
 code:Function_get_new_headers____src_requests_cookies_py__get_new_headers a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_new_headers(self)" ;
     code:hasInput code:Parameter_self_get_new_headers ;
     code:isDocumented false ;
@@ -1647,6 +1699,7 @@ code:Function_get_new_headers____src_requests_cookies_py__get_new_headers a code
 code:Function_get_origin_req_host____src_requests_cookies_py__get_origin_req_host a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_origin_req_host(self)" ;
     code:hasInput code:Parameter_self_get_origin_req_host ;
     code:isDocumented false ;
@@ -1655,6 +1708,7 @@ code:Function_get_origin_req_host____src_requests_cookies_py__get_origin_req_hos
 code:Function_get_policy____src_requests_cookies_py__get_policy a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Return the CookiePolicy instance used." ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.get_policy(self)" ;
     code:hasInput code:Parameter_self_get_policy ;
@@ -1665,6 +1719,7 @@ code:Function_get_redirect_target____src_requests_sessions_py__get_redirect_targ
     code:comments "Due to the nature of how requests processes redirects this method will, be called at least once upon the original response and at least twice, on each subsequent redirect response (if any)., If a custom mixin is used to handle this logic, it may be advantageous, to cache the redirect location onto the response object as a private, attribute., Currently the underlying http module on py3 decode headers, in latin1, but empirical evidence suggests that latin1 is very, rarely used with non-ASCII characters in HTTP headers., It is more likely to get UTF8 header rather than latin1., This causes incorrect handling of UTF8 encoded location headers., To solve this, we re-encode the location in latin1." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Receives a Response. Returns a redirect URI or ``None``" ;
     code:function_exe_cmd "src.requests.sessions.SessionRedirectMixin.get_redirect_target(self, resp)" ;
     code:hasInput code:Parameter_resp_get_redirect_target,
@@ -1675,6 +1730,7 @@ code:Function_get_redirect_target____src_requests_sessions_py__get_redirect_targ
 code:Function_get_type____src_requests_cookies_py__get_type a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.get_type(self)" ;
     code:hasInput code:Parameter_self_get_type ;
     code:isDocumented false ;
@@ -1684,6 +1740,7 @@ code:Function_get_unicode_from_response____src_requests_utils_py__get_unicode_fr
     code:comments "2266. (This\", Try charset from content-type, Fall back:" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns the requested content back in unicode.
 
     :param r: Response object to get unicode content from.
@@ -1702,6 +1759,7 @@ code:Function_get_unicode_from_response____src_requests_utils_py__get_unicode_fr
 code:Function_getheaders____src_requests_cookies_py__getheaders a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockResponse.getheaders(self, name)" ;
     code:hasInput code:Parameter_name_getheaders,
         code:Parameter_self_getheaders ;
@@ -1711,6 +1769,7 @@ code:Function_getheaders____src_requests_cookies_py__getheaders a code:Function 
 code:Function_guess_filename____src_requests_utils_py__guess_filename a code:Function ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tries to guess the filename of the given object." ;
     code:function_exe_cmd "src.requests.utils.guess_filename(obj)" ;
     code:hasInput code:Parameter_obj_guess_filename ;
@@ -1721,6 +1780,7 @@ code:Function_guess_json_utf____src_requests_utils_py__guess_json_utf a code:Fun
     code:comments "JSON always starts with two ASCII characters, so detection is as, easy as counting the nulls and from their location and count, determine the encoding. Also detect a BOM, if present., BOM included, BOM included, MS style (discouraged), BOM included, 1st and 3rd are null, 2nd and 4th are null, Did not detect 2 valid UTF-16 ascii-range characters, Did not detect a valid UTF-32 ascii-range character" ;
     code:complexity "Complexity: 11" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring ":rtype: str" ;
     code:function_exe_cmd "src.requests.utils.guess_json_utf(data)" ;
     code:hasInput code:Parameter_data_guess_json_utf ;
@@ -1731,6 +1791,7 @@ code:Function_handle_401____src_requests_auth_py__handle_401 a code:Function ;
     code:comments "If response is not 4xx, do not auth, See https://github.com/psf/requests/issues/3772, Rewind the file position indicator of the body to where, it was to resend the request., Consume content and release the original connection, to allow our new request to reuse the same one." ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Takes the given response and tries digest-auth, if needed.
 
         :rtype: requests.Response""" ;
@@ -1743,6 +1804,7 @@ code:Function_handle_401____src_requests_auth_py__handle_401 a code:Function ;
 code:Function_handle_redirect____src_requests_auth_py__handle_redirect a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Reset num_401_calls counter on redirects." ;
     code:function_exe_cmd "src.requests.auth.HTTPDigestAuth.handle_redirect(self, r)" ;
     code:hasInput code:Parameter_r_handle_redirect,
@@ -1753,6 +1815,7 @@ code:Function_handle_redirect____src_requests_auth_py__handle_redirect a code:Fu
 code:Function_has_header____src_requests_cookies_py__has_header a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.has_header(self, name)" ;
     code:hasInput code:Parameter_name_has_header,
         code:Parameter_self_has_header ;
@@ -1762,6 +1825,7 @@ code:Function_has_header____src_requests_cookies_py__has_header a code:Function 
 code:Function_head____src_requests_api_py__head a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a HEAD request.
 
     :param url: URL for the new :class:`Request` object.
@@ -1778,6 +1842,7 @@ code:Function_head____src_requests_api_py__head a code:Function ;
 code:Function_head____src_requests_sessions_py__head a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a HEAD request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -1792,6 +1857,7 @@ code:Function_head____src_requests_sessions_py__head a code:Function ;
 code:Function_host____src_requests_cookies_py__host a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.host(self)" ;
     code:hasInput code:Parameter_self_host ;
     code:isDocumented false ;
@@ -1800,6 +1866,7 @@ code:Function_host____src_requests_cookies_py__host a code:Function ;
 code:Function_httpbin_conftest_py__httpbin a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".httpbin(httpbin)" ;
     code:hasInput code:Parameter_httpbin_httpbin ;
     code:isDocumented false ;
@@ -1808,6 +1875,7 @@ code:Function_httpbin_conftest_py__httpbin a code:Function ;
 code:Function_httpbin_secure_conftest_py__httpbin_secure a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".httpbin_secure(httpbin_secure)" ;
     code:hasInput code:Parameter_httpbin_secure_httpbin_secure ;
     code:isDocumented false ;
@@ -1816,6 +1884,7 @@ code:Function_httpbin_secure_conftest_py__httpbin_secure a code:Function ;
 code:Function_info____src_requests_cookies_py__info a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockResponse.info(self)" ;
     code:hasInput code:Parameter_self_info ;
     code:isDocumented false ;
@@ -1824,6 +1893,7 @@ code:Function_info____src_requests_cookies_py__info a code:Function ;
 code:Function_info____src_requests_help_py__info a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Generate information for a bug report." ;
     code:function_exe_cmd "src.requests.help.info()" ;
     code:isDocumented true ;
@@ -1833,6 +1903,7 @@ code:Function_init_per_thread_state____src_requests_auth_py__init_per_thread_sta
     code:comments "Ensure state is initialized just once per-thread" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.auth.HTTPDigestAuth.init_per_thread_state(self)" ;
     code:hasInput code:Parameter_self_init_per_thread_state ;
     code:isDocumented false ;
@@ -1842,6 +1913,7 @@ code:Function_init_poolmanager____src_requests_adapters_py__init_poolmanager a c
     code:comments "save these values for pickling" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Initializes a urllib3 PoolManager.
 
         This method should not be called from user code, and is only
@@ -1863,6 +1935,7 @@ code:Function_init_poolmanager____src_requests_adapters_py__init_poolmanager a c
 code:Function_is_ipv4_address____src_requests_utils_py__is_ipv4_address a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring ":rtype: bool" ;
     code:function_exe_cmd "src.requests.utils.is_ipv4_address(string_ip)" ;
     code:hasInput code:Parameter_string_ip_is_ipv4_address ;
@@ -1872,6 +1945,7 @@ code:Function_is_ipv4_address____src_requests_utils_py__is_ipv4_address a code:F
 code:Function_is_permanent_redirect____src_requests_models_py__is_permanent_redirect a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "True if this Response one of the permanent versions of redirect." ;
     code:function_exe_cmd "src.requests.models.Response.is_permanent_redirect(self)" ;
     code:hasInput code:Parameter_self_is_permanent_redirect ;
@@ -1881,6 +1955,7 @@ code:Function_is_permanent_redirect____src_requests_models_py__is_permanent_redi
 code:Function_is_redirect____src_requests_models_py__is_redirect a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """True if this Response is a well-formed HTTP redirect that could have
         been processed automatically (by :meth:`Session.resolve_redirects`).""" ;
     code:function_exe_cmd "src.requests.models.Response.is_redirect(self)" ;
@@ -1891,6 +1966,7 @@ code:Function_is_redirect____src_requests_models_py__is_redirect a code:Function
 code:Function_is_unverifiable____src_requests_cookies_py__is_unverifiable a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.is_unverifiable(self)" ;
     code:hasInput code:Parameter_self_is_unverifiable ;
     code:isDocumented false ;
@@ -1899,6 +1975,7 @@ code:Function_is_unverifiable____src_requests_cookies_py__is_unverifiable a code
 code:Function_is_valid_cidr____src_requests_utils_py__is_valid_cidr a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Very simple check of the cidr format in no_proxy variable.
 
     :rtype: bool""" ;
@@ -1910,6 +1987,7 @@ code:Function_is_valid_cidr____src_requests_utils_py__is_valid_cidr a code:Funct
 code:Function_items____src_requests_cookies_py__items a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like items() that returns a list of name-value tuples from the
         jar. Allows client-code to call ``dict(RequestsCookieJar)`` and get a
         vanilla python dict of key value pairs.
@@ -1924,6 +2002,7 @@ code:Function_iter_content____src_requests_models_py__iter_content a code:Functi
     code:comments "Special case for urllib3., Standard file-like object., simulate reading small chunks of the content" ;
     code:complexity "Complexity: 15" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Iterates over the response data.  When stream=True is set on the
         request, this avoids reading the content at once into memory for
         large responses.  The chunk size is the number of bytes it should
@@ -1948,6 +2027,7 @@ code:Function_iter_content____src_requests_models_py__iter_content a code:Functi
 code:Function_iter_lines____src_requests_models_py__iter_lines a code:Function ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Iterates over the response data, one line at a time.  When
         stream=True is set on the request, this avoids reading the
         content at once into memory for large responses.
@@ -1964,6 +2044,7 @@ code:Function_iter_lines____src_requests_models_py__iter_lines a code:Function ;
 code:Function_iter_slices____src_requests_utils_py__iter_slices a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Iterate over slices of a string." ;
     code:function_exe_cmd "src.requests.utils.iter_slices(string, slice_length)" ;
     code:hasInput code:Parameter_slice_length_iter_slices,
@@ -1974,6 +2055,7 @@ code:Function_iter_slices____src_requests_utils_py__iter_slices a code:Function 
 code:Function_iteritems____src_requests_cookies_py__iteritems a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like iteritems() that returns an iterator of name-value tuples
         from the jar.
 
@@ -1986,6 +2068,7 @@ code:Function_iteritems____src_requests_cookies_py__iteritems a code:Function ;
 code:Function_iterkeys____src_requests_cookies_py__iterkeys a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like iterkeys() that returns an iterator of names of cookies
         from the jar.
 
@@ -1998,6 +2081,7 @@ code:Function_iterkeys____src_requests_cookies_py__iterkeys a code:Function ;
 code:Function_itervalues____src_requests_cookies_py__itervalues a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like itervalues() that returns an iterator of values of cookies
         from the jar.
 
@@ -2011,6 +2095,7 @@ code:Function_json____src_requests_models_py__json a code:Function ;
     code:comments "No encoding set. JSON RFC 4627 section 3 states we should expect, UTF-8, -16 or -32. Detect which one to use; If the detection or, decoding fails, fall back to `self.text` (using charset_normalizer to make, a best guess)., Wrong UTF codec detected; usually because it's not UTF-8, but some other 8-bit codec.  This is an RFC violation,, and the server didn't bother to tell us what codec *was*, used., Catch JSON-related errors and raise as requests.JSONDecodeError, This aliases json.JSONDecodeError and simplejson.JSONDecodeError" ;
     code:complexity "Complexity: 9" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Decodes the JSON response body (if any) as a Python object.
 
         This may return a dictionary, list, etc. depending on what is in the response.
@@ -2026,6 +2111,7 @@ code:Function_json____src_requests_models_py__json a code:Function ;
 code:Function_keys____src_requests_cookies_py__keys a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like keys() that returns a list of names of cookies from the
         jar.
 
@@ -2038,6 +2124,7 @@ code:Function_keys____src_requests_cookies_py__keys a code:Function ;
 code:Function_links____src_requests_models_py__links a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Returns the parsed header links of the response, if any." ;
     code:function_exe_cmd "src.requests.models.Response.links(self)" ;
     code:hasInput code:Parameter_self_links ;
@@ -2047,6 +2134,7 @@ code:Function_links____src_requests_models_py__links a code:Function ;
 code:Function_list_domains____src_requests_cookies_py__list_domains a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Utility method to list all the domains in the jar." ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.list_domains(self)" ;
     code:hasInput code:Parameter_self_list_domains ;
@@ -2056,6 +2144,7 @@ code:Function_list_domains____src_requests_cookies_py__list_domains a code:Funct
 code:Function_list_paths____src_requests_cookies_py__list_paths a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Utility method to list all the paths in the jar." ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.list_paths(self)" ;
     code:hasInput code:Parameter_self_list_paths ;
@@ -2065,6 +2154,7 @@ code:Function_list_paths____src_requests_cookies_py__list_paths a code:Function 
 code:Function_lower_items____src_requests_structures_py__lower_items a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Like iteritems(), but with all lowercase keys." ;
     code:function_exe_cmd "src.requests.structures.CaseInsensitiveDict.lower_items(self)" ;
     code:hasInput code:Parameter_self_lower_items ;
@@ -2074,6 +2164,7 @@ code:Function_lower_items____src_requests_structures_py__lower_items a code:Func
 code:Function_main____src_requests_help_py__main a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Pretty-print the bug information as JSON." ;
     code:function_exe_cmd "src.requests.help.main()" ;
     code:isDocumented true ;
@@ -2082,6 +2173,7 @@ code:Function_main____src_requests_help_py__main a code:Function ;
 code:Function_merge_cookies____src_requests_cookies_py__merge_cookies a code:Function ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Add cookies to cookiejar and returns a merged CookieJar.
 
     :param cookiejar: CookieJar object to add the cookies to.
@@ -2097,6 +2189,7 @@ code:Function_merge_environment_settings____src_requests_sessions_py__merge_envi
     code:comments "Gather clues from the surrounding environment., Set environment's proxies., Look for requests environment configuration, and be compatible with cURL., Merge all the kwargs." ;
     code:complexity "Complexity: 9" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Check the environment and merge it with some settings.
 
         :rtype: dict""" ;
@@ -2113,6 +2206,7 @@ code:Function_merge_environment_settings____src_requests_sessions_py__merge_envi
 code:Function_merge_hooks____src_requests_sessions_py__merge_hooks a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Properly merges both requests and session hooks.
 
     This is necessary because when request_hooks == {'response': []}, the
@@ -2128,6 +2222,7 @@ code:Function_merge_setting____src_requests_sessions_py__merge_setting a code:Fu
     code:comments "Bypass if not a dictionary (e.g. verify), Remove keys that are set to None. Extract keys first to avoid altering, the dictionary during iteration." ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Determines appropriate setting for a given request, taking into account
     the explicit setting on that request, and the setting in the session. If a
     setting is a dictionary, they will be merged together using `dict_class`""" ;
@@ -2141,6 +2236,7 @@ code:Function_merge_setting____src_requests_sessions_py__merge_setting a code:Fu
 code:Function_morsel_to_cookie____src_requests_cookies_py__morsel_to_cookie a code:Function ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Convert a Morsel object into a Cookie containing the one k/v pair." ;
     code:function_exe_cmd "src.requests.cookies.morsel_to_cookie(morsel)" ;
     code:hasInput code:Parameter_morsel_morsel_to_cookie ;
@@ -2150,6 +2246,7 @@ code:Function_morsel_to_cookie____src_requests_cookies_py__morsel_to_cookie a co
 code:Function_mount____src_requests_sessions_py__mount a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Registers a connection adapter to a prefix.
 
         Adapters are sorted in descending order by prefix length.""" ;
@@ -2164,6 +2261,7 @@ code:Function_multiple_domains____src_requests_cookies_py__multiple_domains a co
     code:comments "there is only one domain in jar" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns True if there are multiple domains in the jar.
         Returns False otherwise.
 
@@ -2176,6 +2274,7 @@ code:Function_multiple_domains____src_requests_cookies_py__multiple_domains a co
 code:Function_next____src_requests_models_py__next a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Returns a PreparedRequest for the next request in a redirect chain, if there is one." ;
     code:function_exe_cmd "src.requests.models.Response.next(self)" ;
     code:hasInput code:Parameter_self_next ;
@@ -2186,6 +2285,7 @@ code:Function_nosan_server_conftest_py__nosan_server a code:Function ;
     code:comments "delay importing until the fixture in order to make it possible, to deselect the test via command-line when trustme is not available, only commonName, no subjectAltName" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".nosan_server(tmp_path_factory)" ;
     code:hasInput code:Parameter_tmp_path_factory_nosan_server ;
     code:isDocumented false ;
@@ -2194,6 +2294,7 @@ code:Function_nosan_server_conftest_py__nosan_server a code:Function ;
 code:Function_ok____src_requests_models_py__ok a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns True if :attr:`status_code` is less than 400, False if not.
 
         This attribute checks if the status code of the response is between
@@ -2208,6 +2309,7 @@ code:Function_ok____src_requests_models_py__ok a code:Function ;
 code:Function_options____src_requests_api_py__options a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends an OPTIONS request.
 
     :param url: URL for the new :class:`Request` object.
@@ -2222,6 +2324,7 @@ code:Function_options____src_requests_api_py__options a code:Function ;
 code:Function_options____src_requests_sessions_py__options a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a OPTIONS request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -2236,6 +2339,7 @@ code:Function_options____src_requests_sessions_py__options a code:Function ;
 code:Function_origin_req_host____src_requests_cookies_py__origin_req_host a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.origin_req_host(self)" ;
     code:hasInput code:Parameter_self_origin_req_host ;
     code:isDocumented false ;
@@ -2244,6 +2348,7 @@ code:Function_origin_req_host____src_requests_cookies_py__origin_req_host a code
 code:Function_override_environ_utils_py__override_environ a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".override_environ()" ;
     code:isDocumented false ;
     code:name "override_environ" .
@@ -2251,6 +2356,7 @@ code:Function_override_environ_utils_py__override_environ a code:Function ;
 code:Function_parse_dict_header____src_requests_utils_py__parse_dict_header a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Parse lists of key, value pairs as described by RFC 2068 Section 2 and
     convert them into a python dict:
 
@@ -2279,6 +2385,7 @@ code:Function_parse_dict_header____src_requests_utils_py__parse_dict_header a co
 code:Function_parse_header_links____src_requests_utils_py__parse_header_links a code:Function ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Return a list of parsed link headers proxies.
 
     i.e. Link: <http:/.../front.jpeg>; rel=front; type="image/jpeg",<http://.../back.jpeg>; rel=back;type="image/jpeg"
@@ -2292,6 +2399,7 @@ code:Function_parse_header_links____src_requests_utils_py__parse_header_links a 
 code:Function_parse_list_header____src_requests_utils_py__parse_list_header a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Parse lists as described by RFC 2068 Section 2.
 
     In particular, parse comma-separated lists where the elements of
@@ -2321,6 +2429,7 @@ code:Function_parse_list_header____src_requests_utils_py__parse_list_header a co
 code:Function_patch____src_requests_api_py__patch a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a PATCH request.
 
     :param url: URL for the new :class:`Request` object.
@@ -2339,6 +2448,7 @@ code:Function_patch____src_requests_api_py__patch a code:Function ;
 code:Function_patch____src_requests_sessions_py__patch a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a PATCH request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -2356,6 +2466,7 @@ code:Function_patch____src_requests_sessions_py__patch a code:Function ;
 code:Function_path_url____src_requests_models_py__path_url a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Build the path URL to use." ;
     code:function_exe_cmd "src.requests.models.RequestEncodingMixin.path_url(self)" ;
     code:hasInput code:Parameter_self_path_url ;
@@ -2365,6 +2476,7 @@ code:Function_path_url____src_requests_models_py__path_url a code:Function ;
 code:Function_post____src_requests_api_py__post a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a POST request.
 
     :param url: URL for the new :class:`Request` object.
@@ -2384,6 +2496,7 @@ code:Function_post____src_requests_api_py__post a code:Function ;
 code:Function_post____src_requests_sessions_py__post a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a POST request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -2404,6 +2517,7 @@ code:Function_prepare____src_requests_models_py__prepare a code:Function ;
     code:comments "Note that prepare_auth must be last to enable authentication schemes, such as OAuth to work on a fully prepared request., This MUST go after prepare_auth. Authenticators could add a hook" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the entire request with the given parameters." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare(self, method, url, headers, files, data, params, auth, cookies, hooks, json)" ;
     code:hasInput code:Parameter_auth_prepare,
@@ -2424,6 +2538,7 @@ code:Function_prepare_auth____src_requests_models_py__prepare_auth a code:Functi
     code:comments "If no Auth is explicitly provided, extract it from the URL first., special-case basic HTTP auth, Allow auth to make its changes., Update self to reflect the auth changes., Recompute Content-Length" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given HTTP auth data." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_auth(self, auth, url)" ;
     code:hasInput code:Parameter_auth_prepare_auth,
@@ -2436,6 +2551,7 @@ code:Function_prepare_body____src_requests_models_py__prepare_body a code:Functi
     code:comments "Check if file, fo, generator, iterator., If not, run through normal process., Nottin' on you., urllib3 requires a bytes-like body. Python 2's json.dumps, provides this natively, but Python 3 gives a Unicode string., Record the current file position before reading., This will allow us to rewind a file in the event, of a redirect., This differentiates from None, allowing us to catch, a failed `tell()` later when trying to rewind the body, Multi-part file uploads., Add content-type if it wasn't explicitly provided." ;
     code:complexity "Complexity: 20" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given HTTP body data." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_body(self, data, files, json)" ;
     code:hasInput code:Parameter_data_prepare_body,
@@ -2449,6 +2565,7 @@ code:Function_prepare_content_length____src_requests_models_py__prepare_content_
     code:comments "If length exists, set it. Otherwise, we fallback, to Transfer-Encoding: chunked., Set Content-Length to 0 for methods that can have a body, but don't provide one. (i.e. not GET or HEAD)" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepare Content-Length header based on request method and body" ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_content_length(self, body)" ;
     code:hasInput code:Parameter_body_prepare_content_length,
@@ -2459,6 +2576,7 @@ code:Function_prepare_content_length____src_requests_models_py__prepare_content_
 code:Function_prepare_cookies____src_requests_models_py__prepare_cookies a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Prepares the given HTTP cookie data.
 
         This function eventually generates a ``Cookie`` header from the
@@ -2478,6 +2596,7 @@ code:Function_prepare_headers____src_requests_models_py__prepare_headers a code:
     code:comments "Raise exception on invalid header value." ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given HTTP headers." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_headers(self, headers)" ;
     code:hasInput code:Parameter_headers_prepare_headers,
@@ -2489,6 +2608,7 @@ code:Function_prepare_hooks____src_requests_models_py__prepare_hooks a code:Func
     code:comments "hooks can be passed as None to the prepare method and to this, method. To prevent iterating over None, simply use an empty list, if hooks is False-y" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given hooks." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_hooks(self, hooks)" ;
     code:hasInput code:Parameter_hooks_prepare_hooks,
@@ -2499,6 +2619,7 @@ code:Function_prepare_hooks____src_requests_models_py__prepare_hooks a code:Func
 code:Function_prepare_method____src_requests_models_py__prepare_method a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given HTTP method." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_method(self, method)" ;
     code:hasInput code:Parameter_method_prepare_method,
@@ -2510,6 +2631,7 @@ code:Function_prepare_request____src_requests_sessions_py__prepare_request a cod
     code:comments "Bootstrap CookieJar., Merge with session cookies, Set environment's basic authentication if not explicitly set." ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Constructs a :class:`PreparedRequest <PreparedRequest>` for
         transmission and returns it. The :class:`PreparedRequest` has settings
         merged from the :class:`Request <Request>` instance and those of the
@@ -2528,6 +2650,7 @@ code:Function_prepare_url____src_requests_models_py__prepare_url a code:Function
     code:comments ": Accept objects that have string representations., : We're unable to blindly call unicode/str functions, : as this will include the bytestring indicator (b''), : on python 3.x., : https://github.com/psf/requests/pull/2238, Remove leading whitespaces from url, Don't do any URL preparation for non-HTTP schemes like `mailto`,, `data` etc to work around exceptions from `url_parse`, which, handles RFC 3986 only., Support for unicode domain names and paths., In general, we want to try IDNA encoding the hostname if the string contains, non-ASCII characters. This allows users to automatically get the correct IDNA, behaviour. For strings containing only ASCII characters, we need to also verify, it doesn't start with a wildcard (*), before allowing the unencoded hostname., Carefully reconstruct the network location, Bare domains aren't valid URLs." ;
     code:complexity "Complexity: 19" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Prepares the given HTTP URL." ;
     code:function_exe_cmd "src.requests.models.PreparedRequest.prepare_url(self, url, params)" ;
     code:hasInput code:Parameter_params_prepare_url,
@@ -2540,6 +2663,7 @@ code:Function_prepare_url_conftest_py__prepare_url a code:Function ;
     code:comments "Issue #1483: Make sure the URL always has a trailing slash" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".prepare_url(value)" ;
     code:hasInput code:Parameter_value_prepare_url ;
     code:isDocumented false ;
@@ -2549,6 +2673,7 @@ code:Function_prepend_scheme_if_needed____src_requests_utils_py__prepend_scheme_
     code:comments "A defect in urlparse determines that there isn't a netloc present in some, urls. We previously assumed parsing was overly cautious, and swapped the, netloc and path. Due to a lack of tests on the original defect, this is, maintained with parse_url for backwards compatibility., parse_url doesn't provide the netloc with auth, so we'll add it ourselves." ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Given a URL that may or may not have a scheme, prepend the given scheme.
     Does not replace a present scheme with the one provided as an argument.
 
@@ -2562,6 +2687,7 @@ code:Function_prepend_scheme_if_needed____src_requests_utils_py__prepend_scheme_
 code:Function_proxy_headers____src_requests_adapters_py__proxy_headers a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a dictionary of the headers to add to any request sent
         through a proxy. This works with urllib3 magic to ensure that they are
         correctly sent to the proxy, rather than in a tunnelled request if
@@ -2582,6 +2708,7 @@ code:Function_proxy_headers____src_requests_adapters_py__proxy_headers a code:Fu
 code:Function_proxy_manager_for____src_requests_adapters_py__proxy_manager_for a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Return urllib3 ProxyManager for the given proxy.
 
         This method should not be called from user code, and is only
@@ -2601,6 +2728,7 @@ code:Function_proxy_manager_for____src_requests_adapters_py__proxy_manager_for a
 code:Function_put____src_requests_api_py__put a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a PUT request.
 
     :param url: URL for the new :class:`Request` object.
@@ -2619,6 +2747,7 @@ code:Function_put____src_requests_api_py__put a code:Function ;
 code:Function_put____src_requests_sessions_py__put a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends a PUT request. Returns :class:`Response` object.
 
         :param url: URL for the new :class:`Request` object.
@@ -2637,6 +2766,7 @@ code:Function_raise_for_status____src_requests_models_py__raise_for_status a cod
     code:comments "We attempt to decode utf-8 first because some servers, choose to localize their reason strings. If the string, isn't utf-8, we fall back to iso-8859-1 for all other, encodings. (See PR #3538)" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Raises :class:`HTTPError`, if one occurred." ;
     code:function_exe_cmd "src.requests.models.Response.raise_for_status(self)" ;
     code:hasInput code:Parameter_self_raise_for_status ;
@@ -2647,6 +2777,7 @@ code:Function_rebuild_auth____src_requests_sessions_py__rebuild_auth a code:Func
     code:comments "If we get redirected to a new host, we should strip out any, authentication headers., .netrc might have more auth for us on our new host." ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """When being redirected we may want to strip authentication from the
         request to avoid leaking credentials. This method intelligently removes
         and reapplies authentication where possible to avoid credential loss.""" ;
@@ -2661,6 +2792,7 @@ code:Function_rebuild_method____src_requests_sessions_py__rebuild_method a code:
     code:comments "https://tools.ietf.org/html/rfc7231#section-6.4.4, Do what the browsers do, despite standards..., First, turn 302s into GETs., Second, if a POST is responded to with a 301, turn it into a GET., This bizarre behaviour is explained in Issue 1704." ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """When being redirected we may want to change the method of the request
         based on certain specs or browser behavior.""" ;
     code:function_exe_cmd "src.requests.sessions.SessionRedirectMixin.rebuild_method(self, prepared_request, response)" ;
@@ -2674,6 +2806,7 @@ code:Function_rebuild_proxies____src_requests_sessions_py__rebuild_proxies a cod
     code:comments "urllib3 handles proxy authorization for us in the standard adapter., Avoid appending this to TLS tunneled requests where it may be leaked." ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """This method re-evaluates the proxy configuration by considering the
         environment variables. If we are redirected to a URL covered by
         NO_PROXY, we strip the proxy configuration. Otherwise, we set missing
@@ -2694,6 +2827,7 @@ code:Function_rebuild_proxies____src_requests_sessions_py__rebuild_proxies a cod
 code:Function_register_hook____src_requests_models_py__register_hook a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Properly register a hook." ;
     code:function_exe_cmd "src.requests.models.RequestHooksMixin.register_hook(self, event, hook)" ;
     code:hasInput code:Parameter_event_register_hook,
@@ -2705,6 +2839,7 @@ code:Function_register_hook____src_requests_models_py__register_hook a code:Func
 code:Function_remove_cookie_by_name____src_requests_cookies_py__remove_cookie_by_name a code:Function ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unsets a cookie by name, by default over all domains and paths.
 
     Wraps CookieJar.clear(), is O(n).""" ;
@@ -2720,6 +2855,7 @@ code:Function_request____src_requests_api_py__request a code:Function ;
     code:comments "By using the 'with' statement we are sure the session is closed, thus we, avoid leaving sockets open which can trigger a ResourceWarning in some, cases, and look like a memory leak in others." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Constructs and sends a :class:`Request <Request>`.
 
     :param method: method for the new :class:`Request` object: ``GET``, ``OPTIONS``, ``HEAD``, ``POST``, ``PUT``, ``PATCH``, or ``DELETE``.
@@ -2768,6 +2904,7 @@ code:Function_request____src_requests_sessions_py__request a code:Function ;
     code:comments "Create the Request., Send the request." ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Constructs a :class:`Request <Request>`, prepares it and sends it.
         Returns :class:`Response <Response>` object.
 
@@ -2835,6 +2972,7 @@ code:Function_request_url____src_requests_adapters_py__request_url a code:Functi
     code:comments "Don't confuse urllib3" ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Obtain the url to use when making the final request.
 
         If the message is being sent through a HTTP proxy, the full URL has to
@@ -2858,6 +2996,7 @@ code:Function_requote_uri____src_requests_utils_py__requote_uri a code:Function 
     code:comments "$%&'()*+,/:;=?@[]~\", $&'()*+,/:;=?@[]~\", Unquote only the unreserved characters, Then quote only illegal characters (do not quote reserved,, unreserved, or '%'), We couldn't unquote the given URI, so let's try quoting it, but, there may be unquoted '%'s in the URI. We need to make sure they're, properly quoted so they do not cause issues elsewhere." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Re-quote the given URI.
 
     This function passes the given URI through an unquote/quote cycle to
@@ -2872,6 +3011,7 @@ code:Function_requote_uri____src_requests_utils_py__requote_uri a code:Function 
 code:Function_resolve_proxies____src_requests_utils_py__resolve_proxies a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """This method takes proxy information from a request and configuration
     input to resolve a mapping of target proxies. This will consider settings
     such as NO_PROXY to strip proxy configurations.
@@ -2892,6 +3032,7 @@ code:Function_resolve_redirects____src_requests_sessions_py__resolve_redirects a
     code:comments "keep track of history, Update history and keep track of redirects., resp.history must ignore the original request in this loop, Consume socket so it can be released, Release the connection back into the pool., Handle redirection without scheme (see: RFC 1808 Section 4), Normalize url case and attach previous fragment if needed (RFC 7231 7.1.2), Facilitate relative 'location' headers, as allowed by RFC 7231., (e.g. '/path/to/resource' instead of 'http://domain.tld/path/to/resource'), Compliant with RFC3986, we percent encode the url., https://github.com/psf/requests/issues/1084, https://github.com/psf/requests/issues/3490, Extract any cookies sent on the response to the cookiejar, in the new request. Because we've mutated our copied prepared, request, use the old one that we haven't yet touched., Rebuild auth and proxy information., A failed tell() sets `_body_position` to `object()`. This non-None, value ensures `rewindable` will be True, allowing us to raise an, UnrewindableBodyError, instead of hanging the connection., Attempt to rewind consumed file-like object., Override the original request., extract redirect url, if any, for the next loop" ;
     code:complexity "Complexity: 18" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Receives a Response. Returns a generator of Responses or Requests." ;
     code:function_exe_cmd "src.requests.sessions.SessionRedirectMixin.resolve_redirects(self, resp, req, stream, timeout, verify, cert, proxies, yield_requests)" ;
     code:hasInput code:Parameter_cert_resolve_redirects,
@@ -2909,6 +3050,7 @@ code:Function_resolve_redirects____src_requests_sessions_py__resolve_redirects a
 code:Function_rewind_body____src_requests_utils_py__rewind_body a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Move file pointer back to its recorded starting position
     so it can be read again on redirect.""" ;
     code:function_exe_cmd "src.requests.utils.rewind_body(prepared_request)" ;
@@ -2919,6 +3061,7 @@ code:Function_rewind_body____src_requests_utils_py__rewind_body a code:Function 
 code:Function_select_proxy____src_requests_utils_py__select_proxy a code:Function ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Select a proxy for the url, if applicable.
 
     :param url: The url being for the request
@@ -2933,6 +3076,7 @@ code:Function_send____src_requests_adapters_py__send a code:Function ;
     code:comments "TODO: Remove this in 3.0.0: see #2811, This branch is for urllib3 v1.22 and later., This branch is for urllib3 versions earlier than v1.22" ;
     code:complexity "Complexity: 20" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Sends PreparedRequest object. Returns Response object.
 
         :param request: The :class:`PreparedRequest <PreparedRequest>` being sent.
@@ -2962,6 +3106,7 @@ code:Function_send____src_requests_sessions_py__send a code:Function ;
     code:comments "Set defaults that the hooks can utilize to ensure they always have, the correct parameters to reproduce the previous request., It's possible that users might accidentally send a Request object., Guard against that specific failure case., Set up variables needed for resolve_redirects and dispatching of hooks, Get the appropriate adapter to use, Start time (approximately) of the request, Send the request, Total elapsed time of the request (approximately), Response manipulation hooks, Persist cookies, If the hooks create history then we want those cookies too, Resolve redirects if allowed., Redirect resolving generator., Shuffle things around if there's history., Insert the first (original) request at the start, Get the last request made, If redirects aren't being followed, store the response on the Request for Response.next()." ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Send a given PreparedRequest.
 
         :rtype: requests.Response""" ;
@@ -2974,6 +3119,7 @@ code:Function_send____src_requests_sessions_py__send a code:Function ;
 code:Function_session____src_requests_sessions_py__session a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns a :class:`Session` for context-management.
 
     .. deprecated:: 1.0.0
@@ -2991,6 +3137,7 @@ code:Function_set____src_requests_cookies_py__set a code:Function ;
     code:comments "support client code that unsets cookies by assignment of a None value:" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like set() that also supports optional domain and path args in
         order to resolve naming collisions from using one cookie jar over
         multiple domains.""" ;
@@ -3004,6 +3151,7 @@ code:Function_set____src_requests_cookies_py__set a code:Function ;
 code:Function_set_cookie____src_requests_cookies_py__set_cookie a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.set_cookie(self, cookie)" ;
     code:hasInput code:Parameter_cookie_set_cookie,
         code:Parameter_self_set_cookie ;
@@ -3013,6 +3161,7 @@ code:Function_set_cookie____src_requests_cookies_py__set_cookie a code:Function 
 code:Function_set_environ____src_requests_utils_py__set_environ a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Set the environment variable 'env_name' to 'value'
 
     Save previous value, yield, and then restore the previous value stored in
@@ -3029,6 +3178,7 @@ code:Function_should_bypass_proxies____src_requests_utils_py__should_bypass_prox
     code:comments "Prioritize lowercase environment variables over uppercase, to keep a consistent behaviour with other http projects (curl, wget)., First check whether no_proxy is defined. If it is, check that the URL, we're getting isn't in the no_proxy list., URLs don't always have hostnames, e.g. file:/// urls., We need to check whether we match here. We need to see if we match, the end of the hostname, both with and without the port., If no_proxy ip was defined in plain IP notation instead of cidr notation &, matches the IP of the index, The URL does match something in no_proxy, so we don't want, to apply the proxies on this URL., parsed.hostname can be `None` in cases such as a file URI." ;
     code:complexity "Complexity: 19" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Returns whether we should bypass proxies or not.
 
     :rtype: bool""" ;
@@ -3042,6 +3192,7 @@ code:Function_should_strip_auth____src_requests_sessions_py__should_strip_auth a
     code:comments "Special case: allow http -> https redirect when using the standard, ports. This isn't specified by RFC 7235, but is kept to avoid, breaking backwards compatibility with older versions of requests, that allowed any redirects on the same host., Handle default port usage corresponding to scheme., Standard case: root URI must match" ;
     code:complexity "Complexity: 13" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Decide whether Authorization header should be removed when redirecting" ;
     code:function_exe_cmd "src.requests.sessions.SessionRedirectMixin.should_strip_auth(self, old_url, new_url)" ;
     code:hasInput code:Parameter_new_url_should_strip_auth,
@@ -3053,6 +3204,7 @@ code:Function_should_strip_auth____src_requests_sessions_py__should_strip_auth a
 code:Function_stream_decode_response_unicode____src_requests_utils_py__stream_decode_response_unicode a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Stream decodes an iterator." ;
     code:function_exe_cmd "src.requests.utils.stream_decode_response_unicode(iterator, r)" ;
     code:hasInput code:Parameter_iterator_stream_decode_response_unicode,
@@ -3064,6 +3216,7 @@ code:Function_super_len____src_requests_utils_py__super_len a code:Function ;
     code:comments "urllib3 2.x+ treats all strings as utf-8 instead, of latin-1 (iso-8859-1) like http.client., AttributeError is a surprising exception, seeing as how we've just checked, that `hasattr(o, 'fileno')`.  It happens for objects obtained via, `Tarfile.extractfile()`, per issue 5229., Having used fstat to determine the file length, we need to, confirm that this file was opened up in binary mode., This can happen in some weird situations, such as when the file, is actually a special file descriptor like stdin. In this, instance, we don't know what the length is, so set it to zero and, let requests chunk it instead., StringIO and BytesIO have seek but no usable fileno, seek to end of file, seek back to current position to support, partially read file-like objects" ;
     code:complexity "Complexity: 19" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.utils.super_len(o)" ;
     code:hasInput code:Parameter_o_super_len ;
     code:isDocumented false ;
@@ -3073,6 +3226,7 @@ code:Function_text____src_requests_models_py__text a code:Function ;
     code:comments "Try charset from content-type, Fallback to auto-detected encoding., Decode unicode from given encoding., A LookupError is raised if the encoding was not found which could, indicate a misspelling or similar mistake., , A TypeError can be raised if encoding is None, , So we try blindly encoding." ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Content of the response, in unicode.
 
         If Response.encoding is None, encoding will be guessed using
@@ -3090,6 +3244,7 @@ code:Function_text____src_requests_models_py__text a code:Function ;
 code:Function_to_key_val_list____src_requests_utils_py__to_key_val_list a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Take an object and test to see if it can be represented as a
     dictionary. If it can be, return a list of tuples, e.g.,
 
@@ -3113,6 +3268,7 @@ code:Function_to_key_val_list____src_requests_utils_py__to_key_val_list a code:F
 code:Function_u_compat_py__u a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd ".u(s)" ;
     code:hasInput code:Parameter_s_u ;
     code:isDocumented false ;
@@ -3122,6 +3278,7 @@ code:Function_unquote_header_value____src_requests_utils_py__unquote_header_valu
     code:comments "this is not the real unquoting, but fixing this so that the, RFC is met will result in bugs with internet explorer and, probably some other browsers as well.  IE for example is, uploading files with \"C:\\foo\\bar.txt\" as filename, if this is a filename and the starting characters look like, a UNC path, then just return the value without quotes.  Using the, replace sequence below on a UNC path has the effect of turning, the leading double slash into a single slash and then, _fix_ie_filename() doesn't work correctly.  See #458." ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unquotes a header value.  (Reversal of :func:`quote_header_value`).
     This does not use the real unquoting but what browsers are actually
     using for quoting.
@@ -3137,6 +3294,7 @@ code:Function_unquote_header_value____src_requests_utils_py__unquote_header_valu
 code:Function_unquote_unreserved____src_requests_utils_py__unquote_unreserved a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Un-escape any percent-escape sequences in a URI that are unreserved
     characters. This leaves all reserved, illegal and non-ASCII bytes encoded.
 
@@ -3149,6 +3307,7 @@ code:Function_unquote_unreserved____src_requests_utils_py__unquote_unreserved a 
 code:Function_unverifiable____src_requests_cookies_py__unverifiable a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "src.requests.cookies.MockRequest.unverifiable(self)" ;
     code:hasInput code:Parameter_self_unverifiable ;
     code:isDocumented false ;
@@ -3157,6 +3316,7 @@ code:Function_unverifiable____src_requests_cookies_py__unverifiable a code:Funct
 code:Function_update____src_requests_cookies_py__update a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Updates this jar with cookies from another CookieJar or dict-like" ;
     code:function_exe_cmd "src.requests.cookies.RequestsCookieJar.update(self, other)" ;
     code:hasInput code:Parameter_other_update,
@@ -3168,6 +3328,7 @@ code:Function_urldefragauth____src_requests_utils_py__urldefragauth a code:Funct
     code:comments "see func:`prepend_scheme_if_needed`" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Given a url remove the fragment and the authentication part.
 
     :rtype: str""" ;
@@ -3179,6 +3340,7 @@ code:Function_urldefragauth____src_requests_utils_py__urldefragauth a code:Funct
 code:Function_values____src_requests_cookies_py__values a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Dict-like values() that returns a list of values of cookies from the
         jar.
 

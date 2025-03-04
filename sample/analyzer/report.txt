@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_c2f2f23o/tests
+Package: /tmp/git_analyzer_51mp2ron/tests
 
 Metrics:
 - Total Files: 36
@@ -670,6 +670,7 @@ Functions:
         :param request: The :class:`PreparedRequest <PreparedRequest>` to add headers to.
         :param kwargs: The keyword arguments from the call to send().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/adapters.py::build_connection_pool_key_attributes:
@@ -732,6 +733,7 @@ Functions:
             portion of the Pool Key including scheme, hostname, and port. The
             second is a dictionary of SSLContext related parameters.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/adapters.py::build_response:
@@ -756,6 +758,7 @@ Functions:
         :param resp: The urllib3 response object.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: ["Fallback to None if there's no status_code, for whatever reason.", 'Make headers case-insensitive.', 'Set encoding.', 'Add new cookies from the server.', 'Give the Response some context.']
 
   ../src/requests/adapters.py::cert_verify:
@@ -782,6 +785,7 @@ Functions:
             to a CA bundle to use
         :param cert: The SSL certificate to verify.
     Description: 
+    Description Embedding: 
     Comments: ["Only load the CA certificates if 'verify' is a string indicating the CA bundle to use.", "Otherwise, if verify is a boolean, we don't load anything since", 'the connection will be using a context with the default certificates already loaded,', 'and this avoids a call to the slow load_verify_locations()', '`verify` must be a str with a path then']
 
   ../src/requests/adapters.py::close:
@@ -802,6 +806,7 @@ Functions:
         Currently, this closes the PoolManager and any active ProxyManager,
         which closes any pooled connections.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/adapters.py::get_connection:
@@ -828,6 +833,7 @@ Functions:
         :param proxies: (optional) A Requests-style dictionary of proxies used on this request.
         :rtype: urllib3.ConnectionPool
     Description: 
+    Description Embedding: 
     Comments: ['Only scheme should be lower case']
 
   ../src/requests/adapters.py::get_connection_with_tls_context:
@@ -862,6 +868,7 @@ Functions:
         :rtype:
             urllib3.ConnectionPool
     Description: 
+    Description Embedding: 
     Comments: ['Only scheme should be lower case']
 
   ../src/requests/adapters.py::init_poolmanager:
@@ -888,6 +895,7 @@ Functions:
         :param block: Block when no free connections are available.
         :param pool_kwargs: Extra keyword arguments used to initialize the Pool Manager.
     Description: 
+    Description Embedding: 
     Comments: ['save these values for pickling']
 
   ../src/requests/adapters.py::proxy_headers:
@@ -915,6 +923,7 @@ Functions:
         :param proxy: The url of the proxy being used for this request.
         :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/adapters.py::proxy_manager_for:
@@ -941,6 +950,7 @@ Functions:
         :returns: ProxyManager
         :rtype: urllib3.ProxyManager
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/adapters.py::request_url:
@@ -969,6 +979,7 @@ Functions:
         :param proxies: A dictionary of schemes or schemes and hosts to proxy URLs.
         :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ["Don't confuse urllib3"]
 
   ../src/requests/adapters.py::send:
@@ -999,6 +1010,7 @@ Functions:
         :param proxies: (optional) The proxies dictionary to apply to the request.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: ['TODO: Remove this in 3.0.0: see #2811', 'This branch is for urllib3 v1.22 and later.', 'This branch is for urllib3 versions earlier than v1.22']
 
   ../src/requests/api.py::delete:
@@ -1021,6 +1033,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::get:
@@ -1045,6 +1058,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::head:
@@ -1069,6 +1083,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::options:
@@ -1091,6 +1106,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::patch:
@@ -1116,6 +1132,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::post:
@@ -1141,6 +1158,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::put:
@@ -1166,6 +1184,7 @@ Functions:
     :return: :class:`Response <Response>` object
     :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/api.py::request:
@@ -1220,6 +1239,7 @@ Functions:
       >>> req
       <Response [200]>
     Description: 
+    Description Embedding: 
     Comments: ["By using the 'with' statement we are sure the session is closed, thus we", 'avoid leaving sockets open which can trigger a ResourceWarning in some', 'cases, and look like a memory leak in others.']
 
   ../src/requests/auth.py::build_digest_header:
@@ -1237,6 +1257,7 @@ Functions:
     Decorators: None
     Docstring: :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['lambdas assume digest modules are imported at the top level', 'noqa:E731', 'XXX not implemented yet', ': path is request-uri defined in RFC 2616 which should not be empty', 'XXX handle auth-int.', 'XXX should the partial digests be encoded too?']
 
   ../src/requests/auth.py::handle_401:
@@ -1256,6 +1277,7 @@ Functions:
 
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: ['If response is not 4xx, do not auth', 'See https://github.com/psf/requests/issues/3772', 'Rewind the file position indicator of the body to where', 'it was to resend the request.', 'Consume content and release the original connection', 'to allow our new request to reuse the same one.']
 
   ../src/requests/auth.py::handle_redirect:
@@ -1273,6 +1295,7 @@ Functions:
     Decorators: None
     Docstring: Reset num_401_calls counter on redirects.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/auth.py::init_per_thread_state:
@@ -1290,6 +1313,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: ['Ensure state is initialized just once per-thread']
 
   ../src/requests/cookies.py::add_header:
@@ -1307,6 +1331,7 @@ Functions:
     Decorators: None
     Docstring: cookiejar has no legitimate use for this method; add it back if you find one.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::add_unredirected_header:
@@ -1324,6 +1349,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::cookiejar_from_dict:
@@ -1347,6 +1373,7 @@ Functions:
         already in the jar with new ones.
     :rtype: CookieJar
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::copy:
@@ -1364,6 +1391,7 @@ Functions:
     Decorators: None
     Docstring: Return a copy of this RequestsCookieJar.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::create_cookie:
@@ -1384,6 +1412,7 @@ Functions:
     By default, the pair of `name` and `value` will be set for the domain ''
     and sent on every request (this is sometimes called a "supercookie").
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::extract_cookies_to_jar:
@@ -1405,6 +1434,7 @@ Functions:
     :param request: our own requests.Request object
     :param response: urllib3.HTTPResponse object
     Description: 
+    Description Embedding: 
     Comments: ['the _original_response field is the wrapped httplib.HTTPResponse object,', 'pull out the HTTPMessage with the headers and put it in the mock:']
 
   ../src/requests/cookies.py::get:
@@ -1426,6 +1456,7 @@ Functions:
 
         .. warning:: operation is O(n), not O(1).
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_cookie_header:
@@ -1445,6 +1476,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_dict:
@@ -1466,6 +1498,7 @@ Functions:
 
         :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_full_url:
@@ -1483,6 +1516,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: ["Only return the response's URL if the user hadn't set the Host", 'header', 'If they did set it, retrieve it and reconstruct the expected domain', 'Reconstruct the URL as we expect it']
 
   ../src/requests/cookies.py::get_header:
@@ -1500,6 +1534,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_host:
@@ -1517,6 +1552,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_new_headers:
@@ -1534,6 +1570,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_origin_req_host:
@@ -1551,6 +1588,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_policy:
@@ -1568,6 +1606,7 @@ Functions:
     Decorators: None
     Docstring: Return the CookiePolicy instance used.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::get_type:
@@ -1585,6 +1624,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::getheaders:
@@ -1602,6 +1642,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::has_header:
@@ -1619,6 +1660,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::host:
@@ -1636,6 +1678,7 @@ Functions:
     Decorators: property
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::info:
@@ -1653,6 +1696,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::is_unverifiable:
@@ -1670,6 +1714,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::items:
@@ -1691,6 +1736,7 @@ Functions:
 
         .. seealso:: keys() and values().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::iteritems:
@@ -1711,6 +1757,7 @@ Functions:
 
         .. seealso:: iterkeys() and itervalues().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::iterkeys:
@@ -1731,6 +1778,7 @@ Functions:
 
         .. seealso:: itervalues() and iteritems().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::itervalues:
@@ -1751,6 +1799,7 @@ Functions:
 
         .. seealso:: iterkeys() and iteritems().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::keys:
@@ -1771,6 +1820,7 @@ Functions:
 
         .. seealso:: values() and items().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::list_domains:
@@ -1788,6 +1838,7 @@ Functions:
     Decorators: None
     Docstring: Utility method to list all the domains in the jar.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::list_paths:
@@ -1805,6 +1856,7 @@ Functions:
     Decorators: None
     Docstring: Utility method to list all the paths in the jar.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::merge_cookies:
@@ -1826,6 +1878,7 @@ Functions:
     :param cookies: Dictionary or CookieJar object to be added.
     :rtype: CookieJar
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::morsel_to_cookie:
@@ -1843,6 +1896,7 @@ Functions:
     Decorators: None
     Docstring: Convert a Morsel object into a Cookie containing the one k/v pair.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::multiple_domains:
@@ -1863,6 +1917,7 @@ Functions:
 
         :rtype: bool
     Description: 
+    Description Embedding: 
     Comments: ['there is only one domain in jar']
 
   ../src/requests/cookies.py::origin_req_host:
@@ -1880,6 +1935,7 @@ Functions:
     Decorators: property
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::remove_cookie_by_name:
@@ -1899,6 +1955,7 @@ Functions:
 
     Wraps CookieJar.clear(), is O(n).
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::set:
@@ -1918,6 +1975,7 @@ Functions:
         order to resolve naming collisions from using one cookie jar over
         multiple domains.
     Description: 
+    Description Embedding: 
     Comments: ['support client code that unsets cookies by assignment of a None value:']
 
   ../src/requests/cookies.py::set_cookie:
@@ -1935,6 +1993,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::unverifiable:
@@ -1952,6 +2011,7 @@ Functions:
     Decorators: property
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::update:
@@ -1969,6 +2029,7 @@ Functions:
     Decorators: None
     Docstring: Updates this jar with cookies from another CookieJar or dict-like
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/cookies.py::values:
@@ -1989,6 +2050,7 @@ Functions:
 
         .. seealso:: keys() and items().
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/help.py::info:
@@ -2006,6 +2068,7 @@ Functions:
     Decorators: None
     Docstring: Generate information for a bug report.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/help.py::main:
@@ -2023,6 +2086,7 @@ Functions:
     Decorators: None
     Docstring: Pretty-print the bug information as JSON.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/hooks.py::default_hooks:
@@ -2040,6 +2104,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/hooks.py::dispatch_hook:
@@ -2057,6 +2122,7 @@ Functions:
     Decorators: None
     Docstring: Dispatches a hook dictionary on a given piece of data.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::apparent_encoding:
@@ -2074,6 +2140,7 @@ Functions:
     Decorators: property
     Docstring: The apparent encoding, provided by the charset_normalizer or chardet libraries.
     Description: 
+    Description Embedding: 
     Comments: ["If no character detection library is available, we'll fall back", 'to a standard Python utf-8 str.']
 
   ../src/requests/models.py::close:
@@ -2094,6 +2161,7 @@ Functions:
 
         *Note: Should not normally need to be called explicitly.*
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::content:
@@ -2111,6 +2179,7 @@ Functions:
     Decorators: property
     Docstring: Content of the response, in bytes.
     Description: 
+    Description Embedding: 
     Comments: ['Read the contents.', "don't need to release the connection; that's been handled by urllib3", 'since we exhausted the data.']
 
   ../src/requests/models.py::copy:
@@ -2128,6 +2197,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::deregister_hook:
@@ -2146,6 +2216,7 @@ Functions:
     Docstring: Deregister a previously registered hook.
         Returns True if the hook existed, False if not.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::is_permanent_redirect:
@@ -2163,6 +2234,7 @@ Functions:
     Decorators: property
     Docstring: True if this Response one of the permanent versions of redirect.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::is_redirect:
@@ -2181,6 +2253,7 @@ Functions:
     Docstring: True if this Response is a well-formed HTTP redirect that could have
         been processed automatically (by :meth:`Session.resolve_redirects`).
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::iter_content:
@@ -2211,6 +2284,7 @@ Functions:
         If decode_unicode is True, content will be decoded using the best
         available encoding based on the response.
     Description: 
+    Description Embedding: 
     Comments: ['Special case for urllib3.', 'Standard file-like object.', 'simulate reading small chunks of the content']
 
   ../src/requests/models.py::iter_lines:
@@ -2232,6 +2306,7 @@ Functions:
 
         .. note:: This method is not reentrant safe.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::json:
@@ -2255,6 +2330,7 @@ Functions:
         :raises requests.exceptions.JSONDecodeError: If the response body does not
             contain valid json.
     Description: 
+    Description Embedding: 
     Comments: ['No encoding set. JSON RFC 4627 section 3 states we should expect', 'UTF-8, -16 or -32. Detect which one to use; If the detection or', 'decoding fails, fall back to `self.text` (using charset_normalizer to make', 'a best guess).', "Wrong UTF codec detected; usually because it's not UTF-8", 'but some other 8-bit codec.  This is an RFC violation,', "and the server didn't bother to tell us what codec *was*", 'used.', 'Catch JSON-related errors and raise as requests.JSONDecodeError', 'This aliases json.JSONDecodeError and simplejson.JSONDecodeError']
 
   ../src/requests/models.py::links:
@@ -2272,6 +2348,7 @@ Functions:
     Decorators: property
     Docstring: Returns the parsed header links of the response, if any.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::next:
@@ -2289,6 +2366,7 @@ Functions:
     Decorators: property
     Docstring: Returns a PreparedRequest for the next request in a redirect chain, if there is one.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::ok:
@@ -2311,6 +2389,7 @@ Functions:
         the status code is between 200 and 400, this will return True. This
         is **not** a check to see if the response code is ``200 OK``.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::path_url:
@@ -2328,6 +2407,7 @@ Functions:
     Decorators: property
     Docstring: Build the path URL to use.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::prepare:
@@ -2345,6 +2425,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the entire request with the given parameters.
     Description: 
+    Description Embedding: 
     Comments: ['Note that prepare_auth must be last to enable authentication schemes', 'such as OAuth to work on a fully prepared request.', 'This MUST go after prepare_auth. Authenticators could add a hook']
 
   ../src/requests/models.py::prepare_auth:
@@ -2362,6 +2443,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given HTTP auth data.
     Description: 
+    Description Embedding: 
     Comments: ['If no Auth is explicitly provided, extract it from the URL first.', 'special-case basic HTTP auth', 'Allow auth to make its changes.', 'Update self to reflect the auth changes.', 'Recompute Content-Length']
 
   ../src/requests/models.py::prepare_body:
@@ -2379,6 +2461,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given HTTP body data.
     Description: 
+    Description Embedding: 
     Comments: ['Check if file, fo, generator, iterator.', 'If not, run through normal process.', "Nottin' on you.", "urllib3 requires a bytes-like body. Python 2's json.dumps", 'provides this natively, but Python 3 gives a Unicode string.', 'Record the current file position before reading.', 'This will allow us to rewind a file in the event', 'of a redirect.', 'This differentiates from None, allowing us to catch', 'a failed `tell()` later when trying to rewind the body', 'Multi-part file uploads.', "Add content-type if it wasn't explicitly provided."]
 
   ../src/requests/models.py::prepare_content_length:
@@ -2396,6 +2479,7 @@ Functions:
     Decorators: None
     Docstring: Prepare Content-Length header based on request method and body
     Description: 
+    Description Embedding: 
     Comments: ['If length exists, set it. Otherwise, we fallback', 'to Transfer-Encoding: chunked.', 'Set Content-Length to 0 for methods that can have a body', "but don't provide one. (i.e. not GET or HEAD)"]
 
   ../src/requests/models.py::prepare_cookies:
@@ -2421,6 +2505,7 @@ Functions:
         to ``prepare_cookies`` will have no actual effect, unless the "Cookie"
         header is removed beforehand.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::prepare_headers:
@@ -2438,6 +2523,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given HTTP headers.
     Description: 
+    Description Embedding: 
     Comments: ['Raise exception on invalid header value.']
 
   ../src/requests/models.py::prepare_hooks:
@@ -2455,6 +2541,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given hooks.
     Description: 
+    Description Embedding: 
     Comments: ['hooks can be passed as None to the prepare method and to this', 'method. To prevent iterating over None, simply use an empty list', 'if hooks is False-y']
 
   ../src/requests/models.py::prepare_method:
@@ -2472,6 +2559,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given HTTP method.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::prepare_url:
@@ -2489,6 +2577,7 @@ Functions:
     Decorators: None
     Docstring: Prepares the given HTTP URL.
     Description: 
+    Description Embedding: 
     Comments: [': Accept objects that have string representations.', ": We're unable to blindly call unicode/str functions", ": as this will include the bytestring indicator (b'')", ': on python 3.x.', ': https://github.com/psf/requests/pull/2238', 'Remove leading whitespaces from url', "Don't do any URL preparation for non-HTTP schemes like `mailto`,", '`data` etc to work around exceptions from `url_parse`, which', 'handles RFC 3986 only.', 'Support for unicode domain names and paths.', 'In general, we want to try IDNA encoding the hostname if the string contains', 'non-ASCII characters. This allows users to automatically get the correct IDNA', 'behaviour. For strings containing only ASCII characters, we need to also verify', "it doesn't start with a wildcard (*), before allowing the unencoded hostname.", 'Carefully reconstruct the network location', "Bare domains aren't valid URLs."]
 
   ../src/requests/models.py::raise_for_status:
@@ -2506,6 +2595,7 @@ Functions:
     Decorators: None
     Docstring: Raises :class:`HTTPError`, if one occurred.
     Description: 
+    Description Embedding: 
     Comments: ['We attempt to decode utf-8 first because some servers', 'choose to localize their reason strings. If the string', "isn't utf-8, we fall back to iso-8859-1 for all other", 'encodings. (See PR #3538)']
 
   ../src/requests/models.py::register_hook:
@@ -2523,6 +2613,7 @@ Functions:
     Decorators: None
     Docstring: Properly register a hook.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/models.py::text:
@@ -2548,6 +2639,7 @@ Functions:
         non-HTTP knowledge to make a better guess at the encoding, you should
         set ``r.encoding`` appropriately before accessing this property.
     Description: 
+    Description Embedding: 
     Comments: ['Try charset from content-type', 'Fallback to auto-detected encoding.', 'Decode unicode from given encoding.', 'A LookupError is raised if the encoding was not found which could', 'indicate a misspelling or similar mistake.', '', 'A TypeError can be raised if encoding is None', '', 'So we try blindly encoding.']
 
   ../src/requests/sessions.py::close:
@@ -2565,6 +2657,7 @@ Functions:
     Decorators: None
     Docstring: Closes all adapters and as such the session
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::delete:
@@ -2586,6 +2679,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::get:
@@ -2607,6 +2701,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::get_adapter:
@@ -2626,6 +2721,7 @@ Functions:
 
         :rtype: requests.adapters.BaseAdapter
     Description: 
+    Description Embedding: 
     Comments: ['Nothing matches :-/']
 
   ../src/requests/sessions.py::get_redirect_target:
@@ -2643,6 +2739,7 @@ Functions:
     Decorators: None
     Docstring: Receives a Response. Returns a redirect URI or ``None``
     Description: 
+    Description Embedding: 
     Comments: ['Due to the nature of how requests processes redirects this method will', 'be called at least once upon the original response and at least twice', 'on each subsequent redirect response (if any).', 'If a custom mixin is used to handle this logic, it may be advantageous', 'to cache the redirect location onto the response object as a private', 'attribute.', 'Currently the underlying http module on py3 decode headers', 'in latin1, but empirical evidence suggests that latin1 is very', 'rarely used with non-ASCII characters in HTTP headers.', 'It is more likely to get UTF8 header rather than latin1.', 'This causes incorrect handling of UTF8 encoded location headers.', 'To solve this, we re-encode the location in latin1.']
 
   ../src/requests/sessions.py::head:
@@ -2664,6 +2761,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::merge_environment_settings:
@@ -2683,6 +2781,7 @@ Functions:
 
         :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: ['Gather clues from the surrounding environment.', "Set environment's proxies.", 'Look for requests environment configuration', 'and be compatible with cURL.', 'Merge all the kwargs.']
 
   ../src/requests/sessions.py::merge_hooks:
@@ -2703,6 +2802,7 @@ Functions:
     This is necessary because when request_hooks == {'response': []}, the
     merge breaks Session hooks entirely.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::merge_setting:
@@ -2722,6 +2822,7 @@ Functions:
     the explicit setting on that request, and the setting in the session. If a
     setting is a dictionary, they will be merged together using `dict_class`
     Description: 
+    Description Embedding: 
     Comments: ['Bypass if not a dictionary (e.g. verify)', 'Remove keys that are set to None. Extract keys first to avoid altering', 'the dictionary during iteration.']
 
   ../src/requests/sessions.py::mount:
@@ -2741,6 +2842,7 @@ Functions:
 
         Adapters are sorted in descending order by prefix length.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::options:
@@ -2762,6 +2864,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::patch:
@@ -2785,6 +2888,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::post:
@@ -2809,6 +2913,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::prepare_request:
@@ -2833,6 +2938,7 @@ Functions:
             session's settings.
         :rtype: requests.PreparedRequest
     Description: 
+    Description Embedding: 
     Comments: ['Bootstrap CookieJar.', 'Merge with session cookies', "Set environment's basic authentication if not explicitly set."]
 
   ../src/requests/sessions.py::put:
@@ -2856,6 +2962,7 @@ Functions:
         :param \*\*kwargs: Optional arguments that ``request`` takes.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::rebuild_auth:
@@ -2875,6 +2982,7 @@ Functions:
         request to avoid leaking credentials. This method intelligently removes
         and reapplies authentication where possible to avoid credential loss.
     Description: 
+    Description Embedding: 
     Comments: ['If we get redirected to a new host, we should strip out any', 'authentication headers.', '.netrc might have more auth for us on our new host.']
 
   ../src/requests/sessions.py::rebuild_method:
@@ -2893,6 +3001,7 @@ Functions:
     Docstring: When being redirected we may want to change the method of the request
         based on certain specs or browser behavior.
     Description: 
+    Description Embedding: 
     Comments: ['https://tools.ietf.org/html/rfc7231#section-6.4.4', 'Do what the browsers do, despite standards...', 'First, turn 302s into GETs.', 'Second, if a POST is responded to with a 301, turn it into a GET.', 'This bizarre behaviour is explained in Issue 1704.']
 
   ../src/requests/sessions.py::rebuild_proxies:
@@ -2919,6 +3028,7 @@ Functions:
 
         :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: ['urllib3 handles proxy authorization for us in the standard adapter.', 'Avoid appending this to TLS tunneled requests where it may be leaked.']
 
   ../src/requests/sessions.py::request:
@@ -2977,6 +3087,7 @@ Functions:
             If Tuple, ('cert', 'key') pair.
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: ['Create the Request.', 'Send the request.']
 
   ../src/requests/sessions.py::resolve_redirects:
@@ -2994,6 +3105,7 @@ Functions:
     Decorators: None
     Docstring: Receives a Response. Returns a generator of Responses or Requests.
     Description: 
+    Description Embedding: 
     Comments: ['keep track of history', 'Update history and keep track of redirects.', 'resp.history must ignore the original request in this loop', 'Consume socket so it can be released', 'Release the connection back into the pool.', 'Handle redirection without scheme (see: RFC 1808 Section 4)', 'Normalize url case and attach previous fragment if needed (RFC 7231 7.1.2)', "Facilitate relative 'location' headers, as allowed by RFC 7231.", "(e.g. '/path/to/resource' instead of 'http://domain.tld/path/to/resource')", 'Compliant with RFC3986, we percent encode the url.', 'https://github.com/psf/requests/issues/1084', 'https://github.com/psf/requests/issues/3490', 'Extract any cookies sent on the response to the cookiejar', "in the new request. Because we've mutated our copied prepared", "request, use the old one that we haven't yet touched.", 'Rebuild auth and proxy information.', 'A failed tell() sets `_body_position` to `object()`. This non-None', 'value ensures `rewindable` will be True, allowing us to raise an', 'UnrewindableBodyError, instead of hanging the connection.', 'Attempt to rewind consumed file-like object.', 'Override the original request.', 'extract redirect url, if any, for the next loop']
 
   ../src/requests/sessions.py::send:
@@ -3013,6 +3125,7 @@ Functions:
 
         :rtype: requests.Response
     Description: 
+    Description Embedding: 
     Comments: ['Set defaults that the hooks can utilize to ensure they always have', 'the correct parameters to reproduce the previous request.', "It's possible that users might accidentally send a Request object.", 'Guard against that specific failure case.', 'Set up variables needed for resolve_redirects and dispatching of hooks', 'Get the appropriate adapter to use', 'Start time (approximately) of the request', 'Send the request', 'Total elapsed time of the request (approximately)', 'Response manipulation hooks', 'Persist cookies', 'If the hooks create history then we want those cookies too', 'Resolve redirects if allowed.', 'Redirect resolving generator.', "Shuffle things around if there's history.", 'Insert the first (original) request at the start', 'Get the last request made', "If redirects aren't being followed, store the response on the Request for Response.next()."]
 
   ../src/requests/sessions.py::session:
@@ -3038,6 +3151,7 @@ Functions:
 
     :rtype: Session
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/sessions.py::should_strip_auth:
@@ -3055,6 +3169,7 @@ Functions:
     Decorators: None
     Docstring: Decide whether Authorization header should be removed when redirecting
     Description: 
+    Description Embedding: 
     Comments: ['Special case: allow http -> https redirect when using the standard', "ports. This isn't specified by RFC 7235, but is kept to avoid", 'breaking backwards compatibility with older versions of requests', 'that allowed any redirects on the same host.', 'Handle default port usage corresponding to scheme.', 'Standard case: root URI must match']
 
   ../src/requests/structures.py::copy:
@@ -3072,6 +3187,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/structures.py::get:
@@ -3089,6 +3205,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/structures.py::lower_items:
@@ -3106,6 +3223,7 @@ Functions:
     Decorators: None
     Docstring: Like iteritems(), but with all lowercase keys.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::add_dict_to_cookiejar:
@@ -3127,6 +3245,7 @@ Functions:
     :param cookie_dict: Dict of key/values to insert into CookieJar.
     :rtype: CookieJar
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::address_in_network:
@@ -3149,6 +3268,7 @@ Functions:
 
     :rtype: bool
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::atomic_open:
@@ -3166,6 +3286,7 @@ Functions:
     Decorators: contextlib.contextmanager
     Docstring: Write a file to the disk in an atomic fashion
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::check_header_validity:
@@ -3186,6 +3307,7 @@ Functions:
 
     :param header: tuple, in the format (name, value).
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::default_headers:
@@ -3203,6 +3325,7 @@ Functions:
     Decorators: None
     Docstring: :rtype: requests.structures.CaseInsensitiveDict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::default_user_agent:
@@ -3222,6 +3345,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::dict_from_cookiejar:
@@ -3242,6 +3366,7 @@ Functions:
     :param cj: CookieJar object to extract cookies from.
     :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::dict_to_sequence:
@@ -3259,6 +3384,7 @@ Functions:
     Decorators: None
     Docstring: Returns an internal sequence dictionary update.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::dotted_netmask:
@@ -3280,6 +3406,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::extract_zipped_paths:
@@ -3299,6 +3426,7 @@ Functions:
     archive with the location of an extracted copy of the target, or else
     just return the provided path unchanged.
     Description: 
+    Description Embedding: 
     Comments: ['this is already a valid path, no need to do anything further', 'find the first valid part of the provided path and treat that as a zip archive', 'assume the rest of the path is the name of a member in the archive', "If we don't check for an empty prefix after the split (in other words, archive remains unchanged after the split),", 'we _can_ end up in an infinite loop on a rare corner case affecting a small number of users', 'we have a valid zip archive and a valid member of that archive', 'use read + write to avoid the creating nested folders, we only want the file, avoids mkdir racing condition']
 
   ../src/requests/utils.py::from_key_val_list:
@@ -3331,6 +3459,7 @@ Functions:
 
     :rtype: OrderedDict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::get_auth_from_url:
@@ -3351,6 +3480,7 @@ Functions:
 
     :rtype: (str,str)
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::get_encoding_from_headers:
@@ -3371,6 +3501,7 @@ Functions:
     :param headers: dictionary to extract encoding from.
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['Assume UTF-8 based on RFC 4627: https://www.ietf.org/rfc/rfc4627.txt since the charset was unset']
 
   ../src/requests/utils.py::get_encodings_from_content:
@@ -3390,6 +3521,7 @@ Functions:
 
     :param content: bytestring to extract encodings from.
     Description: 
+    Description Embedding: 
     Comments: ['2266. (This"']
 
   ../src/requests/utils.py::get_environ_proxies:
@@ -3409,6 +3541,7 @@ Functions:
 
     :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::get_netrc_auth:
@@ -3426,6 +3559,7 @@ Functions:
     Decorators: None
     Docstring: Returns the Requests tuple auth for a given url from netrc.
     Description: 
+    Description Embedding: 
     Comments: ['os.path.expanduser can fail when $HOME is undefined and', 'getpwuid fails. See https://bugs.python.org/issue20164 &', 'https://github.com/psf/requests/issues/1846', "Abort early if there isn't one.", 'Strip port numbers from netloc. This weird `if...encode`` dance is', "used for Python 3.2, which doesn't support unicode literals.", 'Return with login / password', 'If there was a parsing error or a permissions issue reading the file,', "we'll just skip netrc auth unless explicitly asked to raise errors.", 'App Engine hackiness.']
 
   ../src/requests/utils.py::get_unicode_from_response:
@@ -3452,6 +3586,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['2266. (This"', 'Try charset from content-type', 'Fall back:']
 
   ../src/requests/utils.py::guess_filename:
@@ -3469,6 +3604,7 @@ Functions:
     Decorators: None
     Docstring: Tries to guess the filename of the given object.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::guess_json_utf:
@@ -3486,6 +3622,7 @@ Functions:
     Decorators: None
     Docstring: :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['JSON always starts with two ASCII characters, so detection is as', 'easy as counting the nulls and from their location and count', 'determine the encoding. Also detect a BOM, if present.', 'BOM included', 'BOM included, MS style (discouraged)', 'BOM included', '1st and 3rd are null', '2nd and 4th are null', 'Did not detect 2 valid UTF-16 ascii-range characters', 'Did not detect a valid UTF-32 ascii-range character']
 
   ../src/requests/utils.py::is_ipv4_address:
@@ -3503,6 +3640,7 @@ Functions:
     Decorators: None
     Docstring: :rtype: bool
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::is_valid_cidr:
@@ -3522,6 +3660,7 @@ Functions:
 
     :rtype: bool
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::iter_slices:
@@ -3539,6 +3678,7 @@ Functions:
     Decorators: None
     Docstring: Iterate over slices of a string.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::parse_dict_header:
@@ -3575,6 +3715,7 @@ Functions:
     :return: :class:`dict`
     :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::parse_header_links:
@@ -3596,6 +3737,7 @@ Functions:
 
     :rtype: list
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::parse_list_header:
@@ -3633,6 +3775,7 @@ Functions:
     :return: :class:`list`
     :rtype: list
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::prepend_scheme_if_needed:
@@ -3653,6 +3796,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ["A defect in urlparse determines that there isn't a netloc present in some", 'urls. We previously assumed parsing was overly cautious, and swapped the', 'netloc and path. Due to a lack of tests on the original defect, this is', 'maintained with parse_url for backwards compatibility.', "parse_url doesn't provide the netloc with auth", "so we'll add it ourselves."]
 
   ../src/requests/utils.py::requote_uri:
@@ -3675,6 +3819,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['$%&\'()*+,/:;=?@[]~"', '$&\'()*+,/:;=?@[]~"', 'Unquote only the unreserved characters', 'Then quote only illegal characters (do not quote reserved,', "unreserved, or '%')", "We couldn't unquote the given URI, so let's try quoting it, but", "there may be unquoted '%'s in the URI. We need to make sure they're", 'properly quoted so they do not cause issues elsewhere.']
 
   ../src/requests/utils.py::resolve_proxies:
@@ -3700,6 +3845,7 @@ Functions:
 
     :rtype: dict
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::rewind_body:
@@ -3718,6 +3864,7 @@ Functions:
     Docstring: Move file pointer back to its recorded starting position
     so it can be read again on redirect.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::select_proxy:
@@ -3738,6 +3885,7 @@ Functions:
     :param url: The url being for the request
     :param proxies: A dictionary of schemes or schemes and hosts to proxy URLs
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::set_environ:
@@ -3760,6 +3908,7 @@ Functions:
 
     If 'value' is None, do nothing
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::should_bypass_proxies:
@@ -3779,6 +3928,7 @@ Functions:
 
     :rtype: bool
     Description: 
+    Description Embedding: 
     Comments: ['Prioritize lowercase environment variables over uppercase', 'to keep a consistent behaviour with other http projects (curl, wget).', 'First check whether no_proxy is defined. If it is, check that the URL', "we're getting isn't in the no_proxy list.", "URLs don't always have hostnames, e.g. file:/// urls.", 'We need to check whether we match here. We need to see if we match', 'the end of the hostname, both with and without the port.', 'If no_proxy ip was defined in plain IP notation instead of cidr notation &', 'matches the IP of the index', "The URL does match something in no_proxy, so we don't want", 'to apply the proxies on this URL.', 'parsed.hostname can be `None` in cases such as a file URI.']
 
   ../src/requests/utils.py::stream_decode_response_unicode:
@@ -3796,6 +3946,7 @@ Functions:
     Decorators: None
     Docstring: Stream decodes an iterator.
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::super_len:
@@ -3813,6 +3964,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: ['urllib3 2.x+ treats all strings as utf-8 instead', 'of latin-1 (iso-8859-1) like http.client.', "AttributeError is a surprising exception, seeing as how we've just checked", "that `hasattr(o, 'fileno')`.  It happens for objects obtained via", '`Tarfile.extractfile()`, per issue 5229.', 'Having used fstat to determine the file length, we need to', 'confirm that this file was opened up in binary mode.', 'This can happen in some weird situations, such as when the file', 'is actually a special file descriptor like stdin. In this', "instance, we don't know what the length is, so set it to zero and", 'let requests chunk it instead.', 'StringIO and BytesIO have seek but no usable fileno', 'seek to end of file', 'seek back to current position to support', 'partially read file-like objects']
 
   ../src/requests/utils.py::to_key_val_list:
@@ -3844,6 +3996,7 @@ Functions:
 
     :rtype: list
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::unquote_header_value:
@@ -3866,6 +4019,7 @@ Functions:
     :param value: the header value to unquote.
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['this is not the real unquoting, but fixing this so that the', 'RFC is met will result in bugs with internet explorer and', 'probably some other browsers as well.  IE for example is', 'uploading files with "C:\\foo\\bar.txt" as filename', 'if this is a filename and the starting characters look like', 'a UNC path, then just return the value without quotes.  Using the', 'replace sequence below on a UNC path has the effect of turning', 'the leading double slash into a single slash and then', "_fix_ie_filename() doesn't work correctly.  See #458."]
 
   ../src/requests/utils.py::unquote_unreserved:
@@ -3886,6 +4040,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: None
 
   ../src/requests/utils.py::urldefragauth:
@@ -3905,6 +4060,7 @@ Functions:
 
     :rtype: str
     Description: 
+    Description Embedding: 
     Comments: ['see func:`prepend_scheme_if_needed`']
 
   compat.py::u:
@@ -3922,6 +4078,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   conftest.py::httpbin:
@@ -3939,6 +4096,7 @@ Functions:
     Decorators: pytest.fixture
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   conftest.py::httpbin_secure:
@@ -3956,6 +4114,7 @@ Functions:
     Decorators: pytest.fixture
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
   conftest.py::nosan_server:
@@ -3973,6 +4132,7 @@ Functions:
     Decorators: pytest.fixture
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: ['delay importing until the fixture in order to make it possible', 'to deselect the test via command-line when trustme is not available', 'only commonName, no subjectAltName']
 
   conftest.py::prepare_url:
@@ -3990,6 +4150,7 @@ Functions:
     Decorators: None
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: ['Issue #1483: Make sure the URL always has a trailing slash']
 
   utils.py::override_environ:
@@ -4007,6 +4168,7 @@ Functions:
     Decorators: contextlib.contextmanager
     Docstring: None
     Description: 
+    Description Embedding: 
     Comments: None
 
 APIs:
