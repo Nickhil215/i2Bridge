@@ -232,8 +232,8 @@ class RDFExporter:
       # Create URI for the class
       class_uri = self._get_component_uri("Class", f"{class_info.name}_{class_path}")
 
-      # Add class as CodeComponent type
-      self.graph.add((class_uri, RDF.type, self.CODE.CodeComponent))
+      # Add class
+      self.graph.add((class_uri, RDF.type, self.CODE.Class))
 
       # Add basic properties
       self.graph.add((class_uri, self.CODE.name, Literal(class_info.name)))
@@ -251,6 +251,8 @@ class RDFExporter:
 
       # Connect methods to the class
       for method_name, method_info in class_info.methods.items():
+        if method_name.startswith("_"):
+            continue
         method_uri = self._get_component_uri("Function", f"{method_name}_{class_path}")
         self.graph.add((class_uri, self.CODE.connectsTo, method_uri))
 
@@ -258,7 +260,7 @@ class RDFExporter:
     """Add API endpoints to the RDF graph"""
     for api_path, api_info in apis.items():
       # Skip APIs without HTTP methods
-      if api_info.http_method is None or 'UNKNOWN':
+      if api_info.http_method is None:
         continue
 
       # Create URI for the API
