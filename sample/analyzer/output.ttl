@@ -17,6 +17,8 @@ code:Class_Agent____pymdp_agent_py__Agent a code:Class ;
         code:Function_update_A____pymdp_agent_py__Agent,
         code:Function_update_B____pymdp_agent_py__Agent,
         code:Function_update_D____pymdp_agent_py__Agent ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """ 
     The Agent class, the highest-level API that wraps together processes for action, perception, and learning under active inference.
 
@@ -44,6 +46,8 @@ code:Class_Agent____pymdp_jax_agent_py__Agent a code:Class ;
         code:Function_unique_multiactions____pymdp_jax_agent_py__Agent,
         code:Function_update_empirical_prior____pymdp_jax_agent_py__Agent ;
     code:dependsOn code:Class_Module ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """ 
     The Agent class, the highest-level API that wraps together processes for action, perception, and learning under active inference.
 
@@ -63,6 +67,8 @@ code:Class_Agent____pymdp_jax_agent_py__Agent a code:Class ;
     code:name "Agent" .
 
 code:Class_Dimensions____pymdp_utils_py__Dimensions a code:Class ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """
     The Dimensions class stores all data related to the size and shape of a model.
     """ ;
@@ -79,6 +85,8 @@ code:Class_Env____pymdp_envs_env_py__Env a code:Class ;
         code:Function_reset____pymdp_envs_env_py__Env,
         code:Function_sample_action____pymdp_envs_env_py__Env,
         code:Function_step____pymdp_envs_env_py__Env ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """ 
     The Env base class, loosely-inspired by the analogous ``env`` class of the OpenAIGym framework. 
 
@@ -103,6 +111,8 @@ code:Class_PyMDPEnv____pymdp_jax_task_py__PyMDPEnv a code:Class ;
     code:connectsTo code:Function_reset____pymdp_jax_task_py__PyMDPEnv,
         code:Function_step____pymdp_jax_task_py__PyMDPEnv ;
     code:dependsOn code:Class_Module ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:isDocumented false ;
     code:name "PyMDPEnv" .
 
@@ -115,6 +125,8 @@ code:Class_TMazeEnvNullOutcome____pymdp_envs_tmaze_py__TMazeEnvNullOutcome a cod
         code:Function_state____pymdp_envs_tmaze_py__TMazeEnvNullOutcome,
         code:Function_step____pymdp_envs_tmaze_py__TMazeEnvNullOutcome ;
     code:dependsOn code:Class_Env ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """ Implementation of the 3-arm T-Maze environment where there is an additional null outcome within the cue modality, so that the agent
     doesn't get a random cue observation, but a null one, when it visits non-cue locations""" ;
     code:isDocumented true ;
@@ -132,6 +144,8 @@ code:Class_TMazeEnv____pymdp_envs_tmaze_py__TMazeEnv a code:Class ;
         code:Function_state____pymdp_envs_tmaze_py__TMazeEnv,
         code:Function_step____pymdp_envs_tmaze_py__TMazeEnv ;
     code:dependsOn code:Class_Env ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring " Implementation of the 3-arm T-Maze environment " ;
     code:isDocumented true ;
     code:name "TMazeEnv" .
@@ -146,6 +160,8 @@ code:CodeComponent_agent_py____pymdp_agent_py a code:CodeComponent ;
         code:CodeComponent_pymdp_maths,
         code:CodeComponent_pymdp_utils,
         code:CodeComponent_warnings ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "agent.py" .
 
 code:CodeComponent_agent_py____pymdp_jax_agent_py a code:CodeComponent ;
@@ -168,6 +184,8 @@ code:CodeComponent_agent_py____pymdp_jax_agent_py a code:CodeComponent ;
         code:CodeComponent_pymath,
         code:CodeComponent_typing_List,
         code:CodeComponent_typing_Optional ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "agent.py" .
 
 code:CodeComponent_algos_py____pymdp_jax_algos_py a code:CodeComponent ;
@@ -188,12 +206,16 @@ code:CodeComponent_algos_py____pymdp_jax_algos_py a code:CodeComponent ;
         code:CodeComponent_maths_log_stable,
         code:CodeComponent_typing_Any,
         code:CodeComponent_typing_List ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "algos.py" .
 
 code:CodeComponent_conf_py____docs_conf_py a code:CodeComponent ;
     code:Packages "os, sys" ;
     code:dependsOn code:CodeComponent_os,
         code:CodeComponent_sys ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "conf.py" .
 
 code:CodeComponent_control_py____pymdp_control_py a code:CodeComponent ;
@@ -212,6 +234,8 @@ code:CodeComponent_control_py____pymdp_control_py a code:CodeComponent ;
         code:CodeComponent_pymdp_maths_spm_log_single,
         code:CodeComponent_pymdp_maths_spm_wnorm,
         code:CodeComponent_pymdp_utils ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "control.py" .
 
 code:CodeComponent_control_py____pymdp_jax_control_py a code:CodeComponent ;
@@ -232,9 +256,13 @@ code:CodeComponent_control_py____pymdp_jax_control_py a code:CodeComponent ;
         code:CodeComponent_typing_List,
         code:CodeComponent_typing_Optional,
         code:CodeComponent_typing_Tuple ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "control.py" .
 
 code:CodeComponent_env_py____pymdp_envs_env_py a code:CodeComponent ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "env.py" .
 
 code:CodeComponent_fpi_py____pymdp_algos_fpi_py a code:CodeComponent ;
@@ -252,6 +280,8 @@ code:CodeComponent_fpi_py____pymdp_algos_fpi_py a code:CodeComponent ;
         code:CodeComponent_pymdp_utils_obj_array,
         code:CodeComponent_pymdp_utils_obj_array_uniform,
         code:CodeComponent_pymdp_utils_to_obj_array ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "fpi.py" .
 
 code:CodeComponent_inference_py____pymdp_inference_py a code:CodeComponent ;
@@ -265,6 +295,8 @@ code:CodeComponent_inference_py____pymdp_inference_py a code:CodeComponent ;
         code:CodeComponent_pymdp_maths_get_joint_likelihood_seq,
         code:CodeComponent_pymdp_maths_get_joint_likelihood_seq_by_modality,
         code:CodeComponent_pymdp_utils ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "inference.py" .
 
 code:CodeComponent_inference_py____pymdp_jax_inference_py a code:CodeComponent ;
@@ -279,6 +311,8 @@ code:CodeComponent_inference_py____pymdp_jax_inference_py a code:CodeComponent ;
         code:CodeComponent_jaxtyping_Array,
         code:CodeComponent_jaxtyping_ArrayLike,
         code:CodeComponent_jnp ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "inference.py" .
 
 code:CodeComponent_learning_py____pymdp_jax_learning_py a code:CodeComponent ;
@@ -289,6 +323,8 @@ code:CodeComponent_learning_py____pymdp_jax_learning_py a code:CodeComponent ;
         code:CodeComponent_jaxtyping_Array,
         code:CodeComponent_maths_dirichlet_expected_value,
         code:CodeComponent_maths_multidimensional_outer ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "learning.py" .
 
 code:CodeComponent_learning_py____pymdp_learning_py a code:CodeComponent ;
@@ -297,6 +333,8 @@ code:CodeComponent_learning_py____pymdp_learning_py a code:CodeComponent ;
         code:CodeComponent_np,
         code:CodeComponent_pymdp_maths,
         code:CodeComponent_pymdp_utils ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "learning.py" .
 
 code:CodeComponent_likelihoods_py____pymdp_jax_likelihoods_py a code:CodeComponent ;
@@ -308,6 +346,8 @@ code:CodeComponent_likelihoods_py____pymdp_jax_likelihoods_py a code:CodeCompone
         code:CodeComponent_numpyro_deterministic,
         code:CodeComponent_numpyro_plate,
         code:CodeComponent_numpyro_sample ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "likelihoods.py" .
 
 code:CodeComponent_maths_py____pymdp_jax_maths_py a code:CodeComponent ;
@@ -324,6 +364,8 @@ code:CodeComponent_maths_py____pymdp_jax_maths_py a code:CodeComponent ;
         code:CodeComponent_typing_List,
         code:CodeComponent_typing_Optional,
         code:CodeComponent_typing_Tuple ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "maths.py" .
 
 code:CodeComponent_maths_py____pymdp_maths_py a code:CodeComponent ;
@@ -333,6 +375,8 @@ code:CodeComponent_maths_py____pymdp_maths_py a code:CodeComponent ;
         code:CodeComponent_opt_einsum_contract,
         code:CodeComponent_pymdp_utils,
         code:CodeComponent_scipy_special ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "maths.py" .
 
 code:CodeComponent_mmp_py____pymdp_algos_mmp_py a code:CodeComponent ;
@@ -350,11 +394,15 @@ code:CodeComponent_mmp_py____pymdp_algos_mmp_py a code:CodeComponent ;
         code:CodeComponent_pymdp_utils_obj_array_uniform,
         code:CodeComponent_pymdp_utils_obj_array_zeros,
         code:CodeComponent_pymdp_utils_to_obj_array ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "mmp.py" .
 
 code:CodeComponent_setup_py____setup_py a code:CodeComponent ;
     code:Packages "setuptools" ;
     code:dependsOn code:CodeComponent_setuptools ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "setup.py" .
 
 code:CodeComponent_task_py____pymdp_jax_task_py a code:CodeComponent ;
@@ -372,6 +420,8 @@ code:CodeComponent_task_py____pymdp_jax_task_py a code:CodeComponent ;
         code:CodeComponent_typing_Dict,
         code:CodeComponent_typing_List,
         code:CodeComponent_typing_Optional ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "task.py" .
 
 code:CodeComponent_tmaze_py____pymdp_envs_tmaze_py a code:CodeComponent ;
@@ -380,6 +430,8 @@ code:CodeComponent_tmaze_py____pymdp_envs_tmaze_py a code:CodeComponent ;
         code:CodeComponent_pymdp_envs_Env,
         code:CodeComponent_pymdp_maths,
         code:CodeComponent_pymdp_utils ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "tmaze.py" .
 
 code:CodeComponent_utils_py____pymdp_jax_utils_py a code:CodeComponent ;
@@ -393,6 +445,8 @@ code:CodeComponent_utils_py____pymdp_jax_utils_py a code:CodeComponent ;
         code:CodeComponent_typing_Sequence,
         code:CodeComponent_typing_Tuple,
         code:CodeComponent_typing_Union ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "utils.py" .
 
 code:CodeComponent_utils_py____pymdp_utils_py a code:CodeComponent ;
@@ -403,6 +457,8 @@ code:CodeComponent_utils_py____pymdp_utils_py a code:CodeComponent ;
         code:CodeComponent_plt,
         code:CodeComponent_sns,
         code:CodeComponent_warnings ;
+    code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:name "utils.py" .
 
 code:Function_add____pymdp_jax_algos_py__add a code:Function ;
@@ -4416,6 +4472,7 @@ code:Function_variational_filtering_step____pymdp_jax_algos_py__variational_filt
 code:Tests_generate_model_params____test_test_control_jax_py__generate_model_params a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Generate random model dimensions" ;
     code:function_exe_cmd "test.test_control_jax.generate_model_params()" ;
     code:isDocumented true ;
@@ -4425,6 +4482,7 @@ code:Tests_make_A_full____test_test_message_passing_jax_py__make_A_full a code:F
     code:comments "initialize the full likelihood tensor (ALL modalities might depend on ALL factors), indices of all hidden state factors, Step 1. Extract the list of the factors that modality `m` does NOT depend on, Step 2. broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `non_dependent_factors`, to give it the full shape of `(num_obs[m], *num_states)`" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Given a reduced A matrix, `A_reduced`, and a list of dependencies between hidden state factors and observation modalities, `A_dependencies`,
     return a full A matrix, `A_full`, where `A_full[m]` is the full A matrix for modality `m`. This means all redundant conditional independencies
     between observation modalities `m` and all hidden state factors (i.e. `range(len(num_states))`) are represented as lagging dimensions in `A_full`.""" ;
@@ -4441,6 +4499,7 @@ code:Tests_make_model_configs____test_test_message_passing_jax_py__make_model_co
     code:comments "list of total numbers of hidden state factors per model, this is the number of factors that each modality depends on, this is the number of factors that each factor depends on" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "test.test_message_passing_jax.make_model_configs(source_seed, num_models)" ;
     code:hasInput code:Parameter_num_models_make_model_configs,
         code:Parameter_source_seed_make_model_configs ;
@@ -4452,6 +4511,7 @@ code:Tests_test_BMR_SPM_a____test_test_SPM_validation_py__test_BMR_SPM_a a code:
     code:comments "create BMR example from MATLAB" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Validate output of pymdp's `dirichlet_log_evidence` function 
         against output of `spm_MDP_log_evidence` from DEM in SPM (MATLAB)
         Test `a` tests the log evidence calculations across for a single
@@ -4464,6 +4524,7 @@ code:Tests_test_BMR_SPM_a____test_test_SPM_validation_py__test_BMR_SPM_a a code:
 code:Tests_test_BMR_SPM_b____test_test_SPM_validation_py__test_BMR_SPM_b a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Validate output of pymdp's `dirichlet_log_evidence` function 
         against output of `spm_MDP_log_evidence` from DEM in SPM (MATLAB). 
         Test `b` vectorizes the log evidence calculations across a _matrix_ of 
@@ -4477,6 +4538,7 @@ code:Tests_test_actinfloop_factorized____test_test_agent_py__test_actinfloop_fac
     code:comments "need to have `save_belief_hist=True` for this to work" ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test that an instance of the `Agent` class can be initialized and run
         with the fully-factorized generative model functions (including policy inference)""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_actinfloop_factorized(self)" ;
@@ -4487,6 +4549,7 @@ code:Tests_test_actinfloop_factorized____test_test_agent_py__test_actinfloop_fac
 code:Tests_test_active_inference_SPM_1a____test_test_SPM_validation_py__test_active_inference_SPM_1a a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test against output of SPM_MDP_VB_X.m
         1A - one hidden state factor, one observation modality, backwards horizon = 3, policy_len = 1, policy-conditional prior""" ;
     code:function_exe_cmd "test.test_SPM_validation.TestSPM.test_active_inference_SPM_1a(self)" ;
@@ -4498,6 +4561,7 @@ code:Tests_test_agent_demo____test_test_demos_py__test_agent_demo a code:Functio
     code:comments "transition/observation matrices characterising the generative process, initial state, number of timesteps in the simulation, initial observation -- no evidence for which arm is rewarding, neutral reward observation, and see themselves in the starting state, initial (true) state -- the reward condition is highly rewarding, and the true position in the 'start' position, update agent, update environment" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """This unit test runs a more concise version of the
         code in the `agent_demo.ipynb` tutorial Jupyter notebook and the `agent_demo` Python script 
         to make sure the code works whenever we change something.""" ;
@@ -4510,6 +4574,7 @@ code:Tests_test_agent_distributional_obs____test_test_agent_py__test_agent_distr
     code:comments "use a distributional observation, @NOTE: `utils.obj_array_from_list` will make a nested list of object arrays if you only put in a list with one vector!!! Makes me think we should remove utils.obj_array_from_list potentially, use a distributional observation, use a distributional observation, @NOTE: `utils.obj_array_from_list` will make a nested list of object arrays if you only put in a list with one vector!!! Makes me think we should remove utils.obj_array_from_list potentially, use a distributional observation" ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "VANILLA method (fixed point iteration) with one hidden state factor and one observation modality" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_distributional_obs(self)" ;
     code:hasInput code:Parameter_self_test_agent_distributional_obs ;
@@ -4519,6 +4584,7 @@ code:Tests_test_agent_distributional_obs____test_test_agent_py__test_agent_distr
 code:Tests_test_agent_infer_states____test_test_agent_py__test_agent_infer_states a code:Function ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test `infer_states` method of the Agent() class" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_infer_states(self)" ;
     code:hasInput code:Parameter_self_test_agent_infer_states ;
@@ -4528,6 +4594,7 @@ code:Tests_test_agent_infer_states____test_test_agent_py__test_agent_infer_state
 code:Tests_test_agent_init_without_control_fac_idx____test_test_agent_py__test_agent_init_without_control_fac_idx a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Initialize instance of the agent class and pass in a custom `control_fac_idx`" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_init_without_control_fac_idx(self)" ;
     code:hasInput code:Parameter_self_test_agent_init_without_control_fac_idx ;
@@ -4538,6 +4605,7 @@ code:Tests_test_agent_with_A_learning_vanilla____test_test_agent_py__test_agent_
     code:comments "3 x 3, 2-dimensional grid world, get some true transition dynamics, instantiate the agent, time horizon, sample the next state given the true transition dynamics and the sampled action, compute the predicted update to the action-conditioned slice of qB, update qA using the agent function, check if the predicted update and the actual update are the same" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unit test for updating prior Dirichlet parameters over likelihood model (pA) with the ``Agent`` class,
         in the case that you're using "vanilla" inference mode.""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_A_learning_vanilla(self)" ;
@@ -4549,6 +4617,7 @@ code:Tests_test_agent_with_A_learning_vanilla_factorized____test_test_agent_py__
     code:comments "instantiate the agent, time horizon, compute the predicted update to the action-conditioned slice of qB, update qA using the agent function, check if the predicted update and the actual update are the same" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unit test for updating prior Dirichlet parameters over likelihood model (pA) with the ``Agent`` class,
         in the case that you're using "vanilla" inference mode. In this case, we encode sparse conditional dependencies by specifying
         a non-all-to-all `A_factor_list`, that specifies the subset of hidden state factors that different modalities depend on.""" ;
@@ -4561,6 +4630,7 @@ code:Tests_test_agent_with_B_learning_vanilla____test_test_agent_py__test_agent_
     code:comments "3 x 3, 2-dimensional grid world, flat transition prior, instantiate the agent, get some true transition dynamics, time horizon, sample the next state given the true transition dynamics and the sampled action, compute the predicted update to the action-conditioned slice of qB, update qB using the agent function, check if the predicted update and the actual update are the same" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unit test for updating prior Dirichlet parameters over transition model (pB) with the ``Agent`` class,
         in the case that you're using "vanilla" inference mode.""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_B_learning_vanilla(self)" ;
@@ -4572,6 +4642,7 @@ code:Tests_test_agent_with_D_learning_MMP____test_test_agent_py__test_agent_with
     code:comments "1. Using Bayesian model average over hidden states at the edge of the inference horizon, get some random hidden state distribution, 2. Using policy-conditioned prior over hidden states at the edge of the inference horizon, get some random hidden state distribution, get beliefs about policies at the time at the beginning of the inference horizon, beliefs about hidden states at the first timestep of the inference horizon" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test updating prior Dirichlet parameters over initial hidden states (pD) with the agent class,
         in the case that you're using MMP inference and various combinations of Bayesian model averaging at the edge of the inference horizon vs. other possibilities""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_D_learning_MMP(self)" ;
@@ -4583,6 +4654,7 @@ code:Tests_test_agent_with_D_learning_vanilla____test_test_agent_py__test_agent_
     code:comments "HMM mode, 1. Test that the updating works when `save_belief_hist` is True, and you don't need to pass in the beliefs about first hidden states, get some random hidden state distribution, 2. Test that the updating works when `save_belief_hist` is False, and you do have to pass in the beliefs about first hidden states, get some random hidden state distribution, 3. Same as test #1, except with learning on only certain hidden state factors. Also passed in a different learning rate, get some random hidden state distribution" ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test updating prior Dirichlet parameters over initial hidden states (pD) with the ``Agent`` class,
         in the case that you're using "vanilla" inference mode.""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_D_learning_vanilla(self)" ;
@@ -4594,6 +4666,7 @@ code:Tests_test_agent_with_factorized_inference____test_test_agent_py__test_agen
     code:comments "list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test that an instance of the `Agent` class can be initialized with a provided `A_factor_list` and run the factorized inference algorithm. Validate
         against an equivalent `Agent` whose `A` matrix represents the full set of (redundant) conditional dependence relationships.""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_factorized_inference(self)" ;
@@ -4604,6 +4677,7 @@ code:Tests_test_agent_with_factorized_inference____test_test_agent_py__test_agen
 code:Tests_test_agent_with_input_alpha____test_test_agent_py__test_agent_with_input_alpha a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for passing in `alpha` (action sampling precision parameter) as argument to `agent.Agent()` constructor.
         Test two cases to make sure alpha scaling is working properly, by comparing entropies of action marginals 
         after computing posterior over actions in cases where alpha is passed in as two different values to the Agent constructor.""" ;
@@ -4615,6 +4689,7 @@ code:Tests_test_agent_with_input_alpha____test_test_agent_py__test_agent_with_in
 code:Tests_test_agent_with_interactions_in_B____test_test_agent_py__test_agent_with_interactions_in_B a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test that an instance of the `Agent` class can be initialized with a provided `B_factor_list` and run a time loop of active inferece" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_interactions_in_B(self)" ;
     code:hasInput code:Parameter_self_test_agent_with_interactions_in_B ;
@@ -4624,6 +4699,7 @@ code:Tests_test_agent_with_interactions_in_B____test_test_agent_py__test_agent_w
 code:Tests_test_agent_with_sampling_mode____test_test_agent_py__test_agent_with_sampling_mode a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for passing in `sampling_mode` argument to `agent.Agent()` constructor, which determines whether you sample
         from posterior marginal over actions ("marginal", default) or posterior over policies ("full")""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_agent_with_sampling_mode(self)" ;
@@ -4634,6 +4710,7 @@ code:Tests_test_agent_with_sampling_mode____test_test_agent_py__test_agent_with_
 code:Tests_test_agent_with_stochastic_action_unidimensional_control____test_test_agent_py__test_agent_with_stochastic_action_unidimensional_control a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test stochastic action sampling in case that one of the control states is one-dimensional, within the agent
         method `sample_action()`.
         Due to a call to probabilities.squeeze() in an earlier version of utils.sample(), this was throwing an
@@ -4646,6 +4723,7 @@ code:Tests_test_agent_with_stochastic_action_unidimensional_control____test_test
 code:Tests_test_deterministic_action_sampling_equal_value____test_test_control_py__test_deterministic_action_sampling_equal_value a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test `deterministic` action sampling in the case that multiple actions have the same probability. 
         Desired behavior is that actions are randomly sampled from the subset of total actions that have the highest (but equal) probability.""" ;
     code:function_exe_cmd "test.test_control.TestControl.test_deterministic_action_sampling_equal_value(self)" ;
@@ -4656,6 +4734,7 @@ code:Tests_test_deterministic_action_sampling_equal_value____test_test_control_p
 code:Tests_test_deterministic_policy_selection_equal_value____test_test_control_py__test_deterministic_policy_selection_equal_value a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test `deterministic` action sampling in the case that multiple actions have the same probability. 
         Desired behavior is that actions are randomly sampled from the subset of total actions that have the highest (but equal) probability.""" ;
     code:function_exe_cmd "test.test_control.TestControl.test_deterministic_policy_selection_equal_value(self)" ;
@@ -4667,6 +4746,7 @@ code:Tests_test_expected_utility____test_test_control_py__test_expected_utility 
     code:comments "Single timestep, Single observation modality, Create noiseless identity A matrix, Create imbalance in preferences for observations, Compute expected utility of policies, One policy entails going to state 0 two times in a row, and then state 2 at the end, Another policy entails going to state 1 three times in a row, single observation modality, create noiseless identity A matrix, create imbalance in preferences for observations, This test is designed to illustrate the emergence of planning by, using the time-integral of the expected free energy., Even though the first observation (index 0) is the most preferred, the policy, that frequents this observation the most is actually not optimal, because that policy, terminates in a less preferred state by timestep 3." ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for the expected utility function, for a simple single factor generative model 
         where there are imbalances in the preferences for different outcomes. Test for both single
         timestep policy horizons and multiple timestep policy horizons (planning)""" ;
@@ -4679,6 +4759,7 @@ code:Tests_test_factorized_fpi_multi_factor_multi_modality____test_test_fpi_py__
     code:comments "test it also without computing VFE (i.e. with `compute_vfe=False`)" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with multiple hidden state factors and multiple observation modalities.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_multi_factor_multi_modality(self)" ;
@@ -4690,6 +4771,7 @@ code:Tests_test_factorized_fpi_multi_factor_multi_modality_with_condind____test_
     code:comments "list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with multiple hidden state factors and multiple observation modalities, where some modalities only depend on some factors.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_multi_factor_multi_modality_with_condind(self)" ;
@@ -4700,6 +4782,7 @@ code:Tests_test_factorized_fpi_multi_factor_multi_modality_with_condind____test_
 code:Tests_test_factorized_fpi_multi_factor_one_modality____test_test_fpi_py__test_factorized_fpi_multi_factor_one_modality a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with multiple hidden state factors and one observation modality.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_multi_factor_one_modality(self)" ;
@@ -4711,6 +4794,7 @@ code:Tests_test_factorized_fpi_multi_factor_single_modality_with_condind____test
     code:comments "list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with multiple hidden state factors and one observation modality, where the modality only depend on some factors.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_multi_factor_single_modality_with_condind(self)" ;
@@ -4721,6 +4805,7 @@ code:Tests_test_factorized_fpi_multi_factor_single_modality_with_condind____test
 code:Tests_test_factorized_fpi_one_factor_multi_modality____test_test_fpi_py__test_factorized_fpi_one_factor_multi_modality a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with single hidden state factor and multiple observation modalities.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_one_factor_multi_modality(self)" ;
@@ -4731,6 +4816,7 @@ code:Tests_test_factorized_fpi_one_factor_multi_modality____test_test_fpi_py__te
 code:Tests_test_factorized_fpi_one_factor_one_modality____test_test_fpi_py__test_factorized_fpi_one_factor_one_modality a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the sparsified version of `run_vanilla_fpi`, named `run_vanilla_fpi_factorized`
         with single hidden state factor and single observation modality.""" ;
     code:function_exe_cmd "test.test_fpi.TestFPI.test_factorized_fpi_one_factor_one_modality(self)" ;
@@ -4742,6 +4828,7 @@ code:Tests_test_fixed_point_iteration____test_test_message_passing_jax_py__test_
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "test.test_message_passing_jax.TestMessagePassing.test_fixed_point_iteration(self)" ;
     code:hasInput code:Parameter_self_test_fixed_point_iteration ;
     code:isDocumented false ;
@@ -4751,6 +4838,7 @@ code:Tests_test_fixed_point_iteration_factorized_fullyconnected____test_test_mes
     code:comments "initialize arrays in numpy version, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the factorized version of `run_vanilla_fpi`, named `run_factorized_fpi`
         with multiple hidden state factors and multiple observation modalities.""" ;
     code:function_exe_cmd "test.test_message_passing_jax.TestMessagePassing.test_fixed_point_iteration_factorized_fullyconnected(self)" ;
@@ -4762,6 +4850,7 @@ code:Tests_test_fixed_point_iteration_factorized_sparsegraph____test_test_messag
     code:comments "jax version, create the full A matrix, where all hidden state factors are represented in the lagging dimensions of each sub-A array, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the factorized version of `run_vanilla_fpi`, named `run_factorized_fpi`
         with multiple hidden state factors and multiple observation modalities, and with sparse conditional dependence relationships between hidden states
         and observation modalities""" ;
@@ -4774,6 +4863,7 @@ code:Tests_test_fixed_point_iteration_index_observations____test_test_inference_
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version, obs = [jnp.array(o_m) for o_m in obs]" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the jax-ified version of mean-field fixed-point iteration against the original NumPy version.
         In this version there are multiple hidden state factors and multiple observation modalities.
 
@@ -4787,6 +4877,7 @@ code:Tests_test_fixed_point_iteration_multistate_multiobs____test_test_inference
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the jax-ified version of mean-field fixed-point iteration against the original numpy version.
         In this version there are multiple hidden state factors and multiple observation modalities""" ;
     code:function_exe_cmd "test.test_inference_jax.TestInferenceJax.test_fixed_point_iteration_multistate_multiobs(self)" ;
@@ -4798,6 +4889,7 @@ code:Tests_test_fixed_point_iteration_multistate_singleobs____test_test_inferenc
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the jax-ified version of mean-field fixed-point iteration against the original numpy version.
         In this version there are multiple hidden state factors and a single observation modality""" ;
     code:function_exe_cmd "test.test_inference_jax.TestInferenceJax.test_fixed_point_iteration_multistate_singleobs(self)" ;
@@ -4809,6 +4901,7 @@ code:Tests_test_fixed_point_iteration_singlestate_multiobs____test_test_inferenc
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the jax-ified version of mean-field fixed-point iteration against the original numpy version.
         In this version there is one hidden state factor and multiple observation modalities""" ;
     code:function_exe_cmd "test.test_inference_jax.TestInferenceJax.test_fixed_point_iteration_singlestate_multiobs(self)" ;
@@ -4820,6 +4913,7 @@ code:Tests_test_fixed_point_iteration_singlestate_singleobs____test_test_inferen
     code:comments "numpy version, set dF_tol to negative number so numpy version of FPI never stops early due to convergence, jax version" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the jax-ified version of mean-field fixed-point iteration against the original numpy version.
         In this version there is one hidden state factor and one observation modality""" ;
     code:function_exe_cmd "test.test_inference_jax.TestInferenceJax.test_fixed_point_iteration_singlestate_singleobs(self)" ;
@@ -4831,6 +4925,7 @@ code:Tests_test_get_expected_obs_factorized____test_test_control_jax_py__test_ge
     code:comments "need to wrap `qs` in list because `get_expected_obs_factorized` expects a list of `qs` (representing multiple timesteps), need to extract first index of `qo_validation` because `get_expected_obs_factorized` returns a list of `qo` (representing multiple timesteps)" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the jax-ified version of computations of expected observations under some hidden states and policy" ;
     code:function_exe_cmd "test.test_control_jax.TestControlJax.test_get_expected_obs_factorized(self)" ;
     code:hasInput code:Parameter_self_test_get_expected_obs_factorized ;
@@ -4841,6 +4936,7 @@ code:Tests_test_get_expected_obs_factorized____test_test_control_py__test_get_ex
     code:comments "need to wrap `qs` in list because `get_expected_obs_factorized` expects a list of `qs` (representing multiple timesteps), need to wrap `qs` in list because `get_expected_obs` expects a list of `qs` (representing multiple timesteps), need to extract first index of `qo_test` and `qo_val` because `get_expected_obs_factorized` returns a list of `qo` (representing multiple timesteps), need to wrap `qs` in list because `get_expected_obs_factorized` expects a list of `qs` (representing multiple timesteps), list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`, need to wrap `qs` in list because `get_expected_obs` expects a list of `qs` (representing multiple timesteps), need to extract first index of `qo_test` and `qo_val` because `get_expected_obs_factorized` returns a list of `qo` (representing multiple timesteps)" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test the new version of `get_expected_obs` that includes sparse dependencies of `A` array on hidden state factors (not all observation modalities depend on all hidden state factors)" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_obs_factorized(self)" ;
     code:hasInput code:Parameter_self_test_get_expected_obs_factorized ;
@@ -4850,6 +4946,7 @@ code:Tests_test_get_expected_obs_factorized____test_test_control_py__test_get_ex
 code:Tests_test_get_expected_states____test_test_control_py__test_get_expected_states a code:Function ;
     code:complexity "Complexity: 11" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `get_expected_states`" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_states(self)" ;
     code:hasInput code:Parameter_self_test_get_expected_states ;
@@ -4860,6 +4957,7 @@ code:Tests_test_get_expected_states_and_obs____test_test_control_py__test_get_ex
     code:comments "validation qs_pi, validation qo_pi, validation qs_pi, validation qo_pi, validation qs_pi, validation qo_pi" ;
     code:complexity "Complexity: 11" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) versions of `get_expected_states` and `get_expected_obs` together" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_states_and_obs(self)" ;
     code:hasInput code:Parameter_self_test_get_expected_states_and_obs ;
@@ -4870,6 +4968,7 @@ code:Tests_test_get_expected_states_interactions_multi_factor____test_test_contr
     code:comments "how to compute equivalent of `spm_dot(B[...,past_action], qs)`" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the new version of `get_expected_states` that includes `B` array inter-factor dependencies, 
         in the case where there are two hidden state factors: one that depends on itself and another that depends on both itself and the other factor.""" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_states_interactions_multi_factor(self)" ;
@@ -4881,6 +4980,7 @@ code:Tests_test_get_expected_states_interactions_multi_factor_independent____tes
     code:comments "each factor only depends on itself" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the new version of `get_expected_states` that includes `B` array inter-factor dependencies, 
         in the case where there are multiple hidden state factors, but they all only depend on themselves""" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_states_interactions_multi_factor_independent(self)" ;
@@ -4891,6 +4991,7 @@ code:Tests_test_get_expected_states_interactions_multi_factor_independent____tes
 code:Tests_test_get_expected_states_interactions_single_factor____test_test_control_py__test_get_expected_states_interactions_single_factor a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test the new version of `get_expected_states` that includes `B` array inter-factor dependencies, in case a of trivial single factor" ;
     code:function_exe_cmd "test.test_control.TestControl.test_get_expected_states_interactions_single_factor(self)" ;
     code:hasInput code:Parameter_self_test_get_expected_states_interactions_single_factor ;
@@ -4900,6 +5001,7 @@ code:Tests_test_get_expected_states_interactions_single_factor____test_test_cont
 code:Tests_test_get_model_dimensions_from_labels____test_test_wrappers_py__test_get_model_dimensions_from_labels a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests model dimension extraction from labels including observations, states and actions." ;
     code:function_exe_cmd "test.test_wrappers.TestWrappers.test_get_model_dimensions_from_labels(self)" ;
     code:hasInput code:Parameter_self_test_get_model_dimensions_from_labels ;
@@ -4910,6 +5012,7 @@ code:Tests_test_gridworld_activeinference____test_test_demos_py__test_gridworld_
     code:comments "@NOTE: we use the `spm_log_single` helper function from the `maths` sub-library of pymdp. This is a numerically stable version of np.log(), def plot_empirical_prior(B):, fig, axes = plt.subplots(3,2, figsize=(8, 10)), actions = ['UP', 'RIGHT', 'DOWN', 'LEFT', 'STAY'], count = 0, for i in range(3):, for j in range(2):, if count >= 5:, break, g = sns.heatmap(B[:,:,count], cmap=\"OrRd\", linewidth=2.5, cbar=False, ax=axes[i,j]), g.set_title(actions[count]), count += 1, fig.delaxes(axes.flatten()[5]), plt.tight_layout(), def plot_transition(B):, fig, axes = plt.subplots(2,3, figsize = (15,8)), a = list(actions.keys()), count = 0, for i in range(dim-1):, for j in range(dim):, if count >= 5:, break, g = sns.heatmap(B[:,:,count], cmap = \"OrRd\", linewidth = 2.5, cbar = False, ax = axes[i,j], xticklabels=labels, yticklabels=labels), g.set_title(a[count]), count +=1, fig.delaxes(axes.flatten()[5]), plt.tight_layout(), plot_likelihood(A), plot_transition(B), def perform_inference(likelihood, prior):, return softmax(log_stable(likelihood) + log_stable(prior)), plot_beliefs(Qs), plot_beliefs(C), initialize expected free energy at 0, loop over policy, get action entailed by the policy at timestep `t`, work out expected state, given the action, work out expected observations, given the action, get entropy, get predicted divergence, divergence = np.sum(Qo_pi * (log_stable(Qo_pi) - log_stable(C)), axis=0), compute the expected uncertainty or ambiguity, increment the expected free energy counter for the policy, using the expected free energy at this timestep, initialize the negative expected free energy, loop over every possible policy and compute the EFE of each policy, get distribution over policies, initialize probabilites of control states (convert from policies to actions), sum probabilites of control states or actions, control state specified by policy, add probability of policy, normalize action marginal, sample control from action marginal, number of time steps, n_actions = env.n_control, length of policies we consider, this function generates all possible combinations of policies, reset environment, loop over time, infer which action to take, perform action in the environment and update the environment, infer new hidden state (this is the same equation as above but with PyMDP functions), plot_beliefs(Qs, \"Beliefs (Qs) at time {}\".format(t)), self.assertEqual(np.argmax(Qs), REWARD_LOCATION) # @NOTE: This is not always true due to stochastic samplign!!!" ;
     code:complexity "Complexity: 8" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "This unit test runs the a concise version of the code in the `gridworld_tutorial_1.ipynb` tutorial notebook to make sure it works if things are changed" ;
     code:function_exe_cmd "test.test_demos.TestDemos.test_gridworld_activeinference(self)" ;
     code:hasInput code:Parameter_self_test_gridworld_activeinference ;
@@ -4920,6 +5023,7 @@ code:Tests_test_gridworld_genmodel_construction____test_test_demos_py__test_grid
     code:comments "rows are the y-coordinate, columns are the x-coordinate -- so we index into the grid we'll be visualizing using '[y, x]', plot_likelihood(A)" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "This unit test runs the a concise version of the code in the `gridworld_tutorial_1.ipynb` tutorial notebook to make sure it works if things are changed" ;
     code:function_exe_cmd "test.test_demos.TestDemos.test_gridworld_genmodel_construction(self)" ;
     code:hasInput code:Parameter_self_test_gridworld_genmodel_construction ;
@@ -4930,6 +5034,7 @@ code:Tests_test_info_gain_factorized____test_test_control_jax_py__test_info_gain
     code:comments "cue statistics, bandit statistics (mapping between reward-state (first hidden state factor) and rewards (Good vs Bad)), agent believes it's in the start state, agent believes it's in the arm-visiting state, agent believes it's in the cue-visiting state" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unit test the `calc_states_info_gain_factorized` function by qualitatively checking that in the T-Maze (contextual bandit)
         example, the state info gain is higher for the policy that leads to visiting the cue, which is higher than state info gain
         for visiting the bandit arm, which in turn is higher than the state info gain for the policy that leads to staying in the start state.""" ;
@@ -4942,6 +5047,7 @@ code:Tests_test_marginal_message_passing____test_test_message_passing_jax_py__te
     code:comments "create a version of a_deps_i where each sub-list is sorted, move observations into leading dimensions, move u_t to the rightmost axis of the array, s_t+1 to the leading dimension of the array, # create a policy-dependent sequence of B matrices, but now we store the sequence dimension (action indices) in the first dimension (0th dimension is still batch dimension)" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "test.test_message_passing_jax.TestMessagePassing.test_marginal_message_passing(self)" ;
     code:hasInput code:Parameter_self_test_marginal_message_passing ;
     code:isDocumented false ;
@@ -4950,6 +5056,7 @@ code:Tests_test_marginal_message_passing____test_test_message_passing_jax_py__te
 code:Tests_test_mmp_a____test_test_mmp_py__test_mmp_a a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing our SPM-ified version of `run_MMP` with
             1 hidden state factor & 1 outcome modality, at a random fixed
             timestep during the generative process""" ;
@@ -4962,6 +5069,7 @@ code:Tests_test_mmp_active_inference____test_test_agent_py__test_mmp_active_infe
     code:comments "just randomly generate observations at each timestep, no generative process" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests to make sure whole active inference loop works (with various past and future
         inference/policy horizons).""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_mmp_active_inference(self)" ;
@@ -4972,6 +5080,7 @@ code:Tests_test_mmp_active_inference____test_test_agent_py__test_mmp_active_infe
 code:Tests_test_mmp_b____test_test_mmp_py__test_mmp_b a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing our SPM-ified version of `run_MMP` with
         2 hidden state factors & 2 outcome modalities, at a random fixed
         timestep during the generative process""" ;
@@ -4984,6 +5093,7 @@ code:Tests_test_mmp_c____test_test_mmp_py__test_mmp_c a code:Function ;
     code:comments "prev_actions = mat_contents[\"previous_actions\"].astype(\"int64\") - 1, prev_actions = prev_actions[(max(0, curr_t - t_horizon)) :, :]" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing our SPM-ified version of `run_MMP` with
          2 hidden state factors & 2 outcome modalities, at the very first
          timestep of the generative process (boundary condition test). So there 
@@ -4996,6 +5106,7 @@ code:Tests_test_mmp_c____test_test_mmp_py__test_mmp_c a code:Function ;
 code:Tests_test_mmp_d____test_test_mmp_py__test_mmp_d a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing our SPM-ified version of `run_MMP` with
         2 hidden state factors & 2 outcome modalities, at the final
         timestep of the generative process (boundary condition test)
@@ -5010,6 +5121,7 @@ code:Tests_test_obj_array_from_list____test_test_utils_py__test_obj_array_from_l
     code:comments "make arrays with same leading dimensions. naive method trigger numpy broadcasting error." ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests `obj_array_from_list`" ;
     code:function_exe_cmd "test.test_utils.TestUtils.test_obj_array_from_list(self)" ;
     code:hasInput code:Parameter_self_test_obj_array_from_list ;
@@ -5020,6 +5132,7 @@ code:Tests_test_pA_info_gain____test_test_control_py__test_pA_info_gain a code:F
     code:comments "start with a precise initial state, single timestep, single observation modality, create noiseless identity A matrix, create prior over dirichlets such that there is a skew, in the parameters about the likelihood mapping from the, second hidden state (index 1) to observations, such that, Observation 0 is believed to be more likely than the other, conditioned on State 1., Therefore sampling observations conditioned on State 1 would afford high info gain, about parameters, for that part of the likelhood distribution." ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the pA_info_gain function. Demonstrates operation
         by manipulating shape of the Dirichlet priors over likelihood parameters
         (pA), which affects information gain for different expected observations""" ;
@@ -5032,6 +5145,7 @@ code:Tests_test_pB_info_gain____test_test_control_py__test_pB_info_gain a code:F
     code:comments "start with a precise initial state, create prior over dirichlets such that there is a skew, in the parameters about the likelihood mapping from the, hidden states to hidden states under the second action,, such that hidden state 0 is considered to be more likely than the other,, given the action in question, Therefore taking that action would yield an expected state that afford, high information gain about that part of the likelihood distribution., , single timestep" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the pB_info_gain function. Demonstrates operation
         by manipulating shape of the Dirichlet priors over likelihood parameters
         (pB), which affects information gain for different states""" ;
@@ -5043,6 +5157,7 @@ code:Tests_test_pB_info_gain____test_test_control_py__test_pB_info_gain a code:F
 code:Tests_test_prune_likelihoods____test_test_learning_py__test_prune_likelihoods a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test removing hidden state factor levels and/or observation levels from the likelihood arrays 
         of a generative model, using the `_prune_A` and `_prune_B` functions of the `learning` module""" ;
     code:function_exe_cmd "test.test_learning.TestLearning.test_prune_likelihoods(self)" ;
@@ -5054,6 +5169,7 @@ code:Tests_test_prune_prior____test_test_learning_py__test_prune_prior a code:Fu
     code:comments "this could either be 4 hidden state levels, or 4 observation levels, this could either be 4 hidden state levels, or 4 observation levels, this could either be 4 hidden state levels, or 4 observation levels" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test removing hidden state factor levels and/or observation levels from the priors vectors
         of a generative model, using the `_prune_prior` function of the `learning` module""" ;
     code:function_exe_cmd "test.test_learning.TestLearning.test_prune_prior(self)" ;
@@ -5064,6 +5180,7 @@ code:Tests_test_prune_prior____test_test_learning_py__test_prune_prior a code:Fu
 code:Tests_test_reset_agent_MMP_wBMA____test_test_agent_py__test_reset_agent_MMP_wBMA a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Ensure the `reset` method of Agent() using the new refactor is working as intended, 
         using the `MMP` argument to `inference_algo`, and `use_BMA` equal to True""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_reset_agent_MMP_wBMA(self)" ;
@@ -5074,6 +5191,7 @@ code:Tests_test_reset_agent_MMP_wBMA____test_test_agent_py__test_reset_agent_MMP
 code:Tests_test_reset_agent_MMP_wPSP____test_test_agent_py__test_reset_agent_MMP_wPSP a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Ensure the `reset` method of Agent() using the new refactor is working as intended, 
         using the `MMP` argument to `inference_algo`, and `policy-separated prior` equal to True""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_reset_agent_MMP_wPSP(self)" ;
@@ -5084,6 +5202,7 @@ code:Tests_test_reset_agent_MMP_wPSP____test_test_agent_py__test_reset_agent_MMP
 code:Tests_test_reset_agent_VANILLA____test_test_agent_py__test_reset_agent_VANILLA a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Ensure the `reset` method of Agent() using the new refactor is working as intended, 
         using the `VANILLA` argument to `inference_algo`""" ;
     code:function_exe_cmd "test.test_agent.TestAgent.test_reset_agent_VANILLA(self)" ;
@@ -5095,6 +5214,7 @@ code:Tests_test_sample_action____test_test_control_py__test_sample_action a code
     code:comments "One policy entails going to state 0 two times in a row, and then state 2 at the end, Another policy entails going to state 1 three times in a row, create noiseless identity A matrix, create imbalance in preferences for observations, This test is designed to illustrate the emergence of planning by, using the time-integral of the expected free energy., Even though the first observation (index 0) is the most preferred, the policy, that frequents this observation the most is actually not optimal, because that policy, terminates in a less preferred state by timestep 3." ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `sample_action`" ;
     code:function_exe_cmd "test.test_control.TestControl.test_sample_action(self)" ;
     code:hasInput code:Parameter_self_test_sample_action ;
@@ -5104,6 +5224,7 @@ code:Tests_test_sample_action____test_test_control_py__test_sample_action a code
 code:Tests_test_sample_policy____test_test_control_py__test_sample_policy a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the action selection function where policies are sampled directly from posterior over policies `q_pi`" ;
     code:function_exe_cmd "test.test_control.TestControl.test_sample_policy(self)" ;
     code:hasInput code:Parameter_self_test_sample_policy ;
@@ -5114,6 +5235,7 @@ code:Tests_test_state_info_gain____test_test_control_py__test_state_info_gain a 
     code:comments "start with a precise initial state, add some uncertainty into the consequences of the second policy, which, leads to increased epistemic value of observations, in case of pursuing, that policy -- this of course depends on a precise observation likelihood model, \"noise-ify\" the consequences of the 1-th action, single timestep, single observation modality, create noiseless identity A matrix, store the Bayesian surprise / epistemic values of states here (AKA state info gain), now we 'undo' the epistemic bonus of the second policy by making the A matrix, totally ambiguous; thus observations cannot resolve uncertainty about hidden states., In this case, uncertainty in the posterior beliefs induced by Policy 1 doesn't tip the balance, of epistemic value, because uncertainty is irresolveable either way., create noiseless identity A matrix, add some uncertainty into the consequences of the both policies, \"noise-ify\" the consequences of the 0-th action, but to a lesser extent than the 1-th action, \"noise-ify\" the consequences of the 1-th action, Although in the presence of a precise likelihood mapping,, Policy 1 would be preferred (due to higher resolve-able uncertainty, introduced by a noisier action-dependent B matrix),, if the expected observation likelihood of being in state 1 (the most likely consequence of Policy 1) is not precise, then, Policy 0 (which has more probability loaded over state 0) will have more resolveable uncertainty, due to the, higher precision of the A matrix over that column (column 0, which is identity). Even though the expected density over states, is less noisy for policy 0." ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test the states_info_gain function. 
         Function is tested by manipulating uncertainty in the likelihood matrices (A or B)
         in a ways that alternatively change the resolvability of uncertainty
@@ -5128,6 +5250,7 @@ code:Tests_test_state_info_gain_factorized____test_test_control_py__test_state_i
     code:comments "cue statistics, bandit statistics (mapping between reward-state (first hidden state factor) and rewards (Good vs Bad)), agent believes it's in the start state, agent believes it's in the arm-visiting state, agent believes it's in the cue-visiting state" ;
     code:complexity "Complexity: 11" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Unit test the `calc_states_info_gain_factorized` function by qualitatively checking that in the T-Maze (contextual bandit)
         example, the state info gain is higher for the policy that leads to visiting the cue, which is higher than state info gain
         for visiting the bandit arm, which in turn is higher than the state info gain for the policy that leads to staying in the start state.""" ;
@@ -5139,6 +5262,7 @@ code:Tests_test_state_info_gain_factorized____test_test_control_py__test_state_i
 code:Tests_test_stochastic_action_unidimensional_control____test_test_control_py__test_stochastic_action_unidimensional_control a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test stochastic action sampling in case that one of the control states is one-dimensional.
         Due to a call to probabilities.squeeze() in an earlier version of utils.sample(), this was throwing an
         error due to the inability to use np.random.multinomial on an array with undefined length (an 'unsized' array)""" ;
@@ -5151,6 +5275,7 @@ code:Tests_test_temporal_C_matrix____test_test_control_py__test_temporal_C_matri
     code:comments "C vectors for modalities 0 is time-dependent, C vectors for modalities 1 is time-independent" ;
     code:complexity "Complexity: 12" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Unit-tests for preferences that change over time" ;
     code:function_exe_cmd "test.test_control.TestControl.test_temporal_C_matrix(self)" ;
     code:hasInput code:Parameter_self_test_temporal_C_matrix ;
@@ -5161,6 +5286,7 @@ code:Tests_test_tmaze_demo____test_test_demos_py__test_tmaze_demo a code:Functio
     code:comments "probabilities used in the original SPM T-maze demo, plot_likelihood(A_gp[1][:,:,0],'Reward Right'), plot_likelihood(B_gp[1][:,:,0],'Reward Condition Transitions'), make a copy of the true observation likelihood to initialize the observation model, make a copy of the true transition likelihood to initialize the transition model, plot_beliefs(agent.D[0],\"Beliefs about initial location\"), they like reward, they don't like loss, number of timesteps, reset the environment and get an initial observation, these are useful for displaying read-outs during the loop over time, if the reward condition is Reward on RIGHT, this tests that the cue observation is 'Cue Right' in case of 'Reward on Right' condition, if the reward condition is Reward on RIGHT, this tests that the cue observation is 'Cue Left' in case of 'Reward on Left' condition" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "This unit test runs the a concise version of the code in the `tmaze_demo.ipynb` tutorial notebook to make sure it works if things are changed" ;
     code:function_exe_cmd "test.test_demos.TestDemos.test_tmaze_demo(self)" ;
     code:hasInput code:Parameter_self_test_tmaze_demo ;
@@ -5171,6 +5297,7 @@ code:Tests_test_tmaze_learning_demo____test_test_demos_py__test_tmaze_learning_d
     code:comments "the 'true' reward probabilities, this is a list of the indices of the hidden state factors that are controllable, this is a list of the modalities that you want to be learn-able, number of timesteps, reset the environment and get an initial observation, make sure they are learning the reward contingencies in the right general direction, in case the reward condition is 'Reward on RIGHT', in case the reward condition is 'Reward on LEFT'" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "This unit test runs the a concise version of the code in the `tmaze_demo_learning.ipynb` tutorial notebook to make sure it works if things are changed" ;
     code:function_exe_cmd "test.test_demos.TestDemos.test_tmaze_learning_demo(self)" ;
     code:hasInput code:Parameter_self_test_tmaze_learning_demo ;
@@ -5181,6 +5308,7 @@ code:Tests_test_update_observation_likelihood_factorized____test_test_learning_j
     code:comments "create numpy arrays to test numpy version of learning, create A matrix initialization (expected initial value of P(o|s, A)) and prior over A (pA), create random observations, create random state posterior, run numpy version of learning" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing JAX-ified version of updating Dirichlet posterior over observation likelihood parameters (qA is posterior, pA is prior, and A is expectation
         of likelihood wrt to current posterior over A, i.e. $A = E_{Q(A)}[P(o|s,A)]$.
 
@@ -5194,6 +5322,7 @@ code:Tests_test_update_observation_likelihood_fullyconnected____test_test_learni
     code:comments "create numpy arrays to test numpy version of learning, create A matrix initialization (expected initial value of P(o|s, A)) and prior over A (pA), create random observations, create random state posterior, run numpy version of learning" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Testing JAX-ified version of updating Dirichlet posterior over observation likelihood parameters (qA is posterior, pA is prior, and A is expectation
         of likelihood wrt to current posterior over A, i.e. $A = E_{Q(A)}[P(o|s,A)]$.
 
@@ -5207,6 +5336,7 @@ code:Tests_test_update_pA_diff_observation_formats____test_test_learning_py__tes
     code:comments "multiple observation modalities, now do the same for case of single modality" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that observation is stored in various formats""" ;
     code:function_exe_cmd "test.test_learning.TestLearning.test_update_pA_diff_observation_formats(self)" ;
@@ -5218,6 +5348,7 @@ code:Tests_test_update_pA_factorized____test_test_learning_py__test_update_pA_fa
     code:comments "sample some positive learning rate" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for `learning.update_obs_likelihood_dirichlet_factorized`, which is the learning function updating prior Dirichlet parameters over the sensory likelihood (pA) 
         in the case that the generative model is sparse and only some modalities depend on some hidden state factors""" ;
     code:function_exe_cmd "test.test_learning.TestLearning.test_update_pA_factorized(self)" ;
@@ -5229,6 +5360,7 @@ code:Tests_test_update_pA_multi_factor_all____test_test_learning_py__test_update
     code:comments "single observation modality, multiple observation modalities" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that all observation modalities are updated and the generative model 
         has multiple hidden state factors""" ;
@@ -5241,6 +5373,7 @@ code:Tests_test_update_pA_multi_factor_one_modality____test_test_learning_py__te
     code:comments "multiple observation modalities" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that ONE observation modalities is updated and the generative model 
         has multiple hidden state factors""" ;
@@ -5253,6 +5386,7 @@ code:Tests_test_update_pA_multi_factor_some_modalities____test_test_learning_py_
     code:comments "multiple observation modalities" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that SOME observation modalities are updated and the generative model 
         has multiple hidden state factors""" ;
@@ -5264,6 +5398,7 @@ code:Tests_test_update_pA_multi_factor_some_modalities____test_test_learning_py_
 code:Tests_test_update_pA_single_factor_all____test_test_learning_py__test_update_pA_single_factor_all a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that all observation modalities are updated and the generative model 
         has a single hidden state factor""" ;
@@ -5275,6 +5410,7 @@ code:Tests_test_update_pA_single_factor_all____test_test_learning_py__test_updat
 code:Tests_test_update_pA_single_factor_one_modality____test_test_learning_py__test_update_pA_single_factor_one_modality a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that ONE observation modalities is updated and the generative model 
         has a single hidden state factor""" ;
@@ -5286,6 +5422,7 @@ code:Tests_test_update_pA_single_factor_one_modality____test_test_learning_py__t
 code:Tests_test_update_pA_single_factor_some_modalities____test_test_learning_py__test_update_pA_single_factor_some_modalities a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over sensory likelihood (pA)
         in the case that some observation modalities are updated and the generative model 
         has a single hidden state factor""" ;
@@ -5298,6 +5435,7 @@ code:Tests_test_update_pB_interactions____test_test_learning_py__test_update_pB_
     code:comments "sample some positive learning rate, sample some positive learning rate" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for `learning.update_state_likelihood_dirichlet_factorized`, which is the learning function updating prior Dirichlet parameters over the transition likelihood (pB) 
         in the case that there are allowable interactions between hidden state factors, i.e. the dynamics of factor `f` may depend on more than just its control factor and its own state.""" ;
     code:function_exe_cmd "test.test_learning.TestLearning.test_update_pB_interactions(self)" ;
@@ -5308,6 +5446,7 @@ code:Tests_test_update_pB_interactions____test_test_learning_py__test_update_pB_
 code:Tests_test_update_pB_multi_factor_no_actions_all_factors____test_test_learning_py__test_update_pB_multi_factor_no_actions_all_factors a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are no actions. All factors are updated.""" ;
@@ -5319,6 +5458,7 @@ code:Tests_test_update_pB_multi_factor_no_actions_all_factors____test_test_learn
 code:Tests_test_update_pB_multi_factor_no_actions_one_factor____test_test_learning_py__test_update_pB_multi_factor_no_actions_one_factor a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are no actions. One factor is updated""" ;
@@ -5330,6 +5470,7 @@ code:Tests_test_update_pB_multi_factor_no_actions_one_factor____test_test_learni
 code:Tests_test_update_pB_multi_factor_no_actions_some_factors____test_test_learning_py__test_update_pB_multi_factor_no_actions_some_factors a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are no actions. Some factors are updated.""" ;
@@ -5341,6 +5482,7 @@ code:Tests_test_update_pB_multi_factor_no_actions_some_factors____test_test_lear
 code:Tests_test_update_pB_multi_factor_some_controllable_some_factors____test_test_learning_py__test_update_pB_multi_factor_some_controllable_some_factors a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, some of which 
         are controllable. Some factors are updated.""" ;
@@ -5352,6 +5494,7 @@ code:Tests_test_update_pB_multi_factor_some_controllable_some_factors____test_te
 code:Tests_test_update_pB_multi_factor_with_actions_all_factors____test_test_learning_py__test_update_pB_multi_factor_with_actions_all_factors a code:Function ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are actions. All factors are updated""" ;
@@ -5363,6 +5506,7 @@ code:Tests_test_update_pB_multi_factor_with_actions_all_factors____test_test_lea
 code:Tests_test_update_pB_multi_factor_with_actions_one_factor____test_test_learning_py__test_update_pB_multi_factor_with_actions_one_factor a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are actions. One factor is updated""" ;
@@ -5374,6 +5518,7 @@ code:Tests_test_update_pB_multi_factor_with_actions_one_factor____test_test_lear
 code:Tests_test_update_pB_multi_factor_with_actions_some_factors____test_test_learning_py__test_update_pB_multi_factor_with_actions_some_factors a code:Function ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that there are mulitple hidden state factors, and there 
         are actions. Some factors are updated""" ;
@@ -5386,6 +5531,7 @@ code:Tests_test_update_pB_single_factor_no_actions____test_test_learning_py__tes
     code:comments "this is how we encode the fact that there aren't any actions" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that the one and only hidden state factor is updated, and there 
         are no actions.""" ;
@@ -5397,6 +5543,7 @@ code:Tests_test_update_pB_single_factor_no_actions____test_test_learning_py__tes
 code:Tests_test_update_pB_single_factor_with_actions____test_test_learning_py__test_update_pB_single_factor_with_actions a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test for updating prior Dirichlet parameters over transition likelihood (pB)
         in the case that the one and only hidden state factor is updated, and there 
         are actions.""" ;
@@ -5409,6 +5556,7 @@ code:Tests_test_update_pD____test_test_learning_py__test_update_pD a code:Functi
     code:comments "1. Single hidden state factor, 2. Multiple hidden state factors, 3. Multiple hidden state factors, only some learned" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Test updating prior Dirichlet parameters over initial hidden states (pD). 
         Tests different cases
         1. Multiple vs. single hidden state factor
@@ -5421,6 +5569,7 @@ code:Tests_test_update_pD____test_test_learning_py__test_update_pD a code:Functi
 code:Tests_test_update_posterior_policies_factorized____test_test_control_py__test_update_posterior_policies_factorized a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test new update_posterior_policies_factorized function, just to make sure it runs through and outputs correct shapes" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_factorized(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_factorized ;
@@ -5430,6 +5579,7 @@ code:Tests_test_update_posterior_policies_factorized____test_test_control_py__te
 code:Tests_test_update_posterior_policies_pA_infogain____test_test_control_py__test_update_posterior_policies_pA_infogain a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `update_posterior_policies`, using only the information gain (about likelihood parameters) component of the expected free energy" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_pA_infogain(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_pA_infogain ;
@@ -5439,6 +5589,7 @@ code:Tests_test_update_posterior_policies_pA_infogain____test_test_control_py__t
 code:Tests_test_update_posterior_policies_pB_infogain____test_test_control_py__test_update_posterior_policies_pB_infogain a code:Function ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `update_posterior_policies`, using only the information gain (about transition likelihood parameters) component of the expected free energy" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_pB_infogain(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_pB_infogain ;
@@ -5448,6 +5599,7 @@ code:Tests_test_update_posterior_policies_pB_infogain____test_test_control_py__t
 code:Tests_test_update_posterior_policies_states_infogain____test_test_control_py__test_update_posterior_policies_states_infogain a code:Function ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `update_posterior_policies`, using only the information gain (about states) component of the expected free energy" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_states_infogain(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_states_infogain ;
@@ -5457,6 +5609,7 @@ code:Tests_test_update_posterior_policies_states_infogain____test_test_control_p
 code:Tests_test_update_posterior_policies_utility____test_test_control_py__test_update_posterior_policies_utility a code:Function ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored (Categorical-less) version of `update_posterior_policies`, using only the expected utility component of the expected free energy" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_utility(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_utility ;
@@ -5466,6 +5619,7 @@ code:Tests_test_update_posterior_policies_utility____test_test_control_py__test_
 code:Tests_test_update_posterior_policies_withE_vector____test_test_control_py__test_update_posterior_policies_withE_vector a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Test update posterior policies in the case that there is a prior over policies" ;
     code:function_exe_cmd "test.test_control.TestControl.test_update_posterior_policies_withE_vector(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_policies_withE_vector ;
@@ -5476,6 +5630,7 @@ code:Tests_test_update_posterior_states____test_test_inference_py__test_update_p
     code:comments "validate with a quick n' dirty implementation of FPI, initialize posterior and log prior, which axes to sum out" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring "Tests the refactored version of `update_posterior_states`" ;
     code:function_exe_cmd "test.test_inference.TestInference.test_update_posterior_states(self)" ;
     code:hasInput code:Parameter_self_test_update_posterior_states ;
@@ -5486,6 +5641,7 @@ code:Tests_test_update_posterior_states_factorized____test_test_inference_py__te
     code:comments "list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the version of `update_posterior_states` where an `mb_dict` is provided as an argument to factorize
         the fixed-point iteration (FPI) algorithm.""" ;
     code:function_exe_cmd "test.test_inference.TestInference.test_update_posterior_states_factorized(self)" ;
@@ -5497,6 +5653,7 @@ code:Tests_test_update_posterior_states_factorized_noVFE_compute____test_test_in
     code:comments "list of the factors that modality `m` does not depend on, broadcast or tile the reduced A matrix (`A_reduced`) along the dimensions of corresponding to `other_factors`" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the version of `update_posterior_states` where an `mb_dict` is provided as an argument to factorize
         the fixed-point iteration (FPI) algorithm.
 
@@ -5509,6 +5666,7 @@ code:Tests_test_update_posterior_states_factorized_noVFE_compute____test_test_in
 code:Tests_test_update_posterior_states_factorized_single_factor____test_test_inference_py__test_update_posterior_states_factorized_single_factor a code:Function ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:docstring """Tests the version of `update_posterior_states` where an `mb_dict` is provided as an argument to factorize
         the fixed-point iteration (FPI) algorithm. Single factor version.""" ;
     code:function_exe_cmd "test.test_inference.TestInference.test_update_posterior_states_factorized_single_factor(self)" ;
@@ -5520,6 +5678,7 @@ code:Tests_test_vmappable_agent_methods____test_test_agent_jax_py__test_vmappabl
     code:comments "validate that the method broadcasted properly" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
+    code:descriptionEmbedding "DescriptionEmbedding: " ;
     code:function_exe_cmd "test.test_agent_jax.TestAgentJax.test_vmappable_agent_methods(self)" ;
     code:hasInput code:Parameter_self_test_vmappable_agent_methods ;
     code:isDocumented false ;
