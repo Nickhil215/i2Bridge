@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_j2alhqj_/tests
+Package: /tmp/git_analyzer_dupwe5fc/tests
 
 Metrics:
 - Total Files: 36
@@ -1206,7 +1206,7 @@ Functions:
     Module Path: ../src/requests/adapters.py
     Signature: add_headers(self, request, **kwargs):
     Packages: ['os']
-    Imports: []
+    Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError']
     function_exe_cmd: requests.adapters.HTTPAdapter.add_headers()
     Arguments: ['self', 'request']
     Returns: None
@@ -1235,8 +1235,8 @@ Functions:
     name: build_connection_pool_key_attributes
     Module Path: ../src/requests/adapters.py
     Signature: build_connection_pool_key_attributes(self, request, verify, cert=None):
-    Packages: ['os', 'urllib3', 'auth', 'models', 'ssl']
-    Imports: []
+    Packages: ['urllib3', 'ssl', 'os', 'models', 'auth']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import ssl', 'import os.path', 'from models import models.Response', 'from models import models.PreparedRequest', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.build_connection_pool_key_attributes()
     Arguments: ['self', 'request', 'verify', 'cert']
     Returns: None
@@ -1301,8 +1301,8 @@ Functions:
     name: build_response
     Module Path: ../src/requests/adapters.py
     Signature: build_response(self, req, resp):
-    Packages: ['os', 'urllib3', 'cookies']
-    Imports: []
+    Packages: ['urllib3', 'os', 'cookies']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from cookies import cookies.extract_cookies_to_jar']
     function_exe_cmd: requests.adapters.HTTPAdapter.build_response()
     Arguments: ['self', 'req', 'resp']
     Returns: None
@@ -1330,7 +1330,7 @@ Functions:
     Module Path: ../src/requests/adapters.py
     Signature: cert_verify(self, conn, url, verify, cert):
     Packages: ['os', 'urllib3']
-    Imports: []
+    Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager']
     function_exe_cmd: requests.adapters.HTTPAdapter.cert_verify()
     Arguments: ['self', 'conn', 'url', 'verify', 'cert']
     Returns: None
@@ -1360,7 +1360,7 @@ Functions:
     Module Path: ../src/requests/adapters.py
     Signature: close(self):
     Packages: ['os']
-    Imports: []
+    Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError']
     function_exe_cmd: requests.adapters.HTTPAdapter.close()
     Arguments: ['self']
     Returns: None
@@ -1383,8 +1383,8 @@ Functions:
     name: get_connection
     Module Path: ../src/requests/adapters.py
     Signature: get_connection(self, url, proxies=None):
-    Packages: ['os', 'warnings', 'urllib3']
-    Imports: []
+    Packages: ['urllib3', 'os', 'warnings']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'import warnings']
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection()
     Arguments: ['self', 'url', 'proxies']
     Returns: None
@@ -1413,8 +1413,8 @@ Functions:
     name: get_connection_with_tls_context
     Module Path: ../src/requests/adapters.py
     Signature: get_connection_with_tls_context(self, request, verify, proxies=None, cert=None):
-    Packages: ['os', 'urllib3', 'auth']
-    Imports: []
+    Packages: ['urllib3', 'os', 'auth']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection_with_tls_context()
     Arguments: ['self', 'request', 'verify', 'proxies', 'cert']
     Returns: None
@@ -1451,8 +1451,8 @@ Functions:
     name: init_poolmanager
     Module Path: ../src/requests/adapters.py
     Signature: init_poolmanager(
-    Packages: ['os', 'urllib3']
-    Imports: []
+    Packages: ['urllib3', 'os']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path']
     function_exe_cmd: requests.adapters.HTTPAdapter.init_poolmanager()
     Arguments: ['self', 'connections', 'maxsize', 'block']
     Returns: None
@@ -1481,8 +1481,8 @@ Functions:
     name: proxy_headers
     Module Path: ../src/requests/adapters.py
     Signature: proxy_headers(self, proxy):
-    Packages: ['os', 'urllib3', 'auth']
-    Imports: []
+    Packages: ['urllib3', 'os', 'auth']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_headers()
     Arguments: ['self', 'proxy']
     Returns: None
@@ -1512,8 +1512,8 @@ Functions:
     name: proxy_manager_for
     Module Path: ../src/requests/adapters.py
     Signature: proxy_manager_for(self, proxy, **proxy_kwargs):
-    Packages: ['os', 'urllib3', 'auth']
-    Imports: []
+    Packages: ['urllib3', 'os', 'auth']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_manager_for()
     Arguments: ['self', 'proxy']
     Returns: None
@@ -1543,7 +1543,7 @@ Functions:
     Module Path: ../src/requests/adapters.py
     Signature: request_url(self, request, proxies):
     Packages: ['os', 'urllib3', 'auth']
-    Imports: []
+    Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.request_url()
     Arguments: ['self', 'request', 'proxies']
     Returns: None
@@ -1574,8 +1574,8 @@ Functions:
     name: send
     Module Path: ../src/requests/adapters.py
     Signature: send(
-    Packages: ['os', 'urllib3']
-    Imports: []
+    Packages: ['urllib3', 'os']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path']
     function_exe_cmd: requests.adapters.HTTPAdapter.send()
     Arguments: ['self', 'request', 'stream', 'timeout', 'verify', 'cert', 'proxies']
     Returns: None
@@ -1609,7 +1609,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: delete(url, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.delete()
     Arguments: ['url']
     Returns: None
@@ -1635,7 +1635,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: get(url, params=None, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.get()
     Arguments: ['url', 'params']
     Returns: None
@@ -1663,7 +1663,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: head(url, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.head()
     Arguments: ['url']
     Returns: None
@@ -1691,7 +1691,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: options(url, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.options()
     Arguments: ['url']
     Returns: None
@@ -1717,7 +1717,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: patch(url, data=None, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.patch()
     Arguments: ['url', 'data']
     Returns: None
@@ -1746,7 +1746,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: post(url, data=None, json=None, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.post()
     Arguments: ['url', 'data', 'json']
     Returns: None
@@ -1775,7 +1775,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: put(url, data=None, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.put()
     Arguments: ['url', 'data']
     Returns: None
@@ -1804,7 +1804,7 @@ Functions:
     Module Path: ../src/requests/api.py
     Signature: request(method, url, **kwargs):
     Packages: ['']
-    Imports: []
+    Imports: ['from  import .sessions']
     function_exe_cmd: requests.api.request()
     Arguments: ['method', 'url']
     Returns: None
@@ -1861,8 +1861,8 @@ Functions:
     name: build_digest_header
     Module Path: ../src/requests/auth.py
     Signature: build_digest_header(self, method, url):
-    Packages: ['hashlib', 'os', 're', 'time']
-    Imports: []
+    Packages: ['re', 'hashlib', 'time', 'os']
+    Imports: ['import re', 'import threading', 'import hashlib', 'import time', 'import os']
     function_exe_cmd: requests.auth.HTTPDigestAuth.build_digest_header()
     Arguments: ['self', 'method', 'url']
     Returns: None
@@ -1882,8 +1882,8 @@ Functions:
     name: handle_401
     Module Path: ../src/requests/auth.py
     Signature: handle_401(self, r, **kwargs):
-    Packages: ['os', 're', 'cookies']
-    Imports: []
+    Packages: ['re', 'os', 'cookies']
+    Imports: ['import re', 'import threading', 'import os', 'from cookies import cookies.extract_cookies_to_jar']
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_401()
     Arguments: ['self', 'r']
     Returns: None
@@ -1906,7 +1906,7 @@ Functions:
     Module Path: ../src/requests/auth.py
     Signature: handle_redirect(self, r, **kwargs):
     Packages: ['re']
-    Imports: []
+    Imports: ['import re', 'import threading']
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_redirect()
     Arguments: ['self', 'r']
     Returns: None
@@ -1926,8 +1926,8 @@ Functions:
     name: init_per_thread_state
     Module Path: ../src/requests/auth.py
     Signature: init_per_thread_state(self):
-    Packages: ['os', 're']
-    Imports: []
+    Packages: ['re', 'os']
+    Imports: ['import re', 'import threading', 'import os']
     function_exe_cmd: requests.auth.HTTPDigestAuth.init_per_thread_state()
     Arguments: ['self']
     Returns: None
@@ -2017,7 +2017,7 @@ Functions:
     Module Path: ../src/requests/cookies.py
     Signature: copy(self):
     Packages: ['copy']
-    Imports: []
+    Imports: ['import copy']
     function_exe_cmd: requests.cookies.RequestsCookieJar.copy()
     Arguments: ['self']
     Returns: None
@@ -2038,7 +2038,7 @@ Functions:
     Module Path: ../src/requests/cookies.py
     Signature: create_cookie(name, value, **kwargs):
     Packages: ['time']
-    Imports: []
+    Imports: ['import time']
     function_exe_cmd: requests.cookies.create_cookie()
     Arguments: ['name', 'value']
     Returns: None
@@ -2599,8 +2599,8 @@ Functions:
     name: morsel_to_cookie
     Module Path: ../src/requests/cookies.py
     Signature: morsel_to_cookie(morsel):
-    Packages: ['calendar', 'time']
-    Imports: []
+    Packages: ['time', 'calendar']
+    Imports: ['import time', 'import calendar']
     function_exe_cmd: requests.cookies.morsel_to_cookie()
     Arguments: ['morsel']
     Returns: None
@@ -2754,7 +2754,7 @@ Functions:
     Module Path: ../src/requests/cookies.py
     Signature: update(self, other):
     Packages: ['copy']
-    Imports: []
+    Imports: ['import copy']
     function_exe_cmd: requests.cookies.RequestsCookieJar.update()
     Arguments: ['self', 'other']
     Returns: None
@@ -2798,8 +2798,8 @@ Functions:
     name: info
     Module Path: ../src/requests/help.py
     Signature: info():
-    Packages: ['platform', 'ssl', 'sys', 'idna', 'urllib3', '', 'charset_normalizer', 'chardet', 'cryptography', 'OpenSSL']
-    Imports: []
+    Packages: ['', 'platform', 'sys', 'urllib3', 'charset_normalizer', 'chardet', 'ssl', 'OpenSSL', 'cryptography', 'idna']
+    Imports: ['import json', 'import platform', 'import ssl', 'import sys', 'import idna', 'import urllib3', 'from  import .__version__ as requests_version', 'import charset_normalizer', 'import chardet', 'from urllib3.contrib import urllib3.contrib.pyopenssl', 'import cryptography', 'import OpenSSL']
     function_exe_cmd: requests.help.info()
     Arguments: None
     Returns: None
@@ -2819,8 +2819,8 @@ Functions:
     name: main
     Module Path: ../src/requests/help.py
     Signature: main():
-    Packages: ['json', '']
-    Imports: []
+    Packages: ['', 'json']
+    Imports: ['import json', 'import platform', 'import ssl', 'import sys', 'import idna', 'import urllib3', 'from  import .__version__ as requests_version', 'import charset_normalizer', 'import chardet', 'from urllib3.contrib import urllib3.contrib.pyopenssl', 'import cryptography', 'import OpenSSL']
     function_exe_cmd: requests.help.main()
     Arguments: None
     Returns: None
@@ -2883,7 +2883,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: @property
     Packages: ['io']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.apparent_encoding()
     Arguments: ['self']
     Returns: None
@@ -2904,7 +2904,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: close(self):
     Packages: ['io']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.close()
     Arguments: ['self']
     Returns: None
@@ -2928,7 +2928,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: @property
     Packages: ['io', 'urllib3']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url']
     function_exe_cmd: requests.models.Response.content()
     Arguments: ['self']
     Returns: None
@@ -2948,8 +2948,8 @@ Functions:
     name: copy
     Module Path: ../src/requests/models.py
     Signature: copy(self):
-    Packages: ['io', 'cookies', 'hooks']
-    Imports: []
+    Packages: ['cookies', 'hooks', 'io']
+    Imports: ['from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from hooks import hooks.default_hooks', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.copy()
     Arguments: ['self']
     Returns: None
@@ -2970,7 +2970,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: deregister_hook(self, event, hook):
     Packages: ['io', 'hooks']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.RequestHooksMixin.deregister_hook()
     Arguments: ['self', 'event', 'hook']
     Returns: None
@@ -2992,7 +2992,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: @property
     Packages: ['io']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.is_permanent_redirect()
     Arguments: ['self']
     Returns: None
@@ -3013,7 +3013,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: @property
     Packages: ['io']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.is_redirect()
     Arguments: ['self']
     Returns: None
@@ -3035,7 +3035,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: iter_content(self, chunk_size=1, decode_unicode=False):
     Packages: ['io', 'urllib3']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url']
     function_exe_cmd: requests.models.Response.iter_content()
     Arguments: ['self', 'chunk_size', 'decode_unicode']
     Returns: None
@@ -3094,7 +3094,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: json(self, **kwargs):
     Packages: ['io', 'exceptions']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.json()
     Arguments: ['self']
     Returns: None
@@ -3209,8 +3209,8 @@ Functions:
     name: prepare
     Module Path: ../src/requests/models.py
     Signature: prepare(
-    Packages: ['io', 'auth', 'cookies', 'hooks']
-    Imports: []
+    Packages: ['auth', 'cookies', 'hooks', 'io']
+    Imports: ['from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url', 'from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from hooks import hooks.default_hooks', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare()
     Arguments: ['self', 'method', 'url', 'headers', 'files', 'data', 'params', 'auth', 'cookies', 'hooks', 'json']
     Returns: None
@@ -3231,7 +3231,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: prepare_auth(self, auth, url=""):
     Packages: ['auth']
-    Imports: []
+    Imports: ['from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url']
     function_exe_cmd: requests.models.PreparedRequest.prepare_auth()
     Arguments: ['self', 'auth', 'url']
     Returns: None
@@ -3251,8 +3251,8 @@ Functions:
     name: prepare_body
     Module Path: ../src/requests/models.py
     Signature: prepare_body(self, data, files, json=None):
-    Packages: ['io', 'urllib3']
-    Imports: []
+    Packages: ['urllib3', 'io']
+    Imports: ['from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url', 'from io import io.UnsupportedOperation', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_body()
     Arguments: ['self', 'data', 'files', 'json']
     Returns: None
@@ -3293,8 +3293,8 @@ Functions:
     name: prepare_cookies
     Module Path: ../src/requests/models.py
     Signature: prepare_cookies(self, cookies):
-    Packages: ['io', 'cookies']
-    Imports: []
+    Packages: ['cookies', 'io']
+    Imports: ['from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_cookies()
     Arguments: ['self', 'cookies']
     Returns: None
@@ -3323,7 +3323,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: prepare_headers(self, headers):
     Packages: ['io']
-    Imports: []
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_headers()
     Arguments: ['self', 'headers']
     Returns: None
@@ -3344,7 +3344,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: prepare_hooks(self, hooks):
     Packages: ['hooks']
-    Imports: []
+    Imports: ['from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.PreparedRequest.prepare_hooks()
     Arguments: ['self', 'hooks']
     Returns: None
@@ -3385,8 +3385,8 @@ Functions:
     name: prepare_url
     Module Path: ../src/requests/models.py
     Signature: prepare_url(self, url, params):
-    Packages: ['io', 'auth', 'exceptions', 'idna']
-    Imports: []
+    Packages: ['io', 'exceptions', 'auth', 'idna']
+    Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url', 'import encodings.idna', 'import idna']
     function_exe_cmd: requests.models.PreparedRequest.prepare_url()
     Arguments: ['self', 'url', 'params']
     Returns: None
@@ -3407,7 +3407,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: raise_for_status(self):
     Packages: ['encodings']
-    Imports: []
+    Imports: ['import encodings.idna']
     function_exe_cmd: requests.models.Response.raise_for_status()
     Arguments: ['self']
     Returns: None
@@ -3428,7 +3428,7 @@ Functions:
     Module Path: ../src/requests/models.py
     Signature: register_hook(self, event, hook):
     Packages: ['hooks']
-    Imports: []
+    Imports: ['from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.RequestHooksMixin.register_hook()
     Arguments: ['self', 'event', 'hook']
     Returns: None
@@ -3478,7 +3478,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: close(self):
     Packages: ['os', 'adapters']
-    Imports: []
+    Imports: ['import os', 'from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.close()
     Arguments: ['self']
     Returns: None
@@ -3549,7 +3549,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: get_adapter(self, url):
     Packages: ['adapters']
-    Imports: []
+    Imports: ['from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.get_adapter()
     Arguments: ['self', 'url']
     Returns: None
@@ -3617,8 +3617,8 @@ Functions:
     name: merge_environment_settings
     Module Path: ../src/requests/sessions.py
     Signature: merge_environment_settings(self, url, proxies, stream, verify, cert):
-    Packages: ['os', 'compat']
-    Imports: []
+    Packages: ['compat', 'os']
+    Imports: ['from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse', 'import os']
     function_exe_cmd: requests.sessions.Session.merge_environment_settings()
     Arguments: ['self', 'url', 'proxies', 'stream', 'verify', 'cert']
     Returns: None
@@ -3641,7 +3641,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: merge_hooks(request_hooks, session_hooks, dict_class=OrderedDict):
     Packages: ['hooks']
-    Imports: []
+    Imports: ['from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook']
     function_exe_cmd: requests.sessions.merge_hooks()
     Arguments: ['request_hooks', 'session_hooks', 'dict_class']
     Returns: None
@@ -3688,7 +3688,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: mount(self, prefix, adapter):
     Packages: ['adapters']
-    Imports: []
+    Imports: ['from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.mount()
     Arguments: ['self', 'prefix', 'adapter']
     Returns: None
@@ -3763,7 +3763,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: post(self, url, data=None, json=None, **kwargs):
     Packages: ['os']
-    Imports: []
+    Imports: ['import os']
     function_exe_cmd: requests.sessions.Session.post()
     Arguments: ['self', 'url', 'data', 'json']
     Returns: None
@@ -3790,8 +3790,8 @@ Functions:
     name: prepare_request
     Module Path: ../src/requests/sessions.py
     Signature: prepare_request(self, request):
-    Packages: ['os', 'auth', 'cookies', 'hooks']
-    Imports: []
+    Packages: ['os', 'cookies', 'auth', 'hooks']
+    Imports: ['import os', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook']
     function_exe_cmd: requests.sessions.Session.prepare_request()
     Arguments: ['self', 'request']
     Returns: None
@@ -3845,8 +3845,8 @@ Functions:
     name: rebuild_auth
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_auth(self, prepared_request, response):
-    Packages: ['os', 'auth']
-    Imports: []
+    Packages: ['auth', 'os']
+    Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import os']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_auth()
     Arguments: ['self', 'prepared_request', 'response']
     Returns: None
@@ -3891,7 +3891,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_proxies(self, prepared_request, proxies):
     Packages: ['auth']
-    Imports: []
+    Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_proxies()
     Arguments: ['self', 'prepared_request', 'proxies']
     Returns: None
@@ -3920,8 +3920,8 @@ Functions:
     name: request
     Module Path: ../src/requests/sessions.py
     Signature: request(
-    Packages: ['os', 'time', 'auth', 'cookies', 'hooks']
-    Imports: []
+    Packages: ['cookies', 'auth', 'time', 'hooks', 'os']
+    Imports: ['from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import time', 'from datetime import datetime.timedelta', 'from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook', 'import os']
     function_exe_cmd: requests.sessions.Session.request()
     Arguments: ['self', 'method', 'url', 'params', 'data', 'headers', 'cookies', 'files', 'auth', 'timeout', 'allow_redirects', 'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
     Returns: None
@@ -3982,8 +3982,8 @@ Functions:
     name: resolve_redirects
     Module Path: ../src/requests/sessions.py
     Signature: resolve_redirects(
-    Packages: ['os', 'time', 'auth', 'cookies']
-    Imports: []
+    Packages: ['time', 'os', 'cookies', 'auth']
+    Imports: ['import time', 'from datetime import datetime.timedelta', 'import os', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.resolve_redirects()
     Arguments: ['self', 'resp', 'req', 'stream', 'timeout', 'verify', 'cert', 'proxies', 'yield_requests']
     Returns: None
@@ -4003,8 +4003,8 @@ Functions:
     name: send
     Module Path: ../src/requests/sessions.py
     Signature: send(self, request, **kwargs):
-    Packages: ['os', 'time', 'cookies', 'hooks']
-    Imports: []
+    Packages: ['hooks', 'os', 'time', 'cookies']
+    Imports: ['from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook', 'import os', 'import time', 'from datetime import datetime.timedelta', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies']
     function_exe_cmd: requests.sessions.Session.send()
     Arguments: ['self', 'request']
     Returns: None
@@ -4027,7 +4027,7 @@ Functions:
     Module Path: ../src/requests/sessions.py
     Signature: session():
     Packages: ['compat']
-    Imports: []
+    Imports: ['from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse']
     function_exe_cmd: requests.sessions.session()
     Arguments: None
     Returns: None
@@ -4055,8 +4055,8 @@ Functions:
     name: should_strip_auth
     Module Path: ../src/requests/sessions.py
     Signature: should_strip_auth(self, old_url, new_url):
-    Packages: ['os', 'auth', 'compat']
-    Imports: []
+    Packages: ['auth', 'os', 'compat']
+    Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import os', 'from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.should_strip_auth()
     Arguments: ['self', 'old_url', 'new_url']
     Returns: None
@@ -4139,8 +4139,8 @@ Functions:
     name: add_dict_to_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: add_dict_to_cookiejar(cj, cookie_dict):
-    Packages: ['io', 're', '', 'cookies']
-    Imports: []
+    Packages: ['', 'io', 'cookies', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.add_dict_to_cookiejar()
     Arguments: ['cj', 'cookie_dict']
     Returns: None
@@ -4164,8 +4164,8 @@ Functions:
     name: address_in_network
     Module Path: ../src/requests/utils.py
     Signature: address_in_network(ip, net):
-    Packages: ['io', 're', 'socket', 'struct', '']
-    Imports: []
+    Packages: ['re', '', 'io', 'socket', 'struct']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.address_in_network()
     Arguments: ['ip', 'net']
     Returns: None
@@ -4190,8 +4190,8 @@ Functions:
     name: atomic_open
     Module Path: ../src/requests/utils.py
     Signature: @contextlib.contextmanager
-    Packages: ['contextlib', 'io', 'os', 're', 'tempfile', '']
-    Imports: []
+    Packages: ['contextlib', '', 'io', 'os', 'tempfile', 're']
+    Imports: ['import contextlib', 'import codecs', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.atomic_open()
     Arguments: ['filename']
     Returns: None
@@ -4211,8 +4211,8 @@ Functions:
     name: check_header_validity
     Module Path: ../src/requests/utils.py
     Signature: check_header_validity(header):
-    Packages: ['re', '']
-    Imports: []
+    Packages: ['', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.check_header_validity()
     Arguments: ['header']
     Returns: None
@@ -4235,8 +4235,8 @@ Functions:
     name: default_headers
     Module Path: ../src/requests/utils.py
     Signature: default_headers():
-    Packages: ['io', 're', 'struct', '', 'structures']
-    Imports: []
+    Packages: ['', 're', 'struct', 'structures', 'io']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.default_headers()
     Arguments: None
     Returns: None
@@ -4256,8 +4256,8 @@ Functions:
     name: default_user_agent
     Module Path: ../src/requests/utils.py
     Signature: default_user_agent(name="python-requests"):
-    Packages: ['io', 're', '', '__version__']
-    Imports: []
+    Packages: ['re', '', 'io', '__version__']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.default_user_agent()
     Arguments: ['name']
     Returns: None
@@ -4279,8 +4279,8 @@ Functions:
     name: dict_from_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: dict_from_cookiejar(cj):
-    Packages: ['io', 're', '', 'cookies']
-    Imports: []
+    Packages: ['', 'io', 'cookies', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.dict_from_cookiejar()
     Arguments: ['cj']
     Returns: None
@@ -4303,8 +4303,8 @@ Functions:
     name: dict_to_sequence
     Module Path: ../src/requests/utils.py
     Signature: dict_to_sequence(d):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.dict_to_sequence()
     Arguments: ['d']
     Returns: None
@@ -4324,8 +4324,8 @@ Functions:
     name: dotted_netmask
     Module Path: ../src/requests/utils.py
     Signature: dotted_netmask(mask):
-    Packages: ['io', 're', 'socket', 'struct', '']
-    Imports: []
+    Packages: ['', 'io', 're', 'socket', 'struct']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.dotted_netmask()
     Arguments: ['mask']
     Returns: None
@@ -4349,8 +4349,8 @@ Functions:
     name: extract_zipped_paths
     Module Path: ../src/requests/utils.py
     Signature: extract_zipped_paths(path):
-    Packages: ['io', 'os', 're', 'tempfile', 'zipfile', '']
-    Imports: []
+    Packages: ['', 're', 'io', 'os', 'zipfile', 'tempfile']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.extract_zipped_paths()
     Arguments: ['path']
     Returns: None
@@ -4372,8 +4372,8 @@ Functions:
     name: from_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: from_key_val_list(value):
-    Packages: ['io', 'os', 're', '']
-    Imports: []
+    Packages: ['', 're', 'io', 'os']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.from_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -4408,8 +4408,8 @@ Functions:
     name: get_auth_from_url
     Module Path: ../src/requests/utils.py
     Signature: get_auth_from_url(url):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_auth_from_url()
     Arguments: ['url']
     Returns: None
@@ -4432,8 +4432,8 @@ Functions:
     name: get_encoding_from_headers
     Module Path: ../src/requests/utils.py
     Signature: get_encoding_from_headers(headers):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_encoding_from_headers()
     Arguments: ['headers']
     Returns: None
@@ -4456,8 +4456,8 @@ Functions:
     name: get_encodings_from_content
     Module Path: ../src/requests/utils.py
     Signature: get_encodings_from_content(content):
-    Packages: ['io', 're', 'warnings', '']
-    Imports: []
+    Packages: ['', 'warnings', 're', 'io']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_encodings_from_content()
     Arguments: ['content']
     Returns: None
@@ -4479,8 +4479,8 @@ Functions:
     name: get_environ_proxies
     Module Path: ../src/requests/utils.py
     Signature: get_environ_proxies(url, no_proxy=None):
-    Packages: ['re', '']
-    Imports: []
+    Packages: ['', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_environ_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -4502,8 +4502,8 @@ Functions:
     name: get_netrc_auth
     Module Path: ../src/requests/utils.py
     Signature: get_netrc_auth(url, raise_errors=False):
-    Packages: ['io', 'os', 're', '', 'netrc']
-    Imports: []
+    Packages: ['', 'netrc', 'os', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_netrc_auth()
     Arguments: ['url', 'raise_errors']
     Returns: None
@@ -4523,8 +4523,8 @@ Functions:
     name: get_unicode_from_response
     Module Path: ../src/requests/utils.py
     Signature: get_unicode_from_response(r):
-    Packages: ['io', 're', 'warnings', '']
-    Imports: []
+    Packages: ['re', '', 'warnings', 'io']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.get_unicode_from_response()
     Arguments: ['r']
     Returns: None
@@ -4553,8 +4553,8 @@ Functions:
     name: guess_filename
     Module Path: ../src/requests/utils.py
     Signature: guess_filename(obj):
-    Packages: ['os', 're', '']
-    Imports: []
+    Packages: ['', 'os', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.guess_filename()
     Arguments: ['obj']
     Returns: None
@@ -4574,8 +4574,8 @@ Functions:
     name: guess_json_utf
     Module Path: ../src/requests/utils.py
     Signature: guess_json_utf(data):
-    Packages: ['codecs', 'io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're', 'codecs']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.guess_json_utf()
     Arguments: ['data']
     Returns: None
@@ -4595,8 +4595,8 @@ Functions:
     name: is_ipv4_address
     Module Path: ../src/requests/utils.py
     Signature: is_ipv4_address(string_ip):
-    Packages: ['re', 'socket', '']
-    Imports: []
+    Packages: ['re', '', 'socket']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.is_ipv4_address()
     Arguments: ['string_ip']
     Returns: None
@@ -4616,8 +4616,8 @@ Functions:
     name: is_valid_cidr
     Module Path: ../src/requests/utils.py
     Signature: is_valid_cidr(string_network):
-    Packages: ['re', 'socket', '']
-    Imports: []
+    Packages: ['', 're', 'socket']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.is_valid_cidr()
     Arguments: ['string_network']
     Returns: None
@@ -4639,8 +4639,8 @@ Functions:
     name: iter_slices
     Module Path: ../src/requests/utils.py
     Signature: iter_slices(string, slice_length):
-    Packages: ['os', '']
-    Imports: []
+    Packages: ['', 'os']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.iter_slices()
     Arguments: ['string', 'slice_length']
     Returns: None
@@ -4660,8 +4660,8 @@ Functions:
     name: parse_dict_header
     Module Path: ../src/requests/utils.py
     Signature: parse_dict_header(value):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.parse_dict_header()
     Arguments: ['value']
     Returns: None
@@ -4700,8 +4700,8 @@ Functions:
     name: parse_header_links
     Module Path: ../src/requests/utils.py
     Signature: parse_header_links(value):
-    Packages: ['re', '']
-    Imports: []
+    Packages: ['', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.parse_header_links()
     Arguments: ['value']
     Returns: None
@@ -4725,8 +4725,8 @@ Functions:
     name: parse_list_header
     Module Path: ../src/requests/utils.py
     Signature: parse_list_header(value):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.parse_list_header()
     Arguments: ['value']
     Returns: None
@@ -4766,8 +4766,8 @@ Functions:
     name: prepend_scheme_if_needed
     Module Path: ../src/requests/utils.py
     Signature: prepend_scheme_if_needed(url, new_scheme):
-    Packages: ['io', 'os', 're', '', 'compat']
-    Imports: []
+    Packages: ['re', '', 'os', 'io', 'compat']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.prepend_scheme_if_needed()
     Arguments: ['url', 'new_scheme']
     Returns: None
@@ -4790,8 +4790,8 @@ Functions:
     name: requote_uri
     Module Path: ../src/requests/utils.py
     Signature: requote_uri(uri):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['re', '', 'io']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.requote_uri()
     Arguments: ['uri']
     Returns: None
@@ -4816,8 +4816,8 @@ Functions:
     name: resolve_proxies
     Module Path: ../src/requests/utils.py
     Signature: resolve_proxies(request, proxies, trust_env=True):
-    Packages: ['io', 'os', 're', '']
-    Imports: []
+    Packages: ['re', '', 'io', 'os']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.resolve_proxies()
     Arguments: ['request', 'proxies', 'trust_env']
     Returns: None
@@ -4845,8 +4845,8 @@ Functions:
     name: rewind_body
     Module Path: ../src/requests/utils.py
     Signature: rewind_body(prepared_request):
-    Packages: ['io', 'os', 're', '']
-    Imports: []
+    Packages: ['re', '', 'io', 'os']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.rewind_body()
     Arguments: ['prepared_request']
     Returns: None
@@ -4867,8 +4867,8 @@ Functions:
     name: select_proxy
     Module Path: ../src/requests/utils.py
     Signature: select_proxy(url, proxies):
-    Packages: ['io', 'os', 're', '']
-    Imports: []
+    Packages: ['', 're', 'io', 'os']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.select_proxy()
     Arguments: ['url', 'proxies']
     Returns: None
@@ -4891,8 +4891,8 @@ Functions:
     name: set_environ
     Module Path: ../src/requests/utils.py
     Signature: @contextlib.contextmanager
-    Packages: ['contextlib', 'io', 'os', 're', '']
-    Imports: []
+    Packages: ['contextlib', '', 'io', 're', 'os']
+    Imports: ['import contextlib', 'import codecs', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.set_environ()
     Arguments: ['env_name', 'value']
     Returns: None
@@ -4917,8 +4917,8 @@ Functions:
     name: should_bypass_proxies
     Module Path: ../src/requests/utils.py
     Signature: should_bypass_proxies(url, no_proxy):
-    Packages: ['io', 'os', 're', 'socket', '']
-    Imports: []
+    Packages: ['', 'io', 'os', 're', 'socket']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.should_bypass_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -4940,8 +4940,8 @@ Functions:
     name: stream_decode_response_unicode
     Module Path: ../src/requests/utils.py
     Signature: stream_decode_response_unicode(iterator, r):
-    Packages: ['codecs', 're', '']
-    Imports: []
+    Packages: ['re', '', 'codecs']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.stream_decode_response_unicode()
     Arguments: ['iterator', 'r']
     Returns: None
@@ -4961,8 +4961,8 @@ Functions:
     name: super_len
     Module Path: ../src/requests/utils.py
     Signature: super_len(o):
-    Packages: ['io', 'os', 're', 'warnings', 'urllib3', '']
-    Imports: []
+    Packages: ['', 'io', 'os', 're', 'urllib3', 'warnings']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.super_len()
     Arguments: ['o']
     Returns: None
@@ -4982,8 +4982,8 @@ Functions:
     name: to_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: to_key_val_list(value):
-    Packages: ['io', 'os', 're', '']
-    Imports: []
+    Packages: ['', 're', 'io', 'os']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.to_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -5017,8 +5017,8 @@ Functions:
     name: unquote_header_value
     Module Path: ../src/requests/utils.py
     Signature: unquote_header_value(value, is_filename=False):
-    Packages: ['re', '']
-    Imports: []
+    Packages: ['', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.unquote_header_value()
     Arguments: ['value', 'is_filename']
     Returns: None
@@ -5044,7 +5044,7 @@ Functions:
     Module Path: ../src/requests/utils.py
     Signature: unquote_unreserved(uri):
     Packages: ['re', '']
-    Imports: []
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs', 'import contextlib', 'import io', 'import os', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.unquote_unreserved()
     Arguments: ['uri']
     Returns: None
@@ -5067,8 +5067,8 @@ Functions:
     name: urldefragauth
     Module Path: ../src/requests/utils.py
     Signature: urldefragauth(url):
-    Packages: ['io', 're', '']
-    Imports: []
+    Packages: ['', 'io', 're']
+    Imports: ['import codecs', 'import contextlib', 'import io', 'import os', 'import re', 'import socket', 'import struct', 'import sys', 'import tempfile', 'import warnings', 'import zipfile', 'from collections import collections.OrderedDict', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from  import .certs', 'from __version__ import __version__.__version__', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_BYTE', 'from _internal_utils import _internal_utils._HEADER_VALIDATORS_STR', 'from _internal_utils import _internal_utils.HEADER_VALIDATORS', 'from _internal_utils import _internal_utils.to_native_string', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse', 'from cookies import cookies.cookiejar_from_dict', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc']
     function_exe_cmd: requests.utils.urldefragauth()
     Arguments: ['url']
     Returns: None
@@ -5090,8 +5090,8 @@ Functions:
     name: u
     Module Path: compat.py
     Signature: u(s):
-    Packages: ['warnings']
-    Imports: []
+    Packages: ['warnings', 'io']
+    Imports: ['import warnings', 'import io as StringIO']
     function_exe_cmd: requests.u()
     Arguments: ['s']
     Returns: None
@@ -5111,8 +5111,8 @@ Functions:
     name: httpbin
     Module Path: conftest.py
     Signature: @pytest.fixture
-    Packages: ['http', 'pytest']
-    Imports: []
+    Packages: ['pytest', 'http']
+    Imports: ['import pytest', 'from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.httpbin()
     Arguments: ['httpbin']
     Returns: None
@@ -5132,8 +5132,8 @@ Functions:
     name: httpbin_secure
     Module Path: conftest.py
     Signature: @pytest.fixture
-    Packages: ['http', 'pytest']
-    Imports: []
+    Packages: ['pytest', 'http']
+    Imports: ['import pytest', 'from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.httpbin_secure()
     Arguments: ['httpbin_secure']
     Returns: None
@@ -5153,8 +5153,8 @@ Functions:
     name: nosan_server
     Module Path: conftest.py
     Signature: @pytest.fixture
-    Packages: ['ssl', 'threading', 'pytest', 'trustme']
-    Imports: []
+    Packages: ['pytest', 'trustme', 'ssl', 'threading']
+    Imports: ['import pytest', 'import trustme', 'import ssl', 'import threading']
     function_exe_cmd: requests.nosan_server()
     Arguments: ['tmp_path_factory']
     Returns: None
@@ -5175,7 +5175,7 @@ Functions:
     Module Path: conftest.py
     Signature: prepare_url(value):
     Packages: ['http']
-    Imports: []
+    Imports: ['from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.prepare_url()
     Arguments: ['value']
     Returns: None
@@ -5196,7 +5196,7 @@ Functions:
     Module Path: utils.py
     Signature: @contextlib.contextmanager
     Packages: ['contextlib', 'os']
-    Imports: []
+    Imports: ['import contextlib', 'import os']
     function_exe_cmd: requests.override_environ()
     Arguments: None
     Returns: None

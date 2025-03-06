@@ -33,7 +33,6 @@ from dataclasses import dataclass
 from io import BytesIO
 from typing import Any, Dict, Optional
 from typing import List, Set
-
 import astroid
 import requests
 from astroid import nodes
@@ -600,7 +599,6 @@ class BaseAnalyzer(ABC):
             elif not relative_path.split('/')[-1].__contains__("_"):
               self._analyze_functions(module, relative_path, source, package_name)
               self._analyze_api_endpoint(module, relative_path, source)
-
         except Exception as e:
             logger.error(f"Error analyzing {file_path}: {str(e)}")
             self.errors.append((file_path, str(e)))
@@ -622,7 +620,6 @@ class BaseAnalyzer(ABC):
 
     def _analyze_api_endpoint(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all api endpoints in a module"""
-
         for node in module.body:
           if isinstance(node, nodes.ClassDef):
             # If it's a class, find all functions inside it
@@ -668,19 +665,29 @@ class BaseAnalyzer(ABC):
                 self.imports[file_path] = []
             if isinstance(node, nodes.Import):
                 for name, asname in node.names:  # Unpacking (name, alias) tuples
-                    import_name = name if asname is None else asname
-                    package_name = import_name.split('.')[0]
+                    import_name = name if asname is None else f"{name} as {asname}"
+                    package_name = name.split('.')[0]
+
+                    if asname is not None:
+                        package_name = name.split('.')[0]
+
                     if package_name not in self.packages[file_path]:
                         self.packages[file_path].append(package_name)  # Add package to the file_path list
-                    self.imports[file_path].append(import_name)
+
+                    self.imports[file_path].append(f"import {import_name}")
             elif isinstance(node, nodes.ImportFrom):
                 module_name = node.modname
                 for name, asname in node.names:  # Unpacking (name, alias) tuples
-                    import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-                    package_name = import_name.split('.')[0]
-                    if package_name not in self.packages[file_path]:
-                        self.packages[file_path].append(package_name)  # Add package to the file_path list
-                    self.imports[file_path].append(import_name)
+
+                    if not module_name:
+                        import_name = f"{name}" if asname is None else f"{name} as {asname}"
+                        self.imports[file_path].append(f"from {current_package} import {import_name}")
+                    else:
+                        import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
+                        package_name = import_name.split('.')[0]
+                        if package_name not in self.packages[file_path]:
+                            self.packages[file_path].append(package_name)  # Add package to the file_path list
+                        self.imports[file_path].append(f"from {module_name} import {import_name}")
 
         self.module_info[file_path] = ModuleInfo(
             name=file_path.split('/')[-1],
@@ -707,20 +714,26 @@ class BaseAnalyzer(ABC):
       return joined_path
 
 
-    def get_used_packages(self, start_line, end_line, source_code, file_path):
+    def get_used_packages_and_imports(self, start_line, end_line, source_code, file_path):
         # Extract the relevant lines from the source code (lines are 1-indexed, so adjust accordingly)
         lines = source_code.splitlines()[start_line-1:end_line]
 
         # Define a list to store packages
         packages = []
+        imports = []
         if file_path not in self.packages:
             self.packages[file_path] = []
+            self.imports[file_path] = []
 
-        for module_package in self.packages[file_path]:
-            for line in lines:
+        for line in lines:
+            for module_package in self.packages[file_path]:
                 if module_package in line and module_package not in packages:
                     packages.append(module_package)
-        return packages
+                    for module_import in self.imports[file_path]:
+                        if module_package in module_import and module_import not in imports:
+                            imports.append(module_import)
+
+        return packages, imports
 
 
     def _extract_function_info(self, node: nodes.FunctionDef, source: str,
@@ -759,8 +772,7 @@ class BaseAnalyzer(ABC):
         formatted_path = f"{package_name}{self.format_path(self.source_path).split(package_name)[-1]}"
         function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
 
-        imports=[]
-        packages = self.get_used_packages(start_line, end_line, source, file_path)
+        packages, imports = self.get_used_packages_and_imports(start_line, end_line, source, file_path)
 
         return FunctionInfo(
             name=node.name,
