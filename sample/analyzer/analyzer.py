@@ -54,29 +54,6 @@ logger = logging.getLogger(__name__)
 # Data Classes
 #-----------------------------------------------------------------------------
 
-
-@dataclass
-class CodeComponentInfo:
-    """Store detailed information about each .py files required packages"""
-    name: str
-    packages: List[str]
-    imports: List[str]
-    description: Optional[str]
-    description_embedding: Optional[str]
-
-@dataclass
-class ApiInfo:
-    """Store detailed information about a API endpoint"""
-    path: str
-    http_method: str
-    name: str
-    path_params: List[str]
-    request_params: List[str]
-    request_body: Optional[str]
-    response_body: Optional[str]
-    description: Optional[str]
-    description_embedding: Optional[str]
-
 @dataclass
 class FunctionInfo:
     """Store detailed information about a function or method."""
@@ -90,12 +67,34 @@ class FunctionInfo:
     comments: List[str]
     decorators: List[str]
     complexity: int
-    line_number: int
+    start_line: int
     end_line: int
     is_method: bool
     is_async: bool
     signature: str
-    function_exec_cmd: str
+    function_exe_cmd: str
+    function_url: str
+    packages: List[str]
+    imports: List[str]
+    runtime: str
+
+@dataclass
+class ApiInfo:
+    """Store detailed information about a API endpoint"""
+    path: str
+    http_method: str
+    name: str
+    path_params: List[str]
+    request_params: List[str]
+    request_body: Optional[str]
+    response_body: Optional[str]
+    description: Optional[str]
+    description_embedding: Optional[str]
+    # packages: List[str]
+    # imports: List[str]
+    # function_url: str
+    runtime: str
+
 
 @dataclass
 class TestsInfo:
@@ -110,12 +109,16 @@ class TestsInfo:
     comments: List[str]
     decorators: List[str]
     complexity: int
-    line_number: int
+    start_line: int
     end_line: int
     is_method: bool
     is_async: bool
     signature: str
-    test_exec_cmd: str
+    test_exe_cmd: str
+    # packages: List[str]
+    # imports: List[str]
+    # function_url: str
+    runtime: str
 
 @dataclass
 class ClassInfo:
@@ -126,8 +129,41 @@ class ClassInfo:
     attributes: List[str]
     docstring: Optional[str]
     decorators: List[str]
-    line_number: int
+    start_line: int
     end_line: int
+    description: Optional[str]
+    description_embedding: Optional[str]
+
+@dataclass
+class ModuleInfo:
+    """Store detailed information about each .py files required packages"""
+    name: str
+    # packages: List[str]
+    # imports: List[str]
+    functions: Dict[str, FunctionInfo]
+    classes: Dict[str, ClassInfo]
+    description: Optional[str]
+    description_embedding: Optional[str]
+
+@dataclass
+class SubPackageInfo:
+    name: str
+    modules: Dict[str, ModuleInfo]
+    description: Optional[str]
+    description_embedding: Optional[str]
+
+@dataclass
+class PackageInfo:
+    name: str
+    modules: Dict[str, ModuleInfo]
+    sub_package: Dict[str, SubPackageInfo]
+    description: Optional[str]
+    description_embedding: Optional[str]
+
+@dataclass
+class LibraryInfo:
+    name: str
+    package: Dict[str, PackageInfo]
     description: Optional[str]
     description_embedding: Optional[str]
 
@@ -220,49 +256,13 @@ class RDFExporter:
         self.graph.add((func_uri, self.CODE.hasOutput, output_uri))
 
       # Add execution command if available
-      if func_info.function_exec_cmd:
-        self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(func_info.function_exec_cmd)))
+      if func_info.function_exe_cmd:
+        self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(func_info.function_exe_cmd)))
 
       # Add comments if available
       if func_info.comments:
         comments_list = Literal(", ".join(func_info.comments))
         self.graph.add((func_uri, self.CODE.comments, comments_list))
-
-  def add_classes(self, classes: Dict[str, Any]) -> None:
-    """Add classes to the RDF graph"""
-    for class_path, class_info in classes.items():
-      # Create URI for the class
-      class_uri = self._get_component_uri("Class", f"{class_info.name}_{class_path}")
-
-      # Add class
-      self.graph.add((class_uri, RDF.type, self.CODE.Class))
-
-      # Add basic properties
-      self.graph.add((class_uri, self.CODE.name, Literal(class_info.name)))
-      if class_info.docstring:
-        self.graph.add((class_uri, self.CODE.docstring, Literal(class_info.docstring)))
-        self.graph.add((class_uri, self.CODE.isDocumented, Literal(True)))
-      else:
-        self.graph.add((class_uri, self.CODE.isDocumented, Literal(False)))
-
-      # Add base classes as dependencies
-      for base in class_info.bases:
-        if base != "object":  # Skip Python's base object
-          base_uri = self._get_component_uri("Class", base)
-          self.graph.add((class_uri, self.CODE.dependsOn, base_uri))
-
-      # Add description
-      self.graph.add((class_uri, self.CODE.description,
-                      Literal(f"Description: {class_info.description}")))
-      self.graph.add((class_uri, self.CODE.descriptionEmbedding,
-                      Literal(f"DescriptionEmbedding: {class_info.description_embedding}")))
-
-      # Connect methods to the class
-      for func_name, func_info in class_info.functions.items():
-        if func_name.startswith("_"):
-            continue
-        func_uri = self._get_component_uri("Function", f"{func_name}_{class_path}")
-        self.graph.add((class_uri, self.CODE.connectsTo, func_uri))
 
   def add_apis(self, apis: Dict[str, Any]) -> None:
     """Add API endpoints to the RDF graph"""
@@ -337,7 +337,117 @@ class RDFExporter:
         self.graph.add((body_uri, self.CODE.contentType, Literal("application/json")))
         self.graph.add((api_uri, self.CODE.hasResponseBody, body_uri))
 
-  def add_code_components(self, components: Dict[str, Any]) -> None:
+  def add_tests(self, tests: Dict[str, Any]) -> None:
+      """Add functions/methods to the RDF graph"""
+      for func_path, test_info in tests.items():
+          if test_info.name.startswith("_"):
+              continue
+          # Create URI for the function
+          func_uri = self._get_component_uri("Tests", f"{test_info.name}_{func_path}")
+
+          # Add function type
+          self.graph.add((func_uri, RDF.type, self.CODE.Function))
+
+          # Add basic properties
+          self.graph.add((func_uri, self.CODE.name, Literal(test_info.name)))
+          if test_info.docstring:
+              self.graph.add((func_uri, self.CODE.docstring, Literal(test_info.docstring)))
+              self.graph.add((func_uri, self.CODE.isDocumented, Literal(True)))
+          else:
+              self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
+
+          # Add description
+          self.graph.add((func_uri, self.CODE.description,
+                          Literal(f"Description: {test_info.description}")))
+          self.graph.add((func_uri, self.CODE.descriptionEmbedding,
+                          Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
+
+          # Add complexity
+          self.graph.add((func_uri, self.CODE.complexity,
+                          Literal(f"Complexity: {test_info.complexity}")))
+
+          # Add parameters as inputs
+          for arg in test_info.args:
+              param_uri = self._get_component_uri("Parameter", f"{arg}_{test_info.name}")
+              self.graph.add((param_uri, RDF.type, self.CODE.Parameter))
+              self.graph.add((param_uri, self.CODE.name, Literal(arg)))
+              self.graph.add((func_uri, self.CODE.hasInput, param_uri))
+
+          # Add description
+          self.graph.add((func_uri, self.CODE.description,
+                          Literal(f"Description: {test_info.description}")))
+          self.graph.add((func_uri, self.CODE.descriptionEmbedding,
+                          Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
+
+          # Add return type as output if available
+          if test_info.returns:
+              output_uri = self._get_component_uri("Parameter", f"output_{test_info.name}")
+              self.graph.add((output_uri, RDF.type, self.CODE.Parameter))
+              self.graph.add((output_uri, self.CODE.name, Literal("return")))
+
+              # Map Python return types to ontology data types (simplified mapping)
+              return_type = test_info.returns.lower()
+              if "str" in return_type:
+                  datatype_uri = self.CODE.String
+              elif "int" in return_type:
+                  datatype_uri = self.CODE.Integer
+              elif "bool" in return_type:
+                  datatype_uri = self.CODE.Boolean
+              elif "dict" in return_type or "json" in return_type:
+                  datatype_uri = self.CODE.JSON
+              else:
+                  datatype_uri = self.CODE.Object
+
+              self.graph.add((output_uri, self.CODE.hasDataType, datatype_uri))
+              self.graph.add((func_uri, self.CODE.hasOutput, output_uri))
+
+          # Add execution command if available
+          if test_info.test_exe_cmd:
+              self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(test_info.test_exe_cmd)))
+
+          # Add comments if available
+          if test_info.comments:
+              comments_list = Literal(", ".join(test_info.comments))
+              self.graph.add((func_uri, self.CODE.comments, comments_list))
+
+  def add_classes(self, classes: Dict[str, Any]) -> None:
+      """Add classes to the RDF graph"""
+      for class_path, class_info in classes.items():
+          # Create URI for the class
+          formatted_class_path = str(class_path).replace("py::","")
+          class_uri = self._get_component_uri("Class", f"{formatted_class_path}")
+
+          # Add class
+          self.graph.add((class_uri, RDF.type, self.CODE.Class))
+
+          # Add basic properties
+          self.graph.add((class_uri, self.CODE.name, Literal(class_info.name)))
+          if class_info.docstring:
+              self.graph.add((class_uri, self.CODE.docstring, Literal(class_info.docstring)))
+              self.graph.add((class_uri, self.CODE.isDocumented, Literal(True)))
+          else:
+              self.graph.add((class_uri, self.CODE.isDocumented, Literal(False)))
+
+          # Add base classes as dependencies
+          for base in class_info.bases:
+              if base != "object":  # Skip Python's base object
+                  base_uri = self._get_component_uri("Class", base)
+                  self.graph.add((class_uri, self.CODE.dependsOn, base_uri))
+
+          # Add description
+          self.graph.add((class_uri, self.CODE.description,
+                          Literal(f"Description: {class_info.description}")))
+          self.graph.add((class_uri, self.CODE.descriptionEmbedding,
+                          Literal(f"DescriptionEmbedding: {class_info.description_embedding}")))
+
+          # Connect methods to the class
+          for func_name, func_info in class_info.functions.items():
+              if func_name.startswith("_"):
+                  continue
+              func_uri = self._get_component_uri("Function", f"{formatted_class_path}_{func_name}")
+              self.graph.add((class_uri, self.CODE.connectsTo, func_uri))
+
+  def add_modules(self, components: Dict[str, Any]) -> None:
     """Add code components and their dependencies to the RDF graph"""
     for component_path, component_info in components.items():
       if component_info.name.startswith("_"):
@@ -351,97 +461,23 @@ class RDFExporter:
       # Add basic properties
       self.graph.add((component_uri, self.CODE.name, Literal(component_info.name)))
 
-      # Add packages as a list
-      if component_info.packages:
-        packages_list = Literal(", ".join(component_info.packages))
-        self.graph.add((component_uri, self.CODE.Packages, packages_list))
-
       # Add description
       self.graph.add((component_uri, self.CODE.description,
                       Literal(f"Description: {component_info.description}")))
       self.graph.add((component_uri, self.CODE.descriptionEmbedding,
                       Literal(f"DescriptionEmbedding: {component_info.description_embedding}")))
 
-      # Add imports as dependencies
-      for imp in component_info.imports:
-        # Create a simpler name for the import
-        import_name = imp.split(" as ")[0] if " as " in imp else imp
-        import_uri = self._get_component_uri("CodeComponent", import_name)
-        self.graph.add((component_uri, self.CODE.dependsOn, import_uri))
+      # # Add packages as a list
+      # if component_info.packages:
+      #   packages_list = Literal(", ".join(component_info.packages))
+      #   self.graph.add((component_uri, self.CODE.Packages, packages_list))
 
-  def add_tests(self, tests: Dict[str, Any]) -> None:
-    """Add functions/methods to the RDF graph"""
-    for func_path, test_info in tests.items():
-      if test_info.name.startswith("_"):
-        continue
-      # Create URI for the function
-      func_uri = self._get_component_uri("Tests", f"{test_info.name}_{func_path}")
-
-      # Add function type
-      self.graph.add((func_uri, RDF.type, self.CODE.Function))
-
-      # Add basic properties
-      self.graph.add((func_uri, self.CODE.name, Literal(test_info.name)))
-      if test_info.docstring:
-        self.graph.add((func_uri, self.CODE.docstring, Literal(test_info.docstring)))
-        self.graph.add((func_uri, self.CODE.isDocumented, Literal(True)))
-      else:
-        self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
-
-      # Add description
-      self.graph.add((func_uri, self.CODE.description,
-                      Literal(f"Description: {test_info.description}")))
-      self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                      Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
-
-      # Add complexity
-      self.graph.add((func_uri, self.CODE.complexity,
-                      Literal(f"Complexity: {test_info.complexity}")))
-
-      # Add parameters as inputs
-      for arg in test_info.args:
-        param_uri = self._get_component_uri("Parameter", f"{arg}_{test_info.name}")
-        self.graph.add((param_uri, RDF.type, self.CODE.Parameter))
-        self.graph.add((param_uri, self.CODE.name, Literal(arg)))
-        self.graph.add((func_uri, self.CODE.hasInput, param_uri))
-
-      # Add description
-      self.graph.add((func_uri, self.CODE.description,
-                      Literal(f"Description: {test_info.description}")))
-      self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                      Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
-
-      # Add return type as output if available
-      if test_info.returns:
-        output_uri = self._get_component_uri("Parameter", f"output_{test_info.name}")
-        self.graph.add((output_uri, RDF.type, self.CODE.Parameter))
-        self.graph.add((output_uri, self.CODE.name, Literal("return")))
-
-        # Map Python return types to ontology data types (simplified mapping)
-        return_type = test_info.returns.lower()
-        if "str" in return_type:
-          datatype_uri = self.CODE.String
-        elif "int" in return_type:
-          datatype_uri = self.CODE.Integer
-        elif "bool" in return_type:
-          datatype_uri = self.CODE.Boolean
-        elif "dict" in return_type or "json" in return_type:
-          datatype_uri = self.CODE.JSON
-        else:
-          datatype_uri = self.CODE.Object
-
-        self.graph.add((output_uri, self.CODE.hasDataType, datatype_uri))
-        self.graph.add((func_uri, self.CODE.hasOutput, output_uri))
-
-      # Add execution command if available
-      if test_info.test_exec_cmd:
-        self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(test_info.test_exec_cmd)))
-
-      # Add comments if available
-      if test_info.comments:
-        comments_list = Literal(", ".join(test_info.comments))
-        self.graph.add((func_uri, self.CODE.comments, comments_list))
-
+      # # Add imports as dependencies
+      # for imp in component_info.imports:
+      #   # Create a simpler name for the import
+      #   import_name = imp.split(" as ")[0] if " as " in imp else imp
+      #   import_uri = self._get_component_uri("CodeComponent", import_name)
+      #   self.graph.add((component_uri, self.CODE.dependsOn, import_uri))
 
   def export_rdf(self, output_path: Optional[str] = None, format: str = "turtle") -> str:
     """
@@ -507,7 +543,7 @@ class BaseAnalyzer(ABC):
         self.modules: Dict[str, nodes.Module] = {}
         self.imports: Dict[str, Set[str]] = defaultdict(set)
         self.classes: Dict[str, ClassInfo] = {}
-        self.code_component_info: Dict[str, CodeComponentInfo] = {}
+        self.module_info: Dict[str, ModuleInfo] = {}
         self.functions: Dict[str, FunctionInfo] = {}
         self.tests: Dict[str, TestsInfo] = {}
         self.apis: Dict[str, ApiInfo] = {}
@@ -540,7 +576,9 @@ class BaseAnalyzer(ABC):
             logger.info(f"Analyzing file: {relative_path}")
             self.source_path = relative_path
 
-            package_name = extract_repo_name(git_url)
+            package_name=None
+            if git_url:
+                package_name = extract_repo_name(git_url)
 
 
             with open(file_path, 'r', encoding='utf-8') as f:
@@ -556,73 +594,28 @@ class BaseAnalyzer(ABC):
                 or relative_path.startswith("test")):
               self._analyze_tests(module, relative_path, source)
             elif not relative_path.split('/')[-1].__contains__("_"):
-              self._analyze_code_component(module, relative_path, source)
-              self._analyze_classes(module, relative_path, source)
-              self._analyze_functions(module, relative_path, source)
+              self._analyze_functions(module, relative_path, source, package_name)
               self._analyze_api_endpoint(module, relative_path, source)
+
+            self._analyze_modules(module, relative_path, source)
+            self._analyze_classes(module, relative_path, source, package_name)
 
         except Exception as e:
             logger.error(f"Error analyzing {file_path}: {str(e)}")
             self.errors.append((file_path, str(e)))
 
-
-    def _analyze_code_component(self, module, file_path: str, source: str) -> None:
-      """Extract and track all imports in a module, and create CoreComponentInfo"""
-      code_component_info = CodeComponentInfo(
-          name=file_path.split('/')[-1],
-          packages=[],
-          imports=[],
-          description="",
-          description_embedding="")
-
-      # Assuming that `module` contains the AST nodes
-      for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
-        if isinstance(node, nodes.Import):
-          for name, asname in node.names:
-            import_name = name if asname is None else asname
-            package_name = import_name.split('.')[0]
-            if package_name not in code_component_info.packages:
-              code_component_info.packages.append(package_name)
-            code_component_info.imports.append(import_name)
-        elif isinstance(node, nodes.ImportFrom):
-          module_name = node.modname
-          for name, asname in node.names:
-            import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-            package_name = import_name.split('.')[0]
-            if package_name not in code_component_info.packages:
-              code_component_info.packages.append(package_name)
-            code_component_info.imports.append(import_name)
-
-      self.code_component_info[file_path] = code_component_info
-
-
-    def _analyze_tests(self, module: nodes.Module, file_path: str, source: str) -> None:
-        """Analyze all tests in a module"""
-        for node in module.body:
-          if isinstance(node, nodes.ClassDef):
-            # If it's a class, find all functions inside it
-            for class_node in node.body:
-              if isinstance(class_node, nodes.FunctionDef):
-                test_info = self._extract_tests_info(class_node, source)
-                self.tests[f"{file_path}::{test_info.name}"] = test_info
-          elif isinstance(node, nodes.FunctionDef):
-            # If it's a function at the module level
-            test_info = self._extract_tests_info(node, source)
-            self.tests[f"{file_path}::{test_info.name}"] = test_info
-
-
-    def _analyze_functions(self, module: nodes.Module, file_path: str, source: str) -> None:
+    def _analyze_functions(self, module: nodes.Module, file_path: str, source: str, package_name:str = None) -> None:
         """Analyze all functions in a module, including methods."""
         for node in module.body:
           if isinstance(node, nodes.ClassDef):
             # If it's a class, find all functions inside it
             for class_node in node.body:
               if isinstance(class_node, nodes.FunctionDef):
-                func_info = self._extract_function_info(class_node, source)
+                func_info = self._extract_function_info(class_node, source, package_name)
                 self.functions[f"{file_path}::{func_info.name}"] = func_info
           elif isinstance(node, nodes.FunctionDef):
             # If it's a function at the module level
-              func_info = self._extract_function_info(node, source)
+              func_info = self._extract_function_info(node, source, package_name)
               self.functions[f"{file_path}::{func_info.name}"] = func_info
 
     def _analyze_api_endpoint(self, module: nodes.Module, file_path: str, source: str) -> None:
@@ -640,11 +633,54 @@ class BaseAnalyzer(ABC):
             api_info = self._extract_api_endpoint_info(node, source)
             self.apis[f"{file_path}::{api_info.name}"] = api_info
 
-    def _analyze_classes(self, module: nodes.Module, file_path: str, source: str) -> None:
+    def _analyze_tests(self, module: nodes.Module, file_path: str, source: str) -> None:
+        """Analyze all tests in a module"""
+        for node in module.body:
+            if isinstance(node, nodes.ClassDef):
+                # If it's a class, find all functions inside it
+                for class_node in node.body:
+                    if isinstance(class_node, nodes.FunctionDef):
+                        test_info = self._extract_tests_info(class_node, source)
+                        self.tests[f"{file_path}::{test_info.name}"] = test_info
+            elif isinstance(node, nodes.FunctionDef):
+                # If it's a function at the module level
+                test_info = self._extract_tests_info(node, source)
+                self.tests[f"{file_path}::{test_info.name}"] = test_info
+
+    def _analyze_classes(self, module: nodes.Module, file_path: str, source: str, package_name:str = None) -> None:
         """Analyze all classes in a module."""
         for node in module.nodes_of_class(nodes.ClassDef):
-            class_info = self._extract_class_info(node, source)
+            class_info = self._extract_class_info(node, source, package_name)
             self.classes[f"{file_path}::{class_info.name}"] = class_info
+
+    def _analyze_modules(self, module, file_path: str, source: str) -> None:
+        """Extract and track all imports in a module, and create CoreComponentInfo"""
+        module_info = ModuleInfo(
+            name=file_path.split('/')[-1],
+            description="",
+            description_embedding="",
+            classes=[],
+            functions=[])
+
+        # # Assuming that `module` contains the AST nodes
+        # for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
+        #     if isinstance(node, nodes.Import):
+        #         for name, asname in node.names:
+        #             import_name = name if asname is None else asname
+        #             package_name = import_name.split('.')[0]
+        #             if package_name not in module_info.packages:
+        #                 module_info.packages.append(package_name)
+        #             module_info.imports.append(import_name)
+        #     elif isinstance(node, nodes.ImportFrom):
+        #         module_name = node.modname
+        #         for name, asname in node.names:
+        #             import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
+        #             package_name = import_name.split('.')[0]
+        #             if package_name not in module_info.packages:
+        #                 module_info.packages.append(package_name)
+        #             module_info.imports.append(import_name)
+
+        self.module_info[file_path] = module_info
 
     def format_path(self, path):
       # Split the path by "/"
@@ -661,60 +697,7 @@ class BaseAnalyzer(ABC):
 
       return joined_path
 
-    def _extract_tests_info(self, node: nodes.FunctionDef, source: str) -> TestsInfo:
-        """Extract detailed information about a test."""
-        args = [arg.name for arg in node.args.args]
-        returns = node.returns.as_string() if node.returns else None
-        docstring = None
-        if isinstance(node.doc_node, nodes.Const):
-          docstring = node.doc_node.value.strip()
-        complexity = self._calculate_complexity(node)
-
-        # Fix decorator handling
-        decorators = []
-        if node.decorators:
-          for decorator in node.decorators.nodes:
-            decorators.append(decorator.as_string())
-
-        class_name = None
-        if isinstance(node.parent, nodes.ClassDef):
-          class_name = node.parent.name
-
-        comments = []
-        line_number=node.lineno
-        end_line=node.end_lineno or node.lineno
-
-        for line_num in range(line_number, end_line + 1):
-          line = source.splitlines()[line_num - 1].strip()
-          if '#' in line:
-            comment_text = line.split('#', 1)[1].strip()
-            comments.append(comment_text)
-
-        signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        formatted_path = self.format_path(self.source_path)
-        test_exec_cmd = f"{formatted_path}.{class_name}.{signature}" if class_name else f"{formatted_path}.{signature}"
-
-        return TestsInfo(
-            name=node.name,
-            module=node.root().name,
-            args=args,
-            returns=returns,
-            test_exec_cmd =test_exec_cmd,
-            docstring=docstring,
-            comments=comments,
-            decorators=decorators,  # Use the properly extracted decorators
-            complexity=complexity,
-            line_number=line_number,
-            end_line=end_line,
-            is_method=isinstance(node.parent, nodes.ClassDef),
-            is_async=isinstance(node, nodes.AsyncFunctionDef),
-            signature=signature,
-            description="",
-            description_embedding=""
-        )
-
-
-    def _extract_function_info(self, node: nodes.FunctionDef, source: str) -> FunctionInfo:
+    def _extract_function_info(self, node: nodes.FunctionDef, source: str, package_name:str = None) -> FunctionInfo:
         """Extract detailed information about a function."""
         args = [arg.name for arg in node.args.args]
         returns = node.returns.as_string() if node.returns else None
@@ -734,76 +717,42 @@ class BaseAnalyzer(ABC):
           class_name = node.parent.name
 
         comments = []
-        line_number=node.lineno
+        start_line=node.lineno
         end_line=node.end_lineno or node.lineno
 
-        for line_num in range(line_number, end_line + 1):
+        signature=None
+        for line_num in range(start_line, end_line + 1):
             line = source.splitlines()[line_num - 1].strip()
+            if line_num == start_line:
+                signature = line.strip().replace("def ", "").replace(":", "")
             if '#' in line:
                 comment_text = line.split('#', 1)[1].strip()
                 comments.append(comment_text)
 
-        signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        formatted_path = self.format_path(self.source_path)
-
-        function_exec_cmd=f"{formatted_path}.{class_name}.{signature}" if class_name else f"{formatted_path}.{signature}"
+        formatted_path = f"{package_name}{self.format_path(self.source_path).split(package_name)[-1]}"
+        function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
 
         return FunctionInfo(
             name=node.name,
             module=node.root().name,
             args=args,
             returns=returns,
-            function_exec_cmd=function_exec_cmd,
+            function_exe_cmd=function_exe_cmd,
+            function_url="",
             docstring=docstring,
             description="",
             description_embedding="",
             comments=comments,
             decorators=decorators,  # Use the properly extracted decorators
             complexity=complexity,
-            line_number=line_number,
+            start_line=start_line,
             end_line=end_line,
             is_method=isinstance(node.parent, nodes.ClassDef),
             is_async=isinstance(node, nodes.AsyncFunctionDef),
-            signature=signature
-        )
-
-    def _extract_class_info(self, node: nodes.ClassDef, source: str) -> ClassInfo:
-        """Extract detailed information about a class."""
-        functions = {}
-        attributes = []
-
-        for child in node.get_children():
-            if isinstance(child, nodes.FunctionDef):
-                func_info = self._extract_function_info(child, source)
-                functions[child.name] = func_info
-            elif isinstance(child, nodes.AnnAssign):  # Type-hinted attributes
-                attributes.append(child.target.name)
-            elif isinstance(child, nodes.Assign):  # Regular assignments
-                attributes.extend(
-                    target.name for target in child.targets if isinstance(target, nodes.AssignName)
-                )
-
-        docstring = None
-        if isinstance(node.doc_node, nodes.Const):
-            docstring = node.doc_node.value
-
-        # Fix decorator handling
-        decorators = []
-        if node.decorators:
-            for decorator in node.decorators.nodes:
-                decorators.append(decorator.as_string())
-
-        return ClassInfo(
-            name=node.name,
-            bases=[base.as_string() for base in node.bases],
-            functions=functions,
-            attributes=attributes,
-            docstring=docstring,
-            decorators=decorators,  # Use the properly extracted decorators
-            line_number=node.lineno,
-            end_line=node.end_lineno or node.lineno,
-            description="",
-            description_embedding=""
+            signature=signature,
+            packages=[],
+            imports=[],
+            runtime="python"
         )
 
     def _extract_api_endpoint_info(self, node: nodes.FunctionDef, source: str) -> ApiInfo | None:
@@ -864,6 +813,99 @@ class BaseAnalyzer(ABC):
             request_body=request_body if request_body else None,
             response_body=response_body if response_body else None,
             description="",
+            description_embedding="",
+            runtime="python"
+        )
+
+    def _extract_tests_info(self, node: nodes.FunctionDef, source: str) -> TestsInfo:
+        """Extract detailed information about a test."""
+        args = [arg.name for arg in node.args.args]
+        returns = node.returns.as_string() if node.returns else None
+        docstring = None
+        if isinstance(node.doc_node, nodes.Const):
+            docstring = node.doc_node.value.strip()
+        complexity = self._calculate_complexity(node)
+
+        # Fix decorator handling
+        decorators = []
+        if node.decorators:
+            for decorator in node.decorators.nodes:
+                decorators.append(decorator.as_string())
+
+        class_name = None
+        if isinstance(node.parent, nodes.ClassDef):
+            class_name = node.parent.name
+
+        comments = []
+        line_number=node.lineno
+        end_line=node.end_lineno or node.lineno
+
+        for line_num in range(line_number, end_line + 1):
+            line = source.splitlines()[line_num - 1].strip()
+            if '#' in line:
+                comment_text = line.split('#', 1)[1].strip()
+                comments.append(comment_text)
+
+        signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
+        formatted_path = self.format_path(self.source_path)
+        test_exe_cmd = f"{formatted_path}.{class_name}.{signature}" if class_name else f"{formatted_path}.{signature}"
+
+        return TestsInfo(
+            name=node.name,
+            module=node.root().name,
+            args=args,
+            returns=returns,
+            test_exe_cmd=test_exe_cmd,
+            docstring=docstring,
+            comments=comments,
+            decorators=decorators,  # Use the properly extracted decorators
+            complexity=complexity,
+            start_line=line_number,
+            end_line=end_line,
+            is_method=isinstance(node.parent, nodes.ClassDef),
+            is_async=isinstance(node, nodes.AsyncFunctionDef),
+            signature=signature,
+            description="",
+            description_embedding="",
+            runtime="python"
+        )
+
+    def _extract_class_info(self, node: nodes.ClassDef, source: str, package_name:str = None) -> ClassInfo:
+        """Extract detailed information about a class."""
+        functions = {}
+        attributes = []
+
+        for child in node.get_children():
+            if isinstance(child, nodes.FunctionDef):
+                func_info = self._extract_function_info(child, source, package_name)
+                functions[child.name] = func_info
+            elif isinstance(child, nodes.AnnAssign):  # Type-hinted attributes
+                attributes.append(child.target.name)
+            elif isinstance(child, nodes.Assign):  # Regular assignments
+                attributes.extend(
+                    target.name for target in child.targets if isinstance(target, nodes.AssignName)
+                )
+
+        docstring = None
+        if isinstance(node.doc_node, nodes.Const):
+            docstring = node.doc_node.value
+
+        # Fix decorator handling
+        decorators = []
+        if node.decorators:
+            for decorator in node.decorators.nodes:
+                decorators.append(decorator.as_string())
+
+        return ClassInfo(
+            name=node.name,
+            bases=[base.as_string() for base in node.bases],
+            functions=functions,
+            attributes=attributes,
+            docstring=docstring,
+            decorators=decorators,  # Use the properly extracted decorators
+            start_line=node.lineno,
+            end_line=node.end_lineno or node.lineno,
+            description="",
             description_embedding=""
         )
 
@@ -901,7 +943,7 @@ class BaseAnalyzer(ABC):
             'total_functions': len(self.functions),
             'total_imports' : sum(len(imports) for imports in self.imports.values()),
             'average_complexity': sum(f.complexity for f in self.functions.values()) / len(self.functions) if self.functions else 0,
-            'total_lines': sum(f.end_line - f.line_number for f in self.functions.values()),
+            'total_lines': sum(f.end_line - f.start_line for f in self.functions.values()),
             'errors': len(self.errors)
         }
 
@@ -923,7 +965,7 @@ class BaseAnalyzer(ABC):
         exporter.add_functions(self.functions)
         exporter.add_classes(self.classes)
         exporter.add_apis(self.apis)
-        exporter.add_code_components(self.code_component_info)
+        exporter.add_modules(self.module_info)
         exporter.add_tests(self.tests)
 
         # Export in the specified format
@@ -945,26 +987,22 @@ class BaseAnalyzer(ABC):
         f"- Total Files: {metrics['total_files']}",
         f"- Total Classes: {metrics['total_classes']}",
         f"- Total Functions: {metrics['total_functions']}",
-        f"- Total Imports: {metrics['total_imports']}",
         f"- Average Complexity: {metrics['average_complexity']:.2f}",
         f"- Total Lines of Code: {metrics['total_lines']}",
         f"- Analysis Errors: {metrics['errors']}\n",
       ]
 
-      # Add code component information
-      report.extend(["\nCode Components:"])
-      if self.code_component_info:
-        for file_path, code_components in sorted(self.code_component_info.items()):
-          if not code_components.name.startswith("_"):
+      # Add module information
+      report.extend(["\nModules:"])
+      if self.module_info:
+        for file_path, module in sorted(self.module_info.items()):
+          if not module.name.startswith("_"):
             report.append(f"\n  {file_path}:")
             report.extend([
-              f"    Name: {code_components.name}",
-              f"    Packages: {code_components.packages}",
-              f"    Imports: {code_components.imports}",
-              f"    Description: {code_components.description}",
-              f"    Description Embedding: {code_components.description_embedding}",
+              f"    Name: {module.name}",
+              f"    Description: {module.description}",
+              f"    Description Embedding: {module.description_embedding}",
             ])
-
 
       # Add class information
       report.extend(["\nClass Hierarchy:"])
@@ -974,7 +1012,7 @@ class BaseAnalyzer(ABC):
           f"    Bases: {', '.join(class_info.bases) if class_info.bases else 'None'}",
           f"    Functions: {len(class_info.functions)}",
           f"    Attributes: {len(class_info.attributes)}",
-          f"    Start Line: {class_info.line_number}",
+          f"    Start Line: {class_info.start_line}",
           f"    End Line: {class_info.end_line}",
           f"    Decorators: {', '.join(class_info.decorators) if class_info.decorators else 'None'}",
           f"    Docstring: {class_info.docstring.strip() if class_info.docstring else 'None'}",
@@ -991,10 +1029,10 @@ class BaseAnalyzer(ABC):
             f"    name: {func_info.name}",
             f"    Module: {func_info.module if func_info.module else 'None'}",
             f"    Signature: {func_info.signature}",
-            f"    function_exe_cmd: {func_info.function_exec_cmd}",
+            f"    function_exe_cmd: {func_info.function_exe_cmd}",
             f"    Parameters: {func_info.args if func_info.args else 'None'}",
             f"    Returns: {func_info.returns if func_info.returns else 'None'}",
-            f"    Start Line: {func_info.line_number}",
+            f"    Start Line: {func_info.start_line}",
             f"    End Line: {func_info.end_line}",
             f"    Complexity: {func_info.complexity}",
             f"    Is Method: {func_info.is_method}",
@@ -1003,7 +1041,8 @@ class BaseAnalyzer(ABC):
             f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
             f"    Description: {func_info.description}",
             f"    Description Embedding: {func_info.description_embedding}",
-            f"    Comments: {func_info.comments if func_info.comments else 'None'}"
+            f"    Comments: {func_info.comments if func_info.comments else 'None'}",
+            f"    Runtime: {func_info.runtime}"
           ])
 
 
@@ -1022,6 +1061,7 @@ class BaseAnalyzer(ABC):
             f"    response_body: {api_info.response_body}",
             f"    Description: {api_info.description}",
             f"    Description Embedding: {api_info.description_embedding}",
+            f"    Runtime: {api_info.runtime}"
           ])
 
           # Add function information
@@ -1033,10 +1073,10 @@ class BaseAnalyzer(ABC):
             f"    name: {test_info.name}",
             f"    Module: {test_info.module if test_info.module else 'None'}",
             f"    Signature: {test_info.signature}",
-            f"    test_exe_cmd: {test_info.test_exec_cmd}",
+            f"    test_exe_cmd: {test_info.test_exe_cmd}",
             f"    Parameters: {test_info.args if test_info.args else 'None'}",
             f"    Returns: {test_info.returns if test_info.returns else 'None'}",
-            f"    Start Line: {test_info.line_number}",
+            f"    Start Line: {test_info.start_line}",
             f"    End Line: {test_info.end_line}",
             f"    Complexity: {test_info.complexity}",
             f"    Is Method: {test_info.is_method}",
@@ -1045,7 +1085,8 @@ class BaseAnalyzer(ABC):
             f"    Docstring: {test_info.docstring if test_info.docstring else 'None'}",
             f"    Description: {test_info.description}",
             f"    Description Embedding: {test_info.description_embedding}",
-            f"    Comments: {test_info.comments if test_info.comments else 'None'}"
+            f"    Comments: {test_info.comments if test_info.comments else 'None'}",
+            f"    Runtime: {test_info.runtime}"
           ])
 
 
@@ -1537,16 +1578,16 @@ def analyze_package(package_path: str, output_file: Optional[str] = None, **kwar
         with PackageAnalyzerFactory.create_analyzer(package_path, **kwargs) as analyzer:
 
             analyzer.analyze_package()
-            report = analyzer.generate_report()
-            analyzer.convert_analyzer_to_knowledge_graph()
+            txt_output = analyzer.generate_report()
+            ttl_output = analyzer.convert_analyzer_to_knowledge_graph()
 
 
             if output_file:
                 with open(output_file, 'w', encoding='utf-8') as f:
-                    f.write(report)
+                    f.write(txt_output)
                     logger.info(f"Analysis report saved to: {output_file}")
 
-            return report
+            return ttl_output
 
     except Exception as e:
         error_msg = f"Error analyzing package: {str(e)}"
@@ -1559,7 +1600,7 @@ class ApiException(Exception):
 
 
 def upload_to_content_service(content):
-    file_name = f"FILE_{uuid.uuid1().hex}.txt"
+    file_name = f"ttl_output_{uuid.uuid1().hex}.ttl"
 
     url = "https://ig.aidtaas.com/mobius-content-service/v1.0/content/upload?filePath=python"
     bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3Ny1NUVdFRTNHZE5adGlsWU5IYmpsa2dVSkpaWUJWVmN1UmFZdHl5ejFjIn0.eyJleHAiOjE3NDExOTM2NjAsImlhdCI6MTc0MTE1NzY2MCwianRpIjoiZjI5ZmRhMWUtZTQ5OC00OTU0LWI5MTItMGZlNzdjOWZhYzUxIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrLXNlcnZpY2Uua2V5Y2xvYWsuc3ZjLmNsdXN0ZXIubG9jYWw6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIkJPTFRaTUFOTl9CT1RfbW9iaXVzIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9tb2JpdXMiLCJNT05FVF9tb2JpdXMiLCJWSU5DSV9tb2JpdXMiLCJhY2NvdW50Il0sInN1YiI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInR5cCI6IkJlYXJlciIsImF6cCI6IkhPTEFDUkFDWV9tb2JpdXMiLCJzaWQiOiIzZmFlYWE4OS0wMjUwLTQ0OTQtYjE3NC04MjA1YTIxMzMyZDkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1hc3RlciIsIkhDWV9URU5BTlRfQ1VTVE9NIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkJPQl9URU5BTlRfQ1VTVE9NIiwiUElfVEVOQU5UX0NVU1RPTSIsIk1PTkVUX1RFTkFOVF9DVVNUT00iXX0sInJlc291cmNlX2FjY2VzcyI6eyJIT0xBQ1JBQ1lfbW9iaXVzIjp7InJvbGVzIjpbIkFHRU5UX1dSSVRFIiwiSE9MQUNSQUNZX0FQUFJPVkUiLCJIT0xBQ1JBQ1lfV1JJVEUiLCJIT0xBQ1JBQ1lfUkVBRCIsIkhPTEFDUkFDWV9FWEVDVVRFIiwiSE9MQUNSQUNZX1VTRVIiLCJBR0VOVF9FWEVDVVRFIiwiQUdFTlRfUkVBRCJdfSwiQk9MVFpNQU5OX0JPVF9tb2JpdXMiOnsicm9sZXMiOlsiQk9MVFpNQU5OX0JPVF9VU0VSIiwiQk9CX0VYRUNVVEUiLCJCT0JfQVBQUk9WRSIsIkJPQl9SRUFEIiwiQk9CX1dSSVRFIl19LCJQQVNDQUxfSU5URUxMSUdFTkNFX21vYml1cyI6eyJyb2xlcyI6WyJQQVNDQUxfSU5URUxMSUdFTkNFX1VTRVIiLCJJTkdFU1RJT05fUkVBRCIsIkNPSE9SVFNfQVBQUk9WRSIsIkNPSE9SVFNfV1JJVEUiLCJTQ0hFTUFfV1JJVEUiLCJJTkdFU1RJT05fQVBQUk9WRSIsIlVOSVZFUlNFX1JFQUQiLCJJTkdFU1RJT05fV1JJVEUiLCJJTkdFU1RJT05fRVhFQ1VURSIsIlNDSEVNQV9FWEVDVVRFIiwiU0NIRU1BX1JFQUQiLCJCSUdRVUVSWV9SRUFEIiwiQklHUVVFUllfV1JJVEUiLCJDT0hPUlRTX1JFQUQiLCJTQ0hFTUFfQVBQUk9WRSIsIlVOSVZFUlNFX0FQUFJPVkUiLCJCSUdRVUVSWV9FWEVDVVRFIiwiVU5JVkVSU0VfV1JJVEUiLCJDT0hPUlRTX0VYRUNVVEUiLCJCSUdRVUVSWV9BUFBST1ZFIiwiVU5JVkVSU0VfRVhFQ1VURSJdfSwiTU9ORVRfbW9iaXVzIjp7InJvbGVzIjpbIk1PTkVUX0FQUFJPVkUiLCJNT05FVF9VU0VSIiwiTU9ORVRfRVhFQ1VURSIsIk1PTkVUX1JFQUQiLCJNT05FVF9XUklURSJdfSwiVklOQ0lfbW9iaXVzIjp7InJvbGVzIjpbIlZJTkNJX1VTRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInJlcXVlc3RlclR5cGUiOiJURU5BTlQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkFpZHRhYXMgQWlkdGFhcyIsInRlbmFudElkIjoiMmNmNzZlNWYtMjZhZC00ZjJjLWJjY2MtZjRiYzFlN2JmYjY0IiwicHJlZmVycmVkX3VzZXJuYW1lIjoicGFzc3dvcmRfdGVuYW50X2FpZHRhYXNAZ2FpYW5zb2x1dGlvbnMuY29tIiwiZ2l2ZW5fbmFtZSI6IkFpZHRhYXMiLCJmYW1pbHlfbmFtZSI6IkFpZHRhYXMiLCJlbWFpbCI6InBhc3N3b3JkX3RlbmFudF9haWR0YWFzQGdhaWFuc29sdXRpb25zLmNvbSJ9.X_i9DMNytrYhDpFNjNWQnWjwK2qZCr12jmPE8D7DaTeCZHwTW-y27Pf-pbLZ_HpA5usK8p8h_S3LLOUjmoGHFrHTRPB0oGPYTiIt80p07wqM2aeyGc_418Q5neGdn22gSjtK_z3_RJY1JlFm4d1DHg9uQlCaffknbBv3uH8XFg-yZqVCkU31FmQY6jbTUNHJsU8srgyJ5NCnqVb-1DLkz0sXf1IhxjZyKD9GY5EAP17OhMPV0JYRZ75W9bmcsnou6RNFmJxdtZMl8kP4h1G_oFGLQKodxnWUbKq-ZdcfNxkcage-mQLBeE8JOIm8-85SwNk_NsfzXdw1f46OcjaTPQ"
@@ -1594,7 +1635,7 @@ def upload_to_content_service(content):
 
 def import_ontology(cdn_url):
 
-    url = 'https://ig.aidtaas.com/mobius-graph-operations/graphrag/v2.0/initialize'
+    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
     bearer_token = "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI3Ny1NUVdFRTNHZE5adGlsWU5IYmpsa2dVSkpaWUJWVmN1UmFZdHl5ejFjIn0.eyJleHAiOjE3NDExOTM2NjAsImlhdCI6MTc0MTE1NzY2MCwianRpIjoiZjI5ZmRhMWUtZTQ5OC00OTU0LWI5MTItMGZlNzdjOWZhYzUxIiwiaXNzIjoiaHR0cDovL2tleWNsb2FrLXNlcnZpY2Uua2V5Y2xvYWsuc3ZjLmNsdXN0ZXIubG9jYWw6ODA4MC9yZWFsbXMvbWFzdGVyIiwiYXVkIjpbIkJPTFRaTUFOTl9CT1RfbW9iaXVzIiwiUEFTQ0FMX0lOVEVMTElHRU5DRV9tb2JpdXMiLCJNT05FVF9tb2JpdXMiLCJWSU5DSV9tb2JpdXMiLCJhY2NvdW50Il0sInN1YiI6IjJjZjc2ZTVmLTI2YWQtNGYyYy1iY2NjLWY0YmMxZTdiZmI2NCIsInR5cCI6IkJlYXJlciIsImF6cCI6IkhPTEFDUkFDWV9tb2JpdXMiLCJzaWQiOiIzZmFlYWE4OS0wMjUwLTQ0OTQtYjE3NC04MjA1YTIxMzMyZDkiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIi8qIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1hc3RlciIsIkhDWV9URU5BTlRfQ1VTVE9NIiwib2ZmbGluZV9hY2Nlc3MiLCJ1bWFfYXV0aG9yaXphdGlvbiIsIkJPQl9URU5BTlRfQ1VTVE9NIiwiUElfVEVOQU5UX0NVU1RPTSIsIk1PTkVUX1RFTkFOVF9DVVNUT00iXX0sInJlc291cmNlX2FjY2VzcyI6eyJIT0xBQ1JBQ1lfbW9iaXVzIjp7InJvbGVzIjpbIkFHRU5UX1dSSVRFIiwiSE9MQUNSQUNZX0FQUFJPVkUiLCJIT0xBQ1JBQ1lfV1JJVEUiLCJIT0xBQ1JBQ1lfUkVBRCIsIkhPTEFDUkFDWV9FWEVDVVRFIiwiSE9MQUNSQUNZX1VTRVIiLCJBR0VOVF9FWEVDVVRFIiwiQUdFTlRfUkVBRCJdfSwiQk9MVFpNQU5OX0JPVF9tb2JpdXMiOnsicm9sZXMiOlsiQk9MVFpNQU5OX0JPVF9VU0VSIiwiQk9CX0VYRUNVVEUiLCJCT0JfQVBQUk9WRSIsIkJPQl9SRUFEIiwiQk9CX1dSSVRFIl19LCJQQVNDQUxfSU5URUxMSUdFTkNFX21vYml1cyI6eyJyb2xlcyI6WyJQQVNDQUxfSU5URUxMSUdFTkNFX1VTRVIiLCJJTkdFU1RJT05fUkVBRCIsIkNPSE9SVFNfQVBQUk9WRSIsIkNPSE9SVFNfV1JJVEUiLCJTQ0hFTUFfV1JJVEUiLCJJTkdFU1RJT05fQVBQUk9WRSIsIlVOSVZFUlNFX1JFQUQiLCJJTkdFU1RJT05fV1JJVEUiLCJJTkdFU1RJT05fRVhFQ1VURSIsIlNDSEVNQV9FWEVDVVRFIiwiU0NIRU1BX1JFQUQiLCJCSUdRVUVSWV9SRUFEIiwiQklHUVVFUllfV1JJVEUiLCJDT0hPUlRTX1JFQUQiLCJTQ0hFTUFfQVBQUk9WRSIsIlVOSVZFUlNFX0FQUFJPVkUiLCJCSUdRVUVSWV9FWEVDVVRFIiwiVU5JVkVSU0VfV1JJVEUiLCJDT0hPUlRTX0VYRUNVVEUiLCJCSUdRVUVSWV9BUFBST1ZFIiwiVU5JVkVSU0VfRVhFQ1VURSJdfSwiTU9ORVRfbW9iaXVzIjp7InJvbGVzIjpbIk1PTkVUX0FQUFJPVkUiLCJNT05FVF9VU0VSIiwiTU9ORVRfRVhFQ1VURSIsIk1PTkVUX1JFQUQiLCJNT05FVF9XUklURSJdfSwiVklOQ0lfbW9iaXVzIjp7InJvbGVzIjpbIlZJTkNJX1VTRVIiXX0sImFjY291bnQiOnsicm9sZXMiOlsibWFuYWdlLWFjY291bnQiLCJtYW5hZ2UtYWNjb3VudC1saW5rcyIsInZpZXctcHJvZmlsZSJdfX0sInNjb3BlIjoicHJvZmlsZSBlbWFpbCIsInJlcXVlc3RlclR5cGUiOiJURU5BTlQiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwibmFtZSI6IkFpZHRhYXMgQWlkdGFhcyIsInRlbmFudElkIjoiMmNmNzZlNWYtMjZhZC00ZjJjLWJjY2MtZjRiYzFlN2JmYjY0IiwicHJlZmVycmVkX3VzZXJuYW1lIjoicGFzc3dvcmRfdGVuYW50X2FpZHRhYXNAZ2FpYW5zb2x1dGlvbnMuY29tIiwiZ2l2ZW5fbmFtZSI6IkFpZHRhYXMiLCJmYW1pbHlfbmFtZSI6IkFpZHRhYXMiLCJlbWFpbCI6InBhc3N3b3JkX3RlbmFudF9haWR0YWFzQGdhaWFuc29sdXRpb25zLmNvbSJ9.X_i9DMNytrYhDpFNjNWQnWjwK2qZCr12jmPE8D7DaTeCZHwTW-y27Pf-pbLZ_HpA5usK8p8h_S3LLOUjmoGHFrHTRPB0oGPYTiIt80p07wqM2aeyGc_418Q5neGdn22gSjtK_z3_RJY1JlFm4d1DHg9uQlCaffknbBv3uH8XFg-yZqVCkU31FmQY6jbTUNHJsU8srgyJ5NCnqVb-1DLkz0sXf1IhxjZyKD9GY5EAP17OhMPV0JYRZ75W9bmcsnou6RNFmJxdtZMl8kP4h1G_oFGLQKodxnWUbKq-ZdcfNxkcage-mQLBeE8JOIm8-85SwNk_NsfzXdw1f46OcjaTPQ"
     headers = {
         'Authorization': f'Bearer {bearer_token}',
@@ -1602,13 +1643,15 @@ def import_ontology(cdn_url):
     }
 
     data = {
-        "content_id": cdn_url,
-        "tenant_id": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64",
-        "ontology_id": "67c57a598c01c77fba2bced1",
-        "transaction_id": "example_transaction_id",
-        "ontology_name": "test123",
-        "is_pdf": False,
-        "job_id" : "123"
+        "ontologyId": "67c7f94236726044b0df97a8",
+        "universes": [
+            "623ebf349279af04cdd709dc"
+        ],
+        "url": cdn_url,
+        "ontologyName": "API",
+        "semanticStructures": "DATA",
+        "fileType": "Turtle",
+        "tenantID": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64"
     }
 
     try:
@@ -1647,9 +1690,9 @@ def main():
     output_file = sys.argv[2] if len(sys.argv) > 2 else None
 
     try:
-        report = analyze_package(package_path, "report.txt")
+        ttl_output = analyze_package(package_path, "report.txt")
 
-        # cdn_url = upload_to_content_service(report)
+        # cdn_url = upload_to_content_service(ttl_output)
         # logging.info(f"------- cdn_url:  {cdn_url} --------")
         # import_ontology(cdn_url)
 
