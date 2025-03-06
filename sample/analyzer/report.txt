@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_wfl_6a_m/tests
+Package: /tmp/git_analyzer_j2alhqj_/tests
 
 Metrics:
 - Total Files: 36
@@ -1203,8 +1203,10 @@ Functions:
 
   ../src/requests/adapters.py::add_headers:
     name: add_headers
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: add_headers(self, request, **kwargs):
+    Packages: ['os']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.add_headers()
     Arguments: ['self', 'request']
     Returns: None
@@ -1231,8 +1233,10 @@ Functions:
 
   ../src/requests/adapters.py::build_connection_pool_key_attributes:
     name: build_connection_pool_key_attributes
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: build_connection_pool_key_attributes(self, request, verify, cert=None):
+    Packages: ['os', 'urllib3', 'auth', 'models', 'ssl']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.build_connection_pool_key_attributes()
     Arguments: ['self', 'request', 'verify', 'cert']
     Returns: None
@@ -1295,8 +1299,10 @@ Functions:
 
   ../src/requests/adapters.py::build_response:
     name: build_response
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: build_response(self, req, resp):
+    Packages: ['os', 'urllib3', 'cookies']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.build_response()
     Arguments: ['self', 'req', 'resp']
     Returns: None
@@ -1321,8 +1327,10 @@ Functions:
 
   ../src/requests/adapters.py::cert_verify:
     name: cert_verify
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: cert_verify(self, conn, url, verify, cert):
+    Packages: ['os', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.cert_verify()
     Arguments: ['self', 'conn', 'url', 'verify', 'cert']
     Returns: None
@@ -1349,8 +1357,10 @@ Functions:
 
   ../src/requests/adapters.py::close:
     name: close
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: close(self):
+    Packages: ['os']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.close()
     Arguments: ['self']
     Returns: None
@@ -1371,8 +1381,10 @@ Functions:
 
   ../src/requests/adapters.py::get_connection:
     name: get_connection
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: get_connection(self, url, proxies=None):
+    Packages: ['os', 'warnings', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection()
     Arguments: ['self', 'url', 'proxies']
     Returns: None
@@ -1399,8 +1411,10 @@ Functions:
 
   ../src/requests/adapters.py::get_connection_with_tls_context:
     name: get_connection_with_tls_context
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: get_connection_with_tls_context(self, request, verify, proxies=None, cert=None):
+    Packages: ['os', 'urllib3', 'auth']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection_with_tls_context()
     Arguments: ['self', 'request', 'verify', 'proxies', 'cert']
     Returns: None
@@ -1435,8 +1449,10 @@ Functions:
 
   ../src/requests/adapters.py::init_poolmanager:
     name: init_poolmanager
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: init_poolmanager(
+    Packages: ['os', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.init_poolmanager()
     Arguments: ['self', 'connections', 'maxsize', 'block']
     Returns: None
@@ -1463,8 +1479,10 @@ Functions:
 
   ../src/requests/adapters.py::proxy_headers:
     name: proxy_headers
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: proxy_headers(self, proxy):
+    Packages: ['os', 'urllib3', 'auth']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_headers()
     Arguments: ['self', 'proxy']
     Returns: None
@@ -1492,8 +1510,10 @@ Functions:
 
   ../src/requests/adapters.py::proxy_manager_for:
     name: proxy_manager_for
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: proxy_manager_for(self, proxy, **proxy_kwargs):
+    Packages: ['os', 'urllib3', 'auth']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_manager_for()
     Arguments: ['self', 'proxy']
     Returns: None
@@ -1520,8 +1540,10 @@ Functions:
 
   ../src/requests/adapters.py::request_url:
     name: request_url
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: request_url(self, request, proxies):
+    Packages: ['os', 'urllib3', 'auth']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.request_url()
     Arguments: ['self', 'request', 'proxies']
     Returns: None
@@ -1550,8 +1572,10 @@ Functions:
 
   ../src/requests/adapters.py::send:
     name: send
-    Module: None
+    Module Path: ../src/requests/adapters.py
     Signature: send(
+    Packages: ['os', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.send()
     Arguments: ['self', 'request', 'stream', 'timeout', 'verify', 'cert', 'proxies']
     Returns: None
@@ -1582,8 +1606,10 @@ Functions:
 
   ../src/requests/api.py::delete:
     name: delete
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: delete(url, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.delete()
     Arguments: ['url']
     Returns: None
@@ -1606,8 +1632,10 @@ Functions:
 
   ../src/requests/api.py::get:
     name: get
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: get(url, params=None, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.get()
     Arguments: ['url', 'params']
     Returns: None
@@ -1632,8 +1660,10 @@ Functions:
 
   ../src/requests/api.py::head:
     name: head
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: head(url, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.head()
     Arguments: ['url']
     Returns: None
@@ -1658,8 +1688,10 @@ Functions:
 
   ../src/requests/api.py::options:
     name: options
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: options(url, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.options()
     Arguments: ['url']
     Returns: None
@@ -1682,8 +1714,10 @@ Functions:
 
   ../src/requests/api.py::patch:
     name: patch
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: patch(url, data=None, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.patch()
     Arguments: ['url', 'data']
     Returns: None
@@ -1709,8 +1743,10 @@ Functions:
 
   ../src/requests/api.py::post:
     name: post
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: post(url, data=None, json=None, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.post()
     Arguments: ['url', 'data', 'json']
     Returns: None
@@ -1736,8 +1772,10 @@ Functions:
 
   ../src/requests/api.py::put:
     name: put
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: put(url, data=None, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.put()
     Arguments: ['url', 'data']
     Returns: None
@@ -1763,8 +1801,10 @@ Functions:
 
   ../src/requests/api.py::request:
     name: request
-    Module: None
+    Module Path: ../src/requests/api.py
     Signature: request(method, url, **kwargs):
+    Packages: ['']
+    Imports: []
     function_exe_cmd: requests.api.request()
     Arguments: ['method', 'url']
     Returns: None
@@ -1819,8 +1859,10 @@ Functions:
 
   ../src/requests/auth.py::build_digest_header:
     name: build_digest_header
-    Module: None
+    Module Path: ../src/requests/auth.py
     Signature: build_digest_header(self, method, url):
+    Packages: ['hashlib', 'os', 're', 'time']
+    Imports: []
     function_exe_cmd: requests.auth.HTTPDigestAuth.build_digest_header()
     Arguments: ['self', 'method', 'url']
     Returns: None
@@ -1838,8 +1880,10 @@ Functions:
 
   ../src/requests/auth.py::handle_401:
     name: handle_401
-    Module: None
+    Module Path: ../src/requests/auth.py
     Signature: handle_401(self, r, **kwargs):
+    Packages: ['os', 're', 'cookies']
+    Imports: []
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_401()
     Arguments: ['self', 'r']
     Returns: None
@@ -1859,8 +1903,10 @@ Functions:
 
   ../src/requests/auth.py::handle_redirect:
     name: handle_redirect
-    Module: None
+    Module Path: ../src/requests/auth.py
     Signature: handle_redirect(self, r, **kwargs):
+    Packages: ['re']
+    Imports: []
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_redirect()
     Arguments: ['self', 'r']
     Returns: None
@@ -1878,8 +1924,10 @@ Functions:
 
   ../src/requests/auth.py::init_per_thread_state:
     name: init_per_thread_state
-    Module: None
+    Module Path: ../src/requests/auth.py
     Signature: init_per_thread_state(self):
+    Packages: ['os', 're']
+    Imports: []
     function_exe_cmd: requests.auth.HTTPDigestAuth.init_per_thread_state()
     Arguments: ['self']
     Returns: None
@@ -1897,8 +1945,10 @@ Functions:
 
   ../src/requests/cookies.py::add_header:
     name: add_header
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: add_header(self, key, val):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.add_header()
     Arguments: ['self', 'key', 'val']
     Returns: None
@@ -1916,8 +1966,10 @@ Functions:
 
   ../src/requests/cookies.py::add_unredirected_header:
     name: add_unredirected_header
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: add_unredirected_header(self, name, value):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.add_unredirected_header()
     Arguments: ['self', 'name', 'value']
     Returns: None
@@ -1935,8 +1987,10 @@ Functions:
 
   ../src/requests/cookies.py::cookiejar_from_dict:
     name: cookiejar_from_dict
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: cookiejar_from_dict(cookie_dict, cookiejar=None, overwrite=True):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.cookiejar_from_dict()
     Arguments: ['cookie_dict', 'cookiejar', 'overwrite']
     Returns: None
@@ -1960,8 +2014,10 @@ Functions:
 
   ../src/requests/cookies.py::copy:
     name: copy
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: copy(self):
+    Packages: ['copy']
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.copy()
     Arguments: ['self']
     Returns: None
@@ -1979,8 +2035,10 @@ Functions:
 
   ../src/requests/cookies.py::create_cookie:
     name: create_cookie
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: create_cookie(name, value, **kwargs):
+    Packages: ['time']
+    Imports: []
     function_exe_cmd: requests.cookies.create_cookie()
     Arguments: ['name', 'value']
     Returns: None
@@ -2001,8 +2059,10 @@ Functions:
 
   ../src/requests/cookies.py::extract_cookies_to_jar:
     name: extract_cookies_to_jar
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: extract_cookies_to_jar(jar, request, response):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.extract_cookies_to_jar()
     Arguments: ['jar', 'request', 'response']
     Returns: None
@@ -2024,8 +2084,10 @@ Functions:
 
   ../src/requests/cookies.py::get:
     name: get
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get(self, name, default=None, domain=None, path=None):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get()
     Arguments: ['self', 'name', 'default', 'domain', 'path']
     Returns: None
@@ -2047,8 +2109,10 @@ Functions:
 
   ../src/requests/cookies.py::get_cookie_header:
     name: get_cookie_header
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_cookie_header(jar, request):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.get_cookie_header()
     Arguments: ['jar', 'request']
     Returns: None
@@ -2068,8 +2132,10 @@ Functions:
 
   ../src/requests/cookies.py::get_dict:
     name: get_dict
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_dict(self, domain=None, path=None):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get_dict()
     Arguments: ['self', 'domain', 'path']
     Returns: None
@@ -2091,8 +2157,10 @@ Functions:
 
   ../src/requests/cookies.py::get_full_url:
     name: get_full_url
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_full_url(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_full_url()
     Arguments: ['self']
     Returns: None
@@ -2110,8 +2178,10 @@ Functions:
 
   ../src/requests/cookies.py::get_header:
     name: get_header
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_header(self, name, default=None):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_header()
     Arguments: ['self', 'name', 'default']
     Returns: None
@@ -2129,8 +2199,10 @@ Functions:
 
   ../src/requests/cookies.py::get_host:
     name: get_host
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_host(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_host()
     Arguments: ['self']
     Returns: None
@@ -2148,8 +2220,10 @@ Functions:
 
   ../src/requests/cookies.py::get_new_headers:
     name: get_new_headers
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_new_headers(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_new_headers()
     Arguments: ['self']
     Returns: None
@@ -2167,8 +2241,10 @@ Functions:
 
   ../src/requests/cookies.py::get_origin_req_host:
     name: get_origin_req_host
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_origin_req_host(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_origin_req_host()
     Arguments: ['self']
     Returns: None
@@ -2186,8 +2262,10 @@ Functions:
 
   ../src/requests/cookies.py::get_policy:
     name: get_policy
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_policy(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get_policy()
     Arguments: ['self']
     Returns: None
@@ -2205,8 +2283,10 @@ Functions:
 
   ../src/requests/cookies.py::get_type:
     name: get_type
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: get_type(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_type()
     Arguments: ['self']
     Returns: None
@@ -2224,8 +2304,10 @@ Functions:
 
   ../src/requests/cookies.py::getheaders:
     name: getheaders
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: getheaders(self, name):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockResponse.getheaders()
     Arguments: ['self', 'name']
     Returns: None
@@ -2243,8 +2325,10 @@ Functions:
 
   ../src/requests/cookies.py::has_header:
     name: has_header
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: has_header(self, name):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.has_header()
     Arguments: ['self', 'name']
     Returns: None
@@ -2262,8 +2346,10 @@ Functions:
 
   ../src/requests/cookies.py::host:
     name: host
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.host()
     Arguments: ['self']
     Returns: None
@@ -2281,8 +2367,10 @@ Functions:
 
   ../src/requests/cookies.py::info:
     name: info
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: info(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockResponse.info()
     Arguments: ['self']
     Returns: None
@@ -2300,8 +2388,10 @@ Functions:
 
   ../src/requests/cookies.py::is_unverifiable:
     name: is_unverifiable
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: is_unverifiable(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.is_unverifiable()
     Arguments: ['self']
     Returns: None
@@ -2319,8 +2409,10 @@ Functions:
 
   ../src/requests/cookies.py::items:
     name: items
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: items(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.items()
     Arguments: ['self']
     Returns: None
@@ -2342,8 +2434,10 @@ Functions:
 
   ../src/requests/cookies.py::iteritems:
     name: iteritems
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: iteritems(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.iteritems()
     Arguments: ['self']
     Returns: None
@@ -2364,8 +2458,10 @@ Functions:
 
   ../src/requests/cookies.py::iterkeys:
     name: iterkeys
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: iterkeys(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.iterkeys()
     Arguments: ['self']
     Returns: None
@@ -2386,8 +2482,10 @@ Functions:
 
   ../src/requests/cookies.py::itervalues:
     name: itervalues
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: itervalues(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.itervalues()
     Arguments: ['self']
     Returns: None
@@ -2408,8 +2506,10 @@ Functions:
 
   ../src/requests/cookies.py::keys:
     name: keys
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: keys(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.keys()
     Arguments: ['self']
     Returns: None
@@ -2430,8 +2530,10 @@ Functions:
 
   ../src/requests/cookies.py::list_domains:
     name: list_domains
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: list_domains(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.list_domains()
     Arguments: ['self']
     Returns: None
@@ -2449,8 +2551,10 @@ Functions:
 
   ../src/requests/cookies.py::list_paths:
     name: list_paths
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: list_paths(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.list_paths()
     Arguments: ['self']
     Returns: None
@@ -2468,8 +2572,10 @@ Functions:
 
   ../src/requests/cookies.py::merge_cookies:
     name: merge_cookies
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: merge_cookies(cookiejar, cookies):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.merge_cookies()
     Arguments: ['cookiejar', 'cookies']
     Returns: None
@@ -2491,8 +2597,10 @@ Functions:
 
   ../src/requests/cookies.py::morsel_to_cookie:
     name: morsel_to_cookie
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: morsel_to_cookie(morsel):
+    Packages: ['calendar', 'time']
+    Imports: []
     function_exe_cmd: requests.cookies.morsel_to_cookie()
     Arguments: ['morsel']
     Returns: None
@@ -2510,8 +2618,10 @@ Functions:
 
   ../src/requests/cookies.py::multiple_domains:
     name: multiple_domains
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: multiple_domains(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.multiple_domains()
     Arguments: ['self']
     Returns: None
@@ -2532,8 +2642,10 @@ Functions:
 
   ../src/requests/cookies.py::origin_req_host:
     name: origin_req_host
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.origin_req_host()
     Arguments: ['self']
     Returns: None
@@ -2551,8 +2663,10 @@ Functions:
 
   ../src/requests/cookies.py::remove_cookie_by_name:
     name: remove_cookie_by_name
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: remove_cookie_by_name(cookiejar, name, domain=None, path=None):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.remove_cookie_by_name()
     Arguments: ['cookiejar', 'name', 'domain', 'path']
     Returns: None
@@ -2572,8 +2686,10 @@ Functions:
 
   ../src/requests/cookies.py::set:
     name: set
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: set(self, name, value, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.set()
     Arguments: ['self', 'name', 'value']
     Returns: None
@@ -2593,8 +2709,10 @@ Functions:
 
   ../src/requests/cookies.py::set_cookie:
     name: set_cookie
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: set_cookie(self, cookie, *args, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.set_cookie()
     Arguments: ['self', 'cookie']
     Returns: None
@@ -2612,8 +2730,10 @@ Functions:
 
   ../src/requests/cookies.py::unverifiable:
     name: unverifiable
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.MockRequest.unverifiable()
     Arguments: ['self']
     Returns: None
@@ -2631,8 +2751,10 @@ Functions:
 
   ../src/requests/cookies.py::update:
     name: update
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: update(self, other):
+    Packages: ['copy']
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.update()
     Arguments: ['self', 'other']
     Returns: None
@@ -2650,8 +2772,10 @@ Functions:
 
   ../src/requests/cookies.py::values:
     name: values
-    Module: None
+    Module Path: ../src/requests/cookies.py
     Signature: values(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.values()
     Arguments: ['self']
     Returns: None
@@ -2672,8 +2796,10 @@ Functions:
 
   ../src/requests/help.py::info:
     name: info
-    Module: None
+    Module Path: ../src/requests/help.py
     Signature: info():
+    Packages: ['platform', 'ssl', 'sys', 'idna', 'urllib3', '', 'charset_normalizer', 'chardet', 'cryptography', 'OpenSSL']
+    Imports: []
     function_exe_cmd: requests.help.info()
     Arguments: None
     Returns: None
@@ -2691,8 +2817,10 @@ Functions:
 
   ../src/requests/help.py::main:
     name: main
-    Module: None
+    Module Path: ../src/requests/help.py
     Signature: main():
+    Packages: ['json', '']
+    Imports: []
     function_exe_cmd: requests.help.main()
     Arguments: None
     Returns: None
@@ -2710,8 +2838,10 @@ Functions:
 
   ../src/requests/hooks.py::default_hooks:
     name: default_hooks
-    Module: None
+    Module Path: ../src/requests/hooks.py
     Signature: default_hooks():
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.hooks.default_hooks()
     Arguments: None
     Returns: None
@@ -2729,8 +2859,10 @@ Functions:
 
   ../src/requests/hooks.py::dispatch_hook:
     name: dispatch_hook
-    Module: None
+    Module Path: ../src/requests/hooks.py
     Signature: dispatch_hook(key, hooks, hook_data, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.hooks.dispatch_hook()
     Arguments: ['key', 'hooks', 'hook_data']
     Returns: None
@@ -2748,8 +2880,10 @@ Functions:
 
   ../src/requests/models.py::apparent_encoding:
     name: apparent_encoding
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: ['io']
+    Imports: []
     function_exe_cmd: requests.models.Response.apparent_encoding()
     Arguments: ['self']
     Returns: None
@@ -2767,8 +2901,10 @@ Functions:
 
   ../src/requests/models.py::close:
     name: close
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: close(self):
+    Packages: ['io']
+    Imports: []
     function_exe_cmd: requests.models.Response.close()
     Arguments: ['self']
     Returns: None
@@ -2789,8 +2925,10 @@ Functions:
 
   ../src/requests/models.py::content:
     name: content
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: ['io', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.models.Response.content()
     Arguments: ['self']
     Returns: None
@@ -2808,8 +2946,10 @@ Functions:
 
   ../src/requests/models.py::copy:
     name: copy
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: copy(self):
+    Packages: ['io', 'cookies', 'hooks']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.copy()
     Arguments: ['self']
     Returns: None
@@ -2827,8 +2967,10 @@ Functions:
 
   ../src/requests/models.py::deregister_hook:
     name: deregister_hook
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: deregister_hook(self, event, hook):
+    Packages: ['io', 'hooks']
+    Imports: []
     function_exe_cmd: requests.models.RequestHooksMixin.deregister_hook()
     Arguments: ['self', 'event', 'hook']
     Returns: None
@@ -2847,8 +2989,10 @@ Functions:
 
   ../src/requests/models.py::is_permanent_redirect:
     name: is_permanent_redirect
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: ['io']
+    Imports: []
     function_exe_cmd: requests.models.Response.is_permanent_redirect()
     Arguments: ['self']
     Returns: None
@@ -2866,8 +3010,10 @@ Functions:
 
   ../src/requests/models.py::is_redirect:
     name: is_redirect
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: ['io']
+    Imports: []
     function_exe_cmd: requests.models.Response.is_redirect()
     Arguments: ['self']
     Returns: None
@@ -2886,8 +3032,10 @@ Functions:
 
   ../src/requests/models.py::iter_content:
     name: iter_content
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: iter_content(self, chunk_size=1, decode_unicode=False):
+    Packages: ['io', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.models.Response.iter_content()
     Arguments: ['self', 'chunk_size', 'decode_unicode']
     Returns: None
@@ -2918,8 +3066,10 @@ Functions:
 
   ../src/requests/models.py::iter_lines:
     name: iter_lines
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: iter_lines(
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.Response.iter_lines()
     Arguments: ['self', 'chunk_size', 'decode_unicode', 'delimiter']
     Returns: None
@@ -2941,8 +3091,10 @@ Functions:
 
   ../src/requests/models.py::json:
     name: json
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: json(self, **kwargs):
+    Packages: ['io', 'exceptions']
+    Imports: []
     function_exe_cmd: requests.models.Response.json()
     Arguments: ['self']
     Returns: None
@@ -2966,8 +3118,10 @@ Functions:
 
   ../src/requests/models.py::links:
     name: links
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.Response.links()
     Arguments: ['self']
     Returns: None
@@ -2985,8 +3139,10 @@ Functions:
 
   ../src/requests/models.py::next:
     name: next
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.Response.next()
     Arguments: ['self']
     Returns: None
@@ -3004,8 +3160,10 @@ Functions:
 
   ../src/requests/models.py::ok:
     name: ok
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.Response.ok()
     Arguments: ['self']
     Returns: None
@@ -3028,8 +3186,10 @@ Functions:
 
   ../src/requests/models.py::path_url:
     name: path_url
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.RequestEncodingMixin.path_url()
     Arguments: ['self']
     Returns: None
@@ -3047,8 +3207,10 @@ Functions:
 
   ../src/requests/models.py::prepare:
     name: prepare
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare(
+    Packages: ['io', 'auth', 'cookies', 'hooks']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare()
     Arguments: ['self', 'method', 'url', 'headers', 'files', 'data', 'params', 'auth', 'cookies', 'hooks', 'json']
     Returns: None
@@ -3066,8 +3228,10 @@ Functions:
 
   ../src/requests/models.py::prepare_auth:
     name: prepare_auth
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_auth(self, auth, url=""):
+    Packages: ['auth']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_auth()
     Arguments: ['self', 'auth', 'url']
     Returns: None
@@ -3085,8 +3249,10 @@ Functions:
 
   ../src/requests/models.py::prepare_body:
     name: prepare_body
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_body(self, data, files, json=None):
+    Packages: ['io', 'urllib3']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_body()
     Arguments: ['self', 'data', 'files', 'json']
     Returns: None
@@ -3104,8 +3270,10 @@ Functions:
 
   ../src/requests/models.py::prepare_content_length:
     name: prepare_content_length
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_content_length(self, body):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_content_length()
     Arguments: ['self', 'body']
     Returns: None
@@ -3123,8 +3291,10 @@ Functions:
 
   ../src/requests/models.py::prepare_cookies:
     name: prepare_cookies
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_cookies(self, cookies):
+    Packages: ['io', 'cookies']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_cookies()
     Arguments: ['self', 'cookies']
     Returns: None
@@ -3150,8 +3320,10 @@ Functions:
 
   ../src/requests/models.py::prepare_headers:
     name: prepare_headers
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_headers(self, headers):
+    Packages: ['io']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_headers()
     Arguments: ['self', 'headers']
     Returns: None
@@ -3169,8 +3341,10 @@ Functions:
 
   ../src/requests/models.py::prepare_hooks:
     name: prepare_hooks
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_hooks(self, hooks):
+    Packages: ['hooks']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_hooks()
     Arguments: ['self', 'hooks']
     Returns: None
@@ -3188,8 +3362,10 @@ Functions:
 
   ../src/requests/models.py::prepare_method:
     name: prepare_method
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_method(self, method):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_method()
     Arguments: ['self', 'method']
     Returns: None
@@ -3207,8 +3383,10 @@ Functions:
 
   ../src/requests/models.py::prepare_url:
     name: prepare_url
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: prepare_url(self, url, params):
+    Packages: ['io', 'auth', 'exceptions', 'idna']
+    Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_url()
     Arguments: ['self', 'url', 'params']
     Returns: None
@@ -3226,8 +3404,10 @@ Functions:
 
   ../src/requests/models.py::raise_for_status:
     name: raise_for_status
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: raise_for_status(self):
+    Packages: ['encodings']
+    Imports: []
     function_exe_cmd: requests.models.Response.raise_for_status()
     Arguments: ['self']
     Returns: None
@@ -3245,8 +3425,10 @@ Functions:
 
   ../src/requests/models.py::register_hook:
     name: register_hook
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: register_hook(self, event, hook):
+    Packages: ['hooks']
+    Imports: []
     function_exe_cmd: requests.models.RequestHooksMixin.register_hook()
     Arguments: ['self', 'event', 'hook']
     Returns: None
@@ -3264,8 +3446,10 @@ Functions:
 
   ../src/requests/models.py::text:
     name: text
-    Module: None
+    Module Path: ../src/requests/models.py
     Signature: @property
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.models.Response.text()
     Arguments: ['self']
     Returns: None
@@ -3291,8 +3475,10 @@ Functions:
 
   ../src/requests/sessions.py::close:
     name: close
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: close(self):
+    Packages: ['os', 'adapters']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.close()
     Arguments: ['self']
     Returns: None
@@ -3310,8 +3496,10 @@ Functions:
 
   ../src/requests/sessions.py::delete:
     name: delete
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: delete(self, url, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.delete()
     Arguments: ['self', 'url']
     Returns: None
@@ -3333,8 +3521,10 @@ Functions:
 
   ../src/requests/sessions.py::get:
     name: get
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: get(self, url, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.get()
     Arguments: ['self', 'url']
     Returns: None
@@ -3356,8 +3546,10 @@ Functions:
 
   ../src/requests/sessions.py::get_adapter:
     name: get_adapter
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: get_adapter(self, url):
+    Packages: ['adapters']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.get_adapter()
     Arguments: ['self', 'url']
     Returns: None
@@ -3377,8 +3569,10 @@ Functions:
 
   ../src/requests/sessions.py::get_redirect_target:
     name: get_redirect_target
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: get_redirect_target(self, resp):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.get_redirect_target()
     Arguments: ['self', 'resp']
     Returns: None
@@ -3396,8 +3590,10 @@ Functions:
 
   ../src/requests/sessions.py::head:
     name: head
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: head(self, url, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.head()
     Arguments: ['self', 'url']
     Returns: None
@@ -3419,8 +3615,10 @@ Functions:
 
   ../src/requests/sessions.py::merge_environment_settings:
     name: merge_environment_settings
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: merge_environment_settings(self, url, proxies, stream, verify, cert):
+    Packages: ['os', 'compat']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.merge_environment_settings()
     Arguments: ['self', 'url', 'proxies', 'stream', 'verify', 'cert']
     Returns: None
@@ -3440,8 +3638,10 @@ Functions:
 
   ../src/requests/sessions.py::merge_hooks:
     name: merge_hooks
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: merge_hooks(request_hooks, session_hooks, dict_class=OrderedDict):
+    Packages: ['hooks']
+    Imports: []
     function_exe_cmd: requests.sessions.merge_hooks()
     Arguments: ['request_hooks', 'session_hooks', 'dict_class']
     Returns: None
@@ -3462,8 +3662,10 @@ Functions:
 
   ../src/requests/sessions.py::merge_setting:
     name: merge_setting
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: merge_setting(request_setting, session_setting, dict_class=OrderedDict):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.merge_setting()
     Arguments: ['request_setting', 'session_setting', 'dict_class']
     Returns: None
@@ -3483,8 +3685,10 @@ Functions:
 
   ../src/requests/sessions.py::mount:
     name: mount
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: mount(self, prefix, adapter):
+    Packages: ['adapters']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.mount()
     Arguments: ['self', 'prefix', 'adapter']
     Returns: None
@@ -3504,8 +3708,10 @@ Functions:
 
   ../src/requests/sessions.py::options:
     name: options
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: options(self, url, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.options()
     Arguments: ['self', 'url']
     Returns: None
@@ -3527,8 +3733,10 @@ Functions:
 
   ../src/requests/sessions.py::patch:
     name: patch
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: patch(self, url, data=None, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.patch()
     Arguments: ['self', 'url', 'data']
     Returns: None
@@ -3552,8 +3760,10 @@ Functions:
 
   ../src/requests/sessions.py::post:
     name: post
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: post(self, url, data=None, json=None, **kwargs):
+    Packages: ['os']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.post()
     Arguments: ['self', 'url', 'data', 'json']
     Returns: None
@@ -3578,8 +3788,10 @@ Functions:
 
   ../src/requests/sessions.py::prepare_request:
     name: prepare_request
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: prepare_request(self, request):
+    Packages: ['os', 'auth', 'cookies', 'hooks']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.prepare_request()
     Arguments: ['self', 'request']
     Returns: None
@@ -3604,8 +3816,10 @@ Functions:
 
   ../src/requests/sessions.py::put:
     name: put
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: put(self, url, data=None, **kwargs):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.Session.put()
     Arguments: ['self', 'url', 'data']
     Returns: None
@@ -3629,8 +3843,10 @@ Functions:
 
   ../src/requests/sessions.py::rebuild_auth:
     name: rebuild_auth
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: rebuild_auth(self, prepared_request, response):
+    Packages: ['os', 'auth']
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_auth()
     Arguments: ['self', 'prepared_request', 'response']
     Returns: None
@@ -3650,8 +3866,10 @@ Functions:
 
   ../src/requests/sessions.py::rebuild_method:
     name: rebuild_method
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: rebuild_method(self, prepared_request, response):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_method()
     Arguments: ['self', 'prepared_request', 'response']
     Returns: None
@@ -3670,8 +3888,10 @@ Functions:
 
   ../src/requests/sessions.py::rebuild_proxies:
     name: rebuild_proxies
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: rebuild_proxies(self, prepared_request, proxies):
+    Packages: ['auth']
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_proxies()
     Arguments: ['self', 'prepared_request', 'proxies']
     Returns: None
@@ -3698,8 +3918,10 @@ Functions:
 
   ../src/requests/sessions.py::request:
     name: request
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: request(
+    Packages: ['os', 'time', 'auth', 'cookies', 'hooks']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.request()
     Arguments: ['self', 'method', 'url', 'params', 'data', 'headers', 'cookies', 'files', 'auth', 'timeout', 'allow_redirects', 'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
     Returns: None
@@ -3758,8 +3980,10 @@ Functions:
 
   ../src/requests/sessions.py::resolve_redirects:
     name: resolve_redirects
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: resolve_redirects(
+    Packages: ['os', 'time', 'auth', 'cookies']
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.resolve_redirects()
     Arguments: ['self', 'resp', 'req', 'stream', 'timeout', 'verify', 'cert', 'proxies', 'yield_requests']
     Returns: None
@@ -3777,8 +4001,10 @@ Functions:
 
   ../src/requests/sessions.py::send:
     name: send
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: send(self, request, **kwargs):
+    Packages: ['os', 'time', 'cookies', 'hooks']
+    Imports: []
     function_exe_cmd: requests.sessions.Session.send()
     Arguments: ['self', 'request']
     Returns: None
@@ -3798,8 +4024,10 @@ Functions:
 
   ../src/requests/sessions.py::session:
     name: session
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: session():
+    Packages: ['compat']
+    Imports: []
     function_exe_cmd: requests.sessions.session()
     Arguments: None
     Returns: None
@@ -3825,8 +4053,10 @@ Functions:
 
   ../src/requests/sessions.py::should_strip_auth:
     name: should_strip_auth
-    Module: None
+    Module Path: ../src/requests/sessions.py
     Signature: should_strip_auth(self, old_url, new_url):
+    Packages: ['os', 'auth', 'compat']
+    Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.should_strip_auth()
     Arguments: ['self', 'old_url', 'new_url']
     Returns: None
@@ -3844,8 +4074,10 @@ Functions:
 
   ../src/requests/structures.py::copy:
     name: copy
-    Module: None
+    Module Path: ../src/requests/structures.py
     Signature: copy(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.copy()
     Arguments: ['self']
     Returns: None
@@ -3863,8 +4095,10 @@ Functions:
 
   ../src/requests/structures.py::get:
     name: get
-    Module: None
+    Module Path: ../src/requests/structures.py
     Signature: get(self, key, default=None):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.structures.LookupDict.get()
     Arguments: ['self', 'key', 'default']
     Returns: None
@@ -3882,8 +4116,10 @@ Functions:
 
   ../src/requests/structures.py::lower_items:
     name: lower_items
-    Module: None
+    Module Path: ../src/requests/structures.py
     Signature: lower_items(self):
+    Packages: []
+    Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.lower_items()
     Arguments: ['self']
     Returns: None
@@ -3901,8 +4137,10 @@ Functions:
 
   ../src/requests/utils.py::add_dict_to_cookiejar:
     name: add_dict_to_cookiejar
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: add_dict_to_cookiejar(cj, cookie_dict):
+    Packages: ['io', 're', '', 'cookies']
+    Imports: []
     function_exe_cmd: requests.utils.add_dict_to_cookiejar()
     Arguments: ['cj', 'cookie_dict']
     Returns: None
@@ -3924,8 +4162,10 @@ Functions:
 
   ../src/requests/utils.py::address_in_network:
     name: address_in_network
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: address_in_network(ip, net):
+    Packages: ['io', 're', 'socket', 'struct', '']
+    Imports: []
     function_exe_cmd: requests.utils.address_in_network()
     Arguments: ['ip', 'net']
     Returns: None
@@ -3948,8 +4188,10 @@ Functions:
 
   ../src/requests/utils.py::atomic_open:
     name: atomic_open
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: @contextlib.contextmanager
+    Packages: ['contextlib', 'io', 'os', 're', 'tempfile', '']
+    Imports: []
     function_exe_cmd: requests.utils.atomic_open()
     Arguments: ['filename']
     Returns: None
@@ -3967,8 +4209,10 @@ Functions:
 
   ../src/requests/utils.py::check_header_validity:
     name: check_header_validity
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: check_header_validity(header):
+    Packages: ['re', '']
+    Imports: []
     function_exe_cmd: requests.utils.check_header_validity()
     Arguments: ['header']
     Returns: None
@@ -3989,8 +4233,10 @@ Functions:
 
   ../src/requests/utils.py::default_headers:
     name: default_headers
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: default_headers():
+    Packages: ['io', 're', 'struct', '', 'structures']
+    Imports: []
     function_exe_cmd: requests.utils.default_headers()
     Arguments: None
     Returns: None
@@ -4008,8 +4254,10 @@ Functions:
 
   ../src/requests/utils.py::default_user_agent:
     name: default_user_agent
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: default_user_agent(name="python-requests"):
+    Packages: ['io', 're', '', '__version__']
+    Imports: []
     function_exe_cmd: requests.utils.default_user_agent()
     Arguments: ['name']
     Returns: None
@@ -4029,8 +4277,10 @@ Functions:
 
   ../src/requests/utils.py::dict_from_cookiejar:
     name: dict_from_cookiejar
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: dict_from_cookiejar(cj):
+    Packages: ['io', 're', '', 'cookies']
+    Imports: []
     function_exe_cmd: requests.utils.dict_from_cookiejar()
     Arguments: ['cj']
     Returns: None
@@ -4051,8 +4301,10 @@ Functions:
 
   ../src/requests/utils.py::dict_to_sequence:
     name: dict_to_sequence
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: dict_to_sequence(d):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.dict_to_sequence()
     Arguments: ['d']
     Returns: None
@@ -4070,8 +4322,10 @@ Functions:
 
   ../src/requests/utils.py::dotted_netmask:
     name: dotted_netmask
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: dotted_netmask(mask):
+    Packages: ['io', 're', 'socket', 'struct', '']
+    Imports: []
     function_exe_cmd: requests.utils.dotted_netmask()
     Arguments: ['mask']
     Returns: None
@@ -4093,8 +4347,10 @@ Functions:
 
   ../src/requests/utils.py::extract_zipped_paths:
     name: extract_zipped_paths
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: extract_zipped_paths(path):
+    Packages: ['io', 'os', 're', 'tempfile', 'zipfile', '']
+    Imports: []
     function_exe_cmd: requests.utils.extract_zipped_paths()
     Arguments: ['path']
     Returns: None
@@ -4114,8 +4370,10 @@ Functions:
 
   ../src/requests/utils.py::from_key_val_list:
     name: from_key_val_list
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: from_key_val_list(value):
+    Packages: ['io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.from_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -4148,8 +4406,10 @@ Functions:
 
   ../src/requests/utils.py::get_auth_from_url:
     name: get_auth_from_url
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_auth_from_url(url):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.get_auth_from_url()
     Arguments: ['url']
     Returns: None
@@ -4170,8 +4430,10 @@ Functions:
 
   ../src/requests/utils.py::get_encoding_from_headers:
     name: get_encoding_from_headers
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_encoding_from_headers(headers):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.get_encoding_from_headers()
     Arguments: ['headers']
     Returns: None
@@ -4192,8 +4454,10 @@ Functions:
 
   ../src/requests/utils.py::get_encodings_from_content:
     name: get_encodings_from_content
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_encodings_from_content(content):
+    Packages: ['io', 're', 'warnings', '']
+    Imports: []
     function_exe_cmd: requests.utils.get_encodings_from_content()
     Arguments: ['content']
     Returns: None
@@ -4213,8 +4477,10 @@ Functions:
 
   ../src/requests/utils.py::get_environ_proxies:
     name: get_environ_proxies
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_environ_proxies(url, no_proxy=None):
+    Packages: ['re', '']
+    Imports: []
     function_exe_cmd: requests.utils.get_environ_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -4234,8 +4500,10 @@ Functions:
 
   ../src/requests/utils.py::get_netrc_auth:
     name: get_netrc_auth
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_netrc_auth(url, raise_errors=False):
+    Packages: ['io', 'os', 're', '', 'netrc']
+    Imports: []
     function_exe_cmd: requests.utils.get_netrc_auth()
     Arguments: ['url', 'raise_errors']
     Returns: None
@@ -4253,8 +4521,10 @@ Functions:
 
   ../src/requests/utils.py::get_unicode_from_response:
     name: get_unicode_from_response
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: get_unicode_from_response(r):
+    Packages: ['io', 're', 'warnings', '']
+    Imports: []
     function_exe_cmd: requests.utils.get_unicode_from_response()
     Arguments: ['r']
     Returns: None
@@ -4281,8 +4551,10 @@ Functions:
 
   ../src/requests/utils.py::guess_filename:
     name: guess_filename
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: guess_filename(obj):
+    Packages: ['os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.guess_filename()
     Arguments: ['obj']
     Returns: None
@@ -4300,8 +4572,10 @@ Functions:
 
   ../src/requests/utils.py::guess_json_utf:
     name: guess_json_utf
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: guess_json_utf(data):
+    Packages: ['codecs', 'io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.guess_json_utf()
     Arguments: ['data']
     Returns: None
@@ -4319,8 +4593,10 @@ Functions:
 
   ../src/requests/utils.py::is_ipv4_address:
     name: is_ipv4_address
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: is_ipv4_address(string_ip):
+    Packages: ['re', 'socket', '']
+    Imports: []
     function_exe_cmd: requests.utils.is_ipv4_address()
     Arguments: ['string_ip']
     Returns: None
@@ -4338,8 +4614,10 @@ Functions:
 
   ../src/requests/utils.py::is_valid_cidr:
     name: is_valid_cidr
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: is_valid_cidr(string_network):
+    Packages: ['re', 'socket', '']
+    Imports: []
     function_exe_cmd: requests.utils.is_valid_cidr()
     Arguments: ['string_network']
     Returns: None
@@ -4359,8 +4637,10 @@ Functions:
 
   ../src/requests/utils.py::iter_slices:
     name: iter_slices
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: iter_slices(string, slice_length):
+    Packages: ['os', '']
+    Imports: []
     function_exe_cmd: requests.utils.iter_slices()
     Arguments: ['string', 'slice_length']
     Returns: None
@@ -4378,8 +4658,10 @@ Functions:
 
   ../src/requests/utils.py::parse_dict_header:
     name: parse_dict_header
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: parse_dict_header(value):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.parse_dict_header()
     Arguments: ['value']
     Returns: None
@@ -4416,8 +4698,10 @@ Functions:
 
   ../src/requests/utils.py::parse_header_links:
     name: parse_header_links
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: parse_header_links(value):
+    Packages: ['re', '']
+    Imports: []
     function_exe_cmd: requests.utils.parse_header_links()
     Arguments: ['value']
     Returns: None
@@ -4439,8 +4723,10 @@ Functions:
 
   ../src/requests/utils.py::parse_list_header:
     name: parse_list_header
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: parse_list_header(value):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.parse_list_header()
     Arguments: ['value']
     Returns: None
@@ -4478,8 +4764,10 @@ Functions:
 
   ../src/requests/utils.py::prepend_scheme_if_needed:
     name: prepend_scheme_if_needed
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: prepend_scheme_if_needed(url, new_scheme):
+    Packages: ['io', 'os', 're', '', 'compat']
+    Imports: []
     function_exe_cmd: requests.utils.prepend_scheme_if_needed()
     Arguments: ['url', 'new_scheme']
     Returns: None
@@ -4500,8 +4788,10 @@ Functions:
 
   ../src/requests/utils.py::requote_uri:
     name: requote_uri
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: requote_uri(uri):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.requote_uri()
     Arguments: ['uri']
     Returns: None
@@ -4524,8 +4814,10 @@ Functions:
 
   ../src/requests/utils.py::resolve_proxies:
     name: resolve_proxies
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: resolve_proxies(request, proxies, trust_env=True):
+    Packages: ['io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.resolve_proxies()
     Arguments: ['request', 'proxies', 'trust_env']
     Returns: None
@@ -4551,8 +4843,10 @@ Functions:
 
   ../src/requests/utils.py::rewind_body:
     name: rewind_body
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: rewind_body(prepared_request):
+    Packages: ['io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.rewind_body()
     Arguments: ['prepared_request']
     Returns: None
@@ -4571,8 +4865,10 @@ Functions:
 
   ../src/requests/utils.py::select_proxy:
     name: select_proxy
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: select_proxy(url, proxies):
+    Packages: ['io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.select_proxy()
     Arguments: ['url', 'proxies']
     Returns: None
@@ -4593,8 +4889,10 @@ Functions:
 
   ../src/requests/utils.py::set_environ:
     name: set_environ
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: @contextlib.contextmanager
+    Packages: ['contextlib', 'io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.set_environ()
     Arguments: ['env_name', 'value']
     Returns: None
@@ -4617,8 +4915,10 @@ Functions:
 
   ../src/requests/utils.py::should_bypass_proxies:
     name: should_bypass_proxies
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: should_bypass_proxies(url, no_proxy):
+    Packages: ['io', 'os', 're', 'socket', '']
+    Imports: []
     function_exe_cmd: requests.utils.should_bypass_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -4638,8 +4938,10 @@ Functions:
 
   ../src/requests/utils.py::stream_decode_response_unicode:
     name: stream_decode_response_unicode
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: stream_decode_response_unicode(iterator, r):
+    Packages: ['codecs', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.stream_decode_response_unicode()
     Arguments: ['iterator', 'r']
     Returns: None
@@ -4657,8 +4959,10 @@ Functions:
 
   ../src/requests/utils.py::super_len:
     name: super_len
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: super_len(o):
+    Packages: ['io', 'os', 're', 'warnings', 'urllib3', '']
+    Imports: []
     function_exe_cmd: requests.utils.super_len()
     Arguments: ['o']
     Returns: None
@@ -4676,8 +4980,10 @@ Functions:
 
   ../src/requests/utils.py::to_key_val_list:
     name: to_key_val_list
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: to_key_val_list(value):
+    Packages: ['io', 'os', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.to_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -4709,8 +5015,10 @@ Functions:
 
   ../src/requests/utils.py::unquote_header_value:
     name: unquote_header_value
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: unquote_header_value(value, is_filename=False):
+    Packages: ['re', '']
+    Imports: []
     function_exe_cmd: requests.utils.unquote_header_value()
     Arguments: ['value', 'is_filename']
     Returns: None
@@ -4733,8 +5041,10 @@ Functions:
 
   ../src/requests/utils.py::unquote_unreserved:
     name: unquote_unreserved
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: unquote_unreserved(uri):
+    Packages: ['re', '']
+    Imports: []
     function_exe_cmd: requests.utils.unquote_unreserved()
     Arguments: ['uri']
     Returns: None
@@ -4755,8 +5065,10 @@ Functions:
 
   ../src/requests/utils.py::urldefragauth:
     name: urldefragauth
-    Module: None
+    Module Path: ../src/requests/utils.py
     Signature: urldefragauth(url):
+    Packages: ['io', 're', '']
+    Imports: []
     function_exe_cmd: requests.utils.urldefragauth()
     Arguments: ['url']
     Returns: None
@@ -4776,8 +5088,10 @@ Functions:
 
   compat.py::u:
     name: u
-    Module: None
+    Module Path: compat.py
     Signature: u(s):
+    Packages: ['warnings']
+    Imports: []
     function_exe_cmd: requests.u()
     Arguments: ['s']
     Returns: None
@@ -4795,8 +5109,10 @@ Functions:
 
   conftest.py::httpbin:
     name: httpbin
-    Module: None
+    Module Path: conftest.py
     Signature: @pytest.fixture
+    Packages: ['http', 'pytest']
+    Imports: []
     function_exe_cmd: requests.httpbin()
     Arguments: ['httpbin']
     Returns: None
@@ -4814,8 +5130,10 @@ Functions:
 
   conftest.py::httpbin_secure:
     name: httpbin_secure
-    Module: None
+    Module Path: conftest.py
     Signature: @pytest.fixture
+    Packages: ['http', 'pytest']
+    Imports: []
     function_exe_cmd: requests.httpbin_secure()
     Arguments: ['httpbin_secure']
     Returns: None
@@ -4833,8 +5151,10 @@ Functions:
 
   conftest.py::nosan_server:
     name: nosan_server
-    Module: None
+    Module Path: conftest.py
     Signature: @pytest.fixture
+    Packages: ['ssl', 'threading', 'pytest', 'trustme']
+    Imports: []
     function_exe_cmd: requests.nosan_server()
     Arguments: ['tmp_path_factory']
     Returns: None
@@ -4852,8 +5172,10 @@ Functions:
 
   conftest.py::prepare_url:
     name: prepare_url
-    Module: None
+    Module Path: conftest.py
     Signature: prepare_url(value):
+    Packages: ['http']
+    Imports: []
     function_exe_cmd: requests.prepare_url()
     Arguments: ['value']
     Returns: None
@@ -4871,8 +5193,10 @@ Functions:
 
   utils.py::override_environ:
     name: override_environ
-    Module: None
+    Module Path: utils.py
     Signature: @contextlib.contextmanager
+    Packages: ['contextlib', 'os']
+    Imports: []
     function_exe_cmd: requests.override_environ()
     Arguments: None
     Returns: None
@@ -4894,7 +5218,7 @@ Tests:
 
   test_adapters.py::test_request_url_trims_leading_path_separators:
     name: test_request_url_trims_leading_path_separators
-    Module: None
+    Module Path: None
     Signature: test_request_url_trims_leading_path_separators()
     test_exe_cmd: .test_request_url_trims_leading_path_separators()
     Arguments: None
@@ -4913,7 +5237,7 @@ Tests:
 
   test_help.py::test_idna_with_version_attribute:
     name: test_idna_with_version_attribute
-    Module: None
+    Module Path: None
     Signature: test_idna_with_version_attribute()
     test_exe_cmd: .test_idna_with_version_attribute()
     Arguments: None
@@ -4932,7 +5256,7 @@ Tests:
 
   test_help.py::test_idna_without_version_attribute:
     name: test_idna_without_version_attribute
-    Module: None
+    Module Path: None
     Signature: test_idna_without_version_attribute()
     test_exe_cmd: .test_idna_without_version_attribute()
     Arguments: None
@@ -4952,7 +5276,7 @@ Tests:
 
   test_help.py::test_system_ssl:
     name: test_system_ssl
-    Module: None
+    Module Path: None
     Signature: test_system_ssl()
     test_exe_cmd: .test_system_ssl()
     Arguments: None
@@ -4971,7 +5295,7 @@ Tests:
 
   test_hooks.py::hook:
     name: hook
-    Module: None
+    Module Path: None
     Signature: hook(value)
     test_exe_cmd: .hook(value)
     Arguments: ['value']
@@ -4990,7 +5314,7 @@ Tests:
 
   test_hooks.py::test_default_hooks:
     name: test_default_hooks
-    Module: None
+    Module Path: None
     Signature: test_default_hooks()
     test_exe_cmd: .test_default_hooks()
     Arguments: None
@@ -5009,7 +5333,7 @@ Tests:
 
   test_hooks.py::test_hooks:
     name: test_hooks
-    Module: None
+    Module Path: None
     Signature: test_hooks(hooks_list, result)
     test_exe_cmd: .test_hooks(hooks_list, result)
     Arguments: ['hooks_list', 'result']
@@ -5028,7 +5352,7 @@ Tests:
 
   test_lowlevel.py::echo_response_handler:
     name: echo_response_handler
-    Module: None
+    Module Path: None
     Signature: echo_response_handler(sock)
     test_exe_cmd: .echo_response_handler(sock)
     Arguments: ['sock']
@@ -5047,7 +5371,7 @@ Tests:
 
   test_lowlevel.py::test_chunked_encoding_error:
     name: test_chunked_encoding_error
-    Module: None
+    Module Path: None
     Signature: test_chunked_encoding_error()
     test_exe_cmd: .test_chunked_encoding_error()
     Arguments: None
@@ -5066,7 +5390,7 @@ Tests:
 
   test_lowlevel.py::test_chunked_upload:
     name: test_chunked_upload
-    Module: None
+    Module Path: None
     Signature: test_chunked_upload()
     test_exe_cmd: .test_chunked_upload()
     Arguments: None
@@ -5085,7 +5409,7 @@ Tests:
 
   test_lowlevel.py::test_chunked_upload_doesnt_skip_host_header:
     name: test_chunked_upload_doesnt_skip_host_header
-    Module: None
+    Module Path: None
     Signature: test_chunked_upload_doesnt_skip_host_header()
     test_exe_cmd: .test_chunked_upload_doesnt_skip_host_header()
     Arguments: None
@@ -5104,7 +5428,7 @@ Tests:
 
   test_lowlevel.py::test_chunked_upload_uses_only_specified_host_header:
     name: test_chunked_upload_uses_only_specified_host_header
-    Module: None
+    Module Path: None
     Signature: test_chunked_upload_uses_only_specified_host_header()
     test_exe_cmd: .test_chunked_upload_uses_only_specified_host_header()
     Arguments: None
@@ -5123,7 +5447,7 @@ Tests:
 
   test_lowlevel.py::test_conflicting_content_lengths:
     name: test_conflicting_content_lengths
-    Module: None
+    Module Path: None
     Signature: test_conflicting_content_lengths()
     test_exe_cmd: .test_conflicting_content_lengths()
     Arguments: None
@@ -5143,7 +5467,7 @@ Tests:
 
   test_lowlevel.py::test_digestauth_401_count_reset_on_redirect:
     name: test_digestauth_401_count_reset_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_digestauth_401_count_reset_on_redirect()
     test_exe_cmd: .test_digestauth_401_count_reset_on_redirect()
     Arguments: None
@@ -5165,7 +5489,7 @@ Tests:
 
   test_lowlevel.py::test_digestauth_401_only_sent_once:
     name: test_digestauth_401_only_sent_once
-    Module: None
+    Module Path: None
     Signature: test_digestauth_401_only_sent_once()
     test_exe_cmd: .test_digestauth_401_only_sent_once()
     Arguments: None
@@ -5185,7 +5509,7 @@ Tests:
 
   test_lowlevel.py::test_digestauth_only_on_4xx:
     name: test_digestauth_only_on_4xx
-    Module: None
+    Module Path: None
     Signature: test_digestauth_only_on_4xx()
     test_exe_cmd: .test_digestauth_only_on_4xx()
     Arguments: None
@@ -5206,7 +5530,7 @@ Tests:
 
   test_lowlevel.py::test_fragment_not_sent_with_request:
     name: test_fragment_not_sent_with_request
-    Module: None
+    Module Path: None
     Signature: test_fragment_not_sent_with_request()
     test_exe_cmd: .test_fragment_not_sent_with_request()
     Arguments: None
@@ -5225,7 +5549,7 @@ Tests:
 
   test_lowlevel.py::test_fragment_update_on_redirect:
     name: test_fragment_update_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_fragment_update_on_redirect()
     test_exe_cmd: .test_fragment_update_on_redirect()
     Arguments: None
@@ -5246,7 +5570,7 @@ Tests:
 
   test_lowlevel.py::test_json_decode_compatibility_for_alt_utf_encodings:
     name: test_json_decode_compatibility_for_alt_utf_encodings
-    Module: None
+    Module Path: None
     Signature: test_json_decode_compatibility_for_alt_utf_encodings()
     test_exe_cmd: .test_json_decode_compatibility_for_alt_utf_encodings()
     Arguments: None
@@ -5265,7 +5589,7 @@ Tests:
 
   test_lowlevel.py::test_redirect_rfc1808_to_non_ascii_location:
     name: test_redirect_rfc1808_to_non_ascii_location
-    Module: None
+    Module Path: None
     Signature: test_redirect_rfc1808_to_non_ascii_location()
     test_exe_cmd: .test_redirect_rfc1808_to_non_ascii_location()
     Arguments: None
@@ -5284,7 +5608,7 @@ Tests:
 
   test_lowlevel.py::test_use_proxy_from_environment:
     name: test_use_proxy_from_environment
-    Module: None
+    Module Path: None
     Signature: test_use_proxy_from_environment(httpbin, var, scheme)
     test_exe_cmd: .test_use_proxy_from_environment(httpbin, var, scheme)
     Arguments: ['httpbin', 'var', 'scheme']
@@ -5303,7 +5627,7 @@ Tests:
 
   test_packages.py::test_can_access_chardet_attribute:
     name: test_can_access_chardet_attribute
-    Module: None
+    Module Path: None
     Signature: test_can_access_chardet_attribute()
     test_exe_cmd: .test_can_access_chardet_attribute()
     Arguments: None
@@ -5322,7 +5646,7 @@ Tests:
 
   test_packages.py::test_can_access_idna_attribute:
     name: test_can_access_idna_attribute
-    Module: None
+    Module Path: None
     Signature: test_can_access_idna_attribute()
     test_exe_cmd: .test_can_access_idna_attribute()
     Arguments: None
@@ -5341,7 +5665,7 @@ Tests:
 
   test_packages.py::test_can_access_urllib3_attribute:
     name: test_can_access_urllib3_attribute
-    Module: None
+    Module Path: None
     Signature: test_can_access_urllib3_attribute()
     test_exe_cmd: .test_can_access_urllib3_attribute()
     Arguments: None
@@ -5360,7 +5684,7 @@ Tests:
 
   test_requests.py::build_response:
     name: build_response
-    Module: None
+    Module Path: None
     Signature: build_response(self)
     test_exe_cmd: .RedirectSession.build_response(self)
     Arguments: ['self']
@@ -5379,7 +5703,7 @@ Tests:
 
   test_requests.py::send:
     name: send
-    Module: None
+    Module Path: None
     Signature: send(self)
     test_exe_cmd: .RedirectSession.send(self)
     Arguments: ['self']
@@ -5398,7 +5722,7 @@ Tests:
 
   test_requests.py::test_BASICAUTH_TUPLE_HTTP_200_OK_GET:
     name: test_BASICAUTH_TUPLE_HTTP_200_OK_GET
-    Module: None
+    Module Path: None
     Signature: test_BASICAUTH_TUPLE_HTTP_200_OK_GET(self, httpbin)
     test_exe_cmd: .TestRequests.test_BASICAUTH_TUPLE_HTTP_200_OK_GET(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5417,7 +5741,7 @@ Tests:
 
   test_requests.py::test_DIGESTAUTH_QUOTES_QOP_VALUE:
     name: test_DIGESTAUTH_QUOTES_QOP_VALUE
-    Module: None
+    Module Path: None
     Signature: test_DIGESTAUTH_QUOTES_QOP_VALUE(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGESTAUTH_QUOTES_QOP_VALUE(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5436,7 +5760,7 @@ Tests:
 
   test_requests.py::test_DIGESTAUTH_WRONG_HTTP_401_GET:
     name: test_DIGESTAUTH_WRONG_HTTP_401_GET
-    Module: None
+    Module Path: None
     Signature: test_DIGESTAUTH_WRONG_HTTP_401_GET(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGESTAUTH_WRONG_HTTP_401_GET(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5455,7 +5779,7 @@ Tests:
 
   test_requests.py::test_DIGEST_AUTH_RETURNS_COOKIE:
     name: test_DIGEST_AUTH_RETURNS_COOKIE
-    Module: None
+    Module Path: None
     Signature: test_DIGEST_AUTH_RETURNS_COOKIE(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGEST_AUTH_RETURNS_COOKIE(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5474,7 +5798,7 @@ Tests:
 
   test_requests.py::test_DIGEST_AUTH_SETS_SESSION_COOKIES:
     name: test_DIGEST_AUTH_SETS_SESSION_COOKIES
-    Module: None
+    Module Path: None
     Signature: test_DIGEST_AUTH_SETS_SESSION_COOKIES(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGEST_AUTH_SETS_SESSION_COOKIES(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5493,7 +5817,7 @@ Tests:
 
   test_requests.py::test_DIGEST_HTTP_200_OK_GET:
     name: test_DIGEST_HTTP_200_OK_GET
-    Module: None
+    Module Path: None
     Signature: test_DIGEST_HTTP_200_OK_GET(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGEST_HTTP_200_OK_GET(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5512,7 +5836,7 @@ Tests:
 
   test_requests.py::test_DIGEST_STREAM:
     name: test_DIGEST_STREAM
-    Module: None
+    Module Path: None
     Signature: test_DIGEST_STREAM(self, httpbin)
     test_exe_cmd: .TestRequests.test_DIGEST_STREAM(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5531,7 +5855,7 @@ Tests:
 
   test_requests.py::test_HTTP_200_OK_GET_ALTERNATIVE:
     name: test_HTTP_200_OK_GET_ALTERNATIVE
-    Module: None
+    Module Path: None
     Signature: test_HTTP_200_OK_GET_ALTERNATIVE(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_200_OK_GET_ALTERNATIVE(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5550,7 +5874,7 @@ Tests:
 
   test_requests.py::test_HTTP_200_OK_GET_WITH_MIXED_PARAMS:
     name: test_HTTP_200_OK_GET_WITH_MIXED_PARAMS
-    Module: None
+    Module Path: None
     Signature: test_HTTP_200_OK_GET_WITH_MIXED_PARAMS(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_200_OK_GET_WITH_MIXED_PARAMS(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5569,7 +5893,7 @@ Tests:
 
   test_requests.py::test_HTTP_200_OK_GET_WITH_PARAMS:
     name: test_HTTP_200_OK_GET_WITH_PARAMS
-    Module: None
+    Module Path: None
     Signature: test_HTTP_200_OK_GET_WITH_PARAMS(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_200_OK_GET_WITH_PARAMS(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5588,7 +5912,7 @@ Tests:
 
   test_requests.py::test_HTTP_200_OK_HEAD:
     name: test_HTTP_200_OK_HEAD
-    Module: None
+    Module Path: None
     Signature: test_HTTP_200_OK_HEAD(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_200_OK_HEAD(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5607,7 +5931,7 @@ Tests:
 
   test_requests.py::test_HTTP_200_OK_PUT:
     name: test_HTTP_200_OK_PUT
-    Module: None
+    Module Path: None
     Signature: test_HTTP_200_OK_PUT(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_200_OK_PUT(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5626,7 +5950,7 @@ Tests:
 
   test_requests.py::test_HTTP_302_ALLOW_REDIRECT_GET:
     name: test_HTTP_302_ALLOW_REDIRECT_GET
-    Module: None
+    Module Path: None
     Signature: test_HTTP_302_ALLOW_REDIRECT_GET(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_302_ALLOW_REDIRECT_GET(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5645,7 +5969,7 @@ Tests:
 
   test_requests.py::test_HTTP_302_TOO_MANY_REDIRECTS:
     name: test_HTTP_302_TOO_MANY_REDIRECTS
-    Module: None
+    Module Path: None
     Signature: test_HTTP_302_TOO_MANY_REDIRECTS(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_302_TOO_MANY_REDIRECTS(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5664,7 +5988,7 @@ Tests:
 
   test_requests.py::test_HTTP_302_TOO_MANY_REDIRECTS_WITH_PARAMS:
     name: test_HTTP_302_TOO_MANY_REDIRECTS_WITH_PARAMS
-    Module: None
+    Module Path: None
     Signature: test_HTTP_302_TOO_MANY_REDIRECTS_WITH_PARAMS(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_302_TOO_MANY_REDIRECTS_WITH_PARAMS(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5683,7 +6007,7 @@ Tests:
 
   test_requests.py::test_HTTP_307_ALLOW_REDIRECT_POST:
     name: test_HTTP_307_ALLOW_REDIRECT_POST
-    Module: None
+    Module Path: None
     Signature: test_HTTP_307_ALLOW_REDIRECT_POST(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_307_ALLOW_REDIRECT_POST(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5702,7 +6026,7 @@ Tests:
 
   test_requests.py::test_HTTP_307_ALLOW_REDIRECT_POST_WITH_SEEKABLE:
     name: test_HTTP_307_ALLOW_REDIRECT_POST_WITH_SEEKABLE
-    Module: None
+    Module Path: None
     Signature: test_HTTP_307_ALLOW_REDIRECT_POST_WITH_SEEKABLE(self, httpbin)
     test_exe_cmd: .TestRequests.test_HTTP_307_ALLOW_REDIRECT_POST_WITH_SEEKABLE(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5721,7 +6045,7 @@ Tests:
 
   test_requests.py::test_POSTBIN_GET_POST_FILES:
     name: test_POSTBIN_GET_POST_FILES
-    Module: None
+    Module Path: None
     Signature: test_POSTBIN_GET_POST_FILES(self, httpbin)
     test_exe_cmd: .TestRequests.test_POSTBIN_GET_POST_FILES(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5740,7 +6064,7 @@ Tests:
 
   test_requests.py::test_POSTBIN_GET_POST_FILES_WITH_DATA:
     name: test_POSTBIN_GET_POST_FILES_WITH_DATA
-    Module: None
+    Module Path: None
     Signature: test_POSTBIN_GET_POST_FILES_WITH_DATA(self, httpbin)
     test_exe_cmd: .TestRequests.test_POSTBIN_GET_POST_FILES_WITH_DATA(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5759,7 +6083,7 @@ Tests:
 
   test_requests.py::test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER:
     name: test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER
-    Module: None
+    Module Path: None
     Signature: test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER(self, httpbin)
     test_exe_cmd: .TestRequests.test_POSTBIN_SEEKED_OBJECT_WITH_NO_ITER(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5778,7 +6102,7 @@ Tests:
 
   test_requests.py::test_auth_is_retained_for_redirect_on_host:
     name: test_auth_is_retained_for_redirect_on_host
-    Module: None
+    Module Path: None
     Signature: test_auth_is_retained_for_redirect_on_host(self, httpbin)
     test_exe_cmd: .TestRequests.test_auth_is_retained_for_redirect_on_host(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5797,7 +6121,7 @@ Tests:
 
   test_requests.py::test_auth_is_stripped_on_http_downgrade:
     name: test_auth_is_stripped_on_http_downgrade
-    Module: None
+    Module Path: None
     Signature: test_auth_is_stripped_on_http_downgrade(self, httpbin, httpbin_secure, httpbin_ca_bundle)
     test_exe_cmd: .TestRequests.test_auth_is_stripped_on_http_downgrade(self, httpbin, httpbin_secure, httpbin_ca_bundle)
     Arguments: ['self', 'httpbin', 'httpbin_secure', 'httpbin_ca_bundle']
@@ -5816,7 +6140,7 @@ Tests:
 
   test_requests.py::test_autoset_header_values_are_native:
     name: test_autoset_header_values_are_native
-    Module: None
+    Module Path: None
     Signature: test_autoset_header_values_are_native(self, httpbin)
     test_exe_cmd: .TestRequests.test_autoset_header_values_are_native(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5835,7 +6159,7 @@ Tests:
 
   test_requests.py::test_basic_auth_str_is_always_native:
     name: test_basic_auth_str_is_always_native
-    Module: None
+    Module Path: None
     Signature: test_basic_auth_str_is_always_native(self, username, password, auth_str)
     test_exe_cmd: .TestRequests.test_basic_auth_str_is_always_native(self, username, password, auth_str)
     Arguments: ['self', 'username', 'password', 'auth_str']
@@ -5854,7 +6178,7 @@ Tests:
 
   test_requests.py::test_basic_building:
     name: test_basic_building
-    Module: None
+    Module Path: None
     Signature: test_basic_building(self)
     test_exe_cmd: .TestRequests.test_basic_building(self)
     Arguments: ['self']
@@ -5873,7 +6197,7 @@ Tests:
 
   test_requests.py::test_basicauth_encodes_byte_strings:
     name: test_basicauth_encodes_byte_strings
-    Module: None
+    Module Path: None
     Signature: test_basicauth_encodes_byte_strings(self)
     test_exe_cmd: .TestRequests.test_basicauth_encodes_byte_strings(self)
     Arguments: ['self']
@@ -5893,7 +6217,7 @@ Tests:
 
   test_requests.py::test_basicauth_with_netrc:
     name: test_basicauth_with_netrc
-    Module: None
+    Module Path: None
     Signature: test_basicauth_with_netrc(self, httpbin)
     test_exe_cmd: .TestRequests.test_basicauth_with_netrc(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5912,7 +6236,7 @@ Tests:
 
   test_requests.py::test_binary_put:
     name: test_binary_put
-    Module: None
+    Module Path: None
     Signature: test_binary_put(self)
     test_exe_cmd: .TestRequests.test_binary_put(self)
     Arguments: ['self']
@@ -5931,7 +6255,7 @@ Tests:
 
   test_requests.py::test_can_send_file_object_with_non_string_filename:
     name: test_can_send_file_object_with_non_string_filename
-    Module: None
+    Module Path: None
     Signature: test_can_send_file_object_with_non_string_filename(self, httpbin)
     test_exe_cmd: .TestRequests.test_can_send_file_object_with_non_string_filename(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5950,7 +6274,7 @@ Tests:
 
   test_requests.py::test_can_send_objects_with_files:
     name: test_can_send_objects_with_files
-    Module: None
+    Module Path: None
     Signature: test_can_send_objects_with_files(self, httpbin, files)
     test_exe_cmd: .TestRequests.test_can_send_objects_with_files(self, httpbin, files)
     Arguments: ['self', 'httpbin', 'files']
@@ -5969,7 +6293,7 @@ Tests:
 
   test_requests.py::test_cannot_send_unprepared_requests:
     name: test_cannot_send_unprepared_requests
-    Module: None
+    Module Path: None
     Signature: test_cannot_send_unprepared_requests(self, httpbin)
     test_exe_cmd: .TestRequests.test_cannot_send_unprepared_requests(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -5988,7 +6312,7 @@ Tests:
 
   test_requests.py::test_certificate_failure:
     name: test_certificate_failure
-    Module: None
+    Module Path: None
     Signature: test_certificate_failure(self, httpbin_secure)
     test_exe_cmd: .TestRequests.test_certificate_failure(self, httpbin_secure)
     Arguments: ['self', 'httpbin_secure']
@@ -6007,7 +6331,7 @@ Tests:
 
   test_requests.py::test_chunked_upload_does_not_set_content_length_header:
     name: test_chunked_upload_does_not_set_content_length_header
-    Module: None
+    Module Path: None
     Signature: test_chunked_upload_does_not_set_content_length_header(self, httpbin)
     test_exe_cmd: .TestRequests.test_chunked_upload_does_not_set_content_length_header(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6027,7 +6351,7 @@ Tests:
 
   test_requests.py::test_conflicting_post_params:
     name: test_conflicting_post_params
-    Module: None
+    Module Path: None
     Signature: test_conflicting_post_params(self, httpbin)
     test_exe_cmd: .TestRequests.test_conflicting_post_params(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6046,7 +6370,7 @@ Tests:
 
   test_requests.py::test_connect_timeout:
     name: test_connect_timeout
-    Module: None
+    Module Path: None
     Signature: test_connect_timeout(self, timeout)
     test_exe_cmd: .TestTimeout.test_connect_timeout(self, timeout)
     Arguments: ['self', 'timeout']
@@ -6065,7 +6389,7 @@ Tests:
 
   test_requests.py::test_contains:
     name: test_contains
-    Module: None
+    Module Path: None
     Signature: test_contains(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_contains(self)
     Arguments: ['self']
@@ -6084,7 +6408,7 @@ Tests:
 
   test_requests.py::test_content_length_for_bytes_data:
     name: test_content_length_for_bytes_data
-    Module: None
+    Module Path: None
     Signature: test_content_length_for_bytes_data(httpbin)
     test_exe_cmd: .test_content_length_for_bytes_data(httpbin)
     Arguments: ['httpbin']
@@ -6103,7 +6427,7 @@ Tests:
 
   test_requests.py::test_content_length_for_string_data_counts_bytes:
     name: test_content_length_for_string_data_counts_bytes
-    Module: None
+    Module Path: None
     Signature: test_content_length_for_string_data_counts_bytes(httpbin)
     test_exe_cmd: .test_content_length_for_string_data_counts_bytes(httpbin)
     Arguments: ['httpbin']
@@ -6122,7 +6446,7 @@ Tests:
 
   test_requests.py::test_cookie_as_dict_items:
     name: test_cookie_as_dict_items
-    Module: None
+    Module Path: None
     Signature: test_cookie_as_dict_items(self)
     test_exe_cmd: .TestRequests.test_cookie_as_dict_items(self)
     Arguments: ['self']
@@ -6141,7 +6465,7 @@ Tests:
 
   test_requests.py::test_cookie_as_dict_keeps_items:
     name: test_cookie_as_dict_keeps_items
-    Module: None
+    Module Path: None
     Signature: test_cookie_as_dict_keeps_items(self)
     test_exe_cmd: .TestRequests.test_cookie_as_dict_keeps_items(self)
     Arguments: ['self']
@@ -6160,7 +6484,7 @@ Tests:
 
   test_requests.py::test_cookie_as_dict_keeps_len:
     name: test_cookie_as_dict_keeps_len
-    Module: None
+    Module Path: None
     Signature: test_cookie_as_dict_keeps_len(self)
     test_exe_cmd: .TestRequests.test_cookie_as_dict_keeps_len(self)
     Arguments: ['self']
@@ -6179,7 +6503,7 @@ Tests:
 
   test_requests.py::test_cookie_as_dict_keys:
     name: test_cookie_as_dict_keys
-    Module: None
+    Module Path: None
     Signature: test_cookie_as_dict_keys(self)
     test_exe_cmd: .TestRequests.test_cookie_as_dict_keys(self)
     Arguments: ['self']
@@ -6198,7 +6522,7 @@ Tests:
 
   test_requests.py::test_cookie_as_dict_values:
     name: test_cookie_as_dict_values
-    Module: None
+    Module Path: None
     Signature: test_cookie_as_dict_values(self)
     test_exe_cmd: .TestRequests.test_cookie_as_dict_values(self)
     Arguments: ['self']
@@ -6217,7 +6541,7 @@ Tests:
 
   test_requests.py::test_cookie_duplicate_names_different_domains:
     name: test_cookie_duplicate_names_different_domains
-    Module: None
+    Module Path: None
     Signature: test_cookie_duplicate_names_different_domains(self)
     test_exe_cmd: .TestRequests.test_cookie_duplicate_names_different_domains(self)
     Arguments: ['self']
@@ -6236,7 +6560,7 @@ Tests:
 
   test_requests.py::test_cookie_duplicate_names_raises_cookie_conflict_error:
     name: test_cookie_duplicate_names_raises_cookie_conflict_error
-    Module: None
+    Module Path: None
     Signature: test_cookie_duplicate_names_raises_cookie_conflict_error(self)
     test_exe_cmd: .TestRequests.test_cookie_duplicate_names_raises_cookie_conflict_error(self)
     Arguments: ['self']
@@ -6255,7 +6579,7 @@ Tests:
 
   test_requests.py::test_cookie_parameters:
     name: test_cookie_parameters
-    Module: None
+    Module Path: None
     Signature: test_cookie_parameters(self)
     test_exe_cmd: .TestRequests.test_cookie_parameters(self)
     Arguments: ['self']
@@ -6274,7 +6598,7 @@ Tests:
 
   test_requests.py::test_cookie_persists_via_api:
     name: test_cookie_persists_via_api
-    Module: None
+    Module Path: None
     Signature: test_cookie_persists_via_api(self, httpbin)
     test_exe_cmd: .TestRequests.test_cookie_persists_via_api(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6293,7 +6617,7 @@ Tests:
 
   test_requests.py::test_cookie_policy_copy:
     name: test_cookie_policy_copy
-    Module: None
+    Module Path: None
     Signature: test_cookie_policy_copy(self)
     test_exe_cmd: .TestRequests.test_cookie_policy_copy(self)
     Arguments: ['self']
@@ -6312,7 +6636,7 @@ Tests:
 
   test_requests.py::test_cookie_quote_wrapped:
     name: test_cookie_quote_wrapped
-    Module: None
+    Module Path: None
     Signature: test_cookie_quote_wrapped(self, httpbin)
     test_exe_cmd: .TestRequests.test_cookie_quote_wrapped(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6331,7 +6655,7 @@ Tests:
 
   test_requests.py::test_cookie_removed_on_expire:
     name: test_cookie_removed_on_expire
-    Module: None
+    Module Path: None
     Signature: test_cookie_removed_on_expire(self, httpbin)
     test_exe_cmd: .TestRequests.test_cookie_removed_on_expire(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6350,7 +6674,7 @@ Tests:
 
   test_requests.py::test_cookie_sent_on_redirect:
     name: test_cookie_sent_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_cookie_sent_on_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_cookie_sent_on_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6369,7 +6693,7 @@ Tests:
 
   test_requests.py::test_cookielib_cookiejar_on_redirect:
     name: test_cookielib_cookiejar_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_cookielib_cookiejar_on_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_cookielib_cookiejar_on_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6391,7 +6715,7 @@ Tests:
 
   test_requests.py::test_copy:
     name: test_copy
-    Module: None
+    Module Path: None
     Signature: test_copy(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_copy(self)
     Arguments: ['self']
@@ -6410,7 +6734,7 @@ Tests:
 
   test_requests.py::test_custom_content_type:
     name: test_custom_content_type
-    Module: None
+    Module Path: None
     Signature: test_custom_content_type(self, httpbin)
     test_exe_cmd: .TestRequests.test_custom_content_type(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6429,7 +6753,7 @@ Tests:
 
   test_requests.py::test_custom_redirect_mixin:
     name: test_custom_redirect_mixin
-    Module: None
+    Module Path: None
     Signature: test_custom_redirect_mixin(self, httpbin)
     test_exe_cmd: .TestRequests.test_custom_redirect_mixin(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6457,7 +6781,7 @@ Tests:
 
   test_requests.py::test_data_argument_accepts_tuples:
     name: test_data_argument_accepts_tuples
-    Module: None
+    Module Path: None
     Signature: test_data_argument_accepts_tuples(data)
     test_exe_cmd: .test_data_argument_accepts_tuples(data)
     Arguments: ['data']
@@ -6477,7 +6801,7 @@ Tests:
 
   test_requests.py::test_decompress_gzip:
     name: test_decompress_gzip
-    Module: None
+    Module Path: None
     Signature: test_decompress_gzip(self, httpbin)
     test_exe_cmd: .TestRequests.test_decompress_gzip(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6496,7 +6820,7 @@ Tests:
 
   test_requests.py::test_delitem:
     name: test_delitem
-    Module: None
+    Module Path: None
     Signature: test_delitem(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_delitem(self)
     Arguments: ['self']
@@ -6515,7 +6839,7 @@ Tests:
 
   test_requests.py::test_different_connection_pool_for_mtls_settings:
     name: test_different_connection_pool_for_mtls_settings
-    Module: None
+    Module Path: None
     Signature: test_different_connection_pool_for_mtls_settings(self)
     test_exe_cmd: .TestPreparingURLs.test_different_connection_pool_for_mtls_settings(self)
     Arguments: ['self']
@@ -6534,7 +6858,7 @@ Tests:
 
   test_requests.py::test_different_connection_pool_for_tls_settings_verify_True:
     name: test_different_connection_pool_for_tls_settings_verify_True
-    Module: None
+    Module Path: None
     Signature: test_different_connection_pool_for_tls_settings_verify_True(self)
     test_exe_cmd: .TestPreparingURLs.test_different_connection_pool_for_tls_settings_verify_True(self)
     Arguments: ['self']
@@ -6553,7 +6877,7 @@ Tests:
 
   test_requests.py::test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert:
     name: test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert
-    Module: None
+    Module Path: None
     Signature: test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert(self)
     test_exe_cmd: .TestPreparingURLs.test_different_connection_pool_for_tls_settings_verify_bundle_expired_cert(self)
     Arguments: ['self']
@@ -6572,7 +6896,7 @@ Tests:
 
   test_requests.py::test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert:
     name: test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert
-    Module: None
+    Module Path: None
     Signature: test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert(self)
     test_exe_cmd: .TestPreparingURLs.test_different_connection_pool_for_tls_settings_verify_bundle_unexpired_cert(self)
     Arguments: ['self']
@@ -6591,7 +6915,7 @@ Tests:
 
   test_requests.py::test_different_encodings_dont_break_post:
     name: test_different_encodings_dont_break_post
-    Module: None
+    Module Path: None
     Signature: test_different_encodings_dont_break_post(self, httpbin)
     test_exe_cmd: .TestRequests.test_different_encodings_dont_break_post(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6610,7 +6934,7 @@ Tests:
 
   test_requests.py::test_docstring_example:
     name: test_docstring_example
-    Module: None
+    Module Path: None
     Signature: test_docstring_example(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_docstring_example(self)
     Arguments: ['self']
@@ -6629,7 +6953,7 @@ Tests:
 
   test_requests.py::test_empty_content_length:
     name: test_empty_content_length
-    Module: None
+    Module Path: None
     Signature: test_empty_content_length(self, httpbin, method)
     test_exe_cmd: .TestRequests.test_empty_content_length(self, httpbin, method)
     Arguments: ['self', 'httpbin', 'method']
@@ -6648,7 +6972,7 @@ Tests:
 
   test_requests.py::test_empty_response_has_content_none:
     name: test_empty_response_has_content_none
-    Module: None
+    Module Path: None
     Signature: test_empty_response_has_content_none(self)
     test_exe_cmd: .TestRequests.test_empty_response_has_content_none(self)
     Arguments: ['self']
@@ -6667,7 +6991,7 @@ Tests:
 
   test_requests.py::test_empty_stream_with_auth_does_not_set_content_length_header:
     name: test_empty_stream_with_auth_does_not_set_content_length_header
-    Module: None
+    Module Path: None
     Signature: test_empty_stream_with_auth_does_not_set_content_length_header(self, httpbin)
     test_exe_cmd: .TestRequests.test_empty_stream_with_auth_does_not_set_content_length_header(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6687,7 +7011,7 @@ Tests:
 
   test_requests.py::test_encoded_methods:
     name: test_encoded_methods
-    Module: None
+    Module Path: None
     Signature: test_encoded_methods(self, httpbin)
     test_exe_cmd: .TestTimeout.test_encoded_methods(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6706,7 +7030,7 @@ Tests:
 
   test_requests.py::test_entry_points:
     name: test_entry_points
-    Module: None
+    Module Path: None
     Signature: test_entry_points(self)
     test_exe_cmd: .TestRequests.test_entry_points(self)
     Arguments: ['self']
@@ -6725,7 +7049,7 @@ Tests:
 
   test_requests.py::test_env_cert_bundles:
     name: test_env_cert_bundles
-    Module: None
+    Module Path: None
     Signature: test_env_cert_bundles(self, httpbin, env, expected)
     test_exe_cmd: .TestRequests.test_env_cert_bundles(self, httpbin, env, expected)
     Arguments: ['self', 'httpbin', 'env', 'expected']
@@ -6744,7 +7068,7 @@ Tests:
 
   test_requests.py::test_equality:
     name: test_equality
-    Module: None
+    Module Path: None
     Signature: test_equality(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_equality(self)
     Arguments: ['self']
@@ -6763,7 +7087,7 @@ Tests:
 
   test_requests.py::test_errors:
     name: test_errors
-    Module: None
+    Module Path: None
     Signature: test_errors(self, url, exception)
     test_exe_cmd: .TestRequests.test_errors(self, url, exception)
     Arguments: ['self', 'url', 'exception']
@@ -6782,7 +7106,7 @@ Tests:
 
   test_requests.py::test_expires_invalid_int:
     name: test_expires_invalid_int
-    Module: None
+    Module Path: None
     Signature: test_expires_invalid_int(self, value, exception)
     test_exe_cmd: .TestMorselToCookieExpires.test_expires_invalid_int(self, value, exception)
     Arguments: ['self', 'value', 'exception']
@@ -6801,7 +7125,7 @@ Tests:
 
   test_requests.py::test_expires_none:
     name: test_expires_none
-    Module: None
+    Module Path: None
     Signature: test_expires_none(self)
     test_exe_cmd: .TestMorselToCookieExpires.test_expires_none(self)
     Arguments: ['self']
@@ -6820,7 +7144,7 @@ Tests:
 
   test_requests.py::test_expires_valid_str:
     name: test_expires_valid_str
-    Module: None
+    Module Path: None
     Signature: test_expires_valid_str(self)
     test_exe_cmd: .TestMorselToCookieExpires.test_expires_valid_str(self)
     Arguments: ['self']
@@ -6839,7 +7163,7 @@ Tests:
 
   test_requests.py::test_fixes_1329:
     name: test_fixes_1329
-    Module: None
+    Module Path: None
     Signature: test_fixes_1329(self, httpbin)
     test_exe_cmd: .TestRequests.test_fixes_1329(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6858,7 +7182,7 @@ Tests:
 
   test_requests.py::test_fixes_649:
     name: test_fixes_649
-    Module: None
+    Module Path: None
     Signature: test_fixes_649(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_fixes_649(self)
     Arguments: ['self']
@@ -6877,7 +7201,7 @@ Tests:
 
   test_requests.py::test_form_encoded_post_query_multivalued_element:
     name: test_form_encoded_post_query_multivalued_element
-    Module: None
+    Module Path: None
     Signature: test_form_encoded_post_query_multivalued_element(self, httpbin)
     test_exe_cmd: .TestRequests.test_form_encoded_post_query_multivalued_element(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6896,7 +7220,7 @@ Tests:
 
   test_requests.py::test_fragment_maintained_on_redirect:
     name: test_fragment_maintained_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_fragment_maintained_on_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_fragment_maintained_on_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6915,7 +7239,7 @@ Tests:
 
   test_requests.py::test_generic_cookiejar_works:
     name: test_generic_cookiejar_works
-    Module: None
+    Module Path: None
     Signature: test_generic_cookiejar_works(self, httpbin)
     test_exe_cmd: .TestRequests.test_generic_cookiejar_works(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6934,7 +7258,7 @@ Tests:
 
   test_requests.py::test_get:
     name: test_get
-    Module: None
+    Module Path: None
     Signature: test_get(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_get(self)
     Arguments: ['self']
@@ -6953,7 +7277,7 @@ Tests:
 
   test_requests.py::test_getitem:
     name: test_getitem
-    Module: None
+    Module Path: None
     Signature: test_getitem(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_getitem(self)
     Arguments: ['self']
@@ -6972,7 +7296,7 @@ Tests:
 
   test_requests.py::test_header_and_body_removal_on_redirect:
     name: test_header_and_body_removal_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_header_and_body_removal_on_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_header_and_body_removal_on_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -6991,7 +7315,7 @@ Tests:
 
   test_requests.py::test_header_keys_are_native:
     name: test_header_keys_are_native
-    Module: None
+    Module Path: None
     Signature: test_header_keys_are_native(self, httpbin)
     test_exe_cmd: .TestRequests.test_header_keys_are_native(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7010,7 +7334,7 @@ Tests:
 
   test_requests.py::test_header_no_leading_space:
     name: test_header_no_leading_space
-    Module: None
+    Module Path: None
     Signature: test_header_no_leading_space(self, httpbin, invalid_header)
     test_exe_cmd: .TestRequests.test_header_no_leading_space(self, httpbin, invalid_header)
     Arguments: ['self', 'httpbin', 'invalid_header']
@@ -7030,7 +7354,7 @@ Tests:
 
   test_requests.py::test_header_no_return_chars:
     name: test_header_no_return_chars
-    Module: None
+    Module Path: None
     Signature: test_header_no_return_chars(self, httpbin, invalid_header)
     test_exe_cmd: .TestRequests.test_header_no_return_chars(self, httpbin, invalid_header)
     Arguments: ['self', 'httpbin', 'invalid_header']
@@ -7050,7 +7374,7 @@ Tests:
 
   test_requests.py::test_header_remove_is_case_insensitive:
     name: test_header_remove_is_case_insensitive
-    Module: None
+    Module Path: None
     Signature: test_header_remove_is_case_insensitive(self, httpbin)
     test_exe_cmd: .TestRequests.test_header_remove_is_case_insensitive(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7069,7 +7393,7 @@ Tests:
 
   test_requests.py::test_header_validation:
     name: test_header_validation
-    Module: None
+    Module Path: None
     Signature: test_header_validation(self, httpbin)
     test_exe_cmd: .TestRequests.test_header_validation(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7088,7 +7412,7 @@ Tests:
 
   test_requests.py::test_header_value_not_str:
     name: test_header_value_not_str
-    Module: None
+    Module Path: None
     Signature: test_header_value_not_str(self, httpbin, invalid_header, key)
     test_exe_cmd: .TestRequests.test_header_value_not_str(self, httpbin, invalid_header, key)
     Arguments: ['self', 'httpbin', 'invalid_header', 'key']
@@ -7108,7 +7432,7 @@ Tests:
 
   test_requests.py::test_header_with_subclass_types:
     name: test_header_with_subclass_types
-    Module: None
+    Module Path: None
     Signature: test_header_with_subclass_types(self, httpbin)
     test_exe_cmd: .TestRequests.test_header_with_subclass_types(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7129,7 +7453,7 @@ Tests:
 
   test_requests.py::test_headers_on_session_with_None_are_not_sent:
     name: test_headers_on_session_with_None_are_not_sent
-    Module: None
+    Module Path: None
     Signature: test_headers_on_session_with_None_are_not_sent(self, httpbin)
     test_exe_cmd: .TestRequests.test_headers_on_session_with_None_are_not_sent(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7148,7 +7472,7 @@ Tests:
 
   test_requests.py::test_headers_preserve_order:
     name: test_headers_preserve_order
-    Module: None
+    Module Path: None
     Signature: test_headers_preserve_order(self, httpbin)
     test_exe_cmd: .TestRequests.test_headers_preserve_order(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7167,7 +7491,7 @@ Tests:
 
   test_requests.py::test_history_is_always_a_list:
     name: test_history_is_always_a_list
-    Module: None
+    Module Path: None
     Signature: test_history_is_always_a_list(self, httpbin)
     test_exe_cmd: .TestRequests.test_history_is_always_a_list(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7186,7 +7510,7 @@ Tests:
 
   test_requests.py::test_hook_receives_request_arguments:
     name: test_hook_receives_request_arguments
-    Module: None
+    Module Path: None
     Signature: test_hook_receives_request_arguments(self, httpbin)
     test_exe_cmd: .TestRequests.test_hook_receives_request_arguments(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7205,7 +7529,7 @@ Tests:
 
   test_requests.py::test_http_301_changes_post_to_get:
     name: test_http_301_changes_post_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_301_changes_post_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_301_changes_post_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7224,7 +7548,7 @@ Tests:
 
   test_requests.py::test_http_301_doesnt_change_head_to_get:
     name: test_http_301_doesnt_change_head_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_301_doesnt_change_head_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_301_doesnt_change_head_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7243,7 +7567,7 @@ Tests:
 
   test_requests.py::test_http_302_changes_post_to_get:
     name: test_http_302_changes_post_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_302_changes_post_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_302_changes_post_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7262,7 +7586,7 @@ Tests:
 
   test_requests.py::test_http_302_doesnt_change_head_to_get:
     name: test_http_302_doesnt_change_head_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_302_doesnt_change_head_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_302_doesnt_change_head_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7281,7 +7605,7 @@ Tests:
 
   test_requests.py::test_http_303_changes_post_to_get:
     name: test_http_303_changes_post_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_303_changes_post_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_303_changes_post_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7300,7 +7624,7 @@ Tests:
 
   test_requests.py::test_http_303_doesnt_change_head_to_get:
     name: test_http_303_doesnt_change_head_to_get
-    Module: None
+    Module Path: None
     Signature: test_http_303_doesnt_change_head_to_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_303_doesnt_change_head_to_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7319,7 +7643,7 @@ Tests:
 
   test_requests.py::test_http_error:
     name: test_http_error
-    Module: None
+    Module Path: None
     Signature: test_http_error(self)
     test_exe_cmd: .TestRequests.test_http_error(self)
     Arguments: ['self']
@@ -7338,7 +7662,7 @@ Tests:
 
   test_requests.py::test_http_with_certificate:
     name: test_http_with_certificate
-    Module: None
+    Module Path: None
     Signature: test_http_with_certificate(self, httpbin)
     test_exe_cmd: .TestRequests.test_http_with_certificate(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7357,7 +7681,7 @@ Tests:
 
   test_requests.py::test_https_warnings:
     name: test_https_warnings
-    Module: None
+    Module Path: None
     Signature: test_https_warnings(self, nosan_server)
     test_exe_cmd: .TestRequests.test_https_warnings(self, nosan_server)
     Arguments: ['self', 'nosan_server']
@@ -7376,7 +7700,7 @@ Tests:
 
   test_requests.py::test_init:
     name: test_init
-    Module: None
+    Module Path: None
     Signature: test_init(self, cid)
     test_exe_cmd: .TestCaseInsensitiveDict.test_init(self, cid)
     Arguments: ['self', 'cid']
@@ -7395,7 +7719,7 @@ Tests:
 
   test_requests.py::test_invalid_ca_certificate_path:
     name: test_invalid_ca_certificate_path
-    Module: None
+    Module Path: None
     Signature: test_invalid_ca_certificate_path(self, httpbin_secure)
     test_exe_cmd: .TestRequests.test_invalid_ca_certificate_path(self, httpbin_secure)
     Arguments: ['self', 'httpbin_secure']
@@ -7414,7 +7738,7 @@ Tests:
 
   test_requests.py::test_invalid_files_input:
     name: test_invalid_files_input
-    Module: None
+    Module Path: None
     Signature: test_invalid_files_input(self, httpbin)
     test_exe_cmd: .TestRequests.test_invalid_files_input(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7433,7 +7757,7 @@ Tests:
 
   test_requests.py::test_invalid_ssl_certificate_files:
     name: test_invalid_ssl_certificate_files
-    Module: None
+    Module Path: None
     Signature: test_invalid_ssl_certificate_files(self, httpbin_secure)
     test_exe_cmd: .TestRequests.test_invalid_ssl_certificate_files(self, httpbin_secure)
     Arguments: ['self', 'httpbin_secure']
@@ -7452,7 +7776,7 @@ Tests:
 
   test_requests.py::test_invalid_timeout:
     name: test_invalid_timeout
-    Module: None
+    Module Path: None
     Signature: test_invalid_timeout(self, httpbin, timeout, error_text)
     test_exe_cmd: .TestTimeout.test_invalid_timeout(self, httpbin, timeout, error_text)
     Arguments: ['self', 'httpbin', 'timeout', 'error_text']
@@ -7471,7 +7795,7 @@ Tests:
 
   test_requests.py::test_invalid_url:
     name: test_invalid_url
-    Module: None
+    Module Path: None
     Signature: test_invalid_url(self, exception, url)
     test_exe_cmd: .TestRequests.test_invalid_url(self, exception, url)
     Arguments: ['self', 'exception', 'url']
@@ -7490,7 +7814,7 @@ Tests:
 
   test_requests.py::test_iter:
     name: test_iter
-    Module: None
+    Module Path: None
     Signature: test_iter(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_iter(self)
     Arguments: ['self']
@@ -7509,7 +7833,7 @@ Tests:
 
   test_requests.py::test_iter_content_wraps_exceptions:
     name: test_iter_content_wraps_exceptions
-    Module: None
+    Module Path: None
     Signature: test_iter_content_wraps_exceptions(self, httpbin, exception, args, expected)
     test_exe_cmd: .TestRequests.test_iter_content_wraps_exceptions(self, httpbin, exception, args, expected)
     Arguments: ['self', 'httpbin', 'exception', 'args', 'expected']
@@ -7528,7 +7852,7 @@ Tests:
 
   test_requests.py::test_json_decode_compatibility:
     name: test_json_decode_compatibility
-    Module: None
+    Module Path: None
     Signature: test_json_decode_compatibility(self, httpbin)
     test_exe_cmd: .TestPreparingURLs.test_json_decode_compatibility(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7547,7 +7871,7 @@ Tests:
 
   test_requests.py::test_json_decode_errors_are_serializable_deserializable:
     name: test_json_decode_errors_are_serializable_deserializable
-    Module: None
+    Module Path: None
     Signature: test_json_decode_errors_are_serializable_deserializable()
     test_exe_cmd: .test_json_decode_errors_are_serializable_deserializable()
     Arguments: None
@@ -7566,7 +7890,7 @@ Tests:
 
   test_requests.py::test_json_decode_persists_doc_attr:
     name: test_json_decode_persists_doc_attr
-    Module: None
+    Module Path: None
     Signature: test_json_decode_persists_doc_attr(self, httpbin)
     test_exe_cmd: .TestPreparingURLs.test_json_decode_persists_doc_attr(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7585,7 +7909,7 @@ Tests:
 
   test_requests.py::test_json_encodes_as_bytes:
     name: test_json_encodes_as_bytes
-    Module: None
+    Module Path: None
     Signature: test_json_encodes_as_bytes()
     test_exe_cmd: .test_json_encodes_as_bytes()
     Arguments: None
@@ -7604,7 +7928,7 @@ Tests:
 
   test_requests.py::test_json_param_post_content_type_works:
     name: test_json_param_post_content_type_works
-    Module: None
+    Module Path: None
     Signature: test_json_param_post_content_type_works(self, httpbin)
     test_exe_cmd: .TestRequests.test_json_param_post_content_type_works(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7623,7 +7947,7 @@ Tests:
 
   test_requests.py::test_json_param_post_should_not_override_data_param:
     name: test_json_param_post_should_not_override_data_param
-    Module: None
+    Module Path: None
     Signature: test_json_param_post_should_not_override_data_param(self, httpbin)
     test_exe_cmd: .TestRequests.test_json_param_post_should_not_override_data_param(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7642,7 +7966,7 @@ Tests:
 
   test_requests.py::test_len:
     name: test_len
-    Module: None
+    Module Path: None
     Signature: test_len(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_len(self)
     Arguments: ['self']
@@ -7661,7 +7985,7 @@ Tests:
 
   test_requests.py::test_links:
     name: test_links
-    Module: None
+    Module Path: None
     Signature: test_links(self)
     test_exe_cmd: .TestRequests.test_links(self)
     Arguments: ['self']
@@ -7680,7 +8004,7 @@ Tests:
 
   test_requests.py::test_long_authinfo_in_url:
     name: test_long_authinfo_in_url
-    Module: None
+    Module Path: None
     Signature: test_long_authinfo_in_url(self)
     test_exe_cmd: .TestRequests.test_long_authinfo_in_url(self)
     Arguments: ['self']
@@ -7699,7 +8023,7 @@ Tests:
 
   test_requests.py::test_lower_items:
     name: test_lower_items
-    Module: None
+    Module Path: None
     Signature: test_lower_items(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_lower_items(self)
     Arguments: ['self']
@@ -7718,7 +8042,7 @@ Tests:
 
   test_requests.py::test_manual_redirect_with_partial_body_read:
     name: test_manual_redirect_with_partial_body_read
-    Module: None
+    Module Path: None
     Signature: test_manual_redirect_with_partial_body_read(self, httpbin)
     test_exe_cmd: .TestRequests.test_manual_redirect_with_partial_body_read(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7737,7 +8061,7 @@ Tests:
 
   test_requests.py::test_max_age_invalid_str:
     name: test_max_age_invalid_str
-    Module: None
+    Module Path: None
     Signature: test_max_age_invalid_str(self)
     test_exe_cmd: .TestMorselToCookieMaxAge.test_max_age_invalid_str(self)
     Arguments: ['self']
@@ -7756,7 +8080,7 @@ Tests:
 
   test_requests.py::test_max_age_valid_int:
     name: test_max_age_valid_int
-    Module: None
+    Module Path: None
     Signature: test_max_age_valid_int(self)
     test_exe_cmd: .TestMorselToCookieMaxAge.test_max_age_valid_int(self)
     Arguments: ['self']
@@ -7775,7 +8099,7 @@ Tests:
 
   test_requests.py::test_mixed_case_scheme_acceptable:
     name: test_mixed_case_scheme_acceptable
-    Module: None
+    Module Path: None
     Signature: test_mixed_case_scheme_acceptable(self, httpbin, scheme)
     test_exe_cmd: .TestRequests.test_mixed_case_scheme_acceptable(self, httpbin, scheme)
     Arguments: ['self', 'httpbin', 'scheme']
@@ -7794,7 +8118,7 @@ Tests:
 
   test_requests.py::test_no_body_content_length:
     name: test_no_body_content_length
-    Module: None
+    Module Path: None
     Signature: test_no_body_content_length(self, httpbin, method)
     test_exe_cmd: .TestRequests.test_no_body_content_length(self, httpbin, method)
     Arguments: ['self', 'httpbin', 'method']
@@ -7813,7 +8137,7 @@ Tests:
 
   test_requests.py::test_no_content_length:
     name: test_no_content_length
-    Module: None
+    Module Path: None
     Signature: test_no_content_length(self, httpbin, method)
     test_exe_cmd: .TestRequests.test_no_content_length(self, httpbin, method)
     Arguments: ['self', 'httpbin', 'method']
@@ -7832,7 +8156,7 @@ Tests:
 
   test_requests.py::test_non_prepared_request_error:
     name: test_non_prepared_request_error
-    Module: None
+    Module Path: None
     Signature: test_non_prepared_request_error(self)
     test_exe_cmd: .TestRequests.test_non_prepared_request_error(self)
     Arguments: ['self']
@@ -7851,7 +8175,7 @@ Tests:
 
   test_requests.py::test_none_timeout:
     name: test_none_timeout
-    Module: None
+    Module Path: None
     Signature: test_none_timeout(self, httpbin, timeout)
     test_exe_cmd: .TestTimeout.test_none_timeout(self, httpbin, timeout)
     Arguments: ['self', 'httpbin', 'timeout']
@@ -7876,7 +8200,7 @@ Tests:
 
   test_requests.py::test_nonhttp_schemes_dont_check_URLs:
     name: test_nonhttp_schemes_dont_check_URLs
-    Module: None
+    Module Path: None
     Signature: test_nonhttp_schemes_dont_check_URLs(self)
     test_exe_cmd: .TestRequests.test_nonhttp_schemes_dont_check_URLs(self)
     Arguments: ['self']
@@ -7895,7 +8219,7 @@ Tests:
 
   test_requests.py::test_override_content_length:
     name: test_override_content_length
-    Module: None
+    Module Path: None
     Signature: test_override_content_length(self, httpbin)
     test_exe_cmd: .TestRequests.test_override_content_length(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7914,7 +8238,7 @@ Tests:
 
   test_requests.py::test_param_cookiejar_works:
     name: test_param_cookiejar_works
-    Module: None
+    Module Path: None
     Signature: test_param_cookiejar_works(self, httpbin)
     test_exe_cmd: .TestRequests.test_param_cookiejar_works(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7933,7 +8257,7 @@ Tests:
 
   test_requests.py::test_parameters_for_nonstandard_schemes:
     name: test_parameters_for_nonstandard_schemes
-    Module: None
+    Module Path: None
     Signature: test_parameters_for_nonstandard_schemes(self, input, params, expected)
     test_exe_cmd: .TestPreparingURLs.test_parameters_for_nonstandard_schemes(self, input, params, expected)
     Arguments: ['self', 'input', 'params', 'expected']
@@ -7953,7 +8277,7 @@ Tests:
 
   test_requests.py::test_params_are_added_before_fragment:
     name: test_params_are_added_before_fragment
-    Module: None
+    Module Path: None
     Signature: test_params_are_added_before_fragment(self, url, expected)
     test_exe_cmd: .TestRequests.test_params_are_added_before_fragment(self, url, expected)
     Arguments: ['self', 'url', 'expected']
@@ -7972,7 +8296,7 @@ Tests:
 
   test_requests.py::test_params_are_merged_case_sensitive:
     name: test_params_are_merged_case_sensitive
-    Module: None
+    Module Path: None
     Signature: test_params_are_merged_case_sensitive(self, httpbin)
     test_exe_cmd: .TestRequests.test_params_are_merged_case_sensitive(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -7991,7 +8315,7 @@ Tests:
 
   test_requests.py::test_params_bytes_are_encoded:
     name: test_params_bytes_are_encoded
-    Module: None
+    Module Path: None
     Signature: test_params_bytes_are_encoded(self)
     test_exe_cmd: .TestRequests.test_params_bytes_are_encoded(self)
     Arguments: ['self']
@@ -8010,7 +8334,7 @@ Tests:
 
   test_requests.py::test_params_original_order_is_preserved_by_default:
     name: test_params_original_order_is_preserved_by_default
-    Module: None
+    Module Path: None
     Signature: test_params_original_order_is_preserved_by_default(self)
     test_exe_cmd: .TestRequests.test_params_original_order_is_preserved_by_default(self)
     Arguments: ['self']
@@ -8029,7 +8353,7 @@ Tests:
 
   test_requests.py::test_path_is_not_double_encoded:
     name: test_path_is_not_double_encoded
-    Module: None
+    Module Path: None
     Signature: test_path_is_not_double_encoded(self)
     test_exe_cmd: .TestRequests.test_path_is_not_double_encoded(self)
     Arguments: ['self']
@@ -8048,7 +8372,7 @@ Tests:
 
   test_requests.py::test_post_json_nan:
     name: test_post_json_nan
-    Module: None
+    Module Path: None
     Signature: test_post_json_nan(self, httpbin)
     test_exe_cmd: .TestPreparingURLs.test_post_json_nan(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8067,7 +8391,7 @@ Tests:
 
   test_requests.py::test_post_with_custom_mapping:
     name: test_post_with_custom_mapping
-    Module: None
+    Module Path: None
     Signature: test_post_with_custom_mapping(self, httpbin)
     test_exe_cmd: .TestRequests.test_post_with_custom_mapping(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8086,7 +8410,7 @@ Tests:
 
   test_requests.py::test_prepare_body_position_non_stream:
     name: test_prepare_body_position_non_stream
-    Module: None
+    Module Path: None
     Signature: test_prepare_body_position_non_stream(self)
     test_exe_cmd: .TestRequests.test_prepare_body_position_non_stream(self)
     Arguments: ['self']
@@ -8105,7 +8429,7 @@ Tests:
 
   test_requests.py::test_prepare_request_with_bytestring_url:
     name: test_prepare_request_with_bytestring_url
-    Module: None
+    Module Path: None
     Signature: test_prepare_request_with_bytestring_url(self)
     test_exe_cmd: .TestRequests.test_prepare_request_with_bytestring_url(self)
     Arguments: ['self']
@@ -8124,7 +8448,7 @@ Tests:
 
   test_requests.py::test_prepared_copy:
     name: test_prepared_copy
-    Module: None
+    Module Path: None
     Signature: test_prepared_copy(kwargs)
     test_exe_cmd: .test_prepared_copy(kwargs)
     Arguments: ['kwargs']
@@ -8143,7 +8467,7 @@ Tests:
 
   test_requests.py::test_prepared_from_session:
     name: test_prepared_from_session
-    Module: None
+    Module Path: None
     Signature: test_prepared_from_session(self, httpbin)
     test_exe_cmd: .TestRequests.test_prepared_from_session(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8162,7 +8486,7 @@ Tests:
 
   test_requests.py::test_prepared_request_hook:
     name: test_prepared_request_hook
-    Module: None
+    Module Path: None
     Signature: test_prepared_request_hook(self, httpbin)
     test_exe_cmd: .TestRequests.test_prepared_request_hook(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8181,7 +8505,7 @@ Tests:
 
   test_requests.py::test_prepared_request_is_pickleable:
     name: test_prepared_request_is_pickleable
-    Module: None
+    Module Path: None
     Signature: test_prepared_request_is_pickleable(self, httpbin)
     test_exe_cmd: .TestRequests.test_prepared_request_is_pickleable(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8200,7 +8524,7 @@ Tests:
 
   test_requests.py::test_prepared_request_with_file_is_pickleable:
     name: test_prepared_request_with_file_is_pickleable
-    Module: None
+    Module Path: None
     Signature: test_prepared_request_with_file_is_pickleable(self, httpbin)
     test_exe_cmd: .TestRequests.test_prepared_request_with_file_is_pickleable(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8219,7 +8543,7 @@ Tests:
 
   test_requests.py::test_prepared_request_with_hook_is_pickleable:
     name: test_prepared_request_with_hook_is_pickleable
-    Module: None
+    Module Path: None
     Signature: test_prepared_request_with_hook_is_pickleable(self, httpbin)
     test_exe_cmd: .TestRequests.test_prepared_request_with_hook_is_pickleable(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8238,7 +8562,7 @@ Tests:
 
   test_requests.py::test_preparing_bad_url:
     name: test_preparing_bad_url
-    Module: None
+    Module Path: None
     Signature: test_preparing_bad_url(self, url)
     test_exe_cmd: .TestPreparingURLs.test_preparing_bad_url(self, url)
     Arguments: ['self', 'url']
@@ -8257,7 +8581,7 @@ Tests:
 
   test_requests.py::test_preparing_url:
     name: test_preparing_url
-    Module: None
+    Module Path: None
     Signature: test_preparing_url(self, url, expected)
     test_exe_cmd: .TestPreparingURLs.test_preparing_url(self, url, expected)
     Arguments: ['self', 'url', 'expected']
@@ -8276,7 +8600,7 @@ Tests:
 
   test_requests.py::test_preserve_key_case:
     name: test_preserve_key_case
-    Module: None
+    Module Path: None
     Signature: test_preserve_key_case(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_preserve_key_case(self)
     Arguments: ['self']
@@ -8295,7 +8619,7 @@ Tests:
 
   test_requests.py::test_preserve_last_key_case:
     name: test_preserve_last_key_case
-    Module: None
+    Module Path: None
     Signature: test_preserve_last_key_case(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_preserve_last_key_case(self)
     Arguments: ['self']
@@ -8314,7 +8638,7 @@ Tests:
 
   test_requests.py::test_proxy_auth:
     name: test_proxy_auth
-    Module: None
+    Module Path: None
     Signature: test_proxy_auth(self)
     test_exe_cmd: .TestRequests.test_proxy_auth(self)
     Arguments: ['self']
@@ -8333,7 +8657,7 @@ Tests:
 
   test_requests.py::test_proxy_auth_empty_pass:
     name: test_proxy_auth_empty_pass
-    Module: None
+    Module Path: None
     Signature: test_proxy_auth_empty_pass(self)
     test_exe_cmd: .TestRequests.test_proxy_auth_empty_pass(self)
     Arguments: ['self']
@@ -8352,7 +8676,7 @@ Tests:
 
   test_requests.py::test_proxy_authorization_not_appended_to_https_request:
     name: test_proxy_authorization_not_appended_to_https_request
-    Module: None
+    Module Path: None
     Signature: test_proxy_authorization_not_appended_to_https_request(self, url, has_proxy_auth)
     test_exe_cmd: .TestRequests.test_proxy_authorization_not_appended_to_https_request(self, url, has_proxy_auth)
     Arguments: ['self', 'url', 'has_proxy_auth']
@@ -8371,7 +8695,7 @@ Tests:
 
   test_requests.py::test_proxy_authorization_preserved_on_request:
     name: test_proxy_authorization_preserved_on_request
-    Module: None
+    Module Path: None
     Signature: test_proxy_authorization_preserved_on_request(self, httpbin)
     test_exe_cmd: .TestRequests.test_proxy_authorization_preserved_on_request(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8390,7 +8714,7 @@ Tests:
 
   test_requests.py::test_proxy_env_vars_override_default:
     name: test_proxy_env_vars_override_default
-    Module: None
+    Module Path: None
     Signature: test_proxy_env_vars_override_default(var, url, proxy)
     test_exe_cmd: .test_proxy_env_vars_override_default(var, url, proxy)
     Arguments: ['var', 'url', 'proxy']
@@ -8409,7 +8733,7 @@ Tests:
 
   test_requests.py::test_proxy_error:
     name: test_proxy_error
-    Module: None
+    Module Path: None
     Signature: test_proxy_error(self)
     test_exe_cmd: .TestRequests.test_proxy_error(self)
     Arguments: ['self']
@@ -8428,7 +8752,7 @@ Tests:
 
   test_requests.py::test_proxy_error_on_bad_url:
     name: test_proxy_error_on_bad_url
-    Module: None
+    Module Path: None
     Signature: test_proxy_error_on_bad_url(self, httpbin, httpbin_secure)
     test_exe_cmd: .TestRequests.test_proxy_error_on_bad_url(self, httpbin, httpbin_secure)
     Arguments: ['self', 'httpbin', 'httpbin_secure']
@@ -8447,7 +8771,7 @@ Tests:
 
   test_requests.py::test_pyopenssl_redirect:
     name: test_pyopenssl_redirect
-    Module: None
+    Module Path: None
     Signature: test_pyopenssl_redirect(self, httpbin_secure, httpbin_ca_bundle)
     test_exe_cmd: .TestRequests.test_pyopenssl_redirect(self, httpbin_secure, httpbin_ca_bundle)
     Arguments: ['self', 'httpbin_secure', 'httpbin_ca_bundle']
@@ -8466,7 +8790,7 @@ Tests:
 
   test_requests.py::test_read_timeout:
     name: test_read_timeout
-    Module: None
+    Module Path: None
     Signature: test_read_timeout(self, httpbin, timeout)
     test_exe_cmd: .TestTimeout.test_read_timeout(self, httpbin, timeout)
     Arguments: ['self', 'httpbin', 'timeout']
@@ -8485,7 +8809,7 @@ Tests:
 
   test_requests.py::test_redirect_with_wrong_gzipped_header:
     name: test_redirect_with_wrong_gzipped_header
-    Module: None
+    Module Path: None
     Signature: test_redirect_with_wrong_gzipped_header(self, httpbin)
     test_exe_cmd: .TestRequests.test_redirect_with_wrong_gzipped_header(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8504,7 +8828,7 @@ Tests:
 
   test_requests.py::test_redirecting_to_bad_url:
     name: test_redirecting_to_bad_url
-    Module: None
+    Module Path: None
     Signature: test_redirecting_to_bad_url(self, httpbin, url, exception)
     test_exe_cmd: .TestPreparingURLs.test_redirecting_to_bad_url(self, httpbin, url, exception)
     Arguments: ['self', 'httpbin', 'url', 'exception']
@@ -8523,7 +8847,7 @@ Tests:
 
   test_requests.py::test_request_and_response_are_pickleable:
     name: test_request_and_response_are_pickleable
-    Module: None
+    Module Path: None
     Signature: test_request_and_response_are_pickleable(self, httpbin)
     test_exe_cmd: .TestRequests.test_request_and_response_are_pickleable(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8542,7 +8866,7 @@ Tests:
 
   test_requests.py::test_request_cookie_overrides_session_cookie:
     name: test_request_cookie_overrides_session_cookie
-    Module: None
+    Module Path: None
     Signature: test_request_cookie_overrides_session_cookie(self, httpbin)
     test_exe_cmd: .TestRequests.test_request_cookie_overrides_session_cookie(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8561,7 +8885,7 @@ Tests:
 
   test_requests.py::test_request_cookies_not_persisted:
     name: test_request_cookies_not_persisted
-    Module: None
+    Module Path: None
     Signature: test_request_cookies_not_persisted(self, httpbin)
     test_exe_cmd: .TestRequests.test_request_cookies_not_persisted(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8580,7 +8904,7 @@ Tests:
 
   test_requests.py::test_request_ok_set:
     name: test_request_ok_set
-    Module: None
+    Module Path: None
     Signature: test_request_ok_set(self, httpbin)
     test_exe_cmd: .TestRequests.test_request_ok_set(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8599,7 +8923,7 @@ Tests:
 
   test_requests.py::test_request_with_bytestring_host:
     name: test_request_with_bytestring_host
-    Module: None
+    Module Path: None
     Signature: test_request_with_bytestring_host(self, httpbin)
     test_exe_cmd: .TestRequests.test_request_with_bytestring_host(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8618,7 +8942,7 @@ Tests:
 
   test_requests.py::test_requests_are_updated_each_time:
     name: test_requests_are_updated_each_time
-    Module: None
+    Module Path: None
     Signature: test_requests_are_updated_each_time(httpbin)
     test_exe_cmd: .test_requests_are_updated_each_time(httpbin)
     Arguments: ['httpbin']
@@ -8637,7 +8961,7 @@ Tests:
 
   test_requests.py::test_requests_history_is_saved:
     name: test_requests_history_is_saved
-    Module: None
+    Module Path: None
     Signature: test_requests_history_is_saved(self, httpbin)
     test_exe_cmd: .TestRequests.test_requests_history_is_saved(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8656,7 +8980,7 @@ Tests:
 
   test_requests.py::test_requests_in_history_are_not_overridden:
     name: test_requests_in_history_are_not_overridden
-    Module: None
+    Module Path: None
     Signature: test_requests_in_history_are_not_overridden(self, httpbin)
     test_exe_cmd: .TestRequests.test_requests_in_history_are_not_overridden(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8675,7 +8999,7 @@ Tests:
 
   test_requests.py::test_respect_proxy_env_on_get:
     name: test_respect_proxy_env_on_get
-    Module: None
+    Module Path: None
     Signature: test_respect_proxy_env_on_get(self, httpbin)
     test_exe_cmd: .TestRequests.test_respect_proxy_env_on_get(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8694,7 +9018,7 @@ Tests:
 
   test_requests.py::test_respect_proxy_env_on_request:
     name: test_respect_proxy_env_on_request
-    Module: None
+    Module Path: None
     Signature: test_respect_proxy_env_on_request(self, httpbin)
     test_exe_cmd: .TestRequests.test_respect_proxy_env_on_request(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8713,7 +9037,7 @@ Tests:
 
   test_requests.py::test_respect_proxy_env_on_send_self_prepared_request:
     name: test_respect_proxy_env_on_send_self_prepared_request
-    Module: None
+    Module Path: None
     Signature: test_respect_proxy_env_on_send_self_prepared_request(self, httpbin)
     test_exe_cmd: .TestRequests.test_respect_proxy_env_on_send_self_prepared_request(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8732,7 +9056,7 @@ Tests:
 
   test_requests.py::test_respect_proxy_env_on_send_session_prepared_request:
     name: test_respect_proxy_env_on_send_session_prepared_request
-    Module: None
+    Module Path: None
     Signature: test_respect_proxy_env_on_send_session_prepared_request(self, httpbin)
     test_exe_cmd: .TestRequests.test_respect_proxy_env_on_send_session_prepared_request(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8751,7 +9075,7 @@ Tests:
 
   test_requests.py::test_respect_proxy_env_on_send_with_redirects:
     name: test_respect_proxy_env_on_send_with_redirects
-    Module: None
+    Module Path: None
     Signature: test_respect_proxy_env_on_send_with_redirects(self, httpbin)
     test_exe_cmd: .TestRequests.test_respect_proxy_env_on_send_with_redirects(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8770,7 +9094,7 @@ Tests:
 
   test_requests.py::test_response_chunk_size_type:
     name: test_response_chunk_size_type
-    Module: None
+    Module Path: None
     Signature: test_response_chunk_size_type(self)
     test_exe_cmd: .TestRequests.test_response_chunk_size_type(self)
     Arguments: ['self']
@@ -8790,7 +9114,7 @@ Tests:
 
   test_requests.py::test_response_context_manager:
     name: test_response_context_manager
-    Module: None
+    Module Path: None
     Signature: test_response_context_manager(self, httpbin)
     test_exe_cmd: .TestRequests.test_response_context_manager(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8809,7 +9133,7 @@ Tests:
 
   test_requests.py::test_response_decode_unicode:
     name: test_response_decode_unicode
-    Module: None
+    Module Path: None
     Signature: test_response_decode_unicode(self)
     test_exe_cmd: .TestRequests.test_response_decode_unicode(self)
     Arguments: ['self']
@@ -8829,7 +9153,7 @@ Tests:
 
   test_requests.py::test_response_is_iterable:
     name: test_response_is_iterable
-    Module: None
+    Module Path: None
     Signature: test_response_is_iterable(self)
     test_exe_cmd: .TestRequests.test_response_is_iterable(self)
     Arguments: ['self']
@@ -8848,7 +9172,7 @@ Tests:
 
   test_requests.py::test_response_iter_lines:
     name: test_response_iter_lines
-    Module: None
+    Module Path: None
     Signature: test_response_iter_lines(self, httpbin)
     test_exe_cmd: .TestRequests.test_response_iter_lines(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8867,7 +9191,7 @@ Tests:
 
   test_requests.py::test_response_iter_lines_reentrant:
     name: test_response_iter_lines_reentrant
-    Module: None
+    Module Path: None
     Signature: test_response_iter_lines_reentrant(self, httpbin)
     test_exe_cmd: .TestRequests.test_response_iter_lines_reentrant(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8886,7 +9210,7 @@ Tests:
 
   test_requests.py::test_response_json_when_content_is_None:
     name: test_response_json_when_content_is_None
-    Module: None
+    Module Path: None
     Signature: test_response_json_when_content_is_None(self, httpbin)
     test_exe_cmd: .TestRequests.test_response_json_when_content_is_None(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -8905,7 +9229,7 @@ Tests:
 
   test_requests.py::test_response_reason_unicode:
     name: test_response_reason_unicode
-    Module: None
+    Module Path: None
     Signature: test_response_reason_unicode(self)
     test_exe_cmd: .TestRequests.test_response_reason_unicode(self)
     Arguments: ['self']
@@ -8924,7 +9248,7 @@ Tests:
 
   test_requests.py::test_response_reason_unicode_fallback:
     name: test_response_reason_unicode_fallback
-    Module: None
+    Module Path: None
     Signature: test_response_reason_unicode_fallback(self)
     test_exe_cmd: .TestRequests.test_response_reason_unicode_fallback(self)
     Arguments: ['self']
@@ -8943,7 +9267,7 @@ Tests:
 
   test_requests.py::test_response_without_release_conn:
     name: test_response_without_release_conn
-    Module: None
+    Module Path: None
     Signature: test_response_without_release_conn(self)
     test_exe_cmd: .TestRequests.test_response_without_release_conn(self)
     Arguments: ['self']
@@ -8963,7 +9287,7 @@ Tests:
 
   test_requests.py::test_rewind_body:
     name: test_rewind_body
-    Module: None
+    Module Path: None
     Signature: test_rewind_body(self)
     test_exe_cmd: .TestRequests.test_rewind_body(self)
     Arguments: ['self']
@@ -8982,7 +9306,7 @@ Tests:
 
   test_requests.py::test_rewind_body_failed_seek:
     name: test_rewind_body_failed_seek
-    Module: None
+    Module Path: None
     Signature: test_rewind_body_failed_seek(self)
     test_exe_cmd: .TestRequests.test_rewind_body_failed_seek(self)
     Arguments: ['self']
@@ -9001,7 +9325,7 @@ Tests:
 
   test_requests.py::test_rewind_body_failed_tell:
     name: test_rewind_body_failed_tell
-    Module: None
+    Module Path: None
     Signature: test_rewind_body_failed_tell(self)
     test_exe_cmd: .TestRequests.test_rewind_body_failed_tell(self)
     Arguments: ['self']
@@ -9020,7 +9344,7 @@ Tests:
 
   test_requests.py::test_rewind_body_no_seek:
     name: test_rewind_body_no_seek
-    Module: None
+    Module Path: None
     Signature: test_rewind_body_no_seek(self)
     test_exe_cmd: .TestRequests.test_rewind_body_no_seek(self)
     Arguments: ['self']
@@ -9039,7 +9363,7 @@ Tests:
 
   test_requests.py::test_rewind_partially_read_body:
     name: test_rewind_partially_read_body
-    Module: None
+    Module Path: None
     Signature: test_rewind_partially_read_body(self)
     test_exe_cmd: .TestRequests.test_rewind_partially_read_body(self)
     Arguments: ['self']
@@ -9058,7 +9382,7 @@ Tests:
 
   test_requests.py::test_session_close_proxy_clear:
     name: test_session_close_proxy_clear
-    Module: None
+    Module Path: None
     Signature: test_session_close_proxy_clear(self)
     test_exe_cmd: .TestRequests.test_session_close_proxy_clear(self)
     Arguments: ['self']
@@ -9077,7 +9401,7 @@ Tests:
 
   test_requests.py::test_session_get_adapter_prefix_matching:
     name: test_session_get_adapter_prefix_matching
-    Module: None
+    Module Path: None
     Signature: test_session_get_adapter_prefix_matching(self)
     test_exe_cmd: .TestRequests.test_session_get_adapter_prefix_matching(self)
     Arguments: ['self']
@@ -9096,7 +9420,7 @@ Tests:
 
   test_requests.py::test_session_get_adapter_prefix_matching_is_case_insensitive:
     name: test_session_get_adapter_prefix_matching_is_case_insensitive
-    Module: None
+    Module Path: None
     Signature: test_session_get_adapter_prefix_matching_is_case_insensitive(self)
     test_exe_cmd: .TestRequests.test_session_get_adapter_prefix_matching_is_case_insensitive(self)
     Arguments: ['self']
@@ -9115,7 +9439,7 @@ Tests:
 
   test_requests.py::test_session_get_adapter_prefix_matching_mixed_case:
     name: test_session_get_adapter_prefix_matching_mixed_case
-    Module: None
+    Module Path: None
     Signature: test_session_get_adapter_prefix_matching_mixed_case(self)
     test_exe_cmd: .TestRequests.test_session_get_adapter_prefix_matching_mixed_case(self)
     Arguments: ['self']
@@ -9134,7 +9458,7 @@ Tests:
 
   test_requests.py::test_session_hooks_are_overridden_by_request_hooks:
     name: test_session_hooks_are_overridden_by_request_hooks
-    Module: None
+    Module Path: None
     Signature: test_session_hooks_are_overridden_by_request_hooks(self, httpbin)
     test_exe_cmd: .TestRequests.test_session_hooks_are_overridden_by_request_hooks(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9153,7 +9477,7 @@ Tests:
 
   test_requests.py::test_session_hooks_are_used_with_no_request_hooks:
     name: test_session_hooks_are_used_with_no_request_hooks
-    Module: None
+    Module Path: None
     Signature: test_session_hooks_are_used_with_no_request_hooks(self, httpbin)
     test_exe_cmd: .TestRequests.test_session_hooks_are_used_with_no_request_hooks(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9172,7 +9496,7 @@ Tests:
 
   test_requests.py::test_session_pickling:
     name: test_session_pickling
-    Module: None
+    Module Path: None
     Signature: test_session_pickling(self, httpbin)
     test_exe_cmd: .TestRequests.test_session_pickling(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9191,7 +9515,7 @@ Tests:
 
   test_requests.py::test_set_basicauth:
     name: test_set_basicauth
-    Module: None
+    Module Path: None
     Signature: test_set_basicauth(self, httpbin, username, password)
     test_exe_cmd: .TestRequests.test_set_basicauth(self, httpbin, username, password)
     Arguments: ['self', 'httpbin', 'username', 'password']
@@ -9210,7 +9534,7 @@ Tests:
 
   test_requests.py::test_set_cookie_on_301:
     name: test_set_cookie_on_301
-    Module: None
+    Module Path: None
     Signature: test_set_cookie_on_301(self, httpbin)
     test_exe_cmd: .TestRequests.test_set_cookie_on_301(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9229,7 +9553,7 @@ Tests:
 
   test_requests.py::test_setdefault:
     name: test_setdefault
-    Module: None
+    Module Path: None
     Signature: test_setdefault(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_setdefault(self)
     Arguments: ['self']
@@ -9248,7 +9572,7 @@ Tests:
 
   test_requests.py::test_should_strip_auth_default_port:
     name: test_should_strip_auth_default_port
-    Module: None
+    Module Path: None
     Signature: test_should_strip_auth_default_port(self, old_uri, new_uri)
     test_exe_cmd: .TestRequests.test_should_strip_auth_default_port(self, old_uri, new_uri)
     Arguments: ['self', 'old_uri', 'new_uri']
@@ -9267,7 +9591,7 @@ Tests:
 
   test_requests.py::test_should_strip_auth_host_change:
     name: test_should_strip_auth_host_change
-    Module: None
+    Module Path: None
     Signature: test_should_strip_auth_host_change(self)
     test_exe_cmd: .TestRequests.test_should_strip_auth_host_change(self)
     Arguments: ['self']
@@ -9286,7 +9610,7 @@ Tests:
 
   test_requests.py::test_should_strip_auth_http_downgrade:
     name: test_should_strip_auth_http_downgrade
-    Module: None
+    Module Path: None
     Signature: test_should_strip_auth_http_downgrade(self)
     test_exe_cmd: .TestRequests.test_should_strip_auth_http_downgrade(self)
     Arguments: ['self']
@@ -9305,7 +9629,7 @@ Tests:
 
   test_requests.py::test_should_strip_auth_https_upgrade:
     name: test_should_strip_auth_https_upgrade
-    Module: None
+    Module Path: None
     Signature: test_should_strip_auth_https_upgrade(self)
     test_exe_cmd: .TestRequests.test_should_strip_auth_https_upgrade(self)
     Arguments: ['self']
@@ -9324,7 +9648,7 @@ Tests:
 
   test_requests.py::test_should_strip_auth_port_change:
     name: test_should_strip_auth_port_change
-    Module: None
+    Module Path: None
     Signature: test_should_strip_auth_port_change(self)
     test_exe_cmd: .TestRequests.test_should_strip_auth_port_change(self)
     Arguments: ['self']
@@ -9343,7 +9667,7 @@ Tests:
 
   test_requests.py::test_status_code_425:
     name: test_status_code_425
-    Module: None
+    Module Path: None
     Signature: test_status_code_425(self)
     test_exe_cmd: .TestPreparingURLs.test_status_code_425(self)
     Arguments: ['self']
@@ -9362,7 +9686,7 @@ Tests:
 
   test_requests.py::test_status_raising:
     name: test_status_raising
-    Module: None
+    Module Path: None
     Signature: test_status_raising(self, httpbin)
     test_exe_cmd: .TestRequests.test_status_raising(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9381,7 +9705,7 @@ Tests:
 
   test_requests.py::test_stream_timeout:
     name: test_stream_timeout
-    Module: None
+    Module Path: None
     Signature: test_stream_timeout(self, httpbin)
     test_exe_cmd: .TestTimeout.test_stream_timeout(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9400,7 +9724,7 @@ Tests:
 
   test_requests.py::test_stream_with_auth_does_not_set_transfer_encoding_header:
     name: test_stream_with_auth_does_not_set_transfer_encoding_header
-    Module: None
+    Module Path: None
     Signature: test_stream_with_auth_does_not_set_transfer_encoding_header(self, httpbin)
     test_exe_cmd: .TestRequests.test_stream_with_auth_does_not_set_transfer_encoding_header(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9420,7 +9744,7 @@ Tests:
 
   test_requests.py::test_time_elapsed_blank:
     name: test_time_elapsed_blank
-    Module: None
+    Module Path: None
     Signature: test_time_elapsed_blank(self, httpbin)
     test_exe_cmd: .TestRequests.test_time_elapsed_blank(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9439,7 +9763,7 @@ Tests:
 
   test_requests.py::test_total_timeout_connect:
     name: test_total_timeout_connect
-    Module: None
+    Module Path: None
     Signature: test_total_timeout_connect(self, timeout)
     test_exe_cmd: .TestTimeout.test_total_timeout_connect(self, timeout)
     Arguments: ['self', 'timeout']
@@ -9458,7 +9782,7 @@ Tests:
 
   test_requests.py::test_transfer_enc_removal_on_redirect:
     name: test_transfer_enc_removal_on_redirect
-    Module: None
+    Module Path: None
     Signature: test_transfer_enc_removal_on_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_transfer_enc_removal_on_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9477,7 +9801,7 @@ Tests:
 
   test_requests.py::test_transport_adapter_ordering:
     name: test_transport_adapter_ordering
-    Module: None
+    Module Path: None
     Signature: test_transport_adapter_ordering(self)
     test_exe_cmd: .TestRequests.test_transport_adapter_ordering(self)
     Arguments: ['self']
@@ -9496,7 +9820,7 @@ Tests:
 
   test_requests.py::test_unconsumed_session_response_closes_connection:
     name: test_unconsumed_session_response_closes_connection
-    Module: None
+    Module Path: None
     Signature: test_unconsumed_session_response_closes_connection(self, httpbin)
     test_exe_cmd: .TestRequests.test_unconsumed_session_response_closes_connection(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9515,7 +9839,7 @@ Tests:
 
   test_requests.py::test_unicode_get:
     name: test_unicode_get
-    Module: None
+    Module Path: None
     Signature: test_unicode_get(self, httpbin, url, params)
     test_exe_cmd: .TestRequests.test_unicode_get(self, httpbin, url, params)
     Arguments: ['self', 'httpbin', 'url', 'params']
@@ -9534,7 +9858,7 @@ Tests:
 
   test_requests.py::test_unicode_header_name:
     name: test_unicode_header_name
-    Module: None
+    Module Path: None
     Signature: test_unicode_header_name(self, httpbin)
     test_exe_cmd: .TestRequests.test_unicode_header_name(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9553,7 +9877,7 @@ Tests:
 
   test_requests.py::test_unicode_method_name:
     name: test_unicode_method_name
-    Module: None
+    Module Path: None
     Signature: test_unicode_method_name(self, httpbin)
     test_exe_cmd: .TestRequests.test_unicode_method_name(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9572,7 +9896,7 @@ Tests:
 
   test_requests.py::test_unicode_method_name_with_request_object:
     name: test_unicode_method_name_with_request_object
-    Module: None
+    Module Path: None
     Signature: test_unicode_method_name_with_request_object(self, httpbin)
     test_exe_cmd: .TestRequests.test_unicode_method_name_with_request_object(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9591,7 +9915,7 @@ Tests:
 
   test_requests.py::test_unicode_multipart_post:
     name: test_unicode_multipart_post
-    Module: None
+    Module Path: None
     Signature: test_unicode_multipart_post(self, httpbin, data)
     test_exe_cmd: .TestRequests.test_unicode_multipart_post(self, httpbin, data)
     Arguments: ['self', 'httpbin', 'data']
@@ -9610,7 +9934,7 @@ Tests:
 
   test_requests.py::test_unicode_multipart_post_fieldnames:
     name: test_unicode_multipart_post_fieldnames
-    Module: None
+    Module Path: None
     Signature: test_unicode_multipart_post_fieldnames(self, httpbin)
     test_exe_cmd: .TestRequests.test_unicode_multipart_post_fieldnames(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9629,7 +9953,7 @@ Tests:
 
   test_requests.py::test_update:
     name: test_update
-    Module: None
+    Module Path: None
     Signature: test_update(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_update(self)
     Arguments: ['self']
@@ -9648,7 +9972,7 @@ Tests:
 
   test_requests.py::test_update_retains_unchanged:
     name: test_update_retains_unchanged
-    Module: None
+    Module Path: None
     Signature: test_update_retains_unchanged(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_update_retains_unchanged(self)
     Arguments: ['self']
@@ -9667,7 +9991,7 @@ Tests:
 
   test_requests.py::test_uppercase_scheme_redirect:
     name: test_uppercase_scheme_redirect
-    Module: None
+    Module Path: None
     Signature: test_uppercase_scheme_redirect(self, httpbin)
     test_exe_cmd: .TestRequests.test_uppercase_scheme_redirect(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9686,7 +10010,7 @@ Tests:
 
   test_requests.py::test_url_mutation:
     name: test_url_mutation
-    Module: None
+    Module Path: None
     Signature: test_url_mutation(self, input, expected)
     test_exe_cmd: .TestPreparingURLs.test_url_mutation(self, input, expected)
     Arguments: ['self', 'input', 'expected']
@@ -9708,7 +10032,7 @@ Tests:
 
   test_requests.py::test_urlencoded_get_query_multivalued_param:
     name: test_urlencoded_get_query_multivalued_param
-    Module: None
+    Module Path: None
     Signature: test_urlencoded_get_query_multivalued_param(self, httpbin)
     test_exe_cmd: .TestRequests.test_urlencoded_get_query_multivalued_param(self, httpbin)
     Arguments: ['self', 'httpbin']
@@ -9727,7 +10051,7 @@ Tests:
 
   test_requests.py::test_urllib3_pool_connection_closed:
     name: test_urllib3_pool_connection_closed
-    Module: None
+    Module Path: None
     Signature: test_urllib3_pool_connection_closed(httpbin)
     test_exe_cmd: .test_urllib3_pool_connection_closed(httpbin)
     Arguments: ['httpbin']
@@ -9746,7 +10070,7 @@ Tests:
 
   test_requests.py::test_urllib3_retries:
     name: test_urllib3_retries
-    Module: None
+    Module Path: None
     Signature: test_urllib3_retries(httpbin)
     test_exe_cmd: .test_urllib3_retries(httpbin)
     Arguments: ['httpbin']
@@ -9765,7 +10089,7 @@ Tests:
 
   test_requests.py::test_user_agent_transfers:
     name: test_user_agent_transfers
-    Module: None
+    Module Path: None
     Signature: test_user_agent_transfers(self, httpbin, key)
     test_exe_cmd: .TestRequests.test_user_agent_transfers(self, httpbin, key)
     Arguments: ['self', 'httpbin', 'key']
@@ -9784,7 +10108,7 @@ Tests:
 
   test_requests.py::test_whitespaces_are_removed_from_url:
     name: test_whitespaces_are_removed_from_url
-    Module: None
+    Module Path: None
     Signature: test_whitespaces_are_removed_from_url(self)
     test_exe_cmd: .TestRequests.test_whitespaces_are_removed_from_url(self)
     Arguments: ['self']
@@ -9803,7 +10127,7 @@ Tests:
 
   test_structures.py::setup:
     name: setup
-    Module: None
+    Module Path: None
     Signature: setup(self)
     test_exe_cmd: .TestLookupDict.setup(self)
     Arguments: ['self']
@@ -9822,7 +10146,7 @@ Tests:
 
   test_structures.py::test_copy:
     name: test_copy
-    Module: None
+    Module Path: None
     Signature: test_copy(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_copy(self)
     Arguments: ['self']
@@ -9841,7 +10165,7 @@ Tests:
 
   test_structures.py::test_delitem:
     name: test_delitem
-    Module: None
+    Module Path: None
     Signature: test_delitem(self, key)
     test_exe_cmd: .TestCaseInsensitiveDict.test_delitem(self, key)
     Arguments: ['self', 'key']
@@ -9860,7 +10184,7 @@ Tests:
 
   test_structures.py::test_get:
     name: test_get
-    Module: None
+    Module Path: None
     Signature: test_get(self, key, value)
     test_exe_cmd: .TestLookupDict.test_get(self, key, value)
     Arguments: ['self', 'key', 'value']
@@ -9879,7 +10203,7 @@ Tests:
 
   test_structures.py::test_getitem:
     name: test_getitem
-    Module: None
+    Module Path: None
     Signature: test_getitem(self, key, value)
     test_exe_cmd: .TestLookupDict.test_getitem(self, key, value)
     Arguments: ['self', 'key', 'value']
@@ -9898,7 +10222,7 @@ Tests:
 
   test_structures.py::test_instance_equality:
     name: test_instance_equality
-    Module: None
+    Module Path: None
     Signature: test_instance_equality(self, other, result)
     test_exe_cmd: .TestCaseInsensitiveDict.test_instance_equality(self, other, result)
     Arguments: ['self', 'other', 'result']
@@ -9917,7 +10241,7 @@ Tests:
 
   test_structures.py::test_list:
     name: test_list
-    Module: None
+    Module Path: None
     Signature: test_list(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_list(self)
     Arguments: ['self']
@@ -9936,7 +10260,7 @@ Tests:
 
   test_structures.py::test_lower_items:
     name: test_lower_items
-    Module: None
+    Module Path: None
     Signature: test_lower_items(self)
     test_exe_cmd: .TestCaseInsensitiveDict.test_lower_items(self)
     Arguments: ['self']
@@ -9955,7 +10279,7 @@ Tests:
 
   test_structures.py::test_repr:
     name: test_repr
-    Module: None
+    Module Path: None
     Signature: test_repr(self)
     test_exe_cmd: .TestLookupDict.test_repr(self)
     Arguments: ['self']
@@ -9974,7 +10298,7 @@ Tests:
 
   test_testserver.py::test_basic:
     name: test_basic
-    Module: None
+    Module Path: None
     Signature: test_basic(self)
     test_exe_cmd: .TestTestServer.test_basic(self)
     Arguments: ['self']
@@ -9993,7 +10317,7 @@ Tests:
 
   test_testserver.py::test_basic_response:
     name: test_basic_response
-    Module: None
+    Module Path: None
     Signature: test_basic_response(self)
     test_exe_cmd: .TestTestServer.test_basic_response(self)
     Arguments: ['self']
@@ -10012,7 +10336,7 @@ Tests:
 
   test_testserver.py::test_basic_waiting_server:
     name: test_basic_waiting_server
-    Module: None
+    Module Path: None
     Signature: test_basic_waiting_server(self)
     test_exe_cmd: .TestTestServer.test_basic_waiting_server(self)
     Arguments: ['self']
@@ -10031,7 +10355,7 @@ Tests:
 
   test_testserver.py::test_multiple_requests:
     name: test_multiple_requests
-    Module: None
+    Module Path: None
     Signature: test_multiple_requests(self)
     test_exe_cmd: .TestTestServer.test_multiple_requests(self)
     Arguments: ['self']
@@ -10050,7 +10374,7 @@ Tests:
 
   test_testserver.py::test_request_recovery:
     name: test_request_recovery
-    Module: None
+    Module Path: None
     Signature: test_request_recovery(self)
     test_exe_cmd: .TestTestServer.test_request_recovery(self)
     Arguments: ['self']
@@ -10069,7 +10393,7 @@ Tests:
 
   test_testserver.py::test_request_recovery_with_bigger_timeout:
     name: test_request_recovery_with_bigger_timeout
-    Module: None
+    Module Path: None
     Signature: test_request_recovery_with_bigger_timeout(self)
     test_exe_cmd: .TestTestServer.test_request_recovery_with_bigger_timeout(self)
     Arguments: ['self']
@@ -10088,7 +10412,7 @@ Tests:
 
   test_testserver.py::test_requests_after_timeout_are_not_received:
     name: test_requests_after_timeout_are_not_received
-    Module: None
+    Module Path: None
     Signature: test_requests_after_timeout_are_not_received(self)
     test_exe_cmd: .TestTestServer.test_requests_after_timeout_are_not_received(self)
     Arguments: ['self']
@@ -10107,7 +10431,7 @@ Tests:
 
   test_testserver.py::test_server_closes:
     name: test_server_closes
-    Module: None
+    Module Path: None
     Signature: test_server_closes(self)
     test_exe_cmd: .TestTestServer.test_server_closes(self)
     Arguments: ['self']
@@ -10126,7 +10450,7 @@ Tests:
 
   test_testserver.py::test_server_finishes_on_error:
     name: test_server_finishes_on_error
-    Module: None
+    Module Path: None
     Signature: test_server_finishes_on_error(self)
     test_exe_cmd: .TestTestServer.test_server_finishes_on_error(self)
     Arguments: ['self']
@@ -10145,7 +10469,7 @@ Tests:
 
   test_testserver.py::test_server_finishes_when_no_connections:
     name: test_server_finishes_when_no_connections
-    Module: None
+    Module Path: None
     Signature: test_server_finishes_when_no_connections(self)
     test_exe_cmd: .TestTestServer.test_server_finishes_when_no_connections(self)
     Arguments: ['self']
@@ -10164,7 +10488,7 @@ Tests:
 
   test_testserver.py::test_text_response:
     name: test_text_response
-    Module: None
+    Module Path: None
     Signature: test_text_response(self)
     test_exe_cmd: .TestTestServer.test_text_response(self)
     Arguments: ['self']
@@ -10183,7 +10507,7 @@ Tests:
 
   test_utils.py::no_proxy:
     name: no_proxy
-    Module: None
+    Module Path: None
     Signature: no_proxy(self, request, monkeypatch)
     test_exe_cmd: .TestGetEnvironProxies.no_proxy(self, request, monkeypatch)
     Arguments: ['self', 'request', 'monkeypatch']
@@ -10202,7 +10526,7 @@ Tests:
 
   test_utils.py::test__parse_content_type_header:
     name: test__parse_content_type_header
-    Module: None
+    Module Path: None
     Signature: test__parse_content_type_header(value, expected)
     test_exe_cmd: .test__parse_content_type_header(value, expected)
     Arguments: ['value', 'expected']
@@ -10221,7 +10545,7 @@ Tests:
 
   test_utils.py::test_add_dict_to_cookiejar:
     name: test_add_dict_to_cookiejar
-    Module: None
+    Module Path: None
     Signature: test_add_dict_to_cookiejar(cookiejar)
     test_exe_cmd: .test_add_dict_to_cookiejar(cookiejar)
     Arguments: ['cookiejar']
@@ -10241,7 +10565,7 @@ Tests:
 
   test_utils.py::test_bad_utf_like_encoding:
     name: test_bad_utf_like_encoding
-    Module: None
+    Module Path: None
     Signature: test_bad_utf_like_encoding(self)
     test_exe_cmd: .TestGuessJSONUTF.test_bad_utf_like_encoding(self)
     Arguments: ['self']
@@ -10260,7 +10584,7 @@ Tests:
 
   test_utils.py::test_bypass:
     name: test_bypass
-    Module: None
+    Module Path: None
     Signature: test_bypass(self, url)
     test_exe_cmd: .TestGetEnvironProxies.test_bypass(self, url)
     Arguments: ['self', 'url']
@@ -10279,7 +10603,7 @@ Tests:
 
   test_utils.py::test_bypass_no_proxy_keyword:
     name: test_bypass_no_proxy_keyword
-    Module: None
+    Module Path: None
     Signature: test_bypass_no_proxy_keyword(self, url)
     test_exe_cmd: .TestGetEnvironProxies.test_bypass_no_proxy_keyword(self, url)
     Arguments: ['self', 'url']
@@ -10298,7 +10622,7 @@ Tests:
 
   test_utils.py::test_dotted_netmask:
     name: test_dotted_netmask
-    Module: None
+    Module Path: None
     Signature: test_dotted_netmask(mask, expected)
     test_exe_cmd: .test_dotted_netmask(mask, expected)
     Arguments: ['mask', 'expected']
@@ -10317,7 +10641,7 @@ Tests:
 
   test_utils.py::test_encoded:
     name: test_encoded
-    Module: None
+    Module Path: None
     Signature: test_encoded(self, encoding)
     test_exe_cmd: .TestGuessJSONUTF.test_encoded(self, encoding)
     Arguments: ['self', 'encoding']
@@ -10336,7 +10660,7 @@ Tests:
 
   test_utils.py::test_file:
     name: test_file
-    Module: None
+    Module Path: None
     Signature: test_file(self, tmpdir, mode, warnings_num, recwarn)
     test_exe_cmd: .TestSuperLen.test_file(self, tmpdir, mode, warnings_num, recwarn)
     Arguments: ['self', 'tmpdir', 'mode', 'warnings_num', 'recwarn']
@@ -10355,7 +10679,7 @@ Tests:
 
   test_utils.py::test_get_auth_from_url:
     name: test_get_auth_from_url
-    Module: None
+    Module Path: None
     Signature: test_get_auth_from_url(url, auth)
     test_exe_cmd: .test_get_auth_from_url(url, auth)
     Arguments: ['url', 'auth']
@@ -10374,7 +10698,7 @@ Tests:
 
   test_utils.py::test_get_encoding_from_headers:
     name: test_get_encoding_from_headers
-    Module: None
+    Module Path: None
     Signature: test_get_encoding_from_headers(value, expected)
     test_exe_cmd: .test_get_encoding_from_headers(value, expected)
     Arguments: ['value', 'expected']
@@ -10393,7 +10717,7 @@ Tests:
 
   test_utils.py::test_guess_by_bom:
     name: test_guess_by_bom
-    Module: None
+    Module Path: None
     Signature: test_guess_by_bom(self, encoding, expected)
     test_exe_cmd: .TestGuessJSONUTF.test_guess_by_bom(self, encoding, expected)
     Arguments: ['self', 'encoding', 'expected']
@@ -10412,7 +10736,7 @@ Tests:
 
   test_utils.py::test_guess_filename_invalid:
     name: test_guess_filename_invalid
-    Module: None
+    Module Path: None
     Signature: test_guess_filename_invalid(self, value)
     test_exe_cmd: .TestGuessFilename.test_guess_filename_invalid(self, value)
     Arguments: ['self', 'value']
@@ -10431,7 +10755,7 @@ Tests:
 
   test_utils.py::test_guess_filename_valid:
     name: test_guess_filename_valid
-    Module: None
+    Module Path: None
     Signature: test_guess_filename_valid(self, value, expected_type)
     test_exe_cmd: .TestGuessFilename.test_guess_filename_valid(self, value, expected_type)
     Arguments: ['self', 'value', 'expected_type']
@@ -10450,7 +10774,7 @@ Tests:
 
   test_utils.py::test_invalid:
     name: test_invalid
-    Module: None
+    Module Path: None
     Signature: test_invalid(self)
     test_exe_cmd: .TestAddressInNetwork.test_invalid(self)
     Arguments: ['self']
@@ -10469,7 +10793,7 @@ Tests:
 
   test_utils.py::test_invalid_unc_path:
     name: test_invalid_unc_path
-    Module: None
+    Module Path: None
     Signature: test_invalid_unc_path(self)
     test_exe_cmd: .TestExtractZippedPaths.test_invalid_unc_path(self)
     Arguments: ['self']
@@ -10488,7 +10812,7 @@ Tests:
 
   test_utils.py::test_io_streams:
     name: test_io_streams
-    Module: None
+    Module Path: None
     Signature: test_io_streams(self, stream, value)
     test_exe_cmd: .TestSuperLen.test_io_streams(self, stream, value)
     Arguments: ['self', 'stream', 'value']
@@ -10507,7 +10831,7 @@ Tests:
 
   test_utils.py::test_is_filename:
     name: test_is_filename
-    Module: None
+    Module Path: None
     Signature: test_is_filename(self)
     test_exe_cmd: .TestUnquoteHeaderValue.test_is_filename(self)
     Arguments: ['self']
@@ -10526,7 +10850,7 @@ Tests:
 
   test_utils.py::test_iter_slices:
     name: test_iter_slices
-    Module: None
+    Module Path: None
     Signature: test_iter_slices(value, length)
     test_exe_cmd: .test_iter_slices(value, length)
     Arguments: ['value', 'length']
@@ -10545,7 +10869,7 @@ Tests:
 
   test_utils.py::test_none:
     name: test_none
-    Module: None
+    Module Path: None
     Signature: test_none(self)
     test_exe_cmd: .TestContentEncodingDetection.test_none(self)
     Arguments: ['self']
@@ -10564,7 +10888,7 @@ Tests:
 
   test_utils.py::test_not_bypass:
     name: test_not_bypass
-    Module: None
+    Module Path: None
     Signature: test_not_bypass(self, url)
     test_exe_cmd: .TestGetEnvironProxies.test_not_bypass(self, url)
     Arguments: ['self', 'url']
@@ -10583,7 +10907,7 @@ Tests:
 
   test_utils.py::test_not_bypass_no_proxy_keyword:
     name: test_not_bypass_no_proxy_keyword
-    Module: None
+    Module Path: None
     Signature: test_not_bypass_no_proxy_keyword(self, url, monkeypatch)
     test_exe_cmd: .TestGetEnvironProxies.test_not_bypass_no_proxy_keyword(self, url, monkeypatch)
     Arguments: ['self', 'url', 'monkeypatch']
@@ -10602,7 +10926,7 @@ Tests:
 
   test_utils.py::test_parse_dict_header:
     name: test_parse_dict_header
-    Module: None
+    Module Path: None
     Signature: test_parse_dict_header(value, expected)
     test_exe_cmd: .test_parse_dict_header(value, expected)
     Arguments: ['value', 'expected']
@@ -10621,7 +10945,7 @@ Tests:
 
   test_utils.py::test_parse_header_links:
     name: test_parse_header_links
-    Module: None
+    Module Path: None
     Signature: test_parse_header_links(value, expected)
     test_exe_cmd: .test_parse_header_links(value, expected)
     Arguments: ['value', 'expected']
@@ -10640,7 +10964,7 @@ Tests:
 
   test_utils.py::test_pragmas:
     name: test_pragmas
-    Module: None
+    Module Path: None
     Signature: test_pragmas(self, content)
     test_exe_cmd: .TestContentEncodingDetection.test_pragmas(self, content)
     Arguments: ['self', 'content']
@@ -10659,7 +10983,7 @@ Tests:
 
   test_utils.py::test_precedence:
     name: test_precedence
-    Module: None
+    Module Path: None
     Signature: test_precedence(self)
     test_exe_cmd: .TestContentEncodingDetection.test_precedence(self)
     Arguments: ['self']
@@ -10678,7 +11002,7 @@ Tests:
 
   test_utils.py::test_prepend_scheme_if_needed:
     name: test_prepend_scheme_if_needed
-    Module: None
+    Module Path: None
     Signature: test_prepend_scheme_if_needed(value, expected)
     test_exe_cmd: .test_prepend_scheme_if_needed(value, expected)
     Arguments: ['value', 'expected']
@@ -10697,7 +11021,7 @@ Tests:
 
   test_utils.py::test_requote_uri_with_unquoted_percents:
     name: test_requote_uri_with_unquoted_percents
-    Module: None
+    Module Path: None
     Signature: test_requote_uri_with_unquoted_percents(uri, expected)
     test_exe_cmd: .test_requote_uri_with_unquoted_percents(uri, expected)
     Arguments: ['uri', 'expected']
@@ -10716,7 +11040,7 @@ Tests:
 
   test_utils.py::test_select_proxies:
     name: test_select_proxies
-    Module: None
+    Module Path: None
     Signature: test_select_proxies(url, expected, proxies)
     test_exe_cmd: .test_select_proxies(url, expected, proxies)
     Arguments: ['url', 'expected', 'proxies']
@@ -10735,7 +11059,7 @@ Tests:
 
   test_utils.py::test_set_environ:
     name: test_set_environ
-    Module: None
+    Module Path: None
     Signature: test_set_environ(env_name, value)
     test_exe_cmd: .test_set_environ(env_name, value)
     Arguments: ['env_name', 'value']
@@ -10754,7 +11078,7 @@ Tests:
 
   test_utils.py::test_set_environ_raises_exception:
     name: test_set_environ_raises_exception
-    Module: None
+    Module Path: None
     Signature: test_set_environ_raises_exception()
     test_exe_cmd: .test_set_environ_raises_exception()
     Arguments: None
@@ -10774,7 +11098,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies:
     name: test_should_bypass_proxies
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies(url, expected, monkeypatch)
     test_exe_cmd: .test_should_bypass_proxies(url, expected, monkeypatch)
     Arguments: ['url', 'expected', 'monkeypatch']
@@ -10794,7 +11118,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies_no_proxy:
     name: test_should_bypass_proxies_no_proxy
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies_no_proxy(url, expected, monkeypatch)
     test_exe_cmd: .test_should_bypass_proxies_no_proxy(url, expected, monkeypatch)
     Arguments: ['url', 'expected', 'monkeypatch']
@@ -10814,7 +11138,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies_pass_only_hostname:
     name: test_should_bypass_proxies_pass_only_hostname
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies_pass_only_hostname(url, expected)
     test_exe_cmd: .test_should_bypass_proxies_pass_only_hostname(url, expected)
     Arguments: ['url', 'expected']
@@ -10834,7 +11158,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies_win_registry:
     name: test_should_bypass_proxies_win_registry
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies_win_registry(url, expected, override, monkeypatch)
     test_exe_cmd: .test_should_bypass_proxies_win_registry(url, expected, override, monkeypatch)
     Arguments: ['url', 'expected', 'override', 'monkeypatch']
@@ -10854,7 +11178,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies_win_registry_ProxyOverride_value:
     name: test_should_bypass_proxies_win_registry_ProxyOverride_value
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies_win_registry_ProxyOverride_value(monkeypatch)
     test_exe_cmd: .test_should_bypass_proxies_win_registry_ProxyOverride_value(monkeypatch)
     Arguments: ['monkeypatch']
@@ -10874,7 +11198,7 @@ Tests:
 
   test_utils.py::test_should_bypass_proxies_win_registry_bad_values:
     name: test_should_bypass_proxies_win_registry_bad_values
-    Module: None
+    Module Path: None
     Signature: test_should_bypass_proxies_win_registry_bad_values(monkeypatch)
     test_exe_cmd: .test_should_bypass_proxies_win_registry_bad_values(monkeypatch)
     Arguments: ['monkeypatch']
@@ -10894,7 +11218,7 @@ Tests:
 
   test_utils.py::test_string:
     name: test_string
-    Module: None
+    Module Path: None
     Signature: test_string(self)
     test_exe_cmd: .TestSuperLen.test_string(self)
     Arguments: ['self']
@@ -10913,7 +11237,7 @@ Tests:
 
   test_utils.py::test_super_len_correctly_calculates_len_of_partially_read_file:
     name: test_super_len_correctly_calculates_len_of_partially_read_file
-    Module: None
+    Module Path: None
     Signature: test_super_len_correctly_calculates_len_of_partially_read_file(self)
     test_exe_cmd: .TestSuperLen.test_super_len_correctly_calculates_len_of_partially_read_file(self)
     Arguments: ['self']
@@ -10932,7 +11256,7 @@ Tests:
 
   test_utils.py::test_super_len_handles_files_raising_weird_errors_in_tell:
     name: test_super_len_handles_files_raising_weird_errors_in_tell
-    Module: None
+    Module Path: None
     Signature: test_super_len_handles_files_raising_weird_errors_in_tell(self, error)
     test_exe_cmd: .TestSuperLen.test_super_len_handles_files_raising_weird_errors_in_tell(self, error)
     Arguments: ['self', 'error']
@@ -10951,7 +11275,7 @@ Tests:
 
   test_utils.py::test_super_len_tell_ioerror:
     name: test_super_len_tell_ioerror
-    Module: None
+    Module Path: None
     Signature: test_super_len_tell_ioerror(self, error)
     test_exe_cmd: .TestSuperLen.test_super_len_tell_ioerror(self, error)
     Arguments: ['self', 'error']
@@ -10970,7 +11294,7 @@ Tests:
 
   test_utils.py::test_super_len_with__len__:
     name: test_super_len_with__len__
-    Module: None
+    Module Path: None
     Signature: test_super_len_with__len__(self)
     test_exe_cmd: .TestSuperLen.test_super_len_with__len__(self)
     Arguments: ['self']
@@ -10989,7 +11313,7 @@ Tests:
 
   test_utils.py::test_super_len_with_fileno:
     name: test_super_len_with_fileno
-    Module: None
+    Module Path: None
     Signature: test_super_len_with_fileno(self)
     test_exe_cmd: .TestSuperLen.test_super_len_with_fileno(self)
     Arguments: ['self']
@@ -11008,7 +11332,7 @@ Tests:
 
   test_utils.py::test_super_len_with_no__len__:
     name: test_super_len_with_no__len__
-    Module: None
+    Module Path: None
     Signature: test_super_len_with_no__len__(self)
     test_exe_cmd: .TestSuperLen.test_super_len_with_no__len__(self)
     Arguments: ['self']
@@ -11027,7 +11351,7 @@ Tests:
 
   test_utils.py::test_super_len_with_no_matches:
     name: test_super_len_with_no_matches
-    Module: None
+    Module Path: None
     Signature: test_super_len_with_no_matches(self)
     test_exe_cmd: .TestSuperLen.test_super_len_with_no_matches(self)
     Arguments: ['self']
@@ -11046,7 +11370,7 @@ Tests:
 
   test_utils.py::test_super_len_with_tell:
     name: test_super_len_with_tell
-    Module: None
+    Module Path: None
     Signature: test_super_len_with_tell(self)
     test_exe_cmd: .TestSuperLen.test_super_len_with_tell(self)
     Arguments: ['self']
@@ -11065,7 +11389,7 @@ Tests:
 
   test_utils.py::test_tarfile_member:
     name: test_tarfile_member
-    Module: None
+    Module Path: None
     Signature: test_tarfile_member(self, tmpdir)
     test_exe_cmd: .TestSuperLen.test_tarfile_member(self, tmpdir)
     Arguments: ['self', 'tmpdir']
@@ -11084,7 +11408,7 @@ Tests:
 
   test_utils.py::test_to_native_string:
     name: test_to_native_string
-    Module: None
+    Module Path: None
     Signature: test_to_native_string(value, expected)
     test_exe_cmd: .test_to_native_string(value, expected)
     Arguments: ['value', 'expected']
@@ -11103,7 +11427,7 @@ Tests:
 
   test_utils.py::test_unicode_is_ascii:
     name: test_unicode_is_ascii
-    Module: None
+    Module Path: None
     Signature: test_unicode_is_ascii(value, expected)
     test_exe_cmd: .test_unicode_is_ascii(value, expected)
     Arguments: ['value', 'expected']
@@ -11122,7 +11446,7 @@ Tests:
 
   test_utils.py::test_unquote_unreserved:
     name: test_unquote_unreserved
-    Module: None
+    Module Path: None
     Signature: test_unquote_unreserved(uri, expected)
     test_exe_cmd: .test_unquote_unreserved(uri, expected)
     Arguments: ['uri', 'expected']
@@ -11141,7 +11465,7 @@ Tests:
 
   test_utils.py::test_unzipped_paths_unchanged:
     name: test_unzipped_paths_unchanged
-    Module: None
+    Module Path: None
     Signature: test_unzipped_paths_unchanged(self, path)
     test_exe_cmd: .TestExtractZippedPaths.test_unzipped_paths_unchanged(self, path)
     Arguments: ['self', 'path']
@@ -11160,7 +11484,7 @@ Tests:
 
   test_utils.py::test_urldefragauth:
     name: test_urldefragauth
-    Module: None
+    Module Path: None
     Signature: test_urldefragauth(url, expected)
     test_exe_cmd: .test_urldefragauth(url, expected)
     Arguments: ['url', 'expected']
@@ -11179,7 +11503,7 @@ Tests:
 
   test_utils.py::test_valid:
     name: test_valid
-    Module: None
+    Module Path: None
     Signature: test_valid(self)
     test_exe_cmd: .TestAddressInNetwork.test_valid(self)
     Arguments: ['self']
@@ -11198,7 +11522,7 @@ Tests:
 
   test_utils.py::test_zipped_paths_extracted:
     name: test_zipped_paths_extracted
-    Module: None
+    Module Path: None
     Signature: test_zipped_paths_extracted(self, tmpdir)
     test_exe_cmd: .TestExtractZippedPaths.test_zipped_paths_extracted(self, tmpdir)
     Arguments: ['self', 'tmpdir']
@@ -11217,7 +11541,7 @@ Tests:
 
   testserver/server.py::basic_response_server:
     name: basic_response_server
-    Module: None
+    Module Path: None
     Signature: basic_response_server(cls)
     test_exe_cmd: server.Server.basic_response_server(cls)
     Arguments: ['cls']
@@ -11236,7 +11560,7 @@ Tests:
 
   testserver/server.py::consume_socket_content:
     name: consume_socket_content
-    Module: None
+    Module Path: None
     Signature: consume_socket_content(sock, timeout)
     test_exe_cmd: server.consume_socket_content(sock, timeout)
     Arguments: ['sock', 'timeout']
@@ -11255,7 +11579,7 @@ Tests:
 
   testserver/server.py::run:
     name: run
-    Module: None
+    Module Path: None
     Signature: run(self)
     test_exe_cmd: server.Server.run(self)
     Arguments: ['self']
@@ -11274,7 +11598,7 @@ Tests:
 
   testserver/server.py::text_response_server:
     name: text_response_server
-    Module: None
+    Module Path: None
     Signature: text_response_server(cls, text, request_timeout)
     test_exe_cmd: server.Server.text_response_server(cls, text, request_timeout)
     Arguments: ['cls', 'text', 'request_timeout']

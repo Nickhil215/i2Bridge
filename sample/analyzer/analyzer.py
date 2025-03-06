@@ -58,7 +58,7 @@ logger = logging.getLogger(__name__)
 class FunctionInfo:
     """Store detailed information about a function or method."""
     name: str
-    module: str
+    module_path: str
     args: List[str]
     returns: Optional[str]
     docstring: Optional[str]
@@ -84,7 +84,7 @@ class ApiInfo:
     path: str
     http_method: str
     name: str
-    module: str
+    module_path: str
     path_params: List[str]
     request_params: List[str]
     request_body: Optional[str]
@@ -103,7 +103,7 @@ class ApiInfo:
 class TestsInfo:
     """Store detailed information about tests."""
     name: str
-    module: str
+    module_path: str
     args: List[str]
     returns: Optional[str]
     docstring: Optional[str]
@@ -589,6 +589,9 @@ class BaseAnalyzer(ABC):
             module = astroid.parse(source, path=file_path)
             self.modules[relative_path] = module
 
+            self._analyze_modules(module, relative_path, source)
+            self._analyze_classes(module, relative_path, source, package_name)
+
             # Pass source to analysis methods
             if ("tests" in relative_path.split("/")
                 or "test" in relative_path.split("/")
@@ -597,9 +600,6 @@ class BaseAnalyzer(ABC):
             elif not relative_path.split('/')[-1].__contains__("_"):
               self._analyze_functions(module, relative_path, source, package_name)
               self._analyze_api_endpoint(module, relative_path, source)
-
-            self._analyze_modules(module, relative_path, source)
-            self._analyze_classes(module, relative_path, source, package_name)
 
         except Exception as e:
             logger.error(f"Error analyzing {file_path}: {str(e)}")
@@ -612,12 +612,13 @@ class BaseAnalyzer(ABC):
             # If it's a class, find all functions inside it
             for class_node in node.body:
               if isinstance(class_node, nodes.FunctionDef):
-                func_info = self._extract_function_info(class_node, source, module, package_name)
+                func_info = self._extract_function_info(class_node, source, file_path, package_name)
                 self.functions[f"{file_path}::{func_info.name}"] = func_info
           elif isinstance(node, nodes.FunctionDef):
             # If it's a function at the module level
-              func_info = self._extract_function_info(node, source, module, package_name)
+              func_info = self._extract_function_info(node, source, file_path, package_name)
               self.functions[f"{file_path}::{func_info.name}"] = func_info
+
 
     def _analyze_api_endpoint(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all api endpoints in a module"""
@@ -656,12 +657,38 @@ class BaseAnalyzer(ABC):
 
     def _analyze_modules(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Extract and track all imports in a module, and create CoreComponentInfo"""
+
+        self.packages = {}  # {str: List[str]}
+        self.imports = {}   # {str: List[str]}
+
+        for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
+            if file_path not in self.packages:
+                self.packages[file_path] = []
+            if file_path not in self.imports:
+                self.imports[file_path] = []
+            if isinstance(node, nodes.Import):
+                for name, asname in node.names:  # Unpacking (name, alias) tuples
+                    import_name = name if asname is None else asname
+                    package_name = import_name.split('.')[0]
+                    if package_name not in self.packages[file_path]:
+                        self.packages[file_path].append(package_name)  # Add package to the file_path list
+                    self.imports[file_path].append(import_name)
+            elif isinstance(node, nodes.ImportFrom):
+                module_name = node.modname
+                for name, asname in node.names:  # Unpacking (name, alias) tuples
+                    import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
+                    package_name = import_name.split('.')[0]
+                    if package_name not in self.packages[file_path]:
+                        self.packages[file_path].append(package_name)  # Add package to the file_path list
+                    self.imports[file_path].append(import_name)
+
         self.module_info[file_path] = ModuleInfo(
             name=file_path.split('/')[-1],
             description="",
             description_embedding="",
             classes=[],
             functions=[])
+
 
 
     def format_path(self, path):
@@ -679,8 +706,25 @@ class BaseAnalyzer(ABC):
 
       return joined_path
 
-    def _extract_function_info(self, node: nodes.FunctionDef, source: str, module: nodes.Module,
-                               package_name:str = None) -> FunctionInfo:
+
+    def get_used_packages(self, start_line, end_line, source_code, file_path):
+        # Extract the relevant lines from the source code (lines are 1-indexed, so adjust accordingly)
+        lines = source_code.splitlines()[start_line-1:end_line]
+
+        # Define a list to store packages
+        packages = []
+        if file_path not in self.packages:
+            self.packages[file_path] = []
+
+        for module_package in self.packages[file_path]:
+            for line in lines:
+                if module_package in line and module_package not in packages:
+                    packages.append(module_package)
+        return packages
+
+
+    def _extract_function_info(self, node: nodes.FunctionDef, source: str,
+                               file_path: str, package_name:str = None) -> FunctionInfo:
         """Extract detailed information about a function."""
         args = [arg.name for arg in node.args.args]
         returns = node.returns.as_string() if node.returns else None
@@ -715,38 +759,12 @@ class BaseAnalyzer(ABC):
         formatted_path = f"{package_name}{self.format_path(self.source_path).split(package_name)[-1]}"
         function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
 
-        packages=[]
         imports=[]
-
-        # for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
-        #     # print(node)
-        #     if isinstance(node, nodes.Import):
-        #         if hasattr(node, 'names'):
-        #             for name, asname in node.names:
-        #                 import_name = name if asname is None else asname
-        #                 package_name = import_name.split('.')[0]
-        #                 if package_name not in packages:
-        #                     packages.append(package_name)
-        #                 imports.append(import_name)
-        #         else:
-        #             # Handle cases where 'names' attribute does not exist
-        #             print(f"Warning: 'Import' node has no 'names' attribute.")
-        #     elif isinstance(node, nodes.ImportFrom):
-        #         module_name = node.modname if hasattr(node, 'modname') else ''
-        #         if hasattr(node, 'names'):
-        #             for name, asname in node.names:
-        #                 import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-        #                 package_name = import_name.split('.')[0]
-        #                 if package_name not in packages:
-        #                     packages.append(package_name)
-        #                 imports.append(import_name)
-        #         else:
-        #             # Handle cases where 'names' attribute does not exist
-        #             print(f"Warning: 'ImportFrom' node has no 'names' attribute.")
+        packages = self.get_used_packages(start_line, end_line, source, file_path)
 
         return FunctionInfo(
             name=node.name,
-            module=module.name,
+            module_path=file_path,
             args=args,
             returns=returns,
             function_exe_cmd=function_exe_cmd,
@@ -818,7 +836,7 @@ class BaseAnalyzer(ABC):
 
         return ApiInfo(
             name=node.name,
-            module="",
+            module_path="",
             path=endpoint_info.get('path'),
             http_method=endpoint_info.get('method', None),
             path_params=path_params if request_params else None,
@@ -867,7 +885,7 @@ class BaseAnalyzer(ABC):
 
         return TestsInfo(
             name=node.name,
-            module="",
+            module_path="",
             args=args,
             returns=returns,
             test_exe_cmd=test_exe_cmd,
@@ -1042,8 +1060,10 @@ class BaseAnalyzer(ABC):
           report.extend([
             f"\n  {func_path}:",
             f"    name: {func_info.name}",
-            f"    Module: {func_info.module if func_info.module else 'None'}",
+            f"    Module Path: {func_info.module_path if func_info.module_path else 'None'}",
             f"    Signature: {func_info.signature}",
+            f"    Packages: {func_info.packages}",
+            f"    Imports: {func_info.imports}",
             f"    function_exe_cmd: {func_info.function_exe_cmd}",
             f"    Arguments: {func_info.args if func_info.args else 'None'}",
             f"    Returns: {func_info.returns if func_info.returns else 'None'}",
@@ -1068,7 +1088,7 @@ class BaseAnalyzer(ABC):
           report.extend([
             f"\n  {func_path}:",
             f"    name: {api_info.name}",
-            f"    Module: {api_info.module if api_info.module else 'None'}",
+            f"    Module Path: {api_info.module_path if api_info.module_path else 'None'}",
             f"    path: {api_info.path}",
             f"    method: {api_info.http_method}",
             f"    path_param: {api_info.path_params}",
@@ -1089,7 +1109,7 @@ class BaseAnalyzer(ABC):
           report.extend([
             f"\n  {test_path}:",
             f"    name: {test_info.name}",
-            f"    Module: {test_info.module if test_info.module else 'None'}",
+            f"    Module Path: {test_info.module_path if test_info.module_path else 'None'}",
             f"    Signature: {test_info.signature}",
             f"    test_exe_cmd: {test_info.test_exe_cmd}",
             f"    Arguments: {test_info.args if test_info.args else 'None'}",
