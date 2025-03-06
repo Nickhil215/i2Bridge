@@ -20,7 +20,8 @@ def analyze_package(package_path: str, **kwargs) -> str:
             analyzer.analyze_package()
             txt_output = analyzer.generate_report()
             ttl_output = analyzer.convert_analyzer_to_knowledge_graph()
-            return ttl_output, txt_output
+            function_list = analyzer.get_functions_list()
+            return ttl_output, txt_output, function_list
 
     except Exception as e:
         error_msg = f"Error analyzing package: {str(e)}"
@@ -95,7 +96,7 @@ def import_ontology(cdn_url, bearer_token):
 
 def analyze(package_path, request):
     try:
-        ttl_output, txt_output = analyze_package(package_path)
+        ttl_output, txt_output, function_list = analyze_package(package_path)
 
         # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
         #     f.write(ttl_output)
@@ -104,10 +105,12 @@ def analyze(package_path, request):
         #     f.write(txt_output)
 
 
-        bearer_token = request.headers.get("Authorization")
-        cdn_url = upload_to_content_service(ttl_output, bearer_token)
-        logging.info(f"------- cdn_url:  {cdn_url} --------")
-        import_ontology(cdn_url, bearer_token)
+        # bearer_token = request.headers.get("Authorization")
+        # cdn_url = upload_to_content_service(ttl_output, bearer_token)
+        # logging.info(f"------- cdn_url:  {cdn_url} --------")
+        # import_ontology(cdn_url, bearer_token)
+
+        return function_list
 
     except Exception as e:
         logger.error(f"Error: {str(e)}", file=sys.stderr)

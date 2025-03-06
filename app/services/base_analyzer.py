@@ -636,3 +636,6 @@ class BaseAnalyzer(ABC):
             ])
 
         return '\n'.join(report)
+
+    def get_functions_list(self) -> List[FunctionInfo]:
+        return self.functions.items()

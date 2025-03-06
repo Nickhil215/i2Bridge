@@ -7,5 +7,4 @@ app = APIRouter()
 @app.get("/kg")
 def analyze_python(github_url: str, request: Request):
   logger.info(f"/api/v1/persist/kg?github_url={github_url}")
-  analyze(github_url, request)
-  return {"msg" : "success"}
+  return analyze(github_url, request)
