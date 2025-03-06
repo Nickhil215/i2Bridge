@@ -98,11 +98,11 @@ def analyze(package_path, request):
     try:
         ttl_output, txt_output, function_list = analyze_package(package_path)
 
-        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
-        #     f.write(ttl_output)
-        #
-        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
-        #     f.write(txt_output)
+        with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
+            f.write(ttl_output)
+
+        with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
+            f.write(txt_output)
 
 
         # bearer_token = request.headers.get("Authorization")

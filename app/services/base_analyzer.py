@@ -378,18 +378,15 @@ class BaseAnalyzer(ABC):
         start_line=node.lineno
         end_line=node.end_lineno or node.lineno
 
-        signature=None
         for line_num in range(start_line, end_line + 1):
             line = source.splitlines()[line_num - 1].strip()
-            if line_num == start_line:
-                signature = line.strip().replace("def ", "")
             if '#' in line:
                 comment_text = line.split('#', 1)[1].strip()
                 comments.append(comment_text)
 
         formatted_path = f"{package_name}{format_path(self.source_path).split(package_name)[-1]}"
         function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
-
+        signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
         packages, imports = self.get_used_packages_and_imports(start_line, end_line, source, file_path)
 
         return FunctionInfo(
@@ -556,29 +553,28 @@ class BaseAnalyzer(ABC):
             # Add function information
         report.extend(["\nFunctions:"])
         for func_path, func_info in sorted(self.functions.items()):
-            if not func_info.name.startswith("_"):
-                report.extend([
-                    f"\n  {func_path}:",
-                    f"    name: {func_info.name}",
-                    f"    Module Path: {func_info.module_path if func_info.module_path else 'None'}",
-                    f"    Signature: {func_info.signature}",
-                    f"    Packages: {func_info.packages}",
-                    f"    Imports: {func_info.imports}",
-                    f"    function_exe_cmd: {func_info.function_exe_cmd}",
-                    f"    Arguments: {func_info.args if func_info.args else 'None'}",
-                    f"    Returns: {func_info.returns if func_info.returns else 'None'}",
-                    f"    Start Line: {func_info.start_line}",
-                    f"    End Line: {func_info.end_line}",
-                    f"    Complexity: {func_info.complexity}",
-                    f"    Is Active: {func_info.is_active}",
-                    f"    Is Async: {func_info.is_async}",
-                    f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
-                    f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
-                    f"    Description: {func_info.description}",
-                    f"    Description Embedding: {func_info.description_embedding}",
-                    f"    Comments: {func_info.comments if func_info.comments else 'None'}",
-                    f"    Runtime: {func_info.runtime}"
-                ])
+            report.extend([
+                f"\n  {func_path}:",
+                f"    name: {func_info.name}",
+                f"    Module Path: {func_info.module_path}",
+                f"    Signature: {func_info.signature}",
+                f"    Packages: {func_info.packages}",
+                f"    Imports: {func_info.imports}",
+                f"    function_exe_cmd: {func_info.function_exe_cmd}",
+                f"    Arguments: {func_info.args if func_info.args else 'None'}",
+                f"    Returns: {func_info.returns if func_info.returns else 'None'}",
+                f"    Start Line: {func_info.start_line}",
+                f"    End Line: {func_info.end_line}",
+                f"    Complexity: {func_info.complexity}",
+                f"    Is Active: {func_info.is_active}",
+                f"    Is Async: {func_info.is_async}",
+                f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
+                f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
+                f"    Description: {func_info.description}",
+                f"    Description Embedding: {func_info.description_embedding}",
+                f"    Comments: {func_info.comments if func_info.comments else 'None'}",
+                f"    Runtime: {func_info.runtime}"
+            ])
 
 
         # Add apis information
