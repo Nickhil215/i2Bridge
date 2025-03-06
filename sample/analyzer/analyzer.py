@@ -69,7 +69,7 @@ class FunctionInfo:
     complexity: int
     start_line: int
     end_line: int
-    is_method: bool
+    is_active: bool
     is_async: bool
     signature: str
     function_exe_cmd: str
@@ -84,12 +84,15 @@ class ApiInfo:
     path: str
     http_method: str
     name: str
+    module: str
     path_params: List[str]
     request_params: List[str]
     request_body: Optional[str]
     response_body: Optional[str]
     description: Optional[str]
     description_embedding: Optional[str]
+    is_active: bool
+    is_async: bool
     # packages: List[str]
     # imports: List[str]
     # function_url: str
@@ -111,7 +114,7 @@ class TestsInfo:
     complexity: int
     start_line: int
     end_line: int
-    is_method: bool
+    is_active: bool
     is_async: bool
     signature: str
     test_exe_cmd: str
@@ -125,7 +128,7 @@ class ClassInfo:
     """Store detailed information about a class definition."""
     name: str
     bases: List[str]
-    functions: Dict[str, FunctionInfo]
+    functions: List[str]
     attributes: List[str]
     docstring: Optional[str]
     decorators: List[str]
@@ -138,8 +141,6 @@ class ClassInfo:
 class ModuleInfo:
     """Store detailed information about each .py files required packages"""
     name: str
-    # packages: List[str]
-    # imports: List[str]
     functions: Dict[str, FunctionInfo]
     classes: Dict[str, ClassInfo]
     description: Optional[str]
@@ -441,7 +442,7 @@ class RDFExporter:
                           Literal(f"DescriptionEmbedding: {class_info.description_embedding}")))
 
           # Connect methods to the class
-          for func_name, func_info in class_info.functions.items():
+          for func_name in class_info.functions:
               if func_name.startswith("_"):
                   continue
               func_uri = self._get_component_uri("Function", f"{formatted_class_path}_{func_name}")
@@ -611,11 +612,11 @@ class BaseAnalyzer(ABC):
             # If it's a class, find all functions inside it
             for class_node in node.body:
               if isinstance(class_node, nodes.FunctionDef):
-                func_info = self._extract_function_info(class_node, source, package_name)
+                func_info = self._extract_function_info(class_node, source, module, package_name)
                 self.functions[f"{file_path}::{func_info.name}"] = func_info
           elif isinstance(node, nodes.FunctionDef):
             # If it's a function at the module level
-              func_info = self._extract_function_info(node, source, package_name)
+              func_info = self._extract_function_info(node, source, module, package_name)
               self.functions[f"{file_path}::{func_info.name}"] = func_info
 
     def _analyze_api_endpoint(self, module: nodes.Module, file_path: str, source: str) -> None:
@@ -653,34 +654,15 @@ class BaseAnalyzer(ABC):
             class_info = self._extract_class_info(node, source, package_name)
             self.classes[f"{file_path}::{class_info.name}"] = class_info
 
-    def _analyze_modules(self, module, file_path: str, source: str) -> None:
+    def _analyze_modules(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Extract and track all imports in a module, and create CoreComponentInfo"""
-        module_info = ModuleInfo(
+        self.module_info[file_path] = ModuleInfo(
             name=file_path.split('/')[-1],
             description="",
             description_embedding="",
             classes=[],
             functions=[])
 
-        # # Assuming that `module` contains the AST nodes
-        # for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
-        #     if isinstance(node, nodes.Import):
-        #         for name, asname in node.names:
-        #             import_name = name if asname is None else asname
-        #             package_name = import_name.split('.')[0]
-        #             if package_name not in module_info.packages:
-        #                 module_info.packages.append(package_name)
-        #             module_info.imports.append(import_name)
-        #     elif isinstance(node, nodes.ImportFrom):
-        #         module_name = node.modname
-        #         for name, asname in node.names:
-        #             import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-        #             package_name = import_name.split('.')[0]
-        #             if package_name not in module_info.packages:
-        #                 module_info.packages.append(package_name)
-        #             module_info.imports.append(import_name)
-
-        self.module_info[file_path] = module_info
 
     def format_path(self, path):
       # Split the path by "/"
@@ -697,7 +679,8 @@ class BaseAnalyzer(ABC):
 
       return joined_path
 
-    def _extract_function_info(self, node: nodes.FunctionDef, source: str, package_name:str = None) -> FunctionInfo:
+    def _extract_function_info(self, node: nodes.FunctionDef, source: str, module: nodes.Module,
+                               package_name:str = None) -> FunctionInfo:
         """Extract detailed information about a function."""
         args = [arg.name for arg in node.args.args]
         returns = node.returns.as_string() if node.returns else None
@@ -724,7 +707,7 @@ class BaseAnalyzer(ABC):
         for line_num in range(start_line, end_line + 1):
             line = source.splitlines()[line_num - 1].strip()
             if line_num == start_line:
-                signature = line.strip().replace("def ", "").replace(":", "")
+                signature = line.strip().replace("def ", "")
             if '#' in line:
                 comment_text = line.split('#', 1)[1].strip()
                 comments.append(comment_text)
@@ -732,9 +715,38 @@ class BaseAnalyzer(ABC):
         formatted_path = f"{package_name}{self.format_path(self.source_path).split(package_name)[-1]}"
         function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
 
+        packages=[]
+        imports=[]
+
+        # for node in module.nodes_of_class((nodes.Import, nodes.ImportFrom)):
+        #     # print(node)
+        #     if isinstance(node, nodes.Import):
+        #         if hasattr(node, 'names'):
+        #             for name, asname in node.names:
+        #                 import_name = name if asname is None else asname
+        #                 package_name = import_name.split('.')[0]
+        #                 if package_name not in packages:
+        #                     packages.append(package_name)
+        #                 imports.append(import_name)
+        #         else:
+        #             # Handle cases where 'names' attribute does not exist
+        #             print(f"Warning: 'Import' node has no 'names' attribute.")
+        #     elif isinstance(node, nodes.ImportFrom):
+        #         module_name = node.modname if hasattr(node, 'modname') else ''
+        #         if hasattr(node, 'names'):
+        #             for name, asname in node.names:
+        #                 import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
+        #                 package_name = import_name.split('.')[0]
+        #                 if package_name not in packages:
+        #                     packages.append(package_name)
+        #                 imports.append(import_name)
+        #         else:
+        #             # Handle cases where 'names' attribute does not exist
+        #             print(f"Warning: 'ImportFrom' node has no 'names' attribute.")
+
         return FunctionInfo(
             name=node.name,
-            module=node.root().name,
+            module=module.name,
             args=args,
             returns=returns,
             function_exe_cmd=function_exe_cmd,
@@ -747,11 +759,11 @@ class BaseAnalyzer(ABC):
             complexity=complexity,
             start_line=start_line,
             end_line=end_line,
-            is_method=isinstance(node.parent, nodes.ClassDef),
+            is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
-            packages=[],
-            imports=[],
+            packages=packages,
+            imports=imports,
             runtime="python"
         )
 
@@ -806,6 +818,7 @@ class BaseAnalyzer(ABC):
 
         return ApiInfo(
             name=node.name,
+            module="",
             path=endpoint_info.get('path'),
             http_method=endpoint_info.get('method', None),
             path_params=path_params if request_params else None,
@@ -814,6 +827,8 @@ class BaseAnalyzer(ABC):
             response_body=response_body if response_body else None,
             description="",
             description_embedding="",
+            is_active=True,
+            is_async=isinstance(node, nodes.AsyncFunctionDef),
             runtime="python"
         )
 
@@ -852,7 +867,7 @@ class BaseAnalyzer(ABC):
 
         return TestsInfo(
             name=node.name,
-            module=node.root().name,
+            module="",
             args=args,
             returns=returns,
             test_exe_cmd=test_exe_cmd,
@@ -862,7 +877,7 @@ class BaseAnalyzer(ABC):
             complexity=complexity,
             start_line=line_number,
             end_line=end_line,
-            is_method=isinstance(node.parent, nodes.ClassDef),
+            is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
             description="",
@@ -872,13 +887,13 @@ class BaseAnalyzer(ABC):
 
     def _extract_class_info(self, node: nodes.ClassDef, source: str, package_name:str = None) -> ClassInfo:
         """Extract detailed information about a class."""
-        functions = {}
+        functions = []
         attributes = []
 
         for child in node.get_children():
-            if isinstance(child, nodes.FunctionDef):
-                func_info = self._extract_function_info(child, source, package_name)
-                functions[child.name] = func_info
+            if (isinstance(child, nodes.FunctionDef)
+                    and not child.name.startswith("_")):
+                functions.append(child.name)
             elif isinstance(child, nodes.AnnAssign):  # Type-hinted attributes
                 attributes.append(child.target.name)
             elif isinstance(child, nodes.Assign):  # Regular assignments
@@ -1010,8 +1025,8 @@ class BaseAnalyzer(ABC):
         report.extend([
           f"\n  {class_path}:",
           f"    Bases: {', '.join(class_info.bases) if class_info.bases else 'None'}",
-          f"    Functions: {len(class_info.functions)}",
-          f"    Attributes: {len(class_info.attributes)}",
+          f"    Functions: {class_info.functions}",
+          f"    Attributes: {class_info.attributes}",
           f"    Start Line: {class_info.start_line}",
           f"    End Line: {class_info.end_line}",
           f"    Decorators: {', '.join(class_info.decorators) if class_info.decorators else 'None'}",
@@ -1030,12 +1045,12 @@ class BaseAnalyzer(ABC):
             f"    Module: {func_info.module if func_info.module else 'None'}",
             f"    Signature: {func_info.signature}",
             f"    function_exe_cmd: {func_info.function_exe_cmd}",
-            f"    Parameters: {func_info.args if func_info.args else 'None'}",
+            f"    Arguments: {func_info.args if func_info.args else 'None'}",
             f"    Returns: {func_info.returns if func_info.returns else 'None'}",
             f"    Start Line: {func_info.start_line}",
             f"    End Line: {func_info.end_line}",
             f"    Complexity: {func_info.complexity}",
-            f"    Is Method: {func_info.is_method}",
+            f"    Is Active: {func_info.is_active}",
             f"    Is Async: {func_info.is_async}",
             f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
             f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
@@ -1053,6 +1068,7 @@ class BaseAnalyzer(ABC):
           report.extend([
             f"\n  {func_path}:",
             f"    name: {api_info.name}",
+            f"    Module: {api_info.module if api_info.module else 'None'}",
             f"    path: {api_info.path}",
             f"    method: {api_info.http_method}",
             f"    path_param: {api_info.path_params}",
@@ -1061,6 +1077,8 @@ class BaseAnalyzer(ABC):
             f"    response_body: {api_info.response_body}",
             f"    Description: {api_info.description}",
             f"    Description Embedding: {api_info.description_embedding}",
+            f"    Is Active: {api_info.is_active}",
+            f"    Is Async: {api_info.is_async}",
             f"    Runtime: {api_info.runtime}"
           ])
 
@@ -1074,12 +1092,12 @@ class BaseAnalyzer(ABC):
             f"    Module: {test_info.module if test_info.module else 'None'}",
             f"    Signature: {test_info.signature}",
             f"    test_exe_cmd: {test_info.test_exe_cmd}",
-            f"    Parameters: {test_info.args if test_info.args else 'None'}",
+            f"    Arguments: {test_info.args if test_info.args else 'None'}",
             f"    Returns: {test_info.returns if test_info.returns else 'None'}",
             f"    Start Line: {test_info.start_line}",
             f"    End Line: {test_info.end_line}",
             f"    Complexity: {test_info.complexity}",
-            f"    Is Method: {test_info.is_method}",
+            f"    Is Active: {test_info.is_active}",
             f"    Is Async: {test_info.is_async}",
             f"    Decorators: {', '.join(test_info.decorators) or 'None'}",
             f"    Docstring: {test_info.docstring if test_info.docstring else 'None'}",
