@@ -9,7 +9,10 @@ class Settings(BaseSettings):
     # OpenTelemetry
     OTEL_SERVICE_NAME: str = "i2-bridge"
     OTEL_COLLECTOR_URL: str = "http://otel-collector:4317"
-    
+
+    ONTOLOGY_ID: str
+    CONTENT_SERVICE_URL: str
+    ONTOLOGY_SERVICE_URL: str
 
     @property
     def semver(self) -> semver.VersionInfo:
@@ -19,4 +22,3 @@ class Settings(BaseSettings):
         case_sensitive = True
         env_file = ".env"
 
-settings = Settings() 

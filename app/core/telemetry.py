@@ -4,8 +4,8 @@ from opentelemetry.sdk.trace import TracerProvider
 from opentelemetry.sdk.trace.export import BatchSpanProcessor
 from opentelemetry.sdk.resources import Resource
 from opentelemetry.instrumentation.fastapi import FastAPIInstrumentor
-from app.core.config import settings
 import logging
+from app import settings
 
 def setup_telemetry():
     # Configure logging
