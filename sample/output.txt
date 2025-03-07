@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_2nfr9o3q/tests
+Package: /tmp/git_analyzer_5f93ycbm/tests
 
 Metrics:
 - Total Files: 36
@@ -1202,7 +1202,7 @@ Class Hierarchy:
 Functions:
 
   ../src/requests/adapters.py::__getstate__:
-    id: ad4ff33f-4269-4386-92b0-95eb0d71ed6c
+    id: 9fc83436-3993-418e-b371-9e5c6555e157
     name: __getstate__
     Module Path: ../src/requests/adapters.py
     Signature: __getstate__(self)
@@ -1224,7 +1224,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::__init__:
-    id: e7a3d7dc-f1c2-4ed5-841f-fb7adce746d7
+    id: 23834bae-a345-4492-bd36-945f1bc47e00
     name: __init__
     Module Path: ../src/requests/adapters.py
     Signature: __init__(self, pool_connections, pool_maxsize, max_retries, pool_block)
@@ -1246,7 +1246,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::__setstate__:
-    id: 2e4e16c2-bceb-4e27-8801-c0e9cca12c28
+    id: d917a741-0657-47b6-b378-951e06cc3c15
     name: __setstate__
     Module Path: ../src/requests/adapters.py
     Signature: __setstate__(self, state)
@@ -1268,7 +1268,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::_urllib3_request_context:
-    id: ffa529bc-f8ff-434f-8f68-709bd642ed34
+    id: 49b80728-1268-492c-93f1-f90d76afd106
     name: _urllib3_request_context
     Module Path: ../src/requests/adapters.py
     Signature: _urllib3_request_context(request, verify, client_cert, poolmanager)
@@ -1290,7 +1290,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::add_headers:
-    id: 108552dc-3943-42e0-b37e-45a55d2a06ea
+    id: 0876f412-d6fd-453f-96be-1ed828df7c31
     name: add_headers
     Module Path: ../src/requests/adapters.py
     Signature: add_headers(self, request)
@@ -1321,7 +1321,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::build_connection_pool_key_attributes:
-    id: 4e89c019-2dbc-405d-a18c-b2b8b4492bc4
+    id: 22812ba0-cede-4855-b9b0-8706c94f71ee
     name: build_connection_pool_key_attributes
     Module Path: ../src/requests/adapters.py
     Signature: build_connection_pool_key_attributes(self, request, verify, cert)
@@ -1388,7 +1388,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::build_response:
-    id: d4f0cb46-3321-4ff5-9088-5181dcd321de
+    id: 885441fc-b626-44d9-a85b-1f9af7d43a15
     name: build_response
     Module Path: ../src/requests/adapters.py
     Signature: build_response(self, req, resp)
@@ -1417,7 +1417,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::cert_verify:
-    id: a0012008-ef8f-4980-9473-1dc3e346045f
+    id: 040bcaa3-d5e8-488e-9dc8-e0795a09f599
     name: cert_verify
     Module Path: ../src/requests/adapters.py
     Signature: cert_verify(self, conn, url, verify, cert)
@@ -1448,7 +1448,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::close:
-    id: 414a2adf-2718-43aa-886e-70bb7d808da0
+    id: 26eb1b59-36e9-4d85-9e8b-5369da93b100
     name: close
     Module Path: ../src/requests/adapters.py
     Signature: close(self)
@@ -1473,7 +1473,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::get_connection:
-    id: 70d4b539-8410-4125-b854-d13af2c44fc7
+    id: 1e574792-ecc2-42f7-a18e-0882ed75a0c8
     name: get_connection
     Module Path: ../src/requests/adapters.py
     Signature: get_connection(self, url, proxies)
@@ -1504,7 +1504,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::get_connection_with_tls_context:
-    id: 3dc22ed0-2506-436c-a506-571bf7344444
+    id: 1eca58ce-0f7d-4555-9dc2-8b3339041c9d
     name: get_connection_with_tls_context
     Module Path: ../src/requests/adapters.py
     Signature: get_connection_with_tls_context(self, request, verify, proxies, cert)
@@ -1543,7 +1543,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::init_poolmanager:
-    id: f6e9a204-fdb1-469c-bf27-48c496c0186c
+    id: 1104f0b1-b93b-4614-9d5e-58af9ec43126
     name: init_poolmanager
     Module Path: ../src/requests/adapters.py
     Signature: init_poolmanager(self, connections, maxsize, block)
@@ -1574,7 +1574,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::proxy_headers:
-    id: 129c785f-c807-4cae-abe8-42552698cb3f
+    id: adc5f147-ce80-4afe-82ea-1aeaf1107d24
     name: proxy_headers
     Module Path: ../src/requests/adapters.py
     Signature: proxy_headers(self, proxy)
@@ -1606,7 +1606,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::proxy_manager_for:
-    id: 7c96620c-9087-4365-accc-8874c4e95723
+    id: 1bff429f-14ae-4702-8051-96aee7d70edf
     name: proxy_manager_for
     Module Path: ../src/requests/adapters.py
     Signature: proxy_manager_for(self, proxy)
@@ -1637,7 +1637,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::request_url:
-    id: 373feedd-f9f2-4679-842e-93325b2e0ff6
+    id: f901c6fb-38ef-4223-b98c-5f890a958657
     name: request_url
     Module Path: ../src/requests/adapters.py
     Signature: request_url(self, request, proxies)
@@ -1670,7 +1670,7 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::send:
-    id: d6d502a6-c7d5-44bf-92c4-23eb2ba9ca7d
+    id: 745adf0a-d744-4895-a79b-71d73c19b55e
     name: send
     Module Path: ../src/requests/adapters.py
     Signature: send(self, request, stream, timeout, verify, cert, proxies)
@@ -1705,7 +1705,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::delete:
-    id: 656be554-53d8-4536-b0ee-976d49c209b0
+    id: f365fe9c-0c06-4176-a817-3c197df0e04c
     name: delete
     Module Path: ../src/requests/api.py
     Signature: delete(url)
@@ -1732,7 +1732,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::get:
-    id: 3019ee2c-1cba-494c-8b46-548aa270ec43
+    id: fdb7a0ad-8f28-4c97-b2cc-3ae1eebad1eb
     name: get
     Module Path: ../src/requests/api.py
     Signature: get(url, params)
@@ -1761,7 +1761,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::head:
-    id: e2facdc8-742e-4729-bf38-d18ee5bf9087
+    id: 9afc3a4b-238e-4701-b881-971ed8bfdf1a
     name: head
     Module Path: ../src/requests/api.py
     Signature: head(url)
@@ -1790,7 +1790,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::options:
-    id: 35af5008-1fd9-4579-8d43-c6a1b983e09b
+    id: 5b8e1c09-527f-4772-b971-5ef0f0b2a7ae
     name: options
     Module Path: ../src/requests/api.py
     Signature: options(url)
@@ -1817,7 +1817,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::patch:
-    id: 9c8e5071-ca23-434d-b785-d4a52c6f36fc
+    id: 43f533ee-46fd-40e6-87af-4a242b5562e3
     name: patch
     Module Path: ../src/requests/api.py
     Signature: patch(url, data)
@@ -1847,7 +1847,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::post:
-    id: f0c9c3e5-fe80-4641-a854-ac38583f85f7
+    id: 1fec0c76-8d89-45a3-9c6f-1b0a20091902
     name: post
     Module Path: ../src/requests/api.py
     Signature: post(url, data, json)
@@ -1877,7 +1877,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::put:
-    id: d7acc010-01f4-4ab1-aa26-66ff8e33068f
+    id: 2a92fe1f-e423-4a34-a76d-a63e43f86779
     name: put
     Module Path: ../src/requests/api.py
     Signature: put(url, data)
@@ -1907,7 +1907,7 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::request:
-    id: 39788611-d3da-48d8-83d3-503ac3783070
+    id: 45f0c933-5475-42c8-aa42-db1292cc969b
     name: request
     Module Path: ../src/requests/api.py
     Signature: request(method, url)
@@ -1966,7 +1966,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__call__:
-    id: 4d6c8c91-8885-4fd7-9daa-80e93b691774
+    id: c1414aa0-2ef5-4eb1-b50a-c0dd403895cc
     name: __call__
     Module Path: ../src/requests/auth.py
     Signature: __call__(self, r)
@@ -1988,7 +1988,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__eq__:
-    id: d21c7955-2727-499c-b7ee-480f84e75494
+    id: 60bafdfd-1b9d-4af5-88d0-5373ae202d1d
     name: __eq__
     Module Path: ../src/requests/auth.py
     Signature: __eq__(self, other)
@@ -2010,7 +2010,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__init__:
-    id: af8417b5-df6d-4790-835e-fdef862348f8
+    id: 32f46f35-b6e2-48d5-b38b-377af96491db
     name: __init__
     Module Path: ../src/requests/auth.py
     Signature: __init__(self, username, password)
@@ -2032,7 +2032,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__ne__:
-    id: 5ca20085-7ca7-43b3-9226-2e3678e652d6
+    id: 6ac302ec-302e-44c2-bee4-9f1fedf1465e
     name: __ne__
     Module Path: ../src/requests/auth.py
     Signature: __ne__(self, other)
@@ -2054,7 +2054,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::_basic_auth_str:
-    id: 8c9876f0-ed63-4955-8633-ca07f208e76b
+    id: 39d194f7-b3f1-4ab6-87ac-93a6f4d50bea
     name: _basic_auth_str
     Module Path: ../src/requests/auth.py
     Signature: _basic_auth_str(username, password)
@@ -2076,7 +2076,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::build_digest_header:
-    id: 0d2e8880-dd83-494b-b198-e7a3bc6637bf
+    id: e7ca0b5d-3488-43b8-a85b-84b9439cd1ae
     name: build_digest_header
     Module Path: ../src/requests/auth.py
     Signature: build_digest_header(self, method, url)
@@ -2098,7 +2098,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::handle_401:
-    id: b881c875-9b21-44b6-b879-71adf54c44bc
+    id: e2532512-bf62-4df5-8a9e-b314b05d9959
     name: handle_401
     Module Path: ../src/requests/auth.py
     Signature: handle_401(self, r)
@@ -2122,7 +2122,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::handle_redirect:
-    id: 2ddfdbd3-63f9-4e98-8a81-8b38f5aaeee6
+    id: 8f1f3de9-7f0c-49b1-8e83-bc13be399de6
     name: handle_redirect
     Module Path: ../src/requests/auth.py
     Signature: handle_redirect(self, r)
@@ -2144,7 +2144,7 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::init_per_thread_state:
-    id: 0afbe2d4-bcd9-4ed3-83a6-e052c2e32573
+    id: 8199a501-8563-49fe-b159-c5c95f1077c3
     name: init_per_thread_state
     Module Path: ../src/requests/auth.py
     Signature: init_per_thread_state(self)
@@ -2166,7 +2166,7 @@ Functions:
     Runtime: python
 
   ../src/requests/compat.py::_resolve_char_detection:
-    id: b8a07954-9f8d-4582-8037-dd14217f1c04
+    id: d5b3cdd3-1b29-47ca-999a-b161ad593d9d
     name: _resolve_char_detection
     Module Path: ../src/requests/compat.py
     Signature: _resolve_char_detection()
@@ -2188,7 +2188,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__contains__:
-    id: c00d0553-ba5e-40ae-ae02-989a66498ccc
+    id: cba57229-d430-4a56-a460-baf105507463
     name: __contains__
     Module Path: ../src/requests/cookies.py
     Signature: __contains__(self, name)
@@ -2210,7 +2210,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__delitem__:
-    id: 394db0fa-5aa8-4e64-9ebd-0cc02ee663b7
+    id: ec9fef73-1fe9-4eed-8b22-60efad4aa710
     name: __delitem__
     Module Path: ../src/requests/cookies.py
     Signature: __delitem__(self, name)
@@ -2233,7 +2233,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__getitem__:
-    id: cc1fc61a-4cfb-4dbb-a770-7df961f99b43
+    id: 8bbf038b-e149-4a44-bf59-224a6967156e
     name: __getitem__
     Module Path: ../src/requests/cookies.py
     Signature: __getitem__(self, name)
@@ -2259,7 +2259,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__getstate__:
-    id: 72775d12-91b3-444b-9fb8-9058be9ec377
+    id: d26f1028-fba6-4706-a014-21ea73511d58
     name: __getstate__
     Module Path: ../src/requests/cookies.py
     Signature: __getstate__(self)
@@ -2281,7 +2281,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__init__:
-    id: 132420ca-9a3a-49f6-b04e-2f02977282c3
+    id: 86c01c16-4f21-45a6-90a6-6cf0f5c18a43
     name: __init__
     Module Path: ../src/requests/cookies.py
     Signature: __init__(self, headers)
@@ -2305,7 +2305,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__setitem__:
-    id: fe35de5e-a2d7-418c-b544-6beb4f7f5937
+    id: bbc22c4f-ef0d-479c-bd85-de18bbf1a1b4
     name: __setitem__
     Module Path: ../src/requests/cookies.py
     Signature: __setitem__(self, name, value)
@@ -2329,7 +2329,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__setstate__:
-    id: 7a19a401-0ce8-45af-8483-ef70778780d4
+    id: 329e4581-6464-40dc-8727-e1a81063264b
     name: __setstate__
     Module Path: ../src/requests/cookies.py
     Signature: __setstate__(self, state)
@@ -2351,7 +2351,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_copy_cookie_jar:
-    id: 8d509504-eb8b-4020-9d3c-b387aa175ed6
+    id: e3d682f0-8997-45fa-9f1e-b6e3d77b79e0
     name: _copy_cookie_jar
     Module Path: ../src/requests/cookies.py
     Signature: _copy_cookie_jar(jar)
@@ -2373,7 +2373,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_find:
-    id: a64b5d95-a3a2-44b0-afe2-cdc738f5afb8
+    id: 34f25b76-ce11-49fc-82af-e11dc25c072f
     name: _find
     Module Path: ../src/requests/cookies.py
     Signature: _find(self, name, domain, path)
@@ -2404,7 +2404,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_find_no_duplicates:
-    id: 0733726e-c726-48dc-b5a0-a40a0fd2097f
+    id: 93e12a99-7700-4516-a561-e4d9cf01a7a2
     name: _find_no_duplicates
     Module Path: ../src/requests/cookies.py
     Signature: _find_no_duplicates(self, name, domain, path)
@@ -2435,7 +2435,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::add_header:
-    id: 72d486bc-71a9-4273-8ec1-49784cca30c9
+    id: 8e6f2c71-fda6-479c-87d4-d902a8e01731
     name: add_header
     Module Path: ../src/requests/cookies.py
     Signature: add_header(self, key, val)
@@ -2457,7 +2457,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::add_unredirected_header:
-    id: 14da61c6-bb64-4a90-808d-c149286dd3a6
+    id: d674d1c1-d505-43ef-9b8c-164c256833fc
     name: add_unredirected_header
     Module Path: ../src/requests/cookies.py
     Signature: add_unredirected_header(self, name, value)
@@ -2479,7 +2479,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::cookiejar_from_dict:
-    id: 131d1a93-b5df-4cd4-9c2f-eca125238688
+    id: 031bd293-fd82-496d-89c8-4a77f4c87c9b
     name: cookiejar_from_dict
     Module Path: ../src/requests/cookies.py
     Signature: cookiejar_from_dict(cookie_dict, cookiejar, overwrite)
@@ -2507,7 +2507,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::copy:
-    id: 4cda570b-6fbd-47c1-9bd2-4af6b7261fbe
+    id: 076f4359-24fc-464a-9093-0f210897462b
     name: copy
     Module Path: ../src/requests/cookies.py
     Signature: copy(self)
@@ -2529,7 +2529,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::create_cookie:
-    id: be2c8bf0-66f7-4f49-be40-b24390187a59
+    id: 92b0436c-d4c3-46b4-bb1d-b94ce33771a3
     name: create_cookie
     Module Path: ../src/requests/cookies.py
     Signature: create_cookie(name, value)
@@ -2554,7 +2554,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::extract_cookies_to_jar:
-    id: bf93b2a4-4fba-4984-8419-efde66d5f87b
+    id: 7171ed7e-35b5-4fa8-b11d-7b2579d2b9ae
     name: extract_cookies_to_jar
     Module Path: ../src/requests/cookies.py
     Signature: extract_cookies_to_jar(jar, request, response)
@@ -2580,7 +2580,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get:
-    id: 71b8e094-ccb2-4013-ac5b-258b2613f92a
+    id: f62e1f59-4424-4a78-a930-ff79381881c2
     name: get
     Module Path: ../src/requests/cookies.py
     Signature: get(self, name, default, domain, path)
@@ -2606,7 +2606,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_cookie_header:
-    id: 4d3c8482-39e5-4c27-be9a-5afd3f3848d9
+    id: 212d5bdd-ea0e-4900-9d43-4204a2109ba4
     name: get_cookie_header
     Module Path: ../src/requests/cookies.py
     Signature: get_cookie_header(jar, request)
@@ -2630,7 +2630,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_dict:
-    id: ed10e10b-2730-4a73-9d11-1b7c82e422e2
+    id: 35f3f801-0ad8-4308-9c2e-d6d8b0915367
     name: get_dict
     Module Path: ../src/requests/cookies.py
     Signature: get_dict(self, domain, path)
@@ -2656,7 +2656,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_full_url:
-    id: 2753893d-b49a-47b3-8325-90cac2bc9e16
+    id: 55c7a207-5d78-4311-af7f-42a59f298593
     name: get_full_url
     Module Path: ../src/requests/cookies.py
     Signature: get_full_url(self)
@@ -2678,7 +2678,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_header:
-    id: 2177a474-f90e-4315-8da2-85de13a3566c
+    id: 02cc3a3d-0b10-4cd0-998d-3a10bcea45b4
     name: get_header
     Module Path: ../src/requests/cookies.py
     Signature: get_header(self, name, default)
@@ -2700,7 +2700,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_host:
-    id: 143ab3bd-5af8-4d8d-b0e2-9b6f88e75b82
+    id: 47fff763-4d01-4b97-aad2-e2ae762552bc
     name: get_host
     Module Path: ../src/requests/cookies.py
     Signature: get_host(self)
@@ -2722,7 +2722,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_new_headers:
-    id: 1aefbe2c-0ba4-4b29-ae3c-22e3496a8da9
+    id: 4e255d67-5174-4cc1-b4cf-f3d522ce4401
     name: get_new_headers
     Module Path: ../src/requests/cookies.py
     Signature: get_new_headers(self)
@@ -2744,7 +2744,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_origin_req_host:
-    id: d989c9e0-dc70-4ffd-a78f-e9b58b2afebe
+    id: 91810fd6-3b6f-4cb4-b058-6fbf33c8349c
     name: get_origin_req_host
     Module Path: ../src/requests/cookies.py
     Signature: get_origin_req_host(self)
@@ -2766,7 +2766,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_policy:
-    id: e03d4b43-a13e-4ca4-be70-0dfbbf54a3c2
+    id: 0ff91362-897d-4748-998b-86eab242b585
     name: get_policy
     Module Path: ../src/requests/cookies.py
     Signature: get_policy(self)
@@ -2788,7 +2788,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_type:
-    id: 436bdd1d-6e8d-43c2-a2e8-f79393c520ab
+    id: 16f0fd3a-1dec-4ddb-af85-4f14e2941310
     name: get_type
     Module Path: ../src/requests/cookies.py
     Signature: get_type(self)
@@ -2810,7 +2810,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::getheaders:
-    id: 0d371144-cf3a-409e-b6aa-b8edb7ddc077
+    id: d236b18d-6af1-43cd-8ab0-1b497200e7e5
     name: getheaders
     Module Path: ../src/requests/cookies.py
     Signature: getheaders(self, name)
@@ -2832,7 +2832,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::has_header:
-    id: 6b144b70-65a9-420d-801d-2ad5284d75ac
+    id: 03248c6c-9fae-49b0-99fd-3c9c0823fa8d
     name: has_header
     Module Path: ../src/requests/cookies.py
     Signature: has_header(self, name)
@@ -2854,7 +2854,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::host:
-    id: ac663228-6b39-4b31-87bd-b7de23692e64
+    id: d90c48c3-b1e4-417c-94d1-35d07e7fa7e6
     name: host
     Module Path: ../src/requests/cookies.py
     Signature: host(self)
@@ -2876,7 +2876,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::info:
-    id: f294fe64-3d15-474b-ab0f-0f575c1cef16
+    id: 50d70c11-6c4a-48fb-85e9-1f000f40d140
     name: info
     Module Path: ../src/requests/cookies.py
     Signature: info(self)
@@ -2898,7 +2898,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::is_unverifiable:
-    id: 20037c6e-f9e3-4d26-8ecd-c2a00ad5db9b
+    id: 693005b5-a12d-45fb-86cf-5ed8e50c24d2
     name: is_unverifiable
     Module Path: ../src/requests/cookies.py
     Signature: is_unverifiable(self)
@@ -2920,7 +2920,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::items:
-    id: 7b7f1d9c-76c6-48e4-b789-d0eaa6b53ad5
+    id: 64007460-b1a6-4cba-9080-98833d1758b1
     name: items
     Module Path: ../src/requests/cookies.py
     Signature: items(self)
@@ -2946,7 +2946,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::iteritems:
-    id: 0a0d082c-e244-48d8-ae3e-fce32101d814
+    id: 18037848-df88-4b7c-959e-0afe84537722
     name: iteritems
     Module Path: ../src/requests/cookies.py
     Signature: iteritems(self)
@@ -2971,7 +2971,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::iterkeys:
-    id: 36694739-2448-4eb6-8399-51de5b16451d
+    id: dae272b3-6b63-4e1d-a10c-be59692cff49
     name: iterkeys
     Module Path: ../src/requests/cookies.py
     Signature: iterkeys(self)
@@ -2996,7 +2996,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::itervalues:
-    id: 1b0f1fce-a395-45a2-8d5f-0c5e9020e5f0
+    id: 2ffa14b9-9c56-4cf3-b232-1993dd931f5f
     name: itervalues
     Module Path: ../src/requests/cookies.py
     Signature: itervalues(self)
@@ -3021,7 +3021,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::keys:
-    id: 6c537438-89e7-4894-93b0-0fc54b0bbcb5
+    id: 3e232c3e-824b-46d2-845f-d258399becee
     name: keys
     Module Path: ../src/requests/cookies.py
     Signature: keys(self)
@@ -3046,7 +3046,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::list_domains:
-    id: 51d39667-393f-4af5-b506-686deb8dd23b
+    id: b86bdaa6-f80b-4863-9f2d-987ea99438ad
     name: list_domains
     Module Path: ../src/requests/cookies.py
     Signature: list_domains(self)
@@ -3068,7 +3068,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::list_paths:
-    id: db8a3886-bdf4-464c-91a9-44db5b5099f8
+    id: 7e85e989-0f35-46ae-9325-1bc0ec1df516
     name: list_paths
     Module Path: ../src/requests/cookies.py
     Signature: list_paths(self)
@@ -3090,7 +3090,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::merge_cookies:
-    id: 98942fc2-8681-4bcc-b99e-94b50ec9cd6b
+    id: a4a25104-6748-4656-ac99-cdd68885ec75
     name: merge_cookies
     Module Path: ../src/requests/cookies.py
     Signature: merge_cookies(cookiejar, cookies)
@@ -3116,7 +3116,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::morsel_to_cookie:
-    id: 58aad2cf-3f79-40d1-8bc4-71777f4239ce
+    id: 50239e99-c8ad-449a-884e-8e83283ac46c
     name: morsel_to_cookie
     Module Path: ../src/requests/cookies.py
     Signature: morsel_to_cookie(morsel)
@@ -3138,7 +3138,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::multiple_domains:
-    id: d75e1827-5c9c-487b-9ae1-ece60c4d5f72
+    id: 2c9e4d86-2876-485c-bd06-2c27ed84f2dc
     name: multiple_domains
     Module Path: ../src/requests/cookies.py
     Signature: multiple_domains(self)
@@ -3163,7 +3163,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::origin_req_host:
-    id: e76348bb-640c-45cd-94e6-18dfa381625d
+    id: a12699c3-0123-407a-a07b-eda9f22e6a50
     name: origin_req_host
     Module Path: ../src/requests/cookies.py
     Signature: origin_req_host(self)
@@ -3185,7 +3185,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::remove_cookie_by_name:
-    id: 0fe1e953-1a7d-48a4-ae30-a1df5a950182
+    id: e8641fa2-b615-47a2-bf19-a0f469599838
     name: remove_cookie_by_name
     Module Path: ../src/requests/cookies.py
     Signature: remove_cookie_by_name(cookiejar, name, domain, path)
@@ -3209,7 +3209,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::set:
-    id: de010f39-e920-4858-b6e9-3f75646beafe
+    id: 027d8172-881a-42f3-8758-01314dee8427
     name: set
     Module Path: ../src/requests/cookies.py
     Signature: set(self, name, value)
@@ -3233,7 +3233,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::set_cookie:
-    id: a595c887-6112-4b26-901e-277ae18706fa
+    id: a7d6fb76-cc28-4677-9c56-7545f42414b4
     name: set_cookie
     Module Path: ../src/requests/cookies.py
     Signature: set_cookie(self, cookie)
@@ -3255,7 +3255,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::unverifiable:
-    id: 4e9d8f80-e892-48fd-8055-05e40e4e56d1
+    id: f6acdef5-01b2-4c34-8286-396b24d2039c
     name: unverifiable
     Module Path: ../src/requests/cookies.py
     Signature: unverifiable(self)
@@ -3277,7 +3277,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::update:
-    id: b9c44d45-58e3-45a6-84be-4953b09cec66
+    id: 3f37985a-25d8-42bd-8c96-ebcdab99e16c
     name: update
     Module Path: ../src/requests/cookies.py
     Signature: update(self, other)
@@ -3299,7 +3299,7 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::values:
-    id: aa736c31-737d-4d87-a5de-e92ff7d93c32
+    id: c41d8f4b-f67a-4a93-b0b8-f9ae515ff686
     name: values
     Module Path: ../src/requests/cookies.py
     Signature: values(self)
@@ -3324,7 +3324,7 @@ Functions:
     Runtime: python
 
   ../src/requests/exceptions.py::__init__:
-    id: 42178669-bc82-48b1-bab1-f7b6609b7e59
+    id: 0944a9ef-16a3-4f6d-8f20-d6a7094c01ce
     name: __init__
     Module Path: ../src/requests/exceptions.py
     Signature: __init__(self)
@@ -3349,7 +3349,7 @@ Functions:
     Runtime: python
 
   ../src/requests/exceptions.py::__reduce__:
-    id: b28a504c-0a13-4d7c-a93a-1c98ce3df7b2
+    id: 6cf1448a-88ae-4880-b064-8266de71d21f
     name: __reduce__
     Module Path: ../src/requests/exceptions.py
     Signature: __reduce__(self)
@@ -3375,7 +3375,7 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::_implementation:
-    id: 3770d219-3565-4c0f-8f86-c2bb986dcfe2
+    id: 3afb3b33-1ad4-4f50-8a3b-f52f8f8b9f2a
     name: _implementation
     Module Path: ../src/requests/help.py
     Signature: _implementation()
@@ -3405,7 +3405,7 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::info:
-    id: 64da9465-d273-491a-b3e6-a5a86792a675
+    id: ad2d4b40-7dee-4b4e-bbfa-57dc071310b3
     name: info
     Module Path: ../src/requests/help.py
     Signature: info()
@@ -3427,7 +3427,7 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::main:
-    id: 9a3de15a-29c9-491a-950a-12611c0e43a7
+    id: 1b7aefc6-2e3e-48da-8c95-2b065993849b
     name: main
     Module Path: ../src/requests/help.py
     Signature: main()
@@ -3449,7 +3449,7 @@ Functions:
     Runtime: python
 
   ../src/requests/hooks.py::default_hooks:
-    id: d70f4ad2-d603-4fb8-be05-18876c017a8c
+    id: a7664a0f-5b53-48f2-8b55-d2c339aaa37d
     name: default_hooks
     Module Path: ../src/requests/hooks.py
     Signature: default_hooks()
@@ -3471,7 +3471,7 @@ Functions:
     Runtime: python
 
   ../src/requests/hooks.py::dispatch_hook:
-    id: 412f3f11-8d0d-484c-a317-916dd2e45fd0
+    id: e1d73dfb-d83b-4a65-be18-671904f37ed2
     name: dispatch_hook
     Module Path: ../src/requests/hooks.py
     Signature: dispatch_hook(key, hooks, hook_data)
@@ -3493,7 +3493,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__bool__:
-    id: 6629e540-16d3-4b0d-9a21-a4b865f1cdea
+    id: 74830bf6-9c9c-4620-9d08-8ac4b068e269
     name: __bool__
     Module Path: ../src/requests/models.py
     Signature: __bool__(self)
@@ -3520,7 +3520,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__enter__:
-    id: 7e0f5e6d-d9f8-4c19-9bcb-06c508a3b45e
+    id: 067c6d64-e119-4f20-bf0a-c37cdc4b89ec
     name: __enter__
     Module Path: ../src/requests/models.py
     Signature: __enter__(self)
@@ -3542,7 +3542,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__exit__:
-    id: 10944686-ae7f-43cc-8479-00a2b50fa34a
+    id: 1c8a39b2-36f5-41fb-9610-27a9a4b6bea3
     name: __exit__
     Module Path: ../src/requests/models.py
     Signature: __exit__(self)
@@ -3564,7 +3564,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__getstate__:
-    id: df9003a9-e5d8-49f8-a6ec-7c82088f6307
+    id: 8eefbc37-12c8-4b19-8822-5556239d60b3
     name: __getstate__
     Module Path: ../src/requests/models.py
     Signature: __getstate__(self)
@@ -3586,7 +3586,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__init__:
-    id: 204b3680-cfea-436d-9cda-9963f23872cc
+    id: b33f64d5-a864-4455-9cc0-ca5a063d62f6
     name: __init__
     Module Path: ../src/requests/models.py
     Signature: __init__(self)
@@ -3608,7 +3608,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__iter__:
-    id: 02b8570f-7210-4234-b0cf-cf216f231121
+    id: 5cd3091d-9b79-4547-8690-c417a8c5a424
     name: __iter__
     Module Path: ../src/requests/models.py
     Signature: __iter__(self)
@@ -3630,7 +3630,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__nonzero__:
-    id: 157b13eb-8c33-4f4b-90f5-b9058c66957a
+    id: 6fec6c7b-e7bc-4f3f-a7af-3c195c7e7991
     name: __nonzero__
     Module Path: ../src/requests/models.py
     Signature: __nonzero__(self)
@@ -3657,7 +3657,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__repr__:
-    id: a27b0b89-16fe-4780-ae0b-34268402f4e6
+    id: 1a3b6dd7-54c8-45d9-a0e4-e41297825c57
     name: __repr__
     Module Path: ../src/requests/models.py
     Signature: __repr__(self)
@@ -3679,7 +3679,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__setstate__:
-    id: 97b56605-a6a6-4e7b-bb7e-78b13998f09b
+    id: 99ec2b16-7258-4641-ad41-02cd79775a26
     name: __setstate__
     Module Path: ../src/requests/models.py
     Signature: __setstate__(self, state)
@@ -3701,7 +3701,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_encode_files:
-    id: 1763e1a0-bb85-427f-b2b1-50428a77a742
+    id: ab3fc267-c44c-44de-8226-26895de07a09
     name: _encode_files
     Module Path: ../src/requests/models.py
     Signature: _encode_files(files, data)
@@ -3729,7 +3729,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_encode_params:
-    id: 3149dbdd-d450-41ef-8548-fe5d4b670235
+    id: fe9b51ea-65af-45a1-90da-e36811454007
     name: _encode_params
     Module Path: ../src/requests/models.py
     Signature: _encode_params(data)
@@ -3755,7 +3755,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_get_idna_encoded_host:
-    id: d7b6892a-990f-4dc0-8ea2-46b93cedc7f4
+    id: 8a46ec7d-dc5b-449f-9c3f-c1ce5a33ebe8
     name: _get_idna_encoded_host
     Module Path: ../src/requests/models.py
     Signature: _get_idna_encoded_host(host)
@@ -3777,7 +3777,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::apparent_encoding:
-    id: 1a695e64-4cae-454f-8363-bf805849c0a4
+    id: 9fea7305-44fa-403a-b97b-603fc8acb9db
     name: apparent_encoding
     Module Path: ../src/requests/models.py
     Signature: apparent_encoding(self)
@@ -3799,7 +3799,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::close:
-    id: 1d1181e9-d407-4285-ac5e-9c7180633979
+    id: efcb790c-be3e-4a5a-a7f6-60821a5e9ed0
     name: close
     Module Path: ../src/requests/models.py
     Signature: close(self)
@@ -3824,7 +3824,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::content:
-    id: 3a3a82ff-3a80-45d3-8dfd-57b478dce1b7
+    id: a0a7b726-c84d-45d3-a3a2-736a9328b213
     name: content
     Module Path: ../src/requests/models.py
     Signature: content(self)
@@ -3846,7 +3846,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::copy:
-    id: 7d9146ba-b7fb-4bd0-a20f-07a32028d4e8
+    id: 5c58c7f1-21ba-4431-8917-5279bc6f10d8
     name: copy
     Module Path: ../src/requests/models.py
     Signature: copy(self)
@@ -3868,7 +3868,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::deregister_hook:
-    id: 0eaba484-6bf2-4766-b01c-ce418e3f64ec
+    id: f299f41b-0fd0-480a-b942-5d8213f4757d
     name: deregister_hook
     Module Path: ../src/requests/models.py
     Signature: deregister_hook(self, event, hook)
@@ -3891,7 +3891,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::is_permanent_redirect:
-    id: 698c91cf-f991-47f8-bbcc-d47eed8db9e8
+    id: 0ced0e86-77d4-49ad-b4bb-3bfd39a08052
     name: is_permanent_redirect
     Module Path: ../src/requests/models.py
     Signature: is_permanent_redirect(self)
@@ -3913,7 +3913,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::is_redirect:
-    id: 6ff6fa47-8162-401e-a97c-aca603b55fc3
+    id: 69ddea37-d9cb-4363-b67b-37316adb2b52
     name: is_redirect
     Module Path: ../src/requests/models.py
     Signature: is_redirect(self)
@@ -3936,7 +3936,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::iter_content:
-    id: 0ef54c46-dab7-49cf-b89a-fb1b902fcbbe
+    id: 94bb7bd8-59db-4764-bb6a-48d71ec725c5
     name: iter_content
     Module Path: ../src/requests/models.py
     Signature: iter_content(self, chunk_size, decode_unicode)
@@ -3971,7 +3971,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::iter_lines:
-    id: 133e7ab7-df0b-459b-82f2-440dac49cd6b
+    id: 54ff9553-2a15-4f5e-8c7c-f8350da3b665
     name: iter_lines
     Module Path: ../src/requests/models.py
     Signature: iter_lines(self, chunk_size, decode_unicode, delimiter)
@@ -3997,7 +3997,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::json:
-    id: f7a20e6a-9c02-4bc7-9d69-473103c2fb53
+    id: 0d113c9b-df84-4563-be72-9214d8e9fd18
     name: json
     Module Path: ../src/requests/models.py
     Signature: json(self)
@@ -4025,7 +4025,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::links:
-    id: 8bd608a7-2053-4095-b853-b32d4fdc8173
+    id: 19da2a13-51d3-4cdb-b12e-5b2fea69625a
     name: links
     Module Path: ../src/requests/models.py
     Signature: links(self)
@@ -4047,7 +4047,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::next:
-    id: c8db9199-5761-4b57-af23-91c9641a6039
+    id: 4799b4bf-3505-4f08-960d-ad98e00f5d62
     name: next
     Module Path: ../src/requests/models.py
     Signature: next(self)
@@ -4069,7 +4069,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::ok:
-    id: 054bd736-da79-4d2b-9717-f9de7469808e
+    id: bda9095b-33b6-4d56-bb72-241c648296f0
     name: ok
     Module Path: ../src/requests/models.py
     Signature: ok(self)
@@ -4096,7 +4096,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::path_url:
-    id: 3228f8a0-a1d7-4b3f-a14b-a44e88523e4f
+    id: 85190c52-4424-497b-a659-073f77320f77
     name: path_url
     Module Path: ../src/requests/models.py
     Signature: path_url(self)
@@ -4118,7 +4118,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare:
-    id: b027e553-ea89-41c1-970d-9275b570f193
+    id: a48f7bfc-903c-4bfe-8448-7e4569e71b7f
     name: prepare
     Module Path: ../src/requests/models.py
     Signature: prepare(self, method, url, headers, files, data, params, auth, cookies, hooks, json)
@@ -4140,7 +4140,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_auth:
-    id: 3da03ed4-33ad-4954-b7eb-5cca9b03df04
+    id: 44602f57-bf2c-49e5-b577-efbf2aecda1f
     name: prepare_auth
     Module Path: ../src/requests/models.py
     Signature: prepare_auth(self, auth, url)
@@ -4162,7 +4162,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_body:
-    id: 26d40c32-35ce-411e-b7c7-2bd5736956e3
+    id: b5d59154-60e7-43b4-8407-a2c3448748c9
     name: prepare_body
     Module Path: ../src/requests/models.py
     Signature: prepare_body(self, data, files, json)
@@ -4184,7 +4184,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_content_length:
-    id: fa2acc49-7fb7-475e-9acb-2d264e0e36f1
+    id: a1654835-0de4-48cc-b165-71cdc25ec69f
     name: prepare_content_length
     Module Path: ../src/requests/models.py
     Signature: prepare_content_length(self, body)
@@ -4206,7 +4206,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_cookies:
-    id: 75f82714-0298-465a-98de-c3e2eb7f6a0a
+    id: db5e1491-41e9-41e6-a7ff-afd0b7309a6b
     name: prepare_cookies
     Module Path: ../src/requests/models.py
     Signature: prepare_cookies(self, cookies)
@@ -4236,7 +4236,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_headers:
-    id: ae5759cd-5a2c-4309-a1c4-69269d920ed1
+    id: 4eaf928e-7dcc-4804-ae57-e17aea8fe167
     name: prepare_headers
     Module Path: ../src/requests/models.py
     Signature: prepare_headers(self, headers)
@@ -4258,7 +4258,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_hooks:
-    id: 422779cd-fa80-419b-baea-2ae508e5afe0
+    id: 1c4ea5dd-281d-4fba-bc7c-93d637a2a4eb
     name: prepare_hooks
     Module Path: ../src/requests/models.py
     Signature: prepare_hooks(self, hooks)
@@ -4280,7 +4280,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_method:
-    id: 751d96ea-6f8b-441b-b035-dc8538576605
+    id: 11f49edf-fc9f-42fb-b9f8-1afda2dd6286
     name: prepare_method
     Module Path: ../src/requests/models.py
     Signature: prepare_method(self, method)
@@ -4302,7 +4302,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_url:
-    id: ca2fc1bf-e1a3-4e7e-9ab1-c7a9fade4c81
+    id: 45ab5b3a-970c-4dec-b109-1a0839e115ac
     name: prepare_url
     Module Path: ../src/requests/models.py
     Signature: prepare_url(self, url, params)
@@ -4324,7 +4324,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::raise_for_status:
-    id: 53efec1f-a115-48f7-990d-259f2ec758db
+    id: 7c43b733-358e-42e7-8621-038347b39463
     name: raise_for_status
     Module Path: ../src/requests/models.py
     Signature: raise_for_status(self)
@@ -4346,7 +4346,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::register_hook:
-    id: 21e40c91-d334-49b7-8bb6-533738cd0e7a
+    id: 9e014042-6849-4028-a55e-2cb2300dfe0c
     name: register_hook
     Module Path: ../src/requests/models.py
     Signature: register_hook(self, event, hook)
@@ -4368,7 +4368,7 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::text:
-    id: 4a35561e-7d37-45bd-b0d7-3641805baeca
+    id: 5fe38343-7231-4a7b-9995-3f5ae514f15f
     name: text
     Module Path: ../src/requests/models.py
     Signature: text(self)
@@ -4398,7 +4398,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__enter__:
-    id: 7c6ebfa4-b7d8-408d-b9cf-9340fdf3bba8
+    id: 48b54636-1ca0-49f4-89bd-efaa24627b64
     name: __enter__
     Module Path: ../src/requests/sessions.py
     Signature: __enter__(self)
@@ -4420,7 +4420,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__exit__:
-    id: 5215a7e8-ea32-4d4a-a1f5-594eebd609dc
+    id: 62a7f6c6-18ed-40cb-ac82-13a7dce734f0
     name: __exit__
     Module Path: ../src/requests/sessions.py
     Signature: __exit__(self)
@@ -4442,7 +4442,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__getstate__:
-    id: 87f355db-19ca-42a8-94a5-37be90fe5b2b
+    id: 0caa1fa2-2a30-407a-b813-4912a617e22e
     name: __getstate__
     Module Path: ../src/requests/sessions.py
     Signature: __getstate__(self)
@@ -4464,7 +4464,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__init__:
-    id: eef9ab71-a306-43a9-ab9c-d656efbb5945
+    id: 406b03fe-a40f-4898-9df4-52c1b1d72757
     name: __init__
     Module Path: ../src/requests/sessions.py
     Signature: __init__(self)
@@ -4486,7 +4486,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__setstate__:
-    id: 825b5a43-0e56-4f1c-8a3a-39a44ab7c32b
+    id: 46e9e331-7915-43d6-92b0-0c9f76d0642c
     name: __setstate__
     Module Path: ../src/requests/sessions.py
     Signature: __setstate__(self, state)
@@ -4508,7 +4508,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::close:
-    id: c5804050-bf62-4081-a8bb-694e45b465c0
+    id: 45d68c2c-9b30-44bc-a0f4-98276b69970c
     name: close
     Module Path: ../src/requests/sessions.py
     Signature: close(self)
@@ -4530,7 +4530,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::delete:
-    id: cf375f2d-8517-45a2-ab9f-e31f035c6ada
+    id: 698d6910-b97f-4b17-ba67-589210c23ba6
     name: delete
     Module Path: ../src/requests/sessions.py
     Signature: delete(self, url)
@@ -4556,7 +4556,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get:
-    id: 83148def-affb-44ee-8579-f6f1505ebb17
+    id: 748db260-0e4b-4abf-aace-ca43b43a7968
     name: get
     Module Path: ../src/requests/sessions.py
     Signature: get(self, url)
@@ -4582,7 +4582,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get_adapter:
-    id: a97600f4-65c1-414c-af1e-c34c004467d9
+    id: d1bb9801-4755-4ab4-a84d-7e0cdc6a48c2
     name: get_adapter
     Module Path: ../src/requests/sessions.py
     Signature: get_adapter(self, url)
@@ -4606,7 +4606,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get_redirect_target:
-    id: 0fee9b5e-a600-4390-b017-e7eee1314026
+    id: 2d328ff9-6ef6-4742-b1fa-8ff985f8464c
     name: get_redirect_target
     Module Path: ../src/requests/sessions.py
     Signature: get_redirect_target(self, resp)
@@ -4628,7 +4628,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::head:
-    id: 0822e3d7-cba1-45d6-9446-2d9b050662f4
+    id: 5b68de25-925d-4619-b4cc-ea6ccffbf698
     name: head
     Module Path: ../src/requests/sessions.py
     Signature: head(self, url)
@@ -4654,7 +4654,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_environment_settings:
-    id: a4dc04ab-0383-49c6-8c54-be56106e05cb
+    id: 785c4223-3984-4d98-b05e-206c062dd84e
     name: merge_environment_settings
     Module Path: ../src/requests/sessions.py
     Signature: merge_environment_settings(self, url, proxies, stream, verify, cert)
@@ -4678,7 +4678,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_hooks:
-    id: 16d625d5-3817-4fc2-a40a-13111a223f8d
+    id: 418fc7f7-c052-4a93-b267-7d9ac668bf69
     name: merge_hooks
     Module Path: ../src/requests/sessions.py
     Signature: merge_hooks(request_hooks, session_hooks, dict_class)
@@ -4703,7 +4703,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_setting:
-    id: c9d5fa2b-a66c-4780-9bfd-e48833cf6656
+    id: deba752c-69c5-47eb-94af-61a3e886fcf7
     name: merge_setting
     Module Path: ../src/requests/sessions.py
     Signature: merge_setting(request_setting, session_setting, dict_class)
@@ -4727,7 +4727,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::mount:
-    id: 49e4dd66-beef-46fa-ab52-69ad7b54e7c5
+    id: 69f257b3-97ac-48ee-80ea-5c5eed6d6210
     name: mount
     Module Path: ../src/requests/sessions.py
     Signature: mount(self, prefix, adapter)
@@ -4751,7 +4751,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::options:
-    id: 579653d7-f9f8-45ed-b034-5d32cc9e249c
+    id: 0996562b-bae9-4a86-9cb5-c618f2b0017b
     name: options
     Module Path: ../src/requests/sessions.py
     Signature: options(self, url)
@@ -4777,7 +4777,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::patch:
-    id: 7f58a26e-669a-4a63-9808-1713fba12882
+    id: f3bf3221-b458-4197-91b3-73449eccff7e
     name: patch
     Module Path: ../src/requests/sessions.py
     Signature: patch(self, url, data)
@@ -4805,7 +4805,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::post:
-    id: fef63165-f25c-47b3-aa32-6b1c201b2fe2
+    id: 57d23ca0-6424-42bc-895a-229aff1bc085
     name: post
     Module Path: ../src/requests/sessions.py
     Signature: post(self, url, data, json)
@@ -4834,7 +4834,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::prepare_request:
-    id: 9852babe-6303-4547-ac03-30ddaf23c6ba
+    id: a132a387-bff3-4afa-9c4c-45d2760248f7
     name: prepare_request
     Module Path: ../src/requests/sessions.py
     Signature: prepare_request(self, request)
@@ -4863,7 +4863,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::put:
-    id: 0f856a65-d11f-4338-beb3-bb459de98ab2
+    id: fecc9064-55fd-4f37-9b21-8106fb3bbf7c
     name: put
     Module Path: ../src/requests/sessions.py
     Signature: put(self, url, data)
@@ -4891,7 +4891,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_auth:
-    id: 4babb4d4-6442-4b4b-93a5-989bef717a1f
+    id: 33d805cd-df0e-4c5d-8a1f-0ae588740e0a
     name: rebuild_auth
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_auth(self, prepared_request, response)
@@ -4915,7 +4915,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_method:
-    id: 532758ed-4dc5-4bd3-b312-9025c2c10108
+    id: 7d048751-01e7-47b2-bf45-4042474b5fcc
     name: rebuild_method
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_method(self, prepared_request, response)
@@ -4938,7 +4938,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_proxies:
-    id: 065eeb30-0bf7-4400-a0ad-5162c57cb84e
+    id: 5775cfe3-9985-4d6f-880b-06c03fc4086d
     name: rebuild_proxies
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_proxies(self, prepared_request, proxies)
@@ -4969,7 +4969,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::request:
-    id: d1f35702-f7ec-4d3c-981a-f003f8878504
+    id: 18da15e6-f339-43b1-af5e-112fd87dfc6b
     name: request
     Module Path: ../src/requests/sessions.py
     Signature: request(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)
@@ -5032,7 +5032,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::resolve_redirects:
-    id: 559379cc-128f-4857-ab9d-5c2f81139960
+    id: 0f830b8c-994c-447d-9cc1-2da4c003b169
     name: resolve_redirects
     Module Path: ../src/requests/sessions.py
     Signature: resolve_redirects(self, resp, req, stream, timeout, verify, cert, proxies, yield_requests)
@@ -5054,7 +5054,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::send:
-    id: 3631a8c6-7c6f-461c-b689-37ff110fa6a0
+    id: 240ff830-823c-45c3-b8ab-ebcd4eeb2688
     name: send
     Module Path: ../src/requests/sessions.py
     Signature: send(self, request)
@@ -5078,7 +5078,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::session:
-    id: af03a9c9-21d4-4aec-8a2d-0efbaa1bedaa
+    id: 9ef23c8e-92d3-4796-92b9-001db58f3aae
     name: session
     Module Path: ../src/requests/sessions.py
     Signature: session()
@@ -5108,7 +5108,7 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::should_strip_auth:
-    id: 443c2e58-d5c7-43e0-8c79-efd7acecf490
+    id: 98d66db5-5cac-4cf3-a74b-bf9b58816ede
     name: should_strip_auth
     Module Path: ../src/requests/sessions.py
     Signature: should_strip_auth(self, old_url, new_url)
@@ -5130,7 +5130,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__delitem__:
-    id: 7e13dcff-6d9f-4a70-9fbd-eead2b484c0e
+    id: 72f5ac57-509d-451d-95a1-7fa346895119
     name: __delitem__
     Module Path: ../src/requests/structures.py
     Signature: __delitem__(self, key)
@@ -5152,7 +5152,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__eq__:
-    id: 7c429d27-4f3c-4620-9dab-3afc2534822f
+    id: 751d3ac4-f978-4500-aa8d-d189d6f56767
     name: __eq__
     Module Path: ../src/requests/structures.py
     Signature: __eq__(self, other)
@@ -5174,7 +5174,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__getitem__:
-    id: 2b0457b4-312b-4fbc-8b7b-4a83ed75401b
+    id: 5c6a3f4b-fdd9-457c-a97c-9ac8a3cdc440
     name: __getitem__
     Module Path: ../src/requests/structures.py
     Signature: __getitem__(self, key)
@@ -5196,7 +5196,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__init__:
-    id: 66d695a7-a6ba-4666-9f85-1048790ae009
+    id: a0e45ac9-abb5-410f-96b8-d2125c45cbd4
     name: __init__
     Module Path: ../src/requests/structures.py
     Signature: __init__(self, name)
@@ -5218,7 +5218,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__iter__:
-    id: 7849ed2b-a900-4a5a-9126-1f2627307223
+    id: 8132009f-b6d1-48a8-b5ed-867410405493
     name: __iter__
     Module Path: ../src/requests/structures.py
     Signature: __iter__(self)
@@ -5240,7 +5240,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__len__:
-    id: 697157b6-1515-4c3f-a287-b40498497c85
+    id: da2e5e44-ca0f-40a2-845c-66fa89701572
     name: __len__
     Module Path: ../src/requests/structures.py
     Signature: __len__(self)
@@ -5262,7 +5262,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__repr__:
-    id: 3b8c9094-3a57-47de-9458-d4f6ea0ee645
+    id: 940af7ac-fcdb-4a46-b784-9006d9b1c9b2
     name: __repr__
     Module Path: ../src/requests/structures.py
     Signature: __repr__(self)
@@ -5284,7 +5284,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__setitem__:
-    id: fe55949f-acf2-4075-8ed8-922d1ccb91fa
+    id: 60f7fc08-7cdc-4335-99be-b039e7b81039
     name: __setitem__
     Module Path: ../src/requests/structures.py
     Signature: __setitem__(self, key, value)
@@ -5306,7 +5306,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::copy:
-    id: 21f9a32f-bc4b-4d4c-afc3-ebd594d23518
+    id: e39b238a-ed1c-4a18-b783-29bce0357797
     name: copy
     Module Path: ../src/requests/structures.py
     Signature: copy(self)
@@ -5328,7 +5328,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::get:
-    id: 22b4b34f-e637-40c6-a1b1-bed0059a74f5
+    id: 452a1b88-ac57-45c5-84ea-605e4e2145a4
     name: get
     Module Path: ../src/requests/structures.py
     Signature: get(self, key, default)
@@ -5350,7 +5350,7 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::lower_items:
-    id: f8fc8173-b101-4517-b8e9-409f460f3a49
+    id: ecc0e5ec-8798-4c04-af4e-3fdd328ed6f9
     name: lower_items
     Module Path: ../src/requests/structures.py
     Signature: lower_items(self)
@@ -5372,7 +5372,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::_parse_content_type_header:
-    id: dc7f94c2-7e9d-47dc-a3ad-a8818a31bb6a
+    id: 8c489082-985b-44eb-81d2-2ae370997bee
     name: _parse_content_type_header
     Module Path: ../src/requests/utils.py
     Signature: _parse_content_type_header(header)
@@ -5398,7 +5398,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::_validate_header_part:
-    id: 4811213b-a2b7-4ca9-8db6-7d4043dfa2e7
+    id: a14e129a-445a-464a-a126-27832606f51b
     name: _validate_header_part
     Module Path: ../src/requests/utils.py
     Signature: _validate_header_part(header, header_part, header_validator_index)
@@ -5420,7 +5420,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::add_dict_to_cookiejar:
-    id: 8d5503cc-25c3-44a1-a0cb-0d385c8b0ad9
+    id: 283fa5eb-abce-41ab-acf8-1ad9fecd4725
     name: add_dict_to_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: add_dict_to_cookiejar(cj, cookie_dict)
@@ -5446,7 +5446,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::address_in_network:
-    id: fd2cc2dd-8485-4b98-a771-aaeaf49b1315
+    id: 9e64f232-0a81-47a4-a313-fec431c6fbe0
     name: address_in_network
     Module Path: ../src/requests/utils.py
     Signature: address_in_network(ip, net)
@@ -5473,7 +5473,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::atomic_open:
-    id: d95aa5de-39fe-4745-8775-7407ef131366
+    id: 03814627-b6c0-4e53-8afe-20381c933aa3
     name: atomic_open
     Module Path: ../src/requests/utils.py
     Signature: atomic_open(filename)
@@ -5495,7 +5495,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::check_header_validity:
-    id: 88f7535d-4075-46c6-a226-5acc2840a2a4
+    id: 58c2141e-3bd5-4ca4-aec6-062911d49e32
     name: check_header_validity
     Module Path: ../src/requests/utils.py
     Signature: check_header_validity(header)
@@ -5520,7 +5520,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::default_headers:
-    id: b6bde438-4382-490a-b925-68d3dd6ea0cd
+    id: 0f1f9156-32c9-4aef-9789-3757fb2028d2
     name: default_headers
     Module Path: ../src/requests/utils.py
     Signature: default_headers()
@@ -5542,7 +5542,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::default_user_agent:
-    id: 73cdb2a0-243c-4cf5-bf51-8d551215e29e
+    id: d5c810c3-cffd-4723-9f8a-e5c798b1d245
     name: default_user_agent
     Module Path: ../src/requests/utils.py
     Signature: default_user_agent(name)
@@ -5566,7 +5566,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dict_from_cookiejar:
-    id: 8adf6e8b-acae-4d42-975c-d4adc3956090
+    id: b6fb9bc5-639f-49f3-9501-aa5119b827e3
     name: dict_from_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: dict_from_cookiejar(cj)
@@ -5591,7 +5591,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dict_to_sequence:
-    id: 5f28c5b9-e649-4fd4-90d6-dab74328f52a
+    id: b95c9e7f-4483-4d8d-b2e8-075a646be5e5
     name: dict_to_sequence
     Module Path: ../src/requests/utils.py
     Signature: dict_to_sequence(d)
@@ -5613,7 +5613,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dotted_netmask:
-    id: 973c2d2c-2e77-48ee-bdbd-dde09a7a77d5
+    id: acb6d7f1-829d-44a7-95dc-094e89551f7c
     name: dotted_netmask
     Module Path: ../src/requests/utils.py
     Signature: dotted_netmask(mask)
@@ -5639,7 +5639,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::extract_zipped_paths:
-    id: 2358cbfa-3e1a-4556-9f9a-880b79818994
+    id: e4a51a7e-5c61-4b91-b181-1c08233c4057
     name: extract_zipped_paths
     Module Path: ../src/requests/utils.py
     Signature: extract_zipped_paths(path)
@@ -5663,7 +5663,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::from_key_val_list:
-    id: 4600249b-037c-4a23-909d-a7d41ac01be1
+    id: 9e6a17fe-6290-4735-9fa5-fa312a31bc2e
     name: from_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: from_key_val_list(value)
@@ -5700,7 +5700,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_auth_from_url:
-    id: 5651564f-3a2a-4c91-847e-4451961a33e1
+    id: c97ce095-359a-4366-b734-da85d7250c87
     name: get_auth_from_url
     Module Path: ../src/requests/utils.py
     Signature: get_auth_from_url(url)
@@ -5725,7 +5725,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_encoding_from_headers:
-    id: 6eed56a3-2d01-4313-9ed7-729e9dd30082
+    id: 14940645-c031-4368-89ea-5178a8956821
     name: get_encoding_from_headers
     Module Path: ../src/requests/utils.py
     Signature: get_encoding_from_headers(headers)
@@ -5750,7 +5750,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_encodings_from_content:
-    id: 200ae768-3d8f-41b4-9b4e-c80070a4727e
+    id: 484c9a2c-b295-4357-ba4e-a7c0578bc3b5
     name: get_encodings_from_content
     Module Path: ../src/requests/utils.py
     Signature: get_encodings_from_content(content)
@@ -5774,7 +5774,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_environ_proxies:
-    id: 09688292-5c30-44a8-862a-3b5ad8d709b6
+    id: 0c94352e-fbeb-48e5-93c8-7b91bb24c025
     name: get_environ_proxies
     Module Path: ../src/requests/utils.py
     Signature: get_environ_proxies(url, no_proxy)
@@ -5798,7 +5798,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_netrc_auth:
-    id: 973e8a18-662d-44ff-ae09-a0a12ad6b1b2
+    id: bd293b1c-a857-446a-b524-7d82fb70e3b1
     name: get_netrc_auth
     Module Path: ../src/requests/utils.py
     Signature: get_netrc_auth(url, raise_errors)
@@ -5820,7 +5820,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_unicode_from_response:
-    id: 3430e08e-1b84-4007-a8f8-229fa6e39a95
+    id: c62f9791-4475-448d-83de-07d4ee20c8f3
     name: get_unicode_from_response
     Module Path: ../src/requests/utils.py
     Signature: get_unicode_from_response(r)
@@ -5851,7 +5851,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::guess_filename:
-    id: d181300a-e071-46fc-a3e4-af13ea36ee01
+    id: 76b98b05-7cc6-4493-9f95-06142cad28b7
     name: guess_filename
     Module Path: ../src/requests/utils.py
     Signature: guess_filename(obj)
@@ -5873,7 +5873,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::guess_json_utf:
-    id: 0743393e-7f3f-431e-bcd0-25752875533a
+    id: e5f80896-256c-48bf-b84a-256fce5d4c67
     name: guess_json_utf
     Module Path: ../src/requests/utils.py
     Signature: guess_json_utf(data)
@@ -5895,7 +5895,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::is_ipv4_address:
-    id: f01ac1db-dbe3-4315-b880-5980439c94bc
+    id: 8cf410ac-ce73-483f-8c98-cff2c7efb8bf
     name: is_ipv4_address
     Module Path: ../src/requests/utils.py
     Signature: is_ipv4_address(string_ip)
@@ -5917,7 +5917,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::is_valid_cidr:
-    id: 60950916-8c57-4539-b114-6d69da80fe44
+    id: c05d000d-5f76-4b9e-a175-3b5c6453ad82
     name: is_valid_cidr
     Module Path: ../src/requests/utils.py
     Signature: is_valid_cidr(string_network)
@@ -5941,7 +5941,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::iter_slices:
-    id: 80dde24d-3a22-466c-8945-b2ba2be15278
+    id: 0710ade0-acd5-4fbc-852e-463a3a0d81e4
     name: iter_slices
     Module Path: ../src/requests/utils.py
     Signature: iter_slices(string, slice_length)
@@ -5963,7 +5963,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_dict_header:
-    id: b912c644-2609-45ed-ab0c-8d5e8e370de8
+    id: cb0656ca-dfb4-4001-88d9-4ea5ccb2c6e5
     name: parse_dict_header
     Module Path: ../src/requests/utils.py
     Signature: parse_dict_header(value)
@@ -6004,7 +6004,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_header_links:
-    id: 8571e482-baa8-4ef0-9161-b4dcb6be978d
+    id: 95802003-ee72-48ee-a69d-c413d6312208
     name: parse_header_links
     Module Path: ../src/requests/utils.py
     Signature: parse_header_links(value)
@@ -6030,7 +6030,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_list_header:
-    id: 7bd5fbee-a459-4709-bd0a-78f0beb22f19
+    id: 63ee1d85-7673-47cf-9693-705c8b3879b4
     name: parse_list_header
     Module Path: ../src/requests/utils.py
     Signature: parse_list_header(value)
@@ -6072,7 +6072,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::prepend_scheme_if_needed:
-    id: 41dd0ee0-c509-4c9e-8cd9-e536ebcceb95
+    id: 1dc6a85f-94ea-437b-a299-49cc14554fe9
     name: prepend_scheme_if_needed
     Module Path: ../src/requests/utils.py
     Signature: prepend_scheme_if_needed(url, new_scheme)
@@ -6097,7 +6097,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::requote_uri:
-    id: a0232a77-4602-4b52-985d-5b60b45e778e
+    id: e0580d59-52f4-4c53-b45b-a29022f9aa03
     name: requote_uri
     Module Path: ../src/requests/utils.py
     Signature: requote_uri(uri)
@@ -6124,7 +6124,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::resolve_proxies:
-    id: cbdb8958-5149-4504-af45-28476ba4da23
+    id: edf8c98c-6d70-49fa-9052-d10c5705cc4d
     name: resolve_proxies
     Module Path: ../src/requests/utils.py
     Signature: resolve_proxies(request, proxies, trust_env)
@@ -6154,7 +6154,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::rewind_body:
-    id: e96276b9-226b-41c9-84b7-a02e5aadb420
+    id: 4c87d486-2e66-4efb-8a32-724b802dae6e
     name: rewind_body
     Module Path: ../src/requests/utils.py
     Signature: rewind_body(prepared_request)
@@ -6177,7 +6177,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::select_proxy:
-    id: eba99224-871b-4610-acbf-c073b6b2e24a
+    id: cdd0c088-bd0a-4008-bea2-cf9631fe7aa3
     name: select_proxy
     Module Path: ../src/requests/utils.py
     Signature: select_proxy(url, proxies)
@@ -6202,7 +6202,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::set_environ:
-    id: 0feb4a79-f52a-4541-aafb-77b182c07393
+    id: 8da9e1b3-9fc0-45b3-9ab3-7b23063e6f32
     name: set_environ
     Module Path: ../src/requests/utils.py
     Signature: set_environ(env_name, value)
@@ -6229,7 +6229,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::should_bypass_proxies:
-    id: 49a84930-7386-474f-b561-50614f64ccdd
+    id: 243ea33f-c9a0-4665-be00-3c2dd5b58079
     name: should_bypass_proxies
     Module Path: ../src/requests/utils.py
     Signature: should_bypass_proxies(url, no_proxy)
@@ -6253,7 +6253,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::stream_decode_response_unicode:
-    id: 4cba43de-53ff-457e-b6c7-2e15362515f0
+    id: 10856665-df93-4194-9cde-5f7487f04563
     name: stream_decode_response_unicode
     Module Path: ../src/requests/utils.py
     Signature: stream_decode_response_unicode(iterator, r)
@@ -6275,7 +6275,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::super_len:
-    id: 4f6c6362-2ce3-45f7-a8bf-bf7638c6617e
+    id: 3a4eeca6-d1c9-45dd-834b-460a7c882bd3
     name: super_len
     Module Path: ../src/requests/utils.py
     Signature: super_len(o)
@@ -6297,7 +6297,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::to_key_val_list:
-    id: 61c4b2f6-3de9-480d-9ab9-5498144dba34
+    id: 944becfe-7a04-4f47-a546-a6ca2d2c5985
     name: to_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: to_key_val_list(value)
@@ -6333,7 +6333,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::unquote_header_value:
-    id: fd12dc9a-ab0b-4178-8129-89354c388055
+    id: 84b91971-de75-4680-bff0-ca1d7dcf870c
     name: unquote_header_value
     Module Path: ../src/requests/utils.py
     Signature: unquote_header_value(value, is_filename)
@@ -6360,7 +6360,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::unquote_unreserved:
-    id: f55723f8-9578-432a-95fe-3d95fbee21f9
+    id: b3c1b220-815c-4843-b3c4-0db2bb54692b
     name: unquote_unreserved
     Module Path: ../src/requests/utils.py
     Signature: unquote_unreserved(uri)
@@ -6385,7 +6385,7 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::urldefragauth:
-    id: 42be243f-9249-495f-8291-58818968a434
+    id: 1d0f7ce1-86ef-4f75-9077-649f9bf77a6c
     name: urldefragauth
     Module Path: ../src/requests/utils.py
     Signature: urldefragauth(url)
@@ -6409,7 +6409,7 @@ Functions:
     Runtime: python
 
   compat.py::u:
-    id: c770a361-e726-4de1-9deb-0f45facc53a6
+    id: 2df4f1dc-b31f-49e1-903e-5252a4a7a44b
     name: u
     Module Path: compat.py
     Signature: u(s)
@@ -6431,7 +6431,7 @@ Functions:
     Runtime: python
 
   conftest.py::httpbin:
-    id: 8c22fc59-3f57-4a05-a59c-ccc9a9525d85
+    id: dc1a0d7c-aeaf-4bd0-84a9-6ab01ae183dd
     name: httpbin
     Module Path: conftest.py
     Signature: httpbin(httpbin)
@@ -6453,7 +6453,7 @@ Functions:
     Runtime: python
 
   conftest.py::httpbin_secure:
-    id: c7209167-d401-42db-87af-fdd1e41c5860
+    id: 6b5f6385-3ab9-4e78-a499-4badea5d65ce
     name: httpbin_secure
     Module Path: conftest.py
     Signature: httpbin_secure(httpbin_secure)
@@ -6475,7 +6475,7 @@ Functions:
     Runtime: python
 
   conftest.py::nosan_server:
-    id: 9e5668cf-1d20-4df0-aafc-f5fcf2b0eea1
+    id: f059358d-48a9-4daa-b548-21a849a5d298
     name: nosan_server
     Module Path: conftest.py
     Signature: nosan_server(tmp_path_factory)
@@ -6497,7 +6497,7 @@ Functions:
     Runtime: python
 
   conftest.py::prepare_url:
-    id: 778ecc6f-ea87-49a2-8ac2-5fe7077e9231
+    id: ca6d1f87-f326-4824-ab4d-1bcf8f011bdc
     name: prepare_url
     Module Path: conftest.py
     Signature: prepare_url(value)
@@ -6519,7 +6519,7 @@ Functions:
     Runtime: python
 
   utils.py::override_environ:
-    id: b413e10e-e601-42aa-b406-b54064a81372
+    id: 0a544eb9-1cf3-4f25-954a-c7470f1841c4
     name: override_environ
     Module Path: utils.py
     Signature: override_environ()

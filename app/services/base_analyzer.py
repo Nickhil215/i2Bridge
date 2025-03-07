@@ -414,7 +414,8 @@ class BaseAnalyzer(ABC):
             signature=signature,
             packages=self.requirement_info,
             imports=imports,
-            runtime="python"
+            runtime="python",
+            is_updated=False
         )
 
     def _extract_tests_info(self, node: nodes.FunctionDef, source: str) -> TestsInfo:
@@ -639,5 +640,22 @@ class BaseAnalyzer(ABC):
 
         return '\n'.join(report)
 
-    def get_functions_list(self) -> List[FunctionInfo]:
-        return self.functions.items()
+    def get_functions_list(self) -> List[dict]:
+        # Initialize the result list
+        result = []
+
+        # Iterate over each function in the functions dictionary
+        for func in self.functions.values():
+            # Create a dictionary for each function with only the 'id' and 'name'
+            function_info = {
+                "id": func.id,
+                "function_exe_cmd": func.function_exe_cmd,
+                "function_url": func.function_url,
+                "is_updated": func.is_updated
+            }
+
+            # Append the function dictionary to the result list
+            result.append(function_info)
+
+        return result
+

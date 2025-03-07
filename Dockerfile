@@ -1,4 +1,4 @@
-# Use the official Python 3.9 slim base image
+# Use the official Python 3.11 slim base image
 FROM --platform=linux/amd64 python:3.11-slim
 
 # Set environment variables to non-interactive to avoid prompts during installation
@@ -16,19 +16,16 @@ WORKDIR /app
 # Copy the application files
 COPY . /app
 
-# Create and activate a virtual environment
-RUN python3 -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
+# Copy the requirements.txt file explicitly
+COPY requirements.txt /app/requirements.txt
 
 # Install dependencies from requirements.txt
 RUN pip install --upgrade pip && \
-    pip install -r requirements.txt && \
-    pip install nltk && \
-    pip install openai==0.28 && \
-    python -m nltk.downloader punkt
-    
-# to generate tarfile and place in a folder
+    pip install -r requirements.txt
+
+# To generate tarfile and place it in a folder
 RUN python3 setup.py sdist
+
 # Expose port 8080
 EXPOSE 8080
 

@@ -27,6 +27,7 @@ class FunctionInfo:
     packages: List[str]
     imports: List[str]
     runtime: str
+    is_updated: bool
 
 @dataclass
 class ApiInfo:

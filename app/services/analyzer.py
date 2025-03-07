@@ -62,67 +62,24 @@ def upload_to_content_service(content, bearer_token):
         raise ApiException("Object mapping failure")
 
 
-# def import_ontology(cdn_url, bearer_token):
-#
-#     url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
-#     headers = {
-#         'Authorization': f'Bearer {bearer_token}',
-#         'Content-Type': 'application/json',
-#     }
-#
-#     data = {
-#         "ontologyId": "67c7f94236726044b0df97a8",
-#         "universes": [
-#             "623ebf349279af04cdd709dc"
-#         ],
-#         "url": cdn_url,
-#         "ontologyName": "API",
-#         "semanticStructures": "DATA",
-#         "fileType": "Turtle",
-#         "tenantID": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64"
-#     }
-#
-#     try:
-#         response = requests.post(url, headers=headers, json=data)
-#         response.raise_for_status()
-#         logging.info(f"------- Response body:  {response.text} --------")
-#     except requests.exceptions.RequestException as e:
-#         logging.error(f"API request error: {e}")
-#         raise ApiException("Failed to make API call")
-#     except ValueError as e:
-#         logging.error(f"JSON parsing error: {e}")
-#         raise ApiException("Object mapping failure")
-
-
 def import_ontology(cdn_url, bearer_token):
 
-    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/create'
+    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
     headers = {
         'Authorization': f'Bearer {bearer_token}',
         'Content-Type': 'application/json',
     }
 
     data = {
-        "ontologyUrl": cdn_url,
-        "ontologyName": "API",
-        "description": "This is a sample ontology",
-        "fileType": "TURTLE",
-        "semanticStructures": "DATA",
-        "defaultPromptTemplates": "USER",
-        "userPromptForKgCreation": "consider all the data",
-        "draft": False,
-        "dataBaseType": "NEO4J",
+        "ontologyId": "67c7f94236726044b0df97a8",
         "universes": [
-            "66aa30f77daee22fb1f1d214"
+            "623ebf349279af04cdd709dc"
         ],
-        "isActive": True,
-        "tenantID": "12345",
-        "visibility": "PUBLIC",
-        "dataReadAccess": "PUBLIC",
-        "dataWriteAccess": "PUBLIC",
-        "metadataReadAccess": "PUBLIC",
-        "metadataWriteAccess": "PUBLIC",
-        "execute": "PUBLIC"
+        "url": cdn_url,
+        "ontologyName": "API",
+        "semanticStructures": "DATA",
+        "fileType": "Turtle",
+        "tenantID": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64"
     }
 
     try:
@@ -136,16 +93,58 @@ def import_ontology(cdn_url, bearer_token):
         logging.error(f"JSON parsing error: {e}")
         raise ApiException("Object mapping failure")
 
+
+# def import_ontology(cdn_url, bearer_token):
+#
+#     url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/create'
+#     headers = {
+#         'Authorization': f'Bearer {bearer_token}',
+#         'Content-Type': 'application/json',
+#     }
+#
+#     data = {
+#         "ontologyUrl": cdn_url,
+#         "ontologyName": "API",
+#         "description": "This is a sample ontology",
+#         "fileType": "TURTLE",
+#         "semanticStructures": "DATA",
+#         "defaultPromptTemplates": "USER",
+#         "userPromptForKgCreation": "consider all the data",
+#         "draft": False,
+#         "dataBaseType": "NEO4J",
+#         "universes": [
+#             "66aa30f77daee22fb1f1d214"
+#         ],
+#         "isActive": True,
+#         "tenantID": "12345",
+#         "visibility": "PUBLIC",
+#         "dataReadAccess": "PUBLIC",
+#         "dataWriteAccess": "PUBLIC",
+#         "metadataReadAccess": "PUBLIC",
+#         "metadataWriteAccess": "PUBLIC",
+#         "execute": "PUBLIC"
+#     }
+#
+#     try:
+#         response = requests.post(url, headers=headers, json=data)
+#         response.raise_for_status()
+#         logging.info(f"------- Response body:  {response.text} --------")
+#     except requests.exceptions.RequestException as e:
+#         logging.error(f"API request error: {e}")
+#         raise ApiException("Failed to make API call")
+#     except ValueError as e:
+#         logging.error(f"JSON parsing error: {e}")
+#         raise ApiException("Object mapping failure")
+
 def analyze(package_path, request):
     try:
         ttl_output, txt_output, function_list = analyze_package(package_path)
 
-        with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
-            f.write(ttl_output)
-
-        with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
-            f.write(txt_output)
-
+        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
+        #     f.write(ttl_output)
+        #
+        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
+        #     f.write(txt_output)
 
         # bearer_token = request.headers.get("Authorization")
         # cdn_url = upload_to_content_service(ttl_output, bearer_token)
