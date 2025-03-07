@@ -8,7 +8,6 @@ jobs:
     uses: gaiangroup/access/.github/workflows/i2_bridge_prod.yml@dev
     with:
       SERVICE_CODE: i2_bridge
-      SONAR_SCAN: false
     secrets: inherit
   unauthorized_branch_job:
     if: github.ref != 'refs/heads/prod'
