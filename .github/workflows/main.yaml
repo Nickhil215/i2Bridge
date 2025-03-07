@@ -14,4 +14,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: This is not an authorized branch, please Run on DEV or Prod or master Branch
-        run: echo "This is not an authorized branch. please Run on DEV or Prod or master Branch"
+        run: echo "This is not an authorized branch.
