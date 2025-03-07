@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_pws5vca0/tests
+Package: /tmp/git_analyzer_k92cv8ma/tests
 
 Metrics:
 - Total Files: 36
@@ -1202,10 +1202,11 @@ Class Hierarchy:
 Functions:
 
   ../src/requests/adapters.py::__getstate__:
+    id: 08216f5b-9545-42e3-85e7-0316ae959bd8
     name: __getstate__
     Module Path: ../src/requests/adapters.py
     Signature: __getstate__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.__getstate__()
     Arguments: ['self']
@@ -1223,10 +1224,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::__init__:
+    id: 71f51f03-1c99-4b94-ab6b-d41e17f04f11
     name: __init__
     Module Path: ../src/requests/adapters.py
     Signature: __init__(self, pool_connections, pool_maxsize, max_retries, pool_block)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.__init__()
     Arguments: ['self', 'pool_connections', 'pool_maxsize', 'max_retries', 'pool_block']
@@ -1244,10 +1246,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::__setstate__:
+    id: 48e83b4d-d179-4431-8910-6592cc1e86c9
     name: __setstate__
     Module Path: ../src/requests/adapters.py
     Signature: __setstate__(self, state)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.adapters.HTTPAdapter.__setstate__()
     Arguments: ['self', 'state']
@@ -1265,10 +1268,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::_urllib3_request_context:
+    id: 3d58cc11-13cd-438e-960b-f6a4adf1760c
     name: _urllib3_request_context
     Module Path: ../src/requests/adapters.py
     Signature: _urllib3_request_context(request, verify, client_cert, poolmanager)
-    Packages: ['urllib3', 'typing', 'os', 'ssl']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import typing', 'import os.path', 'import ssl']
     function_exe_cmd: requests.adapters._urllib3_request_context()
     Arguments: ['request', 'verify', 'client_cert', 'poolmanager']
@@ -1286,10 +1290,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::add_headers:
+    id: 0fcc6f52-8535-454c-87d7-252d3aeb2d7d
     name: add_headers
     Module Path: ../src/requests/adapters.py
     Signature: add_headers(self, request)
-    Packages: ['os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError']
     function_exe_cmd: requests.adapters.HTTPAdapter.add_headers()
     Arguments: ['self', 'request']
@@ -1316,10 +1321,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::build_connection_pool_key_attributes:
+    id: 9e691547-9fa3-41ef-9acb-0059bac72418
     name: build_connection_pool_key_attributes
     Module Path: ../src/requests/adapters.py
     Signature: build_connection_pool_key_attributes(self, request, verify, cert)
-    Packages: ['urllib3', 'ssl', 'os', 'models', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import ssl', 'import os.path', 'from models import models.Response', 'from models import models.PreparedRequest', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.build_connection_pool_key_attributes()
     Arguments: ['self', 'request', 'verify', 'cert']
@@ -1382,10 +1388,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::build_response:
+    id: a1395dd0-9dcb-48f5-9e5f-a3b0e4064f7c
     name: build_response
     Module Path: ../src/requests/adapters.py
     Signature: build_response(self, req, resp)
-    Packages: ['urllib3', 'os', 'cookies']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from cookies import cookies.extract_cookies_to_jar']
     function_exe_cmd: requests.adapters.HTTPAdapter.build_response()
     Arguments: ['self', 'req', 'resp']
@@ -1410,10 +1417,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::cert_verify:
+    id: bb0605b8-5426-43dd-8b0b-9b55b1f70368
     name: cert_verify
     Module Path: ../src/requests/adapters.py
     Signature: cert_verify(self, conn, url, verify, cert)
-    Packages: ['os', 'urllib3']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager']
     function_exe_cmd: requests.adapters.HTTPAdapter.cert_verify()
     Arguments: ['self', 'conn', 'url', 'verify', 'cert']
@@ -1440,10 +1448,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::close:
+    id: 7f43e1a6-57be-434e-8690-6d17311c21c3
     name: close
     Module Path: ../src/requests/adapters.py
     Signature: close(self)
-    Packages: ['os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError']
     function_exe_cmd: requests.adapters.HTTPAdapter.close()
     Arguments: ['self']
@@ -1464,10 +1473,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::get_connection:
+    id: da9d6ffe-ad97-46bf-9d83-e2c25aa6833b
     name: get_connection
     Module Path: ../src/requests/adapters.py
     Signature: get_connection(self, url, proxies)
-    Packages: ['urllib3', 'os', 'warnings']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'import warnings']
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection()
     Arguments: ['self', 'url', 'proxies']
@@ -1494,10 +1504,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::get_connection_with_tls_context:
+    id: 81c8f73a-fea4-409a-a812-44b1844c5f5e
     name: get_connection_with_tls_context
     Module Path: ../src/requests/adapters.py
     Signature: get_connection_with_tls_context(self, request, verify, proxies, cert)
-    Packages: ['urllib3', 'os', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.get_connection_with_tls_context()
     Arguments: ['self', 'request', 'verify', 'proxies', 'cert']
@@ -1532,10 +1543,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::init_poolmanager:
+    id: 356c3497-e7f8-4b1a-9002-4d150ad1cd37
     name: init_poolmanager
     Module Path: ../src/requests/adapters.py
     Signature: init_poolmanager(self, connections, maxsize, block)
-    Packages: ['urllib3', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path']
     function_exe_cmd: requests.adapters.HTTPAdapter.init_poolmanager()
     Arguments: ['self', 'connections', 'maxsize', 'block']
@@ -1562,10 +1574,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::proxy_headers:
+    id: 83e07d67-d245-4ed0-9501-5270457c8052
     name: proxy_headers
     Module Path: ../src/requests/adapters.py
     Signature: proxy_headers(self, proxy)
-    Packages: ['urllib3', 'os', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_headers()
     Arguments: ['self', 'proxy']
@@ -1593,10 +1606,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::proxy_manager_for:
+    id: aed8a12d-9e20-40ea-a4b9-2d6b3926123b
     name: proxy_manager_for
     Module Path: ../src/requests/adapters.py
     Signature: proxy_manager_for(self, proxy)
-    Packages: ['urllib3', 'os', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.proxy_manager_for()
     Arguments: ['self', 'proxy']
@@ -1623,10 +1637,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::request_url:
+    id: e0378896-c47e-4890-8874-567fe36fa45b
     name: request_url
     Module Path: ../src/requests/adapters.py
     Signature: request_url(self, request, proxies)
-    Packages: ['os', 'urllib3', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os.path', 'from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.urldefragauth']
     function_exe_cmd: requests.adapters.HTTPAdapter.request_url()
     Arguments: ['self', 'request', 'proxies']
@@ -1655,10 +1670,11 @@ Functions:
     Runtime: python
 
   ../src/requests/adapters.py::send:
+    id: 43289ac1-ad81-4b94-843e-49a2d6672eda
     name: send
     Module Path: ../src/requests/adapters.py
     Signature: send(self, request, stream, timeout, verify, cert, proxies)
-    Packages: ['urllib3', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.ClosedPoolError', 'from urllib3.exceptions import urllib3.exceptions.ConnectTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.HTTPError as _HTTPError', 'from urllib3.exceptions import urllib3.exceptions.InvalidHeader as _InvalidHeader', 'from urllib3.exceptions import urllib3.exceptions.LocationValueError', 'from urllib3.exceptions import urllib3.exceptions.MaxRetryError', 'from urllib3.exceptions import urllib3.exceptions.NewConnectionError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ProxyError as _ProxyError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.ResponseError', 'from urllib3.exceptions import urllib3.exceptions.SSLError as _SSLError', 'from urllib3.poolmanager import urllib3.poolmanager.PoolManager', 'from urllib3.poolmanager import urllib3.poolmanager.proxy_from_url', 'from urllib3.util import urllib3.util.Timeout as TimeoutSauce', 'from urllib3.util import urllib3.util.parse_url', 'from urllib3.util.retry import urllib3.util.retry.Retry', 'from urllib3.util.ssl_ import urllib3.util.ssl_.create_urllib3_context', 'from urllib3.contrib.socks import urllib3.contrib.socks.SOCKSProxyManager', 'import os.path']
     function_exe_cmd: requests.adapters.HTTPAdapter.send()
     Arguments: ['self', 'request', 'stream', 'timeout', 'verify', 'cert', 'proxies']
@@ -1689,10 +1705,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::delete:
+    id: de51b21a-6322-49f5-82a2-311a8a1a8cab
     name: delete
     Module Path: ../src/requests/api.py
     Signature: delete(url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.delete()
     Arguments: ['url']
@@ -1715,10 +1732,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::get:
+    id: 37cdabb6-5a54-4ef2-99c1-a2fda4f33897
     name: get
     Module Path: ../src/requests/api.py
     Signature: get(url, params)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.get()
     Arguments: ['url', 'params']
@@ -1743,10 +1761,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::head:
+    id: 8d268272-49f5-40c6-8c67-c51a166b8782
     name: head
     Module Path: ../src/requests/api.py
     Signature: head(url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.head()
     Arguments: ['url']
@@ -1771,10 +1790,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::options:
+    id: 97db531e-33ad-4e3b-b4fe-ad4beacbb21c
     name: options
     Module Path: ../src/requests/api.py
     Signature: options(url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.options()
     Arguments: ['url']
@@ -1797,10 +1817,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::patch:
+    id: 6285b103-f8e9-485a-b75a-9bfb2a1601b4
     name: patch
     Module Path: ../src/requests/api.py
     Signature: patch(url, data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.patch()
     Arguments: ['url', 'data']
@@ -1826,10 +1847,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::post:
+    id: 212d93e6-a36f-4b04-9ad6-852e37caf900
     name: post
     Module Path: ../src/requests/api.py
     Signature: post(url, data, json)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.post()
     Arguments: ['url', 'data', 'json']
@@ -1855,10 +1877,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::put:
+    id: 350133f0-f8c0-435a-ab85-a7493d46c22d
     name: put
     Module Path: ../src/requests/api.py
     Signature: put(url, data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.put()
     Arguments: ['url', 'data']
@@ -1884,10 +1907,11 @@ Functions:
     Runtime: python
 
   ../src/requests/api.py::request:
+    id: 18147521-96a1-41bf-8aad-eca6763a5d5e
     name: request
     Module Path: ../src/requests/api.py
     Signature: request(method, url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.api.request()
     Arguments: ['method', 'url']
@@ -1942,10 +1966,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__call__:
+    id: 33f3d19f-684d-4f7f-b44c-7949bacd4285
     name: __call__
     Module Path: ../src/requests/auth.py
     Signature: __call__(self, r)
-    Packages: ['re', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading', 'import os']
     function_exe_cmd: requests.auth.HTTPDigestAuth.__call__()
     Arguments: ['self', 'r']
@@ -1963,10 +1988,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__eq__:
+    id: e38c3d94-3f87-422e-adc0-f7def1749900
     name: __eq__
     Module Path: ../src/requests/auth.py
     Signature: __eq__(self, other)
-    Packages: ['re']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading']
     function_exe_cmd: requests.auth.HTTPDigestAuth.__eq__()
     Arguments: ['self', 'other']
@@ -1984,10 +2010,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__init__:
+    id: 92256f8e-5b64-4693-ab8a-8076b387e11e
     name: __init__
     Module Path: ../src/requests/auth.py
     Signature: __init__(self, username, password)
-    Packages: ['re', 'threading']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading']
     function_exe_cmd: requests.auth.HTTPDigestAuth.__init__()
     Arguments: ['self', 'username', 'password']
@@ -2005,10 +2032,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::__ne__:
+    id: 23fdaccb-5ba7-42ed-b793-7a765cad9acb
     name: __ne__
     Module Path: ../src/requests/auth.py
     Signature: __ne__(self, other)
-    Packages: ['re']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading']
     function_exe_cmd: requests.auth.HTTPDigestAuth.__ne__()
     Arguments: ['self', 'other']
@@ -2026,10 +2054,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::_basic_auth_str:
+    id: 33671886-f002-4783-9dd9-b8cf88b4653a
     name: _basic_auth_str
     Module Path: ../src/requests/auth.py
     Signature: _basic_auth_str(username, password)
-    Packages: ['re', 'compat', 'warnings']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading', 'from compat import compat.basestring', 'from compat import compat.str', 'from compat import compat.urlparse', 'import warnings']
     function_exe_cmd: requests.auth._basic_auth_str()
     Arguments: ['username', 'password']
@@ -2047,10 +2076,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::build_digest_header:
+    id: 776ed022-7fd7-450f-97e7-ebb92aca5968
     name: build_digest_header
     Module Path: ../src/requests/auth.py
     Signature: build_digest_header(self, method, url)
-    Packages: ['re', 'hashlib', 'time', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading', 'import hashlib', 'import time', 'import os']
     function_exe_cmd: requests.auth.HTTPDigestAuth.build_digest_header()
     Arguments: ['self', 'method', 'url']
@@ -2068,10 +2098,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::handle_401:
+    id: bb2d596c-2ddd-48c4-98ad-b17b3951116e
     name: handle_401
     Module Path: ../src/requests/auth.py
     Signature: handle_401(self, r)
-    Packages: ['re', 'os', 'cookies']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading', 'import os', 'from cookies import cookies.extract_cookies_to_jar']
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_401()
     Arguments: ['self', 'r']
@@ -2091,10 +2122,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::handle_redirect:
+    id: 17711bc3-a5b5-4941-889d-5db98a5ffb4e
     name: handle_redirect
     Module Path: ../src/requests/auth.py
     Signature: handle_redirect(self, r)
-    Packages: ['re']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading']
     function_exe_cmd: requests.auth.HTTPDigestAuth.handle_redirect()
     Arguments: ['self', 'r']
@@ -2112,10 +2144,11 @@ Functions:
     Runtime: python
 
   ../src/requests/auth.py::init_per_thread_state:
+    id: 809f9b5f-66cc-4ca1-b929-8eb08a824cc7
     name: init_per_thread_state
     Module Path: ../src/requests/auth.py
     Signature: init_per_thread_state(self)
-    Packages: ['re', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import re', 'import threading', 'import os']
     function_exe_cmd: requests.auth.HTTPDigestAuth.init_per_thread_state()
     Arguments: ['self']
@@ -2133,10 +2166,11 @@ Functions:
     Runtime: python
 
   ../src/requests/compat.py::_resolve_char_detection:
+    id: f9aa899f-3ac5-470a-bfba-130f26b60a3c
     name: _resolve_char_detection
     Module Path: ../src/requests/compat.py
     Signature: _resolve_char_detection()
-    Packages: ['io', 'importlib']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3 import urllib3.__version__ as urllib3_version', 'from collections import collections.OrderedDict', 'from collections.abc import collections.abc.Callable', 'from collections.abc import collections.abc.Mapping', 'from collections.abc import collections.abc.MutableMapping', 'from io import io.StringIO', 'import importlib']
     function_exe_cmd: requests.compat._resolve_char_detection()
     Arguments: None
@@ -2154,10 +2188,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__contains__:
+    id: aabe38af-2fa3-4c46-976d-941ec121cc4f
     name: __contains__
     Module Path: ../src/requests/cookies.py
     Signature: __contains__(self, name)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.__contains__()
     Arguments: ['self', 'name']
@@ -2175,10 +2210,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__delitem__:
+    id: 57afd706-a93e-4343-9977-10666b2bd6b4
     name: __delitem__
     Module Path: ../src/requests/cookies.py
     Signature: __delitem__(self, name)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.__delitem__()
     Arguments: ['self', 'name']
@@ -2197,10 +2233,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__getitem__:
+    id: 8d26e3f6-7c1e-4d82-a70f-9e35ade29dbd
     name: __getitem__
     Module Path: ../src/requests/cookies.py
     Signature: __getitem__(self, name)
-    Packages: ['compat']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from compat import compat.Morsel', 'from compat import compat.MutableMapping', 'from compat import compat.cookielib', 'from compat import compat.urlparse', 'from compat import compat.urlunparse']
     function_exe_cmd: requests.cookies.RequestsCookieJar.__getitem__()
     Arguments: ['self', 'name']
@@ -2222,10 +2259,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__getstate__:
+    id: bee73a95-796c-4100-ad10-6ddf55c3129d
     name: __getstate__
     Module Path: ../src/requests/cookies.py
     Signature: __getstate__(self)
-    Packages: ['copy']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import copy']
     function_exe_cmd: requests.cookies.RequestsCookieJar.__getstate__()
     Arguments: ['self']
@@ -2243,10 +2281,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__init__:
+    id: a7d91633-2ed8-4c2a-b5db-b0c2f488d9d9
     name: __init__
     Module Path: ../src/requests/cookies.py
     Signature: __init__(self, headers)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockResponse.__init__()
     Arguments: ['self', 'headers']
@@ -2266,10 +2305,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__setitem__:
+    id: b9bdd828-fded-44f0-a63f-70ef99685e79
     name: __setitem__
     Module Path: ../src/requests/cookies.py
     Signature: __setitem__(self, name, value)
-    Packages: ['compat']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from compat import compat.Morsel', 'from compat import compat.MutableMapping', 'from compat import compat.cookielib', 'from compat import compat.urlparse', 'from compat import compat.urlunparse']
     function_exe_cmd: requests.cookies.RequestsCookieJar.__setitem__()
     Arguments: ['self', 'name', 'value']
@@ -2289,10 +2329,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::__setstate__:
+    id: 4ee6a218-4bcd-43e4-9eca-8f9d218799e8
     name: __setstate__
     Module Path: ../src/requests/cookies.py
     Signature: __setstate__(self, state)
-    Packages: ['threading']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import threading', 'import dummy_threading as threading']
     function_exe_cmd: requests.cookies.RequestsCookieJar.__setstate__()
     Arguments: ['self', 'state']
@@ -2310,10 +2351,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_copy_cookie_jar:
+    id: 27dbbaf4-7f6e-413e-a14a-bb770032dd70
     name: _copy_cookie_jar
     Module Path: ../src/requests/cookies.py
     Signature: _copy_cookie_jar(jar)
-    Packages: ['copy']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import copy']
     function_exe_cmd: requests.cookies._copy_cookie_jar()
     Arguments: ['jar']
@@ -2331,10 +2373,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_find:
+    id: 6b87370a-c15c-4305-8c28-ffa5a2e85563
     name: _find
     Module Path: ../src/requests/cookies.py
     Signature: _find(self, name, domain, path)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar._find()
     Arguments: ['self', 'name', 'domain', 'path']
@@ -2361,10 +2404,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::_find_no_duplicates:
+    id: 30c18a22-7399-45f9-a365-23bb5e9845df
     name: _find_no_duplicates
     Module Path: ../src/requests/cookies.py
     Signature: _find_no_duplicates(self, name, domain, path)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar._find_no_duplicates()
     Arguments: ['self', 'name', 'domain', 'path']
@@ -2391,10 +2435,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::add_header:
+    id: 518167ab-9368-4694-885c-b2dd32803352
     name: add_header
     Module Path: ../src/requests/cookies.py
     Signature: add_header(self, key, val)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.add_header()
     Arguments: ['self', 'key', 'val']
@@ -2412,10 +2457,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::add_unredirected_header:
+    id: a93e80ee-65c5-4c18-8e78-7282e157cb63
     name: add_unredirected_header
     Module Path: ../src/requests/cookies.py
     Signature: add_unredirected_header(self, name, value)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.add_unredirected_header()
     Arguments: ['self', 'name', 'value']
@@ -2433,10 +2479,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::cookiejar_from_dict:
+    id: a2725512-434e-43cc-9051-46d4b22a6d47
     name: cookiejar_from_dict
     Module Path: ../src/requests/cookies.py
     Signature: cookiejar_from_dict(cookie_dict, cookiejar, overwrite)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.cookiejar_from_dict()
     Arguments: ['cookie_dict', 'cookiejar', 'overwrite']
@@ -2460,10 +2507,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::copy:
+    id: 362869a5-0966-45cf-b68d-3b7614672905
     name: copy
     Module Path: ../src/requests/cookies.py
     Signature: copy(self)
-    Packages: ['copy']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import copy']
     function_exe_cmd: requests.cookies.RequestsCookieJar.copy()
     Arguments: ['self']
@@ -2481,10 +2529,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::create_cookie:
+    id: 9b3c8998-5e23-4e22-877b-da45f1fe95db
     name: create_cookie
     Module Path: ../src/requests/cookies.py
     Signature: create_cookie(name, value)
-    Packages: ['time']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import time']
     function_exe_cmd: requests.cookies.create_cookie()
     Arguments: ['name', 'value']
@@ -2505,10 +2554,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::extract_cookies_to_jar:
+    id: 3539df02-e81e-44bf-9264-f3bb3876177f
     name: extract_cookies_to_jar
     Module Path: ../src/requests/cookies.py
     Signature: extract_cookies_to_jar(jar, request, response)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.extract_cookies_to_jar()
     Arguments: ['jar', 'request', 'response']
@@ -2530,10 +2580,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get:
+    id: 3a2ef35a-bcde-41fc-a8b3-f540c1753c61
     name: get
     Module Path: ../src/requests/cookies.py
     Signature: get(self, name, default, domain, path)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get()
     Arguments: ['self', 'name', 'default', 'domain', 'path']
@@ -2555,10 +2606,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_cookie_header:
+    id: 5c8b7f58-7c47-464f-8570-986154b4f78a
     name: get_cookie_header
     Module Path: ../src/requests/cookies.py
     Signature: get_cookie_header(jar, request)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.get_cookie_header()
     Arguments: ['jar', 'request']
@@ -2578,10 +2630,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_dict:
+    id: 0c6beaa9-5b48-4129-910f-d320da1e4472
     name: get_dict
     Module Path: ../src/requests/cookies.py
     Signature: get_dict(self, domain, path)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get_dict()
     Arguments: ['self', 'domain', 'path']
@@ -2603,10 +2656,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_full_url:
+    id: 7dcde9da-4de9-4246-9eeb-12ea86105461
     name: get_full_url
     Module Path: ../src/requests/cookies.py
     Signature: get_full_url(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_full_url()
     Arguments: ['self']
@@ -2624,10 +2678,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_header:
+    id: f87df1fb-f99f-4733-b34f-49c61372fe83
     name: get_header
     Module Path: ../src/requests/cookies.py
     Signature: get_header(self, name, default)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_header()
     Arguments: ['self', 'name', 'default']
@@ -2645,10 +2700,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_host:
+    id: dbf435c8-803d-4bf2-8f84-104884046ded
     name: get_host
     Module Path: ../src/requests/cookies.py
     Signature: get_host(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_host()
     Arguments: ['self']
@@ -2666,10 +2722,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_new_headers:
+    id: aaf99b14-6c61-4401-99ec-c61b8ad41908
     name: get_new_headers
     Module Path: ../src/requests/cookies.py
     Signature: get_new_headers(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_new_headers()
     Arguments: ['self']
@@ -2687,10 +2744,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_origin_req_host:
+    id: 45b9d8f0-5360-49a4-86f4-8026fdaf079b
     name: get_origin_req_host
     Module Path: ../src/requests/cookies.py
     Signature: get_origin_req_host(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_origin_req_host()
     Arguments: ['self']
@@ -2708,10 +2766,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_policy:
+    id: 8021d0c5-e03f-4dc5-bd61-36fec27c16e5
     name: get_policy
     Module Path: ../src/requests/cookies.py
     Signature: get_policy(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.get_policy()
     Arguments: ['self']
@@ -2729,10 +2788,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::get_type:
+    id: 6db1c0d4-0b5a-4ca6-b947-51e942951254
     name: get_type
     Module Path: ../src/requests/cookies.py
     Signature: get_type(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.get_type()
     Arguments: ['self']
@@ -2750,10 +2810,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::getheaders:
+    id: cc06b7df-0471-46f5-8737-1448068b0fb0
     name: getheaders
     Module Path: ../src/requests/cookies.py
     Signature: getheaders(self, name)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockResponse.getheaders()
     Arguments: ['self', 'name']
@@ -2771,10 +2832,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::has_header:
+    id: 5de98cdc-6cea-46d2-a24c-5d386ab8918a
     name: has_header
     Module Path: ../src/requests/cookies.py
     Signature: has_header(self, name)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.has_header()
     Arguments: ['self', 'name']
@@ -2792,10 +2854,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::host:
+    id: b8f22bb1-ed51-4bae-8002-fbca73fd916e
     name: host
     Module Path: ../src/requests/cookies.py
     Signature: host(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.host()
     Arguments: ['self']
@@ -2813,10 +2876,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::info:
+    id: 5010ee1f-f618-47aa-8096-5578f126ee46
     name: info
     Module Path: ../src/requests/cookies.py
     Signature: info(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockResponse.info()
     Arguments: ['self']
@@ -2834,10 +2898,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::is_unverifiable:
+    id: 48fb9b89-70c1-420f-99d7-4cfc32cde598
     name: is_unverifiable
     Module Path: ../src/requests/cookies.py
     Signature: is_unverifiable(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.is_unverifiable()
     Arguments: ['self']
@@ -2855,10 +2920,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::items:
+    id: 78e7129e-f54c-469c-bbfc-ee40386625c6
     name: items
     Module Path: ../src/requests/cookies.py
     Signature: items(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.items()
     Arguments: ['self']
@@ -2880,10 +2946,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::iteritems:
+    id: fe43590f-ad1d-4a62-920d-a168e8de93c4
     name: iteritems
     Module Path: ../src/requests/cookies.py
     Signature: iteritems(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.iteritems()
     Arguments: ['self']
@@ -2904,10 +2971,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::iterkeys:
+    id: 83c75e0f-3a8e-4201-be13-bdd011440649
     name: iterkeys
     Module Path: ../src/requests/cookies.py
     Signature: iterkeys(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.iterkeys()
     Arguments: ['self']
@@ -2928,10 +2996,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::itervalues:
+    id: e178bbc5-ac2e-4d59-978f-b56a033b2907
     name: itervalues
     Module Path: ../src/requests/cookies.py
     Signature: itervalues(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.itervalues()
     Arguments: ['self']
@@ -2952,10 +3021,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::keys:
+    id: 3065477c-d34e-462f-bebc-82c670362b66
     name: keys
     Module Path: ../src/requests/cookies.py
     Signature: keys(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.keys()
     Arguments: ['self']
@@ -2976,10 +3046,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::list_domains:
+    id: 75eea3b6-2672-4e7f-8d1e-bed12c4f1237
     name: list_domains
     Module Path: ../src/requests/cookies.py
     Signature: list_domains(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.list_domains()
     Arguments: ['self']
@@ -2997,10 +3068,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::list_paths:
+    id: 9d02f2fb-9817-48e0-a44b-efccf85afaed
     name: list_paths
     Module Path: ../src/requests/cookies.py
     Signature: list_paths(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.list_paths()
     Arguments: ['self']
@@ -3018,10 +3090,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::merge_cookies:
+    id: 51b50b93-372e-4051-9ba4-b25be938acaa
     name: merge_cookies
     Module Path: ../src/requests/cookies.py
     Signature: merge_cookies(cookiejar, cookies)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.merge_cookies()
     Arguments: ['cookiejar', 'cookies']
@@ -3043,10 +3116,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::morsel_to_cookie:
+    id: 433428c6-898c-4462-840d-d9f385c86826
     name: morsel_to_cookie
     Module Path: ../src/requests/cookies.py
     Signature: morsel_to_cookie(morsel)
-    Packages: ['time', 'calendar']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import time', 'import calendar']
     function_exe_cmd: requests.cookies.morsel_to_cookie()
     Arguments: ['morsel']
@@ -3064,10 +3138,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::multiple_domains:
+    id: e3d0951a-50a0-4b74-8b16-cd357eefbc73
     name: multiple_domains
     Module Path: ../src/requests/cookies.py
     Signature: multiple_domains(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.multiple_domains()
     Arguments: ['self']
@@ -3088,10 +3163,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::origin_req_host:
+    id: 321c618b-c00c-4824-b262-131a506945c6
     name: origin_req_host
     Module Path: ../src/requests/cookies.py
     Signature: origin_req_host(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.origin_req_host()
     Arguments: ['self']
@@ -3109,10 +3185,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::remove_cookie_by_name:
+    id: b8119de8-2923-4466-9f64-00c95877023e
     name: remove_cookie_by_name
     Module Path: ../src/requests/cookies.py
     Signature: remove_cookie_by_name(cookiejar, name, domain, path)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.remove_cookie_by_name()
     Arguments: ['cookiejar', 'name', 'domain', 'path']
@@ -3132,10 +3209,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::set:
+    id: 2e28199a-9ee0-4adc-9281-6c6fb4f1e51a
     name: set
     Module Path: ../src/requests/cookies.py
     Signature: set(self, name, value)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.set()
     Arguments: ['self', 'name', 'value']
@@ -3155,10 +3233,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::set_cookie:
+    id: 503725a2-3b55-4b94-add7-d1dff8489544
     name: set_cookie
     Module Path: ../src/requests/cookies.py
     Signature: set_cookie(self, cookie)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.set_cookie()
     Arguments: ['self', 'cookie']
@@ -3176,10 +3255,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::unverifiable:
+    id: 5cf7d0d6-fb7f-436d-a5cf-39758d882482
     name: unverifiable
     Module Path: ../src/requests/cookies.py
     Signature: unverifiable(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.MockRequest.unverifiable()
     Arguments: ['self']
@@ -3197,10 +3277,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::update:
+    id: 9833c5cc-41c8-4542-8294-9cd6debd7ff3
     name: update
     Module Path: ../src/requests/cookies.py
     Signature: update(self, other)
-    Packages: ['copy']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import copy']
     function_exe_cmd: requests.cookies.RequestsCookieJar.update()
     Arguments: ['self', 'other']
@@ -3218,10 +3299,11 @@ Functions:
     Runtime: python
 
   ../src/requests/cookies.py::values:
+    id: d736863c-6cb8-4963-a37f-9e4687071256
     name: values
     Module Path: ../src/requests/cookies.py
     Signature: values(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.cookies.RequestsCookieJar.values()
     Arguments: ['self']
@@ -3242,10 +3324,11 @@ Functions:
     Runtime: python
 
   ../src/requests/exceptions.py::__init__:
+    id: 2ce4f077-785e-4a68-bbf1-5283022f034d
     name: __init__
     Module Path: ../src/requests/exceptions.py
     Signature: __init__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.exceptions.JSONDecodeError.__init__()
     Arguments: ['self']
@@ -3266,10 +3349,11 @@ Functions:
     Runtime: python
 
   ../src/requests/exceptions.py::__reduce__:
+    id: ee746be2-7f00-42ab-a4e0-fded3895378b
     name: __reduce__
     Module Path: ../src/requests/exceptions.py
     Signature: __reduce__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.exceptions.JSONDecodeError.__reduce__()
     Arguments: ['self']
@@ -3291,10 +3375,11 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::_implementation:
+    id: b15223b1-4f25-4a52-9b8d-86f333e7ad57
     name: _implementation
     Module Path: ../src/requests/help.py
     Signature: _implementation()
-    Packages: ['platform', 'sys']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import platform', 'import sys']
     function_exe_cmd: requests.help._implementation()
     Arguments: None
@@ -3320,10 +3405,11 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::info:
+    id: bac4ffa4-6170-4759-bdc6-82f9cc29f404
     name: info
     Module Path: ../src/requests/help.py
     Signature: info()
-    Packages: ['platform', 'sys', 'urllib3', 'charset_normalizer', 'chardet', 'ssl', 'OpenSSL', 'cryptography', 'idna']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import platform', 'import sys', 'import urllib3', 'from urllib3.contrib import urllib3.contrib.pyopenssl', 'import charset_normalizer', 'import chardet', 'import ssl', 'import OpenSSL', 'import cryptography', 'import idna']
     function_exe_cmd: requests.help.info()
     Arguments: None
@@ -3341,10 +3427,11 @@ Functions:
     Runtime: python
 
   ../src/requests/help.py::main:
+    id: e180a181-2450-41c6-80aa-f6963022f942
     name: main
     Module Path: ../src/requests/help.py
     Signature: main()
-    Packages: ['json']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import json']
     function_exe_cmd: requests.help.main()
     Arguments: None
@@ -3362,10 +3449,11 @@ Functions:
     Runtime: python
 
   ../src/requests/hooks.py::default_hooks:
+    id: 43d47550-ac89-4484-89b5-e9a14d54b278
     name: default_hooks
     Module Path: ../src/requests/hooks.py
     Signature: default_hooks()
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.hooks.default_hooks()
     Arguments: None
@@ -3383,10 +3471,11 @@ Functions:
     Runtime: python
 
   ../src/requests/hooks.py::dispatch_hook:
+    id: acd3b778-c9c6-49f2-95da-ef03881e8355
     name: dispatch_hook
     Module Path: ../src/requests/hooks.py
     Signature: dispatch_hook(key, hooks, hook_data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.hooks.dispatch_hook()
     Arguments: ['key', 'hooks', 'hook_data']
@@ -3404,10 +3493,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__bool__:
+    id: f6440a81-d163-40f9-8591-ca7ef532238e
     name: __bool__
     Module Path: ../src/requests/models.py
     Signature: __bool__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__bool__()
     Arguments: ['self']
@@ -3430,10 +3520,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__enter__:
+    id: f15f81f5-05d5-42c7-8705-2682db4edc49
     name: __enter__
     Module Path: ../src/requests/models.py
     Signature: __enter__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__enter__()
     Arguments: ['self']
@@ -3451,10 +3542,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__exit__:
+    id: e8806d7b-c691-4fa9-9f0a-e7fc597bffb1
     name: __exit__
     Module Path: ../src/requests/models.py
     Signature: __exit__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__exit__()
     Arguments: ['self']
@@ -3472,10 +3564,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__getstate__:
+    id: b5661d12-9137-4854-87a4-15f0b61f240a
     name: __getstate__
     Module Path: ../src/requests/models.py
     Signature: __getstate__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__getstate__()
     Arguments: ['self']
@@ -3493,10 +3586,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__init__:
+    id: 96641209-e4db-46b4-acbf-bcd973e51470
     name: __init__
     Module Path: ../src/requests/models.py
     Signature: __init__(self)
-    Packages: ['io', 'cookies', 'datetime']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'import datetime']
     function_exe_cmd: requests.models.Response.__init__()
     Arguments: ['self']
@@ -3514,10 +3608,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__iter__:
+    id: 3a512c8c-9885-431b-86d6-4fcb24812ba3
     name: __iter__
     Module Path: ../src/requests/models.py
     Signature: __iter__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__iter__()
     Arguments: ['self']
@@ -3535,10 +3630,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__nonzero__:
+    id: b10dea6a-6e15-4d74-bb58-2b4bb36a7d3e
     name: __nonzero__
     Module Path: ../src/requests/models.py
     Signature: __nonzero__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__nonzero__()
     Arguments: ['self']
@@ -3561,10 +3657,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__repr__:
+    id: a4860b1c-e76e-4195-92b5-a40f8fe6662c
     name: __repr__
     Module Path: ../src/requests/models.py
     Signature: __repr__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__repr__()
     Arguments: ['self']
@@ -3582,10 +3679,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::__setstate__:
+    id: f2e51e9a-af02-46dc-b95c-e476198e116a
     name: __setstate__
     Module Path: ../src/requests/models.py
     Signature: __setstate__(self, state)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.__setstate__()
     Arguments: ['self', 'state']
@@ -3603,10 +3701,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_encode_files:
+    id: 438c62a8-0734-41f9-a9b5-7392fea8d8cf
     name: _encode_files
     Module Path: ../src/requests/models.py
     Signature: _encode_files(files, data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.RequestEncodingMixin._encode_files()
     Arguments: ['files', 'data']
@@ -3630,10 +3729,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_encode_params:
+    id: 2169ba7d-f784-4b48-85a8-26632b253623
     name: _encode_params
     Module Path: ../src/requests/models.py
     Signature: _encode_params(data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.RequestEncodingMixin._encode_params()
     Arguments: ['data']
@@ -3655,10 +3755,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::_get_idna_encoded_host:
+    id: 6ed76c3b-eea8-4775-aa26-85655544d585
     name: _get_idna_encoded_host
     Module Path: ../src/requests/models.py
     Signature: _get_idna_encoded_host(host)
-    Packages: ['idna']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import encodings.idna', 'import idna']
     function_exe_cmd: requests.models.PreparedRequest._get_idna_encoded_host()
     Arguments: ['host']
@@ -3676,10 +3777,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::apparent_encoding:
+    id: 47f8f942-f897-442e-a95e-f250ece30e2f
     name: apparent_encoding
     Module Path: ../src/requests/models.py
     Signature: apparent_encoding(self)
-    Packages: ['io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.apparent_encoding()
     Arguments: ['self']
@@ -3697,10 +3799,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::close:
+    id: 5af79c70-fb92-4bdb-b502-b5ba41ccc5bb
     name: close
     Module Path: ../src/requests/models.py
     Signature: close(self)
-    Packages: ['io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.close()
     Arguments: ['self']
@@ -3721,10 +3824,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::content:
+    id: 4496d150-8061-47f0-bac9-619ceeeb87cc
     name: content
     Module Path: ../src/requests/models.py
     Signature: content(self)
-    Packages: ['io', 'urllib3']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url']
     function_exe_cmd: requests.models.Response.content()
     Arguments: ['self']
@@ -3742,10 +3846,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::copy:
+    id: dc64ced6-7e72-4a71-82db-5edd32bfadec
     name: copy
     Module Path: ../src/requests/models.py
     Signature: copy(self)
-    Packages: ['cookies', 'hooks', 'io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from hooks import hooks.default_hooks', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.copy()
     Arguments: ['self']
@@ -3763,10 +3868,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::deregister_hook:
+    id: 8a300151-1216-4a42-9e07-5abcfe3deb2d
     name: deregister_hook
     Module Path: ../src/requests/models.py
     Signature: deregister_hook(self, event, hook)
-    Packages: ['io', 'hooks']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.RequestHooksMixin.deregister_hook()
     Arguments: ['self', 'event', 'hook']
@@ -3785,10 +3891,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::is_permanent_redirect:
+    id: 01f1bdd3-89bc-484e-95c9-571465d566bd
     name: is_permanent_redirect
     Module Path: ../src/requests/models.py
     Signature: is_permanent_redirect(self)
-    Packages: ['io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.is_permanent_redirect()
     Arguments: ['self']
@@ -3806,10 +3913,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::is_redirect:
+    id: 2d96a73e-d5a4-49c5-8a50-d738e51f7633
     name: is_redirect
     Module Path: ../src/requests/models.py
     Signature: is_redirect(self)
-    Packages: ['io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.is_redirect()
     Arguments: ['self']
@@ -3828,10 +3936,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::iter_content:
+    id: 074927cb-11db-4982-a05e-81c8bb1eeba6
     name: iter_content
     Module Path: ../src/requests/models.py
     Signature: iter_content(self, chunk_size, decode_unicode)
-    Packages: ['io', 'urllib3']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url']
     function_exe_cmd: requests.models.Response.iter_content()
     Arguments: ['self', 'chunk_size', 'decode_unicode']
@@ -3862,10 +3971,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::iter_lines:
+    id: f67d947e-36e1-4b75-9ac4-7c646e86c4a9
     name: iter_lines
     Module Path: ../src/requests/models.py
     Signature: iter_lines(self, chunk_size, decode_unicode, delimiter)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.iter_lines()
     Arguments: ['self', 'chunk_size', 'decode_unicode', 'delimiter']
@@ -3887,10 +3997,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::json:
+    id: 4e876f8a-5857-4a0d-b0ce-f98786b60418
     name: json
     Module Path: ../src/requests/models.py
     Signature: json(self)
-    Packages: ['io', 'exceptions']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.Response.json()
     Arguments: ['self']
@@ -3914,10 +4025,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::links:
+    id: 2dfd3c4b-d24f-4757-b44b-a3a46f7fa3d7
     name: links
     Module Path: ../src/requests/models.py
     Signature: links(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.links()
     Arguments: ['self']
@@ -3935,10 +4047,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::next:
+    id: 627ed9cd-d4dd-4856-804e-4fc4f65765e2
     name: next
     Module Path: ../src/requests/models.py
     Signature: next(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.next()
     Arguments: ['self']
@@ -3956,10 +4069,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::ok:
+    id: eb476c48-a29f-4e80-9e9c-c4ac5665fbdd
     name: ok
     Module Path: ../src/requests/models.py
     Signature: ok(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.ok()
     Arguments: ['self']
@@ -3982,10 +4096,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::path_url:
+    id: 55cd899e-bb1a-493d-8cad-74b62a16810d
     name: path_url
     Module Path: ../src/requests/models.py
     Signature: path_url(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.RequestEncodingMixin.path_url()
     Arguments: ['self']
@@ -4003,10 +4118,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare:
+    id: 6d59a409-7569-4a7f-889b-398ddb743018
     name: prepare
     Module Path: ../src/requests/models.py
     Signature: prepare(self, method, url, headers, files, data, params, auth, cookies, hooks, json)
-    Packages: ['auth', 'cookies', 'hooks', 'io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url', 'from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from hooks import hooks.default_hooks', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare()
     Arguments: ['self', 'method', 'url', 'headers', 'files', 'data', 'params', 'auth', 'cookies', 'hooks', 'json']
@@ -4024,10 +4140,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_auth:
+    id: db03ba99-cd4d-45cc-acbd-0eaecf731bcf
     name: prepare_auth
     Module Path: ../src/requests/models.py
     Signature: prepare_auth(self, auth, url)
-    Packages: ['auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url']
     function_exe_cmd: requests.models.PreparedRequest.prepare_auth()
     Arguments: ['self', 'auth', 'url']
@@ -4045,10 +4162,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_body:
+    id: 18b17a4b-451d-4b40-b2de-2021c3ce013e
     name: prepare_body
     Module Path: ../src/requests/models.py
     Signature: prepare_body(self, data, files, json)
-    Packages: ['urllib3', 'io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from urllib3.fields import urllib3.fields.RequestField', 'from urllib3.filepost import urllib3.filepost.encode_multipart_formdata', 'from urllib3.util import urllib3.util.parse_url', 'from io import io.UnsupportedOperation', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_body()
     Arguments: ['self', 'data', 'files', 'json']
@@ -4066,10 +4184,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_content_length:
+    id: 396502ee-cb9d-4478-be07-7b91673e76f4
     name: prepare_content_length
     Module Path: ../src/requests/models.py
     Signature: prepare_content_length(self, body)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_content_length()
     Arguments: ['self', 'body']
@@ -4087,10 +4206,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_cookies:
+    id: f61a1cc5-f5ac-490f-923a-a801febbee7a
     name: prepare_cookies
     Module Path: ../src/requests/models.py
     Signature: prepare_cookies(self, cookies)
-    Packages: ['cookies', 'io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from cookies import cookies._copy_cookie_jar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.get_cookie_header', 'from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_cookies()
     Arguments: ['self', 'cookies']
@@ -4116,10 +4236,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_headers:
+    id: c48239a6-8a8b-4509-8a25-4cffa49b91ed
     name: prepare_headers
     Module Path: ../src/requests/models.py
     Signature: prepare_headers(self, headers)
-    Packages: ['io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError']
     function_exe_cmd: requests.models.PreparedRequest.prepare_headers()
     Arguments: ['self', 'headers']
@@ -4137,10 +4258,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_hooks:
+    id: 8b367b4f-adc4-4e1d-bc2b-11a79ad575ae
     name: prepare_hooks
     Module Path: ../src/requests/models.py
     Signature: prepare_hooks(self, hooks)
-    Packages: ['hooks']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.PreparedRequest.prepare_hooks()
     Arguments: ['self', 'hooks']
@@ -4158,10 +4280,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_method:
+    id: c4c48a78-ca8b-44a3-bd12-420d9ecc9096
     name: prepare_method
     Module Path: ../src/requests/models.py
     Signature: prepare_method(self, method)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.PreparedRequest.prepare_method()
     Arguments: ['self', 'method']
@@ -4179,10 +4302,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::prepare_url:
+    id: 8bbfcbce-9601-488f-8094-5103a1be6500
     name: prepare_url
     Module Path: ../src/requests/models.py
     Signature: prepare_url(self, url, params)
-    Packages: ['io', 'exceptions', 'auth', 'idna']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from io import io.UnsupportedOperation', 'from urllib3.exceptions import urllib3.exceptions.DecodeError', 'from urllib3.exceptions import urllib3.exceptions.LocationParseError', 'from urllib3.exceptions import urllib3.exceptions.ProtocolError', 'from urllib3.exceptions import urllib3.exceptions.ReadTimeoutError', 'from urllib3.exceptions import urllib3.exceptions.SSLError', 'from exceptions import exceptions.ChunkedEncodingError', 'from exceptions import exceptions.ConnectionError', 'from exceptions import exceptions.ContentDecodingError', 'from exceptions import exceptions.HTTPError', 'from exceptions import exceptions.InvalidJSONError', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.JSONDecodeError as RequestsJSONDecodeError', 'from exceptions import exceptions.MissingSchema', 'from exceptions import exceptions.SSLError as RequestsSSLError', 'from exceptions import exceptions.StreamConsumedError', 'from auth import auth.HTTPBasicAuth', 'from utils import utils.get_auth_from_url', 'import encodings.idna', 'import idna']
     function_exe_cmd: requests.models.PreparedRequest.prepare_url()
     Arguments: ['self', 'url', 'params']
@@ -4200,10 +4324,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::raise_for_status:
+    id: a13805c9-ff88-4967-87dd-e5233c153d2e
     name: raise_for_status
     Module Path: ../src/requests/models.py
     Signature: raise_for_status(self)
-    Packages: ['encodings']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import encodings.idna']
     function_exe_cmd: requests.models.Response.raise_for_status()
     Arguments: ['self']
@@ -4221,10 +4346,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::register_hook:
+    id: df96be61-21a7-41b4-afcf-0f6432b47ed3
     name: register_hook
     Module Path: ../src/requests/models.py
     Signature: register_hook(self, event, hook)
-    Packages: ['hooks']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from hooks import hooks.default_hooks']
     function_exe_cmd: requests.models.RequestHooksMixin.register_hook()
     Arguments: ['self', 'event', 'hook']
@@ -4242,10 +4368,11 @@ Functions:
     Runtime: python
 
   ../src/requests/models.py::text:
+    id: 7b13fe1d-9dfb-44b6-9152-aeeeb55a2bcd
     name: text
     Module Path: ../src/requests/models.py
     Signature: text(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.models.Response.text()
     Arguments: ['self']
@@ -4271,10 +4398,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__enter__:
+    id: ac464c8e-5498-4d20-a6b8-b03848da70d6
     name: __enter__
     Module Path: ../src/requests/sessions.py
     Signature: __enter__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.__enter__()
     Arguments: ['self']
@@ -4292,10 +4420,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__exit__:
+    id: fd50fe30-ad0e-4667-9a3a-519d360ea8ab
     name: __exit__
     Module Path: ../src/requests/sessions.py
     Signature: __exit__(self)
-    Packages: ['os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os']
     function_exe_cmd: requests.sessions.Session.__exit__()
     Arguments: ['self']
@@ -4313,10 +4442,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__getstate__:
+    id: da1a5f6d-9138-48b2-bea4-15d68124878e
     name: __getstate__
     Module Path: ../src/requests/sessions.py
     Signature: __getstate__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.__getstate__()
     Arguments: ['self']
@@ -4334,10 +4464,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__init__:
+    id: 7f47d787-8eaa-4b23-a500-ac8b0c4db35c
     name: __init__
     Module Path: ../src/requests/sessions.py
     Signature: __init__(self)
-    Packages: ['auth', 'os', 'hooks', 'models', 'cookies', 'compat', 'adapters']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import os', 'from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook', 'from models import models.DEFAULT_REDIRECT_LIMIT', 'from models import models.REDIRECT_STATI', 'from models import models.PreparedRequest', 'from models import models.Request', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse', 'from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.__init__()
     Arguments: ['self']
@@ -4355,10 +4486,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::__setstate__:
+    id: d48bb79d-47f2-47d8-846e-513c8c1466e0
     name: __setstate__
     Module Path: ../src/requests/sessions.py
     Signature: __setstate__(self, state)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.__setstate__()
     Arguments: ['self', 'state']
@@ -4376,10 +4508,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::close:
+    id: dbd527f8-63bb-47b0-b39c-fa52fe8a7e93
     name: close
     Module Path: ../src/requests/sessions.py
     Signature: close(self)
-    Packages: ['os', 'adapters']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os', 'from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.close()
     Arguments: ['self']
@@ -4397,10 +4530,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::delete:
+    id: 492f98a4-59ec-4349-8299-be0de7659558
     name: delete
     Module Path: ../src/requests/sessions.py
     Signature: delete(self, url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.delete()
     Arguments: ['self', 'url']
@@ -4422,10 +4556,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get:
+    id: 33607501-96ad-4935-9611-a4e6e18a3db7
     name: get
     Module Path: ../src/requests/sessions.py
     Signature: get(self, url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.get()
     Arguments: ['self', 'url']
@@ -4447,10 +4582,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get_adapter:
+    id: ddbe71da-2119-40f8-8853-6f1edbe5258e
     name: get_adapter
     Module Path: ../src/requests/sessions.py
     Signature: get_adapter(self, url)
-    Packages: ['adapters']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.get_adapter()
     Arguments: ['self', 'url']
@@ -4470,10 +4606,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::get_redirect_target:
+    id: d9d355d9-a2b0-4f60-b987-ba8355c62c53
     name: get_redirect_target
     Module Path: ../src/requests/sessions.py
     Signature: get_redirect_target(self, resp)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.get_redirect_target()
     Arguments: ['self', 'resp']
@@ -4491,10 +4628,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::head:
+    id: a997c2d3-38ef-45b4-9c1d-10873a568d4d
     name: head
     Module Path: ../src/requests/sessions.py
     Signature: head(self, url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.head()
     Arguments: ['self', 'url']
@@ -4516,10 +4654,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_environment_settings:
+    id: 0db1f59d-6754-458c-8bd2-3edf0df33c75
     name: merge_environment_settings
     Module Path: ../src/requests/sessions.py
     Signature: merge_environment_settings(self, url, proxies, stream, verify, cert)
-    Packages: ['compat', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse', 'import os']
     function_exe_cmd: requests.sessions.Session.merge_environment_settings()
     Arguments: ['self', 'url', 'proxies', 'stream', 'verify', 'cert']
@@ -4539,10 +4678,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_hooks:
+    id: 18ad5265-b296-4f3f-9f4e-3c68a7697440
     name: merge_hooks
     Module Path: ../src/requests/sessions.py
     Signature: merge_hooks(request_hooks, session_hooks, dict_class)
-    Packages: ['hooks']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook']
     function_exe_cmd: requests.sessions.merge_hooks()
     Arguments: ['request_hooks', 'session_hooks', 'dict_class']
@@ -4563,10 +4703,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::merge_setting:
+    id: 40482d6d-152d-4806-a4d7-c003b06e0185
     name: merge_setting
     Module Path: ../src/requests/sessions.py
     Signature: merge_setting(request_setting, session_setting, dict_class)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.merge_setting()
     Arguments: ['request_setting', 'session_setting', 'dict_class']
@@ -4586,10 +4727,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::mount:
+    id: 35255836-9a69-4d9c-a5da-74f9fe6f390c
     name: mount
     Module Path: ../src/requests/sessions.py
     Signature: mount(self, prefix, adapter)
-    Packages: ['adapters']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from adapters import adapters.HTTPAdapter']
     function_exe_cmd: requests.sessions.Session.mount()
     Arguments: ['self', 'prefix', 'adapter']
@@ -4609,10 +4751,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::options:
+    id: bfd03c11-d2c6-4faf-ac4c-f7c3c9d0f524
     name: options
     Module Path: ../src/requests/sessions.py
     Signature: options(self, url)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.options()
     Arguments: ['self', 'url']
@@ -4634,10 +4777,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::patch:
+    id: 897f0ced-c4ed-4ff9-8233-3a81dd911c5b
     name: patch
     Module Path: ../src/requests/sessions.py
     Signature: patch(self, url, data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.patch()
     Arguments: ['self', 'url', 'data']
@@ -4661,10 +4805,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::post:
+    id: a9b07c80-2739-4cf7-894c-116acc5012c1
     name: post
     Module Path: ../src/requests/sessions.py
     Signature: post(self, url, data, json)
-    Packages: ['os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os']
     function_exe_cmd: requests.sessions.Session.post()
     Arguments: ['self', 'url', 'data', 'json']
@@ -4689,10 +4834,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::prepare_request:
+    id: a7d28e87-15df-49bf-9dd3-769920306527
     name: prepare_request
     Module Path: ../src/requests/sessions.py
     Signature: prepare_request(self, request)
-    Packages: ['os', 'cookies', 'auth', 'hooks']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook']
     function_exe_cmd: requests.sessions.Session.prepare_request()
     Arguments: ['self', 'request']
@@ -4717,10 +4863,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::put:
+    id: 425e846d-706e-4f72-a94e-040dc7d18043
     name: put
     Module Path: ../src/requests/sessions.py
     Signature: put(self, url, data)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.Session.put()
     Arguments: ['self', 'url', 'data']
@@ -4744,10 +4891,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_auth:
+    id: f464214b-24d8-4541-907d-981de7290115
     name: rebuild_auth
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_auth(self, prepared_request, response)
-    Packages: ['auth', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import os']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_auth()
     Arguments: ['self', 'prepared_request', 'response']
@@ -4767,10 +4915,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_method:
+    id: 6e6fce55-3b9f-49b1-bfbc-bd4ff8cb01d2
     name: rebuild_method
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_method(self, prepared_request, response)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_method()
     Arguments: ['self', 'prepared_request', 'response']
@@ -4789,10 +4938,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::rebuild_proxies:
+    id: c869ba30-1092-424f-98b4-e595a0868373
     name: rebuild_proxies
     Module Path: ../src/requests/sessions.py
     Signature: rebuild_proxies(self, prepared_request, proxies)
-    Packages: ['auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.rebuild_proxies()
     Arguments: ['self', 'prepared_request', 'proxies']
@@ -4819,10 +4969,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::request:
+    id: a72c8039-ac84-4bc4-a4cb-77a8384f2a28
     name: request
     Module Path: ../src/requests/sessions.py
     Signature: request(self, method, url, params, data, headers, cookies, files, auth, timeout, allow_redirects, proxies, hooks, stream, verify, cert, json)
-    Packages: ['cookies', 'auth', 'time', 'hooks', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import time', 'from datetime import datetime.timedelta', 'from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook', 'import os']
     function_exe_cmd: requests.sessions.Session.request()
     Arguments: ['self', 'method', 'url', 'params', 'data', 'headers', 'cookies', 'files', 'auth', 'timeout', 'allow_redirects', 'proxies', 'hooks', 'stream', 'verify', 'cert', 'json']
@@ -4881,10 +5032,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::resolve_redirects:
+    id: b506b90f-4aa0-4ebc-b789-e6725793c5c6
     name: resolve_redirects
     Module Path: ../src/requests/sessions.py
     Signature: resolve_redirects(self, resp, req, stream, timeout, verify, cert, proxies, yield_requests)
-    Packages: ['time', 'os', 'cookies', 'auth']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import time', 'from datetime import datetime.timedelta', 'import os', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies', 'from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.resolve_redirects()
     Arguments: ['self', 'resp', 'req', 'stream', 'timeout', 'verify', 'cert', 'proxies', 'yield_requests']
@@ -4902,10 +5054,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::send:
+    id: ffe123c0-e4b7-4818-9160-276545371ace
     name: send
     Module Path: ../src/requests/sessions.py
     Signature: send(self, request)
-    Packages: ['hooks', 'os', 'time', 'cookies']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from hooks import hooks.default_hooks', 'from hooks import hooks.dispatch_hook', 'import os', 'import time', 'from datetime import datetime.timedelta', 'from cookies import cookies.RequestsCookieJar', 'from cookies import cookies.cookiejar_from_dict', 'from cookies import cookies.extract_cookies_to_jar', 'from cookies import cookies.merge_cookies']
     function_exe_cmd: requests.sessions.Session.send()
     Arguments: ['self', 'request']
@@ -4925,10 +5078,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::session:
+    id: 9ebc962f-9af4-4862-bbe9-e10011e68808
     name: session
     Module Path: ../src/requests/sessions.py
     Signature: session()
-    Packages: ['compat']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse']
     function_exe_cmd: requests.sessions.session()
     Arguments: None
@@ -4954,10 +5108,11 @@ Functions:
     Runtime: python
 
   ../src/requests/sessions.py::should_strip_auth:
+    id: 7faf92e5-ddbb-454b-be42-eee86c75a422
     name: should_strip_auth
     Module Path: ../src/requests/sessions.py
     Signature: should_strip_auth(self, old_url, new_url)
-    Packages: ['auth', 'os', 'compat']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from auth import auth._basic_auth_str', 'from utils import utils.get_auth_from_url', 'from utils import utils.get_netrc_auth', 'import os', 'from compat import compat.Mapping', 'from compat import compat.cookielib', 'from compat import compat.urljoin', 'from compat import compat.urlparse']
     function_exe_cmd: requests.sessions.SessionRedirectMixin.should_strip_auth()
     Arguments: ['self', 'old_url', 'new_url']
@@ -4975,10 +5130,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__delitem__:
+    id: 49213726-660a-4ef7-88d8-a302042e0013
     name: __delitem__
     Module Path: ../src/requests/structures.py
     Signature: __delitem__(self, key)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.__delitem__()
     Arguments: ['self', 'key']
@@ -4996,10 +5152,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__eq__:
+    id: a0f1a1ee-789f-4c93-9281-d05381eb225f
     name: __eq__
     Module Path: ../src/requests/structures.py
     Signature: __eq__(self, other)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.__eq__()
     Arguments: ['self', 'other']
@@ -5017,10 +5174,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__getitem__:
+    id: 6f75fe92-3c71-46c9-91de-ab80d0766817
     name: __getitem__
     Module Path: ../src/requests/structures.py
     Signature: __getitem__(self, key)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.LookupDict.__getitem__()
     Arguments: ['self', 'key']
@@ -5038,10 +5196,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__init__:
+    id: fb8a98b1-4d2b-4e5e-b7a6-6556a356032b
     name: __init__
     Module Path: ../src/requests/structures.py
     Signature: __init__(self, name)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.LookupDict.__init__()
     Arguments: ['self', 'name']
@@ -5059,10 +5218,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__iter__:
+    id: 581ba82d-fd5d-4a8f-8bd2-7b61dde9d64b
     name: __iter__
     Module Path: ../src/requests/structures.py
     Signature: __iter__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.__iter__()
     Arguments: ['self']
@@ -5080,10 +5240,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__len__:
+    id: 4578edd9-8975-4c64-b5d2-0e262dde8db4
     name: __len__
     Module Path: ../src/requests/structures.py
     Signature: __len__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.__len__()
     Arguments: ['self']
@@ -5101,10 +5262,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__repr__:
+    id: 3505e3da-80da-438c-ae16-79a30af37209
     name: __repr__
     Module Path: ../src/requests/structures.py
     Signature: __repr__(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.LookupDict.__repr__()
     Arguments: ['self']
@@ -5122,10 +5284,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::__setitem__:
+    id: 245608ab-8566-4067-b4c1-0d48da2537c4
     name: __setitem__
     Module Path: ../src/requests/structures.py
     Signature: __setitem__(self, key, value)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.__setitem__()
     Arguments: ['self', 'key', 'value']
@@ -5143,10 +5306,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::copy:
+    id: 46bfbd1c-af00-42e2-aad6-504e9667a657
     name: copy
     Module Path: ../src/requests/structures.py
     Signature: copy(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.copy()
     Arguments: ['self']
@@ -5164,10 +5328,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::get:
+    id: 0569d004-c8a1-491f-bf38-a609186209d6
     name: get
     Module Path: ../src/requests/structures.py
     Signature: get(self, key, default)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.LookupDict.get()
     Arguments: ['self', 'key', 'default']
@@ -5185,10 +5350,11 @@ Functions:
     Runtime: python
 
   ../src/requests/structures.py::lower_items:
+    id: cb9f8ecf-1f99-4345-839d-5e91e76ffe36
     name: lower_items
     Module Path: ../src/requests/structures.py
     Signature: lower_items(self)
-    Packages: []
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: []
     function_exe_cmd: requests.structures.CaseInsensitiveDict.lower_items()
     Arguments: ['self']
@@ -5206,11 +5372,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::_parse_content_type_header:
+    id: c8ee4ab5-d488-4c2b-919b-3d3860b5aff0
     name: _parse_content_type_header
     Module Path: ../src/requests/utils.py
     Signature: _parse_content_type_header(header)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils._parse_content_type_header()
     Arguments: ['header']
     Returns: None
@@ -5231,11 +5398,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::_validate_header_part:
+    id: 0b745722-5d0b-42e1-8986-86d643a0a004
     name: _validate_header_part
     Module Path: ../src/requests/utils.py
     Signature: _validate_header_part(header, header_part, header_validator_index)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils._validate_header_part()
     Arguments: ['header', 'header_part', 'header_validator_index']
     Returns: None
@@ -5252,11 +5420,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::add_dict_to_cookiejar:
+    id: d45a4d72-3b52-4d89-902a-9fe085c55f1a
     name: add_dict_to_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: add_dict_to_cookiejar(cj, cookie_dict)
-    Packages: ['io', 'cookies', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from cookies import cookies.cookiejar_from_dict', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from cookies import cookies.cookiejar_from_dict', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.add_dict_to_cookiejar()
     Arguments: ['cj', 'cookie_dict']
     Returns: None
@@ -5277,11 +5446,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::address_in_network:
+    id: 7148fbf9-0f86-41c5-af57-a2d85e75b67f
     name: address_in_network
     Module Path: ../src/requests/utils.py
     Signature: address_in_network(ip, net)
-    Packages: ['re', 'io', 'socket', 'struct']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import socket', 'import struct']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import socket', 'import struct']
     function_exe_cmd: requests.utils.address_in_network()
     Arguments: ['ip', 'net']
     Returns: None
@@ -5303,11 +5473,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::atomic_open:
+    id: 83d947db-93d2-4b0c-bf67-e8091fb32c07
     name: atomic_open
     Module Path: ../src/requests/utils.py
     Signature: atomic_open(filename)
-    Packages: ['contextlib', 'io', 'os', 'tempfile', 're']
-    Imports: ['import contextlib', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import tempfile', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import contextlib', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import tempfile', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.atomic_open()
     Arguments: ['filename']
     Returns: None
@@ -5324,11 +5495,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::check_header_validity:
+    id: ada8217f-803e-4cdc-9496-7b308b519e6b
     name: check_header_validity
     Module Path: ../src/requests/utils.py
     Signature: check_header_validity(header)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.check_header_validity()
     Arguments: ['header']
     Returns: None
@@ -5348,11 +5520,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::default_headers:
+    id: 12ac9a06-36fc-4a00-8c6b-26bb0cbb994f
     name: default_headers
     Module Path: ../src/requests/utils.py
     Signature: default_headers()
-    Packages: ['re', 'struct', 'structures', 'io']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import struct', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import struct', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
     function_exe_cmd: requests.utils.default_headers()
     Arguments: None
     Returns: None
@@ -5369,11 +5542,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::default_user_agent:
+    id: a0f611a1-eb2b-4c62-b1fb-3547696266d0
     name: default_user_agent
     Module Path: ../src/requests/utils.py
     Signature: default_user_agent(name)
-    Packages: ['re', 'io', '__version__']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
     function_exe_cmd: requests.utils.default_user_agent()
     Arguments: ['name']
     Returns: None
@@ -5392,11 +5566,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dict_from_cookiejar:
+    id: a5a54a14-339d-4f5f-993f-1f83df7c3162
     name: dict_from_cookiejar
     Module Path: ../src/requests/utils.py
     Signature: dict_from_cookiejar(cj)
-    Packages: ['io', 'cookies', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from cookies import cookies.cookiejar_from_dict', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'from cookies import cookies.cookiejar_from_dict', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.dict_from_cookiejar()
     Arguments: ['cj']
     Returns: None
@@ -5416,11 +5591,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dict_to_sequence:
+    id: a8a80f1b-bf6a-4665-89ff-04bdbc88d191
     name: dict_to_sequence
     Module Path: ../src/requests/utils.py
     Signature: dict_to_sequence(d)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.dict_to_sequence()
     Arguments: ['d']
     Returns: None
@@ -5437,11 +5613,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::dotted_netmask:
+    id: e85a90d2-4267-4583-bb5f-7a46d4a0011d
     name: dotted_netmask
     Module Path: ../src/requests/utils.py
     Signature: dotted_netmask(mask)
-    Packages: ['io', 're', 'socket', 'struct']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket', 'import struct']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket', 'import struct']
     function_exe_cmd: requests.utils.dotted_netmask()
     Arguments: ['mask']
     Returns: None
@@ -5462,11 +5639,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::extract_zipped_paths:
+    id: c6c053fd-00a5-4ed3-b080-88fd0fe5a70d
     name: extract_zipped_paths
     Module Path: ../src/requests/utils.py
     Signature: extract_zipped_paths(path)
-    Packages: ['re', 'io', 'os', 'zipfile', 'tempfile']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os', 'import zipfile', 'import tempfile']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os', 'import zipfile', 'import tempfile']
     function_exe_cmd: requests.utils.extract_zipped_paths()
     Arguments: ['path']
     Returns: None
@@ -5485,11 +5663,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::from_key_val_list:
+    id: c5cb02f4-9ff3-41f5-b08c-9d45a7e7706b
     name: from_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: from_key_val_list(value)
-    Packages: ['re', 'io', 'os']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
     function_exe_cmd: requests.utils.from_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -5521,11 +5700,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_auth_from_url:
+    id: c3f9928d-d4df-491c-8939-0ddad530560d
     name: get_auth_from_url
     Module Path: ../src/requests/utils.py
     Signature: get_auth_from_url(url)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.get_auth_from_url()
     Arguments: ['url']
     Returns: None
@@ -5545,11 +5725,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_encoding_from_headers:
+    id: 75868e97-83a9-4c54-b0ac-1e67dbdfebb0
     name: get_encoding_from_headers
     Module Path: ../src/requests/utils.py
     Signature: get_encoding_from_headers(headers)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.get_encoding_from_headers()
     Arguments: ['headers']
     Returns: None
@@ -5569,11 +5750,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_encodings_from_content:
+    id: 56336b91-a6ec-4fa1-9bd7-bb6244ddebb3
     name: get_encodings_from_content
     Module Path: ../src/requests/utils.py
     Signature: get_encodings_from_content(content)
-    Packages: ['warnings', 're', 'io']
-    Imports: ['import warnings', 'import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import warnings', 'import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
     function_exe_cmd: requests.utils.get_encodings_from_content()
     Arguments: ['content']
     Returns: None
@@ -5592,11 +5774,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_environ_proxies:
+    id: cbf3f7f5-075c-4e21-8c4f-e36a2ff274fd
     name: get_environ_proxies
     Module Path: ../src/requests/utils.py
     Signature: get_environ_proxies(url, no_proxy)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.get_environ_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -5615,11 +5798,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_netrc_auth:
+    id: 070dee5e-a90f-47da-ac9c-26ab8f694ef9
     name: get_netrc_auth
     Module Path: ../src/requests/utils.py
     Signature: get_netrc_auth(url, raise_errors)
-    Packages: ['netrc', 'os', 'io', 're']
-    Imports: ['from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc', 'import os', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['from netrc import netrc.NetrcParseError', 'from netrc import netrc.netrc', 'import os', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.get_netrc_auth()
     Arguments: ['url', 'raise_errors']
     Returns: None
@@ -5636,11 +5820,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::get_unicode_from_response:
+    id: 0ea248ab-aabe-4390-8d7d-e3d144d9e16c
     name: get_unicode_from_response
     Module Path: ../src/requests/utils.py
     Signature: get_unicode_from_response(r)
-    Packages: ['re', 'warnings', 'io']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import warnings', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import warnings', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
     function_exe_cmd: requests.utils.get_unicode_from_response()
     Arguments: ['r']
     Returns: None
@@ -5666,11 +5851,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::guess_filename:
+    id: 0d81dc2f-efe0-4f45-84f0-7cd9360611fe
     name: guess_filename
     Module Path: ../src/requests/utils.py
     Signature: guess_filename(obj)
-    Packages: ['os', 're']
-    Imports: ['import os', 'import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import os', 'import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.guess_filename()
     Arguments: ['obj']
     Returns: None
@@ -5687,11 +5873,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::guess_json_utf:
+    id: 2f98167a-b36e-4360-b6ff-896bfd3576e8
     name: guess_json_utf
     Module Path: ../src/requests/utils.py
     Signature: guess_json_utf(data)
-    Packages: ['io', 're', 'codecs']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs']
     function_exe_cmd: requests.utils.guess_json_utf()
     Arguments: ['data']
     Returns: None
@@ -5708,11 +5895,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::is_ipv4_address:
+    id: 18a52b3b-f2b7-4440-b0b3-501cd3b2f2bf
     name: is_ipv4_address
     Module Path: ../src/requests/utils.py
     Signature: is_ipv4_address(string_ip)
-    Packages: ['re', 'socket']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
     function_exe_cmd: requests.utils.is_ipv4_address()
     Arguments: ['string_ip']
     Returns: None
@@ -5729,11 +5917,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::is_valid_cidr:
+    id: 39e867f1-8aa5-4592-a08b-b2d4521595f3
     name: is_valid_cidr
     Module Path: ../src/requests/utils.py
     Signature: is_valid_cidr(string_network)
-    Packages: ['re', 'socket']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
     function_exe_cmd: requests.utils.is_valid_cidr()
     Arguments: ['string_network']
     Returns: None
@@ -5752,10 +5941,11 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::iter_slices:
+    id: 7d212f3d-7fdb-4893-90eb-fbed2d37b678
     name: iter_slices
     Module Path: ../src/requests/utils.py
     Signature: iter_slices(string, slice_length)
-    Packages: ['os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import os']
     function_exe_cmd: requests.utils.iter_slices()
     Arguments: ['string', 'slice_length']
@@ -5773,11 +5963,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_dict_header:
+    id: 8549a2e9-c6b9-47c8-89ca-5073bf5e9d7e
     name: parse_dict_header
     Module Path: ../src/requests/utils.py
     Signature: parse_dict_header(value)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.parse_dict_header()
     Arguments: ['value']
     Returns: None
@@ -5813,11 +6004,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_header_links:
+    id: 0be46686-58a0-415c-b0cc-4e7268a049d2
     name: parse_header_links
     Module Path: ../src/requests/utils.py
     Signature: parse_header_links(value)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.parse_header_links()
     Arguments: ['value']
     Returns: None
@@ -5838,11 +6030,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::parse_list_header:
+    id: 00919a44-9a77-47e6-bec2-d8d387aa29ae
     name: parse_list_header
     Module Path: ../src/requests/utils.py
     Signature: parse_list_header(value)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.parse_list_header()
     Arguments: ['value']
     Returns: None
@@ -5879,11 +6072,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::prepend_scheme_if_needed:
+    id: 100e3c84-aec9-43af-9ffd-5bddaa032bdd
     name: prepend_scheme_if_needed
     Module Path: ../src/requests/utils.py
     Signature: prepend_scheme_if_needed(url, new_scheme)
-    Packages: ['re', 'os', 'io', 'compat']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import os', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import os', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from compat import compat.Mapping', 'from compat import compat.basestring', 'from compat import compat.bytes', 'from compat import compat.getproxies', 'from compat import compat.getproxies_environment', 'from compat import compat.integer_types', 'from compat import compat.is_urllib3_1', 'from compat import compat.parse_http_list as _parse_list_header', 'from compat import compat.proxy_bypass', 'from compat import compat.proxy_bypass_environment', 'from compat import compat.quote', 'from compat import compat.str', 'from compat import compat.unquote', 'from compat import compat.urlparse', 'from compat import compat.urlunparse']
     function_exe_cmd: requests.utils.prepend_scheme_if_needed()
     Arguments: ['url', 'new_scheme']
     Returns: None
@@ -5903,11 +6097,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::requote_uri:
+    id: fd819157-d666-4cc4-a9d1-a3b02e29bbb7
     name: requote_uri
     Module Path: ../src/requests/utils.py
     Signature: requote_uri(uri)
-    Packages: ['re', 'io']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL']
     function_exe_cmd: requests.utils.requote_uri()
     Arguments: ['uri']
     Returns: None
@@ -5929,11 +6124,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::resolve_proxies:
+    id: b3b09622-4f6f-4608-87d7-9e627f38b550
     name: resolve_proxies
     Module Path: ../src/requests/utils.py
     Signature: resolve_proxies(request, proxies, trust_env)
-    Packages: ['re', 'io', 'os']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
     function_exe_cmd: requests.utils.resolve_proxies()
     Arguments: ['request', 'proxies', 'trust_env']
     Returns: None
@@ -5958,11 +6154,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::rewind_body:
+    id: cf630ddf-5e6f-4db7-84b4-78a72c9e7836
     name: rewind_body
     Module Path: ../src/requests/utils.py
     Signature: rewind_body(prepared_request)
-    Packages: ['re', 'io', 'os']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
     function_exe_cmd: requests.utils.rewind_body()
     Arguments: ['prepared_request']
     Returns: None
@@ -5980,11 +6177,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::select_proxy:
+    id: ca14e662-d655-467c-a570-a2d387cbdf18
     name: select_proxy
     Module Path: ../src/requests/utils.py
     Signature: select_proxy(url, proxies)
-    Packages: ['re', 'io', 'os']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
     function_exe_cmd: requests.utils.select_proxy()
     Arguments: ['url', 'proxies']
     Returns: None
@@ -6004,11 +6202,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::set_environ:
+    id: 0a254381-e1d8-4e92-87a8-0dc50e459963
     name: set_environ
     Module Path: ../src/requests/utils.py
     Signature: set_environ(env_name, value)
-    Packages: ['contextlib', 'io', 're', 'os']
-    Imports: ['import contextlib', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import contextlib', 'import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import os']
     function_exe_cmd: requests.utils.set_environ()
     Arguments: ['env_name', 'value']
     Returns: None
@@ -6030,11 +6229,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::should_bypass_proxies:
+    id: fc3abd97-1c38-47f5-9ff7-50e99156ec08
     name: should_bypass_proxies
     Module Path: ../src/requests/utils.py
     Signature: should_bypass_proxies(url, no_proxy)
-    Packages: ['io', 'os', 're', 'socket']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import socket']
     function_exe_cmd: requests.utils.should_bypass_proxies()
     Arguments: ['url', 'no_proxy']
     Returns: None
@@ -6053,11 +6253,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::stream_decode_response_unicode:
+    id: 554aaac6-77c6-471e-80e3-82d316eb82af
     name: stream_decode_response_unicode
     Module Path: ../src/requests/utils.py
     Signature: stream_decode_response_unicode(iterator, r)
-    Packages: ['re', 'codecs']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import codecs']
     function_exe_cmd: requests.utils.stream_decode_response_unicode()
     Arguments: ['iterator', 'r']
     Returns: None
@@ -6074,11 +6275,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::super_len:
+    id: 972db9e4-21da-4c87-af76-8e8aa1f47b71
     name: super_len
     Module Path: ../src/requests/utils.py
     Signature: super_len(o)
-    Packages: ['io', 'os', 're', 'urllib3', 'warnings']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from compat import compat.is_urllib3_1', 'import warnings']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import os', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'from urllib3.util import urllib3.util.make_headers', 'from urllib3.util import urllib3.util.parse_url', 'from compat import compat.is_urllib3_1', 'import warnings']
     function_exe_cmd: requests.utils.super_len()
     Arguments: ['o']
     Returns: None
@@ -6095,11 +6297,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::to_key_val_list:
+    id: 49ffa332-763f-4c58-bc36-2be5c4478f42
     name: to_key_val_list
     Module Path: ../src/requests/utils.py
     Signature: to_key_val_list(value)
-    Packages: ['re', 'io', 'os']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg', 'import io', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'import os']
     function_exe_cmd: requests.utils.to_key_val_list()
     Arguments: ['value']
     Returns: None
@@ -6130,11 +6333,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::unquote_header_value:
+    id: 0f7b0d0c-93f4-499c-966d-01243b71eb86
     name: unquote_header_value
     Module Path: ../src/requests/utils.py
     Signature: unquote_header_value(value, is_filename)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.unquote_header_value()
     Arguments: ['value', 'is_filename']
     Returns: None
@@ -6156,11 +6360,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::unquote_unreserved:
+    id: 9b679187-1e69-4974-88b4-39b29a196909
     name: unquote_unreserved
     Module Path: ../src/requests/utils.py
     Signature: unquote_unreserved(uri)
-    Packages: ['re']
-    Imports: ['import re', 'from collections import collections.OrderedDict', 'from current_package import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import re', 'from collections import collections.OrderedDict', 'from requests.utils import certs', 'from exceptions import exceptions.UnrewindableBodyError', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.unquote_unreserved()
     Arguments: ['uri']
     Returns: None
@@ -6180,11 +6385,12 @@ Functions:
     Runtime: python
 
   ../src/requests/utils.py::urldefragauth:
+    id: 7f0c20fe-586c-40d1-b5b6-3fd48d2e84cc
     name: urldefragauth
     Module Path: ../src/requests/utils.py
     Signature: urldefragauth(url)
-    Packages: ['io', 're']
-    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from current_package import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
+    Imports: ['import io', 'from collections import collections.OrderedDict', 'from __version__ import __version__.__version__', 'from exceptions import exceptions.FileModeWarning', 'from exceptions import exceptions.InvalidHeader', 'from exceptions import exceptions.InvalidURL', 'from exceptions import exceptions.UnrewindableBodyError', 'import re', 'from requests.utils import certs', 'from structures import structures.CaseInsensitiveDict', 'import winreg']
     function_exe_cmd: requests.utils.urldefragauth()
     Arguments: ['url']
     Returns: None
@@ -6203,10 +6409,11 @@ Functions:
     Runtime: python
 
   compat.py::u:
+    id: b7880387-e84c-48f3-b8ee-951809655fbc
     name: u
     Module Path: compat.py
     Signature: u(s)
-    Packages: ['warnings', 'io']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import warnings', 'import io as StringIO']
     function_exe_cmd: requests.u()
     Arguments: ['s']
@@ -6224,10 +6431,11 @@ Functions:
     Runtime: python
 
   conftest.py::httpbin:
+    id: 01f4062b-5492-4b3d-b8a8-92a0a9dad889
     name: httpbin
     Module Path: conftest.py
     Signature: httpbin(httpbin)
-    Packages: ['pytest', 'http']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import pytest', 'from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.httpbin()
     Arguments: ['httpbin']
@@ -6245,10 +6453,11 @@ Functions:
     Runtime: python
 
   conftest.py::httpbin_secure:
+    id: 2abf4199-4519-477b-aa4d-93f4cf928657
     name: httpbin_secure
     Module Path: conftest.py
     Signature: httpbin_secure(httpbin_secure)
-    Packages: ['pytest', 'http']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import pytest', 'from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.httpbin_secure()
     Arguments: ['httpbin_secure']
@@ -6266,10 +6475,11 @@ Functions:
     Runtime: python
 
   conftest.py::nosan_server:
+    id: 83a9dc55-9dc6-4c73-8e59-420823d35f10
     name: nosan_server
     Module Path: conftest.py
     Signature: nosan_server(tmp_path_factory)
-    Packages: ['pytest', 'trustme', 'ssl', 'threading']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import pytest', 'import trustme', 'import ssl', 'import threading']
     function_exe_cmd: requests.nosan_server()
     Arguments: ['tmp_path_factory']
@@ -6287,10 +6497,11 @@ Functions:
     Runtime: python
 
   conftest.py::prepare_url:
+    id: cc322656-f28e-483d-8c87-f9e27319fe98
     name: prepare_url
     Module Path: conftest.py
     Signature: prepare_url(value)
-    Packages: ['http']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['from http.server import http.server.HTTPServer', 'from http.server import http.server.SimpleHTTPRequestHandler']
     function_exe_cmd: requests.prepare_url()
     Arguments: ['value']
@@ -6308,10 +6519,11 @@ Functions:
     Runtime: python
 
   utils.py::override_environ:
+    id: 96f12937-4c7f-4159-8e40-2e18b2e98e0c
     name: override_environ
     Module Path: utils.py
     Signature: override_environ()
-    Packages: ['contextlib', 'os']
+    Packages: ['your-package[socks]', '-e', 'pytest>=2.8.0', 'pytest-cov', 'pytest-httpbin==2.1.0', 'httpbin~=0.10.0', 'trustme', 'wheel', 'Sphinx==7.2.6']
     Imports: ['import contextlib', 'import os']
     function_exe_cmd: requests.override_environ()
     Arguments: None

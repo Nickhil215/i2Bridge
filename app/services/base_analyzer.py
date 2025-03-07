@@ -1,6 +1,7 @@
 import os
 import re
 import shutil
+import uuid
 from abc import ABC, abstractmethod
 from collections import defaultdict
 from typing import Any, Dict, Optional
@@ -104,7 +105,7 @@ def _extract_api_endpoint_info(node: nodes.FunctionDef, source: str) -> ApiInfo 
     )
 
 
-def _extract_class_info(node: nodes.ClassDef, source: str, package_name:str = None) -> ClassInfo:
+def _extract_class_info(node: nodes.ClassDef, source: str) -> ClassInfo:
     """Extract detailed information about a class."""
     functions = []
     attributes = []
@@ -206,17 +207,21 @@ class BaseAnalyzer(ABC):
         """Analyze the package and extract its information."""
         pass
 
-    def _analyze_file(self, file_path: str, git_url: str = None) -> None:
+    def _analyze_file(self, file_path: str, requirement_info: List[str], git_url: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
+
             relative_path = os.path.relpath(file_path, self.package_path)
             logger.info(f"Analyzing file: {relative_path}")
             self.source_path = relative_path
 
-            package_name=None
-            if git_url:
-                package_name = extract_repo_name(git_url)
+            self.requirement_info = requirement_info
 
+            self.package_name=None
+            if git_url:
+                self.package_name = extract_repo_name(git_url)
+
+            self.formatted_path = f"{self.package_name}{format_path(self.source_path).split(self.package_name)[-1]}"
 
             with open(file_path, 'r', encoding='utf-8') as f:
                 source = f.read()
@@ -226,7 +231,7 @@ class BaseAnalyzer(ABC):
             self.modules[relative_path] = module
 
             self._analyze_modules(module, relative_path, source)
-            self._analyze_classes(module, relative_path, source, package_name)
+            self._analyze_classes(module, relative_path, source)
 
             # Pass source to analysis methods
             if ("tests" in relative_path.split("/")
@@ -234,24 +239,24 @@ class BaseAnalyzer(ABC):
                     or relative_path.startswith("test")):
                 self._analyze_tests(module, relative_path, source)
             elif not relative_path.split('/')[-1].__contains__("_"):
-                self._analyze_functions(module, relative_path, source, package_name)
+                self._analyze_functions(module, relative_path, source)
                 self._analyze_api_endpoint(module, relative_path, source)
         except Exception as e:
             logger.error(f"Error analyzing {file_path}: {str(e)}")
             self.errors.append((file_path, str(e)))
 
-    def _analyze_functions(self, module: nodes.Module, file_path: str, source: str, package_name:str = None) -> None:
+    def _analyze_functions(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all functions in a module, including methods."""
         for node in module.body:
             if isinstance(node, nodes.ClassDef):
                 # If it's a class, find all functions inside it
                 for class_node in node.body:
                     if isinstance(class_node, nodes.FunctionDef):
-                        func_info = self._extract_function_info(class_node, source, file_path, package_name)
+                        func_info = self._extract_function_info(class_node, source, file_path)
                         self.functions[f"{file_path}::{func_info.name}"] = func_info
             elif isinstance(node, nodes.FunctionDef):
                 # If it's a function at the module level
-                func_info = self._extract_function_info(node, source, file_path, package_name)
+                func_info = self._extract_function_info(node, source, file_path)
                 self.functions[f"{file_path}::{func_info.name}"] = func_info
 
 
@@ -283,10 +288,10 @@ class BaseAnalyzer(ABC):
                 test_info = self._extract_tests_info(node, source)
                 self.tests[f"{file_path}::{test_info.name}"] = test_info
 
-    def _analyze_classes(self, module: nodes.Module, file_path: str, source: str, package_name:str = None) -> None:
+    def _analyze_classes(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all classes in a module."""
         for node in module.nodes_of_class(nodes.ClassDef):
-            class_info = _extract_class_info(node, source, package_name)
+            class_info = _extract_class_info(node, source)
             self.classes[f"{file_path}::{class_info.name}"] = class_info
 
     def _analyze_modules(self, module: nodes.Module, file_path: str, source: str) -> None:
@@ -317,7 +322,7 @@ class BaseAnalyzer(ABC):
                 for name, asname in node.names:  # Unpacking (name, alias) tuples
                     if not module_name:
                         import_name = f"{name}" if asname is None else f"{name} as {asname}"
-                        self.imports[file_path].append(f"from current_package import {import_name}")
+                        self.imports[file_path].append(f"from {self.formatted_path} import {import_name}")
                     else:
                         import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
                         package_name = import_name.split('.')[0]
@@ -332,7 +337,7 @@ class BaseAnalyzer(ABC):
             classes=[],
             functions=[])
 
-    def get_used_packages_and_imports(self, start_line, end_line, source_code, file_path):
+    def get_used_imports(self, start_line, end_line, source_code, file_path):
         # Extract the relevant lines from the source code (lines are 1-indexed, so adjust accordingly)
         lines = source_code.splitlines()[start_line-1:end_line]
 
@@ -351,11 +356,11 @@ class BaseAnalyzer(ABC):
                         if module_package in module_import and module_import not in imports:
                             imports.append(module_import)
 
-        return packages, imports
+        return imports
 
 
     def _extract_function_info(self, node: nodes.FunctionDef, source: str,
-                               file_path: str, package_name:str = None) -> FunctionInfo:
+                               file_path: str) -> FunctionInfo:
         """Extract detailed information about a function."""
         args = [arg.name for arg in node.args.args]
         returns = node.returns.as_string() if node.returns else None
@@ -384,12 +389,12 @@ class BaseAnalyzer(ABC):
                 comment_text = line.split('#', 1)[1].strip()
                 comments.append(comment_text)
 
-        formatted_path = f"{package_name}{format_path(self.source_path).split(package_name)[-1]}"
-        function_exe_cmd=f"{formatted_path}.{class_name}.{node.name}()" if class_name else f"{formatted_path}.{node.name}()"
+        function_exe_cmd=f"{self.formatted_path}.{class_name}.{node.name}()" if class_name else f"{self.formatted_path}.{node.name}()"
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        packages, imports = self.get_used_packages_and_imports(start_line, end_line, source, file_path)
+        imports = self.get_used_imports(start_line, end_line, source, file_path)
 
         return FunctionInfo(
+            id= str(uuid.uuid4()),
             name=node.name,
             module_path=file_path,
             args=args,
@@ -407,7 +412,7 @@ class BaseAnalyzer(ABC):
             is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
-            packages=packages,
+            packages=self.requirement_info,
             imports=imports,
             runtime="python"
         )
@@ -555,6 +560,7 @@ class BaseAnalyzer(ABC):
         for func_path, func_info in sorted(self.functions.items()):
             report.extend([
                 f"\n  {func_path}:",
+                f"    id: {func_info.id}",
                 f"    name: {func_info.name}",
                 f"    Module Path: {func_info.module_path}",
                 f"    Signature: {func_info.signature}",
