@@ -3,7 +3,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.core.config import Settings
+from app import settings
 from app.core.telemetry import setup_telemetry
 from app.routers import analyzer_router
 
@@ -17,8 +17,7 @@ async def lifespan(context):
     pass
 
 def create_app() -> FastAPI:
-    settings = Settings()
-    
+
     app = FastAPI(
         title="i2-bridge",
         version=settings.VERSION,

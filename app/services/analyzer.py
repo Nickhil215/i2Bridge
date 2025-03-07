@@ -8,7 +8,7 @@ import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 from app.core.exceptions import ApiException
-from app import logger
+from app import logger, settings
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 
@@ -32,7 +32,7 @@ def analyze_package(package_path: str, **kwargs) -> str:
 def upload_to_content_service(content, bearer_token):
     file_name = f"ttl_output_{uuid.uuid1().hex}.ttl"
 
-    url = "https://ig.aidtaas.com/mobius-content-service/v1.0/content/upload?filePath=python"
+    url = settings.CONTENT_SERVICE_URL
 
     # Headers including Bearer token
     headers = {
@@ -64,14 +64,14 @@ def upload_to_content_service(content, bearer_token):
 
 def import_ontology(cdn_url, bearer_token):
 
-    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
+    url = settings.ONTOLOGY_SERVICE_URL
     headers = {
         'Authorization': f'Bearer {bearer_token}',
         'Content-Type': 'application/json',
     }
 
     data = {
-        "ontologyId": "67c7f94236726044b0df97a8",
+        "ontologyId": settings.ONTOLOGY_ID,
         "universes": [
             "623ebf349279af04cdd709dc"
         ],
