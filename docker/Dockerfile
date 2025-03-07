@@ -17,12 +17,10 @@ WORKDIR /app
 COPY . /app
 
 # Create and activate a virtual environment
-# RUN python3 -m venv /opt/venv
-# ENV PATH="/opt/venv/bin:$PATH"
-
+RUN python3 -m venv /opt/venv
+ENV PATH="/opt/venv/bin:$PATH"
 
 # Install dependencies from requirements.txt
-
 RUN pip install --upgrade pip && \
     pip install -r requirements.txt && \
     pip install nltk && \
