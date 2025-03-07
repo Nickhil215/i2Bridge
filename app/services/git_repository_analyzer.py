@@ -1,5 +1,4 @@
 import os
-import re
 import shutil
 import tempfile
 from typing import Optional, List
@@ -12,32 +11,19 @@ from app.services.base_analyzer import BaseAnalyzer
 
 def parse_requirements(file_path: str, requirement_info: List[str]):
 
-    # Regular expression to match package with version
-    package_pattern = re.compile(r'([a-zA-Z0-9\-_]+)([<>=!~\.\d]+)?')
-
     with open(file_path, 'r') as f:
         for line in f:
             line = line.strip()
-            if not line or line.startswith("#"):  # Ignore empty lines and comments
+
+            # Skip lines starting with '-e' or containing '[', which are not valid package names
+            if line.startswith('-e') or '[' in line:
                 continue
 
-            # If the line contains '-e .' it is related to the editable installation with optional extras
-            if '-e .' in line:
-                # Handle the extras part
-                match = re.match(r'-e \.(\[[^\]]+\])?', line)
-                if match and match.group(1):
-                    # Add the package with extras
-                    requirement_info.append(f"your-package{match.group(1)}")  # Replace 'your-package' with the actual package name
+            # Ignore empty lines and comments
+            if not line or line.startswith("#"):
+                continue
 
-            # Otherwise, look for the package and version part
-            match = package_pattern.match(line)
-            if match:
-                package = match.group(1)
-                version = match.group(2) if match.group(2) else ''
-                if version:
-                    requirement_info.append(f"{package}{version}")
-                else:
-                    requirement_info.append(package)
+            requirement_info.append(line)
 
     return requirement_info
 

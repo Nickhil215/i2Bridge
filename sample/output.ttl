@@ -1295,7 +1295,7 @@ code:CodeComponent_utils_py_utils_py a code:CodeComponent ;
     code:name "utils.py" .
 
 code:Function_add_dict_to_cookiejar____src_requests_utils_py__add_dict_to_cookiejar a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1323,7 +1323,7 @@ code:Function_add_dict_to_cookiejar____src_requests_utils_py__add_dict_to_cookie
     code:name "add_dict_to_cookiejar" .
 
 code:Function_add_header____src_requests_cookies_py__add_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1336,7 +1336,7 @@ code:Function_add_header____src_requests_cookies_py__add_header a code:Function 
     code:name "add_header" .
 
 code:Function_add_headers____src_requests_adapters_py__add_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_urllib3_exceptions_import_urllib3_exceptions_ClosedPoolError,
         code:Function_import_os_path ;
@@ -1359,7 +1359,7 @@ code:Function_add_headers____src_requests_adapters_py__add_headers a code:Functi
     code:name "add_headers" .
 
 code:Function_add_unredirected_header____src_requests_cookies_py__add_unredirected_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1371,7 +1371,7 @@ code:Function_add_unredirected_header____src_requests_cookies_py__add_unredirect
     code:name "add_unredirected_header" .
 
 code:Function_address_in_network____src_requests_utils_py__address_in_network a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1401,7 +1401,7 @@ code:Function_address_in_network____src_requests_utils_py__address_in_network a 
     code:name "address_in_network" .
 
 code:Function_apparent_encoding____src_requests_models_py__apparent_encoding a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "If no character detection library is available, we'll fall back, to a standard Python utf-8 str." ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -1429,7 +1429,7 @@ code:Function_apparent_encoding____src_requests_models_py__apparent_encoding a c
     code:name "apparent_encoding" .
 
 code:Function_atomic_open____src_requests_utils_py__atomic_open a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1454,7 +1454,7 @@ code:Function_atomic_open____src_requests_utils_py__atomic_open a code:Function 
     code:name "atomic_open" .
 
 code:Function_build_connection_pool_key_attributes____src_requests_adapters_py__build_connection_pool_key_attributes a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
         code:Function_from_models_import_models_PreparedRequest,
@@ -1539,7 +1539,7 @@ code:Function_build_connection_pool_key_attributes____src_requests_adapters_py__
     code:name "build_connection_pool_key_attributes" .
 
 code:Function_build_digest_header____src_requests_auth_py__build_digest_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "lambdas assume digest modules are imported at the top level, noqa:E731, XXX not implemented yet, : path is request-uri defined in RFC 2616 which should not be empty, XXX handle auth-int., XXX should the partial digests be encoded too?" ;
     code:complexity "Complexity: 26" ;
     code:dependsOn code:Function_import_hashlib,
@@ -1558,7 +1558,7 @@ code:Function_build_digest_header____src_requests_auth_py__build_digest_header a
     code:name "build_digest_header" .
 
 code:Function_build_response____src_requests_adapters_py__build_response a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Fallback to None if there's no status_code, for whatever reason., Make headers case-insensitive., Set encoding., Add new cookies from the server., Give the Response some context." ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_cookies_import_cookies_extract_cookies_to_jar,
@@ -1600,7 +1600,7 @@ code:Function_build_response____src_requests_adapters_py__build_response a code:
     code:name "build_response" .
 
 code:Function_cert_verify____src_requests_adapters_py__cert_verify a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Only load the CA certificates if 'verify' is a string indicating the CA bundle to use., Otherwise, if verify is a boolean, we don't load anything since, the connection will be using a context with the default certificates already loaded,, and this avoids a call to the slow load_verify_locations(), `verify` must be a str with a path then" ;
     code:complexity "Complexity: 15" ;
     code:dependsOn code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -1645,7 +1645,7 @@ code:Function_cert_verify____src_requests_adapters_py__cert_verify a code:Functi
     code:name "cert_verify" .
 
 code:Function_check_header_validity____src_requests_utils_py__check_header_validity a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -1665,7 +1665,7 @@ code:Function_check_header_validity____src_requests_utils_py__check_header_valid
     code:name "check_header_validity" .
 
 code:Function_close____src_requests_adapters_py__close a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_urllib3_exceptions_import_urllib3_exceptions_ClosedPoolError,
         code:Function_import_os_path ;
@@ -1681,7 +1681,7 @@ code:Function_close____src_requests_adapters_py__close a code:Function ;
     code:name "close" .
 
 code:Function_close____src_requests_models_py__close a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
         code:Function_from_exceptions_import_exceptions_ConnectionError,
@@ -1711,7 +1711,7 @@ code:Function_close____src_requests_models_py__close a code:Function ;
     code:name "close" .
 
 code:Function_close____src_requests_sessions_py__close a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_adapters_import_adapters_HTTPAdapter,
         code:Function_import_os ;
@@ -1724,7 +1724,7 @@ code:Function_close____src_requests_sessions_py__close a code:Function ;
     code:name "close" .
 
 code:Function_content____src_requests_models_py__content a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Read the contents., don't need to release the connection; that's been handled by urllib3, since we exhausted the data." ;
     code:complexity "Complexity: 8" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -1755,7 +1755,7 @@ code:Function_content____src_requests_models_py__content a code:Function ;
     code:name "content" .
 
 code:Function_cookiejar_from_dict____src_requests_cookies_py__cookiejar_from_dict a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1774,7 +1774,7 @@ code:Function_cookiejar_from_dict____src_requests_cookies_py__cookiejar_from_dic
     code:name "cookiejar_from_dict" .
 
 code:Function_copy____src_requests_cookies_py__copy a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_import_copy ;
     code:description "Description: " ;
@@ -1786,7 +1786,7 @@ code:Function_copy____src_requests_cookies_py__copy a code:Function ;
     code:name "copy" .
 
 code:Function_copy____src_requests_models_py__copy a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_cookies_import_cookies__copy_cookie_jar,
         code:Function_from_cookies_import_cookies_cookiejar_from_dict,
@@ -1816,7 +1816,7 @@ code:Function_copy____src_requests_models_py__copy a code:Function ;
     code:name "copy" .
 
 code:Function_copy____src_requests_structures_py__copy a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1826,7 +1826,7 @@ code:Function_copy____src_requests_structures_py__copy a code:Function ;
     code:name "copy" .
 
 code:Function_create_cookie____src_requests_cookies_py__create_cookie a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_import_time ;
     code:description "Description: " ;
@@ -1842,7 +1842,7 @@ code:Function_create_cookie____src_requests_cookies_py__create_cookie a code:Fun
     code:name "create_cookie" .
 
 code:Function_default_headers____src_requests_utils_py__default_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1864,7 +1864,7 @@ code:Function_default_headers____src_requests_utils_py__default_headers a code:F
     code:name "default_headers" .
 
 code:Function_default_hooks____src_requests_hooks_py__default_hooks a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1873,7 +1873,7 @@ code:Function_default_hooks____src_requests_hooks_py__default_hooks a code:Funct
     code:name "default_hooks" .
 
 code:Function_default_user_agent____src_requests_utils_py__default_user_agent a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1897,7 +1897,7 @@ code:Function_default_user_agent____src_requests_utils_py__default_user_agent a 
     code:name "default_user_agent" .
 
 code:Function_delete____src_requests_api_py__delete a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1913,7 +1913,7 @@ code:Function_delete____src_requests_api_py__delete a code:Function ;
     code:name "delete" .
 
 code:Function_delete____src_requests_sessions_py__delete a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -1929,7 +1929,7 @@ code:Function_delete____src_requests_sessions_py__delete a code:Function ;
     code:name "delete" .
 
 code:Function_deregister_hook____src_requests_models_py__deregister_hook a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
         code:Function_from_exceptions_import_exceptions_ConnectionError,
@@ -1960,7 +1960,7 @@ code:Function_deregister_hook____src_requests_models_py__deregister_hook a code:
     code:name "deregister_hook" .
 
 code:Function_dict_from_cookiejar____src_requests_utils_py__dict_from_cookiejar a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -1986,7 +1986,7 @@ code:Function_dict_from_cookiejar____src_requests_utils_py__dict_from_cookiejar 
     code:name "dict_from_cookiejar" .
 
 code:Function_dict_to_sequence____src_requests_utils_py__dict_to_sequence a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -2008,7 +2008,7 @@ code:Function_dict_to_sequence____src_requests_utils_py__dict_to_sequence a code
     code:name "dict_to_sequence" .
 
 code:Function_dispatch_hook____src_requests_hooks_py__dispatch_hook a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2021,7 +2021,7 @@ code:Function_dispatch_hook____src_requests_hooks_py__dispatch_hook a code:Funct
     code:name "dispatch_hook" .
 
 code:Function_dotted_netmask____src_requests_utils_py__dotted_netmask a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -2049,7 +2049,7 @@ code:Function_dotted_netmask____src_requests_utils_py__dotted_netmask a code:Fun
     code:name "dotted_netmask" .
 
 code:Function_extract_cookies_to_jar____src_requests_cookies_py__extract_cookies_to_jar a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "the _original_response field is the wrapped httplib.HTTPResponse object,, pull out the HTTPMessage with the headers and put it in the mock:" ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
@@ -2067,7 +2067,7 @@ code:Function_extract_cookies_to_jar____src_requests_cookies_py__extract_cookies
     code:name "extract_cookies_to_jar" .
 
 code:Function_extract_zipped_paths____src_requests_utils_py__extract_zipped_paths a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "this is already a valid path, no need to do anything further, find the first valid part of the provided path and treat that as a zip archive, assume the rest of the path is the name of a member in the archive, If we don't check for an empty prefix after the split (in other words, archive remains unchanged after the split),, we _can_ end up in an infinite loop on a rare corner case affecting a small number of users, we have a valid zip archive and a valid member of that archive, use read + write to avoid the creating nested folders, we only want the file, avoids mkdir racing condition" ;
     code:complexity "Complexity: 10" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2095,7 +2095,7 @@ code:Function_extract_zipped_paths____src_requests_utils_py__extract_zipped_path
     code:name "extract_zipped_paths" .
 
 code:Function_from_key_val_list____src_requests_utils_py__from_key_val_list a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -2133,7 +2133,7 @@ code:Function_from_key_val_list____src_requests_utils_py__from_key_val_list a co
     code:name "from_key_val_list" .
 
 code:Function_get____src_requests_api_py__get a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2152,7 +2152,7 @@ code:Function_get____src_requests_api_py__get a code:Function ;
     code:name "get" .
 
 code:Function_get____src_requests_cookies_py__get a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2171,7 +2171,7 @@ code:Function_get____src_requests_cookies_py__get a code:Function ;
     code:name "get" .
 
 code:Function_get____src_requests_sessions_py__get a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2187,7 +2187,7 @@ code:Function_get____src_requests_sessions_py__get a code:Function ;
     code:name "get" .
 
 code:Function_get____src_requests_structures_py__get a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2199,7 +2199,7 @@ code:Function_get____src_requests_structures_py__get a code:Function ;
     code:name "get" .
 
 code:Function_get_adapter____src_requests_sessions_py__get_adapter a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Nothing matches :-/" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_adapters_import_adapters_HTTPAdapter ;
@@ -2215,7 +2215,7 @@ code:Function_get_adapter____src_requests_sessions_py__get_adapter a code:Functi
     code:name "get_adapter" .
 
 code:Function_get_auth_from_url____src_requests_utils_py__get_auth_from_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -2240,7 +2240,7 @@ code:Function_get_auth_from_url____src_requests_utils_py__get_auth_from_url a co
     code:name "get_auth_from_url" .
 
 code:Function_get_connection____src_requests_adapters_py__get_connection a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Only scheme should be lower case" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -2284,7 +2284,7 @@ code:Function_get_connection____src_requests_adapters_py__get_connection a code:
     code:name "get_connection" .
 
 code:Function_get_connection_with_tls_context____src_requests_adapters_py__get_connection_with_tls_context a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Only scheme should be lower case" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -2340,7 +2340,7 @@ code:Function_get_connection_with_tls_context____src_requests_adapters_py__get_c
     code:name "get_connection_with_tls_context" .
 
 code:Function_get_cookie_header____src_requests_cookies_py__get_cookie_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2354,7 +2354,7 @@ code:Function_get_cookie_header____src_requests_cookies_py__get_cookie_header a 
     code:name "get_cookie_header" .
 
 code:Function_get_dict____src_requests_cookies_py__get_dict a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 9" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2371,7 +2371,7 @@ code:Function_get_dict____src_requests_cookies_py__get_dict a code:Function ;
     code:name "get_dict" .
 
 code:Function_get_encoding_from_headers____src_requests_utils_py__get_encoding_from_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Assume UTF-8 based on RFC 4627: https://www.ietf.org/rfc/rfc4627.txt since the charset was unset" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2397,7 +2397,7 @@ code:Function_get_encoding_from_headers____src_requests_utils_py__get_encoding_f
     code:name "get_encoding_from_headers" .
 
 code:Function_get_encodings_from_content____src_requests_utils_py__get_encodings_from_content a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "2266. (This\"" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2423,7 +2423,7 @@ code:Function_get_encodings_from_content____src_requests_utils_py__get_encodings
     code:name "get_encodings_from_content" .
 
 code:Function_get_environ_proxies____src_requests_utils_py__get_environ_proxies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -2443,7 +2443,7 @@ code:Function_get_environ_proxies____src_requests_utils_py__get_environ_proxies 
     code:name "get_environ_proxies" .
 
 code:Function_get_full_url____src_requests_cookies_py__get_full_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Only return the response's URL if the user hadn't set the Host, header, If they did set it, retrieve it and reconstruct the expected domain, Reconstruct the URL as we expect it" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
@@ -2454,7 +2454,7 @@ code:Function_get_full_url____src_requests_cookies_py__get_full_url a code:Funct
     code:name "get_full_url" .
 
 code:Function_get_header____src_requests_cookies_py__get_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2466,7 +2466,7 @@ code:Function_get_header____src_requests_cookies_py__get_header a code:Function 
     code:name "get_header" .
 
 code:Function_get_host____src_requests_cookies_py__get_host a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2476,7 +2476,7 @@ code:Function_get_host____src_requests_cookies_py__get_host a code:Function ;
     code:name "get_host" .
 
 code:Function_get_netrc_auth____src_requests_utils_py__get_netrc_auth a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "os.path.expanduser can fail when $HOME is undefined and, getpwuid fails. See https://bugs.python.org/issue20164 &, https://github.com/psf/requests/issues/1846, Abort early if there isn't one., Strip port numbers from netloc. This weird `if...encode`` dance is, used for Python 3.2, which doesn't support unicode literals., Return with login / password, If there was a parsing error or a permissions issue reading the file,, we'll just skip netrc auth unless explicitly asked to raise errors., App Engine hackiness." ;
     code:complexity "Complexity: 11" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2503,7 +2503,7 @@ code:Function_get_netrc_auth____src_requests_utils_py__get_netrc_auth a code:Fun
     code:name "get_netrc_auth" .
 
 code:Function_get_new_headers____src_requests_cookies_py__get_new_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2513,7 +2513,7 @@ code:Function_get_new_headers____src_requests_cookies_py__get_new_headers a code
     code:name "get_new_headers" .
 
 code:Function_get_origin_req_host____src_requests_cookies_py__get_origin_req_host a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2523,7 +2523,7 @@ code:Function_get_origin_req_host____src_requests_cookies_py__get_origin_req_hos
     code:name "get_origin_req_host" .
 
 code:Function_get_policy____src_requests_cookies_py__get_policy a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2534,7 +2534,7 @@ code:Function_get_policy____src_requests_cookies_py__get_policy a code:Function 
     code:name "get_policy" .
 
 code:Function_get_redirect_target____src_requests_sessions_py__get_redirect_target a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Due to the nature of how requests processes redirects this method will, be called at least once upon the original response and at least twice, on each subsequent redirect response (if any)., If a custom mixin is used to handle this logic, it may be advantageous, to cache the redirect location onto the response object as a private, attribute., Currently the underlying http module on py3 decode headers, in latin1, but empirical evidence suggests that latin1 is very, rarely used with non-ASCII characters in HTTP headers., It is more likely to get UTF8 header rather than latin1., This causes incorrect handling of UTF8 encoded location headers., To solve this, we re-encode the location in latin1." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
@@ -2547,7 +2547,7 @@ code:Function_get_redirect_target____src_requests_sessions_py__get_redirect_targ
     code:name "get_redirect_target" .
 
 code:Function_get_type____src_requests_cookies_py__get_type a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2557,7 +2557,7 @@ code:Function_get_type____src_requests_cookies_py__get_type a code:Function ;
     code:name "get_type" .
 
 code:Function_get_unicode_from_response____src_requests_utils_py__get_unicode_from_response a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "2266. (This\", Try charset from content-type, Fall back:" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2590,7 +2590,7 @@ code:Function_get_unicode_from_response____src_requests_utils_py__get_unicode_fr
     code:name "get_unicode_from_response" .
 
 code:Function_getheaders____src_requests_cookies_py__getheaders a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2601,7 +2601,7 @@ code:Function_getheaders____src_requests_cookies_py__getheaders a code:Function 
     code:name "getheaders" .
 
 code:Function_guess_filename____src_requests_utils_py__guess_filename a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -2619,7 +2619,7 @@ code:Function_guess_filename____src_requests_utils_py__guess_filename a code:Fun
     code:name "guess_filename" .
 
 code:Function_guess_json_utf____src_requests_utils_py__guess_json_utf a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "JSON always starts with two ASCII characters, so detection is as, easy as counting the nulls and from their location and count, determine the encoding. Also detect a BOM, if present., BOM included, BOM included, MS style (discouraged), BOM included, 1st and 3rd are null, 2nd and 4th are null, Did not detect 2 valid UTF-16 ascii-range characters, Did not detect a valid UTF-32 ascii-range character" ;
     code:complexity "Complexity: 11" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -2643,7 +2643,7 @@ code:Function_guess_json_utf____src_requests_utils_py__guess_json_utf a code:Fun
     code:name "guess_json_utf" .
 
 code:Function_handle_401____src_requests_auth_py__handle_401 a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "If response is not 4xx, do not auth, See https://github.com/psf/requests/issues/3772, Rewind the file position indicator of the body to where, it was to resend the request., Consume content and release the original connection, to allow our new request to reuse the same one." ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_from_cookies_import_cookies_extract_cookies_to_jar,
@@ -2662,7 +2662,7 @@ code:Function_handle_401____src_requests_auth_py__handle_401 a code:Function ;
     code:name "handle_401" .
 
 code:Function_handle_redirect____src_requests_auth_py__handle_redirect a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_import_re,
         code:Function_import_threading ;
@@ -2676,7 +2676,7 @@ code:Function_handle_redirect____src_requests_auth_py__handle_redirect a code:Fu
     code:name "handle_redirect" .
 
 code:Function_has_header____src_requests_cookies_py__has_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2687,7 +2687,7 @@ code:Function_has_header____src_requests_cookies_py__has_header a code:Function 
     code:name "has_header" .
 
 code:Function_head____src_requests_api_py__head a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2705,7 +2705,7 @@ code:Function_head____src_requests_api_py__head a code:Function ;
     code:name "head" .
 
 code:Function_head____src_requests_sessions_py__head a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2721,7 +2721,7 @@ code:Function_head____src_requests_sessions_py__head a code:Function ;
     code:name "head" .
 
 code:Function_host____src_requests_cookies_py__host a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2731,7 +2731,7 @@ code:Function_host____src_requests_cookies_py__host a code:Function ;
     code:name "host" .
 
 code:Function_httpbin_conftest_py__httpbin a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_http_server_import_http_server_HTTPServer,
         code:Function_from_http_server_import_http_server_SimpleHTTPRequestHandler,
@@ -2744,7 +2744,7 @@ code:Function_httpbin_conftest_py__httpbin a code:Function ;
     code:name "httpbin" .
 
 code:Function_httpbin_secure_conftest_py__httpbin_secure a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_http_server_import_http_server_HTTPServer,
         code:Function_from_http_server_import_http_server_SimpleHTTPRequestHandler,
@@ -2757,7 +2757,7 @@ code:Function_httpbin_secure_conftest_py__httpbin_secure a code:Function ;
     code:name "httpbin_secure" .
 
 code:Function_info____src_requests_cookies_py__info a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2767,7 +2767,7 @@ code:Function_info____src_requests_cookies_py__info a code:Function ;
     code:name "info" .
 
 code:Function_info____src_requests_help_py__info a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from_urllib3_contrib_import_urllib3_contrib_pyopenssl,
         code:Function_import_OpenSSL,
@@ -2787,7 +2787,7 @@ code:Function_info____src_requests_help_py__info a code:Function ;
     code:name "info" .
 
 code:Function_init_per_thread_state____src_requests_auth_py__init_per_thread_state a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Ensure state is initialized just once per-thread" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_import_os,
@@ -2801,7 +2801,7 @@ code:Function_init_per_thread_state____src_requests_auth_py__init_per_thread_sta
     code:name "init_per_thread_state" .
 
 code:Function_init_poolmanager____src_requests_adapters_py__init_poolmanager a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "save these values for pickling" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -2845,7 +2845,7 @@ code:Function_init_poolmanager____src_requests_adapters_py__init_poolmanager a c
     code:name "init_poolmanager" .
 
 code:Function_is_ipv4_address____src_requests_utils_py__is_ipv4_address a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -2863,7 +2863,7 @@ code:Function_is_ipv4_address____src_requests_utils_py__is_ipv4_address a code:F
     code:name "is_ipv4_address" .
 
 code:Function_is_permanent_redirect____src_requests_models_py__is_permanent_redirect a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
         code:Function_from_exceptions_import_exceptions_ConnectionError,
@@ -2890,7 +2890,7 @@ code:Function_is_permanent_redirect____src_requests_models_py__is_permanent_redi
     code:name "is_permanent_redirect" .
 
 code:Function_is_redirect____src_requests_models_py__is_redirect a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
         code:Function_from_exceptions_import_exceptions_ConnectionError,
@@ -2918,7 +2918,7 @@ code:Function_is_redirect____src_requests_models_py__is_redirect a code:Function
     code:name "is_redirect" .
 
 code:Function_is_unverifiable____src_requests_cookies_py__is_unverifiable a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2928,7 +2928,7 @@ code:Function_is_unverifiable____src_requests_cookies_py__is_unverifiable a code
     code:name "is_unverifiable" .
 
 code:Function_is_valid_cidr____src_requests_utils_py__is_valid_cidr a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -2948,7 +2948,7 @@ code:Function_is_valid_cidr____src_requests_utils_py__is_valid_cidr a code:Funct
     code:name "is_valid_cidr" .
 
 code:Function_items____src_requests_cookies_py__items a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -2963,7 +2963,7 @@ code:Function_items____src_requests_cookies_py__items a code:Function ;
     code:name "items" .
 
 code:Function_iter_content____src_requests_models_py__iter_content a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Special case for urllib3., Standard file-like object., simulate reading small chunks of the content" ;
     code:complexity "Complexity: 15" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -3009,7 +3009,7 @@ code:Function_iter_content____src_requests_models_py__iter_content a code:Functi
     code:name "iter_content" .
 
 code:Function_iter_lines____src_requests_models_py__iter_lines a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3027,7 +3027,7 @@ code:Function_iter_lines____src_requests_models_py__iter_lines a code:Function ;
     code:name "iter_lines" .
 
 code:Function_iter_slices____src_requests_utils_py__iter_slices a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_import_os ;
     code:description "Description: " ;
@@ -3040,7 +3040,7 @@ code:Function_iter_slices____src_requests_utils_py__iter_slices a code:Function 
     code:name "iter_slices" .
 
 code:Function_iteritems____src_requests_cookies_py__iteritems a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3054,7 +3054,7 @@ code:Function_iteritems____src_requests_cookies_py__iteritems a code:Function ;
     code:name "iteritems" .
 
 code:Function_iterkeys____src_requests_cookies_py__iterkeys a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3068,7 +3068,7 @@ code:Function_iterkeys____src_requests_cookies_py__iterkeys a code:Function ;
     code:name "iterkeys" .
 
 code:Function_itervalues____src_requests_cookies_py__itervalues a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3082,7 +3082,7 @@ code:Function_itervalues____src_requests_cookies_py__itervalues a code:Function 
     code:name "itervalues" .
 
 code:Function_json____src_requests_models_py__json a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "No encoding set. JSON RFC 4627 section 3 states we should expect, UTF-8, -16 or -32. Detect which one to use; If the detection or, decoding fails, fall back to `self.text` (using charset_normalizer to make, a best guess)., Wrong UTF codec detected; usually because it's not UTF-8, but some other 8-bit codec.  This is an RFC violation,, and the server didn't bother to tell us what codec *was*, used., Catch JSON-related errors and raise as requests.JSONDecodeError, This aliases json.JSONDecodeError and simplejson.JSONDecodeError" ;
     code:complexity "Complexity: 9" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -3116,7 +3116,7 @@ code:Function_json____src_requests_models_py__json a code:Function ;
     code:name "json" .
 
 code:Function_keys____src_requests_cookies_py__keys a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3130,7 +3130,7 @@ code:Function_keys____src_requests_cookies_py__keys a code:Function ;
     code:name "keys" .
 
 code:Function_links____src_requests_models_py__links a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3141,7 +3141,7 @@ code:Function_links____src_requests_models_py__links a code:Function ;
     code:name "links" .
 
 code:Function_list_domains____src_requests_cookies_py__list_domains a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3152,7 +3152,7 @@ code:Function_list_domains____src_requests_cookies_py__list_domains a code:Funct
     code:name "list_domains" .
 
 code:Function_list_paths____src_requests_cookies_py__list_paths a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3163,7 +3163,7 @@ code:Function_list_paths____src_requests_cookies_py__list_paths a code:Function 
     code:name "list_paths" .
 
 code:Function_lower_items____src_requests_structures_py__lower_items a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3174,7 +3174,7 @@ code:Function_lower_items____src_requests_structures_py__lower_items a code:Func
     code:name "lower_items" .
 
 code:Function_main____src_requests_help_py__main a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_import_json ;
     code:description "Description: " ;
@@ -3185,7 +3185,7 @@ code:Function_main____src_requests_help_py__main a code:Function ;
     code:name "main" .
 
 code:Function_merge_cookies____src_requests_cookies_py__merge_cookies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3201,7 +3201,7 @@ code:Function_merge_cookies____src_requests_cookies_py__merge_cookies a code:Fun
     code:name "merge_cookies" .
 
 code:Function_merge_environment_settings____src_requests_sessions_py__merge_environment_settings a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Gather clues from the surrounding environment., Set environment's proxies., Look for requests environment configuration, and be compatible with cURL., Merge all the kwargs." ;
     code:complexity "Complexity: 9" ;
     code:dependsOn code:Function_from_compat_import_compat_Mapping,
@@ -3225,7 +3225,7 @@ code:Function_merge_environment_settings____src_requests_sessions_py__merge_envi
     code:name "merge_environment_settings" .
 
 code:Function_merge_hooks____src_requests_sessions_py__merge_hooks a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_hooks_import_hooks_default_hooks,
         code:Function_from_hooks_import_hooks_dispatch_hook ;
@@ -3243,7 +3243,7 @@ code:Function_merge_hooks____src_requests_sessions_py__merge_hooks a code:Functi
     code:name "merge_hooks" .
 
 code:Function_merge_setting____src_requests_sessions_py__merge_setting a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Bypass if not a dictionary (e.g. verify), Remove keys that are set to None. Extract keys first to avoid altering, the dictionary during iteration." ;
     code:complexity "Complexity: 7" ;
     code:description "Description: " ;
@@ -3259,7 +3259,7 @@ code:Function_merge_setting____src_requests_sessions_py__merge_setting a code:Fu
     code:name "merge_setting" .
 
 code:Function_morsel_to_cookie____src_requests_cookies_py__morsel_to_cookie a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_import_calendar,
         code:Function_import_time ;
@@ -3272,7 +3272,7 @@ code:Function_morsel_to_cookie____src_requests_cookies_py__morsel_to_cookie a co
     code:name "morsel_to_cookie" .
 
 code:Function_mount____src_requests_sessions_py__mount a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_adapters_import_adapters_HTTPAdapter ;
     code:description "Description: " ;
@@ -3288,7 +3288,7 @@ code:Function_mount____src_requests_sessions_py__mount a code:Function ;
     code:name "mount" .
 
 code:Function_multiple_domains____src_requests_cookies_py__multiple_domains a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "there is only one domain in jar" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
@@ -3303,7 +3303,7 @@ code:Function_multiple_domains____src_requests_cookies_py__multiple_domains a co
     code:name "multiple_domains" .
 
 code:Function_next____src_requests_models_py__next a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3314,7 +3314,7 @@ code:Function_next____src_requests_models_py__next a code:Function ;
     code:name "next" .
 
 code:Function_nosan_server_conftest_py__nosan_server a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "delay importing until the fixture in order to make it possible, to deselect the test via command-line when trustme is not available, only commonName, no subjectAltName" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_import_pytest,
@@ -3329,7 +3329,7 @@ code:Function_nosan_server_conftest_py__nosan_server a code:Function ;
     code:name "nosan_server" .
 
 code:Function_ok____src_requests_models_py__ok a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3345,7 +3345,7 @@ code:Function_ok____src_requests_models_py__ok a code:Function ;
     code:name "ok" .
 
 code:Function_options____src_requests_api_py__options a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3361,7 +3361,7 @@ code:Function_options____src_requests_api_py__options a code:Function ;
     code:name "options" .
 
 code:Function_options____src_requests_sessions_py__options a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3377,7 +3377,7 @@ code:Function_options____src_requests_sessions_py__options a code:Function ;
     code:name "options" .
 
 code:Function_origin_req_host____src_requests_cookies_py__origin_req_host a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3387,7 +3387,7 @@ code:Function_origin_req_host____src_requests_cookies_py__origin_req_host a code
     code:name "origin_req_host" .
 
 code:Function_override_environ_utils_py__override_environ a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_import_contextlib,
         code:Function_import_os ;
@@ -3398,7 +3398,7 @@ code:Function_override_environ_utils_py__override_environ a code:Function ;
     code:name "override_environ" .
 
 code:Function_parse_dict_header____src_requests_utils_py__parse_dict_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -3439,7 +3439,7 @@ code:Function_parse_dict_header____src_requests_utils_py__parse_dict_header a co
     code:name "parse_dict_header" .
 
 code:Function_parse_header_links____src_requests_utils_py__parse_header_links a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -3460,7 +3460,7 @@ code:Function_parse_header_links____src_requests_utils_py__parse_header_links a 
     code:name "parse_header_links" .
 
 code:Function_parse_list_header____src_requests_utils_py__parse_list_header a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -3502,7 +3502,7 @@ code:Function_parse_list_header____src_requests_utils_py__parse_list_header a co
     code:name "parse_list_header" .
 
 code:Function_patch____src_requests_api_py__patch a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3522,7 +3522,7 @@ code:Function_patch____src_requests_api_py__patch a code:Function ;
     code:name "patch" .
 
 code:Function_patch____src_requests_sessions_py__patch a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3541,7 +3541,7 @@ code:Function_patch____src_requests_sessions_py__patch a code:Function ;
     code:name "patch" .
 
 code:Function_path_url____src_requests_models_py__path_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3552,7 +3552,7 @@ code:Function_path_url____src_requests_models_py__path_url a code:Function ;
     code:name "path_url" .
 
 code:Function_post____src_requests_api_py__post a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3573,7 +3573,7 @@ code:Function_post____src_requests_api_py__post a code:Function ;
     code:name "post" .
 
 code:Function_post____src_requests_sessions_py__post a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_import_os ;
     code:description "Description: " ;
@@ -3595,7 +3595,7 @@ code:Function_post____src_requests_sessions_py__post a code:Function ;
     code:name "post" .
 
 code:Function_prepare____src_requests_models_py__prepare a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Note that prepare_auth must be last to enable authentication schemes, such as OAuth to work on a fully prepared request., This MUST go after prepare_auth. Authenticators could add a hook" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_auth_import_auth_HTTPBasicAuth,
@@ -3639,7 +3639,7 @@ code:Function_prepare____src_requests_models_py__prepare a code:Function ;
     code:name "prepare" .
 
 code:Function_prepare_auth____src_requests_models_py__prepare_auth a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "If no Auth is explicitly provided, extract it from the URL first., special-case basic HTTP auth, Allow auth to make its changes., Update self to reflect the auth changes., Recompute Content-Length" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_from_auth_import_auth_HTTPBasicAuth,
@@ -3655,7 +3655,7 @@ code:Function_prepare_auth____src_requests_models_py__prepare_auth a code:Functi
     code:name "prepare_auth" .
 
 code:Function_prepare_body____src_requests_models_py__prepare_body a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Check if file, fo, generator, iterator., If not, run through normal process., Nottin' on you., urllib3 requires a bytes-like body. Python 2's json.dumps, provides this natively, but Python 3 gives a Unicode string., Record the current file position before reading., This will allow us to rewind a file in the event, of a redirect., This differentiates from None, allowing us to catch, a failed `tell()` later when trying to rewind the body, Multi-part file uploads., Add content-type if it wasn't explicitly provided." ;
     code:complexity "Complexity: 20" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -3689,7 +3689,7 @@ code:Function_prepare_body____src_requests_models_py__prepare_body a code:Functi
     code:name "prepare_body" .
 
 code:Function_prepare_content_length____src_requests_models_py__prepare_content_length a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "If length exists, set it. Otherwise, we fallback, to Transfer-Encoding: chunked., Set Content-Length to 0 for methods that can have a body, but don't provide one. (i.e. not GET or HEAD)" ;
     code:complexity "Complexity: 6" ;
     code:description "Description: " ;
@@ -3702,7 +3702,7 @@ code:Function_prepare_content_length____src_requests_models_py__prepare_content_
     code:name "prepare_content_length" .
 
 code:Function_prepare_cookies____src_requests_models_py__prepare_cookies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_cookies_import_cookies__copy_cookie_jar,
         code:Function_from_cookies_import_cookies_cookiejar_from_dict,
@@ -3741,7 +3741,7 @@ code:Function_prepare_cookies____src_requests_models_py__prepare_cookies a code:
     code:name "prepare_cookies" .
 
 code:Function_prepare_headers____src_requests_models_py__prepare_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Raise exception on invalid header value." ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_exceptions_import_exceptions_ChunkedEncodingError,
@@ -3770,7 +3770,7 @@ code:Function_prepare_headers____src_requests_models_py__prepare_headers a code:
     code:name "prepare_headers" .
 
 code:Function_prepare_hooks____src_requests_models_py__prepare_hooks a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "hooks can be passed as None to the prepare method and to this, method. To prevent iterating over None, simply use an empty list, if hooks is False-y" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from_hooks_import_hooks_default_hooks ;
@@ -3784,7 +3784,7 @@ code:Function_prepare_hooks____src_requests_models_py__prepare_hooks a code:Func
     code:name "prepare_hooks" .
 
 code:Function_prepare_method____src_requests_models_py__prepare_method a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -3796,7 +3796,7 @@ code:Function_prepare_method____src_requests_models_py__prepare_method a code:Fu
     code:name "prepare_method" .
 
 code:Function_prepare_request____src_requests_sessions_py__prepare_request a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Bootstrap CookieJar., Merge with session cookies, Set environment's basic authentication if not explicitly set." ;
     code:complexity "Complexity: 8" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -3826,7 +3826,7 @@ code:Function_prepare_request____src_requests_sessions_py__prepare_request a cod
     code:name "prepare_request" .
 
 code:Function_prepare_url____src_requests_models_py__prepare_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments ": Accept objects that have string representations., : We're unable to blindly call unicode/str functions, : as this will include the bytestring indicator (b''), : on python 3.x., : https://github.com/psf/requests/pull/2238, Remove leading whitespaces from url, Don't do any URL preparation for non-HTTP schemes like `mailto`,, `data` etc to work around exceptions from `url_parse`, which, handles RFC 3986 only., Support for unicode domain names and paths., In general, we want to try IDNA encoding the hostname if the string contains, non-ASCII characters. This allows users to automatically get the correct IDNA, behaviour. For strings containing only ASCII characters, we need to also verify, it doesn't start with a wildcard (*), before allowing the unencoded hostname., Carefully reconstruct the network location, Bare domains aren't valid URLs." ;
     code:complexity "Complexity: 19" ;
     code:dependsOn code:Function_from_auth_import_auth_HTTPBasicAuth,
@@ -3860,7 +3860,7 @@ code:Function_prepare_url____src_requests_models_py__prepare_url a code:Function
     code:name "prepare_url" .
 
 code:Function_prepare_url_conftest_py__prepare_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Issue #1483: Make sure the URL always has a trailing slash" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_http_server_import_http_server_HTTPServer,
@@ -3873,7 +3873,7 @@ code:Function_prepare_url_conftest_py__prepare_url a code:Function ;
     code:name "prepare_url" .
 
 code:Function_prepend_scheme_if_needed____src_requests_utils_py__prepend_scheme_if_needed a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "A defect in urlparse determines that there isn't a netloc present in some, urls. We previously assumed parsing was overly cautious, and swapped the, netloc and path. Due to a lack of tests on the original defect, this is, maintained with parse_url for backwards compatibility., parse_url doesn't provide the netloc with auth, so we'll add it ourselves." ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -3916,7 +3916,7 @@ code:Function_prepend_scheme_if_needed____src_requests_utils_py__prepend_scheme_
     code:name "prepend_scheme_if_needed" .
 
 code:Function_proxy_headers____src_requests_adapters_py__proxy_headers a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
         code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -3961,7 +3961,7 @@ code:Function_proxy_headers____src_requests_adapters_py__proxy_headers a code:Fu
     code:name "proxy_headers" .
 
 code:Function_proxy_manager_for____src_requests_adapters_py__proxy_manager_for a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
         code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -4005,7 +4005,7 @@ code:Function_proxy_manager_for____src_requests_adapters_py__proxy_manager_for a
     code:name "proxy_manager_for" .
 
 code:Function_put____src_requests_api_py__put a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -4025,7 +4025,7 @@ code:Function_put____src_requests_api_py__put a code:Function ;
     code:name "put" .
 
 code:Function_put____src_requests_sessions_py__put a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -4044,7 +4044,7 @@ code:Function_put____src_requests_sessions_py__put a code:Function ;
     code:name "put" .
 
 code:Function_raise_for_status____src_requests_models_py__raise_for_status a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "We attempt to decode utf-8 first because some servers, choose to localize their reason strings. If the string, isn't utf-8, we fall back to iso-8859-1 for all other, encodings. (See PR #3538)" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_import_encodings_idna ;
@@ -4057,7 +4057,7 @@ code:Function_raise_for_status____src_requests_models_py__raise_for_status a cod
     code:name "raise_for_status" .
 
 code:Function_rebuild_auth____src_requests_sessions_py__rebuild_auth a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "If we get redirected to a new host, we should strip out any, authentication headers., .netrc might have more auth for us on our new host." ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4077,7 +4077,7 @@ code:Function_rebuild_auth____src_requests_sessions_py__rebuild_auth a code:Func
     code:name "rebuild_auth" .
 
 code:Function_rebuild_method____src_requests_sessions_py__rebuild_method a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "https://tools.ietf.org/html/rfc7231#section-6.4.4, Do what the browsers do, despite standards..., First, turn 302s into GETs., Second, if a POST is responded to with a 301, turn it into a GET., This bizarre behaviour is explained in Issue 1704." ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
@@ -4092,7 +4092,7 @@ code:Function_rebuild_method____src_requests_sessions_py__rebuild_method a code:
     code:name "rebuild_method" .
 
 code:Function_rebuild_proxies____src_requests_sessions_py__rebuild_proxies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "urllib3 handles proxy authorization for us in the standard adapter., Avoid appending this to TLS tunneled requests where it may be leaked." ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4118,7 +4118,7 @@ code:Function_rebuild_proxies____src_requests_sessions_py__rebuild_proxies a cod
     code:name "rebuild_proxies" .
 
 code:Function_register_hook____src_requests_models_py__register_hook a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from_hooks_import_hooks_default_hooks ;
     code:description "Description: " ;
@@ -4132,7 +4132,7 @@ code:Function_register_hook____src_requests_models_py__register_hook a code:Func
     code:name "register_hook" .
 
 code:Function_remove_cookie_by_name____src_requests_cookies_py__remove_cookie_by_name a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 10" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -4148,7 +4148,7 @@ code:Function_remove_cookie_by_name____src_requests_cookies_py__remove_cookie_by
     code:name "remove_cookie_by_name" .
 
 code:Function_request____src_requests_api_py__request a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "By using the 'with' statement we are sure the session is closed, thus we, avoid leaving sockets open which can trigger a ResourceWarning in some, cases, and look like a memory leak in others." ;
     code:complexity "Complexity: 2" ;
     code:description "Description: " ;
@@ -4198,7 +4198,7 @@ code:Function_request____src_requests_api_py__request a code:Function ;
     code:name "request" .
 
 code:Function_request____src_requests_sessions_py__request a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Create the Request., Send the request." ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4279,7 +4279,7 @@ code:Function_request____src_requests_sessions_py__request a code:Function ;
     code:name "request" .
 
 code:Function_request_url____src_requests_adapters_py__request_url a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Don't confuse urllib3" ;
     code:complexity "Complexity: 8" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4327,7 +4327,7 @@ code:Function_request_url____src_requests_adapters_py__request_url a code:Functi
     code:name "request_url" .
 
 code:Function_requote_uri____src_requests_utils_py__requote_uri a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "$%&'()*+,/:;=?@[]~\", $&'()*+,/:;=?@[]~\", Unquote only the unreserved characters, Then quote only illegal characters (do not quote reserved,, unreserved, or '%'), We couldn't unquote the given URI, so let's try quoting it, but, there may be unquoted '%'s in the URI. We need to make sure they're, properly quoted so they do not cause issues elsewhere." ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -4355,7 +4355,7 @@ code:Function_requote_uri____src_requests_utils_py__requote_uri a code:Function 
     code:name "requote_uri" .
 
 code:Function_resolve_proxies____src_requests_utils_py__resolve_proxies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -4388,7 +4388,7 @@ code:Function_resolve_proxies____src_requests_utils_py__resolve_proxies a code:F
     code:name "resolve_proxies" .
 
 code:Function_resolve_redirects____src_requests_sessions_py__resolve_redirects a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "keep track of history, Update history and keep track of redirects., resp.history must ignore the original request in this loop, Consume socket so it can be released, Release the connection back into the pool., Handle redirection without scheme (see: RFC 1808 Section 4), Normalize url case and attach previous fragment if needed (RFC 7231 7.1.2), Facilitate relative 'location' headers, as allowed by RFC 7231., (e.g. '/path/to/resource' instead of 'http://domain.tld/path/to/resource'), Compliant with RFC3986, we percent encode the url., https://github.com/psf/requests/issues/1084, https://github.com/psf/requests/issues/3490, Extract any cookies sent on the response to the cookiejar, in the new request. Because we've mutated our copied prepared, request, use the old one that we haven't yet touched., Rebuild auth and proxy information., A failed tell() sets `_body_position` to `object()`. This non-None, value ensures `rewindable` will be True, allowing us to raise an, UnrewindableBodyError, instead of hanging the connection., Attempt to rewind consumed file-like object., Override the original request., extract redirect url, if any, for the next loop" ;
     code:complexity "Complexity: 18" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4418,7 +4418,7 @@ code:Function_resolve_redirects____src_requests_sessions_py__resolve_redirects a
     code:name "resolve_redirects" .
 
 code:Function_rewind_body____src_requests_utils_py__rewind_body a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -4442,7 +4442,7 @@ code:Function_rewind_body____src_requests_utils_py__rewind_body a code:Function 
     code:name "rewind_body" .
 
 code:Function_select_proxy____src_requests_utils_py__select_proxy a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 6" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -4469,7 +4469,7 @@ code:Function_select_proxy____src_requests_utils_py__select_proxy a code:Functio
     code:name "select_proxy" .
 
 code:Function_send____src_requests_adapters_py__send a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "TODO: Remove this in 3.0.0: see #2811, This branch is for urllib3 v1.22 and later., This branch is for urllib3 versions earlier than v1.22" ;
     code:complexity "Complexity: 20" ;
     code:dependsOn code:Function_from_urllib3_contrib_socks_import_urllib3_contrib_socks_SOCKSProxyManager,
@@ -4520,7 +4520,7 @@ code:Function_send____src_requests_adapters_py__send a code:Function ;
     code:name "send" .
 
 code:Function_send____src_requests_sessions_py__send a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Set defaults that the hooks can utilize to ensure they always have, the correct parameters to reproduce the previous request., It's possible that users might accidentally send a Request object., Guard against that specific failure case., Set up variables needed for resolve_redirects and dispatching of hooks, Get the appropriate adapter to use, Start time (approximately) of the request, Send the request, Total elapsed time of the request (approximately), Response manipulation hooks, Persist cookies, If the hooks create history then we want those cookies too, Resolve redirects if allowed., Redirect resolving generator., Shuffle things around if there's history., Insert the first (original) request at the start, Get the last request made, If redirects aren't being followed, store the response on the Request for Response.next()." ;
     code:complexity "Complexity: 10" ;
     code:dependsOn code:Function_from_cookies_import_cookies_RequestsCookieJar,
@@ -4544,7 +4544,7 @@ code:Function_send____src_requests_sessions_py__send a code:Function ;
     code:name "send" .
 
 code:Function_session____src_requests_sessions_py__session a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_from_compat_import_compat_Mapping,
         code:Function_from_compat_import_compat_cookielib,
@@ -4566,7 +4566,7 @@ code:Function_session____src_requests_sessions_py__session a code:Function ;
     code:name "session" .
 
 code:Function_set____src_requests_cookies_py__set a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "support client code that unsets cookies by assignment of a None value:" ;
     code:complexity "Complexity: 3" ;
     code:description "Description: " ;
@@ -4582,7 +4582,7 @@ code:Function_set____src_requests_cookies_py__set a code:Function ;
     code:name "set" .
 
 code:Function_set_cookie____src_requests_cookies_py__set_cookie a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -4593,7 +4593,7 @@ code:Function_set_cookie____src_requests_cookies_py__set_cookie a code:Function 
     code:name "set_cookie" .
 
 code:Function_set_environ____src_requests_utils_py__set_environ a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -4623,7 +4623,7 @@ code:Function_set_environ____src_requests_utils_py__set_environ a code:Function 
     code:name "set_environ" .
 
 code:Function_should_bypass_proxies____src_requests_utils_py__should_bypass_proxies a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Prioritize lowercase environment variables over uppercase, to keep a consistent behaviour with other http projects (curl, wget)., First check whether no_proxy is defined. If it is, check that the URL, we're getting isn't in the no_proxy list., URLs don't always have hostnames, e.g. file:/// urls., We need to check whether we match here. We need to see if we match, the end of the hostname, both with and without the port., If no_proxy ip was defined in plain IP notation instead of cidr notation &, matches the IP of the index, The URL does match something in no_proxy, so we don't want, to apply the proxies on this URL., parsed.hostname can be `None` in cases such as a file URI." ;
     code:complexity "Complexity: 19" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -4651,7 +4651,7 @@ code:Function_should_bypass_proxies____src_requests_utils_py__should_bypass_prox
     code:name "should_bypass_proxies" .
 
 code:Function_should_strip_auth____src_requests_sessions_py__should_strip_auth a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Special case: allow http -> https redirect when using the standard, ports. This isn't specified by RFC 7235, but is kept to avoid, breaking backwards compatibility with older versions of requests, that allowed any redirects on the same host., Handle default port usage corresponding to scheme., Standard case: root URI must match" ;
     code:complexity "Complexity: 13" ;
     code:dependsOn code:Function_from_auth_import_auth__basic_auth_str,
@@ -4673,7 +4673,7 @@ code:Function_should_strip_auth____src_requests_sessions_py__should_strip_auth a
     code:name "should_strip_auth" .
 
 code:Function_stream_decode_response_unicode____src_requests_utils_py__stream_decode_response_unicode a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 5" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -4692,7 +4692,7 @@ code:Function_stream_decode_response_unicode____src_requests_utils_py__stream_de
     code:name "stream_decode_response_unicode" .
 
 code:Function_super_len____src_requests_utils_py__super_len a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "urllib3 2.x+ treats all strings as utf-8 instead, of latin-1 (iso-8859-1) like http.client., AttributeError is a surprising exception, seeing as how we've just checked, that `hasattr(o, 'fileno')`.  It happens for objects obtained via, `Tarfile.extractfile()`, per issue 5229., Having used fstat to determine the file length, we need to, confirm that this file was opened up in binary mode., This can happen in some weird situations, such as when the file, is actually a special file descriptor like stdin. In this, instance, we don't know what the length is, so set it to zero and, let requests chunk it instead., StringIO and BytesIO have seek but no usable fileno, seek to end of file, seek back to current position to support, partially read file-like objects" ;
     code:complexity "Complexity: 19" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -4719,7 +4719,7 @@ code:Function_super_len____src_requests_utils_py__super_len a code:Function ;
     code:name "super_len" .
 
 code:Function_text____src_requests_models_py__text a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "Try charset from content-type, Fallback to auto-detected encoding., Decode unicode from given encoding., A LookupError is raised if the encoding was not found which could, indicate a misspelling or similar mistake., , A TypeError can be raised if encoding is None, , So we try blindly encoding." ;
     code:complexity "Complexity: 4" ;
     code:description "Description: " ;
@@ -4739,7 +4739,7 @@ code:Function_text____src_requests_models_py__text a code:Function ;
     code:name "text" .
 
 code:Function_to_key_val_list____src_requests_utils_py__to_key_val_list a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 4" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
         code:Function_from_collections_import_collections_OrderedDict,
@@ -4776,7 +4776,7 @@ code:Function_to_key_val_list____src_requests_utils_py__to_key_val_list a code:F
     code:name "to_key_val_list" .
 
 code:Function_u_compat_py__u a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:dependsOn code:Function_import_io_as_StringIO,
         code:Function_import_warnings ;
@@ -4788,7 +4788,7 @@ code:Function_u_compat_py__u a code:Function ;
     code:name "u" .
 
 code:Function_unquote_header_value____src_requests_utils_py__unquote_header_value a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "this is not the real unquoting, but fixing this so that the, RFC is met will result in bugs with internet explorer and, probably some other browsers as well.  IE for example is, uploading files with \"C:\\foo\\bar.txt\" as filename, if this is a filename and the starting characters look like, a UNC path, then just return the value without quotes.  Using the, replace sequence below on a UNC path has the effect of turning, the leading double slash into a single slash and then, _fix_ie_filename() doesn't work correctly.  See #458." ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
@@ -4812,7 +4812,7 @@ code:Function_unquote_header_value____src_requests_utils_py__unquote_header_valu
     code:name "unquote_header_value" .
 
 code:Function_unquote_unreserved____src_requests_utils_py__unquote_unreserved a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 7" ;
     code:dependsOn code:Function_from_collections_import_collections_OrderedDict,
         code:Function_from_exceptions_import_exceptions_UnrewindableBodyError,
@@ -4832,7 +4832,7 @@ code:Function_unquote_unreserved____src_requests_utils_py__unquote_unreserved a 
     code:name "unquote_unreserved" .
 
 code:Function_unverifiable____src_requests_cookies_py__unverifiable a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
@@ -4842,7 +4842,7 @@ code:Function_unverifiable____src_requests_cookies_py__unverifiable a code:Funct
     code:name "unverifiable" .
 
 code:Function_update____src_requests_cookies_py__update a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 3" ;
     code:dependsOn code:Function_import_copy ;
     code:description "Description: " ;
@@ -4855,7 +4855,7 @@ code:Function_update____src_requests_cookies_py__update a code:Function ;
     code:name "update" .
 
 code:Function_urldefragauth____src_requests_utils_py__urldefragauth a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:comments "see func:`prepend_scheme_if_needed`" ;
     code:complexity "Complexity: 2" ;
     code:dependsOn code:Function_from___version___import___version_____version__,
@@ -4880,7 +4880,7 @@ code:Function_urldefragauth____src_requests_utils_py__urldefragauth a code:Funct
     code:name "urldefragauth" .
 
 code:Function_values____src_requests_cookies_py__values a code:Function ;
-    code:Packages "your-package[socks], -e, pytest>=2.8.0, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
+    code:Packages "pytest>=2.8.0,<9, pytest-cov, pytest-httpbin==2.1.0, httpbin~=0.10.0, trustme, wheel, Sphinx==7.2.6" ;
     code:complexity "Complexity: 1" ;
     code:description "Description: " ;
     code:descriptionEmbedding "DescriptionEmbedding: " ;
