@@ -8,7 +8,7 @@ import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 from app.core.exceptions import ApiException
-from app.services import logger
+from app import logger
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 

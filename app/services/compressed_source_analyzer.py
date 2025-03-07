@@ -5,7 +5,7 @@ import tarfile
 import zipfile
 from typing import Any, Dict
 
-from app.services import logger
+from app import logger
 from app.services.temp_directory_analyzer import TemporaryDirectoryAnalyzer
 
 

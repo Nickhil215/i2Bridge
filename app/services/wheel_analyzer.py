@@ -3,7 +3,7 @@ from typing import Any, Dict
 
 from wheel.wheelfile import WheelFile
 
-from app.services import logger
+from app import logger
 from app.services.temp_directory_analyzer import TemporaryDirectoryAnalyzer
 
 

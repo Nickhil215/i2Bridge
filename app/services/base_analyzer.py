@@ -10,7 +10,7 @@ import astroid
 from astroid import nodes
 
 from app.models.data_classes import ClassInfo, ModuleInfo, FunctionInfo, TestsInfo, ApiInfo
-from app.services import logger
+from app import logger
 from app.services.rdf_exporter import RDFExporter
 
 

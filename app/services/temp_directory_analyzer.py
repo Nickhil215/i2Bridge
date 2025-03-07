@@ -3,7 +3,7 @@ import tempfile
 from abc import abstractmethod
 from typing import Optional
 
-from app.services import logger
+from app import logger
 from app.services.base_analyzer import BaseAnalyzer
 
 

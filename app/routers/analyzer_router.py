@@ -1,5 +1,6 @@
 from fastapi import APIRouter, Request
-from app.services import logger
+
+from app import logger
 from app.services.analyzer import analyze
 
 app = APIRouter()

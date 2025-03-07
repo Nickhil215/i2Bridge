@@ -5,7 +5,7 @@ from typing import Optional
 
 from git import GitCommandError, Repo
 
-from app.services import logger
+from app import logger
 from app.services.base_analyzer import BaseAnalyzer
 
 

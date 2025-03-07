@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import Settings
 from app.core.telemetry import setup_telemetry
-from app.routers import analyze_router
+from app.routers import analyzer_router
 
 
 @asynccontextmanager
@@ -39,7 +39,7 @@ def create_app() -> FastAPI:
     )
 
     app.include_router(
-        analyze_router.app,
+        analyzer_router.app,
         tags=["kg"]
     )
 

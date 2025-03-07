@@ -1,7 +1,7 @@
 Package Analysis Report
 =====================
 
-Package: /tmp/git_analyzer_2cqygtxi/tests
+Package: /tmp/git_analyzer_pws5vca0/tests
 
 Metrics:
 - Total Files: 36
