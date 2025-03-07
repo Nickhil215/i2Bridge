@@ -146,10 +146,10 @@ def analyze(package_path, request):
         # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
         #     f.write(txt_output)
 
-        # bearer_token = request.headers.get("Authorization")
-        # cdn_url = upload_to_content_service(ttl_output, bearer_token)
-        # logging.info(f"------- cdn_url:  {cdn_url} --------")
-        # import_ontology(cdn_url, bearer_token)
+        bearer_token = request.headers.get("Authorization")
+        cdn_url = upload_to_content_service(ttl_output, bearer_token)
+        logging.info(f"------- cdn_url:  {cdn_url} --------")
+        import_ontology(cdn_url, bearer_token)
 
         return function_list
 
