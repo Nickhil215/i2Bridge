@@ -100,6 +100,16 @@ class RDFExporter:
                 comments_list = Literal(", ".join(func_info.comments))
                 self.graph.add((func_uri, self.CODE.comments, comments_list))
 
+            #Add packages as a list
+            if func_info.packages:
+              packages_list = Literal(", ".join(func_info.packages))
+              self.graph.add((func_uri, self.CODE.Packages, packages_list))
+
+            # Add imports as dependencies
+            for imp in func_info.imports:
+              import_uri = self._get_component_uri("Function", imp)
+              self.graph.add((func_uri, self.CODE.dependsOn, import_uri))
+
     def add_apis(self, apis: Dict[str, Any]) -> None:
         """Add API endpoints to the RDF graph"""
         for api_path, api_info in apis.items():
@@ -303,17 +313,6 @@ class RDFExporter:
             self.graph.add((component_uri, self.CODE.descriptionEmbedding,
                             Literal(f"DescriptionEmbedding: {component_info.description_embedding}")))
 
-            # # Add packages as a list
-            # if component_info.packages:
-            #   packages_list = Literal(", ".join(component_info.packages))
-            #   self.graph.add((component_uri, self.CODE.Packages, packages_list))
-
-            # # Add imports as dependencies
-            # for imp in component_info.imports:
-            #   # Create a simpler name for the import
-            #   import_name = imp.split(" as ")[0] if " as " in imp else imp
-            #   import_uri = self._get_component_uri("CodeComponent", import_name)
-            #   self.graph.add((component_uri, self.CODE.dependsOn, import_uri))
 
     def export_rdf(self) -> str:
 

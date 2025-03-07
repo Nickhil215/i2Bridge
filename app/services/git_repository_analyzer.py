@@ -1,12 +1,45 @@
 import os
+import re
 import shutil
 import tempfile
-from typing import Optional
+from typing import Optional, List
 
 from git import GitCommandError, Repo
 
 from app import logger
 from app.services.base_analyzer import BaseAnalyzer
+
+
+def parse_requirements(file_path: str, requirement_info: List[str]):
+
+    # Regular expression to match package with version
+    package_pattern = re.compile(r'([a-zA-Z0-9\-_]+)([<>=!~\.\d]+)?')
+
+    with open(file_path, 'r') as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#"):  # Ignore empty lines and comments
+                continue
+
+            # If the line contains '-e .' it is related to the editable installation with optional extras
+            if '-e .' in line:
+                # Handle the extras part
+                match = re.match(r'-e \.(\[[^\]]+\])?', line)
+                if match and match.group(1):
+                    # Add the package with extras
+                    requirement_info.append(f"your-package{match.group(1)}")  # Replace 'your-package' with the actual package name
+
+            # Otherwise, look for the package and version part
+            match = package_pattern.match(line)
+            if match:
+                package = match.group(1)
+                version = match.group(2) if match.group(2) else ''
+                if version:
+                    requirement_info.append(f"{package}{version}")
+                else:
+                    requirement_info.append(package)
+
+    return requirement_info
 
 
 class GitRepositoryAnalyzer(BaseAnalyzer):
@@ -50,6 +83,7 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
                     depth=1,
                     branch='main'
                 )
+                logger.info("Cloning from main branch")
             except GitCommandError:
                 # Fallback to master
                 Repo.clone_from(
@@ -58,6 +92,8 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
                     depth=1,
                     branch='master'
                 )
+                logger.info("Cloning from master branch")
+
         except GitCommandError as e:
             raise RuntimeError(f"Failed to clone repository: {str(e)}")
 
@@ -68,11 +104,18 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
         if package_root:
             self.package_path = package_root
 
+        # Analyze requirements to get packages to install
+        requirement_info = []
+        for root, _, files in os.walk(self.temp_dir):
+            for file in files:
+                if "requirement" in file and file.endswith(".txt"):
+                    requirement_info = parse_requirements(os.path.join(root, file), requirement_info)
+
         # Analyze all Python files
         for root, _, files in os.walk(self.temp_dir):
             for file in files:
                 if file.endswith('.py'):
-                    self._analyze_file(os.path.join(root, file), self.git_url)
+                    self._analyze_file(os.path.join(root, file), requirement_info, self.git_url)
 
     def _find_package_root(self) -> Optional[str]:
         """

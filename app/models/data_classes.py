@@ -6,6 +6,7 @@ from typing import List
 @dataclass
 class FunctionInfo:
     """Store detailed information about a function or method."""
+    id: str
     name: str
     module_path: str
     args: List[str]

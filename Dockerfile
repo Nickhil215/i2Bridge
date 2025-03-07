@@ -1,34 +1,38 @@
-FROM python:3.11-slim as builder
+# Use the official Python 3.9 slim base image
+FROM --platform=linux/amd64 python:3.11-slim
 
+# Set environment variables to non-interactive to avoid prompts during installation
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install required packages
+RUN apt-get update && \
+    apt-get install -y curl jq git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+
+# Set the working directory
 WORKDIR /app
 
-# Install poetry
-RUN pip install poetry
+# Copy the application files
+COPY . /app
 
-# Copy dependency files
-COPY pyproject.toml poetry.lock ./
+# Create and activate a virtual environment
+# RUN python3 -m venv /opt/venv
+# ENV PATH="/opt/venv/bin:$PATH"
 
-# Install dependencies
-RUN poetry config virtualenvs.create false \
-    && poetry install --no-dev --no-interaction --no-ansi
 
-# Runtime stage
-FROM python:3.11-slim
+# Install dependencies from requirements.txt
 
-WORKDIR /app
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt && \
+    pip install nltk && \
+    pip install openai==0.28 && \
+    python -m nltk.downloader punkt
+    
+# to generate tarfile and place in a folder
+RUN python3 setup.py sdist
+# Expose port 8080
+EXPOSE 8080
 
-# Copy dependencies from builder
-COPY --from=builder /usr/local/lib/python3.11/site-packages /usr/local/lib/python3.11/site-packages
-
-# Copy application code
-COPY . .
-
-# Set environment variables
-ENV PYTHONPATH=/app
-ENV PYTHONUNBUFFERED=1
-
-# Expose port
-EXPOSE 8000
-
-# Run the application
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"] 
+# Run the FastAPI application with Uvicorn
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]

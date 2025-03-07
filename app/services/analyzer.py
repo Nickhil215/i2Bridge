@@ -62,24 +62,67 @@ def upload_to_content_service(content, bearer_token):
         raise ApiException("Object mapping failure")
 
 
+# def import_ontology(cdn_url, bearer_token):
+#
+#     url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
+#     headers = {
+#         'Authorization': f'Bearer {bearer_token}',
+#         'Content-Type': 'application/json',
+#     }
+#
+#     data = {
+#         "ontologyId": "67c7f94236726044b0df97a8",
+#         "universes": [
+#             "623ebf349279af04cdd709dc"
+#         ],
+#         "url": cdn_url,
+#         "ontologyName": "API",
+#         "semanticStructures": "DATA",
+#         "fileType": "Turtle",
+#         "tenantID": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64"
+#     }
+#
+#     try:
+#         response = requests.post(url, headers=headers, json=data)
+#         response.raise_for_status()
+#         logging.info(f"------- Response body:  {response.text} --------")
+#     except requests.exceptions.RequestException as e:
+#         logging.error(f"API request error: {e}")
+#         raise ApiException("Failed to make API call")
+#     except ValueError as e:
+#         logging.error(f"JSON parsing error: {e}")
+#         raise ApiException("Object mapping failure")
+
+
 def import_ontology(cdn_url, bearer_token):
 
-    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J'
+    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/create'
     headers = {
         'Authorization': f'Bearer {bearer_token}',
         'Content-Type': 'application/json',
     }
 
     data = {
-        "ontologyId": "67c7f94236726044b0df97a8",
-        "universes": [
-            "623ebf349279af04cdd709dc"
-        ],
-        "url": cdn_url,
+        "ontologyUrl": cdn_url,
         "ontologyName": "API",
+        "description": "This is a sample ontology",
+        "fileType": "TURTLE",
         "semanticStructures": "DATA",
-        "fileType": "Turtle",
-        "tenantID": "2cf76e5f-26ad-4f2c-bccc-f4bc1e7bfb64"
+        "defaultPromptTemplates": "USER",
+        "userPromptForKgCreation": "consider all the data",
+        "draft": False,
+        "dataBaseType": "NEO4J",
+        "universes": [
+            "66aa30f77daee22fb1f1d214"
+        ],
+        "isActive": True,
+        "tenantID": "12345",
+        "visibility": "PUBLIC",
+        "dataReadAccess": "PUBLIC",
+        "dataWriteAccess": "PUBLIC",
+        "metadataReadAccess": "PUBLIC",
+        "metadataWriteAccess": "PUBLIC",
+        "execute": "PUBLIC"
     }
 
     try:
@@ -92,7 +135,6 @@ def import_ontology(cdn_url, bearer_token):
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
         raise ApiException("Object mapping failure")
-
 
 def analyze(package_path, request):
     try:
