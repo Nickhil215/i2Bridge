@@ -7,7 +7,7 @@ from io import BytesIO
 import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
-from app.core.exceptions import ApiException
+from app.core.custom_exceptions import ApiException
 from app import logger, settings
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
@@ -62,7 +62,7 @@ def upload_to_content_service(content, bearer_token):
         raise ApiException("Object mapping failure")
 
 
-def import_ontology(cdn_url, bearer_token):
+def import_kg(cdn_url, bearer_token):
 
     url = settings.ONTOLOGY_SERVICE_URL
     headers = {
@@ -94,47 +94,47 @@ def import_ontology(cdn_url, bearer_token):
         raise ApiException("Object mapping failure")
 
 
-# def import_ontology(cdn_url, bearer_token):
-#
-#     url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/create'
-#     headers = {
-#         'Authorization': f'Bearer {bearer_token}',
-#         'Content-Type': 'application/json',
-#     }
-#
-#     data = {
-#         "ontologyUrl": cdn_url,
-#         "ontologyName": "API",
-#         "description": "This is a sample ontology",
-#         "fileType": "TURTLE",
-#         "semanticStructures": "DATA",
-#         "defaultPromptTemplates": "USER",
-#         "userPromptForKgCreation": "consider all the data",
-#         "draft": False,
-#         "dataBaseType": "NEO4J",
-#         "universes": [
-#             "66aa30f77daee22fb1f1d214"
-#         ],
-#         "isActive": True,
-#         "tenantID": "12345",
-#         "visibility": "PUBLIC",
-#         "dataReadAccess": "PUBLIC",
-#         "dataWriteAccess": "PUBLIC",
-#         "metadataReadAccess": "PUBLIC",
-#         "metadataWriteAccess": "PUBLIC",
-#         "execute": "PUBLIC"
-#     }
-#
-#     try:
-#         response = requests.post(url, headers=headers, json=data)
-#         response.raise_for_status()
-#         logging.info(f"------- Response body:  {response.text} --------")
-#     except requests.exceptions.RequestException as e:
-#         logging.error(f"API request error: {e}")
-#         raise ApiException("Failed to make API call")
-#     except ValueError as e:
-#         logging.error(f"JSON parsing error: {e}")
-#         raise ApiException("Object mapping failure")
+def import_ontology(cdn_url, bearer_token):
+
+    url = 'https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/create'
+    headers = {
+        'Authorization': f'Bearer {bearer_token}',
+        'Content-Type': 'application/json',
+    }
+
+    data = {
+        "ontologyUrl": cdn_url,
+        "ontologyName": "API",
+        "description": "This is a sample ontology",
+        "fileType": "TURTLE",
+        "semanticStructures": "DATA",
+        "defaultPromptTemplates": "USER",
+        "userPromptForKgCreation": "consider all the data",
+        "draft": False,
+        "dataBaseType": "NEO4J",
+        "universes": [
+            "66aa30f77daee22fb1f1d214"
+        ],
+        "isActive": True,
+        "tenantID": "12345",
+        "visibility": "PUBLIC",
+        "dataReadAccess": "PUBLIC",
+        "dataWriteAccess": "PUBLIC",
+        "metadataReadAccess": "PUBLIC",
+        "metadataWriteAccess": "PUBLIC",
+        "execute": "PUBLIC"
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=data)
+        response.raise_for_status()
+        logging.info(f"------- Response body:  {response.text} --------")
+    except requests.exceptions.RequestException as e:
+        logging.error(f"API request error: {e}")
+        raise ApiException("Failed to make API call")
+    except ValueError as e:
+        logging.error(f"JSON parsing error: {e}")
+        raise ApiException("Object mapping failure")
 
 def analyze(package_path, request):
     try:
@@ -149,7 +149,7 @@ def analyze(package_path, request):
         bearer_token = request.headers.get("Authorization")
         cdn_url = upload_to_content_service(ttl_output, bearer_token)
         logging.info(f"------- cdn_url:  {cdn_url} --------")
-        import_ontology(cdn_url, bearer_token)
+        import_kg(cdn_url, bearer_token)
 
         return function_list
 

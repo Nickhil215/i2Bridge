@@ -393,6 +393,29 @@ class BaseAnalyzer(ABC):
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
         imports = self.get_used_imports(start_line, end_line, source, file_path)
 
+        dependencies = set()
+        for call in node.nodes_of_class(astroid.Call):
+            try:
+                inferred = next(call.func.infer())
+                if isinstance(inferred, nodes.FunctionDef):
+                    # Get the module path where the called function is defined
+                    inferred_module_path = os.path.relpath(
+                        inferred.root().file,
+                        self.package_path
+                    ) if inferred.root().file else file_path
+
+                    # Build the function path as stored in self.functions
+                    func_path = f"{inferred_module_path}::{inferred.name}"
+                    formatted_path_2 = f"{self.package_name}{format_path(inferred_module_path).split(self.package_name)[-1]}"
+                    function_exe_cmd_2=f"{formatted_path_2}.{inferred.name}()"
+
+                    if inferred.name.startswith("_"):
+                        continue
+                    if func_path in self.functions:
+                        dependencies.add(function_exe_cmd_2)
+            except astroid.InferenceError:
+                continue
+
         return FunctionInfo(
             id= str(uuid.uuid4()),
             name=node.name,
@@ -404,6 +427,7 @@ class BaseAnalyzer(ABC):
             docstring=docstring,
             description="",
             description_embedding="",
+            dependent_functions= dependencies,
             comments=comments,
             decorators=decorators,  # Use the properly extracted decorators
             complexity=complexity,
@@ -641,21 +665,12 @@ class BaseAnalyzer(ABC):
         return '\n'.join(report)
 
     def get_functions_list(self) -> List[dict]:
-        # Initialize the result list
         result = []
-
-        # Iterate over each function in the functions dictionary
         for func in self.functions.values():
-            # Create a dictionary for each function with only the 'id' and 'name'
-            function_info = {
-                "id": func.id,
-                "function_exe_cmd": func.function_exe_cmd,
-                "function_url": func.function_url,
-                "is_updated": func.is_updated
-            }
-
-            # Append the function dictionary to the result list
-            result.append(function_info)
-
+            if func.signature.startswith("_"):
+                continue
+            # Convert the object to a dict automatically
+            result.append(vars(func))  # or func.__dict__
         return result
+
 

@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, Set
 from typing import List
 
 
@@ -14,6 +14,7 @@ class FunctionInfo:
     docstring: Optional[str]
     description: Optional[str]
     description_embedding: Optional[str]
+    dependent_functions: Set[str]
     comments: List[str]
     decorators: List[str]
     complexity: int
