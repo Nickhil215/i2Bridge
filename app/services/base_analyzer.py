@@ -207,14 +207,14 @@ class BaseAnalyzer(ABC):
         """Analyze the package and extract its information."""
         pass
 
-    def _analyze_file(self, file_path: str, requirement_info: Set[str] = None,
+    def _analyze_file(self, temp_file_path: str, requirement_info: Set[str] = None,
                       git_url: str = None, branch: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
 
-            relative_path = os.path.relpath(file_path, self.package_path)
-            logger.info(f"Analyzing file: {relative_path}")
-            self.source_path = relative_path
+            file_path = os.path.relpath(temp_file_path, self.package_path)
+            logger.info(f"Analyzing file: {file_path}")
+            self.relative_path = file_path
 
             self.requirement_info = requirement_info
             self.git_url = git_url
@@ -224,29 +224,29 @@ class BaseAnalyzer(ABC):
             if git_url:
                 self.package_name = extract_repo_name(git_url)
 
-            self.formatted_path = f"{self.package_name}{format_path(self.source_path).split(self.package_name)[-1]}"
+            self.formatted_path = f"{self.package_name}{format_path(self.relative_path).split(self.package_name)[-1]}"
 
-            with open(file_path, 'r', encoding='utf-8') as f:
+            with open(temp_file_path, 'r', encoding='utf-8') as f:
                 source = f.read()
 
             # Parse the file using astroid
-            module = astroid.parse(source, path=file_path)
-            self.modules[relative_path] = module
+            module = astroid.parse(source, path=temp_file_path)
+            self.modules[file_path] = module
 
-            self._analyze_modules(module, relative_path, source)
-            self._analyze_classes(module, relative_path, source)
+            self._analyze_modules(module, file_path, source)
+            self._analyze_classes(module, file_path, source)
 
             # Pass source to analysis methods
-            if ("tests" in relative_path.split("/")
-                    or "test" in relative_path.split("/")
-                    or relative_path.startswith("test")):
-                self._analyze_tests(module, relative_path, source)
-            elif not relative_path.split('/')[-1].__contains__("_"):
-                self._analyze_functions(module, relative_path, source)
-                self._analyze_api_endpoint(module, relative_path, source)
+            if ("tests" in file_path.split("/")
+                    or "test" in file_path.split("/")
+                    or file_path.startswith("test")):
+                self._analyze_tests(module, file_path, source)
+            elif not file_path.split('/')[-1].__contains__("_"):
+                self._analyze_functions(module, file_path, source)
+                self._analyze_api_endpoint(module, file_path, source)
         except Exception as e:
-            logger.error(f"Error analyzing {file_path}: {str(e)}")
-            self.errors.append((file_path, str(e)))
+            logger.error(f"Error analyzing {temp_file_path}: {str(e)}")
+            self.errors.append((temp_file_path, str(e)))
 
     def _analyze_functions(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all functions in a module, including methods."""
@@ -481,7 +481,7 @@ class BaseAnalyzer(ABC):
                 comments.append(comment_text)
 
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
-        formatted_path = format_path(self.source_path)
+        formatted_path = format_path(self.relative_path)
         test_exe_cmd = f"{formatted_path}.{class_name}.{signature}" if class_name else f"{formatted_path}.{signature}"
 
         return TestsInfo(
