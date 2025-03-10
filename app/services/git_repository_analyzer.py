@@ -1,7 +1,7 @@
 import os
 import shutil
 import tempfile
-from typing import Optional, List
+from typing import Optional, List, Set
 
 from git import GitCommandError, Repo
 
@@ -9,7 +9,7 @@ from app import logger
 from app.services.base_analyzer import BaseAnalyzer
 
 
-def parse_requirements(file_path: str, requirement_info: List[str]):
+def parse_requirements(file_path: str, requirement_info: Set[str]):
 
     with open(file_path, 'r') as f:
         for line in f:
@@ -18,12 +18,14 @@ def parse_requirements(file_path: str, requirement_info: List[str]):
             # Skip lines starting with '-e' or containing '[', which are not valid package names
             if line.startswith('-e') or '[' in line:
                 continue
+            if line == '.':
+                continue
 
             # Ignore empty lines and comments
             if not line or line.startswith("#"):
                 continue
 
-            requirement_info.append(line)
+            requirement_info.add(line)
 
     return requirement_info
 
@@ -89,7 +91,7 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
             self.package_path = package_root
 
         # Analyze requirements to get packages to install
-        requirement_info = []
+        requirement_info = set()
         for root, _, files in os.walk(self.temp_dir):
             for file in files:
                 if "requirement" in file and file.endswith(".txt"):

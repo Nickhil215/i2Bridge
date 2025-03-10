@@ -26,7 +26,7 @@ class FunctionInfo:
     signature: str
     function_exe_cmd: str
     function_url: str
-    packages: List[str]
+    packages: Set[str]
     imports: List[str]
     runtime: str
     is_updated: bool

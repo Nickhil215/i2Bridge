@@ -207,7 +207,7 @@ class BaseAnalyzer(ABC):
         """Analyze the package and extract its information."""
         pass
 
-    def _analyze_file(self, file_path: str, requirement_info: List[str],
+    def _analyze_file(self, file_path: str, requirement_info: Set[str] = None,
                       git_url: str = None, branch: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
