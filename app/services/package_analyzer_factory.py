@@ -11,7 +11,7 @@ class PackageAnalyzerFactory:
     """Factory for creating appropriate analyzer based on package type."""
 
     @staticmethod
-    def create_analyzer(package_path: str, **kwargs) -> BaseAnalyzer:
+    def create_analyzer(package_path: str, branch: str, **kwargs) -> BaseAnalyzer:
         """
         Create and return the appropriate analyzer based on the package path.
 
@@ -24,7 +24,7 @@ class PackageAnalyzerFactory:
         """
         # Check if it's a Git URL
         if package_path.startswith(('http://', 'https://', 'git@')):
-            return GitRepositoryAnalyzer(package_path, **kwargs)
+            return GitRepositoryAnalyzer(package_path, branch, **kwargs)
 
         # Check if the path exists
         if not os.path.exists(package_path):

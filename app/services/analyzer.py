@@ -12,10 +12,10 @@ from app.core.custom_exceptions import ApiException
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 
-def analyze_package(package_path: str, **kwargs) -> str:
+def analyze_package(package_path: str, branch: str, **kwargs) -> str:
 
     try:
-        with PackageAnalyzerFactory.create_analyzer(package_path, **kwargs) as analyzer:
+        with PackageAnalyzerFactory.create_analyzer(package_path, branch, **kwargs) as analyzer:
 
             analyzer.analyze_package()
             txt_output = analyzer.generate_report()
@@ -94,9 +94,9 @@ def import_kg(cdn_url, bearer_token):
         raise ApiException("Object mapping failure")
 
 
-def analyze(package_path, request):
+def analyze(package_path, branch, request):
     try:
-        ttl_output, txt_output, function_list = analyze_package(package_path)
+        ttl_output, txt_output, function_list = analyze_package(package_path, branch)
 
         # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
         #     f.write(ttl_output)

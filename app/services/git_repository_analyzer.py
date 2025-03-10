@@ -31,7 +31,7 @@ def parse_requirements(file_path: str, requirement_info: List[str]):
 class GitRepositoryAnalyzer(BaseAnalyzer):
     """Analyzer for Git repositories"""
 
-    def __init__(self, git_url: str, branch: str = 'master'):
+    def __init__(self, git_url: str, branch: str):
         super().__init__(git_url)
         self.git_url = git_url
         self.branch = branch
@@ -61,15 +61,13 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
         """Clone the Git repository with fallback branch detection"""
         try:
             logger.info(f"Cloning {self.git_url}...")
-            # Try main first
             try:
                 Repo.clone_from(
                     self.git_url,
                     self.temp_dir,
                     depth=1,
-                    branch='main'
+                    branch=self.branch
                 )
-                logger.info("Cloning from main branch")
             except GitCommandError:
                 # Fallback to master
                 Repo.clone_from(
@@ -78,8 +76,8 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
                     depth=1,
                     branch='master'
                 )
-                logger.info("Cloning from master branch")
-
+                self.branch = 'master'
+            logger.info(f"Cloning from {self.branch} branch")
         except GitCommandError as e:
             raise RuntimeError(f"Failed to clone repository: {str(e)}")
 
@@ -101,7 +99,7 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
         for root, _, files in os.walk(self.temp_dir):
             for file in files:
                 if file.endswith('.py'):
-                    self._analyze_file(os.path.join(root, file), requirement_info, self.git_url)
+                    self._analyze_file(os.path.join(root, file), requirement_info, self.git_url, self.branch)
 
     def _find_package_root(self) -> Optional[str]:
         """

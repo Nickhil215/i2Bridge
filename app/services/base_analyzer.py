@@ -207,7 +207,8 @@ class BaseAnalyzer(ABC):
         """Analyze the package and extract its information."""
         pass
 
-    def _analyze_file(self, file_path: str, requirement_info: List[str], git_url: str = None) -> None:
+    def _analyze_file(self, file_path: str, requirement_info: List[str],
+                      git_url: str = None, branch: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
 
@@ -217,6 +218,7 @@ class BaseAnalyzer(ABC):
 
             self.requirement_info = requirement_info
             self.git_url = git_url
+            self.branch = branch
 
             self.package_name=None
             if git_url:
@@ -397,7 +399,7 @@ class BaseAnalyzer(ABC):
         prefix = self.git_url.rstrip(".git")
         path = file_path.lstrip("../")
 
-        function_url = f"{prefix}/blob/main/{path}#L{start_line}"
+        function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}"
 
         dependencies = set()
         for call in node.nodes_of_class(astroid.Call):
