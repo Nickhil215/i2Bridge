@@ -10,8 +10,8 @@ from typing import List, Set
 import astroid
 from astroid import nodes
 
-from app.models.data_classes import ClassInfo, ModuleInfo, FunctionInfo, TestsInfo, ApiInfo
 from app import logger
+from app.models.data_classes import ClassInfo, ModuleInfo, FunctionInfo, TestsInfo, ApiInfo
 from app.services.rdf_exporter import RDFExporter
 
 
@@ -216,6 +216,7 @@ class BaseAnalyzer(ABC):
             self.source_path = relative_path
 
             self.requirement_info = requirement_info
+            self.git_url = git_url
 
             self.package_name=None
             if git_url:
@@ -393,6 +394,11 @@ class BaseAnalyzer(ABC):
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
         imports = self.get_used_imports(start_line, end_line, source, file_path)
 
+        prefix = self.git_url.rstrip(".git")
+        path = file_path.lstrip("../")
+
+        function_url = f"{prefix}/blob/main/{path}#L{start_line}"
+
         dependencies = set()
         for call in node.nodes_of_class(astroid.Call):
             try:
@@ -423,7 +429,7 @@ class BaseAnalyzer(ABC):
             args=args,
             returns=returns,
             function_exe_cmd=function_exe_cmd,
-            function_url="",
+            function_url=function_url,
             docstring=docstring,
             description="",
             description_embedding="",
@@ -433,6 +439,7 @@ class BaseAnalyzer(ABC):
             complexity=complexity,
             start_line=start_line,
             end_line=end_line,
+            is_method=False,
             is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,

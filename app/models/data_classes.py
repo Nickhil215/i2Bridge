@@ -20,6 +20,7 @@ class FunctionInfo:
     complexity: int
     start_line: int
     end_line: int
+    is_method: bool
     is_active: bool
     is_async: bool
     signature: str
