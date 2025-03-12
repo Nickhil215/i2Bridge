@@ -101,17 +101,9 @@ class ModuleInfo:
     description_embedding: Optional[str]
 
 @dataclass
-class SubPackageInfo:
-    name: str
-    modules: Dict[str, ModuleInfo]
-    description: Optional[str]
-    description_embedding: Optional[str]
-
-@dataclass
 class PackageInfo:
     name: str
     modules: Dict[str, ModuleInfo]
-    sub_package: Dict[str, SubPackageInfo]
     description: Optional[str]
     description_embedding: Optional[str]
 
