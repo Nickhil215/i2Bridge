@@ -174,9 +174,9 @@ class RDFExporter:
 
             # Add description
             self.graph.add((api_uri, self.CODE.description,
-                            Literal(f"Description: {api_info.description}")))
+                            Literal(api_info.description)))
             self.graph.add((api_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {api_info.description_embedding}")))
+                            Literal(api_info.description_embedding)))
 
             # Add request body if available
             if api_info.request_body:
@@ -217,13 +217,13 @@ class RDFExporter:
 
             # Add description
             self.graph.add((func_uri, self.CODE.description,
-                            Literal(f"Description: {test_info.description}")))
+                            Literal(test_info.description)))
             self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
+                            Literal(test_info.description_embedding)))
 
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
-                            Literal(f"Complexity: {test_info.complexity}")))
+                            Literal(test_info.complexity)))
 
             # Add parameters as inputs
             for arg in test_info.args:
