@@ -234,9 +234,9 @@ class RDFExporter:
 
             # Add description
             self.graph.add((func_uri, self.CODE.description,
-                            Literal(f"Description: {test_info.description}")))
+                            Literal(test_info.description)))
             self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {test_info.description_embedding}")))
+                            Literal(test_info.description_embedding)))
 
             # Add return type as output if available
             if test_info.returns:
@@ -295,9 +295,9 @@ class RDFExporter:
 
             # Add description
             self.graph.add((class_uri, self.CODE.description,
-                            Literal(f"Description: {class_info.description}")))
+                            Literal(class_info.description)))
             self.graph.add((class_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {class_info.description_embedding}")))
+                            Literal(class_info.description_embedding)))
 
             # Connect methods to the class
             for func_name in class_info.functions:
@@ -322,9 +322,9 @@ class RDFExporter:
 
             # Add description
             self.graph.add((component_uri, self.CODE.description,
-                            Literal(f"Description: {component_info.description}")))
+                            Literal(component_info.description)))
             self.graph.add((component_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {component_info.description_embedding}")))
+                            Literal(component_info.description_embedding)))
 
 
     def export_rdf(self) -> str:
