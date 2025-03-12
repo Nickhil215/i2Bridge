@@ -25,6 +25,7 @@ class FunctionInfo:
     is_async: bool
     signature: str
     function_exe_cmd: str
+    function_def: str
     function_url: str
     packages: Set[str]
     imports: List[str]

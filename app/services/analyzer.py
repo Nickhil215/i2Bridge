@@ -56,12 +56,13 @@ def upload_to_content_service(content, bearer_token):
         return json.loads(json.dumps(response.json())).get("cdnUrl")
     except requests.exceptions.HTTPError as e:
         logging.error(f"API request error: {e}")
-        if response is not None and response.status_code >= 400:  # Only print response body for client or server errors
-            logging.error(f"Error response body: {response.text}")
-        raise ApiException("Failed to make API call", 503, response.text)
+        error = None
+        if response is not None:
+            error = response.text
+        raise ApiException("Failed to make API call", 500, error)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure", 503)
+        raise ApiException("Object mapping failure", 500)
 
 
 def import_kg(cdn_url, bearer_token):
@@ -91,12 +92,13 @@ def import_kg(cdn_url, bearer_token):
         logging.info(f"------- Response body:  {response.text} --------")
     except requests.exceptions.HTTPError as e:
         logging.error(f"API request error: {e}")
-        if response is not None and response.status_code >= 400:  # Only print response body for client or server errors
-            logging.error(f"Error response body: {response.text}")
-        raise ApiException("Failed to make API call", 503, response.text)
+        error = None
+        if response is not None:
+            error = response.text
+        raise ApiException("Failed to make API call", 500, error)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure", 503)
+        raise ApiException("Object mapping failure", 500)
 
 
 def analyze(package_path, branch, request):

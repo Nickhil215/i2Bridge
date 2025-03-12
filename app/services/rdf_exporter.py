@@ -95,6 +95,10 @@ class RDFExporter:
             if func_info.function_exe_cmd:
                 self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(func_info.function_exe_cmd)))
 
+            # Add function definition if available
+            if func_info.function_def:
+                self.graph.add((func_uri, self.CODE.function_def, Literal(func_info.function_def)))
+
             # Add function url if available
             if func_info.function_url:
                 self.graph.add((func_uri, self.CODE.function_url, Literal(func_info.function_url)))

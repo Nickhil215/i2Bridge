@@ -438,6 +438,8 @@ class BaseAnalyzer(ABC):
         signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
         imports = self.get_used_imports(start_line, end_line, source, file_path)
 
+        function_def = f"{self.formatted_path}.{class_name}.{signature}" if class_name else f"{self.formatted_path}.{signature}"
+
         prefix = self.git_url.rstrip(".git")
         path = file_path.lstrip("../")
 
@@ -489,6 +491,7 @@ class BaseAnalyzer(ABC):
             is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
+            function_def=function_def,
             packages=self.requirement_info,
             imports=imports,
             runtime="python",
