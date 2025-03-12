@@ -361,6 +361,48 @@ class BaseAnalyzer(ABC):
 
         return imports
 
+    # Function to recursively collect dependencies
+    def find_dependencies(self, node, file_path, package_path, package_name, functions, dependencies, all_deps):
+        """
+        Recursively find dependencies for the given node (function) and propagate dependencies.
+        """
+        # Iterate through all function calls in the node
+        for call in node.nodes_of_class(astroid.Call):
+            try:
+                # Infer the function being called
+                inferred = next(call.func.infer())
+
+                if isinstance(inferred, nodes.FunctionDef):
+                    # Get the module path where the called function is defined
+                    inferred_module_path = os.path.relpath(
+                        inferred.root().file,
+                        package_path
+                    ) if inferred.root().file else file_path
+
+                    # Build the function path as stored in self.functions
+                    func_path = f"{inferred_module_path}::{inferred.name}"
+                    formatted_path_2 = f"{package_name}{format_path(inferred_module_path).split(package_name)[-1]}"
+                    function_exe_cmd_2 = f"{formatted_path_2}.{inferred.name}()"
+
+                    if inferred.name.startswith("_"):
+                        continue
+
+                    # If the function is in the functions set, add its execution command to the dependencies
+                    if func_path in functions:
+                        dependencies.add(function_exe_cmd_2)
+
+                        # If the function is not already in all_deps, initialize its dependency set
+                        if inferred.name not in all_deps:
+                            all_deps[inferred.name] = set()
+
+                        # Now recursively find dependencies in the called function
+                        self.find_dependencies(inferred, file_path, package_path, package_name, functions, all_deps[inferred.name], all_deps)
+
+                        # After finding dependencies, merge them with the current function's dependencies
+                        dependencies.update(all_deps[inferred.name])
+
+            except astroid.InferenceError:
+                continue
 
     def _extract_function_info(self, node: nodes.FunctionDef, source: str,
                                file_path: str) -> FunctionInfo:
@@ -402,6 +444,8 @@ class BaseAnalyzer(ABC):
         function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}"
 
         dependencies = set()
+        # all_deps = {}
+        # self.find_dependencies(node, file_path, self.package_path, self.package_name, self.functions, dependencies, all_deps)
         for call in node.nodes_of_class(astroid.Call):
             try:
                 inferred = next(call.func.infer())
@@ -529,7 +573,7 @@ class BaseAnalyzer(ABC):
         Returns:
             String containing the serialized RDF data
         """
-        exporter = RDFExporter("output.ttl")
+        exporter = RDFExporter(self.git_url)
 
         exporter.add_functions(self.functions)
         exporter.add_classes(self.classes)

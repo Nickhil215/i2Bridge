@@ -10,7 +10,7 @@ class Settings(BaseSettings):
     OTEL_SERVICE_NAME: str = "i2-bridge"
     OTEL_COLLECTOR_URL: str = "http://otel-collector:4317"
 
-    ONTOLOGY_ID: str = "67c7f94236726044b0df97a8"
+    ONTOLOGY_ID: str = "67cec1bf4d8f5a13334b55f1"
     CONTENT_SERVICE_URL: str = "https://ig.aidtaas.com/mobius-content-service/v1.0/content/upload?filePath=python"
     ONTOLOGY_SERVICE_URL: str = "https://ig.aidtaas.com/pi-ontology-service/ontology/v1.0/patch?graphDb=NEO4J"
 

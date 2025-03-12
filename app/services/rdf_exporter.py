@@ -7,13 +7,13 @@ from rdflib.namespace import RDF, RDFS, OWL
 class RDFExporter:
     """Class to export Python package analysis results to RDF following a code ontology"""
 
-    def __init__(self, output_path: Optional[str] = None):
+    def __init__(self, git_url: Optional[str] = None):
         """Initialize the RDF exporter with optional output path"""
-        self.output_path = output_path
+        self.git_url = git_url.rstrip(".git")
         self.graph = Graph()
 
         # Define namespaces
-        self.CODE = Namespace("http://example.org/ontology/code-guru#")
+        self.CODE = Namespace(self.git_url)
         self.graph.bind("code", self.CODE)
         self.graph.bind("owl", OWL)
         self.graph.bind("rdfs", RDFS)
@@ -95,6 +95,10 @@ class RDFExporter:
             if func_info.function_exe_cmd:
                 self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(func_info.function_exe_cmd)))
 
+            # Add function url if available
+            if func_info.function_url:
+                self.graph.add((func_uri, self.CODE.function_url, Literal(func_info.function_url)))
+
             # Add comments if available
             if func_info.comments:
                 comments_list = Literal(", ".join(func_info.comments))
@@ -103,12 +107,17 @@ class RDFExporter:
             #Add packages as a list
             if func_info.packages:
               packages_list = Literal(", ".join(func_info.packages))
-              self.graph.add((func_uri, self.CODE.Packages, packages_list))
+              self.graph.add((func_uri, self.CODE.package, packages_list))
 
             # Add imports as dependencies
             for imp in func_info.imports:
               import_uri = self._get_component_uri("Function", imp)
-              self.graph.add((func_uri, self.CODE.dependsOn, import_uri))
+              self.graph.add((func_uri, self.CODE.hasImport, import_uri))
+
+            # Add dependent functions
+            for dep_func in func_info.dependent_functions:
+                dep_func_uri = self._get_component_uri("Function", dep_func)
+                self.graph.add((func_uri, self.CODE.dependsOn, dep_func_uri))
 
     def add_apis(self, apis: Dict[str, Any]) -> None:
         """Add API endpoints to the RDF graph"""
