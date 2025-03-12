@@ -52,12 +52,6 @@ class RDFExporter:
             else:
                 self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
 
-            # Add description
-            self.graph.add((func_uri, self.CODE.description,
-                            Literal(func_info.description)))
-            self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(func_info.description_embedding)))
-
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
                             Literal(func_info.complexity)))

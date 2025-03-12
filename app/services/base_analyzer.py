@@ -434,8 +434,9 @@ class BaseAnalyzer(ABC):
                 comment_text = line.split('#', 1)[1].strip()
                 comments.append(comment_text)
 
+        formated_args = ', '.join(arg.name for arg in node.args.args if arg.name != 'self' and arg.name != '**kwargs')
         function_exe_cmd=f"{self.formatted_path}.{class_name}.{node.name}()" if class_name else f"{self.formatted_path}.{node.name}()"
-        signature=f"{node.name}({', '.join(arg.name for arg in node.args.args)})"
+        signature=f"{node.name}({formated_args})"
         imports = self.get_used_imports(start_line, end_line, source, file_path)
 
         function_def = f"{self.formatted_path}.{class_name}.{signature}" if class_name else f"{self.formatted_path}.{signature}"
@@ -479,8 +480,6 @@ class BaseAnalyzer(ABC):
             function_exe_cmd=function_exe_cmd,
             function_url=function_url,
             docstring=docstring,
-            description="",
-            description_embedding="",
             dependent_functions= dependencies,
             comments=comments,
             decorators=decorators,  # Use the properly extracted decorators
@@ -657,8 +656,6 @@ class BaseAnalyzer(ABC):
                 f"    Is Async: {func_info.is_async}",
                 f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
                 f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
-                f"    Description: {func_info.description}",
-                f"    Description Embedding: {func_info.description_embedding}",
                 f"    Comments: {func_info.comments if func_info.comments else 'None'}",
                 f"    Runtime: {func_info.runtime}"
             ])
