@@ -256,6 +256,7 @@ class BaseAnalyzer(ABC):
                 for class_node in node.body:
                     if isinstance(class_node, nodes.FunctionDef):
                         func_info = self._extract_function_info(class_node, source, file_path)
+                        func_info.is_method = True
                         self.functions[f"{file_path}::{func_info.name}"] = func_info
             elif isinstance(node, nodes.FunctionDef):
                 # If it's a function at the module level
@@ -447,29 +448,8 @@ class BaseAnalyzer(ABC):
         function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}"
 
         dependencies = set()
-        # all_deps = {}
-        # self.find_dependencies(node, file_path, self.package_path, self.package_name, self.functions, dependencies, all_deps)
-        for call in node.nodes_of_class(astroid.Call):
-            try:
-                inferred = next(call.func.infer())
-                if isinstance(inferred, nodes.FunctionDef):
-                    # Get the module path where the called function is defined
-                    inferred_module_path = os.path.relpath(
-                        inferred.root().file,
-                        self.package_path
-                    ) if inferred.root().file else file_path
-
-                    # Build the function path as stored in self.functions
-                    func_path = f"{inferred_module_path}::{inferred.name}"
-                    formatted_path_2 = f"{self.package_name}{format_path(inferred_module_path).split(self.package_name)[-1]}"
-                    function_exe_cmd_2=f"{formatted_path_2}.{inferred.name}()"
-
-                    if inferred.name.startswith("_"):
-                        continue
-                    if func_path in self.functions:
-                        dependencies.add(function_exe_cmd_2)
-            except astroid.InferenceError:
-                continue
+        all_deps = {}
+        self.find_dependencies(node, file_path, self.package_path, self.package_name, self.functions, dependencies, all_deps)
 
         return FunctionInfo(
             id= str(uuid.uuid4()),
