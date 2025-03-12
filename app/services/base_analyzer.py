@@ -337,8 +337,8 @@ class BaseAnalyzer(ABC):
             name=file_path.split('/')[-1],
             description="",
             description_embedding="",
-            classes=[],
-            functions=[])
+            classes={},
+            functions={})
 
     def get_used_imports(self, start_line, end_line, source_code, file_path):
         # Extract the relevant lines from the source code (lines are 1-indexed, so adjust accordingly)
@@ -494,7 +494,9 @@ class BaseAnalyzer(ABC):
             packages=self.requirement_info,
             imports=imports,
             runtime="python",
-            is_updated=False
+            is_updated=False,
+            description="",
+            description_embedding=""
         )
 
     def _extract_tests_info(self, node: nodes.FunctionDef, source: str) -> TestsInfo:
@@ -656,6 +658,8 @@ class BaseAnalyzer(ABC):
                 f"    Is Async: {func_info.is_async}",
                 f"    Decorators: {', '.join(func_info.decorators) or 'None'}",
                 f"    Docstring: {func_info.docstring if func_info.docstring else 'None'}",
+                f"    Description: {func_info.description}",
+                f"    Description Embedding: {func_info.description_embedding}",
                 f"    Comments: {func_info.comments if func_info.comments else 'None'}",
                 f"    Runtime: {func_info.runtime}"
             ])

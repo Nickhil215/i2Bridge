@@ -12,6 +12,8 @@ class FunctionInfo:
     args: List[str]
     returns: Optional[str]
     docstring: Optional[str]
+    description: Optional[str]
+    description_embedding: Optional[str]
     dependent_functions: Set[str]
     comments: List[str]
     decorators: List[str]
