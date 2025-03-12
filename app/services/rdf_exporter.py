@@ -54,13 +54,13 @@ class RDFExporter:
 
             # Add description
             self.graph.add((func_uri, self.CODE.description,
-                            Literal(f"Description: {func_info.description}")))
+                            Literal(func_info.description)))
             self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(f"DescriptionEmbedding: {func_info.description_embedding}")))
+                            Literal(func_info.description_embedding)))
 
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
-                            Literal(f"Complexity: {func_info.complexity}")))
+                            Literal(func_info.complexity)))
 
             # Add parameters as inputs
             for arg in func_info.args:
