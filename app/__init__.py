@@ -1,5 +1,5 @@
 import logging
-
+import sys
 from app.core.config import Settings
 
 # Configure logging

@@ -4,6 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app import settings
+from app.core.exceptions import ApiException, api_exception_handler
 from app.core.telemetry import setup_telemetry
 from app.routers import analyzer_router
 
@@ -41,6 +42,11 @@ def create_app() -> FastAPI:
         analyzer_router.app,
         tags=["kg"]
     )
+
+    # Register global exception handlers
+    app.add_exception_handler(
+        ApiException,
+        api_exception_handler)
 
     return app
 

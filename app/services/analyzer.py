@@ -1,6 +1,5 @@
 import json
 import logging
-import sys
 import uuid
 from io import BytesIO
 
@@ -8,7 +7,7 @@ import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 from app import logger, settings
-from app.core.custom_exceptions import ApiException
+from app.core.exceptions import ApiException
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 
@@ -30,6 +29,7 @@ def analyze_package(package_path: str, branch: str, **kwargs) -> str:
 
 
 def upload_to_content_service(content, bearer_token):
+    global response
     file_name = f"ttl_output_{uuid.uuid1().hex}.ttl"
 
     url = settings.CONTENT_SERVICE_URL
@@ -54,16 +54,19 @@ def upload_to_content_service(content, bearer_token):
         response.raise_for_status()  # Raises HTTPError for bad responses
         logging.info(f"------- Response body:  {response.text} --------")
         return json.loads(json.dumps(response.json())).get("cdnUrl")
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.HTTPError as e:
         logging.error(f"API request error: {e}")
-        raise ApiException("Failed to make API call")
+        if response is not None and response.status_code >= 400:  # Only print response body for client or server errors
+            logging.error(f"Error response body: {response.text}")
+        raise ApiException("Failed to make API call", 503, response.text)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure")
+        raise ApiException("Object mapping failure", 503)
 
 
 def import_kg(cdn_url, bearer_token):
 
+    global response
     url = settings.ONTOLOGY_SERVICE_URL
     headers = {
         'Authorization': bearer_token,
@@ -86,32 +89,29 @@ def import_kg(cdn_url, bearer_token):
         response = requests.patch(url, headers=headers, json=data)
         response.raise_for_status()
         logging.info(f"------- Response body:  {response.text} --------")
-    except requests.exceptions.RequestException as e:
+    except requests.exceptions.HTTPError as e:
         logging.error(f"API request error: {e}")
-        raise ApiException("Failed to make API call")
+        if response is not None and response.status_code >= 400:  # Only print response body for client or server errors
+            logging.error(f"Error response body: {response.text}")
+        raise ApiException("Failed to make API call", 503, response.text)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure")
+        raise ApiException("Object mapping failure", 503)
 
 
 def analyze(package_path, branch, request):
-    try:
-        ttl_output, txt_output, function_list = analyze_package(package_path, branch)
+    ttl_output, txt_output, function_list = analyze_package(package_path, branch)
 
-        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
-        #     f.write(ttl_output)
+    # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
+    #     f.write(ttl_output)
 
-        # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
-        #     f.write(txt_output)
+    # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.txt", 'w', encoding='utf-8') as f:
+    #     f.write(txt_output)
 
-        bearer_token = request.headers.get("Authorization")
-        cdn_url = upload_to_content_service(ttl_output, bearer_token)
-        logging.info(f"------- cdn_url:  {cdn_url} --------")
-        import_kg(cdn_url, bearer_token)
+    bearer_token = request.headers.get("Authorization")
+    cdn_url = upload_to_content_service(ttl_output, bearer_token)
+    logging.info(f"------- cdn_url:  {cdn_url} --------")
+    import_kg(cdn_url, bearer_token)
 
-        return function_list
-
-    except Exception as e:
-        logger.error(f"Error: {str(e)}", file=sys.stderr)
-        sys.exit(1)
+    return function_list
 
