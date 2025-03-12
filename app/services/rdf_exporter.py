@@ -8,12 +8,15 @@ class RDFExporter:
     """Class to export Python package analysis results to RDF following a code ontology"""
 
     def __init__(self, git_url: Optional[str] = None):
-        """Initialize the RDF exporter with optional output path"""
+        """Initialize the RDF exporter with proper namespace handling"""
+        if not git_url:
+            raise ValueError("git_url must be provided")
+        
         self.git_url = git_url.rstrip(".git")
         self.graph = Graph()
 
-        # Define namespaces
-        self.CODE = Namespace(self.git_url)
+        # Define a generic namespace with a separator
+        self.CODE = Namespace(f"{self.git_url}#")  # Ensure separator at the end
         self.graph.bind("code", self.CODE)
         self.graph.bind("owl", OWL)
         self.graph.bind("rdfs", RDFS)
@@ -29,7 +32,7 @@ class RDFExporter:
         return name.replace(" ", "_").replace(":", "_").replace("/", "_").replace(".", "_")
 
     def _get_component_uri(self, component_type: str, name: str) -> URIRef:
-        """Create a URI for a code component"""
+        """Create a URI for a code component with proper prefix handling"""
         safe_name = self._create_safe_uri(name)
         return URIRef(f"{self.CODE}{component_type}_{safe_name}")
 
@@ -38,6 +41,7 @@ class RDFExporter:
         for func_path, func_info in functions.items():
             if func_info.name.startswith("_"):
                 continue
+
             # Create URI for the function
             func_uri = self._get_component_uri("Function", f"{func_info.name}_{func_path}")
 
@@ -52,11 +56,9 @@ class RDFExporter:
             else:
                 self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
 
-            # Add description
-            self.graph.add((func_uri, self.CODE.description,
-                            Literal(func_info.description)))
-            self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(func_info.description_embedding)))
+            # Correct namespace usage for descriptionEmbedding
+            self.graph.add((func_uri, self.CODE.description, Literal(func_info.description)))
+            self.graph.add((func_uri, self.CODE.descriptionEmbedding, Literal(func_info.description_embedding)))
 
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
