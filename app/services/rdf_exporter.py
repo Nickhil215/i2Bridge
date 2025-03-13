@@ -57,8 +57,8 @@ class RDFExporter:
                 self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
 
             # Correct namespace usage for descriptionEmbedding
-            self.graph.add((func_uri, self.CODE.description, Literal(func_info.description)))
-            self.graph.add((func_uri, self.CODE.descriptionEmbedding, Literal(func_info.description_embedding)))
+            # self.graph.add((func_uri, self.CODE.description, Literal(func_info.description)))
+            # self.graph.add((func_uri, self.CODE.descriptionEmbedding, Literal(func_info.description_embedding)))
 
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
@@ -175,10 +175,8 @@ class RDFExporter:
                     self.graph.add((api_uri, self.CODE.hasInput, param_uri))
 
             # Add description
-            self.graph.add((api_uri, self.CODE.description,
-                            Literal(api_info.description)))
-            self.graph.add((api_uri, self.CODE.descriptionEmbedding,
-                            Literal(api_info.description_embedding)))
+            # self.graph.add((api_uri, self.CODE.description, Literal(api_info.description)))
+            # self.graph.add((api_uri, self.CODE.descriptionEmbedding, Literal(api_info.description_embedding)))
 
             # Add request body if available
             if api_info.request_body:
@@ -199,7 +197,7 @@ class RDFExporter:
                 self.graph.add((api_uri, self.CODE.hasResponseBody, body_uri))
 
     def add_tests(self, tests: Dict[str, Any]) -> None:
-        """Add tests to the RDF graph"""
+        """Add functions/methods to the RDF graph"""
         for func_path, test_info in tests.items():
             if test_info.name.startswith("_"):
                 continue
@@ -218,10 +216,8 @@ class RDFExporter:
                 self.graph.add((func_uri, self.CODE.isDocumented, Literal(False)))
 
             # Add description
-            self.graph.add((func_uri, self.CODE.description,
-                            Literal(test_info.description)))
-            self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(test_info.description_embedding)))
+            # self.graph.add((func_uri, self.CODE.description, Literal(test_info.description)))
+            # self.graph.add((func_uri, self.CODE.descriptionEmbedding, Literal(test_info.description_embedding)))
 
             # Add complexity
             self.graph.add((func_uri, self.CODE.complexity,
@@ -235,10 +231,8 @@ class RDFExporter:
                 self.graph.add((func_uri, self.CODE.hasInput, param_uri))
 
             # Add description
-            self.graph.add((func_uri, self.CODE.description,
-                            Literal(test_info.description)))
-            self.graph.add((func_uri, self.CODE.descriptionEmbedding,
-                            Literal(test_info.description_embedding)))
+            # self.graph.add((func_uri, self.CODE.description, Literal(test_info.description)))
+            # self.graph.add((func_uri, self.CODE.descriptionEmbedding, Literal(test_info.description_embedding)))
 
             # Add return type as output if available
             if test_info.returns:
@@ -296,10 +290,8 @@ class RDFExporter:
                     self.graph.add((class_uri, self.CODE.dependsOn, base_uri))
 
             # Add description
-            self.graph.add((class_uri, self.CODE.description,
-                            Literal(class_info.description)))
-            self.graph.add((class_uri, self.CODE.descriptionEmbedding,
-                            Literal(class_info.description_embedding)))
+            # self.graph.add((class_uri, self.CODE.description, Literal(class_info.description)))
+            # self.graph.add((class_uri, self.CODE.descriptionEmbedding, Literal(class_info.description_embedding)))
 
             # Connect methods to the class
             for func_name in class_info.functions:
@@ -308,91 +300,26 @@ class RDFExporter:
                 func_uri = self._get_component_uri("Function", f"{formatted_class_path}_{func_name}")
                 self.graph.add((class_uri, self.CODE.connectsTo, func_uri))
 
-    def add_modules(self, modules: Dict[str, Any]) -> None:
-        """Add modules and their dependencies to the RDF graph"""
-        for module_path, module_info in modules.items():
-            if module_info.name.startswith("_"):
+    def add_modules(self, components: Dict[str, Any]) -> None:
+        """Add code components and their dependencies to the RDF graph"""
+        for component_path, component_info in components.items():
+            if component_info.name.startswith("_"):
                 continue
-            # Create URI for the module
-            module_uri = self._get_component_uri("Module", f"{module_info.name}_{module_path}")
+            # Create URI for the component
+            component_uri = self._get_component_uri("CodeComponent", f"{component_info.name}_{component_path}")
 
-            # Add module type
-            self.graph.add((module_uri, RDF.type, self.CODE.Module))
-
-            # Add basic properties
-            self.graph.add((module_uri, self.CODE.name, Literal(module_info.name)))
-
-            # Add description
-            self.graph.add((module_uri, self.CODE.description,
-                            Literal(module_info.description)))
-            self.graph.add((module_uri, self.CODE.descriptionEmbedding,
-                            Literal(module_info.description_embedding)))
-
-            formatted_module_path = str(module_path).replace("py::","")
-
-            # Connect function to module
-            for func_name in module_info.functions:
-                if func_name.startswith("_"):
-                    continue
-                func_uri = self._get_component_uri("Function", f"{formatted_module_path}_{func_name}")
-                self.graph.add((module_uri, self.CODE.connectsTo, func_uri))
-
-            # Connect class to module
-            for class_name in module_info.classes:
-                if class_name.startswith("_"):
-                    continue
-                class_uri = self._get_component_uri("Class", f"{formatted_module_path}_{class_name}")
-                self.graph.add((module_uri, self.CODE.connectsTo, class_uri))
-
-    def add_packages(self, packages: Dict[str, Any]) -> None:
-        """Add packages and their dependencies to the RDF graph"""
-        for package_path, package_info in packages.items():
-
-            # Create URI for the package
-            package_uri = self._get_component_uri("Package", f"{package_info.name}_{package_path}")
-
-            # Add package type
-            self.graph.add((package_uri, RDF.type, self.CODE.Package))
+            # Add component type
+            self.graph.add((component_uri, RDF.type, self.CODE.CodeComponent))
 
             # Add basic properties
-            self.graph.add((package_uri, self.CODE.name, Literal(package_info.name)))
+            self.graph.add((component_uri, self.CODE.name, Literal(component_info.name)))
 
             # Add description
-            self.graph.add((package_uri, self.CODE.description,
-                            Literal(package_info.description)))
-            self.graph.add((package_uri, self.CODE.descriptionEmbedding,
-                            Literal(package_info.description_embedding)))
+            self.graph.add((component_uri, self.CODE.description,
+                            Literal(component_info.description)))
+            self.graph.add((component_uri, self.CODE.descriptionEmbedding,
+                            Literal(component_info.description_embedding)))
 
-            # Connect package to module
-            for module_name in package_info.modules:
-                if module_name.startswith("_"):
-                    continue
-                module_uri = self._get_component_uri("Module", f"{package_path}_{module_name}")
-                self.graph.add((package_uri, self.CODE.connectsTo, module_uri))
-
-    def add_library(self, library: Dict[str, Any]) -> None:
-        """Add library and their dependencies to the RDF graph"""
-        for library_path, library_info in library.items():
-
-            # Create URI for the library
-            library_uri = self._get_component_uri("Library", f"{library_info.name}_{library_path}")
-
-            # Add library type
-            self.graph.add((library_uri, RDF.type, self.CODE.Library))
-
-            # Add basic properties
-            self.graph.add((library_uri, self.CODE.name, Literal(library_info.name)))
-
-            # Add description
-            self.graph.add((library_uri, self.CODE.description,
-                            Literal(library_info.description)))
-            self.graph.add((library_uri, self.CODE.descriptionEmbedding,
-                            Literal(library_info.description_embedding)))
-
-            # Connect library to package
-            for package_name in library_info.packages:
-                package_uri = self._get_component_uri("Package", f"{library_path}_{package_name}")
-                self.graph.add((library_uri, self.CODE.connectsTo, package_uri))
 
     def export_rdf(self) -> str:
 
