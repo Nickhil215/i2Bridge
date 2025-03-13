@@ -269,7 +269,7 @@ class RDFExporter:
         """Add classes to the RDF graph"""
         for class_path, class_info in classes.items():
             # Create URI for the class
-            formatted_class_path = str(class_path).replace("py::","")
+            formatted_class_path = str(class_path).replace("py::", "")
             class_uri = self._get_component_uri("Class", f"{formatted_class_path}")
 
             # Add class
@@ -286,7 +286,8 @@ class RDFExporter:
             # Add base classes as dependencies
             for base in class_info.bases:
                 if base != "object":  # Skip Python's base object
-                    base_uri = self._get_component_uri("Class", base)
+                    # Sanitize the base URI to avoid special characters
+                    base_uri = self._get_component_uri("Class", base.replace("(", "").replace(")", "").replace("[", "").replace("]", ""))
                     self.graph.add((class_uri, self.CODE.dependsOn, base_uri))
 
             # Add description
