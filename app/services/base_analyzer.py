@@ -2,13 +2,15 @@ import os
 import re
 import shutil
 import uuid
+import sys
+import importlib.util
 from abc import ABC, abstractmethod
 from collections import defaultdict
-from typing import Any, Dict, Optional
-from typing import List, Set
+from typing import Any, Dict, Optional, List, Set, Tuple
 
 import astroid
 from astroid import nodes
+import pkg_resources
 
 from app import logger
 from app.models.data_classes import ClassInfo, ModuleInfo, FunctionInfo, TestsInfo, ApiInfo
@@ -21,6 +23,39 @@ def extract_repo_name(github_url):
     if match:
         return match.group(2).replace('.git', '')  # The second group is the repo name
     return None
+
+def get_pypi_name(repo_name):
+    """
+    Convert GitHub repo name to standard Python package name.
+    Attempt to map a GitHub repo name to its PyPI package name.
+    This is a heuristic that tries common patterns.
+    """
+    # Common Python package renaming patterns
+    if repo_name.startswith('python-'):
+        # python-package -> package
+        possible_name = repo_name[7:]
+    elif '-python-' in repo_name:
+        # lib-python-client -> lib
+        possible_name = repo_name.split('-python-')[0]
+    elif repo_name.endswith('-python'):
+        # package-python -> package
+        possible_name = repo_name[:-7]
+    elif repo_name.endswith('-py'):
+        # package-py -> package
+        possible_name = repo_name[:-3]
+    else:
+        # Default case - try the repo name directly
+        possible_name = repo_name
+        
+    # Replace hyphens with underscores for Python import compatibility
+    import_name = possible_name.replace('-', '_')
+    
+    return {
+        'repo_name': repo_name,
+        'possible_pypi_name': possible_name,
+        'import_name': import_name,
+        'display_name': repo_name  # Original name for display purposes
+    }
 
 
 def format_path(path):
@@ -187,6 +222,8 @@ class BaseAnalyzer(ABC):
         self.apis: Dict[str, ApiInfo] = {}
         self.errors: List[tuple] = []
         self.temp_dir: Optional[str] = None
+        # New: cache for stdlib packages
+        self.stdlib_cache = {}
 
     def __enter__(self):
         """Support for context manager protocol."""
@@ -211,7 +248,6 @@ class BaseAnalyzer(ABC):
                       git_url: str = None, branch: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
-
             file_path = os.path.relpath(temp_file_path, self.package_path)
             logger.info(f"Analyzing file: {file_path}")
             self.relative_path = file_path
@@ -220,11 +256,37 @@ class BaseAnalyzer(ABC):
             self.git_url = git_url
             self.branch = branch
 
-            self.package_name=None
+            self.package_name = None
+            self.package_info = None
+            
             if git_url:
-                self.package_name = extract_repo_name(git_url)
-
-            self.formatted_path = f"{self.package_name}{format_path(self.relative_path).split(self.package_name)[-1]}"
+                repo_name = extract_repo_name(git_url)
+                self.package_info = get_pypi_name(repo_name)
+                self.package_name = self.package_info['import_name']  # Use import-compatible name
+                self.display_name = self.package_info['display_name']  # Original name for display
+            
+            # Handle module path formatting properly
+            path_parts = format_path(self.relative_path).split('.')
+            
+            # Special handling for setup.py at the root level
+            if path_parts and path_parts[0] == 'setup':
+                # For setup.py, use packagename.setup.function_name format
+                self.formatted_path = f"{self.package_name}.setup"
+            else:
+                # For normal modules, construct path properly with dots
+                try:
+                    # Try to find the package name in the path parts
+                    if self.package_name and self.package_name in path_parts:
+                        # Find where the package name is in the path
+                        pkg_index = path_parts.index(self.package_name)
+                        # Join from that point forward
+                        self.formatted_path = '.'.join(path_parts[pkg_index:])
+                    else:
+                        # If package name not in path, assume format is package_name.relative_path
+                        self.formatted_path = f"{self.package_name}.{'.'.join(path_parts)}"
+                except (ValueError, IndexError):
+                    # Fallback: just use package_name.relative_path
+                    self.formatted_path = f"{self.package_name}.{'.'.join(path_parts)}"
 
             with open(temp_file_path, 'r', encoding='utf-8') as f:
                 source = f.read()
@@ -256,7 +318,6 @@ class BaseAnalyzer(ABC):
                 for class_node in node.body:
                     if isinstance(class_node, nodes.FunctionDef):
                         func_info = self._extract_function_info(class_node, source, file_path)
-                        func_info.is_method = True
                         self.functions[f"{file_path}::{func_info.name}"] = func_info
             elif isinstance(node, nodes.FunctionDef):
                 # If it's a function at the module level
@@ -272,11 +333,13 @@ class BaseAnalyzer(ABC):
                 for class_node in node.body:
                     if isinstance(class_node, nodes.FunctionDef):
                         api_info = _extract_api_endpoint_info(class_node, source)
-                        self.apis[f"{file_path}::{api_info.name}"] = api_info
+                        if api_info and api_info.http_method is not None:
+                            self.apis[f"{file_path}::{api_info.name}"] = api_info
             elif isinstance(node, nodes.FunctionDef):
                 # If it's a function at the module level
                 api_info = _extract_api_endpoint_info(node, source)
-                self.apis[f"{file_path}::{api_info.name}"] = api_info
+                if api_info and api_info.http_method is not None:
+                    self.apis[f"{file_path}::{api_info.name}"] = api_info
 
     def _analyze_tests(self, module: nodes.Module, file_path: str, source: str) -> None:
         """Analyze all tests in a module"""
@@ -314,11 +377,11 @@ class BaseAnalyzer(ABC):
                     import_name = name if asname is None else f"{name} as {asname}"
                     package_name = name.split('.')[0]
 
-                    if asname is not None:
-                        package_name = name.split('.')[0]
+                    # Get the correct library name dynamically
+                    library_name = self.get_library_name(package_name)
 
                     if package_name not in self.packages[file_path]:
-                        self.packages[file_path].append(package_name)  # Add package to the file_path list
+                        self.packages[file_path].append((library_name, import_name))  # Add library name and import name
 
                     self.imports[file_path].append(f"import {import_name}")
             elif isinstance(node, nodes.ImportFrom):
@@ -328,10 +391,12 @@ class BaseAnalyzer(ABC):
                         import_name = f"{name}" if asname is None else f"{name} as {asname}"
                         self.imports[file_path].append(f"from {self.formatted_path} import {import_name}")
                     else:
-                        import_name = f"{module_name}.{name}" if asname is None else f"{module_name}.{name} as {asname}"
-                        package_name = import_name.split('.')[0]
+                        import_name = f"{name}" if asname is None else f"{name} as {asname}"
+                        package_name = module_name.split('.')[0]
+                        library_name = self.get_library_name(package_name)  # Get the correct library name dynamically
+
                         if package_name not in self.packages[file_path]:
-                            self.packages[file_path].append(package_name)  # Add package to the file_path list
+                            self.packages[file_path].append((library_name, module_name))  # Add library name and import name
                         self.imports[file_path].append(f"from {module_name} import {import_name}")
 
         self.module_info[file_path] = ModuleInfo(
@@ -341,74 +406,216 @@ class BaseAnalyzer(ABC):
             classes={},
             functions={})
 
-    def get_used_imports(self, start_line, end_line, source_code, file_path):
-        # Extract the relevant lines from the source code (lines are 1-indexed, so adjust accordingly)
-        lines = source_code.splitlines()[start_line-1:end_line]
+    # NEW METHODS FOR IMPROVED ANALYSIS
 
-        # Define a list to store packages
-        packages = []
-        imports = []
-        if file_path not in self.packages:
-            self.packages[file_path] = []
-            self.imports[file_path] = []
-
-        for line in lines:
-            for module_package in self.packages[file_path]:
-                if module_package in line and module_package not in packages:
-                    packages.append(module_package)
-                    for module_import in self.imports[file_path]:
-                        if module_package in module_import and module_import not in imports:
-                            imports.append(module_import)
-
-        return imports
-
-    # Function to recursively collect dependencies
-    def find_dependencies(self, node, file_path, package_path, package_name, functions, dependencies, all_deps):
-        """
-        Recursively find dependencies for the given node (function) and propagate dependencies.
-        """
-        # Iterate through all function calls in the node
+    def _is_stdlib_package(self, package_name: str) -> bool:
+        """Check if a package is part of the Python standard library."""
+        # Check cache first
+        if package_name in self.stdlib_cache:
+            return self.stdlib_cache[package_name]
+        
+        # Check built-in modules
+        if package_name in sys.builtin_module_names:
+            self.stdlib_cache[package_name] = True
+            return True
+            
+        try:
+            # Try to find the package spec
+            spec = importlib.util.find_spec(package_name)
+            if spec is None:
+                self.stdlib_cache[package_name] = False
+                return False
+            
+            # Most stdlib modules are in the Python installation directory
+            # and not in site-packages or dist-packages
+            path = spec.origin
+            if path and ('site-packages' not in path and 'dist-packages' not in path):
+                self.stdlib_cache[package_name] = True
+                return True
+        except (ImportError, AttributeError):
+            pass
+        
+        self.stdlib_cache[package_name] = False
+        return False
+    
+    def _extract_imported_name(self, import_stmt: str) -> str:
+        """Extract the imported name from an import statement."""
+        if ' as ' in import_stmt:
+            # Handle aliased imports
+            return import_stmt.split(' as ')[1].strip()
+        elif 'from ' in import_stmt and ' import ' in import_stmt:
+            # Handle from ... import ...
+            parts = import_stmt.split(' import ')
+            if len(parts) > 1:
+                return parts[1].strip()
+        elif 'import ' in import_stmt:
+            # Handle plain imports
+            parts = import_stmt.split('import ')
+            if len(parts) > 1:
+                return parts[1].strip()
+        
+        # Default case
+        return ""
+    
+    def classify_dependencies(self, packages: List[str]) -> Tuple[List[str], List[str]]:
+        """Classify packages as runtime or development dependencies based on usage patterns."""
+        runtime_deps = []
+        dev_deps = []
+        
+        dev_patterns = ['test', 'dev', 'doc', 'debug', 'mock', 'build', 'setup', 'lint', 'coverage']
+        
+        for package_info in packages:
+            # Extract base package name without version constraints
+            package_name = package_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
+            
+            # Check for common development dependency patterns
+            if any(pattern in package_name.lower() for pattern in dev_patterns):
+                dev_deps.append(package_info)
+            # Check version constraints that suggest dev dependencies
+            elif '; python_version' in package_info or 'dev' in package_info:
+                dev_deps.append(package_info)
+            else:
+                runtime_deps.append(package_info)
+                
+        return runtime_deps, dev_deps
+    
+    def get_function_imports(self, node: nodes.NodeNG, file_path: str, source: str) -> List[str]:
+        """Extract imports that are actually used within a function."""
+        # Get all names referenced in the function
+        referenced_names = set()
+        for name_node in node.nodes_of_class(astroid.Name):
+            referenced_names.add(name_node.name)
+        
+        # Get all imports from the file
+        file_imports = {}
+        if file_path in self.imports:
+            for import_stmt in self.imports[file_path]:
+                # Extract the imported name and its source
+                imported_name = self._extract_imported_name(import_stmt)
+                if imported_name:
+                    file_imports[imported_name] = import_stmt
+        
+        # Find which imports are actually used
+        used_imports = []
+        for name in referenced_names:
+            if name in file_imports:
+                used_imports.append(file_imports[name])
+        
+        # Also check if the function uses any imports indirectly through method calls
         for call in node.nodes_of_class(astroid.Call):
             try:
-                # Infer the function being called
-                inferred = next(call.func.infer())
-
-                if isinstance(inferred, nodes.FunctionDef):
-                    # Get the module path where the called function is defined
-                    inferred_module_path = os.path.relpath(
-                        inferred.root().file,
-                        package_path
-                    ) if inferred.root().file else file_path
-
-                    # Build the function path as stored in self.functions
-                    func_path = f"{inferred_module_path}::{inferred.name}"
-                    formatted_path_2 = f"{package_name}{format_path(inferred_module_path).split(package_name)[-1]}"
-                    function_exe_cmd_2 = f"{formatted_path_2}.{inferred.name}()"
-
-                    if inferred.name.startswith("_"):
-                        continue
-
-                    # If the function is in the functions set, add its execution command to the dependencies
-                    if func_path in functions:
-                        dependencies.add(function_exe_cmd_2)
-
-                        # If the function is not already in all_deps, initialize its dependency set
-                        if inferred.name not in all_deps:
-                            all_deps[inferred.name] = set()
-
-                        # Now recursively find dependencies in the called function
-                        self.find_dependencies(inferred, file_path, package_path, package_name, functions, all_deps[inferred.name], all_deps)
-
-                        # After finding dependencies, merge them with the current function's dependencies
-                        dependencies.update(all_deps[inferred.name])
-
-            except astroid.InferenceError:
+                if isinstance(call.func, astroid.Attribute) and hasattr(call.func.expr, 'name'):
+                    if call.func.expr.name in file_imports:
+                        used_imports.append(file_imports[call.func.expr.name])
+            except AttributeError:
+                pass
+                
+        return used_imports
+    
+    def infer_package_dependencies(self, imports: List[str]) -> List[str]:
+        """Infer which packages are needed based on imports."""
+        required_packages = set()
+        
+        # Always include the package itself - use PyPI name if available
+        if self.package_info and 'possible_pypi_name' in self.package_info:
+            # Add both the PyPI name and GitHub name to be safe
+            required_packages.add(self.package_info['possible_pypi_name'])
+            required_packages.add(self.package_info['repo_name'])
+            
+            # Also try common variants
+            if '-' in self.package_info['repo_name']:
+                # Try with underscores instead of hyphens
+                required_packages.add(self.package_info['repo_name'].replace('-', '_'))
+            if '_' in self.package_info['repo_name']:
+                # Try with hyphens instead of underscores
+                required_packages.add(self.package_info['repo_name'].replace('_', '-'))
+        elif self.package_name:
+            required_packages.add(self.package_name)
+        
+        for import_stmt in imports:
+            # Extract the top-level package
+            if import_stmt.startswith('import '):
+                top_pkg = import_stmt.split()[1].split('.')[0]
+            elif import_stmt.startswith('from '):
+                parts = import_stmt.split()
+                if len(parts) >= 2:
+                    # Handle relative imports
+                    module_path = parts[1]
+                    if module_path.startswith('.'):
+                        continue  # Skip relative imports
+                    top_pkg = module_path.split('.')[0]
+                else:
+                    continue
+            else:
                 continue
+                
+            # Skip relative imports and the package itself
+            if top_pkg == '.' or (self.package_name and top_pkg == self.package_name):
+                continue
+                
+            # Check if this is a standard library package
+            if self._is_stdlib_package(top_pkg):
+                continue
+                
+            # Add the package name
+            required_packages.add(top_pkg)
+            
+            # Try to map common package names to their PyPI equivalents
+            # This is incomplete and would need to be expanded based on your needs
+            package_map = {
+                'tomlkit': 'tomlkit',
+                'pytest': 'pytest',
+                'requests': 'requests',
+                'numpy': 'numpy',
+                'pandas': 'pandas',
+                # Add more mappings as needed
+            }
+            
+            if top_pkg in package_map:
+                required_packages.add(package_map[top_pkg])
+            
+        return list(required_packages)
+
+    # Enhanced version for direct function use
+    def get_used_imports(self, start_line, end_line, source_code, file_path):
+        """
+        Extract imports actually used in a specific code region.
+        This is more intelligent than the original implementation.
+        """
+        # Extract the function code
+        function_code = source_code.splitlines()[start_line-1:end_line]
+        function_text = '\n'.join(function_code)
+        
+        # Track imports explicitly declared within the function
+        direct_imports = []
+        for line in function_code:
+            if re.match(r'^\s*import\s+', line) or re.match(r'^\s*from\s+\S+\s+import', line):
+                direct_imports.append(line.strip())
+        
+        # Check for imports from the module that are used in the function
+        module_imports = []
+        if file_path in self.imports:
+            for import_stmt in self.imports[file_path]:
+                # Extract what was imported
+                imported_name = ""
+                if ' as ' in import_stmt:
+                    imported_name = import_stmt.split(' as ')[1].strip()
+                elif 'from ' in import_stmt and ' import ' in import_stmt:
+                    imported_name = import_stmt.split(' import ')[1].strip()
+                elif 'import ' in import_stmt:
+                    imported_name = import_stmt.split('import ')[1].strip()
+                
+                # Check if the imported name is used in the function
+                if imported_name and re.search(r'\b' + re.escape(imported_name) + r'\b', function_text):
+                    module_imports.append(import_stmt)
+        
+        # Combine explicit and module imports
+        return list(set(direct_imports + module_imports))
 
     def _extract_function_info(self, node: nodes.FunctionDef, source: str,
                                file_path: str) -> FunctionInfo:
-        """Extract detailed information about a function."""
-        args = [arg.name for arg in node.args.args]
+        """Extract detailed information about a function with improved import and dependency analysis."""
+        args = [arg.name for arg in node.args.args if arg.name != 'self']  # Exclude 'self'
         returns = node.returns.as_string() if node.returns else None
         docstring = None
         if isinstance(node.doc_node, nodes.Const):
@@ -436,20 +643,108 @@ class BaseAnalyzer(ABC):
                 comments.append(comment_text)
 
         formated_args = ', '.join(arg.name for arg in node.args.args if arg.name != 'self' and arg.name != '**kwargs')
-        function_exe_cmd=f"{self.formatted_path}.{class_name}.{node.name}()" if class_name else f"{self.formatted_path}.{node.name}()"
-        signature=f"{node.name}({formated_args})"
+        
+        # Improved function_exe_cmd construction with proper path formatting
+        if class_name:
+            function_exe_cmd = f"{self.formatted_path}.{class_name}.{node.name}()"
+        else:
+            # Handle setup.py special case 
+            if file_path.endswith('setup.py') or '/setup.py' in file_path:
+                function_exe_cmd = f"{self.display_name}.setup.{node.name}()"
+            else:
+                function_exe_cmd = f"{self.formatted_path}.{node.name}()"
+                
+        signature = f"{node.name}({formated_args})"
+        
+        # Get function-specific imports with improved detection
         imports = self.get_used_imports(start_line, end_line, source, file_path)
+        
+        # Make sure imports list includes any import for the package itself if needed
+        if self.package_name and self.package_info:
+            # Check if there are any imports from this package
+            package_import_found = False
+            for imp in imports:
+                if self.package_name in imp or self.package_info['display_name'] in imp:
+                    package_import_found = True
+                    break
+                    
+            # If function is in a module that needs to be imported, add it
+            if not package_import_found and node.name != '__init__':
+                if file_path.endswith('setup.py'):
+                    # For setup.py functions, usually you'd import the function directly
+                    imports.append(f"from {self.package_name}.setup import {node.name}")
+                elif class_name:
+                    # For class methods, import the class
+                    imports.append(f"from {self.formatted_path} import {class_name}")
+                else:
+                    # For regular functions, import the function
+                    imports.append(f"from {self.formatted_path} import {node.name}")
+        
+        # Determine required packages based on imports with improved logic
+        required_packages = self.infer_package_dependencies(imports)
+        
+        # Filter to just runtime dependencies
+        runtime_packages, _ = self.classify_dependencies(self.requirement_info) if self.requirement_info else ([], [])
+        
+        # Filter the runtime packages to only include those that match our required packages
+        filtered_packages = []
+        if required_packages and runtime_packages:
+            for pkg_info in runtime_packages:
+                pkg_name = pkg_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
+                
+                # Check if this package matches any of our required packages
+                if any(req.lower() == pkg_name.lower() for req in required_packages):
+                    filtered_packages.append(pkg_info)
+        
+        # If we couldn't find matching packages, use our best guess
+        if not filtered_packages and self.package_info:
+            # Add the package itself as a dependency
+            filtered_packages.append(self.package_info['possible_pypi_name'])
+            
+            # Also add any third-party packages we detected
+            for pkg in required_packages:
+                if pkg != self.package_name and pkg != self.package_info['possible_pypi_name']:
+                    filtered_packages.append(pkg)
 
-        function_def = f"{self.formatted_path}.{class_name}.{signature}" if class_name else f"{self.formatted_path}.{signature}"
+        # Construct the function definition path properly
+        if class_name:
+            function_def = f"{self.formatted_path}.{class_name}.{signature}"
+        else:
+            # Special handling for setup.py
+            if file_path.endswith('setup.py') or '/setup.py' in file_path:
+                function_def = f"{self.display_name}.setup.{signature}"
+            else:
+                function_def = f"{self.formatted_path}.{signature}"
 
-        prefix = self.git_url.rstrip(".git")
+        # Create a properly formatted URL to the function source
+        prefix = self.git_url.rstrip(".git") if self.git_url else ""
         path = file_path.lstrip("../")
 
-        function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}"
+        function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}" if prefix and self.branch else ""
 
         dependencies = set()
-        all_deps = {}
-        self.find_dependencies(node, file_path, self.package_path, self.package_name, self.functions, dependencies, all_deps)
+        # Collect function dependencies
+        for call in node.nodes_of_class(astroid.Call):
+            try:
+                inferred = next(call.func.infer())
+                if isinstance(inferred, nodes.FunctionDef):
+                    # Get the module path where the called function is defined
+                    inferred_module_path = os.path.relpath(
+                        inferred.root().file,
+                        self.package_path
+                    ) if inferred.root().file else file_path
+
+                    # Build the function path as stored in self.functions
+                    func_path = f"{inferred_module_path}::{inferred.name}"
+                    formatted_path_2 = f"{self.package_name}{format_path(inferred_module_path).split(self.package_name)[-1]}"
+                    function_exe_cmd_2=f"{formatted_path_2}.{inferred.name}()"
+
+                    if inferred.name.startswith("_"):
+                        continue
+                    if func_path in self.functions:
+                        dependencies.add(function_exe_cmd_2)
+            except astroid.InferenceError:
+                continue
 
         return FunctionInfo(
             id= str(uuid.uuid4()),
@@ -462,7 +757,7 @@ class BaseAnalyzer(ABC):
             docstring=docstring,
             dependent_functions= dependencies,
             comments=comments,
-            decorators=decorators,  # Use the properly extracted decorators
+            decorators=decorators,
             complexity=complexity,
             start_line=start_line,
             end_line=end_line,
@@ -471,8 +766,8 @@ class BaseAnalyzer(ABC):
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
             function_def=function_def,
-            packages=self.requirement_info,
-            imports=imports,
+            packages=filtered_packages,  # IMPROVED: Only include relevant packages
+            imports=imports,             # IMPROVED: Only include relevant imports
             runtime="python",
             is_updated=False,
             description="",
@@ -710,4 +1005,9 @@ class BaseAnalyzer(ABC):
             result.append(vars(func))  # or func.__dict__
         return result
 
-
+    def get_library_name(self, package_name):
+        try:
+            distribution = pkg_resources.get_distribution(package_name)
+            return distribution.project_name  # This gives the correct library name
+        except pkg_resources.DistributionNotFound:
+            return package_name  # Fallback to the package name if not found
