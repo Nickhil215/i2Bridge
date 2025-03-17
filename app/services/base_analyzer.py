@@ -318,11 +318,11 @@ class BaseAnalyzer(ABC):
                 for class_node in node.body:
                     if isinstance(class_node, nodes.FunctionDef):
                         func_info = self._extract_function_info(class_node, source, file_path)
-                        self.functions[f"{file_path}::{func_info.name}"] = func_info
+                        self.functions[f"{file_path}::{func_info.function_name}"] = func_info
             elif isinstance(node, nodes.FunctionDef):
                 # If it's a function at the module level
                 func_info = self._extract_function_info(node, source, file_path)
-                self.functions[f"{file_path}::{func_info.name}"] = func_info
+                self.functions[f"{file_path}::{func_info.function_name}"] = func_info
 
 
     def _analyze_api_endpoint(self, module: nodes.Module, file_path: str, source: str) -> None:
@@ -748,9 +748,9 @@ class BaseAnalyzer(ABC):
 
         return FunctionInfo(
             id= str(uuid.uuid4()),
-            name=node.name,
+            function_name=node.name,
             module_path=file_path,
-            args=args,
+            params=args,
             returns=returns,
             function_exe_cmd=function_exe_cmd,
             function_url=function_url,
@@ -765,8 +765,9 @@ class BaseAnalyzer(ABC):
             is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
-            function_def=function_def,
-            packages=filtered_packages,  # IMPROVED: Only include relevant packages
+            method_signature=function_def,
+            output_type="json",
+            packages=set(filtered_packages),  # IMPROVED: Only include relevant packages
             imports=imports,             # IMPROVED: Only include relevant imports
             runtime="python",
             is_updated=False,
@@ -918,13 +919,13 @@ class BaseAnalyzer(ABC):
             report.extend([
                 f"\n  {func_path}:",
                 f"    id: {func_info.id}",
-                f"    name: {func_info.name}",
+                f"    name: {func_info.function_name}",
                 f"    Module Path: {func_info.module_path}",
                 f"    Signature: {func_info.signature}",
                 f"    Packages: {func_info.packages}",
                 f"    Imports: {func_info.imports}",
                 f"    function_exe_cmd: {func_info.function_exe_cmd}",
-                f"    Arguments: {func_info.args if func_info.args else 'None'}",
+                f"    Arguments: {func_info.params if func_info.params else 'None'}",
                 f"    Returns: {func_info.returns if func_info.returns else 'None'}",
                 f"    Start Line: {func_info.start_line}",
                 f"    End Line: {func_info.end_line}",
@@ -996,14 +997,14 @@ class BaseAnalyzer(ABC):
 
         return '\n'.join(report)
 
-    def get_functions_list(self) -> List[dict]:
+    def get_functions_list(self) -> dict:
         result = []
         for func in self.functions.values():
             if func.signature.startswith("_"):
                 continue
             # Convert the object to a dict automatically
             result.append(vars(func))  # or func.__dict__
-        return result
+        return { "library_name" : extract_repo_name(self.git_url), "functions" : result}
 
     def get_library_name(self, package_name):
         try:

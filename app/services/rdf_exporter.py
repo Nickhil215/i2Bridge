@@ -39,17 +39,18 @@ class RDFExporter:
     def add_functions(self, functions: Dict[str, Any]) -> None:
         """Add functions/methods to the RDF graph"""
         for func_path, func_info in functions.items():
-            if func_info.name.startswith("_"):
+            if func_info.function_name.startswith("_"):
                 continue
 
             # Create URI for the function
-            func_uri = self._get_component_uri("Function", f"{func_info.name}_{func_path}")
+            func_uri = self._get_component_uri("Function", f"{func_info.function_name}_{func_path}")
 
             # Add function type
             self.graph.add((func_uri, RDF.type, self.CODE.Function))
 
             # Add basic properties
-            self.graph.add((func_uri, self.CODE.name, Literal(func_info.name)))
+            self.graph.add((func_uri, self.CODE.function_name, Literal(func_info.function_name)))
+            self.graph.add((func_uri, self.CODE.outputType, Literal(func_info.output_type)))
             if func_info.docstring:
                 self.graph.add((func_uri, self.CODE.docstring, Literal(func_info.docstring)))
                 self.graph.add((func_uri, self.CODE.isDocumented, Literal(True)))
@@ -65,17 +66,17 @@ class RDFExporter:
                             Literal(func_info.complexity)))
 
             # Add parameters as inputs
-            for arg in func_info.args:
-                param_uri = self._get_component_uri("Parameter", f"{arg}_{func_info.name}")
+            for arg in func_info.params:
+                param_uri = self._get_component_uri("Parameter", f"{arg}_{func_info.function_name}")
                 self.graph.add((param_uri, RDF.type, self.CODE.Parameter))
                 self.graph.add((param_uri, self.CODE.name, Literal(arg)))
                 self.graph.add((func_uri, self.CODE.hasInput, param_uri))
 
             # Add return type as output if available
             if func_info.returns:
-                output_uri = self._get_component_uri("Parameter", f"output_{func_info.name}")
-                self.graph.add((output_uri, RDF.type, self.CODE.Parameter))
-                self.graph.add((output_uri, self.CODE.name, Literal("return")))
+                output_uri = self._get_component_uri("Return", f"output_{func_info.function_name}")
+                self.graph.add((output_uri, RDF.type, self.CODE.Returns))
+                self.graph.add((output_uri, self.CODE.returns, Literal(func_info.returns)))
 
                 # Map Python return types to ontology data types (simplified mapping)
                 return_type = func_info.returns.lower()
@@ -98,8 +99,8 @@ class RDFExporter:
                 self.graph.add((func_uri, self.CODE.function_exe_cmd, Literal(func_info.function_exe_cmd)))
 
             # Add function definition if available
-            if func_info.function_def:
-                self.graph.add((func_uri, self.CODE.function_def, Literal(func_info.function_def)))
+            if func_info.method_signature:
+                self.graph.add((func_uri, self.CODE.method_signature, Literal(func_info.method_signature)))
 
             # Add function url if available
             if func_info.function_url:

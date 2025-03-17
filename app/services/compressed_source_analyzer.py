@@ -56,7 +56,7 @@ class CompressedSourceAnalyzer(TemporaryDirectoryAnalyzer):
 
             def safe_extract(tar, path):
                 for member in tar.getmembers():
-                    member_path = os.path.join(path, member.name)
+                    member_path = os.path.join(path, member.function_name)
                     if not is_within_directory(path, member_path):
                         raise Exception("Attempted path traversal in tar file")
                 tar.extractall(path)

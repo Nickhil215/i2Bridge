@@ -11,7 +11,7 @@ from app.core.exceptions import ApiException
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 
-def analyze_package(package_path: str, branch: str, **kwargs) -> str:
+def analyze_package(package_path: str, branch: str, **kwargs):
 
     try:
         with PackageAnalyzerFactory.create_analyzer(package_path, branch, **kwargs) as analyzer:

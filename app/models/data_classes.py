@@ -7,9 +7,9 @@ from typing import List
 class FunctionInfo:
     """Store detailed information about a function or method."""
     id: str
-    name: str
+    function_name: str
     module_path: str
-    args: List[str]
+    params: List[str]
     returns: Optional[str]
     docstring: Optional[str]
     description: Optional[str]
@@ -25,7 +25,8 @@ class FunctionInfo:
     is_async: bool
     signature: str
     function_exe_cmd: str
-    function_def: str
+    method_signature: str
+    output_type: str
     function_url: str
     packages: Set[str]
     imports: List[str]
