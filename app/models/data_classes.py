@@ -29,7 +29,7 @@ class FunctionInfo:
     output_type: str
     function_url: str
     packages: Set[str]
-    imports: List[str]
+    imports: Set[str]
     runtime: str
     is_updated: bool
 

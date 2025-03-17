@@ -17,10 +17,10 @@ def analyze_package(package_path: str, branch: str, **kwargs):
         with PackageAnalyzerFactory.create_analyzer(package_path, branch, **kwargs) as analyzer:
 
             analyzer.analyze_package()
-            txt_output = analyzer.generate_report()
+            # txt_output = analyzer.generate_report()
             ttl_output = analyzer.convert_analyzer_to_knowledge_graph()
             function_list = analyzer.get_functions_list()
-            return ttl_output, txt_output, function_list
+            return ttl_output, function_list
 
     except Exception as e:
         error_msg = f"Error analyzing package: {str(e)}"
@@ -102,7 +102,7 @@ def import_kg(cdn_url, bearer_token):
 
 
 def analyze(package_path, branch, request):
-    ttl_output, txt_output, function_list = analyze_package(package_path, branch)
+    ttl_output, function_list = analyze_package(package_path, branch)
 
     # with open("/home/gaian/Desktop/python/i2_bridge/sample/output.ttl", "w", encoding="utf-8") as f:
     #     f.write(ttl_output)

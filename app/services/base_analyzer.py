@@ -46,10 +46,10 @@ def get_pypi_name(repo_name):
     else:
         # Default case - try the repo name directly
         possible_name = repo_name
-        
+
     # Replace hyphens with underscores for Python import compatibility
     import_name = possible_name.replace('-', '_')
-    
+
     return {
         'repo_name': repo_name,
         'possible_pypi_name': possible_name,
@@ -249,7 +249,6 @@ class BaseAnalyzer(ABC):
         """Analyze a single Python file and extract its AST information."""
         try:
             file_path = os.path.relpath(temp_file_path, self.package_path)
-            logger.info(f"Analyzing file: {file_path}")
             self.relative_path = file_path
 
             self.requirement_info = requirement_info
@@ -258,16 +257,16 @@ class BaseAnalyzer(ABC):
 
             self.package_name = None
             self.package_info = None
-            
+
             if git_url:
                 repo_name = extract_repo_name(git_url)
                 self.package_info = get_pypi_name(repo_name)
                 self.package_name = self.package_info['import_name']  # Use import-compatible name
                 self.display_name = self.package_info['display_name']  # Original name for display
-            
+
             # Handle module path formatting properly
             path_parts = format_path(self.relative_path).split('.')
-            
+
             # Special handling for setup.py at the root level
             if path_parts and path_parts[0] == 'setup':
                 # For setup.py, use packagename.setup.function_name format
@@ -299,13 +298,17 @@ class BaseAnalyzer(ABC):
             self._analyze_classes(module, file_path, source)
 
             # Pass source to analysis methods
-            if ("tests" in file_path.split("/")
-                    or "test" in file_path.split("/")
-                    or file_path.startswith("test")):
-                self._analyze_tests(module, file_path, source)
-            elif not file_path.split('/')[-1].__contains__("_"):
-                self._analyze_functions(module, file_path, source)
-                self._analyze_api_endpoint(module, file_path, source)
+            file_path_parts = file_path.split("/")
+            filename = file_path.split('/')[-1]
+
+            # List of terms to check in file path
+            terms_to_check = ["tests", "test", "example", "examples", "sample"]
+
+            # Check if any of the conditions fail
+            if any(term not in file_path_parts for term in terms_to_check) and "_" not in filename:
+              logger.info(f"Analyzing file: {file_path}")
+              self._analyze_functions(module, file_path, source)
+              self._analyze_api_endpoint(module, file_path, source)
         except Exception as e:
             logger.error(f"Error analyzing {temp_file_path}: {str(e)}")
             self.errors.append((temp_file_path, str(e)))
@@ -413,19 +416,19 @@ class BaseAnalyzer(ABC):
         # Check cache first
         if package_name in self.stdlib_cache:
             return self.stdlib_cache[package_name]
-        
+
         # Check built-in modules
         if package_name in sys.builtin_module_names:
             self.stdlib_cache[package_name] = True
             return True
-            
+
         try:
             # Try to find the package spec
             spec = importlib.util.find_spec(package_name)
             if spec is None:
                 self.stdlib_cache[package_name] = False
                 return False
-            
+
             # Most stdlib modules are in the Python installation directory
             # and not in site-packages or dist-packages
             path = spec.origin
@@ -434,10 +437,10 @@ class BaseAnalyzer(ABC):
                 return True
         except (ImportError, AttributeError):
             pass
-        
+
         self.stdlib_cache[package_name] = False
         return False
-    
+
     def _extract_imported_name(self, import_stmt: str) -> str:
         """Extract the imported name from an import statement."""
         if ' as ' in import_stmt:
@@ -453,21 +456,21 @@ class BaseAnalyzer(ABC):
             parts = import_stmt.split('import ')
             if len(parts) > 1:
                 return parts[1].strip()
-        
+
         # Default case
         return ""
-    
-    def classify_dependencies(self, packages: List[str]) -> Tuple[List[str], List[str]]:
+
+    def classify_dependencies(self, packages: Set[str]) -> Tuple[List[str], List[str]]:
         """Classify packages as runtime or development dependencies based on usage patterns."""
         runtime_deps = []
         dev_deps = []
-        
+
         dev_patterns = ['test', 'dev', 'doc', 'debug', 'mock', 'build', 'setup', 'lint', 'coverage']
-        
+
         for package_info in packages:
             # Extract base package name without version constraints
             package_name = package_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
-            
+
             # Check for common development dependency patterns
             if any(pattern in package_name.lower() for pattern in dev_patterns):
                 dev_deps.append(package_info)
@@ -476,16 +479,16 @@ class BaseAnalyzer(ABC):
                 dev_deps.append(package_info)
             else:
                 runtime_deps.append(package_info)
-                
+
         return runtime_deps, dev_deps
-    
+
     def get_function_imports(self, node: nodes.NodeNG, file_path: str, source: str) -> List[str]:
         """Extract imports that are actually used within a function."""
         # Get all names referenced in the function
         referenced_names = set()
         for name_node in node.nodes_of_class(astroid.Name):
             referenced_names.add(name_node.name)
-        
+
         # Get all imports from the file
         file_imports = {}
         if file_path in self.imports:
@@ -494,13 +497,13 @@ class BaseAnalyzer(ABC):
                 imported_name = self._extract_imported_name(import_stmt)
                 if imported_name:
                     file_imports[imported_name] = import_stmt
-        
+
         # Find which imports are actually used
         used_imports = []
         for name in referenced_names:
             if name in file_imports:
                 used_imports.append(file_imports[name])
-        
+
         # Also check if the function uses any imports indirectly through method calls
         for call in node.nodes_of_class(astroid.Call):
             try:
@@ -509,19 +512,19 @@ class BaseAnalyzer(ABC):
                         used_imports.append(file_imports[call.func.expr.name])
             except AttributeError:
                 pass
-                
+
         return used_imports
-    
-    def infer_package_dependencies(self, imports: List[str]) -> List[str]:
+
+    def infer_package_dependencies(self, imports: Set[str]) -> List[str]:
         """Infer which packages are needed based on imports."""
         required_packages = set()
-        
+
         # Always include the package itself - use PyPI name if available
         if self.package_info and 'possible_pypi_name' in self.package_info:
             # Add both the PyPI name and GitHub name to be safe
             required_packages.add(self.package_info['possible_pypi_name'])
             required_packages.add(self.package_info['repo_name'])
-            
+
             # Also try common variants
             if '-' in self.package_info['repo_name']:
                 # Try with underscores instead of hyphens
@@ -531,7 +534,7 @@ class BaseAnalyzer(ABC):
                 required_packages.add(self.package_info['repo_name'].replace('_', '-'))
         elif self.package_name:
             required_packages.add(self.package_name)
-        
+
         for import_stmt in imports:
             # Extract the top-level package
             if import_stmt.startswith('import '):
@@ -548,18 +551,18 @@ class BaseAnalyzer(ABC):
                     continue
             else:
                 continue
-                
+
             # Skip relative imports and the package itself
             if top_pkg == '.' or (self.package_name and top_pkg == self.package_name):
                 continue
-                
+
             # Check if this is a standard library package
             if self._is_stdlib_package(top_pkg):
                 continue
-                
+
             # Add the package name
             required_packages.add(top_pkg)
-            
+
             # Try to map common package names to their PyPI equivalents
             # This is incomplete and would need to be expanded based on your needs
             package_map = {
@@ -570,10 +573,10 @@ class BaseAnalyzer(ABC):
                 'pandas': 'pandas',
                 # Add more mappings as needed
             }
-            
+
             if top_pkg in package_map:
                 required_packages.add(package_map[top_pkg])
-            
+
         return list(required_packages)
 
     # Enhanced version for direct function use
@@ -585,13 +588,13 @@ class BaseAnalyzer(ABC):
         # Extract the function code
         function_code = source_code.splitlines()[start_line-1:end_line]
         function_text = '\n'.join(function_code)
-        
+        #
         # Track imports explicitly declared within the function
         direct_imports = []
-        for line in function_code:
-            if re.match(r'^\s*import\s+', line) or re.match(r'^\s*from\s+\S+\s+import', line):
-                direct_imports.append(line.strip())
-        
+        # for line in function_code:
+        #     if re.match(r'^\s*import\s+', line) or re.match(r'^\s*from\s+\S+\s+import', line):
+        #         direct_imports.append(line.strip())
+
         # Check for imports from the module that are used in the function
         module_imports = []
         if file_path in self.imports:
@@ -604,13 +607,16 @@ class BaseAnalyzer(ABC):
                     imported_name = import_stmt.split(' import ')[1].strip()
                 elif 'import ' in import_stmt:
                     imported_name = import_stmt.split('import ')[1].strip()
-                
+
                 # Check if the imported name is used in the function
                 if imported_name and re.search(r'\b' + re.escape(imported_name) + r'\b', function_text):
-                    module_imports.append(import_stmt)
-        
+                    if import_stmt.startswith("from"):
+                        module_imports.append(re.sub(r'^from (\w+)(\.\s*)?(\w+)(,?\s*\w+)*$', r'import \1', import_stmt))
+                    else:
+                        module_imports.append(import_stmt)
+
         # Combine explicit and module imports
-        return list(set(direct_imports + module_imports))
+        return set(module_imports)
 
     def _extract_function_info(self, node: nodes.FunctionDef, source: str,
                                file_path: str) -> FunctionInfo:
@@ -643,22 +649,22 @@ class BaseAnalyzer(ABC):
                 comments.append(comment_text)
 
         formated_args = ', '.join(arg.name for arg in node.args.args if arg.name != 'self' and arg.name != '**kwargs')
-        
+
         # Improved function_exe_cmd construction with proper path formatting
         if class_name:
             function_exe_cmd = f"{self.formatted_path}.{class_name}.{node.name}()"
         else:
-            # Handle setup.py special case 
+            # Handle setup.py special case
             if file_path.endswith('setup.py') or '/setup.py' in file_path:
                 function_exe_cmd = f"{self.display_name}.setup.{node.name}()"
             else:
                 function_exe_cmd = f"{self.formatted_path}.{node.name}()"
-                
+
         signature = f"{node.name}({formated_args})"
-        
+
         # Get function-specific imports with improved detection
         imports = self.get_used_imports(start_line, end_line, source, file_path)
-        
+
         # Make sure imports list includes any import for the package itself if needed
         if self.package_name and self.package_info:
             # Check if there are any imports from this package
@@ -667,44 +673,36 @@ class BaseAnalyzer(ABC):
                 if self.package_name in imp or self.package_info['display_name'] in imp:
                     package_import_found = True
                     break
-                    
+
             # If function is in a module that needs to be imported, add it
             if not package_import_found and node.name != '__init__':
-                if file_path.endswith('setup.py'):
-                    # For setup.py functions, usually you'd import the function directly
-                    imports.append(f"from {self.package_name}.setup import {node.name}")
-                elif class_name:
-                    # For class methods, import the class
-                    imports.append(f"from {self.formatted_path} import {class_name}")
-                else:
-                    # For regular functions, import the function
-                    imports.append(f"from {self.formatted_path} import {node.name}")
-        
+                imports.add(f"import {self.package_name}")
+
         # Determine required packages based on imports with improved logic
         required_packages = self.infer_package_dependencies(imports)
-        
+
         # Filter to just runtime dependencies
         runtime_packages, _ = self.classify_dependencies(self.requirement_info) if self.requirement_info else ([], [])
-        
+
         # Filter the runtime packages to only include those that match our required packages
-        filtered_packages = []
+        filtered_packages = set()
         if required_packages and runtime_packages:
             for pkg_info in runtime_packages:
                 pkg_name = pkg_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
-                
+
                 # Check if this package matches any of our required packages
                 if any(req.lower() == pkg_name.lower() for req in required_packages):
-                    filtered_packages.append(pkg_info)
-        
+                    filtered_packages.add(pkg_info)
+
         # If we couldn't find matching packages, use our best guess
         if not filtered_packages and self.package_info:
             # Add the package itself as a dependency
-            filtered_packages.append(self.package_info['possible_pypi_name'])
-            
+            filtered_packages.add(self.package_info['possible_pypi_name'])
+
             # Also add any third-party packages we detected
             for pkg in required_packages:
                 if pkg != self.package_name and pkg != self.package_info['possible_pypi_name']:
-                    filtered_packages.append(pkg)
+                    filtered_packages.add(pkg)
 
         # Construct the function definition path properly
         if class_name:
@@ -746,13 +744,25 @@ class BaseAnalyzer(ABC):
             except astroid.InferenceError:
                 continue
 
+        modified_imports = set()
+
+        for imp in imports:
+            if imp.startswith("from"):
+                # Apply regex to change 'from module' import to 'import module'
+                modified_import = re.sub(r'^from (\w+)(\.\s*)?.*$', r'import \1', imp)
+                modified_imports.add(modified_import)
+            else:
+                # If it's not a 'from' import, just add it as is
+                modified_imports.add(imp)
+
+
         return FunctionInfo(
             id= str(uuid.uuid4()),
             function_name=node.name,
             module_path=file_path,
             params=args,
             returns=returns,
-            function_exe_cmd=function_exe_cmd,
+            function_exe_cmd=re.sub(r'\.{2,}', '.', function_exe_cmd),
             function_url=function_url,
             docstring=docstring,
             dependent_functions= dependencies,
@@ -765,10 +775,10 @@ class BaseAnalyzer(ABC):
             is_active=True,
             is_async=isinstance(node, nodes.AsyncFunctionDef),
             signature=signature,
-            method_signature=function_def,
+            method_signature=re.sub(r'\.{2,}', '.', function_def),
             output_type="json",
-            packages=set(filtered_packages),  # IMPROVED: Only include relevant packages
-            imports=imports,             # IMPROVED: Only include relevant imports
+            packages=filtered_packages,  # IMPROVED: Only include relevant packages
+            imports=modified_imports,             # IMPROVED: Only include relevant imports
             runtime="python",
             is_updated=False,
             description="",
