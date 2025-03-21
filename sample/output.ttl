@@ -1,0 +1,1517 @@
+@prefix code: <https://github.com/neo4j/neo4j-python-driver#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/code-ontology> a owl:Ontology ;
+    dc:title "Generated Code Component Knowledge Graph" .
+
+code:Class____src_neo4j__async_compat_network__util_AsyncNetworkUtil a code:Class ;
+    code:connectsTo code:Function____src_neo4j__async_compat_network__util_AsyncNetworkUtil_get_address_info,
+        code:Function____src_neo4j__async_compat_network__util_AsyncNetworkUtil_resolve_address ;
+    code:isDocumented false ;
+    code:name "AsyncNetworkUtil" .
+
+code:Class____src_neo4j__async_compat_network__util_NetworkUtil a code:Class ;
+    code:connectsTo code:Function____src_neo4j__async_compat_network__util_NetworkUtil_get_address_info,
+        code:Function____src_neo4j__async_compat_network__util_NetworkUtil_resolve_address ;
+    code:isDocumented false ;
+    code:name "NetworkUtil" .
+
+code:Class____src_neo4j__codec_hydration__common_BrokenHydrationObject a code:Class ;
+    code:connectsTo code:Function____src_neo4j__codec_hydration__common_BrokenHydrationObject_exception_copy ;
+    code:docstring """
+    Represents an object from the server, not understood by the driver.
+
+    A :class:`neo4j.Record` might contain a ``BrokenHydrationObject`` object
+    if the driver received data from the server that it did not understand.
+    This can for instance happen if the server sends a zoned datetime with a
+    zone name unknown to the driver.
+
+    There is no need to explicitly check for this type. Any method on the
+    :class:`neo4j.Record` that would return a ``BrokenHydrationObject``, will
+    raise a :exc:`neo4j.exceptions.BrokenRecordError`
+    with the original exception as cause.
+    """ ;
+    code:isDocumented true ;
+    code:name "BrokenHydrationObject" .
+
+code:Class____src_neo4j__codec_hydration__common_DehydrationHooks a code:Class ;
+    code:connectsTo code:Function____src_neo4j__codec_hydration__common_DehydrationHooks_extend,
+        code:Function____src_neo4j__codec_hydration__common_DehydrationHooks_get_transformer,
+        code:Function____src_neo4j__codec_hydration__common_DehydrationHooks_update ;
+    code:isDocumented false ;
+    code:name "DehydrationHooks" .
+
+code:Class____src_neo4j__codec_hydration__common_GraphHydrator a code:Class ;
+    code:isDocumented false ;
+    code:name "GraphHydrator" .
+
+code:Class____src_neo4j__codec_hydration__common_HydrationScope a code:Class ;
+    code:connectsTo code:Function____src_neo4j__codec_hydration__common_HydrationScope_get_graph ;
+    code:isDocumented false ;
+    code:name "HydrationScope" .
+
+code:Class____src_neo4j__codec_packstream__python__common_Structure a code:Class ;
+    code:isDocumented false ;
+    code:name "Structure" .
+
+code:Class____src_neo4j__deadline_Deadline a code:Class ;
+    code:connectsTo code:Function____src_neo4j__deadline_Deadline_expired,
+        code:Function____src_neo4j__deadline_Deadline_from_timeout_or_deadline,
+        code:Function____src_neo4j__deadline_Deadline_original_timeout,
+        code:Function____src_neo4j__deadline_Deadline_to_timeout ;
+    code:isDocumented false ;
+    code:name "Deadline" .
+
+code:Class____src_neo4j__exceptions_BoltConnectionError a code:Class ;
+    code:connectsTo code:Function____src_neo4j__exceptions_BoltConnectionError_errno ;
+    code:dependsOn code:Class_BoltError ;
+    code:docstring "Raised when a connection fails." ;
+    code:isDocumented true ;
+    code:name "BoltConnectionError" .
+
+code:Class____src_neo4j__exceptions_BoltError a code:Class ;
+    code:dependsOn code:Class_Exception ;
+    code:docstring "Base class for all Bolt protocol errors." ;
+    code:isDocumented true ;
+    code:name "BoltError" .
+
+code:Class____src_neo4j__exceptions_BoltHandshakeError a code:Class ;
+    code:dependsOn code:Class_BoltError ;
+    code:docstring "Raised when a handshake completes unsuccessfully." ;
+    code:isDocumented true ;
+    code:name "BoltHandshakeError" .
+
+code:Class____src_neo4j__exceptions_BoltProtocolError a code:Class ;
+    code:dependsOn code:Class_BoltError ;
+    code:docstring "Raised when an unexpected or unsupported protocol event occurs." ;
+    code:isDocumented true ;
+    code:name "BoltProtocolError" .
+
+code:Class____src_neo4j__exceptions_BoltSecurityError a code:Class ;
+    code:dependsOn code:Class_BoltConnectionError ;
+    code:docstring "Raised when a connection fails for security reasons." ;
+    code:isDocumented true ;
+    code:name "BoltSecurityError" .
+
+code:Class____src_neo4j__exceptions_SocketDeadlineExceededError a code:Class ;
+    code:dependsOn code:Class_RuntimeError ;
+    code:docstring "Raised from sockets with deadlines when a timeout occurs." ;
+    code:isDocumented true ;
+    code:name "SocketDeadlineExceededError" .
+
+code:Class____src_neo4j__work_gql_status_DiagnosticRecord a code:Class ;
+    code:docstring """
+    Container additional GQL status information useful for diagnostics.
+
+    The contents are mostly vendor-specific GQL status information.
+
+    **This is a preview**.
+    It might be changed without following the deprecation policy.
+
+    See also
+    https://github.com/neo4j/neo4j-python-driver/wiki/preview-features
+
+    .. versionadded:: 5.22
+    """ ;
+    code:isDocumented true ;
+    code:name "DiagnosticRecord" .
+
+code:Class____src_neo4j__work_gql_status_GqlStatusObject a code:Class ;
+    code:docstring """
+    Container for GQLSTATUS information.
+
+    **This is a preview**.
+    It might be changed without following the deprecation policy.
+
+    See also
+    https://github.com/neo4j/neo4j-python-driver/wiki/preview-features
+
+    .. versionadded:: 5.22
+    """ ;
+    code:isDocumented true ;
+    code:name "GqlStatusObject" .
+
+code:Class____src_neo4j_time__metaclasses_DateTimeType a code:Class ;
+    code:dependsOn code:Class_type ;
+    code:isDocumented false ;
+    code:name "DateTimeType" .
+
+code:Class____src_neo4j_time__metaclasses_DateType a code:Class ;
+    code:dependsOn code:Class_type ;
+    code:isDocumented false ;
+    code:name "DateType" .
+
+code:Class____src_neo4j_time__metaclasses_TimeType a code:Class ;
+    code:dependsOn code:Class_type ;
+    code:isDocumented false ;
+    code:name "TimeType" .
+
+code:Class____testkitbackend_backend_Request a code:Class ;
+    code:connectsTo code:Function____testkitbackend_backend_Request_get,
+        code:Function____testkitbackend_backend_Request_mark_all_as_read,
+        code:Function____testkitbackend_backend_Request_mark_item_as_read,
+        code:Function____testkitbackend_backend_Request_mark_item_as_read_if_equals,
+        code:Function____testkitbackend_backend_Request_seen_all_keys,
+        code:Function____testkitbackend_backend_Request_unseen_keys ;
+    code:dependsOn code:Class_dict ;
+    code:isDocumented false ;
+    code:name "Request" .
+
+code:Class____testkitbackend_exceptions_MarkdAsDriverError a code:Class ;
+    code:dependsOn code:Class_Exception ;
+    code:docstring "Wrap any error as DriverException." ;
+    code:isDocumented true ;
+    code:name "MarkdAsDriverError" .
+
+code:Class____tests__async_compat_mark_decorator_AsyncTestDecorators a code:Class ;
+    code:isDocumented false ;
+    code:name "AsyncTestDecorators" .
+
+code:Class____tests__async_compat_mark_decorator_TestDecorators a code:Class ;
+    code:connectsTo code:Function____tests__async_compat_mark_decorator_TestDecorators_mark_async_only_test ;
+    code:isDocumented false ;
+    code:name "TestDecorators" .
+
+code:Class____tests_env__LazyEval a code:Class ;
+    code:connectsTo code:Function____tests_env__LazyEval_eval ;
+    code:dependsOn code:Class_abc_ABC ;
+    code:isDocumented false ;
+    code:name "_LazyEval" .
+
+code:Class____tests_env__LazyEvalEnv a code:Class ;
+    code:connectsTo code:Function____tests_env__LazyEvalEnv_eval ;
+    code:dependsOn code:Class__LazyEval ;
+    code:isDocumented false ;
+    code:name "_LazyEvalEnv" .
+
+code:Class____tests_env__LazyEvalFunc a code:Class ;
+    code:connectsTo code:Function____tests_env__LazyEvalFunc_eval ;
+    code:dependsOn code:Class__LazyEval ;
+    code:isDocumented false ;
+    code:name "_LazyEvalFunc" .
+
+code:Class____tests_env__Module a code:Class ;
+    code:isDocumented false ;
+    code:name "_Module" .
+
+code:Class____tests_integration_conftest_ForcedRollback a code:Class ;
+    code:dependsOn code:Class_Exception ;
+    code:isDocumented false ;
+    code:name "ForcedRollback" .
+
+code:Class____tests_integration_examples___init___DriverSetupExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples___init___DriverSetupExample_close,
+        code:Function____tests_integration_examples___init___DriverSetupExample_test ;
+    code:isDocumented false ;
+    code:name "DriverSetupExample" .
+
+code:Class____tests_integration_examples_test_autocommit_transaction_example_AutocommitTransactionExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_autocommit_transaction_example_AutocommitTransactionExample_add_person,
+        code:Function____tests_integration_examples_test_autocommit_transaction_example_AutocommitTransactionExample_add_person_within_a_second ;
+    code:isDocumented false ;
+    code:name "AutocommitTransactionExample" .
+
+code:Class____tests_integration_examples_test_basic_auth_example_BasicAuthExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "BasicAuthExample" .
+
+code:Class____tests_integration_examples_test_bearer_auth_example_BearerAuthExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "BearerAuthExample" .
+
+code:Class____tests_integration_examples_test_config_connection_pool_example_ConfigConnectionPoolExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigConnectionPoolExample" .
+
+code:Class____tests_integration_examples_test_config_connection_timeout_example_ConfigConnectionTimeoutExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigConnectionTimeoutExample" .
+
+code:Class____tests_integration_examples_test_config_max_retry_time_example_ConfigMaxRetryTimeExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigMaxRetryTimeExample" .
+
+code:Class____tests_integration_examples_test_config_secure_example_ConfigSecureExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigSecureExample" .
+
+code:Class____tests_integration_examples_test_config_trust_example_ConfigTrustExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigTrustExample" .
+
+code:Class____tests_integration_examples_test_config_unencrypted_example_ConfigUnencryptedExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "ConfigUnencryptedExample" .
+
+code:Class____tests_integration_examples_test_custom_auth_example_CustomAuthExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "CustomAuthExample" .
+
+code:Class____tests_integration_examples_test_cypher_error_example_Neo4jErrorExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_cypher_error_example_Neo4jErrorExample_get_employee_number,
+        code:Function____tests_integration_examples_test_cypher_error_example_Neo4jErrorExample_select_employee ;
+    code:isDocumented false ;
+    code:name "Neo4jErrorExample" .
+
+code:Class____tests_integration_examples_test_database_selection_example_DatabaseSelectionExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_database_selection_example_DatabaseSelectionExample_close,
+        code:Function____tests_integration_examples_test_database_selection_example_DatabaseSelectionExample_run_example_code ;
+    code:isDocumented false ;
+    code:name "DatabaseSelectionExample" .
+
+code:Class____tests_integration_examples_test_driver_introduction_example_App a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_driver_introduction_example_App_close,
+        code:Function____tests_integration_examples_test_driver_introduction_example_App_create_friendship,
+        code:Function____tests_integration_examples_test_driver_introduction_example_App_enable_log,
+        code:Function____tests_integration_examples_test_driver_introduction_example_App_find_person ;
+    code:isDocumented false ;
+    code:name "App" .
+
+code:Class____tests_integration_examples_test_driver_lifecycle_example_DriverLifecycleExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_driver_lifecycle_example_DriverLifecycleExample_close ;
+    code:isDocumented false ;
+    code:name "DriverLifecycleExample" .
+
+code:Class____tests_integration_examples_test_hello_world_example_HelloWorldExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_hello_world_example_HelloWorldExample_close,
+        code:Function____tests_integration_examples_test_hello_world_example_HelloWorldExample_print_greeting ;
+    code:isDocumented false ;
+    code:name "HelloWorldExample" .
+
+code:Class____tests_integration_examples_test_kerberos_auth_example_KerberosAuthExample a code:Class ;
+    code:dependsOn code:Class_DriverSetupExample ;
+    code:isDocumented false ;
+    code:name "KerberosAuthExample" .
+
+code:Class____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_close,
+        code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_create_friendship,
+        code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_create_person,
+        code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_employ,
+        code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_main,
+        code:Function____tests_integration_examples_test_pass_bookmarks_example_BookmarksExample_print_friendships ;
+    code:isDocumented false ;
+    code:name "BookmarksExample" .
+
+code:Class____tests_integration_examples_test_transaction_function_example_TransactionFunctionExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_transaction_function_example_TransactionFunctionExample_add_person ;
+    code:isDocumented false ;
+    code:name "TransactionFunctionExample" .
+
+code:Class____tests_integration_examples_test_transaction_metadata_config_example_TransactionMetadataConfigExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_transaction_metadata_config_example_TransactionMetadataConfigExample_add_person ;
+    code:isDocumented false ;
+    code:name "TransactionMetadataConfigExample" .
+
+code:Class____tests_integration_examples_test_transaction_timeout_config_example_TransactionTimeoutConfigExample a code:Class ;
+    code:connectsTo code:Function____tests_integration_examples_test_transaction_timeout_config_example_TransactionTimeoutConfigExample_add_person ;
+    code:isDocumented false ;
+    code:name "TransactionTimeoutConfigExample" .
+
+code:Class____tests_unit_async__fixtures_fake_connection_AsyncFakeConnection a code:Class ;
+    code:connectsTo code:Function____tests_unit_async__fixtures_fake_connection_AsyncFakeConnection_fetch_all,
+        code:Function____tests_unit_async__fixtures_fake_connection_AsyncFakeConnection_fetch_message,
+        code:Function____tests_unit_async__fixtures_fake_connection_AsyncFakeConnection_is_reset ;
+    code:dependsOn code:Class_mock_NonCallableMagicMock ;
+    code:isDocumented false ;
+    code:name "AsyncFakeConnection" .
+
+code:Class____tests_unit_async__fixtures_fake_connection_AsyncScriptedConnection a code:Class ;
+    code:connectsTo code:Function____tests_unit_async__fixtures_fake_connection_AsyncScriptedConnection_set_script ;
+    code:dependsOn code:Class_async_fake_connection_generator ;
+    code:isDocumented false ;
+    code:name "AsyncScriptedConnection" .
+
+code:Class____tests_unit_async__io_conftest_AsyncFakeSocket a code:Class ;
+    code:connectsTo code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_close,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_getpeername,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_getsockname,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_pop_message,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_recv_into,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket_sendall ;
+    code:isDocumented false ;
+    code:name "AsyncFakeSocket" .
+
+code:Class____tests_unit_async__io_conftest_AsyncFakeSocket2 a code:Class ;
+    code:connectsTo code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_close,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_getpeername,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_getsockname,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_inject,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_kill,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_pop_message,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_recv_into,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_send_message,
+        code:Function____tests_unit_async__io_conftest_AsyncFakeSocket2_sendall ;
+    code:isDocumented false ;
+    code:name "AsyncFakeSocket2" .
+
+code:Class____tests_unit_async__io_conftest_AsyncFakeSocketPair a code:Class ;
+    code:isDocumented false ;
+    code:name "AsyncFakeSocketPair" .
+
+code:Class____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase_hydration_handler,
+        code:Function____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase_hydration_scope,
+        code:Function____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase_test_handler_hydration_scope,
+        code:Function____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase_test_scope_dehydration_keys,
+        code:Function____tests_unit_common_codec_hydration__common_HydrationHandlerTestBase_test_scope_hydration_keys ;
+    code:isDocumented false ;
+    code:name "HydrationHandlerTestBase" .
+
+code:Class____tests_unit_common_codec_hydration_v1__base_HydrationHandlerTestBase a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v1__base_HydrationHandlerTestBase_hydration_handler,
+        code:Function____tests_unit_common_codec_hydration_v1__base_HydrationHandlerTestBase_hydration_scope ;
+    code:isDocumented false ;
+    code:name "HydrationHandlerTestBase" .
+
+code:Class____tests_unit_common_codec_hydration_v1_test_temporal_dehydration_utc_patch_TestUTCPatchedTimeDehydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v1_test_temporal_dehydration_utc_patch_TestUTCPatchedTimeDehydration_hydration_handler ;
+    code:dependsOn code:Class__TestTimeDehydrationV1 ;
+    code:isDocumented false ;
+    code:name "TestUTCPatchedTimeDehydration" .
+
+code:Class____tests_unit_common_codec_hydration_v1_test_temporal_dehydration_utc_patch_UTCPatchedTimeDehydrationMeta a code:Class ;
+    code:dependsOn code:Class_type ;
+    code:isDocumented false ;
+    code:name "UTCPatchedTimeDehydrationMeta" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_graph_hydration_TestGraphHydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_graph_hydration_TestGraphHydration_hydration_handler,
+        code:Function____tests_unit_common_codec_hydration_v2_test_graph_hydration_TestGraphHydration_test_can_hydrate_node_structure,
+        code:Function____tests_unit_common_codec_hydration_v2_test_graph_hydration_TestGraphHydration_test_can_hydrate_relationship_structure ;
+    code:dependsOn code:Class__TestGraphHydration ;
+    code:isDocumented false ;
+    code:name "TestGraphHydration" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_hydration_handler_TestHydrationHandler a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_hydration_handler_TestHydrationHandler_hydration_handler ;
+    code:dependsOn code:Class_TestHydrationHandlerV1 ;
+    code:isDocumented false ;
+    code:name "TestHydrationHandler" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_spacial_dehydration_TestSpatialDehydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_spacial_dehydration_TestSpatialDehydration_hydration_handler ;
+    code:dependsOn code:Class__TestSpatialDehydrationV1 ;
+    code:isDocumented false ;
+    code:name "TestSpatialDehydration" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_spacial_hydration_TestSpatialHydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_spacial_hydration_TestSpatialHydration_hydration_handler ;
+    code:dependsOn code:Class__TestSpatialHydrationV1 ;
+    code:isDocumented false ;
+    code:name "TestSpatialHydration" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_hydration_handler,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_date_time_fixed_native_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_date_time_fixed_negative_native_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_date_time_fixed_negative_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_date_time_fixed_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_date_time_zone_id,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_native_date_time_fixed_native_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_native_date_time_fixed_negative_native_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_native_date_time_fixed_negative_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_native_date_time_fixed_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_native_date_time_zone_id,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_pandas_date_time_fixed_negative_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_pandas_date_time_fixed_offset,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_TestTimeDehydration_test_pandas_date_time_zone_id ;
+    code:dependsOn code:Class__TestTemporalDehydrationV1 ;
+    code:isDocumented false ;
+    code:name "TestTimeDehydration" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_hydration_handler,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_test_hydrate_date_time_structure_v1,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_test_hydrate_date_time_structure_v2,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_test_hydrate_date_time_unknown_zone_id_structure,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_test_hydrate_date_time_zone_id_structure_v1,
+        code:Function____tests_unit_common_codec_hydration_v2_test_temporal_hydration_TestTemporalHydration_test_hydrate_date_time_zone_id_structure_v2 ;
+    code:dependsOn code:Class__TestTemporalHydrationV1 ;
+    code:isDocumented false ;
+    code:name "TestTemporalHydration" .
+
+code:Class____tests_unit_common_codec_hydration_v2_test_unknown_hydration_TestUnknownHydration a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_hydration_v2_test_unknown_hydration_TestUnknownHydration_hydration_handler ;
+    code:dependsOn code:Class__TestUnknownHydration ;
+    code:isDocumented false ;
+    code:name "TestUnknownHydration" .
+
+code:Class____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_boolean,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_boolean_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_bytearray_size_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_bytes_16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_bytes_32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_bytes_8,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_bytes_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_bytes,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_dataframe_maps,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_list,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_map,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_string,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_empty_struct,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_float,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_float_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_illegal_signature,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_illegal_uuid,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_integer_negative_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_integer_positive_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_list_16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_list_32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_list_8,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_list_pandas_categorical,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_list_size_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_map_16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_map_32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_map_8,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_map_key_type,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_map_size_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_int16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_int32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_int64,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_int64_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_int8,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_tiny_int,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_negative_tiny_int_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_nested_lists,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_none,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_positive_int16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_positive_int32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_positive_int64,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_positive_int64_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_positive_tiny_int,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_string_16,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_string_32,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_string_8,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_string_pandas_series,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_string_size_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_struct_size_overflow,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_tiny_dataframes_maps,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_tiny_lists,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_tiny_maps,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_tiny_strings,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_tiny_structs,
+        code:Function____tests_unit_common_codec_packstream_v1_test_packstream_TestPackStream_test_unicode_string ;
+    code:isDocumented false ;
+    code:name "TestPackStream" .
+
+code:Class____tests_unit_common_io_test_routing_TestOrderedSet a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_add_existing,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_add_new,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_clear,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_discard_existing,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_discard_non_existing,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_get_item_if_empty,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_get_items_by_index,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_remove_existing,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_replace,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_able_to_update,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_be_iterable,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_contain_element,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_have_length,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_not_be_able_to_remove_non_existing,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_not_contain_non_element,
+        code:Function____tests_unit_common_io_test_routing_TestOrderedSet_test_should_repr_as_set ;
+    code:isDocumented false ;
+    code:name "TestOrderedSet" .
+
+code:Class____tests_unit_common_io_test_routing_TestRoutingTableConstruction a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestRoutingTableConstruction_test_should_be_initially_stale ;
+    code:isDocumented false ;
+    code:name "TestRoutingTableConstruction" .
+
+code:Class____tests_unit_common_io_test_routing_TestRoutingTableFreshness a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestRoutingTableFreshness_test_should_be_fresh_after_update,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableFreshness_test_should_become_stale_if_no_readers,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableFreshness_test_should_become_stale_if_no_writers,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableFreshness_test_should_become_stale_on_expiry ;
+    code:isDocumented false ;
+    code:name "TestRoutingTableFreshness" .
+
+code:Class____tests_unit_common_io_test_routing_TestRoutingTableParseRoutingInfo a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestRoutingTableParseRoutingInfo_test_should_return_routing_table_on_valid_record,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableParseRoutingInfo_test_should_return_routing_table_on_valid_record_with_extra_role ;
+    code:isDocumented false ;
+    code:name "TestRoutingTableParseRoutingInfo" .
+
+code:Class____tests_unit_common_io_test_routing_TestRoutingTableServers a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestRoutingTableServers_test_should_return_all_distinct_servers_in_routing_table ;
+    code:isDocumented false ;
+    code:name "TestRoutingTableServers" .
+
+code:Class____tests_unit_common_io_test_routing_TestRoutingTableUpdate a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_new_table,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_table,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_test_update_should_replace_readers,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_test_update_should_replace_routers,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_test_update_should_replace_ttl,
+        code:Function____tests_unit_common_io_test_routing_TestRoutingTableUpdate_test_update_should_replace_writers ;
+    code:isDocumented false ;
+    code:name "TestRoutingTableUpdate" .
+
+code:Class____tests_unit_common_test_types_ExampleGraph a code:Class ;
+    code:isDocumented false ;
+    code:name "ExampleGraph" .
+
+code:Class____tests_unit_common_time___init___FixedClock a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_time___init___FixedClock_available,
+        code:Function____tests_unit_common_time___init___FixedClock_local_offset,
+        code:Function____tests_unit_common_time___init___FixedClock_precision,
+        code:Function____tests_unit_common_time___init___FixedClock_utc_time ;
+    code:dependsOn code:Class_Clock ;
+    code:isDocumented false ;
+    code:name "FixedClock" .
+
+code:Class____tests_unit_common_time_test_clock_TestClock a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_time_test_clock_TestClock_test_base_clock_available,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_base_clock_precision,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_base_clock_utc_time,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_local_offset,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_local_time,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_no_clock_implementations,
+        code:Function____tests_unit_common_time_test_clock_TestClock_test_utc_time ;
+    code:isDocumented false ;
+    code:name "TestClock" .
+
+code:Class____tests_unit_common_time_test_clocktime_TestClockTime a code:Class ;
+    code:connectsTo code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_add_duration,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_add_duration_with_months,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_add_float,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_add_object,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_float,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_nanoseconds_overflow,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_negative_nanoseconds,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_only_nanoseconds,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_only_seconds,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_positive_nanoseconds,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_repr,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_sub_duration,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_sub_duration_with_months,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_sub_float,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_sub_object,
+        code:Function____tests_unit_common_time_test_clocktime_TestClockTime_test_zero_ ;
+    code:isDocumented false ;
+    code:name "TestClockTime" .
+
+code:Class____tests_unit_mixed_io__common_AsyncMultiEvent a code:Class ;
+    code:connectsTo code:Function____tests_unit_mixed_io__common_AsyncMultiEvent_clear,
+        code:Function____tests_unit_mixed_io__common_AsyncMultiEvent_counter,
+        code:Function____tests_unit_mixed_io__common_AsyncMultiEvent_decrement,
+        code:Function____tests_unit_mixed_io__common_AsyncMultiEvent_increment,
+        code:Function____tests_unit_mixed_io__common_AsyncMultiEvent_wait ;
+    code:isDocumented false ;
+    code:name "AsyncMultiEvent" .
+
+code:Class____tests_unit_mixed_io__common_MultiEvent a code:Class ;
+    code:connectsTo code:Function____tests_unit_mixed_io__common_MultiEvent_clear,
+        code:Function____tests_unit_mixed_io__common_MultiEvent_counter,
+        code:Function____tests_unit_mixed_io__common_MultiEvent_decrement,
+        code:Function____tests_unit_mixed_io__common_MultiEvent_increment,
+        code:Function____tests_unit_mixed_io__common_MultiEvent_wait ;
+    code:isDocumented false ;
+    code:name "MultiEvent" .
+
+code:Class____tests_unit_sync_fixtures_fake_connection_FakeConnection a code:Class ;
+    code:connectsTo code:Function____tests_unit_sync_fixtures_fake_connection_FakeConnection_fetch_all,
+        code:Function____tests_unit_sync_fixtures_fake_connection_FakeConnection_fetch_message,
+        code:Function____tests_unit_sync_fixtures_fake_connection_FakeConnection_is_reset ;
+    code:dependsOn code:Class_mock_NonCallableMagicMock ;
+    code:isDocumented false ;
+    code:name "FakeConnection" .
+
+code:Class____tests_unit_sync_fixtures_fake_connection_ScriptedConnection a code:Class ;
+    code:connectsTo code:Function____tests_unit_sync_fixtures_fake_connection_ScriptedConnection_set_script ;
+    code:dependsOn code:Class_fake_connection_generator ;
+    code:isDocumented false ;
+    code:name "ScriptedConnection" .
+
+code:Class____tests_unit_sync_io_conftest_FakeSocket a code:Class ;
+    code:connectsTo code:Function____tests_unit_sync_io_conftest_FakeSocket_close,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket_getpeername,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket_getsockname,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket_pop_message,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket_recv_into,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket_sendall ;
+    code:isDocumented false ;
+    code:name "FakeSocket" .
+
+code:Class____tests_unit_sync_io_conftest_FakeSocket2 a code:Class ;
+    code:connectsTo code:Function____tests_unit_sync_io_conftest_FakeSocket2_close,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_getpeername,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_getsockname,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_inject,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_kill,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_pop_message,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_recv_into,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_send_message,
+        code:Function____tests_unit_sync_io_conftest_FakeSocket2_sendall ;
+    code:isDocumented false ;
+    code:name "FakeSocket2" .
+
+code:Class____tests_unit_sync_io_conftest_FakeSocketPair a code:Class ;
+    code:isDocumented false ;
+    code:name "FakeSocketPair" .
+
+code:CodeComponent_backend_py____testkitbackend_backend_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "backend.py" .
+
+code:CodeComponent_conf_py____docs_source_conf_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conf.py" .
+
+code:CodeComponent_conftest_py____tests_integration_conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_conftest_py____tests_unit_async__conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_conftest_py____tests_unit_async__io_conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_conftest_py____tests_unit_conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_conftest_py____tests_unit_sync_conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_conftest_py____tests_unit_sync_io_conftest_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "conftest.py" .
+
+code:CodeComponent_env_py____tests_env_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "env.py" .
+
+code:CodeComponent_exceptions_py____testkitbackend_exceptions_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "exceptions.py" .
+
+code:CodeComponent_fake_connection_py____tests_unit_async__fixtures_fake_connection_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "fake_connection.py" .
+
+code:CodeComponent_fake_connection_py____tests_unit_sync_fixtures_fake_connection_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "fake_connection.py" .
+
+code:CodeComponent_fake_pool_py____tests_unit_async__fixtures_fake_pool_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "fake_pool.py" .
+
+code:CodeComponent_fake_pool_py____tests_unit_sync_fixtures_fake_pool_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "fake_pool.py" .
+
+code:CodeComponent_gql_status_py____src_neo4j__work_gql_status_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "gql_status.py" .
+
+code:CodeComponent_mark_decorator_py____tests__async_compat_mark_decorator_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "mark_decorator.py" .
+
+code:CodeComponent_setup_py____setup_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "setup.py" .
+
+code:CodeComponent_stress_py____testkit_stress_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "stress.py" .
+
+code:CodeComponent_test_async_results_py____tests_performance_test_async_results_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_async_results.py" .
+
+code:CodeComponent_test_autocommit_transaction_example_py____tests_integration_examples_test_autocommit_transaction_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_autocommit_transaction_example.py" .
+
+code:CodeComponent_test_basic_auth_example_py____tests_integration_examples_test_basic_auth_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_basic_auth_example.py" .
+
+code:CodeComponent_test_bearer_auth_example_py____tests_integration_examples_test_bearer_auth_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_bearer_auth_example.py" .
+
+code:CodeComponent_test_bolt_driver_py____tests_integration_test_bolt_driver_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_bolt_driver.py" .
+
+code:CodeComponent_test_clock_py____tests_unit_common_time_test_clock_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_clock.py" .
+
+code:CodeComponent_test_clocktime_py____tests_unit_common_time_test_clocktime_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_clocktime.py" .
+
+code:CodeComponent_test_conf_py____tests_unit_common_test_conf_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_conf.py" .
+
+code:CodeComponent_test_config_connection_pool_example_py____tests_integration_examples_test_config_connection_pool_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_connection_pool_example.py" .
+
+code:CodeComponent_test_config_connection_timeout_example_py____tests_integration_examples_test_config_connection_timeout_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_connection_timeout_example.py" .
+
+code:CodeComponent_test_config_max_retry_time_example_py____tests_integration_examples_test_config_max_retry_time_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_max_retry_time_example.py" .
+
+code:CodeComponent_test_config_secure_example_py____tests_integration_examples_test_config_secure_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_secure_example.py" .
+
+code:CodeComponent_test_config_trust_example_py____tests_integration_examples_test_config_trust_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_trust_example.py" .
+
+code:CodeComponent_test_config_unencrypted_example_py____tests_integration_examples_test_config_unencrypted_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_config_unencrypted_example.py" .
+
+code:CodeComponent_test_custom_auth_example_py____tests_integration_examples_test_custom_auth_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_custom_auth_example.py" .
+
+code:CodeComponent_test_custom_resolver_example_py____tests_integration_examples_test_custom_resolver_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_custom_resolver_example.py" .
+
+code:CodeComponent_test_cypher_error_example_py____tests_integration_examples_test_cypher_error_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_cypher_error_example.py" .
+
+code:CodeComponent_test_database_selection_example_py____tests_integration_examples_test_database_selection_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_database_selection_example.py" .
+
+code:CodeComponent_test_driver_introduction_example_py____tests_integration_examples_test_driver_introduction_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_driver_introduction_example.py" .
+
+code:CodeComponent_test_driver_lifecycle_example_py____tests_integration_examples_test_driver_lifecycle_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_driver_lifecycle_example.py" .
+
+code:CodeComponent_test_graph_hydration_py____tests_unit_common_codec_hydration_v2_test_graph_hydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_graph_hydration.py" .
+
+code:CodeComponent_test_hello_world_example_py____tests_integration_examples_test_hello_world_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_hello_world_example.py" .
+
+code:CodeComponent_test_home_db_cache_py____tests_unit_mixed_test_home_db_cache_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_home_db_cache.py" .
+
+code:CodeComponent_test_hydration_handler_py____tests_unit_common_codec_hydration_v2_test_hydration_handler_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_hydration_handler.py" .
+
+code:CodeComponent_test_import_neo4j_py____tests_unit_common_test_import_neo4j_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_import_neo4j.py" .
+
+code:CodeComponent_test_kerberos_auth_example_py____tests_integration_examples_test_kerberos_auth_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_kerberos_auth_example.py" .
+
+code:CodeComponent_test_packstream_py____tests_unit_common_codec_packstream_v1_test_packstream_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_packstream.py" .
+
+code:CodeComponent_test_pass_bookmarks_example_py____tests_integration_examples_test_pass_bookmarks_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_pass_bookmarks_example.py" .
+
+code:CodeComponent_test_read_write_transaction_example_py____tests_integration_examples_test_read_write_transaction_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_read_write_transaction_example.py" .
+
+code:CodeComponent_test_readme_py____tests_integration_test_readme_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_readme.py" .
+
+code:CodeComponent_test_result_consume_example_py____tests_integration_examples_test_result_consume_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_result_consume_example.py" .
+
+code:CodeComponent_test_result_retain_example_py____tests_integration_examples_test_result_retain_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_result_retain_example.py" .
+
+code:CodeComponent_test_results_py____tests_performance_test_results_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_results.py" .
+
+code:CodeComponent_test_routing_py____tests_unit_common_io_test_routing_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_routing.py" .
+
+code:CodeComponent_test_service_unavailable_example_py____tests_integration_examples_test_service_unavailable_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_service_unavailable_example.py" .
+
+code:CodeComponent_test_session_example_py____tests_integration_examples_test_session_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_session_example.py" .
+
+code:CodeComponent_test_spacial_dehydration_py____tests_unit_common_codec_hydration_v2_test_spacial_dehydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_spacial_dehydration.py" .
+
+code:CodeComponent_test_spacial_hydration_py____tests_unit_common_codec_hydration_v2_test_spacial_hydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_spacial_hydration.py" .
+
+code:CodeComponent_test_subtest_skips_py____testkitbackend_test_subtest_skips_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_subtest_skips.py" .
+
+code:CodeComponent_test_temporal_dehydration_py____tests_unit_common_codec_hydration_v2_test_temporal_dehydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_temporal_dehydration.py" .
+
+code:CodeComponent_test_temporal_dehydration_utc_patch_py____tests_unit_common_codec_hydration_v1_test_temporal_dehydration_utc_patch_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_temporal_dehydration_utc_patch.py" .
+
+code:CodeComponent_test_temporal_hydration_py____tests_unit_common_codec_hydration_v2_test_temporal_hydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_temporal_hydration.py" .
+
+code:CodeComponent_test_temporal_types_example_py____tests_integration_examples_test_temporal_types_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_temporal_types_example.py" .
+
+code:CodeComponent_test_transaction_function_example_py____tests_integration_examples_test_transaction_function_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_transaction_function_example.py" .
+
+code:CodeComponent_test_transaction_metadata_config_example_py____tests_integration_examples_test_transaction_metadata_config_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_transaction_metadata_config_example.py" .
+
+code:CodeComponent_test_transaction_timeout_config_example_py____tests_integration_examples_test_transaction_timeout_config_example_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_transaction_timeout_config_example.py" .
+
+code:CodeComponent_test_types_py____tests_unit_common_test_types_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_types.py" .
+
+code:CodeComponent_test_unknown_hydration_py____tests_unit_common_codec_hydration_v2_test_unknown_hydration_py a code:CodeComponent ;
+    code:description "" ;
+    code:descriptionEmbedding "" ;
+    code:name "test_unknown_hydration.py" .
+
+code:Function_change_project_name____setup_py__change_project_name a code:Function ;
+    code:complexity 3 ;
+    code:function_exe_cmd "neo4j-python-driver.setup.change_project_name()" ;
+    code:function_name "change_project_name" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/setup.py#L59" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_tomlkit ;
+    code:hasInput code:Parameter_new_name_change_project_name ;
+    code:isDocumented false ;
+    code:method_signature "neo4j-python-driver.setup.change_project_name(new_name)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, tomlkit, neo4j-python-driver, neo4j" .
+
+code:Function_changed_package_name____setup_py__changed_package_name a code:Function ;
+    code:complexity 2 ;
+    code:dependsOn code:Function_neo4jsetup_change_project_name\(\) ;
+    code:function_exe_cmd "neo4j-python-driver.setup.changed_package_name()" ;
+    code:function_name "changed_package_name" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/setup.py#L73" ;
+    code:hasImport code:Function_import_contextlib,
+        code:Function_import_neo4j ;
+    code:hasInput code:Parameter_new_name_changed_package_name ;
+    code:isDocumented false ;
+    code:method_signature "neo4j-python-driver.setup.changed_package_name(new_name)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_close____tests_unit_async__io_conftest_py__close a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.close()" ;
+    code:function_name "close" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L95" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.close()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_close____tests_unit_sync_io_conftest_py__close a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.close()" ;
+    code:function_name "close" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L95" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.close()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_cypher_eval____tests_integration_conftest_py__cypher_eval a code:Function ;
+    code:complexity 3 ;
+    code:function_exe_cmd "neo4j.tests.integration.conftest.cypher_eval()" ;
+    code:function_name "cypher_eval" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L26" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:hasInput code:Parameter_driver_cypher_eval ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.integration.conftest.cypher_eval(driver)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_eval____tests_env_py__eval a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.env._LazyEvalFunc.eval()" ;
+    code:function_name "eval" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/benchkit/env.py#L54" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.env._LazyEvalFunc.eval()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket_2____tests_unit_async__io_conftest_py__fake_socket_2 a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.fake_socket_2()" ;
+    code:function_name "fake_socket_2" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L131" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.fake_socket_2()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket_2____tests_unit_sync_io_conftest_py__fake_socket_2 a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.fake_socket_2()" ;
+    code:function_name "fake_socket_2" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L131" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.fake_socket_2()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket____tests_unit_async__io_conftest_py__fake_socket a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.fake_socket()" ;
+    code:function_name "fake_socket" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L126" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.fake_socket()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket____tests_unit_sync_io_conftest_py__fake_socket a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.fake_socket()" ;
+    code:function_name "fake_socket" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L126" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.fake_socket()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket_pair____tests_unit_async__io_conftest_py__fake_socket_pair a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.fake_socket_pair()" ;
+    code:function_name "fake_socket_pair" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L136" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.fake_socket_pair()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_fake_socket_pair____tests_unit_sync_io_conftest_py__fake_socket_pair a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.fake_socket_pair()" ;
+    code:function_name "fake_socket_pair" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L136" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.fake_socket_pair()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_get____testkitbackend_backend_py__get a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.get()" ;
+    code:function_name "get" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L26" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_default_get,
+        code:Parameter_item_get ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.get(item, default)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_getpeername____tests_unit_async__io_conftest_py__getpeername a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getpeername()" ;
+    code:function_name "getpeername" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L81" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getpeername()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_getpeername____tests_unit_sync_io_conftest_py__getpeername a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.getpeername()" ;
+    code:function_name "getpeername" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L81" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.getpeername()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_getsockname____tests_unit_async__io_conftest_py__getsockname a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getsockname()" ;
+    code:function_name "getsockname" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L78" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getsockname()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_getsockname____tests_unit_sync_io_conftest_py__getsockname a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.getsockname()" ;
+    code:function_name "getsockname" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L78" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.getsockname()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_inject____tests_unit_async__io_conftest_py__inject a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.inject()" ;
+    code:function_name "inject" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L101" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_data_inject ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.inject(data)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_inject____tests_unit_sync_io_conftest_py__inject a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.inject()" ;
+    code:function_name "inject" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L101" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_data_inject ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.inject(data)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_kill____tests_unit_async__io_conftest_py__kill a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.kill()" ;
+    code:function_name "kill" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L98" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.kill()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_kill____tests_unit_sync_io_conftest_py__kill a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.kill()" ;
+    code:function_name "kill" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L98" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.kill()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_mark_all_as_read____testkitbackend_backend_py__mark_all_as_read a code:Function ;
+    code:complexity 4 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.mark_all_as_read()" ;
+    code:function_name "mark_all_as_read" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L30" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_recursive_mark_all_as_read ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.mark_all_as_read(recursive)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_mark_item_as_read____testkitbackend_backend_py__mark_item_as_read a code:Function ;
+    code:complexity 3 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.mark_item_as_read()" ;
+    code:function_name "mark_item_as_read" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L37" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_item_mark_item_as_read,
+        code:Parameter_recursive_mark_item_as_read ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.mark_item_as_read(item, recursive)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_mark_item_as_read_if_equals____testkitbackend_backend_py__mark_item_as_read_if_equals a code:Function ;
+    code:complexity 2 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.mark_item_as_read_if_equals()" ;
+    code:function_name "mark_item_as_read_if_equals" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L44" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_item_mark_item_as_read_if_equals,
+        code:Parameter_recursive_mark_item_as_read_if_equals,
+        code:Parameter_value_mark_item_as_read_if_equals ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.mark_item_as_read_if_equals(item, value, recursive)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_none_auth____tests_unit_async__io_conftest_py__none_auth a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.none_auth()" ;
+    code:function_name "none_auth" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L146" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:hasInput code:Parameter_static_auth_none_auth ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.none_auth(static_auth)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_none_auth____tests_unit_sync_io_conftest_py__none_auth a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.none_auth()" ;
+    code:function_name "none_auth" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L146" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:hasInput code:Parameter_static_auth_none_auth ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.none_auth(static_auth)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_pop_message____tests_unit_async__io_conftest_py__pop_message a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.pop_message()" ;
+    code:function_name "pop_message" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L104" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.pop_message()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_pop_message____tests_unit_sync_io_conftest_py__pop_message a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.pop_message()" ;
+    code:function_name "pop_message" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L104" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.pop_message()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_recv_into____tests_unit_async__io_conftest_py__recv_into a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.recv_into()" ;
+    code:function_name "recv_into" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L84" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_buffer_recv_into,
+        code:Parameter_nbytes_recv_into ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.recv_into(buffer, nbytes)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_recv_into____tests_unit_sync_io_conftest_py__recv_into a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.recv_into()" ;
+    code:function_name "recv_into" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L84" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_buffer_recv_into,
+        code:Parameter_nbytes_recv_into ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.recv_into(buffer, nbytes)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_seen_all_keys____testkitbackend_backend_py__seen_all_keys a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.seen_all_keys()" ;
+    code:function_name "seen_all_keys" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L60" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.seen_all_keys()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_send_message____tests_unit_async__io_conftest_py__send_message a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.send_message()" ;
+    code:function_name "send_message" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L108" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_tag_send_message ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.send_message(tag)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_send_message____tests_unit_sync_io_conftest_py__send_message a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.send_message()" ;
+    code:function_name "send_message" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L108" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_tag_send_message ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.send_message(tag)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_sendall____tests_unit_async__io_conftest_py__sendall a code:Function ;
+    code:complexity 2 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.sendall()" ;
+    code:function_name "sendall" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L91" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_data_sendall ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.sendall(data)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_sendall____tests_unit_sync_io_conftest_py__sendall a code:Function ;
+    code:complexity 2 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.FakeSocket2.sendall()" ;
+    code:function_name "sendall" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L91" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_data_sendall ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.FakeSocket2.sendall(data)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_setup____docs_source_conf_py__setup a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.docs.source.conf.setup()" ;
+    code:function_name "setup" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/docs/source/conf.py#L148" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:hasInput code:Parameter_app_setup ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.docs.source.conf.setup(app)" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Function_static_auth____tests_unit_async__io_conftest_py__static_auth a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.async_.io.conftest.static_auth()" ;
+    code:function_name "static_auth" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L141" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.async_.io.conftest.static_auth()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_static_auth____tests_unit_sync_io_conftest_py__static_auth a code:Function ;
+    code:complexity 1 ;
+    code:function_exe_cmd "neo4j.tests.unit.sync.io.conftest.static_auth()" ;
+    code:function_name "static_auth" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/tests/conftest.py#L141" ;
+    code:hasImport code:Function_import_neo4j,
+        code:Function_import_pytest ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.tests.unit.sync.io.conftest.static_auth()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, pytest, neo4j-python-driver, neo4j" .
+
+code:Function_unseen_keys____testkitbackend_backend_py__unseen_keys a code:Function ;
+    code:complexity 5 ;
+    code:function_exe_cmd "neo4j.testkitbackend.backend.Request.unseen_keys()" ;
+    code:function_name "unseen_keys" ;
+    code:function_url "https://github.com/neo4j/neo4j-python-driver/blob/5.0/testkit/backend.py#L48" ;
+    code:hasImport code:Function_import_neo4j ;
+    code:isDocumented false ;
+    code:method_signature "neo4j.testkitbackend.backend.Request.unseen_keys()" ;
+    code:outputType "json" ;
+    code:package "neo4j_python_driver, neo4j-python-driver, neo4j" .
+
+code:Parameter_app_setup a code:Parameter ;
+    code:name "app" .
+
+code:Parameter_default_get a code:Parameter ;
+    code:name "default" .
+
+code:Parameter_driver_cypher_eval a code:Parameter ;
+    code:name "driver" .
+
+code:Parameter_item_get a code:Parameter ;
+    code:name "item" .
+
+code:Parameter_item_mark_item_as_read a code:Parameter ;
+    code:name "item" .
+
+code:Parameter_item_mark_item_as_read_if_equals a code:Parameter ;
+    code:name "item" .
+
+code:Parameter_new_name_change_project_name a code:Parameter ;
+    code:name "new_name" .
+
+code:Parameter_new_name_changed_package_name a code:Parameter ;
+    code:name "new_name" .
+
+code:Parameter_recursive_mark_all_as_read a code:Parameter ;
+    code:name "recursive" .
+
+code:Parameter_recursive_mark_item_as_read a code:Parameter ;
+    code:name "recursive" .
+
+code:Parameter_recursive_mark_item_as_read_if_equals a code:Parameter ;
+    code:name "recursive" .
+
+code:Parameter_value_mark_item_as_read_if_equals a code:Parameter ;
+    code:name "value" .
+
+code:Parameter_buffer_recv_into a code:Parameter ;
+    code:name "buffer" .
+
+code:Parameter_data_inject a code:Parameter ;
+    code:name "data" .
+
+code:Parameter_data_sendall a code:Parameter ;
+    code:name "data" .
+
+code:Parameter_nbytes_recv_into a code:Parameter ;
+    code:name "nbytes" .
+
+code:Parameter_static_auth_none_auth a code:Parameter ;
+    code:name "static_auth" .
+
+code:Parameter_tag_send_message a code:Parameter ;
+    code:name "tag" .
+

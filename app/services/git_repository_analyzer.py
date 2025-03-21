@@ -101,6 +101,8 @@ class GitRepositoryAnalyzer(BaseAnalyzer):
         for root, _, files in os.walk(self.temp_dir):
             for file in files:
                 if file.endswith('.py'):
+                    # print("------------root",root )
+                    # print("------------file",file )
                     self._analyze_file(os.path.join(root, file), requirement_info, self.git_url, self.branch)
 
     def _find_package_root(self) -> Optional[str]:

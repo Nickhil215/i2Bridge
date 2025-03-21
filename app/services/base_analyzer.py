@@ -213,6 +213,7 @@ class BaseAnalyzer(ABC):
     def __init__(self, package_path: str):
         """Initialize the base analyzer."""
         self.package_path = os.path.abspath(package_path)
+        print("------self.package_path",self.package_path)
         self.modules: Dict[str, nodes.Module] = {}
         self.imports: Dict[str, Set[str]] = defaultdict(set)
         self.classes: Dict[str, ClassInfo] = {}
@@ -248,12 +249,19 @@ class BaseAnalyzer(ABC):
                       git_url: str = None, branch: str = None) -> None:
         """Analyze a single Python file and extract its AST information."""
         try:
-            file_path = os.path.relpath(temp_file_path, self.package_path)
+            temp_file_path = os.path.normpath(temp_file_path)
+            package_path = os.path.normpath(self.package_path)
+            print(package_path, "package_path2-----------------------")
+            
+            file_path = os.path.relpath(temp_file_path, package_path)
+            # print(temp_file_path, "-----------------------")
+            # print(file_path, "-----------------------")
             self.relative_path = file_path
 
             self.requirement_info = requirement_info
             self.git_url = git_url
             self.branch = branch
+
 
             self.package_name = None
             self.package_info = None
@@ -611,15 +619,14 @@ class BaseAnalyzer(ABC):
                 # Check if the imported name is used in the function
                 if imported_name and re.search(r'\b' + re.escape(imported_name) + r'\b', function_text):
                     if import_stmt.startswith("from"):
-                        module_imports.append(re.sub(r'^from (\w+)(\.\s*)?(\w+)(,?\s*\w+)*$', r'import \1', import_stmt))
+                        module_imports.append(re.sub(r'^from (\w+)(\.\s*)?.*$', r'import \1', import_stmt))
                     else:
                         module_imports.append(import_stmt)
 
         # Combine explicit and module imports
         return set(module_imports)
 
-    def _extract_function_info(self, node: nodes.FunctionDef, source: str,
-                               file_path: str) -> FunctionInfo:
+    def _extract_function_info(self, node: nodes.FunctionDef, source: str, file_path: str) -> FunctionInfo:
         """Extract detailed information about a function with improved import and dependency analysis."""
         args = [arg.name for arg in node.args.args if arg.name != 'self']  # Exclude 'self'
         returns = node.returns.as_string() if node.returns else None
@@ -716,9 +723,52 @@ class BaseAnalyzer(ABC):
 
         # Create a properly formatted URL to the function source
         prefix = self.git_url.rstrip(".git") if self.git_url else ""
-        path = file_path.lstrip("../")
-
-        function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}" if prefix and self.branch else ""
+        
+        if prefix:
+            # Get the normalized local file path
+            local_path = file_path.lstrip("../")
+            filename = os.path.basename(local_path)
+            
+            # Need to determine the correct repository path structure
+            # This requires examining the actual repository structure
+            
+            # 1. First approach: Use git commands to find the file's actual location in the repo
+            # We need to identify the repository root directory first
+            repo_root = self.package_path
+            while repo_root and not os.path.exists(os.path.join(repo_root, '.git')):
+                parent = os.path.dirname(repo_root)
+                if parent == repo_root:  # Reached filesystem root
+                    break
+                repo_root = parent
+                
+            # Now we can try to find the actual file location using git
+            import subprocess
+            try:
+                # Run git ls-files to find all tracked files
+                result = subprocess.run(
+                    ['git', 'ls-files', '--full-name', '*' + filename],
+                    cwd=repo_root,
+                    capture_output=True,
+                    text=True,
+                    check=True
+                )
+                
+                possible_paths = result.stdout.strip().split('\n')
+                
+                # Filter paths to find the most likely match
+                if possible_paths and possible_paths[0]:
+                    # Check file content or other indicators to find the correct file
+                    path = possible_paths[0]  # For now, use the first match
+                else:
+                    # Fallback - use the original path
+                    path = local_path
+            except (subprocess.SubprocessError, FileNotFoundError):
+                # If git command fails, fall back to guessing
+                path = local_path
+            
+            function_url = f"{prefix}/blob/{self.branch}/{path}#L{start_line}" if self.branch else ""
+        else:
+            function_url = ""
 
         dependencies = set()
         # Collect function dependencies
