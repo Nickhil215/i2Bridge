@@ -1,0 +1,2942 @@
+Package Analysis Report
+=====================
+
+Package: /tmp/git_analyzer_mr1tyu63/benchkit
+
+Metrics:
+- Total Files: 336
+- Total Classes: 83
+- Total Functions: 47
+- Average Complexity: 1.38
+- Total Lines of Code: 148
+- Analysis Errors: 204
+
+
+Modules:
+
+  ../docs/source/conf.py:
+    Name: conf.py
+    Description: 
+    Description Embedding: 
+
+  ../setup.py:
+    Name: setup.py
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_work/gql_status.py:
+    Name: gql_status.py
+    Description: 
+    Description Embedding: 
+
+  ../testkit/stress.py:
+    Name: stress.py
+    Description: 
+    Description Embedding: 
+
+  ../testkitbackend/backend.py:
+    Name: backend.py
+    Description: 
+    Description Embedding: 
+
+  ../testkitbackend/exceptions.py:
+    Name: exceptions.py
+    Description: 
+    Description Embedding: 
+
+  ../testkitbackend/test_subtest_skips.py:
+    Name: test_subtest_skips.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/_async_compat/mark_decorator.py:
+    Name: mark_decorator.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/env.py:
+    Name: env.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_autocommit_transaction_example.py:
+    Name: test_autocommit_transaction_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_basic_auth_example.py:
+    Name: test_basic_auth_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_bearer_auth_example.py:
+    Name: test_bearer_auth_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_connection_pool_example.py:
+    Name: test_config_connection_pool_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_connection_timeout_example.py:
+    Name: test_config_connection_timeout_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_max_retry_time_example.py:
+    Name: test_config_max_retry_time_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_secure_example.py:
+    Name: test_config_secure_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_trust_example.py:
+    Name: test_config_trust_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_unencrypted_example.py:
+    Name: test_config_unencrypted_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_custom_auth_example.py:
+    Name: test_custom_auth_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_custom_resolver_example.py:
+    Name: test_custom_resolver_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_cypher_error_example.py:
+    Name: test_cypher_error_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_database_selection_example.py:
+    Name: test_database_selection_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_driver_introduction_example.py:
+    Name: test_driver_introduction_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_driver_lifecycle_example.py:
+    Name: test_driver_lifecycle_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_hello_world_example.py:
+    Name: test_hello_world_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_kerberos_auth_example.py:
+    Name: test_kerberos_auth_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_pass_bookmarks_example.py:
+    Name: test_pass_bookmarks_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_read_write_transaction_example.py:
+    Name: test_read_write_transaction_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_result_consume_example.py:
+    Name: test_result_consume_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_result_retain_example.py:
+    Name: test_result_retain_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_service_unavailable_example.py:
+    Name: test_service_unavailable_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_session_example.py:
+    Name: test_session_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_temporal_types_example.py:
+    Name: test_temporal_types_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_function_example.py:
+    Name: test_transaction_function_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_metadata_config_example.py:
+    Name: test_transaction_metadata_config_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_timeout_config_example.py:
+    Name: test_transaction_timeout_config_example.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/test_bolt_driver.py:
+    Name: test_bolt_driver.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/test_readme.py:
+    Name: test_readme.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/performance/test_async_results.py:
+    Name: test_async_results.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/performance/test_results.py:
+    Name: test_results.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/fixtures/fake_connection.py:
+    Name: fake_connection.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/fixtures/fake_pool.py:
+    Name: fake_pool.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/io/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v1/test_temporal_dehydration_utc_patch.py:
+    Name: test_temporal_dehydration_utc_patch.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_graph_hydration.py:
+    Name: test_graph_hydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_hydration_handler.py:
+    Name: test_hydration_handler.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_spacial_dehydration.py:
+    Name: test_spacial_dehydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_spacial_hydration.py:
+    Name: test_spacial_hydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_temporal_dehydration.py:
+    Name: test_temporal_dehydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_temporal_hydration.py:
+    Name: test_temporal_hydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_unknown_hydration.py:
+    Name: test_unknown_hydration.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/packstream/v1/test_packstream.py:
+    Name: test_packstream.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py:
+    Name: test_routing.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/test_conf.py:
+    Name: test_conf.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/test_import_neo4j.py:
+    Name: test_import_neo4j.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/test_types.py:
+    Name: test_types.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/time/test_clock.py:
+    Name: test_clock.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/time/test_clocktime.py:
+    Name: test_clocktime.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/mixed/test_home_db_cache.py:
+    Name: test_home_db_cache.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/fixtures/fake_connection.py:
+    Name: fake_connection.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/fixtures/fake_pool.py:
+    Name: fake_pool.py
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/io/conftest.py:
+    Name: conftest.py
+    Description: 
+    Description Embedding: 
+
+Class Hierarchy:
+
+  ../src/neo4j/_async_compat/network/_util.py::AsyncNetworkUtil:
+    Bases: None
+    Functions: ['get_address_info', 'resolve_address']
+    Attributes: []
+    Start Line: 40
+    End Line: 124
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_async_compat/network/_util.py::NetworkUtil:
+    Bases: None
+    Functions: ['get_address_info', 'resolve_address']
+    Attributes: []
+    Start Line: 127
+    End Line: 203
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_codec/hydration/_common.py::BrokenHydrationObject:
+    Bases: None
+    Functions: ['exception_copy']
+    Attributes: []
+    Start Line: 62
+    End Line: 86
+    Decorators: None
+    Docstring: Represents an object from the server, not understood by the driver.
+
+    A :class:`neo4j.Record` might contain a ``BrokenHydrationObject`` object
+    if the driver received data from the server that it did not understand.
+    This can for instance happen if the server sends a zoned datetime with a
+    zone name unknown to the driver.
+
+    There is no need to explicitly check for this type. Any method on the
+    :class:`neo4j.Record` that would return a ``BrokenHydrationObject``, will
+    raise a :exc:`neo4j.exceptions.BrokenRecordError`
+    with the original exception as cause.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_codec/hydration/_common.py::DehydrationHooks:
+    Bases: None
+    Functions: ['update', 'extend', 'get_transformer']
+    Attributes: ['exact_types', 'subtypes']
+    Start Line: 26
+    End Line: 59
+    Decorators: dataclass
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_codec/hydration/_common.py::GraphHydrator:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 89
+    End Line: 92
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_codec/hydration/_common.py::HydrationScope:
+    Bases: None
+    Functions: ['get_graph']
+    Attributes: []
+    Start Line: 95
+    End Line: 136
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_codec/packstream/_python/_common.py::Structure:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 17
+    End Line: 43
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_deadline.py::Deadline:
+    Bases: None
+    Functions: ['original_timeout', 'expired', 'to_timeout', 'from_timeout_or_deadline']
+    Attributes: []
+    Start Line: 21
+    End Line: 74
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::BoltConnectionError:
+    Bases: BoltError
+    Functions: ['errno']
+    Attributes: []
+    Start Line: 30
+    End Line: 56
+    Decorators: None
+    Docstring: Raised when a connection fails.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::BoltError:
+    Bases: Exception
+    Functions: []
+    Attributes: []
+    Start Line: 22
+    End Line: 27
+    Decorators: None
+    Docstring: Base class for all Bolt protocol errors.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::BoltHandshakeError:
+    Bases: BoltError
+    Functions: []
+    Attributes: []
+    Start Line: 66
+    End Line: 72
+    Decorators: None
+    Docstring: Raised when a handshake completes unsuccessfully.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::BoltProtocolError:
+    Bases: BoltError
+    Functions: []
+    Attributes: []
+    Start Line: 75
+    End Line: 76
+    Decorators: None
+    Docstring: Raised when an unexpected or unsupported protocol event occurs.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::BoltSecurityError:
+    Bases: BoltConnectionError
+    Functions: []
+    Attributes: []
+    Start Line: 59
+    End Line: 63
+    Decorators: None
+    Docstring: Raised when a connection fails for security reasons.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_exceptions.py::SocketDeadlineExceededError:
+    Bases: RuntimeError
+    Functions: []
+    Attributes: []
+    Start Line: 79
+    End Line: 80
+    Decorators: None
+    Docstring: Raised from sockets with deadlines when a timeout occurs.
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_work/gql_status.py::DiagnosticRecord:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 31
+    End Line: 44
+    Decorators: None
+    Docstring: Container additional GQL status information useful for diagnostics.
+
+    The contents are mostly vendor-specific GQL status information.
+
+    **This is a preview**.
+    It might be changed without following the deprecation policy.
+
+    See also
+    https://github.com/neo4j/neo4j-python-driver/wiki/preview-features
+
+    .. versionadded:: 5.22
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/_work/gql_status.py::GqlStatusObject:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 17
+    End Line: 28
+    Decorators: None
+    Docstring: Container for GQLSTATUS information.
+
+    **This is a preview**.
+    It might be changed without following the deprecation policy.
+
+    See also
+    https://github.com/neo4j/neo4j-python-driver/wiki/preview-features
+
+    .. versionadded:: 5.22
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/time/_metaclasses.py::DateTimeType:
+    Bases: type
+    Functions: []
+    Attributes: []
+    Start Line: 52
+    End Line: 67
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/time/_metaclasses.py::DateType:
+    Bases: type
+    Functions: []
+    Attributes: []
+    Start Line: 24
+    End Line: 36
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../src/neo4j/time/_metaclasses.py::TimeType:
+    Bases: type
+    Functions: []
+    Attributes: []
+    Start Line: 39
+    End Line: 49
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../testkitbackend/backend.py::Request:
+    Bases: dict
+    Functions: ['get', 'mark_all_as_read', 'mark_item_as_read', 'mark_item_as_read_if_equals', 'unseen_keys', 'seen_all_keys']
+    Attributes: []
+    Start Line: 17
+    End Line: 62
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../testkitbackend/exceptions.py::MarkdAsDriverError:
+    Bases: Exception
+    Functions: []
+    Attributes: []
+    Start Line: 17
+    End Line: 22
+    Decorators: None
+    Docstring: Wrap any error as DriverException.
+    Description: 
+    Description Embedding: 
+
+  ../tests/_async_compat/mark_decorator.py::AsyncTestDecorators:
+    Bases: None
+    Functions: []
+    Attributes: ['mark_async_only_test']
+    Start Line: 33
+    End Line: 34
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/_async_compat/mark_decorator.py::TestDecorators:
+    Bases: None
+    Functions: ['mark_async_only_test']
+    Attributes: []
+    Start Line: 37
+    End Line: 41
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/env.py::_LazyEval:
+    Bases: abc.ABC
+    Functions: ['eval']
+    Attributes: []
+    Start Line: 23
+    End Line: 26
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/env.py::_LazyEvalEnv:
+    Bases: _LazyEval
+    Functions: ['eval']
+    Attributes: []
+    Start Line: 29
+    End Line: 47
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/env.py::_LazyEvalFunc:
+    Bases: _LazyEval
+    Functions: ['eval']
+    Attributes: []
+    Start Line: 50
+    End Line: 55
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/env.py::_Module:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 58
+    End Line: 67
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/conftest.py::ForcedRollback:
+    Bases: Exception
+    Functions: []
+    Attributes: []
+    Start Line: 20
+    End Line: 23
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/__init__.py::DriverSetupExample:
+    Bases: None
+    Functions: ['close', 'test']
+    Attributes: ['driver']
+    Start Line: 95
+    End Line: 109
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_autocommit_transaction_example.py::AutocommitTransactionExample:
+    Bases: None
+    Functions: ['add_person', 'add_person_within_a_second']
+    Attributes: []
+    Start Line: 24
+    End Line: 39
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_basic_auth_example.py::BasicAuthExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 35
+    End Line: 38
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_bearer_auth_example.py::BearerAuthExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 36
+    End Line: 39
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_connection_pool_example.py::ConfigConnectionPoolExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 32
+    End Line: 41
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_connection_timeout_example.py::ConfigConnectionTimeoutExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 32
+    End Line: 37
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_max_retry_time_example.py::ConfigMaxRetryTimeExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 32
+    End Line: 37
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_secure_example.py::ConfigSecureExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 33
+    End Line: 48
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_trust_example.py::ConfigTrustExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 30
+    End Line: 45
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_config_unencrypted_example.py::ConfigUnencryptedExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 32
+    End Line: 35
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_custom_auth_example.py::CustomAuthExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 38
+    End Line: 44
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_cypher_error_example.py::Neo4jErrorExample:
+    Bases: None
+    Functions: ['get_employee_number', 'select_employee']
+    Attributes: []
+    Start Line: 28
+    End Line: 46
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_database_selection_example.py::DatabaseSelectionExample:
+    Bases: None
+    Functions: ['close', 'run_example_code']
+    Attributes: []
+    Start Line: 36
+    End Line: 65
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_driver_introduction_example.py::App:
+    Bases: None
+    Functions: ['close', 'enable_log', 'create_friendship', 'find_person']
+    Attributes: []
+    Start Line: 37
+    End Line: 119
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_driver_lifecycle_example.py::DriverLifecycleExample:
+    Bases: None
+    Functions: ['close']
+    Attributes: []
+    Start Line: 31
+    End Line: 36
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_hello_world_example.py::HelloWorldExample:
+    Bases: None
+    Functions: ['close', 'print_greeting']
+    Attributes: []
+    Start Line: 37
+    End Line: 59
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_kerberos_auth_example.py::KerberosAuthExample:
+    Bases: DriverSetupExample
+    Functions: []
+    Attributes: []
+    Start Line: 31
+    End Line: 34
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_pass_bookmarks_example.py::BookmarksExample:
+    Bases: None
+    Functions: ['close', 'create_person', 'employ', 'create_friendship', 'print_friendships', 'main']
+    Attributes: []
+    Start Line: 34
+    End Line: 94
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_function_example.py::TransactionFunctionExample:
+    Bases: None
+    Functions: ['add_person']
+    Attributes: []
+    Start Line: 42
+    End Line: 47
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_metadata_config_example.py::TransactionMetadataConfigExample:
+    Bases: None
+    Functions: ['add_person']
+    Attributes: []
+    Start Line: 38
+    End Line: 43
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/integration/examples/test_transaction_timeout_config_example.py::TransactionTimeoutConfigExample:
+    Bases: None
+    Functions: ['add_person']
+    Attributes: []
+    Start Line: 38
+    End Line: 43
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/fixtures/fake_connection.py::AsyncFakeConnection:
+    Bases: mock.NonCallableMagicMock
+    Functions: ['is_reset', 'fetch_message', 'fetch_all']
+    Attributes: ['callbacks', 'server_info', 'local_port']
+    Start Line: 41
+    End Line: 139
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/fixtures/fake_connection.py::AsyncScriptedConnection:
+    Bases: async_fake_connection_generator
+    Functions: ['set_script']
+    Attributes: ['_script', '_script_pos']
+    Start Line: 151
+    End Line: 237
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/io/conftest.py::AsyncFakeSocket:
+    Bases: None
+    Functions: ['getsockname', 'getpeername', 'recv_into', 'sendall', 'close', 'pop_message']
+    Attributes: []
+    Start Line: 26
+    End Line: 57
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/io/conftest.py::AsyncFakeSocket2:
+    Bases: None
+    Functions: ['getsockname', 'getpeername', 'recv_into', 'sendall', 'close', 'kill', 'inject', 'pop_message', 'send_message']
+    Attributes: []
+    Start Line: 60
+    End Line: 111
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/async_/io/conftest.py::AsyncFakeSocketPair:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 114
+    End Line: 123
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/_common.py::HydrationHandlerTestBase:
+    Bases: None
+    Functions: ['hydration_handler', 'test_handler_hydration_scope', 'hydration_scope', 'test_scope_hydration_keys', 'test_scope_dehydration_keys']
+    Attributes: []
+    Start Line: 43
+    End Line: 76
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v1/_base.py::HydrationHandlerTestBase:
+    Bases: None
+    Functions: ['hydration_handler', 'hydration_scope']
+    Attributes: []
+    Start Line: 20
+    End Line: 27
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v1/test_temporal_dehydration_utc_patch.py::TestUTCPatchedTimeDehydration:
+    Bases: _TestTimeDehydrationV1
+    Functions: ['hydration_handler']
+    Attributes: []
+    Start Line: 54
+    End Line: 61
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v1/test_temporal_dehydration_utc_patch.py::UTCPatchedTimeDehydrationMeta:
+    Bases: type
+    Functions: []
+    Attributes: []
+    Start Line: 30
+    End Line: 51
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_graph_hydration.py::TestGraphHydration:
+    Bases: _TestGraphHydration
+    Functions: ['hydration_handler', 'test_can_hydrate_node_structure', 'test_can_hydrate_relationship_structure']
+    Attributes: []
+    Start Line: 29
+    End Line: 65
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_hydration_handler.py::TestHydrationHandler:
+    Bases: TestHydrationHandlerV1
+    Functions: ['hydration_handler']
+    Attributes: []
+    Start Line: 26
+    End Line: 29
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_spacial_dehydration.py::TestSpatialDehydration:
+    Bases: _TestSpatialDehydrationV1
+    Functions: ['hydration_handler']
+    Attributes: []
+    Start Line: 26
+    End Line: 29
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_spacial_hydration.py::TestSpatialHydration:
+    Bases: _TestSpatialHydrationV1
+    Functions: ['hydration_handler']
+    Attributes: []
+    Start Line: 26
+    End Line: 29
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_temporal_dehydration.py::TestTimeDehydration:
+    Bases: _TestTemporalDehydrationV1
+    Functions: ['hydration_handler', 'test_date_time_fixed_offset', 'test_native_date_time_fixed_offset', 'test_date_time_fixed_native_offset', 'test_native_date_time_fixed_native_offset', 'test_pandas_date_time_fixed_offset', 'test_date_time_fixed_negative_offset', 'test_native_date_time_fixed_negative_offset', 'test_date_time_fixed_negative_native_offset', 'test_native_date_time_fixed_negative_native_offset', 'test_pandas_date_time_fixed_negative_offset', 'test_date_time_zone_id', 'test_native_date_time_zone_id', 'test_pandas_date_time_zone_id']
+    Attributes: []
+    Start Line: 32
+    End Line: 133
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_temporal_hydration.py::TestTemporalHydration:
+    Bases: _TestTemporalHydrationV1
+    Functions: ['hydration_handler', 'test_hydrate_date_time_structure_v1', 'test_hydrate_date_time_structure_v2', 'test_hydrate_date_time_zone_id_structure_v1', 'test_hydrate_date_time_zone_id_structure_v2', 'test_hydrate_date_time_unknown_zone_id_structure']
+    Attributes: []
+    Start Line: 30
+    End Line: 90
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/hydration/v2/test_unknown_hydration.py::TestUnknownHydration:
+    Bases: _TestUnknownHydration
+    Functions: ['hydration_handler']
+    Attributes: []
+    Start Line: 26
+    End Line: 29
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/codec/packstream/v1/test_packstream.py::TestPackStream:
+    Bases: None
+    Functions: ['test_none', 'test_boolean', 'test_boolean_pandas_series', 'test_negative_tiny_int', 'test_negative_tiny_int_pandas_series', 'test_positive_tiny_int', 'test_negative_int8', 'test_positive_int16', 'test_negative_int16', 'test_positive_int32', 'test_negative_int32', 'test_positive_int64', 'test_positive_int64_pandas_series', 'test_negative_int64', 'test_negative_int64_pandas_series', 'test_integer_positive_overflow', 'test_integer_negative_overflow', 'test_float', 'test_float_pandas_series', 'test_empty_bytes', 'test_bytes_8', 'test_bytes_16', 'test_bytes_32', 'test_bytes_pandas_series', 'test_bytearray_size_overflow', 'test_empty_string', 'test_tiny_strings', 'test_string_8', 'test_string_16', 'test_string_32', 'test_unicode_string', 'test_string_pandas_series', 'test_string_size_overflow', 'test_empty_list', 'test_tiny_lists', 'test_list_8', 'test_list_16', 'test_list_32', 'test_nested_lists', 'test_list_pandas_categorical', 'test_list_size_overflow', 'test_empty_map', 'test_tiny_maps', 'test_map_8', 'test_map_16', 'test_map_32', 'test_empty_dataframe_maps', 'test_tiny_dataframes_maps', 'test_map_size_overflow', 'test_map_key_type', 'test_illegal_signature', 'test_empty_struct', 'test_tiny_structs', 'test_struct_size_overflow', 'test_illegal_uuid']
+    Attributes: []
+    Start Line: 190
+    End Line: 639
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestOrderedSet:
+    Bases: None
+    Functions: ['test_should_repr_as_set', 'test_should_contain_element', 'test_should_not_contain_non_element', 'test_should_be_able_to_get_item_if_empty', 'test_should_be_able_to_get_items_by_index', 'test_should_be_iterable', 'test_should_have_length', 'test_should_be_able_to_add_new', 'test_should_be_able_to_add_existing', 'test_should_be_able_to_clear', 'test_should_be_able_to_discard_existing', 'test_should_be_able_to_discard_non_existing', 'test_should_be_able_to_remove_existing', 'test_should_not_be_able_to_remove_non_existing', 'test_should_be_able_to_update', 'test_should_be_able_to_replace']
+    Attributes: []
+    Start Line: 60
+    End Line: 135
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestRoutingTableConstruction:
+    Bases: None
+    Functions: ['test_should_be_initially_stale']
+    Attributes: []
+    Start Line: 138
+    End Line: 142
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestRoutingTableFreshness:
+    Bases: None
+    Functions: ['test_should_be_fresh_after_update', 'test_should_become_stale_on_expiry', 'test_should_become_stale_if_no_readers', 'test_should_become_stale_if_no_writers']
+    Attributes: []
+    Start Line: 210
+    End Line: 248
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestRoutingTableParseRoutingInfo:
+    Bases: None
+    Functions: ['test_should_return_routing_table_on_valid_record', 'test_should_return_routing_table_on_valid_record_with_extra_role']
+    Attributes: []
+    Start Line: 145
+    End Line: 174
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestRoutingTableServers:
+    Bases: None
+    Functions: ['test_should_return_all_distinct_servers_in_routing_table']
+    Attributes: []
+    Start Line: 177
+    End Line: 207
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/io/test_routing.py::TestRoutingTableUpdate:
+    Bases: None
+    Functions: ['table', 'new_table', 'test_update_should_replace_routers', 'test_update_should_replace_readers', 'test_update_should_replace_writers', 'test_update_should_replace_ttl']
+    Attributes: []
+    Start Line: 251
+    End Line: 294
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/test_types.py::ExampleGraph:
+    Bases: None
+    Functions: []
+    Attributes: ['graph', 'alice', 'bob', 'carol', 'alice_knows_bob', 'carol_dislikes_bob']
+    Start Line: 585
+    End Line: 591
+    Decorators: dataclass
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/time/__init__.py::FixedClock:
+    Bases: Clock
+    Functions: ['available', 'precision', 'local_offset', 'utc_time']
+    Attributes: []
+    Start Line: 26
+    End Line: 40
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/time/test_clock.py::TestClock:
+    Bases: None
+    Functions: ['test_no_clock_implementations', 'test_base_clock_precision', 'test_base_clock_available', 'test_base_clock_utc_time', 'test_local_offset', 'test_local_time', 'test_utc_time']
+    Attributes: []
+    Start Line: 25
+    End Line: 68
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/common/time/test_clocktime.py::TestClockTime:
+    Bases: None
+    Functions: ['test_zero_', 'test_only_seconds', 'test_float', 'test_only_nanoseconds', 'test_nanoseconds_overflow', 'test_positive_nanoseconds', 'test_negative_nanoseconds', 'test_add_float', 'test_add_duration', 'test_add_duration_with_months', 'test_add_object', 'test_sub_float', 'test_sub_duration', 'test_sub_duration_with_months', 'test_sub_object', 'test_repr']
+    Attributes: []
+    Start Line: 25
+    End Line: 99
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/mixed/io/_common.py::AsyncMultiEvent:
+    Bases: None
+    Functions: ['counter', 'increment', 'decrement', 'clear', 'wait']
+    Attributes: []
+    Start Line: 77
+    End Line: 122
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/mixed/io/_common.py::MultiEvent:
+    Bases: None
+    Functions: ['counter', 'increment', 'decrement', 'clear', 'wait']
+    Attributes: []
+    Start Line: 31
+    End Line: 74
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/fixtures/fake_connection.py::FakeConnection:
+    Bases: mock.NonCallableMagicMock
+    Functions: ['is_reset', 'fetch_message', 'fetch_all']
+    Attributes: ['callbacks', 'server_info', 'local_port']
+    Start Line: 41
+    End Line: 139
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/fixtures/fake_connection.py::ScriptedConnection:
+    Bases: fake_connection_generator
+    Functions: ['set_script']
+    Attributes: ['_script', '_script_pos']
+    Start Line: 151
+    End Line: 237
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/io/conftest.py::FakeSocket:
+    Bases: None
+    Functions: ['getsockname', 'getpeername', 'recv_into', 'sendall', 'close', 'pop_message']
+    Attributes: []
+    Start Line: 26
+    End Line: 57
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/io/conftest.py::FakeSocket2:
+    Bases: None
+    Functions: ['getsockname', 'getpeername', 'recv_into', 'sendall', 'close', 'kill', 'inject', 'pop_message', 'send_message']
+    Attributes: []
+    Start Line: 60
+    End Line: 111
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+  ../tests/unit/sync/io/conftest.py::FakeSocketPair:
+    Bases: None
+    Functions: []
+    Attributes: []
+    Start Line: 114
+    End Line: 123
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+
+Functions:
+
+  ../docs/source/conf.py::setup:
+    id: 8acfa126-15e0-44ea-bd19-a3a9c6ebdf4f
+    name: setup
+    Module Path: ../docs/source/conf.py
+    Signature: setup(app)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.docs.source.conf.setup()
+    Arguments: ['app']
+    Returns: None
+    Start Line: 148
+    End Line: 152
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../setup.py::change_project_name:
+    id: 0c56ca55-7734-40af-a987-79a63179495d
+    name: change_project_name
+    Module Path: ../setup.py
+    Signature: change_project_name(new_name)
+    Packages: {'neo4j_python_driver', 'tomlkit', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import tomlkit', 'import neo4j'}
+    function_exe_cmd: neo4j-python-driver.setup.change_project_name()
+    Arguments: ['new_name']
+    Returns: None
+    Start Line: 59
+    End Line: 70
+    Complexity: 3
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../setup.py::changed_package_name:
+    id: 403bd321-8ab9-4ab9-9272-76c79e250047
+    name: changed_package_name
+    Module Path: ../setup.py
+    Signature: changed_package_name(new_name)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import contextlib'}
+    function_exe_cmd: neo4j-python-driver.setup.changed_package_name()
+    Arguments: ['new_name']
+    Returns: None
+    Start Line: 73
+    End Line: 80
+    Complexity: 2
+    Is Active: True
+    Is Async: False
+    Decorators: contextmanager
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::__getitem__:
+    id: 15a53a3e-4a0f-4816-bd51-8ea0981251a2
+    name: __getitem__
+    Module Path: ../testkitbackend/backend.py
+    Signature: __getitem__(item)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.__getitem__()
+    Arguments: ['item']
+    Returns: None
+    Start Line: 22
+    End Line: 24
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::__init__:
+    id: 83e50e44-09f5-4612-a59e-df0e7600b705
+    name: __init__
+    Module Path: ../testkitbackend/backend.py
+    Signature: __init__()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.__init__()
+    Arguments: None
+    Returns: None
+    Start Line: 18
+    End Line: 20
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::get:
+    id: 1dc9c06f-6fb4-4926-bec7-8af7c2047782
+    name: get
+    Module Path: ../testkitbackend/backend.py
+    Signature: get(item, default)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.get()
+    Arguments: ['item', 'default']
+    Returns: None
+    Start Line: 26
+    End Line: 28
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::mark_all_as_read:
+    id: 69e71f88-10ea-48e5-95ae-22c43dde8304
+    name: mark_all_as_read
+    Module Path: ../testkitbackend/backend.py
+    Signature: mark_all_as_read(recursive)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.mark_all_as_read()
+    Arguments: ['recursive']
+    Returns: None
+    Start Line: 30
+    End Line: 35
+    Complexity: 4
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::mark_item_as_read:
+    id: 1c689e9f-d0ff-409b-8e6e-8a1f70d24fba
+    name: mark_item_as_read
+    Module Path: ../testkitbackend/backend.py
+    Signature: mark_item_as_read(item, recursive)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.mark_item_as_read()
+    Arguments: ['item', 'recursive']
+    Returns: None
+    Start Line: 37
+    End Line: 42
+    Complexity: 3
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::mark_item_as_read_if_equals:
+    id: d5bd79a8-b62b-4676-88ce-e5f357af8a4d
+    name: mark_item_as_read_if_equals
+    Module Path: ../testkitbackend/backend.py
+    Signature: mark_item_as_read_if_equals(item, value, recursive)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.mark_item_as_read_if_equals()
+    Arguments: ['item', 'value', 'recursive']
+    Returns: None
+    Start Line: 44
+    End Line: 46
+    Complexity: 2
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::seen_all_keys:
+    id: 7ecd50d7-dff4-44eb-a772-d08d2afb6b27
+    name: seen_all_keys
+    Module Path: ../testkitbackend/backend.py
+    Signature: seen_all_keys()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.seen_all_keys()
+    Arguments: None
+    Returns: None
+    Start Line: 60
+    End Line: 62
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: property
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/backend.py::unseen_keys:
+    id: 5a2e54e4-56b3-48d7-9810-a6f9e33cc668
+    name: unseen_keys
+    Module Path: ../testkitbackend/backend.py
+    Signature: unseen_keys()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.testkitbackend.backend.Request.unseen_keys()
+    Arguments: None
+    Returns: None
+    Start Line: 48
+    End Line: 58
+    Complexity: 5
+    Is Active: True
+    Is Async: False
+    Decorators: property
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../testkitbackend/exceptions.py::__init__:
+    id: 6868ced1-6a09-41f9-86fb-b5372df74778
+    name: __init__
+    Module Path: ../testkitbackend/exceptions.py
+    Signature: __init__(wrapped_exc)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.testkitbackend.exceptions.MarkdAsDriverError.__init__()
+    Arguments: ['wrapped_exc']
+    Returns: None
+    Start Line: 20
+    End Line: 22
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/env.py::__getattr__:
+    id: 9bf4a79a-0ca3-4aba-9be8-035ed42f45b8
+    name: __getattr__
+    Module Path: ../tests/env.py
+    Signature: __getattr__(item)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.env._Module.__getattr__()
+    Arguments: ['item']
+    Returns: None
+    Start Line: 62
+    End Line: 67
+    Complexity: 2
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/env.py::__init__:
+    id: 7054cdbc-c257-4d9e-8673-ae398f99a648
+    name: __init__
+    Module Path: ../tests/env.py
+    Signature: __init__(module)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.tests.env._Module.__init__()
+    Arguments: ['module']
+    Returns: None
+    Start Line: 59
+    End Line: 60
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/env.py::eval:
+    id: dc163774-b621-4c0a-9231-c73694d2cf99
+    name: eval
+    Module Path: ../tests/env.py
+    Signature: eval()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.env._LazyEvalFunc.eval()
+    Arguments: None
+    Returns: None
+    Start Line: 54
+    End Line: 55
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/integration/conftest.py::__init__:
+    id: 7f4f5e96-4627-44f2-98ca-663aafeaba04
+    name: __init__
+    Module Path: ../tests/integration/conftest.py
+    Signature: __init__(return_value)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.tests.integration.conftest.ForcedRollback.__init__()
+    Arguments: ['return_value']
+    Returns: None
+    Start Line: 21
+    End Line: 23
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/integration/conftest.py::cypher_eval:
+    id: c5083ef7-fe2e-4530-9ef8-e78bdb2cc6e6
+    name: cypher_eval
+    Module Path: ../tests/integration/conftest.py
+    Signature: cypher_eval(driver)
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.integration.conftest.cypher_eval()
+    Arguments: ['driver']
+    Returns: None
+    Start Line: 26
+    End Line: 41
+    Complexity: 3
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::__init__:
+    id: 4916cf99-232b-47f6-a833-d748b320ff97
+    name: __init__
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: __init__(address, packer_cls, unpacker_cls)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocketPair.__init__()
+    Arguments: ['address', 'packer_cls', 'unpacker_cls']
+    Returns: None
+    Start Line: 115
+    End Line: 123
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::close:
+    id: ea20cc6b-04cf-48f4-bb28-0c45717180da
+    name: close
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: close()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.close()
+    Arguments: None
+    Returns: None
+    Start Line: 95
+    End Line: 96
+    Complexity: 1
+    Is Active: True
+    Is Async: True
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::fake_socket:
+    id: 990cb1e2-9b0a-42a2-a62f-12820dac5447
+    name: fake_socket
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: fake_socket()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.fake_socket()
+    Arguments: None
+    Returns: None
+    Start Line: 126
+    End Line: 128
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::fake_socket_2:
+    id: 18282836-0350-482e-afcd-d02848eb0233
+    name: fake_socket_2
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: fake_socket_2()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.fake_socket_2()
+    Arguments: None
+    Returns: None
+    Start Line: 131
+    End Line: 133
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::fake_socket_pair:
+    id: d0f6f4f2-7719-4906-ad82-54fc5073b2cc
+    name: fake_socket_pair
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: fake_socket_pair()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.fake_socket_pair()
+    Arguments: None
+    Returns: None
+    Start Line: 136
+    End Line: 138
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::getpeername:
+    id: e61f7f6c-de03-43f6-bc30-8b8e8c27a1d9
+    name: getpeername
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: getpeername()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getpeername()
+    Arguments: None
+    Returns: None
+    Start Line: 81
+    End Line: 82
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::getsockname:
+    id: c1e7efea-5891-4c3d-8d0f-8824e2222cea
+    name: getsockname
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: getsockname()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.getsockname()
+    Arguments: None
+    Returns: None
+    Start Line: 78
+    End Line: 79
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::inject:
+    id: ac55f75e-9da7-465e-8b5c-f5ae69c832b5
+    name: inject
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: inject(data)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.inject()
+    Arguments: ['data']
+    Returns: None
+    Start Line: 101
+    End Line: 102
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::kill:
+    id: 1243d27a-2b4a-41d2-855c-79bee607727c
+    name: kill
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: kill()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.kill()
+    Arguments: None
+    Returns: None
+    Start Line: 98
+    End Line: 99
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::none_auth:
+    id: 69f0e93c-825a-4a36-ae95-deace6e71d54
+    name: none_auth
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: none_auth(static_auth)
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.none_auth()
+    Arguments: ['static_auth']
+    Returns: None
+    Start Line: 146
+    End Line: 148
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::pop_message:
+    id: 9887c568-f2a1-46fb-a00f-755378570ab7
+    name: pop_message
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: pop_message()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.pop_message()
+    Arguments: None
+    Returns: None
+    Start Line: 104
+    End Line: 106
+    Complexity: 1
+    Is Active: True
+    Is Async: True
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::recv_into:
+    id: 77c663f3-3cf9-4705-91b4-d63f293e1e13
+    name: recv_into
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: recv_into(buffer, nbytes)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.recv_into()
+    Arguments: ['buffer', 'nbytes']
+    Returns: None
+    Start Line: 84
+    End Line: 89
+    Complexity: 1
+    Is Active: True
+    Is Async: True
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::send_message:
+    id: 4d352ac7-d7f3-4005-b7ef-f54b3be45b90
+    name: send_message
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: send_message(tag)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.send_message()
+    Arguments: ['tag']
+    Returns: None
+    Start Line: 108
+    End Line: 111
+    Complexity: 1
+    Is Active: True
+    Is Async: True
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::sendall:
+    id: 8230527a-ef13-4f83-958b-5e139555aa7e
+    name: sendall
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: sendall(data)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.AsyncFakeSocket2.sendall()
+    Arguments: ['data']
+    Returns: None
+    Start Line: 91
+    End Line: 93
+    Complexity: 2
+    Is Active: True
+    Is Async: True
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/async_/io/conftest.py::static_auth:
+    id: b33e30e5-21a7-43bf-8735-798042e2dd3d
+    name: static_auth
+    Module Path: ../tests/unit/async_/io/conftest.py
+    Signature: static_auth()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.async_.io.conftest.static_auth()
+    Arguments: None
+    Returns: None
+    Start Line: 141
+    End Line: 143
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::__init__:
+    id: 953b4ebc-76b1-47ce-9b57-c32047d06ef3
+    name: __init__
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: __init__(address, packer_cls, unpacker_cls)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: set()
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocketPair.__init__()
+    Arguments: ['address', 'packer_cls', 'unpacker_cls']
+    Returns: None
+    Start Line: 115
+    End Line: 123
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::close:
+    id: f0adce9d-6a19-4c0f-9918-263dbc137a1d
+    name: close
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: close()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.close()
+    Arguments: None
+    Returns: None
+    Start Line: 95
+    End Line: 96
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::fake_socket:
+    id: 9ede9ffe-e9a4-4ee7-9154-f780231c5d05
+    name: fake_socket
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: fake_socket()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.fake_socket()
+    Arguments: None
+    Returns: None
+    Start Line: 126
+    End Line: 128
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::fake_socket_2:
+    id: 8ad8bfbf-4342-4ece-bd35-bf4a4e0ea877
+    name: fake_socket_2
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: fake_socket_2()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.fake_socket_2()
+    Arguments: None
+    Returns: None
+    Start Line: 131
+    End Line: 133
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::fake_socket_pair:
+    id: d6e354fe-5d52-44b7-ba74-f644f43622e1
+    name: fake_socket_pair
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: fake_socket_pair()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.fake_socket_pair()
+    Arguments: None
+    Returns: None
+    Start Line: 136
+    End Line: 138
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::getpeername:
+    id: 049fde3c-f2d0-4ff9-9029-1cb3b76b2ef0
+    name: getpeername
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: getpeername()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.getpeername()
+    Arguments: None
+    Returns: None
+    Start Line: 81
+    End Line: 82
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::getsockname:
+    id: 4f58063d-6efe-4e0e-9397-567e0db23f12
+    name: getsockname
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: getsockname()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.getsockname()
+    Arguments: None
+    Returns: None
+    Start Line: 78
+    End Line: 79
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::inject:
+    id: a82cc1e6-e566-4ad9-af94-c7320daa12fc
+    name: inject
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: inject(data)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.inject()
+    Arguments: ['data']
+    Returns: None
+    Start Line: 101
+    End Line: 102
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::kill:
+    id: c719c19f-420e-4af6-ac5d-4eec78b74350
+    name: kill
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: kill()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.kill()
+    Arguments: None
+    Returns: None
+    Start Line: 98
+    End Line: 99
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::none_auth:
+    id: 48b47657-b851-4bb9-9e84-4d5d2f55be1d
+    name: none_auth
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: none_auth(static_auth)
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.none_auth()
+    Arguments: ['static_auth']
+    Returns: None
+    Start Line: 146
+    End Line: 148
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::pop_message:
+    id: 78a8a4e4-7c43-43dd-bec3-bd24fef9c66c
+    name: pop_message
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: pop_message()
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.pop_message()
+    Arguments: None
+    Returns: None
+    Start Line: 104
+    End Line: 106
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::recv_into:
+    id: 3190fdf4-95aa-4468-a808-0d7ac6de4e0d
+    name: recv_into
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: recv_into(buffer, nbytes)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.recv_into()
+    Arguments: ['buffer', 'nbytes']
+    Returns: None
+    Start Line: 84
+    End Line: 89
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::send_message:
+    id: 83d1f39f-fc6b-4aee-8cf1-7a37b2e8e419
+    name: send_message
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: send_message(tag)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.send_message()
+    Arguments: ['tag']
+    Returns: None
+    Start Line: 108
+    End Line: 111
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::sendall:
+    id: 9fac59b0-356d-4c7d-80f0-4c6ce491f131
+    name: sendall
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: sendall(data)
+    Packages: {'neo4j_python_driver', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.FakeSocket2.sendall()
+    Arguments: ['data']
+    Returns: None
+    Start Line: 91
+    End Line: 93
+    Complexity: 2
+    Is Active: True
+    Is Async: False
+    Decorators: None
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+  ../tests/unit/sync/io/conftest.py::static_auth:
+    id: 1773cf70-7270-4232-a4e9-fc5ed2fff058
+    name: static_auth
+    Module Path: ../tests/unit/sync/io/conftest.py
+    Signature: static_auth()
+    Packages: {'neo4j_python_driver', 'pytest', 'neo4j-python-driver', 'neo4j'}
+    Imports: {'import neo4j', 'import pytest'}
+    function_exe_cmd: neo4j.tests.unit.sync.io.conftest.static_auth()
+    Arguments: None
+    Returns: None
+    Start Line: 141
+    End Line: 143
+    Complexity: 1
+    Is Active: True
+    Is Async: False
+    Decorators: pytest.fixture
+    Docstring: None
+    Description: 
+    Description Embedding: 
+    Comments: None
+    Runtime: python
+
+APIs:
+
+Tests:
+
+Errors:
+- /tmp/git_analyzer_mr1tyu63/benchkit/workloads.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/benchkit/app.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/benchkit/context.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/benchkit/__init__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/benchkit/__main__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/benchkit/env.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/totestkit.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/fromtestkit.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/server.py: Expected package name at the start of dependency specifier
+    _async
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/_preview_imports.py: Expected package name at the start of dependency specifier
+    _warning_check
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/_async/requests.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/_async/backend.py: Expected package name at the start of dependency specifier
+    _driver_logger
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/_sync/requests.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkitbackend/_sync/backend.py: Expected package name at the start of dependency specifier
+    _driver_logger
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/conftest.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/iter_util.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/_teamcity.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/mixed/io/test_direct.py: Expected package name at the start of dependency specifier
+    _async_util
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/mixed/async_compat/test_shims.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/mixed/async_compat/test_network.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/mixed/async_compat/test_concurrency.py: Expected package name at the start of dependency specifier
+    _async_util
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/fixtures/socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/fixtures/notifications.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_api.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_record.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_security.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_debug.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_exceptions.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/test_addressing.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/work/test_summary.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/graph/test_graph.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/spatial/test_point.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/spatial/test_cartesian_point.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/spatial/test_wgs84_point.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_unknown_hydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_spacial_dehydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_hydration_handler.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_temporal_dehydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_graph_hydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_temporal_hydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/codec/hydration/v1/test_spacial_hydration.py: Expected package name at the start of dependency specifier
+    _base
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/_debug/test_notification_printer.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/time/test_time.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/time/test_duration.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/time/test_datetime.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/common/time/test_date.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_driver.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_bookmark_manager.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_auth_management.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_conf.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_home_db_cache.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/test_addressing.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/work/test_session.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/work/test_transaction.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/work/test_result.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt4x4.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x0.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x4.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_direct.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test__common.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt4x1.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x5.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_neo4j_pool.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test__bolt_socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x2.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt4x2.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x8.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x7.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x1.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt5x6.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt4x3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/sync/io/test_class_bolt4x0.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_driver.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_bookmark_manager.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_auth_management.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_conf.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_home_db_cache.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/test_addressing.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/work/test_session.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/work/test_transaction.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/work/test_result.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt4x4.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x0.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x4.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_direct.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test__common.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt4x1.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x5.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_neo4j_pool.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test__bolt_socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x2.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt4x2.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x8.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x7.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x1.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt5x6.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt4x3.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/unit/async_/io/test_class_bolt4x0.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/integration/examples/test_geospatial_types_example.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/integration/mixed/test_async_cancellation.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/integration/mixed/test_async_driver.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/integration/sync/test_custom_ssl_context.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/tests/integration/async_/test_custom_ssl_context.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_api.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/data.py: Expected package name at the start of dependency specifier
+    _data
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/routing.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/warnings.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/addressing.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_auth_management.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/conf.py: Expected package name at the start of dependency specifier
+    _conf
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_meta.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/auth_management.py: Expected package name at the start of dependency specifier
+    _async
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/__init__.py: Expected package name at the start of dependency specifier
+    _api
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_data.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/debug.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/api.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/meta.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/exceptions.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_conf.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_routing.py: Expected package name at the start of dependency specifier
+    _conf
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/packstream.py: Expected package name at the start of dependency specifier
+    _codec
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/home_db_cache.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/bookmark_manager.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/auth_management.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/config.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/driver.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/work/session.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/work/transaction.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/work/result.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/work/workspace.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_bolt4.py: Expected package name at the start of dependency specifier
+    _api
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_bolt5.py: Expected package name at the start of dependency specifier
+    _api
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_bolt.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_common.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/__init__.py: Expected package name at the start of dependency specifier
+    _bolt
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_pool.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_bolt_socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/io/_bolt3.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/_debug/_concurrency_check.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async/_debug/__init__.py: Expected package name at the start of dependency specifier
+    _concurrency_check
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_spatial/__init__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/work/query.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/work/summary.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/work/__init__.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/packstream/_common.py: Expected package name at the start of dependency specifier
+    _rust
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/packstream/__init__.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/packstream/v1/types.py: Expected package name at the start of dependency specifier
+    _optional_deps
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/packstream/v1/__init__.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/packstream/_python/__init__.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/__init__.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/v1/hydration_handler.py: Expected package name at the start of dependency specifier
+    _optional_deps
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/v1/spatial.py: Expected package name at the start of dependency specifier
+    _spatial
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/v1/temporal.py: Expected package name at the start of dependency specifier
+    _optional_deps
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/v2/hydration_handler.py: Expected package name at the start of dependency specifier
+    _optional_deps
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/v2/temporal.py: Expected package name at the start of dependency specifier
+    _optional_deps
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_codec/hydration/_interface/__init__.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_util/__init__.py: Expected package name at the start of dependency specifier
+    _context_bool
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_util/_context_bool.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_work/query.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_work/summary.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_work/eager_result.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/graph/__init__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/home_db_cache.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/bookmark_manager.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/auth_management.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/config.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/driver.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/work/session.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/work/transaction.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/work/result.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/work/workspace.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_bolt4.py: Expected package name at the start of dependency specifier
+    _api
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_bolt5.py: Expected package name at the start of dependency specifier
+    _api
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_bolt.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_common.py: Expected package name at the start of dependency specifier
+    _async_compat
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/__init__.py: Expected package name at the start of dependency specifier
+    _bolt
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_pool.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_bolt_socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/io/_bolt3.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/_debug/_concurrency_check.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_sync/_debug/__init__.py: Expected package name at the start of dependency specifier
+    _concurrency_check
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async_compat/util.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async_compat/concurrency.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async_compat/network/__init__.py: Expected package name at the start of dependency specifier
+    _bolt_socket
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_async_compat/network/_bolt_socket.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/spatial/__init__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_debug/_notification_printer.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/_debug/__init__.py: Expected package name at the start of dependency specifier
+    _config
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/_clock_implementations.py: Expected package name at the start of dependency specifier
+    _arithmetic
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/clock_implementations.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/arithmetic.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/__init__.py: Expected package name at the start of dependency specifier
+    __future__
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/hydration.py: Expected package name at the start of dependency specifier
+    _codec
+    ^
+- /tmp/git_analyzer_mr1tyu63/src/neo4j/time/metaclasses.py: Expected package name at the start of dependency specifier
+    _meta
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkit/unittests.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkit/integration.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkit/build.py: Expected package name at the start of dependency specifier
+    _common
+    ^
+- /tmp/git_analyzer_mr1tyu63/testkit/backend.py: Expected package name at the start of dependency specifier
+    _common
+    ^
