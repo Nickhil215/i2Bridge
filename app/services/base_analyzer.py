@@ -381,10 +381,10 @@ class BaseAnalyzer(ABC):
                     package_name = name.split('.')[0]
 
                     # Get the correct library name dynamically
-                    library_name = self.get_library_name(package_name)
+                    # library_name = self.get_library_name(package_name)
 
-                    if package_name not in self.packages[file_path]:
-                        self.packages[file_path].append((library_name, import_name))  # Add library name and import name
+                    # if package_name not in self.packages[file_path]:
+                    #     self.packages[file_path].append((library_name, import_name))  # Add library name and import name
 
                     self.imports[file_path].append(f"import {import_name}")
             elif isinstance(node, nodes.ImportFrom):
@@ -396,10 +396,10 @@ class BaseAnalyzer(ABC):
                     else:
                         import_name = f"{name}" if asname is None else f"{name} as {asname}"
                         package_name = module_name.split('.')[0]
-                        library_name = self.get_library_name(package_name)  # Get the correct library name dynamically
-
-                        if package_name not in self.packages[file_path]:
-                            self.packages[file_path].append((library_name, module_name))  # Add library name and import name
+                        # library_name = self.get_library_name(package_name)  # Get the correct library name dynamically
+                        #
+                        # if package_name not in self.packages[file_path]:
+                        #     self.packages[file_path].append((library_name, module_name))  # Add library name and import name
                         self.imports[file_path].append(f"from {module_name} import {import_name}")
 
         self.module_info[file_path] = ModuleInfo(
@@ -686,13 +686,13 @@ class BaseAnalyzer(ABC):
 
         # Filter the runtime packages to only include those that match our required packages
         filtered_packages = set()
-        if required_packages and runtime_packages:
-            for pkg_info in runtime_packages:
-                pkg_name = pkg_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
-
-                # Check if this package matches any of our required packages
-                if any(req.lower() == pkg_name.lower() for req in required_packages):
-                    filtered_packages.add(pkg_info)
+        # if required_packages and runtime_packages:
+        #     for pkg_info in runtime_packages:
+        #         pkg_name = pkg_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
+        #
+        #         # Check if this package matches any of our required packages
+        #         if any(req.lower() == pkg_name.lower() for req in required_packages):
+        #             filtered_packages.add(pkg_info)
 
         # If we couldn't find matching packages, use our best guess
         if not filtered_packages and self.package_info:
@@ -700,9 +700,9 @@ class BaseAnalyzer(ABC):
             filtered_packages.add(self.package_info['possible_pypi_name'])
 
             # Also add any third-party packages we detected
-            for pkg in required_packages:
-                if pkg != self.package_name and pkg != self.package_info['possible_pypi_name']:
-                    filtered_packages.add(pkg)
+            # for pkg in required_packages:
+            #     if pkg != self.package_name and pkg != self.package_info['possible_pypi_name']:
+            #         filtered_packages.add(pkg)
 
         # Construct the function definition path properly
         if class_name:

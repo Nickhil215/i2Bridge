@@ -113,7 +113,9 @@ def analyze(package_path, branch, request):
     bearer_token = request.headers.get("Authorization")
     cdn_url = upload_to_content_service(ttl_output, bearer_token)
     logging.info(f"------- cdn_url:  {cdn_url} --------")
-    import_kg(cdn_url, bearer_token)
+    # import_kg(cdn_url, bearer_token)
+
+    function_list["cdn_url"] = cdn_url
 
     return function_list
 
