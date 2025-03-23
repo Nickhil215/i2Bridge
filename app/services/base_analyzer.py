@@ -213,7 +213,6 @@ class BaseAnalyzer(ABC):
     def __init__(self, package_path: str):
         """Initialize the base analyzer."""
         self.package_path = os.path.abspath(package_path)
-        print("------self.package_path",self.package_path)
         self.modules: Dict[str, nodes.Module] = {}
         self.imports: Dict[str, Set[str]] = defaultdict(set)
         self.classes: Dict[str, ClassInfo] = {}
@@ -251,11 +250,8 @@ class BaseAnalyzer(ABC):
         try:
             temp_file_path = os.path.normpath(temp_file_path)
             package_path = os.path.normpath(self.package_path)
-            print(package_path, "package_path2-----------------------")
-            
+
             file_path = os.path.relpath(temp_file_path, package_path)
-            # print(temp_file_path, "-----------------------")
-            # print(file_path, "-----------------------")
             self.relative_path = file_path
 
             self.requirement_info = requirement_info
@@ -313,10 +309,10 @@ class BaseAnalyzer(ABC):
             terms_to_check = ["tests", "test", "example", "examples", "sample"]
 
             # Check if any of the conditions fail
-            if any(term not in file_path_parts for term in terms_to_check) and "_" not in filename:
-              logger.info(f"Analyzing file: {file_path}")
-              self._analyze_functions(module, file_path, source)
-              self._analyze_api_endpoint(module, file_path, source)
+            # if any(term not in file_path_parts for term in terms_to_check) and "_" not in filename:
+            logger.info(f"Analyzing file: {file_path}")
+            self._analyze_functions(module, file_path, source)
+            self._analyze_api_endpoint(module, file_path, source)
         except Exception as e:
             logger.error(f"Error analyzing {temp_file_path}: {str(e)}")
             self.errors.append((temp_file_path, str(e)))
