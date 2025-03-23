@@ -386,14 +386,6 @@ class BaseAnalyzer(ABC):
             if isinstance(node, nodes.Import):
                 for name, asname in node.names:  # Unpacking (name, alias) tuples
                     import_name = name if asname is None else f"{name} as {asname}"
-                    package_name = name.split('.')[0]
-
-                    # Get the correct library name dynamically
-                    # library_name = self.get_library_name(package_name)
-
-                    # if package_name not in self.packages[file_path]:
-                    #     self.packages[file_path].append((library_name, import_name))  # Add library name and import name
-
                     self.imports[file_path].append(f"import {import_name}")
             elif isinstance(node, nodes.ImportFrom):
                 module_name = node.modname
@@ -403,11 +395,6 @@ class BaseAnalyzer(ABC):
                         self.imports[file_path].append(f"from {self.formatted_path} import {import_name}")
                     else:
                         import_name = f"{name}" if asname is None else f"{name} as {asname}"
-                        package_name = module_name.split('.')[0]
-                        # library_name = self.get_library_name(package_name)  # Get the correct library name dynamically
-                        #
-                        # if package_name not in self.packages[file_path]:
-                        #     self.packages[file_path].append((library_name, module_name))  # Add library name and import name
                         self.imports[file_path].append(f"from {module_name} import {import_name}")
 
         self.module_info[file_path] = ModuleInfo(
@@ -596,12 +583,6 @@ class BaseAnalyzer(ABC):
         # Extract the function code
         function_code = source_code.splitlines()[start_line-1:end_line]
         function_text = '\n'.join(function_code)
-        #
-        # Track imports explicitly declared within the function
-        direct_imports = []
-        # for line in function_code:
-        #     if re.match(r'^\s*import\s+', line) or re.match(r'^\s*from\s+\S+\s+import', line):
-        #         direct_imports.append(line.strip())
 
         # Check for imports from the module that are used in the function
         module_imports = []
@@ -685,31 +666,15 @@ class BaseAnalyzer(ABC):
             if not package_import_found and node.name != '__init__':
                 imports.add(f"import {self.package_name}")
 
-        # Determine required packages based on imports with improved logic
-        required_packages = self.infer_package_dependencies(imports)
-
         # Filter to just runtime dependencies
         runtime_packages, _ = self.classify_dependencies(self.requirement_info) if self.requirement_info else ([], [])
 
         # Filter the runtime packages to only include those that match our required packages
         filtered_packages = set()
-        # if required_packages and runtime_packages:
-        #     for pkg_info in runtime_packages:
-        #         pkg_name = pkg_info.split('==')[0].split('>=')[0].split('~=')[0].strip()
-        #
-        #         # Check if this package matches any of our required packages
-        #         if any(req.lower() == pkg_name.lower() for req in required_packages):
-        #             filtered_packages.add(pkg_info)
-
         # If we couldn't find matching packages, use our best guess
         if not filtered_packages and self.package_info:
             # Add the package itself as a dependency
             filtered_packages.add(self.package_info['possible_pypi_name'])
-
-            # Also add any third-party packages we detected
-            # for pkg in required_packages:
-            #     if pkg != self.package_name and pkg != self.package_info['possible_pypi_name']:
-            #         filtered_packages.add(pkg)
 
         # Construct the function definition path properly
         if class_name:
