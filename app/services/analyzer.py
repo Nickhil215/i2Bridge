@@ -3,11 +3,12 @@ import logging
 import uuid
 from io import BytesIO
 
+from flask import jsonify
 import requests
 from requests_toolbelt.multipart.encoder import MultipartEncoder
 
 from app import logger, settings
-from app.core.exceptions import ApiException
+# from app.core.exceptions import ApiException
 from app.services.package_analyzer_factory import PackageAnalyzerFactory
 
 
@@ -59,10 +60,12 @@ def upload_to_content_service(content, bearer_token):
         error = None
         if response is not None:
             error = response.text
-        raise ApiException("Failed to make API call", 500, error)
+        # raise ApiException("Failed to make API call", 500, error)
+        return jsonify(error)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure", 500)
+        # raise ApiException("Object mapping failure", 500)
+        return jsonify(e)
 
 
 def import_kg(cdn_url, bearer_token):
@@ -95,10 +98,12 @@ def import_kg(cdn_url, bearer_token):
         error = None
         if response is not None:
             error = response.text
-        raise ApiException("Failed to make API call", 500, error)
+        # raise ApiException("Failed to make API call", 500, error)
+        return jsonify(e)
     except ValueError as e:
         logging.error(f"JSON parsing error: {e}")
-        raise ApiException("Object mapping failure", 500)
+        # raise ApiException("Object mapping failure", 500)
+        return jsonify(e)
 
 
 def analyze(package_path, branch, request):
