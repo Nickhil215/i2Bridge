@@ -16,6 +16,6 @@ opentelemetry-exporter-otlp
 opentelemetry-instrumentation-fastapi
 
 flask
-Flask-Cors
+flask-cors
 functions-framework==1.4.3
 markupsafe==2.0.1
